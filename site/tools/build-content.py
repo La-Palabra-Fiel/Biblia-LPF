@@ -211,6 +211,7 @@ def nota_fuente(libro: Libro) -> str:
         return ""
     partes = []
     for n in libro.notas:
+        n = n.replace("La Biblia Fiel", "La Palabra Fiel")
         n = html.escape(n, quote=False)
         n = re.sub(r"`([^`]+)`", r"<code>\1</code>", n)
         partes.append(n)
@@ -232,7 +233,7 @@ def escribir_libro(libro: Libro) -> None:
         f"capitulos: {libro.n_capitulos}",
         f"versiculos: {libro.n_versiculos}",
         f'slugLibro: "{libro.slug}"',
-        f"description: {yaml_txt(f'{libro.titulo} en La Biblia Fiel (LBF): {libro.n_capitulos} capítulos, {libro.n_versiculos} versículos.')}",
+        f"description: {yaml_txt(f'{libro.titulo} en La Palabra Fiel (LPF): {libro.n_capitulos} capítulos, {libro.n_versiculos} versículos.')}",
     ]
     if fuente:
         portada.append(f"fuente: {yaml_txt(fuente)}")
@@ -263,7 +264,7 @@ def escribir_libro(libro: Libro) -> None:
             f'testamento: "{libro.testamento}"',
             f"weight: {cap}",
             f"versiculos: {len(versiculos)}",
-            f"description: {yaml_txt(f'{libro.titulo} {cap} — La Biblia Fiel (LBF). {descripcion}')}",
+            f"description: {yaml_txt(f'{libro.titulo} {cap} — La Palabra Fiel (LPF). {descripcion}')}",
         ]
         if idx > 0:
             ant = capitulos[idx - 1]
@@ -348,10 +349,10 @@ def main() -> None:
             [
                 "---",
                 'title: "La Biblia"',
-                'description: "Libros de la Biblia con textos de trabajo disponibles en La Biblia Fiel (LBF), todavía en revisión."',
+                'description: "Libros de la Biblia con textos de trabajo disponibles en La Palabra Fiel (LPF), todavía en revisión."',
                 "---",
                 "",
-                "Libros con texto de trabajo disponible en la edición LBF. Estos",
+                "Libros con texto de trabajo disponible en la edición LPF. Estos",
                 "borradores siguen en revisión y no representan una traducción",
                 "completa terminada ni aprobada.",
                 "",

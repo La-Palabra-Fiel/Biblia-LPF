@@ -33,6 +33,14 @@ class RenderTextoVersiculoTests(unittest.TestCase):
             "Estos son los nombres.",
         )
 
+    def test_updates_old_project_name_in_displayed_source_note(self) -> None:
+        book = build_content["Libro"]("exodo", "Éxodo", "ot", 1)
+        book.notas = ["La Biblia Fiel — Éxodo.", "Fuente: OSHB / WLC."]
+        self.assertEqual(
+            build_content["nota_fuente"](book),
+            "La Palabra Fiel — Éxodo. Fuente: OSHB / WLC.",
+        )
+
     def test_renders_notes_collapsed_and_escapes_html(self) -> None:
         rendered = build_content["render_nota_traduccion"](
             ["*son* se suple <para completar> la oración."]

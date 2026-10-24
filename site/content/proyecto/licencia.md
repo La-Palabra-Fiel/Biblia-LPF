@@ -2,31 +2,31 @@
 title: "Licencia y uso"
 antetitulo: "El proyecto"
 weight: 40
-entradilla: "Qué puedes hacer con el texto de La Biblia Fiel, y bajo qué condiciones."
-description: "Condiciones de uso del texto de La Biblia Fiel (CC BY-NC-ND 4.0), de las herramientas públicas (PolyForm Noncommercial) y de los textos fuente."
+entradilla: "Qué puedes hacer con el texto de La Palabra Fiel, y bajo qué condiciones."
+description: "Condiciones de uso del texto de La Palabra Fiel (CC BY-NC-ND 4.0), de las herramientas públicas (PolyForm Noncommercial) y de los textos fuente."
 ---
 
 © 2026 **Cultivados en Gracia y Verdad**.
 
-La Biblia Fiel es propiedad de
+La Palabra Fiel es propiedad de
 [Cultivados en Gracia y Verdad](https://github.com/Cultivados-en-Gracia-y-Verdad).
 Este proyecto reúne más de una obra: aplica la licencia que corresponde a los
 archivos que estés usando.
 
 ## El texto bíblico
 
-El texto de La Biblia Fiel se publica bajo
+El texto de La Palabra Fiel se publica bajo
 [Creative Commons Atribución-NoComercial-SinDerivadas 4.0
 (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es).
 
-Puedes **copiar y compartir el texto LBF tal cual**, con atribución, para usos
-no comerciales. Esta licencia pública no permite compartir un texto LBF
+Puedes **copiar y compartir el texto LPF tal cual**, con atribución, para usos
+no comerciales. Esta licencia pública no permite compartir un texto LPF
 adaptado, ni usar el texto principalmente para obtener ventaja comercial o
 compensación monetaria.
 
 ### Atribución
 
-> La Biblia Fiel. © Cultivados en Gracia y Verdad.
+> La Palabra Fiel. © Cultivados en Gracia y Verdad.
 > Licencia CC BY-NC-ND 4.0.
 > https://github.com/La-Biblia-Fiel/Biblia-LBF
 
@@ -62,13 +62,13 @@ sus propias licencias, que no se ven alteradas por esta página.
 | Textus Receptus de Scrivener 1894 (ed. Robinson) | Dominio público |
 | Open Scriptures Hebrew Bible (WLC) | CC BY 4.0 |
 
-LBF no utiliza, no depende de, ni redistribuye ninguna edición del texto
+LPF no utiliza, no depende de, ni redistribuye ninguna edición del texto
 crítico. Los textos bíblicos subyacentes —el hebreo del Códice de Leningrado y
 el griego del Textus Receptus— son de dominio público.
 
 ## Los nombres
 
-«La Biblia Fiel», «LBF» y «Cultivados en Gracia y Verdad» identifican
+«La Palabra Fiel», «LPF» y «Cultivados en Gracia y Verdad» identifican
 únicamente la redacción publicada por el proyecto. No se licencian para
 publicar un texto alterado, competidor o modificado de forma independiente
 bajo esos nombres.

@@ -293,11 +293,11 @@ Y respondió Moisés y dijo: «Y he aquí, no me creerán ni escucharán mi voz,
 
 ### 4:2
 
-Y Yahvé le dijo: «¿Qué es eso en tu mano?». Y él dijo: «Una vara».
+Y Yahvé le dijo: «¿*Qué es eso* en tu mano?». Y él dijo: «Una vara».
 
 ### 4:3
 
-Y dijo: Arrójalo a tierra. Y lo arrojó a tierra, y fue a serpiente, y huyó Moisés de su rostro.
+Y dijo: «Échalo a tierra». Y lo echó a tierra, y llegó a ser una serpiente; y huyó Moisés de delante de ella.
 
 ### 4:4
 
@@ -305,7 +305,7 @@ Y dijo Yahvé a Moisés: «Extiende tu mano y agárralo por su cola». Y extendi
 
 ### 4:5
 
-Para que crean que se te apareció Yahvé, Dios de sus padres, Dios de Abraham, Dios de Isaac y Dios de Jacob.
+Para que crean que te apareció Yahvé, Dios de sus padres, Dios de Abraham, Dios de Isaac y Dios de Jacob.
 
 ### 4:6
 
@@ -313,7 +313,7 @@ Y Yahvé le dijo además: «Mete, por favor, tu mano en tu seno». Y metió su m
 
 ### 4:7
 
-Y dijo: «Haz volver tu mano a tu seno». Y él hizo volver su mano a su seno, y la sacó de su seno; y he aquí, había vuelto a estar como *el resto de* su carne.
+Y dijo: «Haz volver tu mano a tu seno». Y él hizo volver su mano a su seno, y la sacó de su seno; y he aquí, volvió como su carne.
 
 ### 4:8
 
@@ -321,7 +321,7 @@ Y sucederá que, si no te creen ni escuchan la voz de la primera señal, creerá
 
 ### 4:9
 
-Y sucederá que, si tampoco creen a estas dos señales ni escuchan tu voz, tomarás de las aguas del río y las derramarás sobre la tierra seca; y las aguas que tomes del río se convertirán en sangre en la tierra seca.
+Y será que, si tampoco creen a estas dos señales ni escuchan tu voz, tomarás de las aguas del río y las derramarás sobre la tierra seca; y las aguas que tomes del río serán sangre en la tierra seca.
 
 ### 4:10
 
@@ -329,7 +329,7 @@ Y dijo Moisés a Yahvé: «Por favor, Señor mío, no soy hombre de palabras, ni
 
 ### 4:11
 
-Y Yahvé le dijo: «¿Quién dio boca al hombre? ¿O quién lo hace mudo, o sordo, o capaz de ver, o ciego? ¿No *soy* yo, Yahvé?».
+Y Yahvé le dijo: «¿Quién puso boca al hombre? ¿O quién pone mudo, o sordo, o vidente, o ciego? ¿No yo, Yahvé?»
 
 ### 4:12
 
@@ -341,15 +341,15 @@ Y dijo: «Por favor, mi Señor, envía, por favor, por mano de quien enviarás»
 
 ### 4:14
 
-Y se encendió la ira de Yahvé contra Moisés, y dijo: «¿No está Aarón, tu hermano, el levita? Sé que él habla bien. Y también, he aquí, él sale a tu encuentro; y te verá y se alegrará en su corazón».
+Y se encendió la ira de Yahvé contra Moisés, y dijo: «¿No *está* Aarón, tu hermano, el levita? Sé que el habla bien. Y además, he aquí, él sale a tu encuentro; y te verá y se alegrará en su corazón».
 
 ### 4:15
 
-Y hablarás a él, y pondrás las palabras en su boca, y yo seré con tu boca y con su boca, y enseñaré a ustedes lo que harán.
+Y hablarás con él y pondrás las palabras en su boca; y yo estaré con tu boca y con su boca, y los instruiré sobre lo que harán.
 
 ### 4:16
 
-Y él hablará por ti al pueblo; y sucederá que él será tu boca, y tú serás para él como Dios.
+Y hablará él por ti al pueblo; y él será para ti por boca, y tú serás para él por Dios.
 
 ### 4:17
 
@@ -357,11 +357,11 @@ Y esta vara tomarás en tu mano, con la cual harás las señales.
 
 ### 4:18
 
-Y fue Moisés y volvió a Jetró, su suegro, y le dijo: «Permíteme ir, por favor, y volver a mis hermanos que están en Egipto para ver si aún están vivos». Y Jetró dijo a Moisés: «Ve en paz».
+Y fue Moisés y volvió a Jetró, su suegro, y le dijo: «Permíteme ir, por favor, y volver a mis hermanos que están en Egipto, y veré si aún están vivos». Y Jetró dijo a Moisés: «Ve en paz».
 
 ### 4:19
 
-Y Yahvé dijo a Moisés en Madián: «Ve, vuelve a Egipto, porque han muerto todos los hombres que buscaban tu vida».
+Y dijo Yahvé a Moisés en Madián: «Ve, vuelve a Egipto, porque han muerto todos los hombres que buscaban tu vida».
 
 ### 4:20
 
@@ -369,7 +369,7 @@ Y Moisés tomó a su mujer y a sus hijos, y los hizo montar sobre el asno, y vol
 
 ### 4:21
 
-Y Yahvé dijo a Moisés: «Cuando vuelvas a Egipto, mira que hagas delante de Faraón todos los prodigios que he puesto en tu mano; pero yo fortaleceré su corazón, y él no dejará ir al pueblo».
+Y Yahvé dijo a Moisés: «Cuando vayas a volver a Egipto, mira todos los prodigios que he puesto en tu mano, y hazlos delante de Faraón; y yo fortaleceré su corazón, y no enviará al pueblo».
 
 ### 4:22
 
@@ -377,7 +377,7 @@ Y dirás a Faraón: Así dijo Yahvé: Mi hijo, mi primogénito, Israel.
 
 ### 4:23
 
-Y te dije: «Deja ir a mi hijo para que me sirva»; pero te negaste a dejarlo ir. He aquí, yo voy a matar a tu hijo, tu primogénito.
+Y te dije: Deja ir a mi hijo, y que me sirva; pero te negaste a enviarlo. He aquí, yo mato a tu hijo, tu primogénito.
 
 ### 4:24
 
@@ -385,11 +385,11 @@ Y sucedió en el camino, en el alojamiento, que Yahvé lo encontró y procuró m
 
 ### 4:25
 
-Y Séfora tomó un pedernal, y cortó el prepucio de su hijo, y lo hizo tocar sus pies, y dijo: «Ciertamente, tú *eres* para mí un esposo de sangre».
+Y Séfora tomó un pedernal, y cortó el prepucio de su hijo, y lo hizo tocar sus dos pies, y dijo: «Porque *eres* esposo de sangres tú para mí».
 
 ### 4:26
 
-Y desistió de él. Entonces ella dijo: «Esposo de sangre», por la circuncisión.
+Y desistió de nosotros. Entonces ella dijo: «Novio de sangre», por la circuncision.
 
 ### 4:27
 
@@ -397,11 +397,11 @@ Y Yahvé dijo a Aarón: «Ve al encuentro de Moisés, hacia el desierto». Y fue
 
 ### 4:28
 
-Y Moisés contó a Aarón todas las palabras de Yahvé, quien lo había enviado, y todas las señales que le había mandado *realizar*.
+Y Moisés contó a Aarón todas las palabras de Yahvé, quien lo envió, y todas las señales que le mandó.
 
 ### 4:29
 
-Y anduvo Moisés y Aarón, y reunieron a todos los ancianos de hijos de Israel.
+Y fueron Moisés y Aarón, y reunieron a todos los ancianos de los hijos de Israel.
 
 ### 4:30
 
@@ -409,7 +409,7 @@ Y habló Aarón todas las palabras que Yahvé había hablado a Moisés, e hizo l
 
 ### 4:31
 
-Y creyó el pueblo, y oyeron que Yahvé había visitado a los hijos de Israel y que había visto su aflicción; y se inclinaron y se postraron.
+Y creyó el pueblo, y oyeron que había visitado Yahvé a los hijos de Israel y que había visto su aflicción; y se inclinaron y se postraron.
 
 ## Capítulo 5
 

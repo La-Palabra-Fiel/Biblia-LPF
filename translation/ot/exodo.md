@@ -203,7 +203,7 @@ Y Moisés estaba pastoreando el rebaño de Jetró, su suegro, sacerdote de Madi�
 
 ### 3:2
 
-Y el mensajero de Yahvé se le apareció en una llama de fuego, desde en medio de la zarza. Él miró, y he aquí que la zarza ardía en el fuego, pero la zarza no se consumía.
+Y se le apareció el mensajero de Yahvé en una llama de fuego desde en medio de la zarza; y vio, y he aquí, la zarza ardía en el fuego, pero la zarza no se consumía.
 
 ### 3:3
 
@@ -211,19 +211,19 @@ Y dijo Moisés: «Me apartaré ahora y veré esta gran visión, por qué no arde
 
 ### 3:4
 
-Y Yahvé vio que se había apartado para ver, y Dios lo llamó de en medio de la zarza y dijo: «Moisés, Moisés». Y él dijo: «Aquí estoy».
+Y vio Yahvé que se había apartado para ver, y Dios lo llamó de en medio de la zarza y dijo: «Moisés, Moisés». Y él dijo: «Aquí estoy».
 
 ### 3:5
 
-Y dijo: «No te acerques aquí. Quítate las sandalias de tus pies, porque el lugar sobre el cual estás de pie es tierra santa».
+Y dijo: «No te acerques aquí. Quita tus sandalias de sobre tus pies, porque el lugar sobre el cual tú estás de pie es tierra de santidad».
 
 ### 3:6
 
-Y dijo: «Yo soy el Dios de tu padre, Dios de Abraham, Dios de Isaac y Dios de Jacob». Y Moisés ocultó su rostro, porque temió mirar a Dios.
+Y dijo: «Yo, Dios de tu padre, Dios de Abraham, Dios de Isaac y Dios de Jacob». Y Moisés ocultó su rostro, porque temió mirar a Dios.
 
 ### 3:7
 
-Y Yahvé dijo: «Ciertamente he visto la aflicción de mi pueblo que está en Egipto, y he oído su clamor a causa de sus opresores, porque he conocido sus dolores».
+Y dijo Yahvé: «Ciertamente he visto la aflicción de mi pueblo en Egipto, y he oído el clamor de ellos a causa de sus opresores, porque he conocido sus dolores».
 
 ### 3:8
 
@@ -231,7 +231,7 @@ Y descendí para librarlo de la mano de Egipto y para hacerlo subir de aquella t
 
 ### 3:9
 
-Y ahora, he aquí clamor de hijos de Israel ha venido a mí, y también he visto la opresión que Egipto oprimen a ellos.
+Y ahora, he aquí, el clamor de los hijos de Israel ha llegado a mí; y también he visto la opresión con la cual Egipto los oprime.
 
 ### 3:10
 
@@ -243,7 +243,7 @@ Y dijo Moisés a Dios: «¿Quién soy yo, para que vaya al faraón y para que sa
 
 ### 3:12
 
-Y dijo: Porque seré contigo, y esta a ti la señal de que yo te envié: en tu sacar al pueblo desde Egipto, ustedes servirán a Dios sobre este monte.
+Y dijo: «Porque estaré contigo; y esto para ti, la señal de que yo te envié: cuando saques al pueblo de Egipto, servirán a Dios sobre este monte».
 
 ### 3:13
 
@@ -251,39 +251,39 @@ Y dijo Moisés a Dios: «He aquí, *si* voy a los hijos de Israel y les digo: �
 
 ### 3:14
 
-Y dijo Dios a Moisés: Seré lo que seré. Y dijo: Así dirás a hijos de Israel: Seré me envió a ustedes.
+Y dijo Dios a Moisés: «Seré el que seré». Y dijo: «Así dirás a los hijos de Israel: “Seré me ha enviado a ustedes”».
 
 ### 3:15
 
-Y dijo además Dios a Moisés: «Así dirás a los hijos de Israel: “Yahvé, Dios de sus padres, Dios de Abraham, Dios de Isaac y Dios de Jacob, me ha enviado a ustedes”. Este *es* mi nombre para siempre, y este *es* mi memorial de generación en generación».
+Y dijo además Dios a Moisés: «Así dirás a los hijos de Israel: “Yahvé, Dios de sus padres, Dios de Abraham, Dios de Isaac y Dios de Jacob, me ha enviado a ustedes”. Este, *es* mi nombre para siempre; y este *es* mi recuerdo de generación en generación».
 
 ### 3:16
 
-Ve y reúne a los ancianos de Israel, y dirás a ellos: Yahvé Dios de padres de ustedes se apareció a mí, Dios de Abraham, Isaac y Jacob, diciendo: Visitando he visitado a ustedes y lo hecho a ustedes en Egipto.
+Ve y reúne a los ancianos de Israel, y diles: Yahvé, el Dios de sus padres, se me apareció, el Dios de Abraham, Isaac y Jacob, diciendo: Ciertamente los he visitado a ustedes y lo que les es hecho en Egipto.
 
 ### 3:17
 
-Y dije: Subiré a ustedes desde la aflicción de Egipto a tierra del cananeo y el hitita y el amorreo y el ferezeo y el heveo y el jebuseo, a tierra manante leche y miel.
+Y dije: Los haré subir de la aflicción de Egipto a la tierra del cananeo, y del hitita, y del amorreo, y del ferezeo, y del heveo, y del jebuseo, a una tierra que fluye leche y miel.
 
 ### 3:18
 
-Y oirán a tu voz, y vendrás tú y los ancianos de Israel al rey de Egipto, y dirán a él: Yahvé Dios de los hebreos se encontró sobre nosotros; y ahora, andemos, por favor, camino de tres días en el desierto, y sacrifiquemos a Yahvé nuestro Dios.
+Y escucharán tu voz; y vendrás tú y los ancianos de Israel al rey de Egipto, y le dirán: «Yahvé, Dios de los hebreos, se encontró con nosotros; y ahora, por favor, vayamos camino de tres días por el desierto y sacrifiquemos a Yahvé nuestro Dios».
 
 ### 3:19
 
-Y yo he conocido que no dará a ustedes rey de Egipto para andar, y no con mano fuerte.
+Y yo sé que el rey de Egipto no los dejará ir, sino con mano fuerte.
 
 ### 3:20
 
-Y enviaré mi mano e heriré a Egipto con todas mis maravillas que haré en medio de él, y después de así enviará a ustedes.
+Y enviaré mi mano y heriré a Egipto con todas mis maravillas que haré en medio de él; y después de eso los enviará.
 
 ### 3:21
 
-Y daré favor de este pueblo en los ojos de Egipto, y será que andarán, no andarán vacíos.
+Y daré gracia a este pueblo ante los ojos de Egipto; y será que, cuando se vayan, no se irán *con manos* vacíos.
 
 ### 3:22
 
-Y pedirá mujer de su vecina y de la huésped de su casa utensilios de plata y utensilios de oro y vestidos, y pondrán sobre sus hijos y sobre sus hijas, y despojarán a Egipto.
+Y pedirá cada mujer a su vecina y a la que reside en su casa objetos de plata, objetos de oro y vestidos; y *lo* pondrán sobre sus hijos y sobre sus hijas, y despojarán a Egipto.
 
 ## Capítulo 4
 

@@ -3,10 +3,10 @@ title: "Metodología"
 antetitulo: "El proyecto"
 weight: 20
 entradilla: "Cada cláusula sigue el mismo orden: leer, observar, estudiar, traducir, revisar."
-description: "El flujo de trabajo de traducción de La Biblia Fiel: reglas operativas y orden de traducción."
+description: "El flujo de trabajo de traducción de La Palabra Fiel: reglas operativas y orden de traducción."
 ---
 
-Este documento define el orden de traducción de **La Biblia Fiel**. Existe
+Este documento define el orden de traducción de **La Palabra Fiel**. Existe
 para asegurar que toda decisión se tome según los mismos principios, y que
 la traducción permanezca fiel al texto bíblico antes que a la tradición, la
 memoria o los sistemas teológicos.

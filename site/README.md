@@ -1,6 +1,6 @@
-# Sitio web — La Biblia Fiel
+# Sitio web — La Palabra Fiel
 
-Sitio estático en [Hugo](https://gohugo.io) para el proyecto **La Biblia Fiel (LBF)**.
+Sitio estático en [Hugo](https://gohugo.io) para el proyecto **La Palabra Fiel (LPF)**.
 El texto bíblico no se escribe aquí: se genera a partir de `../translation/`.
 
 ## Requisitos

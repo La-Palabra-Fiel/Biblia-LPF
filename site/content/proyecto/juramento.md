@@ -3,7 +3,7 @@ title: "El juramento del traductor"
 antetitulo: "El proyecto"
 weight: 10
 entradilla: "El traductor no es el autor. Se le confía una sola responsabilidad."
-description: "El juramento del traductor de La Biblia Fiel: dejar que las Escrituras hablen por sí mismas."
+description: "El juramento del traductor de La Palabra Fiel: dejar que las Escrituras hablen por sí mismas."
 ---
 
 El traductor no es el autor.

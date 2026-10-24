@@ -1,10 +1,10 @@
 ---
 title: "Progreso de la traducción"
 layout: "progreso"
-description: "Cobertura de borradores de La Biblia Fiel y estado de revisión por libro."
+description: "Cobertura de borradores de La Palabra Fiel y estado de revisión por libro."
 ---
 
-La traducción completa de La Biblia Fiel sigue en curso. Las cifras de esta
+La traducción completa de La Palabra Fiel sigue en curso. Las cifras de esta
 página indican en qué libros hay texto de trabajo disponible; no indican que
 ese texto esté terminado ni aprobado. Consulta el registro de
 [estado de revisión]({{< relref "/versiones" >}}) para ver los estados y las

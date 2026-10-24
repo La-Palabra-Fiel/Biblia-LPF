@@ -1,10 +1,10 @@
 ---
 title: "El proyecto"
-antetitulo: "La Biblia Fiel"
-description: "Qué es La Biblia Fiel, por qué existe y cómo se traduce."
+antetitulo: "La Palabra Fiel"
+description: "Qué es La Palabra Fiel, por qué existe y cómo se traduce."
 ---
 
-**La Biblia Fiel (LBF)** es una traducción de las Escrituras al español
+**La Palabra Fiel (LPF)** es una traducción de las Escrituras al español
 contemporáneo, realizada directamente a partir de las lenguas bíblicas.
 
 Su objetivo no es producir el español más pulido posible. Su objetivo es

@@ -1,4 +1,4 @@
-/* La Biblia Fiel — comportamiento del sitio.
+/* La Palabra Fiel — comportamiento del sitio.
    Sin dependencias. Todo degrada con gracia si JS está desactivado. */
 (function () {
   'use strict';
@@ -67,7 +67,7 @@
         if (n) n.remove();
         partes.push((num ? num + ' ' : '') + c.textContent.trim());
       });
-      navigator.clipboard.writeText(partes.join('\n') + '\n\n— ' + ref + ' (La Biblia Fiel)').then(function () {
+      navigator.clipboard.writeText(partes.join('\n') + '\n\n— ' + ref + ' (La Palabra Fiel)').then(function () {
         var previo = b.textContent;
         b.textContent = 'Copiado';
         setTimeout(function () { b.textContent = previo; }, 1600);

@@ -3,12 +3,12 @@ title: "Base textual"
 antetitulo: "El proyecto"
 weight: 30
 entradilla: "Textus Receptus de Scrivener (1894) para el Nuevo Testamento; texto masorético (OSHB/WLC) para el Antiguo."
-description: "Los textos fuente de los que se traduce La Biblia Fiel y los recursos de referencia utilizados."
+description: "Los textos fuente de los que se traduce La Palabra Fiel y los recursos de referencia utilizados."
 ---
 
 ## Nuevo Testamento
 
-LBF se traduce del **Textus Receptus de Scrivener (1894)**.
+LPF se traduce del **Textus Receptus de Scrivener (1894)**.
 
 La fuente de trabajo es la edición analizada de Scrivener 1894 preparada por el
 Dr. Maurice A. Robinson, que lleva la morfología y los números de Strong sobre
@@ -20,9 +20,9 @@ El traductor puede utilizar los siguientes recursos como referencia objetiva:
 - Léxicos
 - Otros recursos lingüísticos objetivos de dominio público
 
-Estos recursos asisten la traducción, pero no determinan el texto de LBF.
+Estos recursos asisten la traducción, pero no determinan el texto de LPF.
 
-**No se emplean ediciones del texto crítico.** LBF no consulta, no depende de,
+**No se emplean ediciones del texto crítico.** LPF no consulta, no depende de,
 ni redistribuye el SBLGNT, MorphGNT ni ningún texto derivado de ellos. Cuando
 surge una cuestión de lectura, el traductor evalúa el TR directamente.
 

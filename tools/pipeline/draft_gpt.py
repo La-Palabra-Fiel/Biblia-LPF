@@ -22,6 +22,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import env_load  # noqa: F401
 from books import get_book
 from draft_lib import (
+    DRAFT_MAX_COMPLETION_TOKENS,
+    OpenAIResponseError,
     build_user_prompt,
     call_openai,
     draft_path,
@@ -78,10 +80,18 @@ def main() -> int:
         return 0
 
     try:
-        raw, usage = call_openai(system, user_prompt)
+        raw, usage = call_openai(
+            system,
+            user_prompt,
+            max_completion_tokens=DRAFT_MAX_COMPLETION_TOKENS,
+        )
         record_call(args.book, args.chapter, args.verse, "draft", usage)
     except RuntimeError as exc:
-        print(f"API unavailable ({exc}). Request saved at {req_file}", file=sys.stderr)
+        if isinstance(exc, OpenAIResponseError):
+            record_call(args.book, args.chapter, args.verse, "draft-invalid-response", exc.usage)
+            print(f"Preparation stopped safely: {exc}", file=sys.stderr)
+        else:
+            print(f"API unavailable ({exc}). Request saved at {req_file}", file=sys.stderr)
         if out.is_file():
             existing = json.loads(out.read_text(encoding="utf-8"))
             print(

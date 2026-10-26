@@ -26,6 +26,10 @@ RULES = (
     (re.compile(r"\b(?:el|sus|los) partos?\b", re.I), "extra noun parto"),
     (re.compile(r"asiento de piedra|birthstool", re.I), "dual stones are not a stool"),
     (re.compile(r"den a luz a las hebreas", re.I), "addressees giving birth to the Hebrew women"),
+    (
+        re.compile(r"^(?:Y\s+)?(?:Él|Ella),\s+[A-ZÁÉÍÓÚÑ][\wÁÉÍÓÚÜÑáéíóúüñ-]+\s+y\s+[A-ZÁÉÍÓÚÑ][\wÁÉÍÓÚÜÑáéíóúüñ-]+(?:,|\s)", re.UNICODE),
+        "incomplete Spanish identification: a pronoun followed by coordinated names needs a grammatical predicate",
+    ),
 )
 
 
@@ -44,6 +48,21 @@ def lint_spanish(spanish: str) -> list[dict]:
     text = spanish or ""
     findings = []
     seen = set()
+    if "**" in text:
+        findings.append({
+            "severity": "fail",
+            "sourceTokenIds": [],
+            "issue": "Supplied words use single Markdown asterisks, not bold markup",
+            "spanishSpan": "**",
+        })
+    without_supplied = re.sub(r"(?<!\*)\*[^*\n]+\*(?!\*)", "", text)
+    if "*" in without_supplied:
+        findings.append({
+            "severity": "fail",
+            "sourceTokenIds": [],
+            "issue": "Unbalanced supplied-word italics",
+            "spanishSpan": "*",
+        })
     for pattern, issue in RULES:
         match = pattern.search(text)
         if not match or issue in seen:

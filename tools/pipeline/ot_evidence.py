@@ -146,7 +146,8 @@ def syntax_for_tokens(book: Book, tokens: list[dict]) -> dict:
                     candidate = candidates[candidate_index]
                     morphs = groups[candidate]
                     candidate_surface = "".join(
-                        word.get("unicode") or "".join(word.itertext()) for word in morphs
+                        ("".join(word.itertext()).strip() or word.get("unicode") or "")
+                        for word in morphs
                     )
                     candidate_norm = _norm_hebrew(candidate_surface)
                     token_norm = _norm_hebrew(token["surface"])

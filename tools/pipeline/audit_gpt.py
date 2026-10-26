@@ -19,9 +19,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import env_load  # noqa: F401
 from audit_lib import SYSTEM, audit_path, build_user_prompt, normalize_audit, request_path, write_json
 from books import get_book
-from draft_lib import call_openai
+from draft_lib import OpenAIResponseError, call_openai
 from source_packet import build_packet, packet_path, validate_packet, write_packet
 from usage_lib import record_call
+
+AUDIT_MAX_COMPLETION_TOKENS = 1800
 
 
 def main() -> int:
@@ -59,10 +61,18 @@ def main() -> int:
         raw = json.loads(Path(args.ingest).read_text(encoding="utf-8"))
     else:
         try:
-            raw, usage = call_openai(SYSTEM, user)
+            raw, usage = call_openai(
+                SYSTEM,
+                user,
+                max_completion_tokens=AUDIT_MAX_COMPLETION_TOKENS,
+            )
             record_call(args.book, args.chapter, args.verse, "audit-draft-gpt", usage)
         except RuntimeError as exc:
-            print(f"API unavailable ({exc}). Request saved at {request}", file=sys.stderr)
+            if isinstance(exc, OpenAIResponseError):
+                record_call(args.book, args.chapter, args.verse, "audit-invalid-response", exc.usage)
+                print(f"Preparation stopped safely: {exc}", file=sys.stderr)
+            else:
+                print(f"API unavailable ({exc}). Request saved at {request}", file=sys.stderr)
             return 2
 
     audit = normalize_audit(raw, packet, spanish, label, auditor="GPT independent audit")

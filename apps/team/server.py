@@ -31,7 +31,7 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path in {"/", "/index.html"}: return self.send_value(200, body=(PUBLIC / "index.html").read_bytes(), content_type="text/html; charset=utf-8")
         self.send_value(404, {"error": "Not found"})
     def do_POST(self):  # noqa: N802
-        actions = {"/api/claim": lambda p: desk.claim(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/release": lambda p: desk.release(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/prepare": lambda p: desk.prepare(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/stop": lambda p: desk.stop(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/approve-verse": desk.approve_verse, "/api/finish-chapter": desk.finish_chapter}
+        actions = {"/api/claim": lambda p: desk.claim(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/release": lambda p: desk.release(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/prepare-estimate": lambda p: desk.prepare_estimate(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/prepare": lambda p: desk.prepare(p.get("name"), p.get("book"), p.get("chapter"), p.get("token"), p.get("costConfirmed")), "/api/stop": lambda p: desk.stop(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")), "/api/audit-verse": desk.audit_verse, "/api/approve-verse": desk.approve_verse, "/api/finish-chapter": desk.finish_chapter}
         action = actions.get(urlparse(self.path).path)
         if not action: return self.send_value(404, {"error": "Not found"})
         try:

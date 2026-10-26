@@ -18,6 +18,15 @@ from usage_lib import extract_usage
 
 PROMPT_PATH = Path(__file__).resolve().parent / "draft_prompt.md"
 DRAFT_SCHEMA = "lbf-gpt-draft-v1"
+DRAFT_MAX_COMPLETION_TOKENS = 4000
+
+
+class OpenAIResponseError(RuntimeError):
+    """A billed response that could not be used as a pipeline artifact."""
+
+    def __init__(self, message: str, usage: dict):
+        super().__init__(message)
+        self.usage = usage
 
 
 def load_system() -> str:
@@ -132,7 +141,12 @@ def write_json(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def call_openai(system: str, user: str) -> tuple[dict, dict]:
+def call_openai(
+    system: str,
+    user: str,
+    *,
+    max_completion_tokens: int | None = None,
+) -> tuple[dict, dict]:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("no OPENAI_API_KEY")
@@ -143,7 +157,10 @@ def call_openai(system: str, user: str) -> tuple[dict, dict]:
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
+        "response_format": {"type": "json_object"},
     }
+    if max_completion_tokens is not None:
+        body["max_completion_tokens"] = int(max_completion_tokens)
     effort = (os.environ.get("LBF_GPT_REASONING") or "medium").strip()
     if effort:
         body["reasoning_effort"] = effort
@@ -161,5 +178,21 @@ def call_openai(system: str, user: str) -> tuple[dict, dict]:
             payload = json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         raise RuntimeError(exc.read().decode("utf-8")) from exc
-    text = payload["choices"][0]["message"]["content"]
-    return parse_json_object(text), extract_usage("openai", model, payload)
+    usage = extract_usage("openai", model, payload)
+    choice = (payload.get("choices") or [{}])[0]
+    text = (choice.get("message") or {}).get("content") or ""
+    if not text.strip():
+        finish_reason = choice.get("finish_reason") or "unknown"
+        raise OpenAIResponseError(
+            f"GPT returned no usable JSON (finish reason: {finish_reason}). The billed call was recorded; no automatic retry was made.",
+            usage,
+        )
+    try:
+        parsed = parse_json_object(text)
+    except (json.JSONDecodeError, ValueError) as exc:
+        finish_reason = choice.get("finish_reason") or "unknown"
+        raise OpenAIResponseError(
+            f"GPT returned invalid JSON (finish reason: {finish_reason}). The billed call was recorded; no automatic retry was made.",
+            usage,
+        ) from exc
+    return parsed, usage

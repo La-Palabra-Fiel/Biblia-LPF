@@ -58,14 +58,21 @@ lema, morfología y relación sintáctica de manera determinista.
 Cuando el usuario autoriza explícitamente el camino pagado, GPT-5.6 Sol redacta
 un versículo a la vez desde el paquete canónico. Devuelve solamente el español,
 las unidades con `sourceTokenIds`, incertidumbres y conceptos añadidos (que
-debe dejar vacíos). El lint local comprueba reglas mecánicas. Un auditor
-independiente compara el candidato con el mismo paquete y no reescribe.
+debe dejar vacíos). El lint local comprueba reglas mecánicas. Para contener el
+costo, el auditor independiente no se ejecuta rutinariamente: compara el
+candidato con el mismo paquete, sin reescribir, solamente cuando el candidato
+declara incertidumbre, falla una regla local o la persona solicita la auditoría.
 
-La mesa de equipo fija `reasoning.effort=medium` para la redacción, la auditoría
-de fidelidad y la comprobación de español. Cada artefacto registra ese esfuerzo;
-un artefacto sin procedencia `gpt-5.6-sol` y `medium` se rechaza y debe prepararse
-de nuevo. Las decisiones difíciles incluyen una explicación breve ligada a
-`sourceTokenIds`; no se pide ni se conserva razonamiento interno del modelo.
+La mesa de equipo fija `reasoning.effort=medium` para la redacción y la
+auditoría independiente de fidelidad cuando esta se requiere. Cada artefacto registra ese esfuerzo;
+un artefacto de redacción o auditoría sin procedencia `gpt-5.6-sol` y `medium`
+se rechaza y debe prepararse de nuevo. La comprobación mecánica del español es
+local y determinista; la fluidez final la adjudica la persona que lee el
+versículo y después el capítulo completo. No se paga una tercera llamada para
+suplantar esa lectura humana. Las decisiones difíciles incluyen como máximo
+dos explicaciones breves ligadas a `sourceTokenIds`; no se pide ni se conserva
+razonamiento interno del modelo. Las llamadas fijan límites de salida que
+incluyen los tokens de razonamiento para contener el costo.
 
 Las adjudicaciones humanas aprobadas forman una memoria visible para los
 revisores y deben mantener consistente la política del proyecto. Esa memoria
@@ -77,9 +84,17 @@ sintáctica anterior puede alertar al revisor, pero el versículo presente debe
 quedar justificado otra vez por su propia superficie, gramática y contexto.
 
 El capítulo entra en `translation/` solamente con los candidatos que pasaron
-fidelidad y español; los demás conservan el texto anterior y quedan en el
-informe como `HOLD`. Después una persona lee el capítulo completo para comprobar
+la comprobación local y, cuando fue requerida, la auditoría de fidelidad; los
+demás conservan el texto anterior y quedan en el informe como `HOLD`. Después una persona lee el capítulo completo para comprobar
 continuidad, voz y fluidez. Ningún pase de modelo constituye aprobación humana.
+
+La mesa nunca vuelve a preparar ni cobra por un versículo cuya aprobación
+humana todavía coincide exactamente con el texto canónico. Un fallo de
+auditoría se muestra con sus hallazgos y no puede aceptarse silenciosamente:
+la persona corrige el texto o escribe su propia adjudicación y activa el
+control explícito de anulación humana. La aplicación jamás redacta esa
+adjudicación por la persona. La estimación previa distingue llamadas conocidas,
+llamadas selectivas probables y el máximo posible de la ejecución.
 
 Las unidades enlazadas que produce GPT pueden convertirse en semilla de
 alineación. La persona debe abrir cada frase, comprobar cada enlace contra los
@@ -91,6 +106,15 @@ No trabaje de memoria, de otra versión, ni desde la teología.
 No simplifique una metáfora o imagen concreta convirtiéndola en su explicación.
 Si el español puede decir la imagen de forma gramatical, consérvela; una nota
 humana posterior puede explicarla, pero la traducción no debe borrarla.
+
+Toda palabra o frase continua suplida en español sin una palabra ni una fuerza
+gramatical correspondiente en la fuente se escribe entre asteriscos Markdown:
+`*soy*`, `*son*`, `*y*`. La cursiva declara al lector que la expresión fue
+suplida; nunca autoriza añadir un concepto. Una palabra que expresa persona,
+definitud, tiempo, aspecto, forma verbal, sintaxis o fuerza discursiva de la fuente no
+es «extra» solo porque no tenga token separado. Los mismos asteriscos deben
+permanecer en el texto y en la unidad de alineación. La persona revisora
+confirma explícitamente esta marcación antes de aprobar el versículo.
 
 ### Camino Cursor anterior (suspendido para el trabajo GPT)
 

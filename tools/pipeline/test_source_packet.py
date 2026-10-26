@@ -445,6 +445,12 @@ class SourcePacketTests(unittest.TestCase):
         self.assertTrue(all("ahrc" not in token for token in packet["tokens"]))
         self.assertEqual(packet_for_prompt(packet)["reference"], "Éxodo 1:16")
 
+    def test_macula_visible_surface_wins_over_faulty_unicode_metadata(self) -> None:
+        packet = build_packet("exodo", 4, 13)
+        self.assertEqual(packet["evidenceStatus"], "READY_FOR_MODEL")
+        self.assertEqual(packet["tokens"][1]["surface"], "בִּ֣י")
+        self.assertEqual(packet["syntax"]["mapping"]["status"], "exact")
+
     def test_model_packet_is_compact_but_keeps_primary_evidence(self) -> None:
         packet = build_packet("exodo", 1, 5)
         compact = packet_for_prompt(packet)

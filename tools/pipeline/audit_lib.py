@@ -90,11 +90,15 @@ women give birth. FAIL “dar a luz a las hebreas” (addressees give birth to
 the women). Dual stones stay stones. FAIL el sexo, entre las piernas,
 birthstool, and extra noun parto/partos. Gender is in if-son / if-daughter.
 
-A word in single asterisks (*son*) is a supplied Spanish word with no
-Hebrew or Greek token. The asterisks are the reader's mark. Do not warn
-or fail a marked copula that only lets a verbless clause be a sentence.
-Fail a supplied word that is not marked, and fail an italic word that
-adds a concept the tokens do not license.
+Every word or continuous phrase in single asterisks (*son*, *y*) is declared
+to be supplied Spanish without a lexical item or grammatical feature in the
+source. The asterisks are the reader's mark. This rule is not limited to
+copulas. Do not warn or fail a marked word that only makes grammatical Spanish
+without changing meaning. A word that renders person, definiteness, tense,
+aspect, stem, syntax, or discourse force is licensed and must not be treated as
+extra merely because it lacks a separate token. Fail every genuinely supplied
+word that is not marked. Fail every italic word or phrase that adds a concept
+the tokens do not license.
 
 WARN when uncertain, or when Spanish is grammatical smoothing that does not
 change meaning.
@@ -102,12 +106,18 @@ change meaning.
 PASS when the Spanish says neither more nor less than the tokens license,
 preserving repetition and openness.
 
-Every FAIL/WARN finding MUST cite one or more sourceTokenIds from the packet.
+FAIL a fragmentary Spanish identification such as a personal pronoun followed
+by coordinated names without a grammatical predicate. Source-language
+agreement must not be imitated in a way that produces incoherent Spanish; a
+genuinely supplied copula remains marked with single asterisks.
+
+Return at most two findings. Every FAIL/WARN finding MUST cite one or more
+sourceTokenIds from the packet.
 A finding without token ids is discarded.
 
 For difficult decisions, explain the mismatch or uncertainty concretely in
-`issue`: name the governing surface, morphology/syntax, context/discourse, or
-corpus evidence and cite its sourceTokenIds. A lexicon may document an option
+`issue`: in at most 25 words, name the governing surface, morphology/syntax,
+context/discourse, or corpus evidence and cite its sourceTokenIds. A lexicon may document an option
 but cannot settle it. Do not expose hidden chain-of-thought; return only the
 concise evidence-based finding required by the schema.
 
@@ -125,6 +135,7 @@ Return JSON only:
   "notes": "optional one line"
 }
 verdict is fail if any finding has severity fail.
+Keep `notes` empty unless the verdict cannot be understood from the findings.
 """
 
 

@@ -88,7 +88,7 @@ def main() -> int:
     if local:
         raw = {"findings": local, "notes": "failed deterministic local lint"}
     else:
-        raw, usage = call_openai(SYSTEM, user)
+        raw, usage = call_openai(SYSTEM, user, max_completion_tokens=700)
         record_call(args.book, args.chapter, args.verse, "spanish-check-gpt", usage)
     result = normalize(raw, args.book, args.chapter, args.verse, spanish)
     result["model"] = os.environ.get("LBF_GPT_MODEL", "gpt-5.1")

@@ -247,7 +247,7 @@ Y dijo: «Porque estaré contigo; y esto para ti, la señal de que yo te envié:
 
 ### 3:13
 
-Y dijo Moisés a Dios: «He aquí, *si* voy a los hijos de Israel y les digo: “El Dios de los padres de ustedes me envió a ustedes”, y ellos me dicen: “¿Cuál es su nombre?”, ¿qué les diré?».
+Y dijo Moisés a Dios: «He aquí, yo voy a los hijos de Israel, y les diré: “El Dios de los padres de ustedes me envió a ustedes”. Y ellos me dirán: “¿Cuál es su nombre?”. ¿Qué les diré?»
 
 ### 3:14
 
@@ -337,7 +337,7 @@ Y ahora ve, y yo estaré con tu boca, y te enseñaré lo que hablarás.
 
 ### 4:13
 
-Y dijo: «Por favor, mi Señor, envía, por favor, por mano de quien enviarás».
+Y dijo: «Te ruego, mi Señor: envía, por favor, por mano de aquel a quien enviarás».
 
 ### 4:14
 
@@ -415,7 +415,7 @@ Y creyó el pueblo, y oyeron que había visitado Yahvé a los hijos de Israel y 
 
 ### 5:1
 
-Y después vinieron Moisés y Aarón, y dijeron a Faraón: «Así dice Yahvé, Dios de Israel: “Deja ir a mi pueblo para que celebren una fiesta para mí en el desierto”».
+Y después vinieron Moisés y Aarón, y dijeron a Faraón: «Así dijo Yahvé, Dios de Israel: Envía a mi pueblo, y celebrarán para mí en el desierto».
 
 ### 5:2
 
@@ -423,19 +423,19 @@ Y Faraón dijo: «¿Quién es Yahvé, para que escuche su voz y deje ir a Israel
 
 ### 5:3
 
-Y dijeron: «El Dios de los hebreos ha venido a nuestro encuentro. Permítenos ir, por favor, tres días de camino por el desierto para ofrecer sacrificios a Yahvé nuestro Dios, no sea que nos alcance con pestilencia o con espada».
+Y dijeron: «El Dios de los hebreos ha venido a nuestro encuentro. Permítenos ir, por favor, camino de tres días por el desierto, y sacrifiquemos a Yahvé nuestro Dios, no sea que nos alcance con pestilencia o con espada».
 
 ### 5:4
 
-Y les dijo el rey de Egipto: «¿Por qué, Moisés y Aarón, apartan al pueblo de sus trabajos? ¡Vuelvan a sus cargas!».
+Y les dijo el rey de Egipto: «¿Por qué, Moisés y Aarón, hacen cesar al pueblo de sus obras? ¡Vuelvan a sus cargas!».
 
 ### 5:5
 
-Y dijo Faraón: He aquí, mucho *es* ahora el pueblo de la tierra, y han hecho cesar a ellos de sus cargas.
+Y dijo Faraón: «He aquí, ahora *es* numeroso el pueblo de la tierra; y los han hecho cesar de sus cargas».
 
 ### 5:6
 
-Y Faraón mandó aquel mismo día a los capataces del pueblo y a sus oficiales, diciendo:
+Y mandó Faraón en aquel día a los que apremiaban al pueblo y a sus oficiales, diciendo:
 
 ### 5:7
 
@@ -443,19 +443,19 @@ No continuarán dando paja al pueblo para hacer los ladrillos como ayer y anteay
 
 ### 5:8
 
-Y la cantidad de ladrillos que hacían antes, impóngansela; no la disminuyan, porque están ociosos. Por eso claman, diciendo: «Vayamos a ofrecer sacrificios a nuestro Dios».
+Y la cantidad de los ladrillos que ellos hacían ayer y anteayer, pónganla sobre ellos; no disminuyan de nosotros, porque ellos están flojos; por eso ellos claman, diciendo: «Vayamos, sacrifiquemos a nuestro Dios».
 
 ### 5:9
 
-Que el trabajo pese sobre los hombres, y que se ocupen en él y no presten atención a palabras de falsedad.
+Sea pesada la obra sobre los hombres, y trabajen en ella; y no presten atención a palabras de falsedad.
 
 ### 5:10
 
-Y salieron los capataces del pueblo y sus oficiales, y dijeron al pueblo: «Así dice Faraón: “No les doy paja”».
+Y salieron los opresores del pueblo y sus oficiales, y dijeron al pueblo: «Así dijo Faraón: No les doy paja».
 
 ### 5:11
 
-Ustedes, vayan y recojan paja para ustedes donde la encuentren, porque no se disminuirá en nada su trabajo.
+Ustedes vayan, tomen para ustedes paja de lo que encuentren, porque no se disminuye de su labor cosa alguna.
 
 ### 5:12
 
@@ -463,47 +463,47 @@ Y se dispersó el pueblo por toda la tierra de Egipto para recoger rastrojo que 
 
 ### 5:13
 
-Y los capataces apremiaban, diciendo: «Completen sus trabajos, la tarea de cada día en su día, como cuando había paja».
+Y los capataces apremiaban, diciendo: «Completen sus trabajos, la tarea de cada día en su día, como cuando había paja»。
 
 ### 5:14
 
-Y fueron golpeados los oficiales de los hijos de Israel, a quienes los capataces de Faraón habían puesto sobre ellos, y les dijeron: «¿Por qué no han completado, ni ayer ni hoy, su cuota de ladrillos como antes?».
+Y fueron golpeados los oficiales de los hijos de Israel, a quienes los capataces de Faraón habían puesto sobre ellos, diciendo: «¿Por qué no completaron la cuota de ustedes de hacer ladrillos, como ayer y anteayer, tanto ayer como hoy?»
 
 ### 5:15
 
-Y vinieron los oficiales de los hijos de Israel, y clamaron a Faraón, diciendo: «¿Por qué haces así a tus siervos?».
+Y vinieron los oficiales de los hijos de Israel, y clamaron a Faraón, diciendo: «¿Por qué haces así a tus siervos?»
 
 ### 5:16
 
-No se da paja a tus siervos, y nos dicen: «Hagan ladrillos». Y he aquí, tus siervos son golpeados, pero la culpa es de tu pueblo.
+No se da paja a tus siervos, pero nos dicen: «Hagan ladrillos». Y he aquí, golpean a tus siervos, y la culpa es de tu pueblo.
 
 ### 5:17
 
-Y dijo: «Ociosos *son* ustedes, ociosos; por eso dicen: “Vayamos a ofrecer sacrificios a Yahvé”».
+Y dijo: «*son* ociosos ustedes, ociosos; por eso ustedes dicen: “Vayamos, sacrifiquemos a Yahvé”».
 
 ### 5:18
 
-Y ahora, vayan, sirvan, y paja no será dada a ustedes, y medida de ladrillos darán.
+Y ahora vayan, trabajen; y no les será dada paja, y la cantidad de ladrillos *se* darán.
 
 ### 5:19
 
-Y vieron los oficiales de los hijos de Israel a ellos en mal, diciendo: No disminuirán de sus ladrillos asunto de día en su día.
+Y se vieron los oficiales de los hijos de Israel en apuros cuando se les dijo: «No reducirán su cuota de sus ladrillos: la tarea de cada día en su día».
 
 ### 5:20
 
-Y al salir de ante Faraón, se encontraron con Moisés y Aarón, que estaban de pie esperándolos.
+Y encontraron a Moisés y a Aarón de pie a su encuentro al salir ellos de ante Faraón.
 
 ### 5:21
 
-Y les dijeron: «Que Yahvé los mire y juzgue, porque nos han hecho odiosos ante Faraón y ante sus siervos, poniendo una espada en sus manos para matarnos».
+Y les dijeron: «Yahvé mire sobre ustedes y juzgue, porque nos han hecho odiosos ante los ojos de Faraón y ante los ojos de sus siervos, poniendo espada en la mano de ellos para matarnos».
 
 ### 5:22
 
-Y volvió Moisés a Yahvé y dijo: «Señor mío, ¿por qué has hecho mal a este pueblo? ¿Por qué me enviaste?».
+Y volvió Moisés a Yahvé y dijo: «Señor mío, ¿por qué has hecho mal a este pueblo? ¿Por qué me enviaste para esto?»
 
 ### 5:23
 
-Y desde que vine a Faraón para hablar en tu nombre, él ha hecho mal a este pueblo; y tú no has librado en absoluto a tu pueblo.
+Y desde que vine a Faraón para hablar en tu nombre, ha hecho mal a este pueblo; y no has librado en absoluto a tu pueblo.
 
 ## Capítulo 6
 
@@ -513,35 +513,35 @@ Y Yahvé dijo a Moisés: «Ahora verás lo que haré a Faraón, porque con mano 
 
 ### 6:2
 
-Y habló Dios a Moisés, y le dijo: «Yo *soy* Yahvé».
+Y habló Dios a Moisés, y le dijo: «Yo, Yahvé».
 
 ### 6:3
 
-Y me aparecí a Abraham, a Isaac y a Jacob en El Shaday, y mi nombre Yahvé no fui conocido a ellos.
+Y aparecí a Abraham, a Isaac y a Jacob como Dios Shaddai, y por mi nombre Yahvé no fui conocido por ellos.
 
 ### 6:4
 
-Y también establecí mi pacto con ellos para darles la tierra de Canaán, la tierra donde residieron como extranjeros.
+Y también establecí mi pacto con ellos para darles la tierra de Canaán, la tierra en la que fueron forasteros y en la que habitaron.
 
 ### 6:5
 
-Y también yo he oído el gemido de los hijos de Israel, a quienes los egipcios mantienen en servidumbre, y he recordado mi pacto.
+Y también yo he oído el gemido de los hijos de Israel, a quienes Egipto hace trabajar, y he recordado mi pacto.
 
 ### 6:6
 
-Por tanto, di a los hijos de Israel: «Yo *soy* Yahvé, y los sacaré de debajo de las cargas de Egipto, y los libraré de su servidumbre, y los redimiré con brazo extendido y con grandes juicios».
+Por tanto, di a los hijos de Israel: «Yo *soy* Yahvé, y los sacaré de debajo de las cargas de Egipto, y los libraré de su servidumbre, y los redimiré con el brazo extendido y con grandes juicios».
 
 ### 6:7
 
-Y los tomaré para mí por pueblo, y seré su Dios; y sabrán que yo *soy* Yahvé, su Dios, el que los saca de debajo de las cargas de Egipto.
+Y los tomaré para mí por pueblo, y seré para ustedes por Dios; y sabrán que yo, Yahvé su Dios, los saco de debajo de las cargas de Egipto.
 
 ### 6:8
 
-Y los traeré a la tierra respecto de la cual alcé mi mano para darla a Abraham, a Isaac y a Jacob; y se la daré a ustedes como posesión. Yo *soy* Yahvé.
+Y los traeré a la tierra respecto de la cual alcé mi mano para darla a Abraham, a Isaac y a Jacob; y se la daré a ustedes como posesión. Yo, Yahvé.
 
 ### 6:9
 
-Y Moisés habló así a los hijos de Israel, pero no escucharon a Moisés por el desaliento y la dura servidumbre.
+Y habló Moisés así a los hijos de Israel; y no escucharon a Moisés por falta de ánimo y por el trabajo duro.
 
 ### 6:10
 
@@ -553,19 +553,19 @@ Ve y habla a Faraón, rey de Egipto, para que deje salir a los hijos de Israel d
 
 ### 6:12
 
-Y Moisés habló ante Yahvé, diciendo: «He aquí, los hijos de Israel no me han escuchado; ¿cómo me escuchará Faraón, siendo yo incircunciso de labios?».
+Y habló Moisés delante de Yahvé, diciendo: «He aquí, los hijos de Israel no me escucharon; ¿y cómo me escuchará Faraón, siendo yo incircunciso de labios?»
 
 ### 6:13
 
-Y habló Yahvé a Moisés y a Aarón, y les mandó respecto de los hijos de Israel y respecto de Faraón, rey de Egipto, para sacar a los hijos de Israel de la tierra de Egipto.
+Y Yahvé habló a Moisés y a Aarón, y les dio órdenes acerca de los hijos de Israel y acerca de Faraón, rey de Egipto, para sacar a los hijos de Israel de la tierra de Egipto.
 
 ### 6:14
 
-Estos *son* los jefes de sus casas paternas: los hijos de Rubén, primogénito de Israel: Hanoc, Falú, Hezrón y Carmí. Estas *son* las familias de Rubén.
+Estos, *son* los jefes de la casa de sus padres: los hijos de Rubén, primogénito de Israel: Janoc y Falú, Hezrón y Carmí; estas, las familias de Rubén.
 
 ### 6:15
 
-Y los hijos de Simeón: Jemuel, y Jamín, y Ohad, y Jaquín, y Zohar, y Saúl, hijo de la cananea. Estas son las familias de Simeón.
+Y los hijos de Simeón *son*: Jemuel, y Jamín, y Ohad, y Jaquín, y Zohar, y Saúl, hijo de la cananea. Estas son las familias de Simeón.
 
 ### 6:16
 
@@ -573,39 +573,39 @@ Y estos *son* los nombres de los hijos de Leví según sus generaciones: Gersón
 
 ### 6:17
 
-Los hijos de Gersón: Libní y Simeí, según sus familias.
+Los hijos de Gersón *son*: Libní y Simeí, según sus familias.
 
 ### 6:18
 
-Y los hijos de Coat: Amram, Izhar, Hebrón y Uziel; y los años de la vida de Coat *fueron* ciento treinta y tres años.
+Y los hijos de Quehat *son*: Amram, Yitshar, Hebrón y Uziel; y los años de la vida de Quehat: ciento treinta y tres años.
 
 ### 6:19
 
-Y los hijos de Merari: Mahlí y Musí. Estas *son* las familias de Leví según sus generaciones.
+Y los hijos de Merarí *son*: Mahlí y Musí; estas, las familias de leví según sus generaciones.
 
 ### 6:20
 
-Y Amram tomó a Jocabed, su tía, para sí por mujer; y ella le dio a luz a Aarón y a Moisés. Y los años de la vida de Amram: ciento treinta y siete años.
+Y tomó Amram a Jocabed, su tía, para sí por mujer; y ella dio a luz a Aarón y a Moisés. Y los años de la vida de Amram *fueron* ciento treinta y siete años.
 
 ### 6:21
 
-Y los hijos de Izhar: Coré, Néfeg y Zicrí.
+Y los hijos de Izhar *son*: Coré, Néfeg y Zicrí.
 
 ### 6:22
 
-Y los hijos de Uziel: Misael, y Elzafán, y Sitri.
+Y los hijos de Uziel *son*: Misael, y Elzafán, y Sitri.
 
 ### 6:23
 
-Y tomó Aarón a Elisabet, hija de Aminadab, hermana de Naasón, para sí por mujer; y le dio a luz a Nadab, a Abiú, a Eleazar y a Itamar.
+Y tomó Aarón a Elisabet, hija de Aminadab, hermana de Naasón, para sí por mujer; y dio a luz a Nadab, a Abiú, a Eleazar y a Itamar.
 
 ### 6:24
 
-Y los hijos de Coré: Asir, Elcaná y Abiasaf. Estas *son* las familias de los coreítas.
+Y los hijos de Coré *son*: Asir, Elcaná y Abiasaf; estas *son* las familias de los coreítas.
 
 ### 6:25
 
-Y Eleazar, hijo de Aarón, tomó para sí por mujer a una de las hijas de Putiel, y ella le dio a luz a Pinjás. Estos *son* los jefes de las casas paternas de los levitas, según sus familias.
+Y Eleazar, hijo de Aarón, tomó por esposa a una de las hijas de Putiel, y ella le dio a luz a Pinjás. Estos son los jefes de las casas paternas de los levitas, según sus familias.
 
 ### 6:26
 
@@ -613,29 +613,29 @@ Estos *son* Aarón y Moisés, a quienes Yahvé dijo: «Saquen a los hijos de Isr
 
 ### 6:27
 
-Ellos fueron los que hablaron a Faraón, rey de Egipto, para sacar a los hijos de Israel de Egipto; estos *son* Moisés y Aarón.
+Ellos *son* los que hablan a Faraón, rey de Egipto, para sacar de Egipto a los hijos de Israel. Estos *son* Moisés y Aarón.
 
 ### 6:28
 
-Y sucedió, el día en que Yahvé habló a Moisés en la tierra de Egipto,
+Y sucedió que el día en que Yahvé habló a Moisés en la tierra de Egipto,
 
 ### 6:29
 
-que Yahvé habló a Moisés, diciendo: «Yo *soy* Yahvé. Habla a Faraón, rey de Egipto, todo lo que yo te diga».
+Yahvé habló a Moisés, diciendo: «Yo *soy* Yahvé. Dile a Faraón, rey de Egipto, todo lo que yo te digo».
 
 ### 6:30
 
-Y dijo Moisés delante de Yahvé: «He aquí, yo *soy* incircunciso de labios; ¿cómo me escuchará Faraón?».
+Y dijo Moisés delante de Yahvé: «He aquí, yo *soy* incircunciso de labios; ¿y cómo me escuchará Faraón?»
 
 ## Capítulo 7
 
 ### 7:1
 
-Y dijo Yahvé a Moisés: «Mira, te he puesto como Dios para Faraón, y Aarón, tu hermano, será tu profeta».
+Y dijo Yahvé a Moisés: «Mira, te he puesto como Dios para Faraón, y Aarón tu hermano será tu profeta».
 
 ### 7:2
 
-Tú hablarás todo lo que yo te mande; y Aarón, tu hermano, hablará a Faraón para que deje salir a los hijos de Israel de su tierra.
+Tú hablarás todo lo que te ordene, y Aarón, tu hermano, hablará al faraón, y él dejará salir de su tierra a los hijos de Israel.
 
 ### 7:3
 
@@ -643,31 +643,31 @@ Y yo endureceré el corazón de Faraón, y multiplicaré mis señales y mis prod
 
 ### 7:4
 
-Y no oirá a ustedes Faraón, y daré mi mano en Egipto, y haré salir mis ejércitos, mi pueblo, hijos de Israel, desde tierra de Egipto con juicios grandes.
+Y Faraón no los escuchará, y pondré mi mano en Egipto y sacaré de la tierra de Egipto a mis ejércitos, a mi pueblo, los hijos de Israel, con grandes juicios.
 
 ### 7:5
 
-Y Egipto conocerá que yo Yahvé, en mi extender mi mano sobre Egipto, y haré salir a hijos de Israel de medio de ellos.
+Y los egipcios sabrán que yo *soy* Yahvé cuando extienda mi mano sobre Egipto y saque de en medio de ellos a los hijos de Israel.
 
 ### 7:6
 
-Y Moisés y Aarón hicieron como Yahvé les había mandado; así hicieron.
+Y Moisés y Aarón hicieron como Yahvé les ordenó; así lo hicieron.
 
 ### 7:7
 
-Y Moisés tenía ochenta años, y Aarón ochenta y tres, cuando hablaron a Faraón.
+Y Moisés tenía ochenta años, y Aarón tenía ochenta y tres años cuando hablaron a Faraón.
 
 ### 7:8
 
-Y Yahvé dijo a Moisés y a Aarón, diciendo:
+Yahvé dijo a Moisés y a Aarón:
 
 ### 7:9
 
-Cuando Faraón les hable, diciendo: «Muestren un prodigio», entonces dirás a Aarón: «Toma tu vara y arrójala delante de Faraón; que se convierta en una serpiente».
+Cuando Faraón les diga: «Presenten ustedes un prodigio», dirás a Aarón: «Toma tu vara y arrójala delante de Faraón; que se convierta en serpiente».
 
 ### 7:10
 
-Y Moisés y Aarón vinieron a Faraón e hicieron tal como Yahvé había mandado; y Aarón arrojó su vara delante de Faraón y delante de sus siervos, y se convirtió en una serpiente.
+Moisés y Aarón fueron ante Faraón e hicieron tal como Yahvé había ordenado. Y Aarón arrojó su vara delante de Faraón y delante de sus siervos, y se convirtió en serpiente.
 
 ### 7:11
 

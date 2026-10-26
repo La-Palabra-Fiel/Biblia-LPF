@@ -61,10 +61,16 @@ METHOD:
 - Read the completed line aloud mentally. It must be grammatical, immediately
   understandable, and natural in a formal contemporary Latin American register.
   Fidelity never requires an unidiomatic calque.
-- A word with no token, added so the Spanish can be a sentence, is italic:
-  *son*, *es*, *está*. A verbless Hebrew clause may need that copula.
-  Do not italicize a word the packet licenses. Do not add a concept and
-  hide it in italics.
+- Every Spanish word or continuous phrase supplied without a lexical item or
+  grammatical feature in the source must be enclosed in single Markdown
+  asterisks: *son*, *es*, *está*, *y*. This applies to every supplied word,
+  not only copulas. Preserve the same asterisks in `spanish` and in the
+  corresponding alignment unit. A word that renders person, definiteness,
+  tense, aspect, stem, syntax, discourse force, or another source feature is
+  licensed and is not “extra” merely because it lacks a separate source token.
+  Do not italicize licensed words. Italics disclose supply; they never license
+  an added concept. If Spanish cannot be grammatical without adding meaning,
+  return an uncertainty instead.
 - If the source repeats, repeat. If it is open, leave it open.
 - Faithfulness is not explanatory simplification. Preserve concrete imagery,
   bodily metaphors, repetition, and marked expressions whenever grammatical
@@ -89,11 +95,24 @@ METHOD:
   stones as el sexo, entre las piernas, or a stool. Gender is in
   si hijo / si hija. Never turn AHRC “midwife” or “STONE STOOL” into Spanish.
 - Do not add a dative, subject, or copula the tokens do not mark.
+- Do not produce gloss-shaped Spanish. Construct chains, participles,
+  verbless clauses, beneficiary phrases, quotation formulas, and clause
+  relations must become ordinary contemporary Spanish while retaining every
+  participant, relationship, image, repetition, and open question. Reject
+  your own draft and reformulate it if a fluent Latin American reader would
+  have to mentally reconstruct the Hebrew syntax.
+- In an identification clause, do not leave a personal pronoun followed by
+  coordinated names as a fragment (for example, “Él, Aarón y Moisés”). Use a
+  complete Spanish identification clause, preserve the source relationship,
+  and mark a genuinely supplied copula with asterisks.
 - Every Spanish unit must cite sourceTokenIds from the packet.
-- For every genuinely difficult lexical, syntactic, discourse, or imagery
-  decision, add an evidenceDecisions entry. Cite the exact sourceTokenIds,
+- Only for a genuinely difficult lexical, syntactic, discourse, or imagery
+  decision, add an evidenceDecisions entry. Never explain routine morphology,
+  ordinary names, obvious clause relations, or straightforward word choices.
+  Return at most two entries per verse. Cite the exact sourceTokenIds,
   identify the highest evidence level that settles the decision, state a short
-  rationale grounded only in the packet, and list serious alternatives. If the
+  rationale of one sentence (at most 25 words) grounded only in the packet,
+  and list at most two serious alternatives. If the
   packet does not settle the choice, also put it in uncertainties; do not make
   the rationale sound more certain than the packet.
 - Proper names: conventional Spanish form when one exists
@@ -126,3 +145,5 @@ Return JSON only:
   "addedConcepts": []
 }
 addedConcepts must be empty. Uncertainties list open choices, not theology.
+Keep the complete JSON compact. Do not add prose outside the schema, repeat
+packet data, or explain decisions that are not genuinely difficult.

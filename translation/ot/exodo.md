@@ -671,11 +671,11 @@ Moisés y Aarón fueron ante Faraón e hicieron tal como Yahvé había ordenado.
 
 ### 7:11
 
-Y llamó también Faraón a los sabios y a los hechiceros; e hicieron también ellos, los magos de Egipto, así con sus artes secretas.
+Y Faraón también llamó a los sabios y a los hechiceros; y también ellos, los magos de Egipto, hicieron lo mismo con sus encantamientos.
 
 ### 7:12
 
-Y cada uno arrojó su vara, y las varas se convirtieron en serpientes; y la vara de Aarón se tragó las varas de ellos.
+Y cada uno arrojó su vara, y se convirtieron en serpientes; y la vara de Aarón se tragó las varas de ellos.
 
 ### 7:13
 
@@ -683,43 +683,43 @@ Y se fortaleció el corazón de Faraón, y no los escuchó, tal como Yahvé hab�
 
 ### 7:14
 
-Y dijo Yahvé a Moisés: «El corazón de Faraón *está* pesado; se ha negado a dejar ir al pueblo».
+Y Yahvé dijo a Moisés: «Pesado está el corazón de Faraón; se ha negado a dejar ir al pueblo».
 
 ### 7:15
 
-Ve a Faraón por la mañana; he aquí, sale hacia las aguas, y te pondrás a su encuentro sobre la ribera del Nilo; y la vara que se convirtió en serpiente tomarás en tu mano.
+Ve a Faraón por la mañana. He aquí que sale hacia el agua; y te pondrás frente a él a la orilla del Nilo. Y tomarás en tu mano la vara que se convirtió en serpiente.
 
 ### 7:16
 
-Y le dirás: «Yahvé, Dios de los hebreos, me ha enviado a ti, diciendo: “Deja ir a mi pueblo para que me sirvan en el desierto”; y he aquí, no has escuchado hasta ahora».
+Y le dirás: «Yahvé, Dios de los hebreos, me envió a ti para decir: “Deja ir a mi pueblo para que me sirvan en el desierto”. Y mira, no has escuchado hasta ahora».
 
 ### 7:17
 
-Así dice Yahvé: «En esto sabrás que yo *soy* Yahvé. He aquí, yo voy a golpear con la vara que está en mi mano las aguas que están en el Nilo, y se convertirán en sangre».
+Así dijo Yahvé: «En esto sabrás que yo *soy* Yahvé: He aquí, yo golpeo con la vara que *está* en mi mano sobre las aguas que *están* en el Nilo, y se convertirán en sangre».
 
 ### 7:18
 
-Y los peces que están en el Nilo morirán, y el Nilo apestará; y los egipcios no podrán beber agua del Nilo.
+Y los peces que están en el Nilo morirán, y el Nilo apestará, y los egipcios se cansarán de beber agua del Nilo.
 
 ### 7:19
 
-Y Yahvé dijo a Moisés: «Di a Aarón: “Toma tu vara y extiende tu mano sobre las aguas de Egipto, sobre sus ríos, sobre sus canales, sobre sus estanques y sobre todos sus depósitos de agua, para que se conviertan en sangre”. Y habrá sangre en toda la tierra de Egipto, incluso en los *recipientes* de madera y de piedra».
+Y Yahvé dijo a Moisés: «Di a Aarón: “Toma tu vara y extiende tu mano sobre las aguas de Egipto, sobre sus ríos, sobre sus canales, y sobre sus estanques, y sobre toda acumulación de sus aguas; y se convertirán en sangre. Y habrá sangre en toda la tierra de Egipto, en los *recipientes de* madera y de piedra”».
 
 ### 7:20
 
-Y Moisés y Aarón hicieron tal como Yahvé había mandado; y alzó la vara y golpeó las aguas que estaban en el Nilo, ante los ojos de Faraón y ante los ojos de sus siervos; y todas las aguas que estaban en el Nilo se convirtieron en sangre.
+Moisés y Aarón hicieron tal como Yahvé había mandado. Entonces levantó la vara y golpeó las aguas que estaban en el Nilo ante los ojos de Faraón y ante los ojos de sus siervos; y todas las aguas que estaban en el Nilo se convirtieron en sangre.
 
 ### 7:21
 
-Y murieron los peces que había en el Nilo, y el Nilo apestó; y los egipcios no pudieron beber agua del Nilo, y hubo sangre en toda la tierra de Egipto.
+Y los peces que había en el Nilo murieron, y el Nilo apestó; y los egipcios no pudieron beber agua del Nilo, y hubo sangre en toda la tierra de Egipto.
 
 ### 7:22
 
-Y los magos de Egipto hicieron lo mismo con sus artes secretas; y se fortaleció el corazón de Faraón y no los escuchó, tal como Yahvé había dicho.
+Y los magos de Egipto hicieron lo mismo con sus artes secretas; y se fortaleció el corazón de Faraón, y no los escuchó, tal como había hablado Yahvé.
 
 ### 7:23
 
-Y Faraón se volvió y entró en su casa, y tampoco prestó atención a esto.
+Faraón se volvió y fue a su casa, y tampoco prestó atención a esto.
 
 ### 7:24
 
@@ -737,181 +737,181 @@ Y dijo Yahvé a Moisés: Entra a Faraón, y dirás a él: Así dijo Yahvé: Env�
 
 ### 8:2
 
-Y si rehúsante tú de enviar, he aquí yo plagante a todo tu límite con las ranas.
+Y si tú te niegas a dejar ir, he aquí que yo voy a golpear todo tu territorio con ranas.
 
 ### 8:3
 
-Y enjambrará el Yeor ranas, y subirán y vendrán en tu casa y en la cámara de tu lecho y sobre tu cama y en casa de tus siervos y en tu pueblo y en tus hornos y en tus artesas.
+El Nilo bullirá de ranas, y subirán y entrarán en tu casa, y en tu dormitorio, y sobre tu cama, y en casa de tus siervos, y entre tu pueblo, y en tus hornos y en tus artesas de amasar.
 
 ### 8:4
 
-Y en ti y en tu pueblo y en todos tus siervos subirán las ranas.
+Y sobre ti, y sobre tu pueblo, y sobre todos tus siervos subirán las ranas.
 
 ### 8:5
 
-Y dijo Yahvé a Moisés: Di a Aarón: Extiende tu mano con tu vara sobre los ríos, sobre los arroyos y sobre los estanques, y haz subir a las ranas sobre tierra de Egipto.
+Y Yahvé dijo a Moisés: «Di a Aarón: “Extiende tu mano con tu vara sobre los ríos, sobre los canales y sobre los estanques, y haz subir a las ranas sobre la tierra de Egipto”».
 
 ### 8:6
 
-Y extendió Aarón su mano sobre las aguas de Egipto, y subió la rana y cubrió la tierra de Egipto.
+Y Aarón extendió su mano sobre las aguas de Egipto, y subió la rana y cubrió la tierra de Egipto.
 
 ### 8:7
 
-Y hicieron así los magos con sus secretos, y hicieron subir a las ranas sobre tierra de Egipto.
+Y los magos hicieron lo mismo con sus artes secretas, e hicieron subir las ranas sobre la tierra de Egipto.
 
 ### 8:8
 
-Y llamó Faraón a Moisés y a Aarón, y dijo: Intercedan a Yahvé, y quite las ranas de mí y de mi pueblo, y enviaré al pueblo, y sacrificarán a Yahvé.
+Entonces llamó Faraón a Moisés y a Aarón, y dijo: «Rueguen a Yahvé que quite las ranas de mí y de mi pueblo, y dejaré ir al pueblo para que sacrifique a Yahvé».
 
 ### 8:9
 
-Y dijo Moisés a Faraón: Gloríate sobre mí: ¿para cuándo intercederé por ti y por tus siervos y por tu pueblo, para cortar las ranas de ti y de tus casas? Solo en el Yeor quedarán.
+Y Moisés dijo a Faraón: «Gloríate sobre mí: ¿para cuándo rogaré por ti, por tus siervos y por tu pueblo, para quitar las ranas de ti y de tus casas? Solo en el Nilo quedarán».
 
 ### 8:10
 
-Y dijo: Para mañana. Y dijo: Conforme a tu palabra, a fin de que conozcas que no hay como Yahvé nuestro Dios.
+Y *Faraón* dijo: «Para mañana». Y *Moisés* dijo: «Conforme a tu palabra, para que sepas que no hay como Yahvé, nuestro Dios».
 
 ### 8:11
 
-Y se apartarán las ranas de ti y de tus casas y de tus siervos y de tu pueblo; solo en el Yeor quedarán.
+Y se apartarán las ranas de ti, de tus casas, de tus siervos y de tu pueblo; solo en el Nilo quedarán.
 
 ### 8:12
 
-Y salió Moisés y Aarón de con Faraón, y clamó Moisés a Yahvé sobre el asunto de las ranas que puso a Faraón.
+Moisés y Aarón salieron de donde estaba Faraón, y Moisés clamó a Yahvé con respecto al asunto de las ranas que había puesto para Faraón.
 
 ### 8:13
 
-Y hizo Yahvé conforme a la palabra de Moisés, y murieron las ranas desde las casas, desde los patios y desde los campos.
+Y Yahvé hizo conforme a la palabra de Moisés, y murieron las ranas de las casas, de los patios y de los campos.
 
 ### 8:14
 
-Y amontonaron a ellos montones montones, y hedió la tierra.
+Y los amontonaron en montones *y* montones, y apestó la tierra.
 
 ### 8:15
 
-Y vio Faraón que fue el alivio, y hizo pesado su corazón, y no oyó a ellos, como habló Yahvé.
+Faraón vio que había alivio, y entonces hizo pesado su corazón y no los escuchó, tal como Yahvé había hablado.
 
 ### 8:16
 
-Y dijo Yahvé a Moisés: Di a Aarón: Extiende tu vara y hiere el polvo de la tierra, y será a piojos en toda tierra de Egipto.
+Y dijo Yahvé a Moisés: «Di a Aarón: “Extiende tu vara y golpea el polvo de la tierra, y se convertirá en piojos por toda la tierra de Egipto”».
 
 ### 8:17
 
-Y hicieron así, y extendió Aarón su mano con su vara y hirió el polvo de la tierra, y fue el piojo en el hombre y en el ganado; todo polvo de la tierra fue piojos en toda tierra de Egipto.
+Y actuaron así: Aarón extendió su mano con su vara y golpeó el polvo de la tierra; y hubo piojos en los seres humanos y en los animales. Todo el polvo de la tierra se convirtió en piojos en toda la tierra de Egipto.
 
 ### 8:18
 
-Y hicieron así los magos con sus secretos para sacar a los piojos, y no pudieron. Y fue el piojo en el hombre y en el ganado.
+Los magos actuaron así con sus artes secretas para hacer salir los piojos, pero no pudieron; y hubo piojos en el ser humano y en el animal.
 
 ### 8:19
 
-Y dijeron los magos a Faraón: Dedo de Dios ella. Y se fortaleció el corazón de Faraón, y no oyó a ellos, como habló Yahvé.
+Entonces los magos dijeron al Faraón: «Es el dedo de Dios». Y el corazón del Faraón se endureció, y no los escuchó, tal como había dicho Yahvé.
 
 ### 8:20
 
-Y dijo Yahvé a Moisés: Madruga en la mañana y ponte delante de Faraón; he aquí saliente hacia las aguas, y dirás a él: Así dijo Yahvé: Envía a mi pueblo, y me servirán.
+Y Yahvé dijo a Moisés: «Levántate temprano por la mañana y preséntate ante Faraón; mira, sale hacia el agua, y dile: “Así dijo Yahvé: Deja ir a mi pueblo para que me sirvan”».
 
 ### 8:21
 
-Porque si no eres enviando a mi pueblo, he aquí yo enviando en ti y en tus siervos y en tu pueblo y en tus casas el enjambre; y se llenarán las casas de Egipto del enjambre, y también el suelo que ellos sobre él.
+Porque si no dejas ir a mi pueblo, he aquí que envío contra ti, contra tus siervos, contra tu pueblo y contra tus casas el enjambre; y se llenarán las casas de los egipcios del enjambre, y también el suelo sobre el que estarán.
 
 ### 8:22
 
-Y distinguiré en el día aquel a tierra de Gosén, que mi pueblo está parado sobre ella, para no ser allí enjambre, a fin de que conozcas que yo Yahvé en medio de la tierra.
+Y distinguiré en aquel día la tierra de Gosén, sobre la cual está mi pueblo, para que no haya allí enjambre, a fin de que sepas que yo *soy* Yahvé en medio de la tierra.
 
 ### 8:23
 
-Y pondré rescate entre mi pueblo y entre tu pueblo; para mañana será la señal esta.
+Y pondré rescate entre mi pueblo y tu pueblo; mañana será esta señal.
 
 ### 8:24
 
-Y hizo Yahvé así, y vino enjambre pesado a casa de Faraón y casa de sus siervos; y en toda tierra de Egipto se corrompía la tierra de faces del enjambre.
+Y Yahvé hizo así, y llegó un enjambre pesado a la casa de Faraón y a la casa de sus siervos; y en toda la tierra de Egipto, la tierra se arruinó por causa del enjambre.
 
 ### 8:25
 
-Y llamó Faraón a Moisés y a Aarón, y dijo: Vayan, sacrifiquen a su Dios en la tierra.
+Entonces el faraón llamó a Moisés y a Aarón y dijo: «Vayan, hagan sacrificios a su Dios en la tierra».
 
 ### 8:26
 
-Y dijo Moisés: No *es* firme hacer así, porque la abominación de Egipto sacrificaremos a Yahvé nuestro Dios. He aquí, sacrificaremos la abominación de Egipto a sus ojos, y no nos apedrearán.
+Moisés dijo: «No *es* correcto hacer eso, porque sacrificaremos la abominación de los egipcios a Yahvé, nuestro Dios. Mira, sacrificaremos la abominación de Egipto ante sus ojos, ¿y no nos apedrearán?»
 
 ### 8:27
 
-Camino de tres días iremos en el desierto, y sacrificaremos a Yahvé nuestro Dios, como diga a nosotros.
+Iremos tres días de camino en el desierto y sacrificaremos a Yahvé nuestro Dios, según nos diga.
 
 ### 8:28
 
-Y dijo Faraón: Yo enviaré a ustedes, y sacrificarán a Yahvé su Dios en el desierto; solo alejando no alejen para ir. Intercedan por mí.
+Y dijo Faraón: «Yo los dejaré ir, y sacrificarán a Yahvé su Dios en el desierto. Solamente no vayan demasiado lejos. Intercedan por mí».
 
 ### 8:29
 
-Y dijo Moisés: He aquí yo saliente de con ti, e intercederé a Yahvé, y se apartará el enjambre de Faraón, de sus siervos y de su pueblo mañana; solo no vuelva Faraón a engañar, para no enviar al pueblo a sacrificar a Yahvé.
+Y dijo Moisés: «He aquí, yo salgo de tu lado y suplicaré a Yahvé, y se apartará el enjambre de Faraón, de sus siervos y de su pueblo mañana. Solo que no vuelva Faraón a engañar al no dejar ir al pueblo para sacrificar a Yahvé».
 
 ### 8:30
 
-Y salió Moisés de con Faraón, e intercedió a Yahvé.
+Y salió Moisés de la presencia de Faraón y oró a Yahvé.
 
 ### 8:31
 
-Y hizo Yahvé conforme a la palabra de Moisés, y apartó el enjambre de Faraón, de sus siervos y de su pueblo; no quedó uno.
+Y Yahvé actuó conforme a la palabra de Moisés, y el enjambre se retiró de Faraón, de sus siervos y de su pueblo; no quedó ni uno.
 
 ### 8:32
 
-Y hizo pesado Faraón su corazón también en la vez esta, y no envió al pueblo.
+Y Faraón hizo pesado su corazón también esta vez, y no dejó ir al pueblo.
 
 ## Capítulo 9
 
 ### 9:1
 
-Y dijo Yahvé a Moisés: Entra a Faraón, y hablarás a él: Así dijo Yahvé Dios de los hebreos: Envía a mi pueblo, y me servirán.
+Y Yahvé dijo a Moisés: «Ve al faraón y dile: “Así ha dicho Yahvé, Dios de los hebreos: Deja ir a mi pueblo para que me sirvan”».
 
 ### 9:2
 
-Porque si rehúsante tú de enviar, y todavía tú aferrado en ellos,
+Porque si tú te niegas a dejarlos ir y todavía los retienes,
 
 ### 9:3
 
-he aquí mano de Yahvé siendo en tu ganado que en el campo, en los caballos, en los asnos, en los camellos, en el ganado vacuno y en el rebaño, peste pesada mucho.
+Mira, la mano de Yahvé está sobre tu ganado que *está* en el campo, sobre los caballos, sobre los burros, sobre los camellos, sobre el ganado vacuno y sobre los rebaños: una peste muy grave.
 
 ### 9:4
 
-Y distinguirá Yahvé entre ganado de Israel y entre ganado de Egipto, y no morirá cosa de todo a hijos de Israel.
+Y Yahvé hará distinción entre el ganado de Israel y el ganado de Egipto, y no morirá nada de todo lo perteneciente a los hijos de Israel.
 
 ### 9:5
 
-Y puso Yahvé plazo, diciendo: Mañana hará Yahvé este asunto en la tierra.
+Y fijó Yahvé un tiempo, diciendo: «Mañana Yahvé hará esto en la tierra».
 
 ### 9:6
 
-Y hizo Yahvé este asunto al día siguiente, y murió todo ganado de Egipto, y del ganado de hijos de Israel no murió uno.
+Y Yahvé llevó a cabo este asunto al día siguiente, y murió todo el ganado de Egipto; pero del ganado de los hijos de Israel no murió ni uno.
 
 ### 9:7
 
-Y envió Faraón, y he aquí no murió del ganado de Israel hasta uno, y se hizo pesado el corazón de Faraón, y no envió al pueblo.
+Y envió Faraón, y he aquí que no había muerto ni uno solo del ganado de Israel; y se volvió pesado el corazón de Faraón, y no dejó ir al pueblo.
 
 ### 9:8
 
-Y dijo Yahvé a Moisés y a Aarón: Tomen para ustedes sus puños llenos de hollín de horno, y lo esparcirá Moisés hacia los cielos a ojos de Faraón.
+Y dijo Yahvé a Moisés y a Aarón: «Tomen para ustedes cuanto hollín de horno les quepa en ambas manos ahuecadas, y Moisés lo arrojará hacia el cielo ante los ojos de Faraón».
 
 ### 9:9
 
-Y será a polvo sobre toda tierra de Egipto, y será sobre el hombre y sobre el ganado a úlcera brotante ampollas en toda tierra de Egipto.
+Y se convertirá en polvo sobre toda la tierra de Egipto, y se convertirá en una erupción que brotará en ampollas sobre el ser humano y sobre el animal, en toda la tierra de Egipto.
 
 ### 9:10
 
-Y tomaron el hollín del horno y se pararon delante de Faraón, y lo esparció Moisés hacia los cielos, y fue úlcera de ampollas brotante en el hombre y en el ganado.
+Y tomaron el hollín del horno y se pusieron de pie delante de Faraón; Moisés lo arrojó hacia el cielo, y se convirtió en una erupción que brotaba en ampollas en el hombre y en el animal.
 
 ### 9:11
 
-Y no pudieron los magos pararse delante de Moisés de faces de la úlcera, porque fue la úlcera en los magos y en todo Egipto.
+Y los magos no pudieron estar de pie ante Moisés a causa de la erupción, porque la erupción estaba en los magos y en todos los Egipcios.
 
 ### 9:12
 
-Y fortaleció Yahvé el corazón de Faraón, y no oyó a ellos, como habló Yahvé a Moisés.
+Y Yahvé endureció el corazón de Faraón, y no los escuchó, tal como Yahvé habló a Moisés.
 
 ### 9:13
 
-Y dijo Yahvé a Moisés: Madruga en la mañana y ponte delante de Faraón, y dirás a él: Así dijo Yahvé Dios de los hebreos: Envía a mi pueblo, y me servirán.
+Y dijo Yahvé a Moisés: «Levántate temprano por la mañana, preséntate ante Faraón y dile: “Así ha dicho Yahvé, Dios de los hebreos: Deja ir a mi pueblo para que me sirvan”».
 
 ### 9:14
 

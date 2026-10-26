@@ -518,6 +518,50 @@ class SourcePacketTests(unittest.TestCase):
         self.assertEqual(evidence["authority"], "secondary-possibilities-only")
         self.assertTrue(evidence["possibleSenses"])
 
+    def test_exodus_7_11_plural_lahat_follows_pinned_bdb_form_redirect(self) -> None:
+        packet = build_packet("exodo", 7, 11)
+        token = next(item for item in packet["tokens"] if item["lemma"] == "b/3858")
+        evidence = next(
+            item
+            for item in packet["lexicalEvidence"]
+            if (item.get("lexicalEvidenceId") or item["lexicalIndexId"])
+            == token["lexicalEvidenceId"]
+        )
+        self.assertEqual(evidence["bdbIndexedEntryId"], "l.ap.ab")
+        self.assertEqual(evidence["bdbEntryId"], "l.ax.ab")
+        self.assertEqual(
+            evidence["bdbFormCrossReference"],
+            {
+                "entryId": "l.ap.ac",
+                "targetRootEntryId": "l.ax.aa",
+                "resolvedEntryId": "l.ax.ab",
+            },
+        )
+        self.assertIn("enchantments", evidence["possibleSenses"])
+        self.assertNotIn("flame", evidence["possibleSenses"])
+        prompt = packet_for_prompt(packet)
+        prompt_evidence = next(
+            item
+            for item in prompt["lexicalEvidence"]
+            if (item.get("lexicalEvidenceId") or item["lexicalIndexId"])
+            == token["lexicalEvidenceId"]
+        )
+        self.assertIn("enchantments", prompt_evidence["possibleSenses"])
+
+    def test_genesis_3_24_singular_lahat_remains_flame(self) -> None:
+        packet = build_packet("genesis", 3, 24)
+        token = next(item for item in packet["tokens"] if item["lemma"] == "3858")
+        evidence = next(
+            item
+            for item in packet["lexicalEvidence"]
+            if (item.get("lexicalEvidenceId") or item["lexicalIndexId"])
+            == token["lexicalEvidenceId"]
+        )
+        self.assertEqual(evidence["bdbEntryId"], "l.ap.ab")
+        self.assertNotIn("bdbFormCrossReference", evidence)
+        self.assertIn("flame", evidence["possibleSenses"])
+        self.assertNotIn("enchantments", evidence["possibleSenses"])
+
     def test_open_scriptures_entries_are_deduplicated(self) -> None:
         packet = build_packet("exodo", 1, 1)
         ids = [item["lexicalIndexId"] for item in packet["lexicalEvidence"]]

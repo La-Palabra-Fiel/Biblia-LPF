@@ -39,7 +39,11 @@ contexto. Una afirmación que la evidencia canónica no justifica queda en
 Open Scriptures HebrewLexicon es el testigo léxico autorizado para el AT,
 fijado por commit y checksum. El paquete llega a él desde el lema Strong
 aumentado de OSHB; sus sentidos siguen siendo opciones secundarias y nunca
-eligen la traducción. TBESG es el candidato griego autorizado, pendiente de
+eligen la traducción. El cargador sigue también las remisiones internas
+explícitas de BDB ligadas a una forma morfológica; no puede reducir una forma
+remitida a la primera entrada del índice Strong (por ejemplo,
+`לְהָטִים` remite a misterio/encantamiento, mientras el singular de Génesis
+3:24 permanece llama). TBESG es el candidato griego autorizado, pendiente de
 parser y validación de cobertura. El campo `Meaning` de TBESH está bloqueado
 por el aviso de Online Bible; el paquete no lo lee. TFLSJ y TFLSJ extra están
 presentes pero no autorizados. HALOT, DCH y BDAG tampoco entran al paquete

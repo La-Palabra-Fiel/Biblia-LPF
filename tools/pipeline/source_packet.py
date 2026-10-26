@@ -266,11 +266,14 @@ def build_ot_packet(book: Book, chapter: int, verse: int) -> dict:
             "morph": morph,
             "morphExpanded": expand_hebrew_morph(morph),
         }
-        lexical_evidence = lookup_hebrew_lexicon(lemma)
+        lexical_evidence = lookup_hebrew_lexicon(lemma, morph=morph)
         if lexical_evidence is not None:
-            lexical_id = str(lexical_evidence["lexicalIndexId"])
-            entry["lexicalEvidenceId"] = lexical_id
-            lexical_entries[lexical_id] = lexical_evidence
+            lexical_evidence_id = str(
+                lexical_evidence.get("lexicalEvidenceId")
+                or lexical_evidence["lexicalIndexId"]
+            )
+            entry["lexicalEvidenceId"] = lexical_evidence_id
+            lexical_entries[lexical_evidence_id] = lexical_evidence
         else:
             entry["lexicalEvidenceId"] = None
         tokens.append(entry)
@@ -539,7 +542,7 @@ def validate_packet(packet: dict) -> None:
                 or entry.get("authority") != "secondary-possibilities-only"
             ):
                 raise ValueError("OT packet has noncanonical lexical evidence")
-            ids.add(entry.get("lexicalIndexId"))
+            ids.add(entry.get("lexicalEvidenceId") or entry.get("lexicalIndexId"))
         for token in packet.get("tokens") or []:
             lexical_id = token.get("lexicalEvidenceId")
             if lexical_id is not None and lexical_id not in ids:
@@ -608,10 +611,12 @@ def packet_for_prompt(packet: dict) -> dict:
             {
                 key: entry.get(key)
                 for key in (
+                    "lexicalEvidenceId",
                     "lexicalIndexId",
                     "headword",
                     "transliteration",
                     "partOfSpeech",
+                    "bdbFormCrossReference",
                     "possibleSenses",
                 )
                 if entry.get(key) not in (None, [], "")

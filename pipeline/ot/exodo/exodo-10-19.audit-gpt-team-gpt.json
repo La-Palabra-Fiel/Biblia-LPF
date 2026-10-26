@@ -1,0 +1,37 @@
+{
+  "schema": "lbf-grok-audit-v1",
+  "auditor": "GPT independent audit",
+  "book": "exodo",
+  "reference": "Éxodo 10:19",
+  "chapter": 10,
+  "verse": 19,
+  "candidateLabel": "team-gpt",
+  "spanish": "Y Yahvé hizo girar un viento del mar muy fuerte; el viento se llevó la langosta y la arrojó al mar de Juncos. No quedó una sola langosta en todo el territorio de Egipto.",
+  "verdict": "fail",
+  "findings": [
+    {
+      "severity": "fail",
+      "sourceTokenIds": [
+        "h02010019003",
+        "h02010019007",
+        "h02010019010"
+      ],
+      "issue": "Los verbos 3ms continúan sin sujeto expreso; «el viento» introduce como agente explícito un participante no establecido.",
+      "spanishSpan": "el viento se llevó la langosta y la arrojó"
+    },
+    {
+      "severity": "fail",
+      "sourceTokenIds": [
+        "h02010019001"
+      ],
+      "issue": "El qal transitivo licencia «girar/volver», pero «hizo girar» añade una construcción causativa no marcada por el tallo.",
+      "spanishSpan": "hizo girar"
+    }
+  ],
+  "notes": "",
+  "discardedUncitedFindings": 0,
+  "model": "gpt-5.6-sol",
+  "reasoningEffort": "medium",
+  "packetSha256": "a39aa8eb3febca6f27c86cc1d083f7ed6efcf0a65574aca59402fb256e241786",
+  "candidateSha256": "fa0cdea1b9f9e829d3db7b5708e97188afed065efb3a29804ff66b5e73142bc9"
+}

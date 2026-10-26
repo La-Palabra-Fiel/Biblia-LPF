@@ -151,7 +151,11 @@ La revisión de los archivos descargados establece:
 - **Open Scriptures HebrewLexicon** — autorizado para el AT en el commit
   `21c9add13bc727d3a951361778e97e3ff7afd1ce`, con los checksums registrados
   en `Lexicons/PROVENANCE.md`. `AugIndex.xml` enlaza el lema Strong aumentado
-  de OSHB con `LexicalIndex.xml` y `BrownDriverBriggs.xml`. Su licencia es
+  de OSHB con `LexicalIndex.xml` y `BrownDriverBriggs.xml`. El cargador debe
+  seguir las remisiones internas explícitas de BDB cuando estén ligadas a la
+  forma morfológica presente, conservando tanto la procedencia del índice como
+  la entrada resuelta; no puede tratar una forma remitida como si solo tuviera
+  el sentido de la entrada inicial. Su licencia es
   CC BY 4.0 y la atribución requerida es *Open Scriptures Hebrew Bible
   Project*. El cargador debe rechazar cualquier archivo cuyo checksum cambie;
 - **TBESG** — aprobado como candidato para ingestión automática, sujeto a

@@ -13,12 +13,13 @@ const outputDirectory = join(appRoot, "var", "compact-ot-scan-v0.2.0");
 const ledger = JSON.parse(await readFile(join(appRoot, "var", "candidate-scan-v0.1.0", "ledger.json"), "utf8"));
 const index = JSON.parse(await readFile(join(trancheDirectory, "index.json"), "utf8"));
 await mkdir(outputDirectory, { recursive: true });
+const compactFileName = windowId => `${String(windowId).replaceAll(":", ".")}.compact-dry-run.json`;
 const comparison = [];
 for (const attempt of index.attempts.filter(item => item.status === "succeeded")) {
   const record = JSON.parse(await readFile(join(trancheDirectory, attempt.file), "utf8"));
   const compacted = compactScanPayload(record.exact_api_request), validation = validateCompactScanPayload(compacted, record.exact_api_request), sizes = compactSizeComparison(record.exact_api_request, compacted);
   if (!validation.ok) throw new Error(`Compact comparison failed for ${attempt.window_id}: ${validation.errors.join(", ")}`);
-  const file = `${attempt.window_id}.compact-dry-run.json`;
+  const file = compactFileName(attempt.window_id);
   await writeFile(join(outputDirectory, file), `${JSON.stringify({ source_attempt: { file: attempt.file, request_fingerprint: attempt.request_fingerprint }, compact_payload: compacted.payload, local_record: compacted.local_record, validation, sizes }, null, 2)}\n`);
   comparison.push({ window_id: attempt.window_id, source_attempt_file: attempt.file, compact_file: file, ...sizes, validation });
 }
@@ -27,7 +28,7 @@ for (const window of ledger.sequential_roster_cursor?.proposed_next_tranche || [
   const full = await buildContextWindowRequest(repoRoot, { book: window.book, chapter: window.chapter, firstVerse: window.first_verse, lastVerse: window.last_verse });
   const compacted = compactScanPayload(full), validation = validateCompactScanPayload(compacted, full), sizes = compactSizeComparison(full, compacted);
   if (!validation.ok) throw new Error(`Genesis compact preparation failed for ${window.window_id}: ${validation.errors.join(", ")}`);
-  const file = `${window.window_id}.compact-dry-run.json`;
+  const file = compactFileName(window.window_id);
   await writeFile(join(outputDirectory, file), `${JSON.stringify({ planned_window: window, compact_payload: compacted.payload, local_record: compacted.local_record, validation, sizes }, null, 2)}\n`);
   genesis.push({ window_id: window.window_id, compact_file: file, ...sizes, validation });
 }

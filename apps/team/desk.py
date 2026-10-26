@@ -334,7 +334,18 @@ def chapter_view(slug: str, chapter) -> dict:
         packet = read_json(packet_path(slug, number, verse), {})
         candidate_file = candidate_path(slug, number, verse)
         candidate = read_json(candidate_file, {}) if candidate_file else {}
-        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": verse_body(canonical, number, verse) or "", "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verses.get(str(verse)) or {}, "gate": gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {"source": "missing", "fidelity": "missing", "spanish": "missing"}, "humanReviewed": human_review_is_current(slug, number, verse)})
+        recovered_verse = recovered_verses.get(str(verse)) or {}
+        # An older failed browser submission may contain the human's text but
+        # no alignment rows.  Preserve that text while restoring the model's
+        # visible seed as an editable starting point; it remains unapproved
+        # and must still pass exact Spanish/unit validation.
+        if (
+            isinstance(recovered_verse, dict)
+            and not recovered_verse.get("units")
+            and candidate.get("units")
+        ):
+            recovered_verse = {**recovered_verse, "units": candidate["units"]}
+        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": verse_body(canonical, number, verse) or "", "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {"source": "missing", "fidelity": "missing", "spanish": "missing"}, "humanReviewed": human_review_is_current(slug, number, verse)})
     return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "precedents": human_precedents(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
@@ -540,11 +551,11 @@ def approve_verse(payload: dict) -> dict:
         prior_path = candidate_path(book.slug, chapter, verse); prior = read_json(prior_path, {}) if prior_path else {}; decision = " ".join(str(payload.get("decision") or "").split())
         if prior.get("schema") != "lbf-human-reviewed-candidate-v1":
             if prior.get("model") != TEAM_MODEL:
-                raise ValueError("This candidate is not proven to have been drafted by GPT-5.6 Sol. Prepare the chapter first.")
+                raise ValueError("This candidate is not proven to have been drafted by GPT-5.6 Sol. Prepare this verse again.")
             if prior.get("reasoningEffort") != TEAM_REASONING:
-                raise ValueError("This candidate was not drafted with the required medium reasoning effort. Prepare the chapter again.")
+                raise ValueError("This candidate was not drafted with the required medium reasoning effort. Prepare this verse again.")
             if prior.get("packetSha256") != packet_fingerprint(packet):
-                raise ValueError("This candidate is not bound to the current canonical packet. Prepare the chapter again.")
+                raise ValueError("This candidate is not bound to the current canonical packet. Prepare this verse again.")
             gate = gate_for(book.slug, chapter, verse, prior_path, prior)
             if gate["spanish"] == "missing":
                 raise ValueError("The deterministic Spanish gate must run before human adjudication.")

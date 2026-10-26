@@ -32,6 +32,22 @@ PINNED_SHA256 = {
     "readme.md": "9a129c25674387c494571c3828aa3a8eb78459c165e275c313ae26994ce8ff22",
 }
 
+# BDB sometimes redirects an inflected form away from the entry selected by
+# the augmented Strong index.  These redirects are lexical provenance, not a
+# contextual sense choice.  Keep them narrow and verify every referenced node
+# against the pinned BDB file before exposing the resolved possibilities.
+FORM_BDB_REDIRECTS = {
+    # BDB l.ap.ac: לְהָטִים v. לוּט.  Its noun entry l.ax.ab documents
+    # "with their mysteries = enchantments".  The singular H3858 remains the
+    # flame entry used in Genesis 3:24; only plural noun forms take this link.
+    "3858": {
+        "morphFragment": "Ncmp",
+        "crossReferenceEntryId": "l.ap.ac",
+        "targetRootEntryId": "l.ax.aa",
+        "resolvedEntryId": "l.ax.ab",
+    },
+}
+
 
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -75,6 +91,43 @@ def _unique(values: list[str]) -> list[str]:
     return list(dict.fromkeys(value for value in values if value))
 
 
+def _definitions(
+    entry: ET.Element | None, *, include_tail_equivalents: bool = False
+) -> list[str]:
+    if entry is None:
+        return []
+    values = [_text(node) or "" for node in entry.findall(".//o:def", NS)]
+    # Some BDB senses put an English equivalent after a <def> node, e.g.
+    # "with their mysteries = enchantments".  Preserve the right-hand
+    # equivalent instead of silently dropping it with XML tail text.
+    if include_tail_equivalents:
+        for sense in entry.findall(".//o:sense", NS):
+            text = _text(sense) or ""
+            if "=" in text:
+                values.extend(part.strip() for part in text.split("=")[1:])
+    return _unique(values)
+
+
+def _form_bdb_redirect(
+    key: str, morph: str, bdb_entries: dict[str, ET.Element]
+) -> dict[str, str] | None:
+    spec = FORM_BDB_REDIRECTS.get(key)
+    if spec is None or spec["morphFragment"] not in (morph or ""):
+        return None
+    cross_reference = bdb_entries.get(spec["crossReferenceEntryId"])
+    resolved = bdb_entries.get(spec["resolvedEntryId"])
+    if cross_reference is None or resolved is None:
+        raise ValueError(f"pinned BDB form redirect is incomplete for H{key}")
+    targets = {
+        str(node.get("src"))
+        for node in cross_reference.findall(".//o:w[@src]", NS)
+        if node.get("src")
+    }
+    if spec["targetRootEntryId"] not in targets:
+        raise ValueError(f"pinned BDB form redirect changed for H{key}")
+    return spec
+
+
 @lru_cache(maxsize=1)
 def _indexes() -> tuple[dict[str, str], dict[str, ET.Element], dict[str, ET.Element]]:
     verify_pinned_files()
@@ -100,7 +153,7 @@ def _indexes() -> tuple[dict[str, str], dict[str, ET.Element], dict[str, ET.Elem
     return augmented, lexical, bdb
 
 
-def lookup(oshb_lemma: str) -> dict | None:
+def lookup(oshb_lemma: str, *, morph: str = "") -> dict | None:
     """Return compact lexical possibilities for one OSHB lemma."""
     key = augmented_strong(oshb_lemma)
     if key is None:
@@ -113,19 +166,23 @@ def lookup(oshb_lemma: str) -> dict | None:
 
     word = lexical.find("o:w", NS)
     xref = lexical.find("o:xref", NS)
-    bdb_id = xref.get("bdb") if xref is not None else None
+    indexed_bdb_id = xref.get("bdb") if xref is not None else None
+    redirect = _form_bdb_redirect(key, morph, bdb_entries)
+    bdb_id = redirect["resolvedEntryId"] if redirect else indexed_bdb_id
     bdb = bdb_entries.get(bdb_id or "")
     definitions = []
     references = []
     if bdb is not None:
-        definitions = _unique(
-            [_text(node) or "" for node in bdb.findall(".//o:def", NS)]
-        )
+        definitions = _definitions(bdb, include_tail_equivalents=bool(redirect))
         references = _unique(
             [str(node.get("r")) for node in bdb.findall(".//o:ref", NS) if node.get("r")]
         )
 
-    return {
+    lexical_evidence_id = lexical_id
+    if redirect:
+        lexical_evidence_id = f"{lexical_id}@{bdb_id}"
+
+    result = {
         "source": "OpenScriptures-HebrewLexicon",
         "sourceCommit": UPSTREAM_COMMIT,
         "license": LICENSE,
@@ -141,3 +198,12 @@ def lookup(oshb_lemma: str) -> dict | None:
         "corpusReferences": references,
         "authority": "secondary-possibilities-only",
     }
+    if redirect:
+        result["lexicalEvidenceId"] = lexical_evidence_id
+        result["bdbIndexedEntryId"] = indexed_bdb_id
+        result["bdbFormCrossReference"] = {
+            "entryId": redirect["crossReferenceEntryId"],
+            "targetRootEntryId": redirect["targetRootEntryId"],
+            "resolvedEntryId": redirect["resolvedEntryId"],
+        }
+    return result

@@ -109,6 +109,11 @@ class DeskTests(unittest.TestCase):
         self.assertIn("la aplicación ya no la redacta",html)
         self.assertIn('class="supplied"',html)
         self.assertIn("toda palabra suplida",html)
+        self.assertIn("Español alineado",html)
+        self.assertIn("morphologySpanish",html)
+        self.assertIn("refreshTokenSpanish",html)
+        self.assertIn("mergeSeedUnits",html)
+        self.assertIn("Añadir unidad",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

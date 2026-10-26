@@ -46,6 +46,14 @@ def main() -> int:
     parser.add_argument("--ingest", help="JSON reply saved from Cursor GPT")
     args = parser.parse_args()
 
+    # ``team-gpt`` is the app's reserved workflow label.  Its model contract
+    # must hold even when this script is invoked directly and a private env
+    # file contains cheaper exploratory defaults.  Otherwise the paid call
+    # succeeds but Team Desk necessarily rejects the resulting candidate.
+    if args.label == "team-gpt":
+        os.environ["LBF_GPT_MODEL"] = "gpt-5.6-sol"
+        os.environ["LBF_GPT_REASONING"] = "medium"
+
     book = get_book(args.book)
     stored = packet_path(book, args.chapter, args.verse)
     if stored.is_file():

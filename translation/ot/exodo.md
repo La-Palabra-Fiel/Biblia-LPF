@@ -7,7 +7,7 @@
 
 ### 1:1
 
-Y estos *son* los nombres de los hijos de Israel que llegaron a Egipto con Jacob; cada uno llegó con su familia:
+Y estos *son* los nombres de los hijos de Israel que vinieron a Egipto; con Jacob vinieron cada hombre y su casa.
 
 ### 1:2
 
@@ -15,7 +15,7 @@ Rubén, Simeón, Leví y Judá.
 
 ### 1:3
 
-Isacar, Zabulón y Benjamín;
+Isacar, Zabulón y Benjamín.
 
 ### 1:4
 
@@ -23,35 +23,35 @@ Dan y Neftalí, Gad y Aser.
 
 ### 1:5
 
-Y todas las personas que salieron de los lomos de Jacob fueron setenta; y José estaba en Egipto.
+Y todas las personas que salieron de los lomos de Jacob fueron setenta personas; y José estaba en Egipto.
 
 ### 1:6
 
-Y murió José, y todos sus hermanos, y toda aquella generación.
+Y murieron José y todos sus hermanos y toda aquella generación.
 
 ### 1:7
 
-Y los hijos de Israel fueron fecundos, proliferaron, se multiplicaron y se hicieron muy, muy numerosos; y la tierra se llenó de ellos.
+Y los hijos de Israel fueron fecundos, y proliferaron, y se multiplicaron, y se hicieron muy, muy numerosos; y la tierra se llenó de ellos.
 
 ### 1:8
 
-Entonces se levantó sobre Egipto un nuevo rey que no conocía a José.
+Y se levantó un rey nuevo sobre Egipto, que no conocía a José.
 
 ### 1:9
 
-Y dijo a su pueblo: «He aquí, el pueblo de los hijos de Israel *es* más numeroso y poderoso que nosotros».
+Y dijo a su pueblo: «He aquí, el pueblo de los hijos de Israel es más numeroso y más poderoso que nosotros».
 
 ### 1:10
 
-Ahora pues, actuemos sabiamente con él, no sea que se multiplique y suceda que, cuando acontezca una guerra, también él se una a nuestros enemigos, luche contra nosotros y suba de la tierra.
+Vamos, actuemos con astucia respecto a él, no sea que se multiplique y, si sobreviene una guerra, él también se una a nuestros enemigos y pelee contra nosotros y suba de la tierra.
 
 ### 1:11
 
-Y pusieron sobre él jefes de trabajos forzados para afligirlo con sus cargas; y edificó ciudades de almacenamiento para Faraón: Pitom y Raamses.
+Entonces pusieron sobre él jefes de trabajo forzado para afligirlo con sus cargas, y construyó ciudades de almacenamiento para Faraón: Pitom y Raamsés.
 
 ### 1:12
 
-Y cuanto más lo afligían, tanto más se multiplicaba y tanto más se extendía; y sintieron repugnancia ante los hijos de Israel.
+Y cuanto más lo afligían, tanto más se multiplicaba y tanto más se extendía; y sintieron horror ante los hijos de Israel.
 
 ### 1:13
 
@@ -975,37 +975,37 @@ Rueguen a Yahvé, y basta de que haya sonidos de Dios y granizo; y los dejaré i
 
 ### 9:29
 
-Y dijo a él Moisés: Al salir yo la ciudad, extenderé mis palmas a Yahvé; las voces cesarán, y el granizo no será todavía, a fin de que conozcas que a Yahvé la tierra.
+Y Moisés le dijo: «Al salir de la ciudad, extenderé mis manos hacia Yahvé; los sonidos cesarán y ya no habrá granizo, para que sepas que la tierra pertenece a Yahvé».
 
 ### 9:30
 
-Y tú y tus siervos, he conocido que todavía no temen de faces de Yahvé Dios.
+Pero en cuanto a ti y a tus siervos, sé que todavía no temen a Yahvé Dios.
 
 ### 9:31
 
-Y el lino y la cebada fueron heridos, porque la cebada espiga y el lino botón.
+Y el lino y la cebada fueron golpeados, porque la cebada estaba en espiga y el lino estaba en botón.
 
 ### 9:32
 
-Y el trigo y la escanda no fueron heridos, porque tardías ellas.
+Y el trigo y la espelta no fueron golpeados, porque ellas *eran* tardías.
 
 ### 9:33
 
-Y salió Moisés de con Faraón la ciudad, y extendió sus palmas a Yahvé, y cesaron las voces y el granizo, y lluvia no se derramó a tierra.
+Y Moisés salió de junto a Faraón, fuera de la ciudad, y extendió sus palmas hacia Yahvé; y cesaron los sonidos y el granizo, y la lluvia no se derramó a tierra.
 
 ### 9:34
 
-Y vio Faraón que cesó la lluvia y el granizo y las voces, y añadió a pecar, e hizo pesado su corazón, él y sus siervos.
+Y Faraón vio que habían cesado la lluvia, el granizo y los sonidos, y volvió a pecar, y él, junto con sus siervos, hizo pesado su corazón.
 
 ### 9:35
 
-Y se fortaleció el corazón de Faraón, y no envió a hijos de Israel, como que habló Yahvé por mano de Moisés.
+Y se endureció el corazón de Faraón, y no dejó ir a los hijos de Israel, tal como habló Yahvé por mano de Moisés.
 
 ## Capítulo 10
 
 ### 10:1
 
-Y dijo Yahvé a Moisés: Entra a Faraón, porque yo he hecho pesado su corazón y el corazón de sus siervos, a fin de poner yo mis señales estas en medio de él,
+Entonces Yahvé dijo a Moisés: Ve a Faraón, porque yo he hecho pesado su corazón y el corazón de sus siervos, a fin de poner mis señales en medio de él,
 
 ### 10:2
 

@@ -87,6 +87,11 @@ METHOD:
   → Latin American ustedes (hagan, vean, lo matarán). Never Spain
   vosotros (hagáis, veréis, lo mataréis) to “keep” 2nd person. Do not add
   an ustedes pronoun the tokens do not mark.
+- LBF house style capitalizes pronouns and possessive forms whose referent is
+  unambiguously God, Jesus Christ, or the Holy Spirit: Él, Tú, Ti, Te, Lo,
+  Le, Se, Su, Sus, Suyo and their inflected forms. This capitalization does
+  not add a concept and must not be used to resolve an ambiguous referent.
+  Pronouns referring to humans remain lowercase.
 - Piel ילד + 2fp + את + the Hebrew women: addressees act on the women;
   the women are the ones who give birth (asistan a las hebreas a dar a
   luz). Never den a luz a las hebreas (that makes the addressees give
@@ -117,12 +122,14 @@ METHOD:
   source tokens, but independently alignable participants around it must remain
   separate. In particular, separate coordinated proper names and their
   prepositional phrases; do not absorb them into the verb unit.
-- Alignment is many-to-many. A sourceTokenId may appear in more than one
-  Spanish unit when one inflected or prefixed source token licenses separate
-  continuous Spanish pieces. For example, if source token `s1` carries both a
-  narrative conjunction and a verb, units such as `Entonces ← s1` and
-  `mandó ← s1` are valid. Do not make a broad unit merely to avoid repeating
-  a sourceTokenId.
+- Do not create artificial word-by-word rows. Adjacent Spanish pieces whose
+  source-token lists are identical or overlap must be one unit: write
+  `Y dijo ← s1`, never adjacent rows `Y ← s1` and `dijo ← s1`. Start a new
+  unit when the source-token correspondence changes. A `sourceTokenId` may
+  recur only when Spanish word order makes its correspondences genuinely
+  discontinuous. For example, in `Y el rey dijo`, `Y ← s1`, `el rey ← s2`,
+  and `dijo ← s1` remain separate; never absorb the intervening subject into
+  the verb unit merely to make `s1` occur once.
 - Before returning JSON, try to split every unit once more. Keep it grouped
   only if the smaller Spanish pieces would not have defensible source links.
 - Only for a genuinely difficult lexical, syntactic, discourse, or imagery

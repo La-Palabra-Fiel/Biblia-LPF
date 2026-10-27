@@ -23,6 +23,7 @@ class DeskTests(unittest.TestCase):
         self.assertFalse(desk.audit_required({"uncertainties":[]},{"verdict":"pass"}))
         self.assertTrue(desk.audit_required({"uncertainties":[{"issue":"open"}]},{"verdict":"pass"}))
         self.assertTrue(desk.audit_required({"uncertainties":[]},{"verdict":"fail"}))
+        self.assertEqual(desk.board()["draftSpecVersion"],desk.DRAFT_SPEC_VERSION)
     def test_divine_name_is_locked(self):
         packet={"tokens":[{"sourceTokenId":"h1","lemma":"c/3068"}]}
         self.assertEqual(desk.lint_divine_name("Y dijo Yahvé",packet),[])
@@ -46,6 +47,17 @@ class DeskTests(unittest.TestCase):
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]}])
         self.assertEqual(len(desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"dos","sourceTokenIds":["h2"]}],"Uno, dos.")),2)
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"tres","sourceTokenIds":["h2"]}],"Uno, dos.")
+    def test_alignment_consolidates_repeated_source_ids(self):
+        packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
+        units=desk.validate_units(packet,[
+            {"es":"Y","sourceTokenIds":["h1"]},
+            {"es":"dijo","sourceTokenIds":["h1"]},
+            {"es":"Moisés","sourceTokenIds":["h2"]},
+        ],"Y dijo Moisés.")
+        self.assertEqual(units,[
+            {"es":"Y dijo","sourceTokenIds":["h1"]},
+            {"es":"Moisés","sourceTokenIds":["h2"]},
+        ])
     def test_alignment_rejects_obviously_broad_units(self):
         packet={"tokens":[{"sourceTokenId":f"h{i}","morphExpanded":"Hebrew; noun common"} for i in range(1,6)]}
         with self.assertRaisesRegex(ValueError,"too broad"):
@@ -118,7 +130,12 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Él, Aarón y Moisés",prompt)
         self.assertIn("smallest continuous Spanish unit",prompt)
         self.assertIn("full reverse interlinear",prompt)
-        self.assertIn("sourceTokenId may appear in more than one",prompt)
+        self.assertIn("discontinuous",prompt)
+        self.assertIn("Y dijo ← s1",prompt)
+        self.assertIn("unambiguously God, Jesus Christ, or the Holy Spirit",prompt)
+        self.assertIn("Él, Tú, Ti",prompt)
+        self.assertIn("LBF HOUSE STYLE",desk.AUDIT_SYSTEM)
+        self.assertNotIn("doctrinal capitalization not in the tokens",desk.AUDIT_SYSTEM)
     def test_notification_ui_is_accessible_and_explains_credentials(self):
         html=(Path(desk.__file__).resolve().parent/"public"/"index.html").read_text(encoding="utf-8")
         self.assertIn('id="notifications" aria-live="polite"',html)
@@ -137,6 +154,8 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Preparar este versículo con GPT‑5.6 Sol",html)
         self.assertIn("/api/prepare-verse-estimate",html)
         self.assertIn("/api/prepare-verse",html)
+        self.assertIn("open().catch",html)
+        self.assertIn("La tarjeta se actualizará automáticamente",html)
         self.assertIn('class="override"',html)
         self.assertIn("la aplicación ya no la redacta",html)
         self.assertIn('class="supplied"',html)
@@ -145,6 +164,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("morphologySpanish",html)
         self.assertIn("refreshTokenSpanish",html)
         self.assertIn("mergeSeedUnits",html)
+        self.assertIn("mergeUnitsBySourceId",html)
+        self.assertIn("EXPECTED_DRAFT_SPEC",html)
+        self.assertIn("server is out of date",html)
         self.assertIn("Añadir unidad",html)
         self.assertIn("Quitar esta unidad de alineación",html)
         self.assertIn("¿Seguro que quieres quitar esta unidad de alineación?",html)

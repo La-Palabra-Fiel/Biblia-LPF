@@ -35,7 +35,7 @@ from auto_pass import write_verse  # noqa: E402
 from books import OT, get_book  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
 from source_packet import build_packet, list_verses  # noqa: E402
-from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, alignment_precision_findings, build_user_prompt as build_draft_prompt, load_system as load_draft_system, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
+from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
 from audit_gpt import AUDIT_MAX_COMPLETION_TOKENS  # noqa: E402
 from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_prompt  # noqa: E402
 
@@ -268,7 +268,7 @@ def gate_for(slug: str, chapter: int, verse: int, path: Path, candidate: dict) -
     required = audit_required(candidate, check)
     packet = read_json(packet_path(slug, chapter, verse), {})
     alignment_findings = alignment_precision_findings(packet, candidate.get("units") or [])
-    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": candidate.get("promptSha256") == draft_prompt_fingerprint(), "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or [], "alignmentFindings": alignment_findings}
+    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": draft_specification_is_current(candidate), "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or [], "alignmentFindings": alignment_findings}
 
 
 def human_precedents(slug: str) -> list[dict]:
@@ -337,7 +337,11 @@ def chapter_view(slug: str, chapter) -> dict:
         packet = read_json(packet_path(slug, number, verse), {})
         candidate_file = candidate_path(slug, number, verse)
         candidate = read_json(candidate_file, {}) if candidate_file else {}
+        if candidate.get("units"):
+            candidate = {**candidate, "units": merge_source_units_by_id(candidate["units"])}
         recovered_verse = recovered_verses.get(str(verse)) or {}
+        if isinstance(recovered_verse, dict) and recovered_verse.get("units"):
+            recovered_verse = {**recovered_verse, "units": merge_source_units_by_id(recovered_verse["units"])}
         # An older failed browser submission may contain the human's text but
         # no alignment rows.  Preserve that text while restoring the model's
         # visible seed as an editable starting point; it remains unapproved
@@ -389,7 +393,7 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
             and candidate.get("model") == TEAM_MODEL
             and candidate.get("reasoningEffort") == TEAM_REASONING
             and candidate.get("packetSha256") == packet_fingerprint(packet)
-            and candidate.get("promptSha256") == draft_prompt_fingerprint()
+            and draft_specification_is_current(candidate)
         )
         if not fresh_draft:
             draft_calls += 1
@@ -473,7 +477,7 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             candidate = read_json(path, {})
             if candidate.get("schema") == "lbf-human-reviewed-candidate-v1": continue
             packet = read_json(packet_path(slug, chapter, verse), {})
-            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet) or candidate.get("promptSha256") != draft_prompt_fingerprint():
+            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet) or not draft_specification_is_current(candidate):
                 _run([sys.executable, str(PIPELINE / "draft_gpt.py"), slug, str(chapter), str(verse), "--label", "team-gpt"])
                 path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"; candidate = read_json(path, {})
             label = label_for(candidate, path); folder = pipeline_dir(slug)
@@ -515,7 +519,7 @@ def audit_verse(payload: dict) -> dict:
     packet = read_json(packet_path(book.slug, chapter, verse), {})
     if candidate.get("packetSha256") != packet_fingerprint(packet):
         raise ValueError("Prepare this verse again before requesting an audit.")
-    if candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("promptSha256") != draft_prompt_fingerprint():
+    if candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or not draft_specification_is_current(candidate):
         raise ValueError("Prepare this verse with the current GPT and alignment specification before requesting an audit.")
     label = label_for(candidate, path)
     audit_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}-{verse}.audit-gpt-{label}.json"
@@ -535,6 +539,7 @@ def validate_units(packet: dict, units, spanish: str = "") -> list[dict]:
         if not surface or not ids: raise ValueError("Every alignment unit needs Spanish and source tokens.")
         if set(ids) - allowed: raise ValueError("An alignment unit contains an unknown source token.")
         covered.update(ids); clean.append({"es": surface, "sourceTokenIds": ids})
+    clean = merge_source_units_by_id(clean)
     precision = alignment_precision_findings(packet, clean)
     if precision:
         finding = precision[0]
@@ -585,7 +590,7 @@ def approve_verse(payload: dict) -> dict:
                 raise ValueError("This candidate was not drafted with the required medium reasoning effort. Prepare this verse again.")
             if prior.get("packetSha256") != packet_fingerprint(packet):
                 raise ValueError("This candidate is not bound to the current canonical packet. Prepare this verse again.")
-            if prior.get("promptSha256") != draft_prompt_fingerprint():
+            if not draft_specification_is_current(prior):
                 raise ValueError("This candidate was created under an older translation or alignment specification. Prepare this verse again.")
             gate = gate_for(book.slug, chapter, verse, prior_path, prior)
             if gate["spanish"] == "missing":
@@ -633,7 +638,7 @@ def chapter_count(slug: str) -> int:
 
 
 def board() -> dict:
-    return {"model": model_name(), "reasoningEffort": reasoning_effort(), "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
+    return {"model": model_name(), "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
 
 
 def warm_totals() -> None:

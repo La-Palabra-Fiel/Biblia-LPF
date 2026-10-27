@@ -20,6 +20,20 @@ from usage_lib import extract_usage
 PROMPT_PATH = Path(__file__).resolve().parent / "draft_prompt.md"
 DRAFT_SCHEMA = "lbf-gpt-draft-v1"
 DRAFT_MAX_COMPLETION_TOKENS = 4000
+DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v5"
+COMPATIBLE_DRAFT_SPEC_VERSIONS = {
+    "lbf-full-reverse-interlinear-v1",
+    "lbf-full-reverse-interlinear-v2",
+    "lbf-full-reverse-interlinear-v3",
+    "lbf-full-reverse-interlinear-v4",
+    DRAFT_SPEC_VERSION,
+}
+# Candidates created immediately after the precision migration predate the
+# explicit version field.  This hash identifies that same specification and
+# remains accepted even if unrelated prompt prose changes later.
+ACCEPTED_UNVERSIONED_PROMPT_SHA256 = {
+    "2c194f4fef1835f83f8dec3521e358d384fce76969dcd4f7e82e8c73d1bd8193",
+}
 
 
 class OpenAIResponseError(RuntimeError):
@@ -37,6 +51,14 @@ def load_system() -> str:
 def prompt_fingerprint() -> str:
     """Bind a draft to the exact translation and alignment specification."""
     return hashlib.sha256(load_system().encode("utf-8")).hexdigest()
+
+
+def draft_specification_is_current(candidate: dict) -> bool:
+    """Check semantic draft compatibility without invalidating on prose edits."""
+    return bool(
+        candidate.get("draftSpecVersion") in COMPATIBLE_DRAFT_SPEC_VERSIONS
+        or candidate.get("promptSha256") in ACCEPTED_UNVERSIONED_PROMPT_SHA256
+    )
 
 
 def draft_path(book_slug: str, chapter: int, verse: int, label: str = "gpt56") -> Path:
@@ -90,6 +112,27 @@ def allowed_token_ids(packet: dict) -> set[str]:
     }
 
 
+def merge_source_units_by_id(units: list[dict]) -> list[dict]:
+    """Merge adjacent overlapping rows without bridging Spanish reordering."""
+    clean: list[dict] = []
+    for item in units or []:
+        surface = " ".join(str((item or {}).get("es") or "").split())
+        ids = list(dict.fromkeys(str(x) for x in ((item or {}).get("sourceTokenIds") or [])))
+        if not surface or not ids:
+            continue
+        clean.append({"es": surface, "sourceTokenIds": ids})
+    merged: list[dict] = []
+    for unit in clean:
+        if merged and set(merged[-1]["sourceTokenIds"]) & set(unit["sourceTokenIds"]):
+            merged[-1]["es"] = f'{merged[-1]["es"]} {unit["es"]}'
+            merged[-1]["sourceTokenIds"] = list(dict.fromkeys(
+                [*merged[-1]["sourceTokenIds"], *unit["sourceTokenIds"]]
+            ))
+        else:
+            merged.append(unit)
+    return merged
+
+
 def alignment_precision_findings(packet: dict, units: list[dict]) -> list[dict]:
     """Find plainly coarse units without pretending to solve alignment locally."""
     tokens = packet.get("tokens") or []
@@ -126,6 +169,7 @@ def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
             dropped += 1
             continue
         units.append({"es": es, "sourceTokenIds": ids})
+    units = merge_source_units_by_id(units)
     added = [str(x).strip() for x in (raw.get("addedConcepts") or []) if str(x).strip()]
     uncertainties = []
     for item in raw.get("uncertainties") or []:
@@ -163,6 +207,7 @@ def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
         "addedConcepts": added,
         "droppedUncitedUnits": dropped,
         "alignmentPrecisionFindings": alignment_precision_findings(packet, units),
+        "draftSpecVersion": DRAFT_SPEC_VERSION,
         "promptSha256": prompt_fingerprint(),
     }
 

@@ -25,6 +25,13 @@ explícito se traduce **Yahvé**. Nunca se usa Jehová, Yavé, Yahweh, Yahveh,
 YHWH ni SEÑOR como sustituto de יהוה. Esto no altera el tratamiento distinto
 de אדני como **Adonai** cuando funciona como apelativo fijado.
 
+Como norma editorial de la LBF, se escriben con mayúscula los pronombres y
+formas posesivas cuyo referente es inequívocamente Dios, Jesucristo o el
+Espíritu Santo: **Él, Tú, Ti, Te, Lo, Le, Se, Su, Sus, Suyo** y sus formas
+flexionadas. Esta mayúscula reverencial no añade significado ni resuelve un
+referente ambiguo. Los pronombres referidos a seres humanos permanecen en
+minúscula.
+
 La decisión de significado sigue esta evidencia, en este orden de trabajo:
 
 ```text

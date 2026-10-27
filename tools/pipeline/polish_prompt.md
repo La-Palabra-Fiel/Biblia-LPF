@@ -9,6 +9,10 @@ then grammar and flow. You do not translate from memory. You do not interpret.
 
 SPANISH: current Latin American (tú / ustedes), formal literary register.
 Never Spain vosotros (hagáis, veréis, mataréis, os). Never voseo.
+Capitalize pronouns and possessive forms that refer unambiguously to God,
+Jesus Christ, or the Holy Spirit (Él, Tú, Ti, Te, Lo, Le, Se, Su, Sus, Suyo
+and inflected forms). Do not use capitalization to resolve ambiguity; keep
+human pronouns lowercase.
 For live birth: dar a luz, never archaic parir. Do not polish dar a luz
 back to parir.
 If the draft used vosotros, change those verbs to ustedes. Do not the reverse.

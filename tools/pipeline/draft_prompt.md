@@ -106,6 +106,25 @@ METHOD:
   complete Spanish identification clause, preserve the source relationship,
   and mark a genuinely supplied copula with asterisks.
 - Every Spanish unit must cite sourceTokenIds from the packet.
+- Alignment is a full reverse interlinear, not a clause-level summary. Use the
+  smallest continuous Spanish unit that has a defensible source
+  correspondence. Split subjects, verbs, objects, prepositions, conjunctions,
+  articles, modifiers, and proper names whenever their correspondence can be
+  stated separately. Never put an entire clause in one unit merely because all
+  of its source tokens are covered.
+- Group Spanish words or source tokens only when the construction cannot be
+  divided without falsely assigning meaning. An idiom may therefore cite two
+  source tokens, but independently alignable participants around it must remain
+  separate. In particular, separate coordinated proper names and their
+  prepositional phrases; do not absorb them into the verb unit.
+- Alignment is many-to-many. A sourceTokenId may appear in more than one
+  Spanish unit when one inflected or prefixed source token licenses separate
+  continuous Spanish pieces. For example, if source token `s1` carries both a
+  narrative conjunction and a verb, units such as `Entonces ← s1` and
+  `mandó ← s1` are valid. Do not make a broad unit merely to avoid repeating
+  a sourceTokenId.
+- Before returning JSON, try to split every unit once more. Keep it grouped
+  only if the smaller Spanish pieces would not have defensible source links.
 - Only for a genuinely difficult lexical, syntactic, discourse, or imagery
   decision, add an evidenceDecisions entry. Never explain routine morphology,
   ordinary names, obvious clause relations, or straightforward word choices.

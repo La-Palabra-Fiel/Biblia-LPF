@@ -6,6 +6,7 @@ Does not write translation Markdown, alignment, or STATUS.md.
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 import urllib.error
@@ -31,6 +32,11 @@ class OpenAIResponseError(RuntimeError):
 
 def load_system() -> str:
     return PROMPT_PATH.read_text(encoding="utf-8").strip()
+
+
+def prompt_fingerprint() -> str:
+    """Bind a draft to the exact translation and alignment specification."""
+    return hashlib.sha256(load_system().encode("utf-8")).hexdigest()
 
 
 def draft_path(book_slug: str, chapter: int, verse: int, label: str = "gpt56") -> Path:
@@ -84,6 +90,29 @@ def allowed_token_ids(packet: dict) -> set[str]:
     }
 
 
+def alignment_precision_findings(packet: dict, units: list[dict]) -> list[dict]:
+    """Find plainly coarse units without pretending to solve alignment locally."""
+    tokens = packet.get("tokens") or []
+    proper_ids = {
+        str(token.get("sourceTokenId"))
+        for token in tokens
+        if "noun proper" in str(token.get("morphExpanded") or "").casefold()
+    }
+    findings = []
+    for unit in units:
+        surface = " ".join(str((unit or {}).get("es") or "").split())
+        ids = list(dict.fromkeys(str(x) for x in ((unit or {}).get("sourceTokenIds") or [])))
+        words = re.findall(r"\w+", surface, re.UNICODE)
+        issue = ""
+        if len(ids) >= 4 and len(words) >= 4:
+            issue = "The alignment unit is too broad; split it into the smallest defensible Spanish-to-source correspondences."
+        elif len(set(ids) & proper_ids) >= 2:
+            issue = "The alignment unit combines independently alignable proper names; put each name in its own unit."
+        if issue:
+            findings.append({"severity": "fail", "issue": issue, "spanishSpan": surface, "sourceTokenIds": ids})
+    return findings
+
+
 def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
     allowed = allowed_token_ids(packet)
     units = []
@@ -133,6 +162,8 @@ def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
         "evidenceDecisions": evidence_decisions,
         "addedConcepts": added,
         "droppedUncitedUnits": dropped,
+        "alignmentPrecisionFindings": alignment_precision_findings(packet, units),
+        "promptSha256": prompt_fingerprint(),
     }
 
 

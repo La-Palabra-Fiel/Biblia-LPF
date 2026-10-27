@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from audit_lib import normalize_audit
-from draft_lib import normalize_draft
+from draft_lib import normalize_draft, prompt_fingerprint
 from morph import expand_hebrew_morph
 from polish_lib import freeze_from, normalize_polish
 from source_packet import build_packet, dump_prompt, packet_for_prompt
@@ -74,6 +74,28 @@ class SourcePacketTests(unittest.TestCase):
         draft = normalize_draft(raw, packet, "test")
         self.assertEqual(draft["droppedUncitedUnits"], 1)
         self.assertEqual(len(draft["units"]), 1)
+
+    def test_draft_is_bound_to_prompt_and_flags_coarse_alignment(self) -> None:
+        packet = {
+            "book": "exodo",
+            "reference": "Éxodo 9:27",
+            "chapter": 9,
+            "verse": 27,
+            "tokens": [
+                {"sourceTokenId": f"h{i}", "morphExpanded": "Hebrew; noun common"}
+                for i in range(1, 6)
+            ],
+        }
+        raw = {
+            "spanish": "Entonces el rey mandó llamar",
+            "units": [{
+                "es": "Entonces el rey mandó llamar",
+                "sourceTokenIds": ["h1", "h2", "h3", "h4", "h5"],
+            }],
+        }
+        draft = normalize_draft(raw, packet, "test")
+        self.assertEqual(draft["promptSha256"], prompt_fingerprint())
+        self.assertEqual(draft["alignmentPrecisionFindings"][0]["severity"], "fail")
 
     def test_polish_freeze_keeps_dual_and_vivira(self) -> None:
         draft = {

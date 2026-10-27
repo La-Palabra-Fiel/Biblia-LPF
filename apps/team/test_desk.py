@@ -68,13 +68,14 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(desk.recovered_path("exodo",3),desk.RECOVERED/"exodo-3.json")
     def test_failed_review_attempt_can_be_recovered_before_validation(self):
         book=type("B",(),{"slug":"exodo"})()
-        payload={"spanish":"Texto revisado","units":[{"es":"Texto revisado","sourceTokenIds":["h1"]}],"decision":"","sourceConfirmed":True,"alignmentConfirmed":True,"suppliedConfirmed":True,"auditOverrideConfirmed":True}
+        payload={"spanish":"Texto revisado","units":[{"es":"Texto revisado","sourceTokenIds":["h1"]}],"unitsComplete":True,"decision":"","sourceConfirmed":True,"alignmentConfirmed":True,"suppliedConfirmed":True,"auditOverrideConfirmed":True}
         desk.save_review_attempt(book,3,1,"Ana",payload)
         saved=desk.read_json(desk.recovered_path("exodo",3),{})["verses"]["1"]
         self.assertEqual(saved["spanish"],"Texto revisado")
         self.assertEqual(saved["lastAttemptedBy"],"Ana")
         self.assertTrue(saved["suppliedConfirmed"])
         self.assertTrue(saved["auditOverrideConfirmed"])
+        self.assertTrue(saved["unitsComplete"])
     def test_current_human_review_must_match_canonical_spanish(self):
         root=Path(self.tmp.name); human=root/"human.json"; translation=root/"exodo.md"
         translation.write_text("# Éxodo\n\n## Capítulo 6\n\n### 6:26\n\nEstos *son* Aarón y Moisés.\n",encoding="utf-8")
@@ -125,6 +126,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("La revisión encontró problemas",html)
         self.assertIn("g.alignmentFindings",html)
         self.assertIn("reglas anteriores",html)
+        self.assertIn("Alineación antigua retirada",html)
+        self.assertIn("lbf-review-draft-v3:${current.promptSha256}",html)
+        self.assertIn("button.disabled=!!r.humanReviewed||stale",html)
         self.assertIn('class="override"',html)
         self.assertIn("la aplicación ya no la redacta",html)
         self.assertIn('class="supplied"',html)
@@ -134,6 +138,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("refreshTokenSpanish",html)
         self.assertIn("mergeSeedUnits",html)
         self.assertIn("Añadir unidad",html)
+        self.assertIn("Quitar esta unidad de alineación",html)
+        self.assertIn("¿Seguro que quieres quitar esta unidad de alineación?",html)
+        self.assertIn("unitsComplete:true",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

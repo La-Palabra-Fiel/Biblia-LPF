@@ -226,6 +226,7 @@ def save_review_attempt(book, chapter: int, verse: int, person: str, payload: di
     verses[str(verse)] = {
         "spanish": str(payload.get("spanish") or ""),
         "units": payload.get("units") if isinstance(payload.get("units"), list) else [],
+        "unitsComplete": bool(payload.get("unitsComplete")),
         "decision": str(payload.get("decision") or ""),
         "sourceConfirmed": bool(payload.get("sourceConfirmed")),
         "alignmentConfirmed": bool(payload.get("alignmentConfirmed")),
@@ -348,7 +349,7 @@ def chapter_view(slug: str, chapter) -> dict:
         ):
             recovered_verse = {**recovered_verse, "units": candidate["units"]}
         rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": verse_body(canonical, number, verse) or "", "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {"source": "missing", "fidelity": "missing", "spanish": "missing"}, "humanReviewed": human_review_is_current(slug, number, verse)})
-    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "precedents": human_precedents(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
+    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "precedents": human_precedents(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
 def _run(args: list[str], *, allow_gate_failure: bool = False) -> None:

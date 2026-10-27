@@ -7,7 +7,7 @@
 
 ### 1:1
 
-Y llamó a Moisés, y le habló Jehová desde *la* tienda de reunión, diciendo:
+Y llamó a Moisés, y Yahvé le habló desde *la* tienda de reunión, diciendo:
 
 ### 1:2
 

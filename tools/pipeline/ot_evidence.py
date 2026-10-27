@@ -37,6 +37,11 @@ OSIS_NS = "http://www.bibletechnologies.net/2003/OSIS/namespace"
 
 def _blob_sha1(path: Path) -> str:
     data = path.read_bytes()
+    # Windows checkouts may expand LF to CRLF. Reconstruct the pinned Git blob
+    # only for that reversible conversion; all other byte changes remain visible.
+    crlf_only = b"\r\n" in data and b"\r" not in data.replace(b"\r\n", b"")
+    if crlf_only:
+        data = data.replace(b"\r\n", b"\n")
     return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
 
 

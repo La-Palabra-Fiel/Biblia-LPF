@@ -46,6 +46,21 @@ class DeskTests(unittest.TestCase):
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]}])
         self.assertEqual(len(desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"dos","sourceTokenIds":["h2"]}],"Uno, dos.")),2)
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"tres","sourceTokenIds":["h2"]}],"Uno, dos.")
+    def test_alignment_rejects_obviously_broad_units(self):
+        packet={"tokens":[{"sourceTokenId":f"h{i}","morphExpanded":"Hebrew; noun common"} for i in range(1,6)]}
+        with self.assertRaisesRegex(ValueError,"too broad"):
+            desk.validate_units(packet,[{"es":"Entonces el rey mandó llamar","sourceTokenIds":["h1","h2","h3","h4","h5"]}])
+        precise=[{"es":"Entonces","sourceTokenIds":["h1"]},{"es":"el rey","sourceTokenIds":["h2"]},{"es":"mandó llamar","sourceTokenIds":["h3","h4"]},{"es":"hoy","sourceTokenIds":["h5"]}]
+        self.assertEqual(len(desk.validate_units(packet,precise,"Entonces el rey mandó llamar hoy.")),4)
+    def test_alignment_separates_proper_names(self):
+        packet={"tokens":[
+            {"sourceTokenId":"h1","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h2","morphExpanded":"Hebrew; conjunction; noun proper"},
+        ]}
+        with self.assertRaisesRegex(ValueError,"proper names"):
+            desk.validate_units(packet,[{"es":"Moisés y Aarón","sourceTokenIds":["h1","h2"]}])
+        precise=[{"es":"Moisés","sourceTokenIds":["h1"]},{"es":"y Aarón","sourceTokenIds":["h2"]}]
+        self.assertEqual(len(desk.validate_units(packet,precise,"Moisés y Aarón")),2)
     def test_verse_scanner(self):
         text="# Éxodo\n\n## Capítulo 3\n\n### 3:1\n\nTexto.\n\n### 3:2\n\n"
         self.assertEqual(desk.verse_body(text,3,1),"Texto.");self.assertEqual(desk.verse_body(text,3,2),"");self.assertIsNone(desk.verse_body(text,3,9))
@@ -95,6 +110,9 @@ class DeskTests(unittest.TestCase):
     def test_prompt_rejects_fragmentary_identification(self):
         prompt=(Path(desk.__file__).resolve().parents[2]/"tools"/"pipeline"/"draft_prompt.md").read_text(encoding="utf-8")
         self.assertIn("Él, Aarón y Moisés",prompt)
+        self.assertIn("smallest continuous Spanish unit",prompt)
+        self.assertIn("full reverse interlinear",prompt)
+        self.assertIn("sourceTokenId may appear in more than one",prompt)
     def test_notification_ui_is_accessible_and_explains_credentials(self):
         html=(Path(desk.__file__).resolve().parent/"public"/"index.html").read_text(encoding="utf-8")
         self.assertIn('id="notifications" aria-live="polite"',html)
@@ -104,7 +122,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("La revisión mecánica local es gratuita",html)
         self.assertIn("/api/audit-verse",html)
         self.assertIn("Nunca habrá más de",html)
-        self.assertIn("La auditoría encontró problemas",html)
+        self.assertIn("La revisión encontró problemas",html)
+        self.assertIn("g.alignmentFindings",html)
+        self.assertIn("reglas anteriores",html)
         self.assertIn('class="override"',html)
         self.assertIn("la aplicación ya no la redacta",html)
         self.assertIn('class="supplied"',html)

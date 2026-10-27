@@ -35,7 +35,7 @@ from auto_pass import write_verse  # noqa: E402
 from books import OT, get_book  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
 from source_packet import build_packet, list_verses  # noqa: E402
-from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, build_user_prompt as build_draft_prompt, load_system as load_draft_system  # noqa: E402
+from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, alignment_precision_findings, build_user_prompt as build_draft_prompt, load_system as load_draft_system, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
 from audit_gpt import AUDIT_MAX_COMPLETION_TOKENS  # noqa: E402
 from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_prompt  # noqa: E402
 
@@ -265,7 +265,9 @@ def gate_for(slug: str, chapter: int, verse: int, path: Path, candidate: dict) -
     audit = read_json(folder / f"{slug}-{chapter}-{verse}.audit-gpt-{label}.json", {})
     check = read_json(folder / f"{slug}-{chapter}-{verse}.spanish-check-{label}.json", {})
     required = audit_required(candidate, check)
-    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or []}
+    packet = read_json(packet_path(slug, chapter, verse), {})
+    alignment_findings = alignment_precision_findings(packet, candidate.get("units") or [])
+    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": candidate.get("promptSha256") == draft_prompt_fingerprint(), "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or [], "alignmentFindings": alignment_findings}
 
 
 def human_precedents(slug: str) -> list[dict]:
@@ -379,6 +381,7 @@ def prepare_estimate(name, slug, chapter, token="") -> dict:
             and candidate.get("model") == TEAM_MODEL
             and candidate.get("reasoningEffort") == TEAM_REASONING
             and candidate.get("packetSha256") == packet_fingerprint(packet)
+            and candidate.get("promptSha256") == draft_prompt_fingerprint()
         )
         if not fresh_draft:
             draft_calls += 1
@@ -451,7 +454,7 @@ def _prepare(slug: str, chapter: int, event: threading.Event) -> None:
             candidate = read_json(path, {})
             if candidate.get("schema") == "lbf-human-reviewed-candidate-v1": continue
             packet = read_json(packet_path(slug, chapter, verse), {})
-            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet):
+            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet) or candidate.get("promptSha256") != draft_prompt_fingerprint():
                 _run([sys.executable, str(PIPELINE / "draft_gpt.py"), slug, str(chapter), str(verse), "--label", "team-gpt"])
                 path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"; candidate = read_json(path, {})
             label = label_for(candidate, path); folder = pipeline_dir(slug)
@@ -504,12 +507,17 @@ def audit_verse(payload: dict) -> dict:
 
 def validate_units(packet: dict, units, spanish: str = "") -> list[dict]:
     if not isinstance(units, list) or not units: raise ValueError("Alignment units are required.")
-    allowed = {str(t.get("sourceTokenId")) for t in packet.get("tokens") or []}; covered = set(); clean = []
+    tokens = packet.get("tokens") or []
+    allowed = {str(t.get("sourceTokenId")) for t in tokens}; covered = set(); clean = []
     for unit in units:
         surface = " ".join(str((unit or {}).get("es") or "").split()); ids = [str(x) for x in ((unit or {}).get("sourceTokenIds") or [])]
         if not surface or not ids: raise ValueError("Every alignment unit needs Spanish and source tokens.")
         if set(ids) - allowed: raise ValueError("An alignment unit contains an unknown source token.")
         covered.update(ids); clean.append({"es": surface, "sourceTokenIds": ids})
+    precision = alignment_precision_findings(packet, clean)
+    if precision:
+        finding = precision[0]
+        raise ValueError(f'{finding["issue"]} Spanish unit: "{finding["spanishSpan"]}"')
     if allowed - covered: raise ValueError("The alignment omits source tokens: " + ", ".join(sorted(allowed - covered)))
     if spanish:
         words = lambda value: [x.casefold() for x in re.findall(r"\w+", value, re.UNICODE)]
@@ -556,6 +564,8 @@ def approve_verse(payload: dict) -> dict:
                 raise ValueError("This candidate was not drafted with the required medium reasoning effort. Prepare this verse again.")
             if prior.get("packetSha256") != packet_fingerprint(packet):
                 raise ValueError("This candidate is not bound to the current canonical packet. Prepare this verse again.")
+            if prior.get("promptSha256") != draft_prompt_fingerprint():
+                raise ValueError("This candidate was created under an older translation or alignment specification. Prepare this verse again.")
             gate = gate_for(book.slug, chapter, verse, prior_path, prior)
             if gate["spanish"] == "missing":
                 raise ValueError("The deterministic Spanish gate must run before human adjudication.")

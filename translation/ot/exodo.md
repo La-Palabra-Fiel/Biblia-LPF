@@ -915,63 +915,63 @@ Y dijo Yahvé a Moisés: «Levántate temprano por la mañana, preséntate ante 
 
 ### 9:14
 
-Porque en la vez esta yo enviando todas mis plagas a tu corazón y en tus siervos y en tu pueblo, a fin de que conozcas que no hay como yo en toda la tierra.
+Porque esta vez yo envío todas mis plagas contra tu corazón, contra tus siervos y contra tu pueblo, para que sepas que no hay nadie como yo en toda la tierra.
 
 ### 9:15
 
-Porque ahora envié mi mano y te herí a ti y a tu pueblo con peste, y serías borrado desde la tierra.
+Porque ya habría extendido mi mano y te habría herido a ti y a tu pueblo con la peste, y habrías sido borrado de la tierra.
 
 ### 9:16
 
-Pero por causa de esto te hice estar en pie, por causa de hacerte ver mi fuerza, y a fin de contar mi nombre en toda la tierra.
+Pero para esto te he hecho permanecer en pie: para mostrarte mi poder y para que se proclame mi nombre en toda la tierra.
 
 ### 9:17
 
-Todavía tú exaltándote en mi pueblo, para no enviarlos.
+Todavía te exaltas contra mi pueblo para no dejarlos ir.
 
 ### 9:18
 
-He aquí yo haciendo llover como el tiempo de mañana granizo muy pesado, que no fue como él en Egipto desde el día de su ser fundado y hasta ahora.
+He aquí mañana a esta hora haré llover granizo muy pesado, como no lo ha habido en Egipto desde el día en que fue fundado hasta ahora.
 
 ### 9:19
 
-Y ahora, envía, haz refugiar a tu ganado y a todo lo que a ti en el campo; todo el hombre y el ganado que se halle en el campo y no se recoja a la casa, y descenderá sobre ellos el granizo y morirán.
+Y ahora manda poner a salvo tu ganado y todo lo que tienes en el campo. Todo hombre y todo animal que se encuentren en el campo y no sean recogidos dentro de la casa, sobre ellos descenderá el granizo y morirán.
 
 ### 9:20
 
-El temiente la palabra de Yahvé, de siervos de Faraón, hizo huir a sus siervos y a su ganado a las casas.
+El que, entre los siervos de Faraón, temía la palabra de Yahvé hizo huir a sus siervos y su ganado a las casas.
 
 ### 9:21
 
-Y el que no puso su corazón a la palabra de Yahvé, y dejó a sus siervos y a su ganado en el campo.
+Y el que no puso su corazón en la palabra de Yahvé dejó a sus siervos y su ganado en el campo.
 
 ### 9:22
 
-Y dijo Yahvé a Moisés: Extiende tu mano sobre los cielos, y sea granizo en toda tierra de Egipto, sobre el hombre y sobre el ganado y sobre toda hierba del campo en tierra de Egipto.
+Y Yahvé dijo a Moisés: «Extiende tu mano hacia los cielos, y que haya granizo en toda la tierra de Egipto, sobre el hombre y sobre el animal y sobre toda la hierba del campo en la tierra de Egipto».
 
 ### 9:23
 
-Y extendió Moisés su vara sobre los cielos, y Yahvé dio voces y granizo, y anduvo fuego a tierra, e hizo llover Yahvé granizo sobre tierra de Egipto.
+Y Moisés extendió su vara hacia los cielos, y Yahvé dio sonidos y granizo, y *el* fuego se dirigió hacia *la* tierra; y Yahvé hizo llover granizo sobre la tierra de Egipto.
 
 ### 9:24
 
-Y fue granizo, y fuego asiendo en medio del granizo, pesado mucho, que no fue como él en toda tierra de Egipto desde entonces de ser a nación.
+Hubo granizo muy fuerte, y fuego que se prendía en medio del granizo, como no había habido otro igual en toda la tierra de Egipto desde que llegó a ser una nación.
 
 ### 9:25
 
-Y hirió el granizo en toda tierra de Egipto todo lo que en el campo, desde hombre y hasta ganado, y toda hierba del campo hirió el granizo, y todo árbol del campo quebró.
+Y el granizo golpeó en toda la tierra de Egipto todo lo que estaba en el campo, desde el ser humano hasta el animal; y el granizo golpeó toda la hierba del campo y quebró todo árbol del campo.
 
 ### 9:26
 
-Solo en tierra de Gosén, que allí hijos de Israel, no fue granizo.
+Solo en la tierra de Gosén, donde estaban los hijos de Israel, no hubo granizo.
 
 ### 9:27
 
-Y envió Faraón y llamó a Moisés y a Aarón, y dijo a ellos: He pecado la vez esta; Yahvé el justo, y yo y mi pueblo los malos.
+Entonces Faraón mandó llamar a Moisés y a Aarón, y les dijo: «He pecado esta vez. Yahvé es el justo, y mi pueblo y yo somos los malvados».
 
 ### 9:28
 
-Intercedan a Yahvé, y bastante de ser voces de Dios y granizo, y enviaré a ustedes, y no añadirán permanecer.
+Rueguen a Yahvé, y basta de que haya sonidos de Dios y granizo; y los dejaré ir, y no permanecerán más.
 
 ### 9:29
 

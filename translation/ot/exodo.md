@@ -51,7 +51,7 @@ Entonces pusieron sobre él jefes de trabajo forzado para afligirlo con sus carg
 
 ### 1:12
 
-Y cuanto más lo afligían, tanto más se multiplicaba y tanto más se extendía; y sintieron repugnancia ante los hijos de Israel.
+Y cuanto más lo afligían, tanto más se multiplicaba y tanto más se extendía; y sintieron horror ante los hijos de Israel.
 
 ### 1:13
 

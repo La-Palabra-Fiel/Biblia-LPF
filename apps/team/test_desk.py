@@ -90,6 +90,11 @@ class DeskTests(unittest.TestCase):
             estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
         self.assertEqual(estimate["humanReviewedSkipped"],2)
         self.assertEqual(estimate["maximumPaidCalls"],0)
+    def test_single_verse_prepare_rejects_nonexistent_verse(self):
+        book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder"):
+            with self.assertRaisesRegex(ValueError,"not in this Protestant chapter"):
+                desk.prepare_estimate("Ana","exodo",1,"11111111",14)
     def test_prepare_worker_makes_no_calls_for_current_human_approval(self):
         key="exodo:6"; claims={key:{"name":"Ana"}}
         with patch.object(desk,"list_verses",return_value=[1]),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"_run") as run,patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"):
@@ -126,9 +131,12 @@ class DeskTests(unittest.TestCase):
         self.assertIn("La revisión encontró problemas",html)
         self.assertIn("g.alignmentFindings",html)
         self.assertIn("reglas anteriores",html)
-        self.assertIn("Alineación antigua retirada",html)
+        self.assertIn("Preparación requerida",html)
         self.assertIn("lbf-review-draft-v3:${current.promptSha256}",html)
-        self.assertIn("button.disabled=!!r.humanReviewed||stale",html)
+        self.assertIn('const prepareOneButton=a.querySelector(".prepare-one")',html)
+        self.assertIn("Preparar este versículo con GPT‑5.6 Sol",html)
+        self.assertIn("/api/prepare-verse-estimate",html)
+        self.assertIn("/api/prepare-verse",html)
         self.assertIn('class="override"',html)
         self.assertIn("la aplicación ya no la redacta",html)
         self.assertIn('class="supplied"',html)

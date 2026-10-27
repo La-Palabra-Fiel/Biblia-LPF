@@ -359,15 +359,22 @@ def _run(args: list[str], *, allow_gate_failure: bool = False) -> None:
         raise RuntimeError((result.stderr or result.stdout or "Pipeline command failed").strip())
 
 
-def prepare_estimate(name, slug, chapter, token="") -> dict:
+def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
     person = authorize(name, token)
     book, number, verses = chapter_or_raise(slug, chapter)
     with _lock:
         assert_holder(person, book.slug, number)
+    selected_verses = verses
+    selected_verse = None
+    if verse is not None:
+        selected_verse = int(verse or 0)
+        if selected_verse not in verses:
+            raise ValueError("That verse is not in this Protestant chapter.")
+        selected_verses = [selected_verse]
     draft_calls = audit_calls = skipped_human = 0
     estimated_input_tokens = 0
     possible_audit_input_tokens = 0
-    for verse in verses:
+    for verse in selected_verses:
         if human_review_is_current(book.slug, number, verse):
             skipped_human += 1
             continue
@@ -406,6 +413,7 @@ def prepare_estimate(name, slug, chapter, token="") -> dict:
     return {
         "book": book.slug,
         "chapter": number,
+        "verse": selected_verse,
         "draftCalls": draft_calls,
         "auditCalls": audit_calls,
         "paidCalls": draft_calls + audit_calls,
@@ -421,9 +429,14 @@ def prepare_estimate(name, slug, chapter, token="") -> dict:
     }
 
 
-def prepare(name, slug, chapter, token="", cost_confirmed=False) -> None:
+def prepare(name, slug, chapter, token="", cost_confirmed=False, verse=None) -> None:
     person = authorize(name, token)
-    book, number, _ = chapter_or_raise(slug, chapter)
+    book, number, verses = chapter_or_raise(slug, chapter)
+    selected_verse = None
+    if verse is not None:
+        selected_verse = int(verse or 0)
+        if selected_verse not in verses:
+            raise ValueError("That verse is not in this Protestant chapter.")
     if not cost_confirmed:
         raise ValueError("Review and confirm the preparation cost estimate first.")
     with _lock:
@@ -434,15 +447,20 @@ def prepare(name, slug, chapter, token="", cost_confirmed=False) -> None:
             raise ValueError("All preparation workers are occupied.")
         event = threading.Event()
         _stops[key] = event
-        _threads[key] = threading.Thread(target=_prepare, args=(book.slug, number, event), daemon=True)
-        claims = load_claims(); claims[key].update(running=True, note="Preparing GPT gates", updated=now()); save_claims(claims)
+        _threads[key] = threading.Thread(target=_prepare, args=(book.slug, number, event, selected_verse), daemon=True)
+        claims = load_claims(); claims[key].update(running=True, note=(f"Preparing {number}:{selected_verse}" if selected_verse else "Preparing GPT gates"), updated=now()); save_claims(claims)
         _threads[key].start()
 
 
-def _prepare(slug: str, chapter: int, event: threading.Event) -> None:
+def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | None = None) -> None:
     key, error = claim_key(slug, chapter), ""
     try:
-        for verse in list_verses(slug, chapter):
+        verses = list_verses(slug, chapter)
+        if only_verse is not None:
+            if only_verse not in verses:
+                raise ValueError("That verse is not in this Protestant chapter.")
+            verses = [only_verse]
+        for verse in verses:
             if event.is_set(): break
             if human_review_is_current(slug, chapter, verse):
                 continue
@@ -497,6 +515,8 @@ def audit_verse(payload: dict) -> dict:
     packet = read_json(packet_path(book.slug, chapter, verse), {})
     if candidate.get("packetSha256") != packet_fingerprint(packet):
         raise ValueError("Prepare this verse again before requesting an audit.")
+    if candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("promptSha256") != draft_prompt_fingerprint():
+        raise ValueError("Prepare this verse with the current GPT and alignment specification before requesting an audit.")
     label = label_for(candidate, path)
     audit_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}-{verse}.audit-gpt-{label}.json"
     existing = read_json(audit_path, {})

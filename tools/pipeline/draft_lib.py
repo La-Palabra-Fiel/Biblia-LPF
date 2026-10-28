@@ -19,7 +19,10 @@ from usage_lib import extract_usage
 
 PROMPT_PATH = Path(__file__).resolve().parent / "draft_prompt.md"
 DRAFT_SCHEMA = "lbf-gpt-draft-v1"
-DRAFT_MAX_COMPLETION_TOKENS = 4000
+# The budget includes reasoning as well as the Spanish and full alignment JSON.
+# A 4,000-token cap repeatedly exhausted the entire budget on reasoning alone.
+# Team Desk uses this same constant in its pre-run maximum-cost estimate.
+DRAFT_MAX_COMPLETION_TOKENS = 8000
 DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v5"
 COMPATIBLE_DRAFT_SPEC_VERSIONS = {
     "lbf-full-reverse-interlinear-v1",

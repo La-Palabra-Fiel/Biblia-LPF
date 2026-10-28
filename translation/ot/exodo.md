@@ -1257,27 +1257,27 @@ Y Yahvé pasará para herir a Egipto; y verá la sangre sobre el dintel y sobre 
 
 ### 12:24
 
-Y guardarán este asunto a estatuto a ti y a tus hijos hasta siempre.
+Y observarán esto como estatuto para ti y para tus hijos para siempre.
 
 ### 12:25
 
-Y será que vengan a la tierra que dará Yahvé a ustedes como habló, y guardarán este servicio.
+Y sucederá que, cuando entren en la tierra que Yahvé les dará, tal como lo ha dicho, celebrarán esta ceremonia.
 
 ### 12:26
 
-Y será que digan a ustedes sus hijos: ¿Qué este servicio a ustedes?
+Y sucederá que sus hijos les dirán: «¿Qué significa esta ceremonia para ustedes?»
 
 ### 12:27
 
-Y dirán: Sacrificio de pascua él a Yahvé, que pasó sobre casas de hijos de Israel en Egipto, en su herir a Egipto, y a nuestras casas libró. Y se inclinó el pueblo y se postraron.
+Y dirán: «Este es un sacrificio de Pascua para Yahvé, quien pasó de largo ante las casas de los hijos de Israel en Egipto cuando hirió a Egipto, y libró nuestras casas». Y el pueblo se inclinó y adoró.
 
 ### 12:28
 
-Y fueron e hicieron hijos de Israel; como que mandó Yahvé a Moisés y Aarón, así hicieron.
+Y los hijos de Israel fueron e hicieron como Yahvé ordenó a Moisés y Aarón; así hicieron.
 
 ### 12:29
 
-Y fue en media de la noche, y Yahvé hirió todo primogénito en tierra de Egipto, desde primogénito de Faraón el sentado sobre su trono hasta primogénito del cautivo que en casa del pozo, y todo primogénito de ganado.
+Y sucedió, a la mitad de la noche, que Yahvé hirió a todo primogénito en la tierra de Egipto, desde el primogénito de Faraón que estaba sentado en su trono, hasta el primogénito del cautivo que estaba en el calabozo, y todo primogénito de animal.
 
 ### 12:30
 

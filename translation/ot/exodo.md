@@ -1009,183 +1009,183 @@ Entonces Yahvé dijo a Moisés: Ve a Faraón, porque yo he hecho pesado su coraz
 
 ### 10:2
 
-y a fin de que cuentes en oídos de tu hijo y de hijo de tu hijo lo que me burlé en Egipto, y mis señales que puse en ellos, y conocerán que yo Yahvé.
+Y para que cuentes a oídos de tu hijo y del hijo de tu hijo cómo actué severamente en Egipto y Mis señales que puse allí, y ustedes sabrán que Yo *soy* Yahvé.
 
 ### 10:3
 
-Y vino Moisés y Aarón a Faraón, y dijeron a él: Así dijo Yahvé Dios de los hebreos: ¿Hasta cuándo rehusaste humillarte de mis faces? Envía a mi pueblo, y me servirán.
+Entonces fueron Moisés y Aarón a Faraón y le dijeron: «Así ha dicho Yahvé, Dios de los hebreos: “¿Hasta cuándo te has negado a humillarte ante Mi rostro? Deja ir a Mi pueblo, y Me servirán”».
 
 ### 10:4
 
-Porque si rehúsante tú de enviar a mi pueblo, he aquí yo trayente mañana langosta en tu límite.
+Porque si tú te niegas a dejar ir a Mi pueblo, he aquí que mañana traeré langostas a tu territorio.
 
 ### 10:5
 
-Y cubrirá el ojo de la tierra, y no podrá ver la tierra, y comerá el resto del escape, el restante a ustedes desde el granizo, y comerá todo el árbol, el brotante a ustedes desde el campo.
+Y cubrirá el ojo de la tierra, y no se podrá ver la tierra; y devorará el resto del remanente que les quedó del granizo, y devorará todo árbol que les brota del campo
 
 ### 10:6
 
-Y se llenarán tus casas y casas de todos tus siervos y casas de todo Egipto, que no vieron tus padres y padres de tus padres desde día de su ser sobre el suelo hasta el día este. Y se volvió y salió de con Faraón.
+Y llenarán tus casas, y las casas de todos tus siervos, y las casas de todo Egipto, como nunca lo habían visto tus padres ni los padres de tus padres desde el día en que existieron sobre la tierra hasta este día. Y se volvió y salió de la presencia de Faraón.
 
 ### 10:7
 
-Y dijeron siervos de Faraón a él: ¿Hasta cuándo será este a nosotros a trampa? Envía a los varones, y servirán a Yahvé su Dios. ¿Todavía no conoces que pereció Egipto?
+Y los siervos de Faraón le dijeron: ¿Hasta cuándo será este una trampa para nosotros? Deja ir a los hombres y que sirvan a Yahvé, su Dios. ¿Aún no sabes que Egipto ha perecido?
 
 ### 10:8
 
-Y fue hecho volver Moisés y Aarón a Faraón, y dijo a ellos: Vayan, sirvan a Yahvé su Dios. ¿Quién y quién los andantes?
+Y Moisés y Aarón fueron llevados de vuelta a Faraón, y él les dijo: «Vayan, sirvan a Yahvé, su Dios. ¿Quién y quién son los que van?»
 
 ### 10:9
 
-Y dijo Moisés: Con nuestros jóvenes y con nuestros ancianos iremos; con nuestros hijos y con nuestras hijas, con nuestro rebaño y con nuestro ganado iremos, porque fiesta de Yahvé a nosotros.
+Y Moisés dijo: «Con nuestros jóvenes y con nuestros ancianos iremos; con nuestros hijos y con nuestras hijas, con nuestro rebaño y con nuestro ganado iremos, porque tenemos una fiesta de Yahvé».
 
 ### 10:10
 
-Y dijo a ellos: Sea así Yahvé con ustedes, como enviaré a ustedes y a su pequeño. Vean que mal delante de sus rostros.
+Y les dijo: «Así esté Yahvé con ustedes como dejaré ir a ustedes y a sus niños. Miren que el mal está frente a sus rostros».
 
 ### 10:11
 
-No así; vayan ahora los varones y sirvan a Yahvé, porque ella ustedes buscan. Y los echó de con faces de Faraón.
+«Así no. Vayan ahora los hombres y sirvan a Yahvé, porque la buscan ustedes». Y los expulsó de delante del rostro de Faraón.
 
 ### 10:12
 
-Y dijo Yahvé a Moisés: Extiende tu mano sobre tierra de Egipto en la langosta, y suba sobre tierra de Egipto, y coma toda hierba de la tierra, todo lo que dejó el granizo.
+Y dijo Yahvé a Moisés: «Extiende tu mano sobre la tierra de Egipto para que la langosta suba sobre la tierra de Egipto y coma toda la hierba de la tierra, todo lo que dejó el granizo».
 
 ### 10:13
 
-Y extendió Moisés su vara sobre tierra de Egipto, y Yahvé condujo viento de oriente en la tierra todo el día aquel y toda la noche; la mañana fue, y el viento del oriente alzó la langosta.
+Y Moisés extendió su vara sobre la tierra de Egipto, y Yahvé impulsó un viento del este por la tierra todo aquel día y toda la noche. La mañana llegó, y el viento del este llevó la langosta.
 
 ### 10:14
 
-Y subió la langosta sobre toda tierra de Egipto, y reposó en todo límite de Egipto; pesada mucho. Delante de ella no fue así langosta como ella, y después de ella no será así.
+Y la langosta subió sobre toda la tierra de Egipto y se posó en todo el territorio de Egipto; era muy grave. Antes de ella no había habido tal langosta como ella, y después de ella no habrá una así.
 
 ### 10:15
 
-Y cubrió el ojo de toda la tierra, y se oscureció la tierra, y comió toda hierba de la tierra y todo fruto del árbol que dejó el granizo, y no quedó verdor alguno en el árbol y en hierba del campo en toda tierra de Egipto.
+Y cubrió la superficie de toda la tierra, y se oscureció la tierra; y comió toda la hierba de la tierra y todo el fruto del árbol que había dejado el granizo; y no quedó nada verde en el árbol ni en la hierba del campo, en toda la tierra de Egipto.
 
 ### 10:16
 
-Y se apresuró Faraón a llamar a Moisés y a Aarón, y dijo: He pecado a Yahvé su Dios y a ustedes.
+Y el faraón se apresuró a llamar a Moisés y a Aarón, y dijo: «He pecado contra Yahvé, Dios de ustedes, y contra ustedes».
 
 ### 10:17
 
-Y ahora, alza, por favor, mi pecado solo esta vez, e intercedan a Yahvé su Dios, y quite de sobre mí solo esta muerte.
+Y ahora, perdona, por favor, mi pecado solo esta vez, y rueguen a Yahvé, su Dios, para que quite de sobre mí solamente esta muerte.
 
 ### 10:18
 
-Y salió de con Faraón, e intercedió a Yahvé.
+Y salió de la presencia de Faraón y suplicó a Yahvé.
 
 ### 10:19
 
-Y volvió Yahvé viento de mar fuerte mucho, y alzó la langosta, y la empujó hacia mar de junco; no quedó langosta una en todo límite de Egipto.
+Y Yahvé hizo volver un viento del mar muy fuerte, y se llevó la langosta y la arrojó al mar de Juncos. No quedó ni una langosta en todo el territorio de Egipto.
 
 ### 10:20
 
-Y fortaleció Yahvé el corazón de Faraón, y no envió a hijos de Israel.
+Y endureció Yahvé el corazón de Faraón, y él no dejó ir a los hijos de Israel.
 
 ### 10:21
 
-Y dijo Yahvé a Moisés: Extiende tu mano sobre los cielos, y sea oscuridad sobre tierra de Egipto, y palpe oscuridad.
+Y Yahvé dijo a Moisés: «Extiende tu mano hacia los cielos, y que haya oscuridad sobre la tierra de Egipto, y que se pueda palpar la oscuridad».
 
 ### 10:22
 
-Y extendió Moisés su mano sobre los cielos, y fue oscuridad de tiniebla en toda tierra de Egipto tres días.
+Y extendió Moisés su mano hacia los cielos, y hubo oscuridad de tinieblas en toda la tierra de Egipto durante tres días.
 
 ### 10:23
 
-No vieron varón a su hermano, y no se levantaron varón de debajo de él tres días; y a todos hijos de Israel fue luz en sus moradas.
+Nadie vio a su hermano, y nadie se levantó de su lugar durante tres días; y para todos los hijos de Israel había luz en sus moradas.
 
 ### 10:24
 
-Y llamó Faraón a Moisés, y dijo: Vayan, sirvan a Yahvé; solo su rebaño y su ganado será detenido; también su pequeño irá con ustedes.
+Y Faraón llamó a Moisés y dijo: «Vayan, sirvan a Yahvé; solo sus rebaños y su ganado serán retenidos. También sus niños irán con ustedes».
 
 ### 10:25
 
-Y dijo Moisés: También tú darás en nuestra mano sacrificios y holocaustos, y haremos a Yahvé nuestro Dios.
+Y Moisés dijo: «Tú también pondrás en nuestras manos sacrificios y holocaustos, y los haremos para Yahvé, nuestro Dios».
 
 ### 10:26
 
-Y también nuestro ganado irá con nosotros; no quedará pezuña, porque de nosotros tomaremos para servir a Yahvé nuestro Dios, y nosotros no conocemos qué serviremos a Yahvé hasta nuestro venir allá.
+Y también nuestro ganado irá con nosotros; ninguna pezuña quedará, porque de él tomaremos para servir a Yahvé nuestro Dios, y nosotros no sabremos con qué serviremos a Yahvé hasta que lleguemos allá.
 
 ### 10:27
 
-Y fortaleció Yahvé el corazón de Faraón, y no quiso enviarlos.
+Y Yahvé endureció el corazón de Faraón, y no quiso dejarlos ir.
 
 ### 10:28
 
-Y dijo a él Faraón: Ve de sobre mí; guárdate a ti, no añadas ver mis faces, porque en día de tu ver mis faces morirás.
+Y Faraón le dijo: «Retírate de mí. Cuídate; no vuelvas a ver mi rostro, porque el día que veas mi rostro morirás».
 
 ### 10:29
 
-Y dijo Moisés: Así hablaste; no añadiré todavía ver tus faces.
+Y Moisés dijo: «Así has hablado; no volveré a ver tu rostro».
 
 ## Capítulo 11
 
 ### 11:1
 
-Y dijo Yahvé a Moisés: Todavía golpe uno traeré sobre Faraón y sobre Egipto; después de así enviará a ustedes desde esto; como su enviar, acabamiento echará echará a ustedes desde esto.
+Y dijo Yahvé a Moisés: «Aún traeré una plaga más sobre Faraón y sobre Egipto. Después de eso, los dejará ir de aquí; cuando los deje ir por completo, los expulsará —los expulsará— de aquí».
 
 ### 11:2
 
-Habla ahora en oídos del pueblo, y pidan varón de con su prójimo y mujer de con su prójima utensilios de plata y utensilios de oro.
+Habla, por favor, a oídos del pueblo, y que pidan —cada hombre a su compañero y cada mujer a su compañera— objetos de plata y objetos de oro.
 
 ### 11:3
 
-Y dio Yahvé favor del pueblo en ojos de Egipto; también el varón Moisés grande mucho en tierra de Egipto, en ojos de siervos de Faraón y en ojos del pueblo.
+Y Yahvé dio favor al pueblo ante los ojos de los egipcios. También el hombre Moisés *era* muy grande en la tierra de Egipto, ante los ojos de los siervos de Faraón y ante los ojos del pueblo.
 
 ### 11:4
 
-Y dijo Moisés: Así dijo Yahvé: Como media noche yo saliente en medio de Egipto.
+Y Moisés dijo: «Así dijo Yahvé: Como a la mitad de la noche, Yo salgo en medio de Egipto».
 
 ### 11:5
 
-Y morirá todo primogénito en tierra de Egipto, desde primogénito de Faraón el sentado sobre su trono hasta primogénito de la sierva que detrás de las muelas, y todo primogénito de ganado.
+Y morirá todo primogénito en la tierra de Egipto, desde el primogénito de Faraón, quien está sentado sobre su trono, hasta el primogénito de la sierva que está detrás de las dos piedras de molino, y todo primogénito de animal.
 
 ### 11:6
 
-Y será clamor grande en toda tierra de Egipto, que como él no fue, y como él no añadirá.
+Y habrá un gran clamor en toda la tierra de Egipto, como no lo ha habido y como no volverá a haberlo.
 
 ### 11:7
 
-Y a todos hijos de Israel no afilará perro su lengua, desde varón y hasta ganado, a fin de que conozcan que distinguirá Yahvé entre Egipto y entre Israel.
+Y contra ninguno de los hijos de Israel moverá un perro su lengua, desde el hombre hasta el animal, para que sepan que Yahvé hará distinción entre Egipto e Israel.
 
 ### 11:8
 
-Y descenderán todos tus siervos estos a mí y se postrarán a mí, diciendo: Sal tú y todo el pueblo que en tus pies, y después de así saldré. Y salió de con Faraón en ardor de nariz.
+Todos estos siervos tuyos descenderán hasta mí y se postrarán ante mí, diciendo: «Sal tú y todo el pueblo que está a tus pies». Y después de eso saldré. Y salió de junto a Faraón con ira ardiente.
 
 ### 11:9
 
-Y dijo Yahvé a Moisés: No oirá a ustedes Faraón, a fin de que se multipliquen mis prodigios en tierra de Egipto.
+Y dijo Yahvé a Moisés: «Faraón no los escuchará, para que se multipliquen Mis maravillas en la tierra de Egipto».
 
 ### 11:10
 
-Y Moisés y Aarón hicieron todos estos prodigios delante de Faraón, y fortaleció Yahvé el corazón de Faraón, y no envió a hijos de Israel desde su tierra.
+Y Moisés y Aarón hicieron todas estas maravillas delante de Faraón; y Yahvé endureció el corazón de Faraón, y él no dejó salir a los hijos de Israel de su tierra.
 
 ## Capítulo 12
 
 ### 12:1
 
-Y dijo Yahvé a Moisés y a Aarón en tierra de Egipto, diciendo:
+Y Yahvé dijo a Moisés y a Aarón en la tierra de Egipto, diciendo:
 
 ### 12:2
 
-Este mes a ustedes cabeza de meses; primero él a ustedes a meses del año.
+Este mes *es* para ustedes el principio de los meses; él *es* para ustedes el primero de los meses del año.
 
 ### 12:3
 
-Hablen a toda congregación de Israel, diciendo: En el diez a este mes, y tomarán para ellos, cada uno, una res del rebaño a casa de padres, una res del rebaño a la casa.
+Hablen a toda la congregación de Israel, diciendo: «El diez de este mes, cada uno tomará para sí un animal del rebaño por casa paterna, un animal del rebaño por casa».
 
 ### 12:4
 
-Y si mengua la casa de ser de res del rebaño, y tomará él y su vecino el cercano a su casa en cuenta de almas; varón según boca de su comida contarán sobre la res del rebaño.
+Y si la familia es demasiado pequeña para un animal del rebaño, él y su vecino más cercano a su casa lo tomarán conforme al número de personas; según lo que coma cada uno, harán el cálculo para el animal del rebaño.
 
 ### 12:5
 
-Cordero perfecto, macho, hijo de año, será a ustedes; de los corderos y de las cabras tomarán.
+Un animal del rebaño sin defecto, macho de un año, será para ustedes; lo tomarán de los corderos y de las cabras.
 
 ### 12:6
 
-Y será a ustedes a guarda hasta catorce día a este mes, y lo degollarán toda asamblea de congregación de Israel entre las tardes.
+Y estará bajo custodia de ustedes hasta el día catorce de este mes, y lo matará toda la asamblea de la congregación de Israel entre las dos tardes.
 
 ### 12:7
 
@@ -1193,67 +1193,67 @@ Y tomarán de la sangre y darán sobre las dos jambas y sobre el dintel, sobre l
 
 ### 12:8
 
-Y comerán la carne en esta noche; asado de fuego y panes ázimos sobre amargos lo comerán.
+Y esta noche comerán la carne asada al fuego y panes sin levadura; con hierbas amargas la comerán.
 
 ### 12:9
 
-No coman de él crudo y cocido cocido en las aguas, sino asado de fuego: su cabeza sobre sus piernas y sobre su interior.
+No coman de él crudo ni hervido por completo en agua, sino asado al fuego: su cabeza junto con sus piernas y sus entrañas.
 
 ### 12:10
 
-Y no dejarán de él hasta mañana, y el restante de él hasta mañana en el fuego quemarán.
+No dejarán nada de él hasta la mañana; y quemarán en el fuego lo que quede de él hasta la mañana.
 
 ### 12:11
 
-Y así lo comerán: sus lomos ceñidos, sus sandalias en sus pies y su bastón en su mano, y lo comerán en prisa; pascua él a Yahvé.
+Y así lo comerán: con sus lomos ceñidos, sus sandalias en sus pies y su bastón en su mano; y lo comerán con apresuramiento. Es Pascua para Yahvé.
 
 ### 12:12
 
-Y pasaré en tierra de Egipto en esta noche, e heriré todo primogénito en tierra de Egipto, desde hombre y hasta ganado, y en todos dioses de Egipto haré juicios; yo Yahvé.
+Y pasaré por la tierra de Egipto esta noche, y heriré a todo primogénito en la tierra de Egipto, desde el ser humano hasta el animal; y contra todos los dioses de Egipto haré juicios. Yo *soy* Yahvé.
 
 ### 12:13
 
-Y será la sangre a ustedes a señal sobre las casas que ustedes allí, y veré la sangre y pasaré sobre ustedes, y no será en ustedes plaga a destrucción en mi herir en tierra de Egipto.
+Y la sangre será para ustedes una señal sobre las casas en las que ustedes están; y veré la sangre y pasaré sobre ustedes. Y no habrá entre ustedes una plaga destructora cuando golpee la tierra de Egipto.
 
 ### 12:14
 
-Y será este día a ustedes a memorial, y lo celebrarán fiesta a Yahvé; a sus generaciones estatuto de siempre lo celebrarán.
+Y este día será para ustedes un memorial, y lo celebrarán como fiesta para Yahvé; a lo largo de sus generaciones, lo celebrarán como estatuto perpetuo.
 
 ### 12:15
 
-Siete días panes ázimos comerán; solo en el día primero harán cesar levadura de sus casas, porque todo comiente leudado, y será cortada esa alma de Israel, desde día primero hasta día séptimo.
+Durante siete días comerán panes sin levadura. Ya el primer día quitarán la levadura de sus casas, porque cualquiera que coma algo leudado desde el primer día hasta el séptimo día, esa persona será cortada de Israel.
 
 ### 12:16
 
-Y en el día primero convocación de santidad, y en el día séptimo convocación de santidad será a ustedes; toda obra no se hará en ellos, solo lo que se coma a toda alma, él solo se hará a ustedes.
+Y el primer día habrá para ustedes una convocación sagrada, y el séptimo día, una convocación sagrada. En esos días no se hará ningún trabajo; solo se hará para ustedes lo que se coma para cada persona.
 
 ### 12:17
 
-Y guardarán los panes ázimos, porque en hueso de este día saqué a sus ejércitos desde tierra de Egipto, y guardarán este día a sus generaciones estatuto de siempre.
+Y observarán los panes sin levadura, porque en este mismo día saqué a sus ejércitos de la tierra de Egipto; y guardarán este día a lo largo de sus generaciones como estatuto perpetuo.
 
 ### 12:18
 
-En el primero, en catorce día al mes, en la tarde, comerán panes ázimos, hasta día el uno y veinte al mes, en la tarde.
+En el primer mes, el día catorce del mes, al atardecer, comerán panes sin levadura hasta el día veintiuno del mes, al atardecer.
 
 ### 12:19
 
-Siete días levadura no se hallará en sus casas, porque todo comiente fermentado, y será cortada esa alma de congregación de Israel, en el peregrino y en natural de la tierra.
+Durante siete días no se hallará levadura en sus casas, porque cualquiera que coma algo leudado, esa persona será cortada de la congregación de Israel, sea extranjero o natural de la tierra.
 
 ### 12:20
 
-Todo fermentado no comerán; en todas sus moradas comerán panes ázimos.
+No comerán nada con levadura; en todas sus moradas comerán panes sin levadura.
 
 ### 12:21
 
-Y llamó Moisés a todos los ancianos de Israel, y dijo a ellos: Saquen y tomen para ustedes rebaño a sus familias, y degüellen la Pascua.
+Y Moisés llamó a todos los ancianos de Israel y les dijo: «Saquen y tomen para ustedes ganado menor según sus clanes, y degüellen el animal de la Pascua».
 
 ### 12:22
 
-Y tomarán manojo de hisopo y mojarán en la sangre que en la palangana, y harán tocar de la sangre que en la palangana al dintel y a las dos jambas, y ustedes no saldrán varón de puerta de su casa hasta la mañana.
+Y tomarán un manojo de hisopo y lo mojarán en la sangre que está en la palangana, y aplicarán la sangre que está en la palangana al dintel y a los dos postes de la puerta; y ninguno de ustedes saldrá por la puerta de su casa hasta la mañana.
 
 ### 12:23
 
-Y pasará Yahvé a herir a Egipto, y verá la sangre sobre el dintel y sobre las dos jambas, y pasará Yahvé sobre la puerta, y no dará al destructor a entrar a sus casas a herir.
+Y Yahvé pasará para herir a Egipto; y verá la sangre sobre el dintel y sobre los dos postes; y Yahvé pasará de largo ante la entrada y no permitirá que el destructor entre en sus casas para herir*los*
 
 ### 12:24
 

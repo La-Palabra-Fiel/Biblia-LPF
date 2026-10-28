@@ -102,6 +102,21 @@ class DeskTests(unittest.TestCase):
             estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
         self.assertEqual(estimate["humanReviewedSkipped"],2)
         self.assertEqual(estimate["maximumPaidCalls"],0)
+    def test_prepare_estimate_reuses_existing_candidate_without_paid_calls(self):
+        book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
+        candidate=Path(self.tmp.name)/"existing.json";candidate.write_text('{"spanish":"Texto","units":[{"es":"Texto","sourceTokenIds":["h1"]}]}\n',encoding="utf-8")
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"reusable_candidate",return_value=(candidate,{"spanish":"Texto"})),patch.object(desk,"build_packet") as build:
+            estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
+        build.assert_not_called()
+        self.assertEqual(estimate["reusedCandidates"],1)
+        self.assertEqual(estimate["maximumPaidCalls"],0)
+        self.assertEqual(estimate["auditCalls"],0)
+    def test_candidate_path_never_treats_request_json_as_draft(self):
+        root=Path(self.tmp.name)
+        (root/"exodo-2-1.draft-team-gpt.request.json").write_text('{"spanish":"wrong request"}\n',encoding="utf-8")
+        (root/"exodo-2-1.draft-auto.json").write_text('{"spanish":"usable auto seed"}\n',encoding="utf-8")
+        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"human_review_is_current",return_value=False):
+            self.assertEqual(desk.candidate_path("exodo",2,1).name,"exodo-2-1.draft-auto.json")
     def test_single_verse_prepare_rejects_nonexistent_verse(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder"):
@@ -142,16 +157,16 @@ class DeskTests(unittest.TestCase):
         self.assertIn("no la clave OpenAI",html)
         self.assertIn("Tu trabajo permanece guardado en este navegador",html)
         self.assertIn("/api/prepare-estimate",html)
-        self.assertIn("La revisión mecánica local es gratuita",html)
+        self.assertIn("Revisión humana local:</b> sin costo",html)
         self.assertIn("/api/audit-verse",html)
-        self.assertIn("Nunca habrá más de",html)
+        self.assertIn("Máximo calculado",html)
         self.assertIn("La revisión encontró problemas",html)
         self.assertIn("g.alignmentFindings",html)
         self.assertIn("reglas anteriores",html)
         self.assertIn("Preparación requerida",html)
-        self.assertIn("lbf-review-draft-v3:${current.promptSha256}",html)
-        self.assertIn('const prepareOneButton=a.querySelector(".prepare-one")',html)
-        self.assertIn("Preparar este versículo con GPT‑5.6 Sol",html)
+        self.assertIn("lbf-review-draft-v4:${current.book}",html)
+        self.assertIn("legacyDraftKey",html)
+        self.assertIn("Generar solo candidatos faltantes con Sol (pagado y opcional)",html)
         self.assertIn("/api/prepare-verse-estimate",html)
         self.assertIn("/api/prepare-verse",html)
         self.assertIn("open().catch",html)
@@ -171,6 +186,8 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Quitar esta unidad de alineación",html)
         self.assertIn("¿Seguro que quieres quitar esta unidad de alineación?",html)
         self.assertIn("unitsComplete:true",html)
+        self.assertIn("Puedes cancelar y revisar localmente sin pagar",html)
+        self.assertIn('g.source!=="canonical-local-seed"',html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

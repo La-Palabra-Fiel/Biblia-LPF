@@ -1281,91 +1281,91 @@ Y sucedió, a la mitad de la noche, que Yahvé hirió a todo primogénito en la 
 
 ### 12:30
 
-Y se levantó Faraón de noche, él y todos sus siervos y todo Egipto, y fue clamor grande en Egipto, porque no hay casa que no haya allí muerto.
+Y se levantó Faraón de noche, él y todos sus siervos y todo Egipto; y hubo un gran clamor en Egipto, porque no había casa donde no hubiera un muerto.
 
 ### 12:31
 
-Y llamó a Moisés y a Aarón de noche, y dijo: Levántense, salgan de medio de mi pueblo, también ustedes, también hijos de Israel, y vayan, sirvan a Yahvé como el hablar de ustedes.
+Y llamó a Moisés y a Aarón de noche, y dijo: «Levántense, salgan de en medio de mi pueblo, tanto ustedes como los hijos de Israel; y vayan, sirvan a Yahvé como dijeron».
 
 ### 12:32
 
-También su rebaño, también su ganado tomen como hablaron, y vayan, y bendigan también a mí.
+Tomen también sus ovejas y cabras, y también su ganado vacuno, como dijeron, y váyanse; y bendíganme también.
 
 ### 12:33
 
-Y se fortaleció Egipto sobre el pueblo a apresurar a enviarlos desde la tierra, porque dijeron: Todos nosotros muertos.
+Y Egipto presionó al pueblo para apresurarse para expulsarlos del país, porque dijeron: «Todos nosotros estamos muertos».
 
 ### 12:34
 
-Y alzó el pueblo su masa antes de que leudara; sus artesas atadas en sus mantos sobre su hombro.
+Y el pueblo llevó su masa antes de que fermentara, *con* sus recipientes para amasar atadas con sus mantos sobre sus hombros.
 
 ### 12:35
 
-Y hijos de Israel hicieron conforme a la palabra de Moisés, y pidieron de Egipto utensilios de plata y utensilios de oro y mantos.
+Y los hijos de Israel hicieron conforme a la palabra de Moisés, y pidieron a los egipcios objetos de plata, objetos de oro y ropa.
 
 ### 12:36
 
-Y Yahvé dio favor del pueblo en ojos de Egipto, y les prestaron, y despojaron a Egipto.
+Y Yahvé dio favor al pueblo a los ojos de los egipcios, y estos accedieron a sus peticiones; y *los israelitas* despojaron a Egipto.
 
 ### 12:37
 
-Y partieron hijos de Israel desde Raamses hacia Sucot, como seiscientos mil a pie los varones, aparte de pequeños.
+Y partieron los hijos de Israel de Ramsés hacia Sucot, unos seiscientos mil hombres a pie, aparte de los niños.
 
 ### 12:38
 
-Y también mezcla mucha subió con ellos, y rebaño y ganado, ganado pesado mucho.
+También subió con ellos una multitud mixta, así como rebaños y ganado vacuno: ganado en gran cantidad.
 
 ### 12:39
 
-Y cocieron la masa que sacaron desde Egipto tortas ázimas, porque no leudó, porque fueron echados desde Egipto y no pudieron demorarse, y también provisión no hicieron a ellos.
+Y hornearon la masa que habían sacado de Egipto en tortas sin levadura, porque no había fermentado; porque habían sido expulsados de Egipto y no habían podido demorarse, y tampoco habían preparado provisiones para sí mismos.
 
 ### 12:40
 
-Y morada de hijos de Israel que habitaron en Egipto treinta año y cuatrocientos año.
+Y el tiempo que los hijos de Israel habitaron en Egipto fue de treinta años y cuatrocientos años.
 
 ### 12:41
 
-Y fue al cabo de treinta año y cuatrocientos año, y fue en hueso de este día salieron todos los ejércitos de Yahvé desde tierra de Egipto.
+Y sucedió al cabo de treinta años y cuatrocientos años, y sucedió que en este mismo día salieron todos los ejércitos de Yahvé de la tierra de Egipto.
 
 ### 12:42
 
-Noche de guardias ella a Yahvé, para sacarlos desde tierra de Egipto; ella esta noche a Yahvé, guardias a todos hijos de Israel a sus generaciones.
+Fue una noche de vigilias para Yahvé, para sacarlos de la tierra de Egipto; esta noche es de vigilias para Yahvé, para todos los hijos de Israel por sus generaciones.
 
 ### 12:43
 
-Y dijo Yahvé a Moisés y Aarón: Este estatuto de la pascua: todo hijo de extranjería no comerá en él.
+Y dijo Yahvé a Moisés y a Aarón: Esta es la ordenanza de la Pascua: ningún hijo de extranjero comerá de ella.
 
 ### 12:44
 
-Y todo siervo varón compra de plata, y circuncidarás a él, entonces comerá en él.
+Y a todo esclavo de un hombre, comprado con dinero, lo circuncidarás; entonces podrá comer de ella.
 
 ### 12:45
 
-Residente y asalariado no comerá en él.
+Ni el residente temporal ni el trabajador contratado comerán de él.
 
 ### 12:46
 
-En casa una se comerá; no sacarás desde la casa, desde la carne, afuera, y hueso no quebrarán en él.
+En una sola casa se comerá; no sacarás fuera de la casa nada de la carne, y no quebrarán en él hueso alguno.
 
 ### 12:47
 
-Toda la congregación de Israel lo harán.
+Toda la congregación de Israel lo hará.
 
 ### 12:48
 
-Y cuando peregrine contigo peregrino y haga pascua a Yahvé, circuncídese a él todo macho, y entonces se acerque a hacerlo, y será como natural de la tierra; y todo incircunciso no comerá en él.
+Y cuando resida contigo un extranjero y celebre la Pascua para Yahvé, que se le circuncide todo varón; y entonces que se acerque a celebrarla, y será como un nativo de la tierra; y ningún incircunciso comerá de ella.
 
 ### 12:49
 
-Una ley será al natural y al peregrino el peregrinante en medio de ustedes.
+Habrá una sola ley para el nativo y para el forastero que reside en medio de ustedes.
 
 ### 12:50
 
-Y hicieron todos los hijos de Israel; como mandó Yahvé a Moisés y a Aarón, así hicieron.
+Y todos los hijos de Israel hicieron tal como Yahvé mandó a Moisés y a Aarón; así hicieron.
 
 ### 12:51
 
-Y fue en hueso de este día sacó Yahvé a hijos de Israel desde tierra de Egipto sobre sus ejércitos.
+Y sucedió en este mismo día: Yahvé sacó a los hijos de Israel de la tierra de Egipto según sus ejércitos.
 
 ## Capítulo 13
 
@@ -1375,63 +1375,63 @@ Y habló Yahvé a Moisés, diciendo:
 
 ### 13:2
 
-Santifica a mí todo primogénito, abertura de todo vientre en hijos de Israel, en el hombre y en el ganado; a mí él.
+Consagra para Mí todo primogénito, el que abre toda matriz entre los hijos de Israel, tanto entre los seres humanos como entre los animales; él *es* Mío.
 
 ### 13:3
 
-Y dijo Moisés al pueblo: Recuerda este día que salieron ustedes desde Egipto, desde casa de siervos, porque con fuerza de mano sacó Yahvé a ustedes desde esto, y no se comerá leudado.
+Y Moisés dijo al pueblo: «Recuerden este día en que salieron de Egipto, de casa de esclavos, porque con mano fuerte Yahvé los sacó de aquí; y no se comerá nada leudado».
 
 ### 13:4
 
-Hoy ustedes salientes en mes del Aviv.
+Hoy ustedes salen en el mes de Abib.
 
 ### 13:5
 
-Y será que te traiga Yahvé a tierra del cananeo y el hitita y el amorreo y el heveo y el jebuseo, que juró a tus padres a dar a ti, tierra manante leche y miel, y servirás este servicio en este mes.
+Y ocurrirá que cuando Yahvé te lleve a la tierra de los cananeos y los hititas y los amorreos y los heveos y los jebuseos, que juró a tus padres darte, tierra que fluye leche y miel, realizarás este servicio en este mes.
 
 ### 13:6
 
-Siete días comerás panes ázimos, y en el día séptimo fiesta a Yahvé.
+Durante siete días comerás panes sin levadura, y en el séptimo día *habrá* fiesta para Yahvé.
 
 ### 13:7
 
-Panes ázimos se comerán los siete días, y no se verá a ti leudado, y no se verá a ti levadura en todo tu límite.
+Panes sin levadura se comerán durante los siete días, y no te será visible nada leudado, y no te será visible levadura en todo tu territorio.
 
 ### 13:8
 
-Y declararás a tu hijo en el día aquel, diciendo: Por causa de esto hizo Yahvé a mí en mi salir desde Egipto.
+Y contarás a tu hijo aquel día, diciendo: «Porque Yahvé hizo esto por mí cuando salí de Egipto».
 
 ### 13:9
 
-Y será a ti a señal sobre tu mano y a memorial entre tus ojos, a fin de que sea ley de Yahvé en tu boca, porque con mano fuerte te sacó Yahvé desde Egipto.
+Y será para ti una señal sobre tu mano y un recordatorio entre tus ojos, para que la instrucción de Yahvé esté en tu boca, porque con mano fuerte Yahvé te sacó de Egipto.
 
 ### 13:10
 
-Y guardarás este estatuto a su plazo, de días a días.
+Y observarás este estatuto en su tiempo señalado, de tiempo en tiempo.
 
 ### 13:11
 
-Y será que te traerá Yahvé a tierra del cananeo, como juró a ti y a tus padres, y te la dará,
+Y sucederá que, cuando Yahvé te lleve a la tierra de los cananeos, como juró a ti y a tus padres, y te la dé,
 
 ### 13:12
 
-y harás pasar todo primer nacido de vientre a Yahvé, y todo primer nacido de cría de ganado que sea a ti, los machos, a Yahvé.
+Y entregarás a Yahvé todo el que primero abra el vientre, y todo primer nacido de animal que sea tuyo; los machos serán para Yahvé.
 
 ### 13:13
 
-Y todo primer nacido de asno redimirás con res del rebaño, y si no redimirás, y le romperás la cerviz; y todo primogénito de hombre en tus hijos redimirás.
+Y redimirás todo primer nacido de asno con un animal del rebaño; y si no lo redimes, le quebrarás el cuello. Y redimirás a todo primogénito humano entre tus hijos.
 
 ### 13:14
 
-Y será que tu hijo te preguntará mañana, diciendo: ¿Qué *es* esto? Y le dirás: Con fuerza de mano nos sacó Yahvé desde Egipto, desde casa de siervos.
+Y sucederá que cuando tu hijo te pregunte mañana, diciendo: «¿Qué *es* esto?», y le dirás: «Con fuerza de mano, Yahvé nos sacó de Egipto, de casa de esclavos».
 
 ### 13:15
 
-Y fue que endureció Faraón de enviarnos, y mató Yahvé todo primogénito en tierra de Egipto, desde primogénito de hombre y hasta primogénito de ganado; por eso yo sacrificante a Yahvé toda abertura de vientre los machos, y todo primogénito de mis hijos redimiré.
+Y sucedió que, cuando Faraón puso dificultades para dejarnos ir, Yahvé mató todo primogénito en la tierra de Egipto, desde el primogénito del hombre hasta el primogénito del animal. Por eso yo sacrifico a Yahvé todo macho que abre la matriz, y todo primogénito de mis hijos rescato.
 
 ### 13:16
 
-Y será a señal sobre tu mano y a frontales entre tus ojos, porque con fuerza de mano nos sacó Yahvé desde Egipto.
+Y será como señal sobre tu mano y como bandas entre tus ojos, porque con fuerza de mano nos sacó Yahvé de Egipto.
 
 ### 13:17
 

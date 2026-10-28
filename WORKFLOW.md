@@ -43,6 +43,46 @@ describir opciones o señalar un problema, pero no eligen el sentido del
 contexto. Una afirmación que la evidencia canónica no justifica queda en
 `HOLD`.
 
+### Política léxica: arrepentimiento, pesar y cambio de rumbo
+
+La LBF no usa **arrepentirse** ni **arrepentimiento** como glosas universales.
+Esas palabras españolas pueden ocultar distinciones que el original conserva
+entre reconsiderar, sentir pesar, cambiar de conducta, volver, desistir,
+compadecerse y consolar. La semejanza etimológica, la tradición de una versión
+o la primera definición de un léxico no decide el sentido.
+
+En el NT deben conservarse distintas estas familias:
+
+- `μετανοέω` / `μετάνοια` expresan un cambio de mente, juicio o manera de
+  pensar. La redacción parte de **cambiar de manera de pensar**, **cambiar de
+  parecer** o **cambio de mente**, según la sintaxis y el contexto. No se les
+  añade pesar emocional si el contexto no lo expresa.
+- `μεταμέλομαι` expresa una preocupación o pesar posterior, que según el
+  contexto puede acompañar una reconsideración. La redacción parte de
+  **sentir pesar** o **lamentar** cuando el pesar es el foco; **cambiar de
+  parecer** exige que la construcción y el resultado lo sostengan. No se
+  confunde automáticamente con la familia `μετανοέω` / `μετάνοια`.
+
+En el AT tampoco se impone una sola palabra española:
+
+- `נחם` (H5162) se decide por tronco, construcción, participantes y contexto.
+  Puede comunicar consuelo, pesar, compasión, reconsideración o desistimiento;
+  **arrepentirse** nunca es su valor predeterminado.
+- `שוב` (H7725) comunica volver o cambiar de dirección, física o
+  figuradamente. No se le añade por sí solo pesar emocional ni un cambio de
+  mente.
+
+Estas descripciones son política editorial, no evidencia suficiente para un
+versículo. En cada aparición manda la cadena canónica completa. Si dos de
+estas familias aparecen juntas, el español debe mantener su contraste. Si el
+contexto no permite escoger entre dos realizaciones españolas, el resultado es
+`HOLD`.
+
+En Éxodo 13:17, el nifal `יִנָּחֵם`, seguido por ver la guerra y volver a
+Egipto, describe reconsiderar el rumbo: **cambie de parecer**, no el genérico
+**se arrepienta**. Esta adjudicación no convierte esa traducción en glosa fija
+para otras apariciones de `נחם`.
+
 Open Scriptures HebrewLexicon es el testigo léxico autorizado para el AT,
 fijado por commit y checksum. El paquete llega a él desde el lema Strong
 aumentado de OSHB; sus sentidos siguen siendo opciones secundarias y nunca

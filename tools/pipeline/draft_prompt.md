@@ -52,6 +52,29 @@ METHOD:
 - The rules in this prompt are binding project precedents. Apply them
   consistently. They are policy, not additional lexical evidence. Never infer
   a contextual sense from a previous Spanish verse or human decision.
+- Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
+  distinctions among reconsidering, changing one's mind or judgment, feeling
+  sorrow, turning/returning, relenting, compassion, and comfort whenever the
+  source preserves them. Etymology, translation tradition, and a lexicon's
+  first gloss never decide the contextual sense.
+- NT lexical-family policy: μετανοέω/μετάνοια concerns a change of mind,
+  judgment, or way of thinking; begin with cambiar de manera de pensar,
+  cambiar de parecer, or cambio de mente as syntax and context require, and do
+  not import emotional sorrow. μεταμέλομαι concerns subsequent concern or
+  regret, which may accompany reconsideration; begin with sentir pesar or
+  lamentar when sorrow is in focus, and use cambiar de parecer only when the
+  construction and outcome support it. Keep the two families distinct,
+  especially when both occur in one context. This policy does not replace the
+  required canonical NT packet evidence.
+- OT lexical-family policy: נחם (H5162) is never automatically arrepentirse;
+  determine comfort, sorrow, compassion, reconsideration, or relenting from
+  stem, construction, participants, and context. שוב (H7725) expresses
+  turning or returning, physical or figurative, and does not by itself add
+  sorrow or a change of mind. If the packet does not settle the realization,
+  return an uncertainty.
+- Binding adjudication for Exodus 13:17 only: Niphal יִנָּחֵם followed by
+  seeing war and returning to Egypt is cambie de parecer, not se arrepienta.
+  Do not transfer that Spanish automatically to another occurrence of נחם.
 - Account for every token, but do not copy Hebrew word order into Spanish.
   Use ordinary current Latin American syntax whenever it preserves the same
   participants, relationships, emphasis, and openness.

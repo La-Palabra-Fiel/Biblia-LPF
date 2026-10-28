@@ -1,4 +1,4 @@
 ---
 title: "La Palabra Fiel"
-description: "Una traducción fiel de las Escrituras en español contemporáneo, comprometida con dejar que las Escrituras hablen por sí mismas."
+description: "La Palabra Fiel (LPF) es un proyecto de traducción bíblica al español en fase inicial. Los textos disponibles son borradores muy preliminares, incompletos y no aprobados."
 ---

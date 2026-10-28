@@ -1,28 +1,21 @@
 {{ define "main" }}
 {{ $d := site.Data.libros }}
 <section class="envoltura pagina pagina-ancha">
-  <p class="subtitulo-pagina">Estado de la traducción</p>
+  <p class="subtitulo-pagina">Fase inicial · inventario de borradores</p>
   <h1>{{ .Title }}</h1>
   <div class="prosa">{{ .Content }}</div>
 
   {{ with $d }}
   <ul class="cifras">
-    <li class="cifra"><b>{{ .totales.libros }}/66</b><span>Libros con borrador</span></li>
-    <li class="cifra"><b>{{ .totales.capitulos }}</b><span>Capítulos con texto</span></li>
-    <li class="cifra"><b>{{ lang.FormatNumber 0 .totales.versiculos }}</b><span>Versículos en borrador</span></li>
-    <li class="cifra"><b>{{ .totales.porcentajeCanon }}%</b><span>Libros con texto disponible</span></li>
+    <li class="cifra"><b>{{ .totales.libros }}</b><span>Libros con algún texto preliminar</span></li>
+    <li class="cifra"><b>{{ .totales.capitulos }}</b><span>Capítulos con archivo de borrador</span></li>
+    <li class="cifra"><b>{{ lang.FormatNumber 0 .totales.versiculos }}</b><span>Versículos con texto preliminar</span></li>
   </ul>
 
-  <h2>Cobertura de borradores</h2>
-
-  <p class="etiqueta-medidor"><span>Libros del Nuevo Testamento con borrador</span> <b>{{ .totales.porcentajeNT }}%</b></p>
-  <div class="medidor"><i style="width:{{ .totales.porcentajeNT }}%"></i></div>
-
-  <p class="etiqueta-medidor"><span>Libros del Antiguo Testamento con borrador</span> <b>{{ .totales.porcentajeAT }}%</b></p>
-  <div class="medidor"><i style="width:{{ .totales.porcentajeAT }}%"></i></div>
+  <h2>Disponibilidad de texto preliminar</h2>
 
   <div class="aviso">
-    <p>Estos porcentajes miden únicamente si hay texto de trabajo disponible para un libro. No indican que el texto esté terminado ni aprobado. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver la revisión y las firmas registradas por etapa.</p>
+    <p>Estas cifras cuentan únicamente los archivos y versículos con algún texto. No representan un porcentaje de avance, calidad, revisión ni aprobación. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver la revisión y las firmas registradas por etapa.</p>
   </div>
 
   {{ range $t := slice "at" "nt" }}
@@ -30,20 +23,20 @@
   {{ $hechos := where $libros "publicado" true }}
   <h2>{{ if eq $t "at" }}Antiguo Testamento{{ else }}Nuevo Testamento{{ end }}
     <span style="font-family:var(--sans);font-size:.75rem;letter-spacing:.08em;color:var(--tinta-suave);text-transform:uppercase">
-      {{ len $hechos }} de {{ len $libros }} con borrador
+      {{ len $hechos }} con algún borrador preliminar
     </span></h2>
   <div class="tabla-envoltura">
     <table>
       <thead>
-        <tr><th>Libro</th><th>Capítulos</th><th>Versículos</th><th>Texto disponible</th></tr>
+        <tr><th>Libro</th><th>Capítulos</th><th>Versículos</th><th>Borrador preliminar</th></tr>
       </thead>
       <tbody>
         {{ range $libros }}
         <tr>
           <td>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</td>
-          <td>{{ .capitulos }}</td>
+          <td>{{ if .publicado }}{{ .capitulos }}{{ else }}—{{ end }}</td>
           <td>{{ if .publicado }}{{ .versiculos }}{{ else }}—{{ end }}</td>
-          <td>{{ if .publicado }}Borrador{{ else }}Sin borrador{{ end }}</td>
+          <td>{{ if .publicado }}Sí, muy preliminar{{ else }}No disponible{{ end }}</td>
         </tr>
         {{ end }}
       </tbody>

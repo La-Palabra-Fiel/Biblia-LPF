@@ -31,11 +31,11 @@ Y desollará la ofrenda que se quema por completo *el holocausto*, y la cortará
 
 ### 1:7
 
-Y darán hijos de Aarón el sacerdote fuego sobre el altar, y ordenarán leños sobre el fuego.
+Y los hijos de Aarón, el sacerdote, pondrán fuego sobre el altar y acomodaran leños sobre el fuego.
 
 ### 1:8
 
-Y ordenarán hijos de Aarón, los sacerdotes, los trozos, la cabeza y el sebo, sobre los leños que sobre el fuego que sobre el altar.
+Y los hijos de Aarón, los sacerdotes, colocaran los pedazos, la cabeza y el sebo sobre los leños que están sobre el fuego que está sobre el altar.
 
 ### 1:9
 

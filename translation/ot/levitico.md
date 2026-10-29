@@ -23,11 +23,11 @@ Pondrá su mano sobre la cabeza del holocausto, y le será aceptado para hacer e
 
 ### 1:5
 
-Y degollará al hijo del ganado delante de Jehová, y acercarán hijos de Aarón, los sacerdotes, la sangre, y echarán la sangre sobre el altar alrededor, que a abertura de tienda de reunión.
+Degollará el novillo delante de Yahvé, y los hijos de Aarón, los sacerdotes, presentarán la sangre y esparcirán la sangre por todos lados sobre el altar , que está a la entrada de la tienda de reunión.
 
 ### 1:6
 
-Y desollará el holocausto, y lo descuartizará a sus cuartos.
+Y desollará la ofrenda que se quema por completo *el holocausto*, y la cortará en trozos.
 
 ### 1:7
 

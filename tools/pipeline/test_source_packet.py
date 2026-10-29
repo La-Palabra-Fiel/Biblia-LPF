@@ -9,7 +9,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from audit_lib import normalize_audit
-from draft_lib import normalize_draft, prompt_fingerprint
+from draft_lib import (
+    ACCEPTED_UNVERSIONED_PROMPT_SHA256,
+    DRAFT_SPEC_VERSION,
+    draft_specification_is_current,
+    merge_source_units_by_id,
+    normalize_draft,
+    prompt_fingerprint,
+)
 from morph import expand_hebrew_morph
 from polish_lib import freeze_from, normalize_polish
 from source_packet import build_packet, dump_prompt, packet_for_prompt
@@ -95,7 +102,44 @@ class SourcePacketTests(unittest.TestCase):
         }
         draft = normalize_draft(raw, packet, "test")
         self.assertEqual(draft["promptSha256"], prompt_fingerprint())
+        self.assertEqual(draft["draftSpecVersion"], DRAFT_SPEC_VERSION)
+        self.assertTrue(draft_specification_is_current(draft))
         self.assertEqual(draft["alignmentPrecisionFindings"][0]["severity"], "fail")
+
+    def test_draft_specification_migrates_current_unversioned_candidates(self) -> None:
+        accepted_sha = next(iter(ACCEPTED_UNVERSIONED_PROMPT_SHA256))
+        self.assertTrue(draft_specification_is_current({"promptSha256": accepted_sha}))
+        self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v1"}))
+        self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v2"}))
+        self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v3"}))
+        self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v4"}))
+        self.assertFalse(draft_specification_is_current({"promptSha256": "older-prompt"}))
+
+    def test_repeated_source_ids_are_consolidated_into_one_row(self) -> None:
+        units = merge_source_units_by_id([
+            {"es": "Y", "sourceTokenIds": ["h02001015001"]},
+            {"es": "dijo", "sourceTokenIds": ["h02001015001"]},
+            {"es": "el", "sourceTokenIds": ["h02001015002", "h02001015003"]},
+            {"es": "rey", "sourceTokenIds": ["h02001015002"]},
+            {"es": "de", "sourceTokenIds": ["h02001015002", "h02001015003"]},
+            {"es": "Egipto", "sourceTokenIds": ["h02001015003"]},
+        ])
+        self.assertEqual(units, [
+            {"es": "Y dijo", "sourceTokenIds": ["h02001015001"]},
+            {"es": "el rey de Egipto", "sourceTokenIds": ["h02001015002", "h02001015003"]},
+        ])
+
+    def test_discontinuous_source_id_does_not_absorb_intervening_subject(self) -> None:
+        units = merge_source_units_by_id([
+            {"es": "Y", "sourceTokenIds": ["h1"]},
+            {"es": "el rey", "sourceTokenIds": ["h2"]},
+            {"es": "dijo", "sourceTokenIds": ["h1"]},
+        ])
+        self.assertEqual(units, [
+            {"es": "Y", "sourceTokenIds": ["h1"]},
+            {"es": "el rey", "sourceTokenIds": ["h2"]},
+            {"es": "dijo", "sourceTokenIds": ["h1"]},
+        ])
 
     def test_polish_freeze_keeps_dual_and_vivira(self) -> None:
         draft = {

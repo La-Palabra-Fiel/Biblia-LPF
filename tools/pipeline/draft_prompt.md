@@ -52,6 +52,29 @@ METHOD:
 - The rules in this prompt are binding project precedents. Apply them
   consistently. They are policy, not additional lexical evidence. Never infer
   a contextual sense from a previous Spanish verse or human decision.
+- Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
+  distinctions among reconsidering, changing one's mind or judgment, feeling
+  sorrow, turning/returning, relenting, compassion, and comfort whenever the
+  source preserves them. Etymology, translation tradition, and a lexicon's
+  first gloss never decide the contextual sense.
+- NT lexical-family policy: μετανοέω/μετάνοια concerns a change of mind,
+  judgment, or way of thinking; begin with cambiar de manera de pensar,
+  cambiar de parecer, or cambio de mente as syntax and context require, and do
+  not import emotional sorrow. μεταμέλομαι concerns subsequent concern or
+  regret, which may accompany reconsideration; begin with sentir pesar or
+  lamentar when sorrow is in focus, and use cambiar de parecer only when the
+  construction and outcome support it. Keep the two families distinct,
+  especially when both occur in one context. This policy does not replace the
+  required canonical NT packet evidence.
+- OT lexical-family policy: נחם (H5162) is never automatically arrepentirse;
+  determine comfort, sorrow, compassion, reconsideration, or relenting from
+  stem, construction, participants, and context. שוב (H7725) expresses
+  turning or returning, physical or figurative, and does not by itself add
+  sorrow or a change of mind. If the packet does not settle the realization,
+  return an uncertainty.
+- Binding adjudication for Exodus 13:17 only: Niphal יִנָּחֵם followed by
+  seeing war and returning to Egypt is cambie de parecer, not se arrepienta.
+  Do not transfer that Spanish automatically to another occurrence of נחם.
 - Account for every token, but do not copy Hebrew word order into Spanish.
   Use ordinary current Latin American syntax whenever it preserves the same
   participants, relationships, emphasis, and openness.
@@ -87,6 +110,11 @@ METHOD:
   → Latin American ustedes (hagan, vean, lo matarán). Never Spain
   vosotros (hagáis, veréis, lo mataréis) to “keep” 2nd person. Do not add
   an ustedes pronoun the tokens do not mark.
+- LBF house style capitalizes pronouns and possessive forms whose referent is
+  unambiguously God, Jesus Christ, or the Holy Spirit: Él, Tú, Ti, Te, Lo,
+  Le, Se, Su, Sus, Suyo and their inflected forms. This capitalization does
+  not add a concept and must not be used to resolve an ambiguous referent.
+  Pronouns referring to humans remain lowercase.
 - Piel ילד + 2fp + את + the Hebrew women: addressees act on the women;
   the women are the ones who give birth (asistan a las hebreas a dar a
   luz). Never den a luz a las hebreas (that makes the addressees give
@@ -117,12 +145,14 @@ METHOD:
   source tokens, but independently alignable participants around it must remain
   separate. In particular, separate coordinated proper names and their
   prepositional phrases; do not absorb them into the verb unit.
-- Alignment is many-to-many. A sourceTokenId may appear in more than one
-  Spanish unit when one inflected or prefixed source token licenses separate
-  continuous Spanish pieces. For example, if source token `s1` carries both a
-  narrative conjunction and a verb, units such as `Entonces ← s1` and
-  `mandó ← s1` are valid. Do not make a broad unit merely to avoid repeating
-  a sourceTokenId.
+- Do not create artificial word-by-word rows. Adjacent Spanish pieces whose
+  source-token lists are identical or overlap must be one unit: write
+  `Y dijo ← s1`, never adjacent rows `Y ← s1` and `dijo ← s1`. Start a new
+  unit when the source-token correspondence changes. A `sourceTokenId` may
+  recur only when Spanish word order makes its correspondences genuinely
+  discontinuous. For example, in `Y el rey dijo`, `Y ← s1`, `el rey ← s2`,
+  and `dijo ← s1` remain separate; never absorb the intervening subject into
+  the verb unit merely to make `s1` occur once.
 - Before returning JSON, try to split every unit once more. Keep it grouped
   only if the smaller Spanish pieces would not have defensible source links.
 - Only for a genuinely difficult lexical, syntactic, discourse, or imagery

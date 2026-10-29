@@ -1,0 +1,39 @@
+{
+  "schema": "lbf-grok-audit-v1",
+  "auditor": "GPT independent audit",
+  "book": "exodo",
+  "reference": "Éxodo 2:5",
+  "chapter": 2,
+  "verse": 5,
+  "candidateLabel": "team-gpt",
+  "spanish": "Y la hija de Faraón descendió para bañarse en el Nilo, y sus muchachas caminaban a la orilla del Nilo. Entonces vio el arca en medio de los juncos, envió a su sierva y la tomó.",
+  "verdict": "fail",
+  "findings": [
+    {
+      "severity": "fail",
+      "sourceTokenIds": [
+        "h02002005009",
+        "h02002005010",
+        "h02002005011"
+      ],
+      "issue": "יַד is the concrete “hand”; “orilla” replaces its bodily image with an explanatory geographic simplification.",
+      "spanishSpan": "a la orilla del Nilo"
+    },
+    {
+      "severity": "fail",
+      "sourceTokenIds": [
+        "h02002005004",
+        "h02002005005",
+        "h02002005006"
+      ],
+      "issue": "עַל marks by/on/beside the Nile; “en” imports interior location not established by the surface or syntax.",
+      "spanishSpan": "bañarse en el Nilo"
+    }
+  ],
+  "notes": "",
+  "discardedUncitedFindings": 0,
+  "model": "gpt-5.6-sol",
+  "reasoningEffort": "medium",
+  "packetSha256": "6a364db86115c4cfa8dd5b3c10b426284d92be30da1fe089fe9110bd70e46eb6",
+  "candidateSha256": "bfc0c9a921cb80af3aedc1b6f937a12f2883b09dd8f36b846e7de0ad838f3a76"
+}

@@ -65,7 +65,7 @@ FAIL when the Spanish:
 - resolves an ambiguity the morphology/lemma leave open (e.g. dual "stones"
   rendered as a specialized instrument)
 - imports a lexical meaning or syntactic decision the packet does not settle
-- inserts theology, titles, or doctrinal capitalization not in the tokens
+- inserts theology or titles not in the tokens
 - dumps untranslated non-name lemmas as Spanish (Elohím for אלהים → Dios)
 - scholar-dumps or Hebraizes locked proper names (Mitsráyim / Yehudá /
   Yosef when the packet referent is locked as Egipto / Judá / José in
@@ -84,6 +84,14 @@ veréis, mataréis, os) is the wrong variety. Hebrew/Greek 2pl including 2fp
 → ustedes verbs (hagan, vean, matarán) is licensed 2nd-person address, not
 a 3rd-person participant shift. Do not fail that as “they”. FAIL vosotros.
 FAIL only if 2pl addressees become a different third party.
+
+LBF HOUSE STYLE: pronouns and possessive forms whose referent is
+unambiguously God, Jesus Christ, or the Holy Spirit are capitalized: Él, Tú,
+Ti, Te, Lo, Le, Se, Su, Sus, Suyo and their inflected forms. Treat this
+capitalization as editorial style, not added theology. Do not use it to settle
+an ambiguous referent. Pronouns referring to humans remain lowercase. WARN
+or FAIL lowercase divine pronouns according to the certainty and materiality
+of the case.
 
 Piel ילד + 2fp + את + the Hebrew women: addressees act on the women; the
 women give birth. FAIL “dar a luz a las hebreas” (addressees give birth to

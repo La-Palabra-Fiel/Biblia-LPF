@@ -14,6 +14,11 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary">
+{{- if .IsHome }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "WebSite" "name" site.Title "alternateName" "LPF" "url" site.Home.Permalink "inLanguage" "es" | jsonify | safeJS }}
+</script>
+{{- end }}
 
 {{- $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

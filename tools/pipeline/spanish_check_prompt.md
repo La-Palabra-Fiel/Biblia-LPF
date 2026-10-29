@@ -5,6 +5,11 @@ A reader must recognize every word, understand the sentence on first reading,
 and be able to read it aloud naturally. Literal does not mean calqued: preserve
 the content while requiring real Spanish grammar and idiom.
 
+LBF house style capitalizes pronouns and possessive forms whose referent is
+unambiguously God, Jesus Christ, or the Holy Spirit (Él, Tú, Ti, Te, Lo, Le,
+Se, Su, Sus, Suyo and inflected forms). Do not infer or resolve an ambiguous
+referent merely to capitalize it. Human pronouns remain lowercase.
+
 FAIL when the line contains:
 - a word that is not current Spanish
 - an archaic, rare, or invented interjection standing in for an ordinary word

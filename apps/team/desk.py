@@ -35,7 +35,7 @@ from auto_pass import write_verse  # noqa: E402
 from books import OT, get_book  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
 from source_packet import build_packet, list_verses  # noqa: E402
-from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, alignment_precision_findings, build_user_prompt as build_draft_prompt, load_system as load_draft_system, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
+from draft_lib import DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
 from audit_gpt import AUDIT_MAX_COMPLETION_TOKENS  # noqa: E402
 from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_prompt  # noqa: E402
 
@@ -97,7 +97,11 @@ def estimate_input_tokens(text: str) -> int:
 
 
 def enforce_human_adjudication(prior: dict, gate: dict, spanish: str, decision: str, override_confirmed: bool) -> None:
-    needs_adjudication = gate.get("fidelity") not in {"pass", "not-required"} or gate.get("spanish") != "pass" or bool(prior.get("uncertainties"))
+    # A missing optional model audit is not a defect.  The named human is the
+    # approval authority and the deterministic Spanish/source checks run
+    # locally below.  Require written adjudication only for an actual failed
+    # audit or an uncertainty already recorded in the seed.
+    needs_adjudication = gate.get("fidelity") == "fail" or bool(prior.get("uncertainties"))
     if needs_adjudication and not decision:
         raise ValueError("Write your own human adjudication for every failed gate or model uncertainty; the app will not manufacture one.")
     unchanged = spanish == " ".join(str(prior.get("spanish") or "").split())
@@ -243,9 +247,29 @@ def candidate_path(slug: str, chapter: int, verse: int) -> Path | None:
     options = []
     if human_review_is_current(slug, chapter, verse):
         options.append(human_path(slug, chapter, verse))
-    options += [folder / f"{slug}-{chapter}-{verse}.draft-team-gpt.json", folder / f"{slug}-{chapter}-{verse}.draft-gpt56.json"]
-    options += sorted(folder.glob(f"{slug}-{chapter}-{verse}.draft-gpt-*.json"), reverse=True)
-    return next((path for path in options if path.is_file()), None)
+    # Explicit workflow priority only.  Never glob request JSON as if it were
+    # a completed draft, and never choose between differing drafts by mtime.
+    options += [
+        folder / f"{slug}-{chapter}-{verse}.draft-team-gpt.json",
+        folder / f"{slug}-{chapter}-{verse}.draft-auto.json",
+        folder / f"{slug}-{chapter}-{verse}.draft-gpt56.json",
+    ]
+    for path in options:
+        if not path.is_file() or path.name.endswith(".request.json"):
+            continue
+        candidate = read_json(path, {})
+        if isinstance(candidate, dict) and str(candidate.get("spanish") or "").strip():
+            return path
+    return None
+
+
+def reusable_candidate(slug: str, chapter: int, verse: int) -> tuple[Path | None, dict]:
+    """Return a usable review seed without requiring another paid model call."""
+    path = candidate_path(slug, chapter, verse)
+    candidate = read_json(path, {}) if path else {}
+    if path and str(candidate.get("spanish") or "").strip():
+        return path, candidate
+    return None, {}
 
 
 def label_for(candidate: dict, path: Path) -> str:
@@ -268,7 +292,7 @@ def gate_for(slug: str, chapter: int, verse: int, path: Path, candidate: dict) -
     required = audit_required(candidate, check)
     packet = read_json(packet_path(slug, chapter, verse), {})
     alignment_findings = alignment_precision_findings(packet, candidate.get("units") or [])
-    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": candidate.get("promptSha256") == draft_prompt_fingerprint(), "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or [], "alignmentFindings": alignment_findings}
+    return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": draft_specification_is_current(candidate), "auditModel": audit.get("model") or "unverified", "auditReasoning": audit.get("reasoningEffort") or "unverified", "spanishModel": check.get("model") or "unverified", "spanishReasoning": check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": audit.get("findings") or [], "spanish": check.get("verdict") or "missing", "spanishFindings": check.get("findings") or [], "alignmentFindings": alignment_findings}
 
 
 def human_precedents(slug: str) -> list[dict]:
@@ -335,9 +359,27 @@ def chapter_view(slug: str, chapter) -> dict:
     rows = []
     for verse in verses:
         packet = read_json(packet_path(slug, number, verse), {})
+        canonical_verse = verse_body(canonical, number, verse) or ""
         candidate_file = candidate_path(slug, number, verse)
         candidate = read_json(candidate_file, {}) if candidate_file else {}
+        if not candidate_file:
+            # Reviewing the canonical wording against the visible packet is a
+            # complete no-cost path.  The reviewer supplies and validates the
+            # reverse-interlinear units by hand; GPT is optional assistance.
+            candidate = {
+                "schema": "lbf-local-review-seed-v1",
+                "model": "human-local",
+                "reasoningEffort": "not-required",
+                "spanish": canonical_verse,
+                "units": [],
+                "uncertainties": [],
+                "evidenceDecisions": [],
+            }
+        if candidate.get("units"):
+            candidate = {**candidate, "units": merge_source_units_by_id(candidate["units"])}
         recovered_verse = recovered_verses.get(str(verse)) or {}
+        if isinstance(recovered_verse, dict) and recovered_verse.get("units"):
+            recovered_verse = {**recovered_verse, "units": merge_source_units_by_id(recovered_verse["units"])}
         # An older failed browser submission may contain the human's text but
         # no alignment rows.  Preserve that text while restoring the model's
         # visible seed as an editable starting point; it remains unapproved
@@ -348,7 +390,19 @@ def chapter_view(slug: str, chapter) -> dict:
             and candidate.get("units")
         ):
             recovered_verse = {**recovered_verse, "units": candidate["units"]}
-        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": verse_body(canonical, number, verse) or "", "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {"source": "missing", "fidelity": "missing", "spanish": "missing"}, "humanReviewed": human_review_is_current(slug, number, verse)})
+        gate = gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {
+            "source": "canonical-local-seed",
+            "draftModel": "human-local",
+            "draftReasoning": "not-required",
+            "promptCurrent": True,
+            "auditRequired": False,
+            "fidelity": "not-required",
+            "fidelityFindings": [],
+            "spanish": "local",
+            "spanishFindings": [],
+            "alignmentFindings": [],
+        }
+        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_review_is_current(slug, number, verse)})
     return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "precedents": human_precedents(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
@@ -371,12 +425,16 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         if selected_verse not in verses:
             raise ValueError("That verse is not in this Protestant chapter.")
         selected_verses = [selected_verse]
-    draft_calls = audit_calls = skipped_human = 0
+    draft_calls = audit_calls = skipped_human = reused_candidates = 0
     estimated_input_tokens = 0
     possible_audit_input_tokens = 0
     for verse in selected_verses:
         if human_review_is_current(book.slug, number, verse):
             skipped_human += 1
+            continue
+        existing_path, existing_candidate = reusable_candidate(book.slug, number, verse)
+        if existing_path and existing_candidate:
+            reused_candidates += 1
             continue
         # Preparation always rebuilds the derived packet. Do the same in
         # memory here so a stale stored packet cannot understate paid calls.
@@ -389,27 +447,20 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
             and candidate.get("model") == TEAM_MODEL
             and candidate.get("reasoningEffort") == TEAM_REASONING
             and candidate.get("packetSha256") == packet_fingerprint(packet)
-            and candidate.get("promptSha256") == draft_prompt_fingerprint()
+            and draft_specification_is_current(candidate)
         )
         if not fresh_draft:
             draft_calls += 1
             if packet:
                 estimated_input_tokens += estimate_input_tokens(load_draft_system() + build_draft_prompt(packet))
                 possible_audit_input_tokens += estimate_input_tokens(AUDIT_SYSTEM + build_audit_prompt(packet, "[candidate]", "team-gpt"))
-        current = candidate if fresh_draft else {}
-        check = read_json(pipeline_dir(book.slug) / f"{book.slug}-{number}-{verse}.spanish-check-team-gpt.json", {})
-        fingerprint = object_fingerprint(candidate) if fresh_draft else ""
-        audit = read_json(pipeline_dir(book.slug) / f"{book.slug}-{number}-{verse}.audit-gpt-team-gpt.json", {})
-        fresh_audit = fresh_draft and audit.get("model") == TEAM_MODEL and audit.get("reasoningEffort") == TEAM_REASONING and audit.get("candidateSha256") == fingerprint
-        if fresh_draft and audit_required(current, check) and not fresh_audit:
-            audit_calls += 1
-            if packet:
-                estimated_input_tokens += estimate_input_tokens(AUDIT_SYSTEM + build_audit_prompt(packet, str(current.get("spanish") or "[candidate]"), "team-gpt"))
+        # Audits are never launched automatically.  A reviewer may request a
+        # paid one-verse audit explicitly from the verse card.
     output_cap_tokens = draft_calls * DRAFT_MAX_COMPLETION_TOKENS + audit_calls * AUDIT_MAX_COMPLETION_TOKENS
     conservative_usd = estimated_input_tokens / 1_000_000 * 4 + output_cap_tokens / 1_000_000 * 20
-    all_flagged_usd = conservative_usd + possible_audit_input_tokens / 1_000_000 * 4 + draft_calls * AUDIT_MAX_COMPLETION_TOKENS / 1_000_000 * 20
-    maximum_paid_calls = draft_calls + audit_calls + draft_calls
-    likely_new_audits = math.ceil(draft_calls * 0.5)
+    all_flagged_usd = conservative_usd
+    maximum_paid_calls = draft_calls
+    likely_new_audits = 0
     return {
         "book": book.slug,
         "chapter": number,
@@ -420,12 +471,13 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         "likelyPaidCalls": draft_calls + audit_calls + likely_new_audits,
         "maximumPaidCalls": maximum_paid_calls,
         "humanReviewedSkipped": skipped_human,
-        "possibleSelectiveAudits": draft_calls,
+        "reusedCandidates": reused_candidates,
+        "possibleSelectiveAudits": 0,
         "localSpanishChecks": draft_calls,
         "estimatedLikelyUsd": round(draft_calls * 0.0678 + (audit_calls + likely_new_audits) * 0.0324, 2),
         "estimatedMaximumUsd": round(conservative_usd, 2),
         "estimatedAllFlaggedMaximumUsd": round(all_flagged_usd, 2),
-        "note": "Likely cost uses recorded Sol averages and the observed 50% selective-audit rate. Maximum assumes every new draft is flagged and reaches both output caps.",
+        "note": "Existing candidates are reused. Paid audits are optional, one verse at a time, and are never included or launched automatically.",
     }
 
 
@@ -469,22 +521,21 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             # Rebuild the derived packet from pinned sources. A stale packet
             # from an earlier policy must never reach GPT-5.6 Sol.
             _run([sys.executable, str(PIPELINE / "build_source_packet.py"), slug, str(chapter), str(verse)])
+            existing_path, existing_candidate = reusable_candidate(slug, chapter, verse)
+            if existing_path and existing_candidate:
+                continue
             path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"
             candidate = read_json(path, {})
             if candidate.get("schema") == "lbf-human-reviewed-candidate-v1": continue
             packet = read_json(packet_path(slug, chapter, verse), {})
-            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet) or candidate.get("promptSha256") != draft_prompt_fingerprint():
+            if not path.is_file() or candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("packetSha256") != packet_fingerprint(packet) or not draft_specification_is_current(candidate):
                 _run([sys.executable, str(PIPELINE / "draft_gpt.py"), slug, str(chapter), str(verse), "--label", "team-gpt"])
                 path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"; candidate = read_json(path, {})
             label = label_for(candidate, path); folder = pipeline_dir(slug)
             check = folder / f"{slug}-{chapter}-{verse}.spanish-check-{label}.json"
-            audit = folder / f"{slug}-{chapter}-{verse}.audit-gpt-{label}.json"
             check_data = read_json(check, {})
             fingerprint = object_fingerprint(candidate)
             if check_data.get("model") != SPANISH_GATE_MODEL or check_data.get("candidateSha256") != fingerprint: _run([sys.executable, str(PIPELINE / "spanish_check_local.py"), slug, str(chapter), str(verse), "--candidate-file", str(path), "--label", label], allow_gate_failure=True)
-            check_data = read_json(check, {})
-            audit_data = read_json(audit, {})
-            if audit_required(candidate, check_data) and (audit_data.get("model") != TEAM_MODEL or audit_data.get("reasoningEffort") != TEAM_REASONING or audit_data.get("candidateSha256") != fingerprint): _run([sys.executable, str(PIPELINE / "audit_gpt.py"), slug, str(chapter), str(verse), "--candidate-file", str(path), "--label", label], allow_gate_failure=True)
     except Exception as exc:  # noqa: BLE001
         error = str(exc)
     with _lock:
@@ -511,12 +562,8 @@ def audit_verse(payload: dict) -> dict:
     path = candidate_path(book.slug, chapter, verse)
     candidate = read_json(path, {}) if path else {}
     if not path or candidate.get("schema") == "lbf-human-reviewed-candidate-v1":
-        raise ValueError("Prepare an unapproved GPT candidate before requesting an audit.")
+        raise ValueError("A saved unapproved candidate is required before requesting an optional paid audit.")
     packet = read_json(packet_path(book.slug, chapter, verse), {})
-    if candidate.get("packetSha256") != packet_fingerprint(packet):
-        raise ValueError("Prepare this verse again before requesting an audit.")
-    if candidate.get("model") != TEAM_MODEL or candidate.get("reasoningEffort") != TEAM_REASONING or candidate.get("promptSha256") != draft_prompt_fingerprint():
-        raise ValueError("Prepare this verse with the current GPT and alignment specification before requesting an audit.")
     label = label_for(candidate, path)
     audit_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}-{verse}.audit-gpt-{label}.json"
     existing = read_json(audit_path, {})
@@ -535,6 +582,7 @@ def validate_units(packet: dict, units, spanish: str = "") -> list[dict]:
         if not surface or not ids: raise ValueError("Every alignment unit needs Spanish and source tokens.")
         if set(ids) - allowed: raise ValueError("An alignment unit contains an unknown source token.")
         covered.update(ids); clean.append({"es": surface, "sourceTokenIds": ids})
+    clean = merge_source_units_by_id(clean)
     precision = alignment_precision_findings(packet, clean)
     if precision:
         finding = precision[0]
@@ -579,24 +627,9 @@ def approve_verse(payload: dict) -> dict:
             raise ValueError("Spanish policy failed: " + "; ".join(item["issue"] for item in policy_findings))
         prior_path = candidate_path(book.slug, chapter, verse); prior = read_json(prior_path, {}) if prior_path else {}; decision = " ".join(str(payload.get("decision") or "").split())
         if prior.get("schema") != "lbf-human-reviewed-candidate-v1":
-            if prior.get("model") != TEAM_MODEL:
-                raise ValueError("This candidate is not proven to have been drafted by GPT-5.6 Sol. Prepare this verse again.")
-            if prior.get("reasoningEffort") != TEAM_REASONING:
-                raise ValueError("This candidate was not drafted with the required medium reasoning effort. Prepare this verse again.")
-            if prior.get("packetSha256") != packet_fingerprint(packet):
-                raise ValueError("This candidate is not bound to the current canonical packet. Prepare this verse again.")
-            if prior.get("promptSha256") != draft_prompt_fingerprint():
-                raise ValueError("This candidate was created under an older translation or alignment specification. Prepare this verse again.")
-            gate = gate_for(book.slug, chapter, verse, prior_path, prior)
-            if gate["spanish"] == "missing":
-                raise ValueError("The deterministic Spanish gate must run before human adjudication.")
-            if gate["spanishModel"] != SPANISH_GATE_MODEL or gate["spanishReasoning"] != "none":
-                raise ValueError("The Spanish gate must be deterministic local lint.")
-            if gate["auditRequired"] and gate["fidelity"] == "missing":
-                raise ValueError("This flagged candidate requires an independent GPT-5.6 Sol fidelity audit.")
-            if gate["fidelity"] not in {"missing", "not-required"} and (gate["auditModel"] != TEAM_MODEL or gate["auditReasoning"] != TEAM_REASONING):
-                raise ValueError("Any fidelity audit must use GPT-5.6 Sol with medium reasoning.")
-            enforce_human_adjudication(prior, gate, spanish, decision, bool(payload.get("auditOverrideConfirmed")))
+            if prior_path:
+                gate = gate_for(book.slug, chapter, verse, prior_path, prior)
+                enforce_human_adjudication(prior, gate, spanish, decision, bool(payload.get("auditOverrideConfirmed")))
         artifact = {"schema": "lbf-human-reviewed-candidate-v1", "book": book.slug, "reference": f"{book.label} {chapter}:{verse}", "chapter": chapter, "verse": verse, "sourcePolicy": packet.get("sourcePolicy"), "packetSha256": packet_fingerprint(packet), "spanish": spanish, "units": units, "adjudication": {"status": "approved", "decision": decision or "The named reviewer confirmed the wording against the complete canonical packet.", "reviewedBy": person, "reviewedOn": today(), "humanApprovedInTeamDesk": True, "sourceEvidenceConfirmed": True, "alignmentUnitsConfirmed": True, "suppliedWordsConfirmed": True, "failedAuditOverrideConfirmed": bool(payload.get("auditOverrideConfirmed")), "scope": "verse wording and alignment seed; not STATUS.md done approval"}}
         current_path = translation_file(book.slug)
         current_text = current_path.read_text(encoding="utf-8") if current_path.is_file() else ""
@@ -633,7 +666,7 @@ def chapter_count(slug: str) -> int:
 
 
 def board() -> dict:
-    return {"model": model_name(), "reasoningEffort": reasoning_effort(), "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
+    return {"model": model_name(), "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
 
 
 def warm_totals() -> None:

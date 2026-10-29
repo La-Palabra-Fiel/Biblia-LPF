@@ -35,6 +35,18 @@ in a note when useful.
 | Common nouns, verbs, titles | Spanish |
 | Cult / tech terms | Spanish, unless listed in a separate closed glossary |
 
+## Divine pronoun capitalization
+
+Capitalize Spanish pronouns and possessive forms whose referent is
+unambiguously God, Jesus Christ, or the Holy Spirit: **Él, Tú, Ti, Te, Lo,
+Le, Se, Su, Sus, Suyo, Suya, Suyos, Suyas**. Apply the same rule to other
+grammatically required forms.
+
+This is LBF house style, not additional lexical meaning. Do not use
+capitalization to decide an ambiguous referent; first preserve the ambiguity
+required by the source and context. Pronouns referring to human beings remain
+lowercase.
+
 ## Not a lemma dump
 
 Fail:

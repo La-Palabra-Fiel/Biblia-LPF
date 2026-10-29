@@ -11,15 +11,15 @@ Y llamó a Moisés, y Yahvé le habló desde *la* tienda de reunión, diciendo:
 
 ### 1:2
 
-Habla a los hijos de Israel, y dirás a ellos: Hombre, cuando acerque de ustedes una ofrenda a Jehová, desde la bestia, desde el ganado y desde el rebaño, acercarán su ofrenda.
+Habla a los hijos de Israel y diles: «Cuando un hombre de entre ustedes presente a Yahvé una ofrenda de los animales, del ganado vacuno y del rebaño presentarán su ofrenda».
 
 ### 1:3
 
-Si holocausto su ofrenda desde el ganado, macho íntegro lo acercará; a abertura de tienda de reunión lo acercará, a su agrado delante de Jehová.
+Si su ofrenda *es* un holocausto del ganado vacuno, presentará un macho sin defecto; a la entrada de la tienda de reunión lo presentará para su aceptación ante Yahvé.
 
 ### 1:4
 
-Y apoyará su mano sobre cabeza del holocausto, y será aceptado a él para expiar sobre él.
+Pondrá su mano sobre la cabeza del holocausto, y le será aceptado para hacer expiación por él.
 
 ### 1:5
 

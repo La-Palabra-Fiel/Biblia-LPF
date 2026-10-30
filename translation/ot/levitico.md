@@ -77,31 +77,31 @@ Y lo partirá por sus alas; *mas* no lo separará. Y el sacerdote lo hará humea
 
 ### 2:1
 
-Y alma, cuando acerque ofrenda de oblación a Jehová, harina fina será su ofrenda, y derramará sobre ella aceite, y dará sobre ella incienso.
+Y cuando alguna persona presente una ofrenda de grano a Yahvé, su ofrenda será harina fina; y verterá sobre ella aceite, y pondrá sobre ella incienso.
 
 ### 2:2
 
-Y la traerá a hijos de Aarón, los sacerdotes, y tomará de allí lleno su puño desde su sólet y desde su aceite, sobre todo su incienso, y hará humear el sacerdote su memorial hacia el altar; ofrenda de fuego, olor de reposo a Jehová.
+Y la llevará a los hijos de Aarón, los sacerdotes; y tomará de allí lo que llene su puño, de su harina fina y de su aceite, junto con todo su incienso; y el sacerdote hará humear su ofrenda conmemorativa en el altar como una ofrenda hecha por fuego, aroma apaciguador para Yahvé.
 
 ### 2:3
 
-Y la restante desde la ofrenda a Aarón y a sus hijos; santidad de santidades desde ofrendas de fuego de Jehová.
+Y lo restante de la ofrenda es para Aarón y para sus hijos; es lo más santo de las ofrendas hechas por fuego de Yahvé.
 
 ### 2:4
 
-Y cuando acerques ofrenda de minjá, cocido de horno, sólet, tortas ázimas amasadas en el aceite, y obleas ázimas untadas en el aceite.
+Y si presentas una ofrenda de cereal cocida en horno, *será de* tortas de flor de harina sin levadura mezcladas con el aceite y hojuelas sin levadura untadas con el aceite.
 
 ### 2:5
 
-Y si oblación sobre la plancha tu ofrenda, harina fina mezclada en el aceite, ázima será.
+Y si tu ofrenda *es* una ofrenda de cereal sobre la plancha, será de harina fina mezclada con aceite, sin levadura.
 
 ### 2:6
 
-La partirás a pedazos, y derramarás sobre ella aceite; ofrenda *es* ella.
+Divídela en pedazos y derramarás aceite sobre ella. Ella *es* una ofrenda *de cereal*.
 
 ### 2:7
 
-Y si oblación de sartén tu ofrenda, harina fina en el aceite será hecha.
+Y si tu ofrenda *es* una ofrenda *preparada* en cacerola, será hecha de harina fina con el aceite.
 
 ### 2:8
 

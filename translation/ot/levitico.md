@@ -7,71 +7,71 @@
 
 ### 1:1
 
-Y llamó a Moisés, y le habló Jehová desde *la* tienda de reunión, diciendo:
+Y llamó a Moisés, y Yahvé le habló desde *la* tienda de reunión, diciendo:
 
 ### 1:2
 
-Habla a los hijos de Israel, y dirás a ellos: Hombre, cuando acerque de ustedes una ofrenda a Jehová, desde la bestia, desde el ganado y desde el rebaño, acercarán su ofrenda.
+Habla a los hijos de Israel y diles: «Cuando un hombre de entre ustedes presente a Yahvé una ofrenda de los animales, del ganado vacuno y del rebaño presentarán su ofrenda».
 
 ### 1:3
 
-Si holocausto su ofrenda desde el ganado, macho íntegro lo acercará; a abertura de tienda de reunión lo acercará, a su agrado delante de Jehová.
+Si su ofrenda *es* un holocausto del ganado vacuno, presentará un macho sin defecto; a la entrada de la tienda de reunión lo presentará para su aceptación ante Yahvé.
 
 ### 1:4
 
-Y apoyará su mano sobre cabeza del holocausto, y será aceptado a él para expiar sobre él.
+Pondrá su mano sobre la cabeza del holocausto, y le será aceptado para hacer expiación por él.
 
 ### 1:5
 
-Y degollará al hijo del ganado delante de Jehová, y acercarán hijos de Aarón, los sacerdotes, la sangre, y echarán la sangre sobre el altar alrededor, que a abertura de tienda de reunión.
+Degollará el novillo delante de Yahvé, y los hijos de Aarón, los sacerdotes, presentarán la sangre y esparcirán la sangre por todos lados sobre el altar , que está a la entrada de la tienda de reunión.
 
 ### 1:6
 
-Y desollará el holocausto, y lo descuartizará a sus cuartos.
+Y desollará la ofrenda que se quema por completo *el holocausto*, y la cortará en trozos.
 
 ### 1:7
 
-Y darán hijos de Aarón el sacerdote fuego sobre el altar, y ordenarán leños sobre el fuego.
+Y los hijos de Aarón, el sacerdote, pondrán fuego sobre el altar y acomodaran leños sobre el fuego.
 
 ### 1:8
 
-Y ordenarán hijos de Aarón, los sacerdotes, los trozos, la cabeza y el sebo, sobre los leños que sobre el fuego que sobre el altar.
+Y los hijos de Aarón, los sacerdotes, colocaran los pedazos, la cabeza y el sebo sobre los leños que están sobre el fuego que está sobre el altar.
 
 ### 1:9
 
-Y su interior y sus piernas lavará en las aguas, y hará humear el sacerdote el todo hacia el altar; holocausto, ofrenda de fuego de olor de reposo a Jehová.
+Y sus entrañas y sus patas las lavará con agua; y el sacerdote quemara todo sobre el altar: holocausto, ofrenda hecha por fuego, aroma tranquilizador para Yahvé.
 
 ### 1:10
 
-Y si desde el rebaño su ofrenda, desde los corderos o desde las cabras, a holocausto, macho íntegro lo acercará.
+Y si su ofrenda para holocausto *es* del ganado menor —de los corderos o de las cabras—, presentará un macho sin defecto.
 
 ### 1:11
 
-Y lo degollará sobre muslo del altar, hacia el norte, delante de Jehová, y echarán hijos de Aarón, los sacerdotes, su sangre sobre el altar alrededor.
+Lo degollará en el costado del altar, hacia el norte delante de Yahvé; y los hijos de Aarón, los sacerdotes, arrojarán su sangre sobre el altar, alrededor.
 
 ### 1:12
 
-Y lo cortará en sus piezas, y su cabeza y su sebo, y el sacerdote los acomodará sobre los leños que sobre el fuego que sobre el altar.
+Y lo cortará en sus piezas, con su cabeza y su sebo; y el sacerdote los colocara sobre la leña que está sobre el fuego que está sobre el altar.
 
 ### 1:13
 
-Y el interior y las dos piernas lavará en las aguas, y acercará el sacerdote el todo, y hará humear hacia el altar; holocausto él, ofrenda de fuego de olor de reposo a Jehová.
+Y lavará las entrañas y las piernas con el agua; el sacerdote presentará todo y lo hará humear en el altar. Es un holocausto, una ofrenda hecha por fuego, aroma tranquilizador para Yahvé.
 
 ### 1:14
 
-Y si desde el ave holocausto su ofrenda a Jehová, y acercará desde las tórtolas o desde hijos de la paloma su ofrenda.
+Y si su ofrenda para Yahvé *es* un holocausto de aves, presentará su ofrenda de las tórtolas o de los pichones de paloma.
 
 ### 1:15
 
-Y lo acercará el sacerdote al altar, y le arrancará la cabeza, y hará humear hacia el altar, y será exprimida su sangre sobre la pared del altar.
+El sacerdote lo acercará al altar, le arrancara la cabeza y *la* hará humear en el altar; y su sangre se escurrirá sobre la pared del altar.
 
 ### 1:16
 
-Y quitará su buche con su pluma, y lo arrojará junto al altar, hacia el oriente, al lugar de la ceniza.
+Y quitará su buche con su plumaje, y lo arrojará junto al altar, hacia el oriente, al lugar de la ceniza.
 
 ### 1:17
 
-Y lo rasgará en sus alas; no separará. Y hará humear a él el sacerdote hacia el altar, sobre los leños que sobre el fuego; holocausto él, ofrenda de fuego de olor de reposo a Jehová.
+Y lo partirá por sus alas; *mas* no lo separará. Y el sacerdote lo hará humear en el altar, sobre los leños que están sobre el fuego. *Es* un holocausto, una ofrenda hecha por fuego, aroma de sosiego para Yahvé.
 
 ## Capítulo 2
 

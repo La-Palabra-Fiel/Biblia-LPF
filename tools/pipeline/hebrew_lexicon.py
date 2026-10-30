@@ -66,9 +66,15 @@ def verify_pinned_files() -> None:
             raise FileNotFoundError(f"pinned Hebrew lexicon file missing: {path}")
         actual = _sha256(path)
         if actual != expected:
-            raise ValueError(
-                f"pinned Hebrew lexicon checksum mismatch: {name}: {actual}"
-            )
+            content = path.read_bytes()
+            # Windows checkouts may expand LF to CRLF. Accept only that
+            # reversible line-ending conversion when the pinned LF hash matches.
+            crlf_only = b"\r\n" in content and b"\r" not in content.replace(b"\r\n", b"")
+            normalized = hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest() if crlf_only else None
+            if normalized != expected:
+                raise ValueError(
+                    f"pinned Hebrew lexicon checksum mismatch: {name}: {actual}"
+                )
 
 
 def augmented_strong(oshb_lemma: str) -> str | None:

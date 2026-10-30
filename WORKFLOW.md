@@ -56,7 +56,16 @@ En el NT deben conservarse distintas estas familias:
 - `μετανοέω` / `μετάνοια` expresan un cambio de mente, juicio o manera de
   pensar. La redacción parte de **cambiar de manera de pensar**, **cambiar de
   parecer** o **cambio de mente**, según la sintaxis y el contexto. No se les
-  añade pesar emocional si el contexto no lo expresa.
+  añade pesar emocional si el contexto no lo expresa. Esta familia no
+  significa por sí sola **dejar de pecar**, **abandonar los pecados**,
+  **reformar la conducta** ni **hacer penitencia**; tampoco convierte esas
+  acciones en una condición de salvación. Cuando el contexto identifica
+  aquello acerca de lo cual se cambia de juicio —una afirmación, una persona,
+  una promesa, un objeto de confianza o cualquier otro referente—, la
+  traducción conserva esa relación exacta. Si no lo identifica explícitamente,
+  no se inventa. Las obras posteriores pueden ser presentadas por el pasaje
+  como resultado o evidencia del cambio, pero nunca se introducen dentro del
+  significado del lema.
 - `μεταμέλομαι` expresa una preocupación o pesar posterior, que según el
   contexto puede acompañar una reconsideración. La redacción parte de
   **sentir pesar** o **lamentar** cuando el pesar es el foco; **cambiar de
@@ -78,10 +87,50 @@ estas familias aparecen juntas, el español debe mantener su contraste. Si el
 contexto no permite escoger entre dos realizaciones españolas, el resultado es
 `HOLD`.
 
+Especialmente en pasajes acerca de la salvación, la traducción no puede
+convertir una interpretación soteriológica en significado léxico. Debe mostrar
+qué relación expresa realmente el griego —por ejemplo, el contenido juzgado,
+la orientación indicada, la confianza nombrada o la fe coordinada— y guardar
+silencio donde el texto guarde silencio.
+
 En Éxodo 13:17, el nifal `יִנָּחֵם`, seguido por ver la guerra y volver a
 Egipto, describe reconsiderar el rumbo: **cambie de parecer**, no el genérico
 **se arrepienta**. Esta adjudicación no convierte esa traducción en glosa fija
 para otras apariciones de `נחם`.
+
+### Política léxica: `מלאך`, mensajero y posible identidad divina
+
+La LBF traduce `מלאך` (H4397) por **mensajero** cuando designa a un enviado,
+sin sustituirlo por **ángel** para adelantar una conclusión acerca de la
+naturaleza del referente. La misma palabra hebrea recibe la misma base
+española en expresiones que el relato puede relacionar entre sí.
+
+La traducción conserva con precisión la determinación y el genitivo:
+
+- `מַלְאַךְ יְהוָה` → **el mensajero de Yahvé**;
+- `מַלְאַךְ הָאֱלֹהִים` → **el mensajero de Dios**;
+- un `מַלְאָךְ` verdaderamente indefinido → **un mensajero**;
+- `מַלְאָכִי` → **Mi mensajero**, con la persona y posesión que exija el
+  contexto.
+
+No se armonizan **Yahvé** y **Dios**, y no se cambia **mensajero** por
+**ángel** cuando cambia el genitivo. Así quedan visibles tanto la distinción
+formal como una posible continuidad narrativa. Si un mismo episodio alterna
+**el mensajero de Yahvé** y **el mensajero de Dios**, o pone habla divina en
+boca del mensajero, la traducción preserva exactamente esas designaciones,
+pronombres y palabras. No añade **Cristo**, **un ángel creado** ni otra
+identificación ontológica.
+
+**Mensajero** no se escribe con mayúscula inicial para insinuar una
+cristofanía: el hebreo no codifica tal mayúscula, y añadirla resolvería por
+tipografía una cuestión que el texto deja a la exégesis. Esta política tampoco
+afirma que todas las apariciones de `מלאך` tengan el mismo referente; la
+identidad se sigue por la sintaxis y el discurso de cada pasaje.
+
+En Éxodo 14:19, el artículo de `הָאֱלֹהִים` hace definida toda la cadena de
+constructo: **el mensajero de Dios**, no **un mensajero de Dios**. La frase
+preserva la posibilidad de que el relato lo relacione con **el mensajero de
+Yahvé** sin decidir por traducción si se trata de Cristo preencarnado.
 
 Open Scriptures HebrewLexicon es el testigo léxico autorizado para el AT,
 fijado por commit y checksum. El paquete llega a él desde el lema Strong

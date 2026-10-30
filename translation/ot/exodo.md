@@ -1435,27 +1435,27 @@ Y será como señal sobre tu mano y como bandas entre tus ojos, porque con fuerz
 
 ### 13:17
 
-Y fue en enviar Faraón al pueblo, y no los guió Dios camino de tierra de filisteos, porque cercano él, porque dijo Dios: No sea que se arrepienta el pueblo en su ver guerra, y vuelvan hacia Egipto.
+Y sucedió que, cuando Faraón dejó ir al pueblo, Dios no los guio por el camino de la tierra de los filisteos, aunque este era cercano, porque Dios dijo: «No sea que el pueblo cambie de parecer al ver la guerra y regresen a Egipto».
 
 ### 13:18
 
-Y Dios hizo rodear al pueblo camino del desierto, mar de los juncos; y armados subieron hijos de Israel desde tierra de Egipto.
+Y Dios hizo dar un rodeo al pueblo por el camino del desierto hacia el mar de Juncos; y en formación de batalla subieron los hijos de Israel de la tierra de Egipto.
 
 ### 13:19
 
-Y tomó Moisés los huesos de José con él, porque jurando había hecho jurar a hijos de Israel, diciendo: Visitando visitará Dios a ustedes, y harán subir mis huesos desde esto con ustedes.
+Y Moisés tomó consigo los huesos de José, porque había hecho jurar solemnemente a los hijos de Israel, diciendo: «Ciertamente Dios los visitará, y subirán mis huesos de aquí con ustedes».
 
 ### 13:20
 
-Y partieron desde Sucot y acamparon en Etam, en extremo del desierto.
+Y partieron de Sucot y acamparon en Etam, en el extremo del desierto.
 
 ### 13:21
 
-Y Yahvé andante delante de ellos de día en columna de nube para guiarlos el camino, y de noche en columna de fuego para alumbrar a ellos, para andar día y noche.
+Y Yahvé iba delante de ellos de día en una columna de nube, para guiarlos por el camino, y de noche en una columna de fuego, para alumbrarles, para que caminaran de día y de noche.
 
 ### 13:22
 
-No se apartará columna de la nube de día y columna del fuego de noche delante del pueblo.
+No se apartaba de delante del pueblo la columna de nube de día, ni la columna de fuego de noche.
 
 ## Capítulo 14
 
@@ -1465,71 +1465,71 @@ Y habló Yahvé a Moisés, diciendo:
 
 ### 14:2
 
-Habla a hijos de Israel, y vuelvan y acampen delante de Pi Hajirot, entre Migdol y entre el mar, delante de Baal Tsefon; enfrente de él acamparán sobre el mar.
+Di a los hijos de Israel que regresen y acampen delante de Pi-hahirot, entre Migdol y el mar, delante de Baal-zefón. Frente a él acamparán junto al mar.
 
 ### 14:3
 
-Y dirá Faraón a hijos de Israel: Confundidos ellos en la tierra; cerró sobre ellos el desierto.
+Y dirá Faraón acerca de los hijos de Israel: «Ellos están confundidos en la tierra; el desierto se ha cerrado sobre ellos».
 
 ### 14:4
 
-Y fortaleceré el corazón de Faraón, y perseguirá detrás de ellos, y me glorificaré en Faraón y en todo su ejército, y conocerán Egipto que yo Yahvé. Y hicieron así.
+Y fortaleceré el corazón de Faraón, y los perseguirá; y seré glorificado por medio de Faraón y de todo su ejército, y sabrán los egipcios que Yo *soy* Yahvé. Y así lo hicieron.
 
 ### 14:5
 
-Y fue dicho a rey de Egipto que huyó el pueblo, y se volvió el corazón de Faraón y de sus siervos hacia el pueblo, y dijeron: ¿Qué esto hicimos, que enviamos a Israel de servirnos?
+Y se le informó al rey de Egipto que el pueblo había huido, y el corazón de Faraón y de sus siervos cambió con respecto al pueblo, y dijeron: «¿Qué es esto que hicimos al liberar a Israel de servirnos?»
 
 ### 14:6
 
-Y enganchó su carro, y a su pueblo tomó consigo.
+Y preparó su carro, y tomó consigo a su pueblo.
 
 ### 14:7
 
-Y tomó seiscientos carro escogido y todo carro de Egipto, y terceros sobre todo él.
+Y tomó seiscientos carros escogidos, junto con toda la fuerza de carros de Egipto, con oficiales a cargo de todos ellos.
 
 ### 14:8
 
-Y fortaleció Yahvé el corazón de Faraón rey de Egipto, y persiguió detrás de hijos de Israel, e hijos de Israel salientes con mano alta.
+Y Yahvé endureció el corazón de Faraón, rey de Egipto, y él persiguió a los hijos de Israel; y los hijos de Israel salían con la mano alzada.
 
 ### 14:9
 
-Y persiguió Egipto detrás de ellos, y los alcanzaron acampados sobre el mar, todo caballo del carro de Faraón y sus jinetes y su ejército, sobre Pi Hajirot, delante de Baal Tsefon.
+Y los egipcios los persiguieron, y todos los caballos de la fuerza de carros de Faraón, sus jinetes y su ejército los alcanzaron mientras acampaban junto al mar, junto a Pi-hahirot, frente a Baal-zefón.
 
 ### 14:10
 
-Y Faraón se acercó, y alzaron hijos de Israel sus ojos, y he aquí Egipto viajante detrás de ellos, y temieron mucho, y clamaron hijos de Israel a Yahvé.
+Y Faraón se acercó, y los hijos de Israel alzaron sus ojos; y he aquí que Egipto marchaba detrás de ellos, y se atemorizaron mucho, y los hijos de Israel clamaron a Yahvé.
 
 ### 14:11
 
-Y dijeron a Moisés: ¿Por falta de no haber sepulcros en Egipto nos tomaste a morir en el desierto? ¿Qué esto hiciste a nosotros, para sacarnos desde Egipto?
+Y dijeron a Moisés: «¿Por no haber sepulcros en Egipto nos llevaste a morir en el desierto? ¿Qué *es* esto que nos hiciste al sacarnos de Egipto?»
 
 ### 14:12
 
-¿No *es* esta la palabra que hablamos a ti en Egipto, diciendo: Cesa de nosotros, y sirvamos a Egipto? Porque bueno a nosotros servir a Egipto más que morir nosotros en el desierto.
+¿No *es* esto de lo que te hablamos en Egipto, diciendo: «Déjanos, y sirvamos a los egipcios»? Porque *es* mejor para nosotros servir a los egipcios que morir en el desierto.
 
 ### 14:13
 
-Y dijo Moisés al pueblo: No teman; párense y vean la salvación de Yahvé que hará a ustedes hoy, porque a Egipto que vieron ustedes hoy, no añadirán verlos todavía hasta siempre.
+Y Moisés dijo al pueblo: «No teman. Manténganse firmes y vean la liberación de Yahvé que llevará a cabo por ustedes hoy; porque a los egipcios que han visto hoy no los volverán a ver nunca más».
 
 ### 14:14
 
-Yahvé peleará a ustedes, y ustedes callarán.
+Yahvé peleará por ustedes, y ustedes guardarán silencio.
 
 ### 14:15
 
-Y dijo Yahvé a Moisés: ¿Qué clamas a mí? Habla a hijos de Israel, y partan.
+Y dijo Yahvé a Moisés: «¿Por qué clamas a Mí? Habla a los hijos de Israel, y que marchen».
 
 ### 14:16
 
-Y tú, alza tu vara y extiende tu mano sobre el mar y rájalo, y entren hijos de Israel en medio del mar en la tierra seca.
+Y tú, levanta tu vara y extiende tu mano sobre el mar y divídelo; y los hijos de Israel entrarán en medio del mar por tierra seca.
 
 ### 14:17
 
-Y yo, he aquí yo fortaleciendo el corazón de Egipto, y entrarán detrás de ellos, y me glorificaré en Faraón y en todo su ejército, en su carro y en sus jinetes.
+Y en cuanto a Mí, he aquí que voy a endurecer el corazón de los egipcios, y entrarán tras ellos; y seré glorificado en Faraón, y en todo su ejército, en sus carros y en sus jinetes.
 
 ### 14:18
 
-Y conocerá Egipto que yo Yahvé, en mi glorificarme en Faraón, en su carro y en sus jinetes.
+Y los egipcios sabrán que Yo *soy* Yahvé cuando sea glorificado por medio de Faraón, de su fuerza de carros y de sus jinetes.
 
 ### 14:19
 
@@ -1541,7 +1541,7 @@ Y vino entre campamento de Egipto y entre campamento de Israel, y fue la nube y 
 
 ### 14:21
 
-Y extendió Moisés su mano sobre el mar, e hizo ir Yahvé al mar con viento de oriente fuerte toda la noche, y puso al mar a sequedad, y se rajaron las aguas.
+Y Moisés extendió su mano sobre el mar, y Yahvé hizo que se retirara el mar con un viento fuerte del este toda la noche; y convirtió el mar en tierra seca, y se partieron las aguas.
 
 ### 14:22
 
@@ -1561,7 +1561,7 @@ Y quitó rueda de sus carros, y los conducía en pesadez, y dijo Egipto: Huyamos
 
 ### 14:26
 
-Y dijo Yahvé a Moisés: Extiende tu mano sobre el mar, y vuelvan las aguas sobre Egipto, sobre su carro y sobre sus jinetes.
+Y Yahvé dijo a Moisés: «Extiende tu mano sobre el mar, y que vuelvan las aguas sobre Egipto, sobre sus carros y sobre sus jinetes».
 
 ### 14:27
 

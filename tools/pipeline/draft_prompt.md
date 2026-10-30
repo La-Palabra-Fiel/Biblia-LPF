@@ -60,12 +60,19 @@ METHOD:
 - NT lexical-family policy: μετανοέω/μετάνοια concerns a change of mind,
   judgment, or way of thinking; begin with cambiar de manera de pensar,
   cambiar de parecer, or cambio de mente as syntax and context require, and do
-  not import emotional sorrow. μεταμέλομαι concerns subsequent concern or
-  regret, which may accompany reconsideration; begin with sentir pesar or
-  lamentar when sorrow is in focus, and use cambiar de parecer only when the
-  construction and outcome support it. Keep the two families distinct,
-  especially when both occur in one context. This policy does not replace the
-  required canonical NT packet evidence.
+  not import emotional sorrow. Never expand this family to dejar de pecar,
+  abandonar los pecados, reformar la conducta, or hacer penitencia, and never
+  make those actions a condition of salvation unless separate source words and
+  syntax explicitly say so. Preserve the exact contextual object or direction
+  of the changed judgment, including a stated claim, person, promise, basis of
+  trust, or coordinated faith; do not invent one when it is unstated. Works
+  may be a stated result or evidence of the change, but are not part of the
+  lemma by default. μεταμέλομαι concerns subsequent concern or regret, which
+  may accompany reconsideration; begin with sentir pesar or lamentar when
+  sorrow is in focus, and use cambiar de parecer only when the construction
+  and outcome support it. Keep the two families distinct, especially when both
+  occur in one context. This policy does not replace the required canonical NT
+  packet evidence or license a theological conclusion as lexical evidence.
 - OT lexical-family policy: נחם (H5162) is never automatically arrepentirse;
   determine comfort, sorrow, compassion, reconsideration, or relenting from
   stem, construction, participants, and context. שוב (H7725) expresses
@@ -75,6 +82,24 @@ METHOD:
 - Binding adjudication for Exodus 13:17 only: Niphal יִנָּחֵם followed by
   seeing war and returning to Egypt is cambie de parecer, not se arrepienta.
   Do not transfer that Spanish automatically to another occurrence of נחם.
+- OT messenger policy: render מלאך (H4397), when it designates an envoy, with
+  the Spanish base mensajero rather than changing it to ángel to encode an
+  ontological conclusion. Preserve determination and the exact genitive:
+  מַלְאַךְ יְהוָה is el mensajero de Yahvé; מַלְאַךְ הָאֱלֹהִים is el
+  mensajero de Dios; a genuinely indefinite מַלְאָךְ is un mensajero; and a
+  possessive form such as מַלְאָכִי preserves its source person and possession.
+  Never harmonize Yahvé with Dios. When a discourse alternates mensajero de
+  Yahvé and mensajero de Dios, or gives the messenger divine first-person
+  speech, preserve the designations, pronouns, and speech exactly while
+  leaving the referent's ontology open. Do not add Cristo, un ángel creado, or
+  another identification, and do not capitalize Mensajero merely to suggest a
+  christophany. This policy does not assert that every occurrence has the same
+  referent; determine referential continuity from the syntax and discourse.
+- Binding adjudication for Exodus 14:19 only: the article in הָאֱלֹהִים makes
+  the construct chain definite, so translate el mensajero de Dios, not un
+  mensajero de Dios. Preserve the possible narrative relation with el
+  mensajero de Yahvé without deciding whether the figure is the preincarnate
+  Christ.
 - Account for every token, but do not copy Hebrew word order into Spanish.
   Use ordinary current Latin American syntax whenever it preserves the same
   participants, relationships, emphasis, and openness.

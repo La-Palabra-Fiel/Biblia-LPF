@@ -105,23 +105,23 @@ Y si tu ofrenda *es* una ofrenda *preparada* en cacerola, será hecha de harina 
 
 ### 2:8
 
-Y traerás la ofrenda que será hecha desde estas a Jehová, y la presentará al sacerdote, y la acercará al altar.
+Y llevarás para Yahvé la ofrenda que se haga de estas ; y *se* la presentará al sacerdote, y *el* la acercará al altar.
 
 ### 2:9
 
-Y alzará el sacerdote desde la ofrenda su memorial, y hará humear hacia el altar; ofrenda de fuego de olor de reposo a Jehová.
+Y el sacerdote alzará de la ofrenda *de cereal* su ofrenda conmemorativa y la hará humear sobre el altar: ofrenda hecha por fuego, aroma tranquilizador para Yahvé.
 
 ### 2:10
 
-Y lo restante desde la ofrenda a Aarón y a sus hijos; santidad de santidades desde ofrendas de fuego de Jehová.
+Y lo que queda de la ofrenda *será* para Aarón y para sus hijos; *es* lo mas santo de las ofrendas hechas por fuego de Yahvé.
 
 ### 2:11
 
-Toda la ofrenda que acercarán a Jehová no será hecha con leudado, porque toda levadura y toda miel no harán humear desde nosotros ofrenda de fuego a Jehová.
+Toda ofrenda *de cereal* que presenten a Yahvé no se hará leudada, porque nada de levadura ni nada de miel harán humear de ello como ofrenda hecha por fuego a Yahvé.
 
 ### 2:12
 
-Ofrenda de principio las acercarán a Jehová, y al altar ellas no subirán a olor de reposo.
+Como ofrenda de lo primero, los presentarán a Yahvé, y no subirán al altar como aroma apaciguador.
 
 ### 2:13
 

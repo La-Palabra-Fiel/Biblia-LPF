@@ -125,25 +125,25 @@ Como ofrenda de lo primero, los presentarán a Yahvé, y no subirán al altar co
 
 ### 2:13
 
-Y toda ofrenda de tu oblación con la sal salarás, y no harás cesar sal de pacto de tu Dios de sobre tu oblación; sobre toda tu ofrenda acercarás sal.
+Y salarás con sal toda ofrenda de tu ofrenda de cereal; y no quitarás de tu ofrenda de cereal la sal del pacto de tu Dios. Sobre toda ofrenda tuya presentarás sal.
 
 ### 2:14
 
-Y si acercas ofrenda de primicias a Jehová, espiga tierna tostada en el fuego, grano triturado de espiga fresca acercarás la ofrenda de tus primicias.
+Y si presentas a Yahvé una ofrenda de *los* primeros frutos, presentarás como ofrenda de tus primeros frutos espigas tiernas tostadas al fuego, grano triturado del fruto.
 
 ### 2:15
 
-Y darás sobre ella aceite, y pondrás sobre ella incienso; ofrenda *es* ella.
+Y pondrás aceite sobre ella, y pondrás incienso sobre ella. Es una ofrenda.
 
 ### 2:16
 
-Y hará humear el sacerdote su memorial desde su grano triturado y desde su aceite, sobre todo su incienso; ofrenda de fuego a Jehová.
+Y quemara el sacerdote la porción conmemorativa de su grano triturado y de su aceite, junto con todo su incienso: una ofrenda hecha por fuego para Yahvé.
 
 ## Capítulo 3
 
 ### 3:1
 
-Y si sacrificio de pazes su ofrenda, si desde el ganado él acercante, si macho si hembra, íntegro lo acercará delante de Jehová.
+Y si su ofrenda *es* un sacrificio de paz, si él presenta un macho o hembra del ganado, lo presentará sin defecto delante de Yahvé.
 
 ### 3:2
 

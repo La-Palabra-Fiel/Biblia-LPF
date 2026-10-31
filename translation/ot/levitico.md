@@ -147,15 +147,15 @@ Y si su ofrenda *es* un sacrificio de paz, si él presenta un macho o hembra del
 
 ### 3:2
 
-Y apoyará su mano sobre cabeza de su ofrenda, y la degollará a abertura de tienda de reunión, y echarán hijos de Aarón, los sacerdotes, la sangre sobre el altar alrededor.
+Y pondrá su mano sobre la cabeza de su ofrenda, y lo degollara a la entrada de la tienda de reunión; y los hijos de Aarón, los sacerdotes, esparcirán la sangre sobre el altar por todos lados.
 
 ### 3:3
 
-Y acercará desde sacrificio de los pazes ofrenda de fuego a Jehová: la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará, del sacrificio de las ofrendas de paz, la grasa que cubre el interior y toda la grasa que está sobre el interior, una ofrenda hecha por fuego para Yahvé.
 
 ### 3:4
 
-y los dos riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones lo quitará.
+Y los dos riñones, y la grasa que *está* sobre ellos, que *está* sobre los lomos, y el apéndice sobre el hígado, junto con los riñones lo quitará.
 
 ### 3:5
 

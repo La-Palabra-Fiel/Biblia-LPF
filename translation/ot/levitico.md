@@ -159,55 +159,55 @@ Y los dos riñones, y la grasa que *está* sobre ellos, que *está* sobre los lo
 
 ### 3:5
 
-Y harán humear a él hijos de Aarón hacia el altar, sobre el holocausto que sobre los leños que sobre el fuego; ofrenda de fuego de olor de reposo a Jehová.
+Y lo quemaran los hijos de Aarón en el altar, sobre el holocausto *de la grasa* que está sobre los maderos que están sobre el fuego, como ofrenda hecha por fuego de aroma apaciguador para Yahvé.
 
 ### 3:6
 
-Y si desde el rebaño su ofrenda a sacrificio de pazes a Jehová, macho o hembra, íntegro lo acercará.
+Y si su ofrenda como sacrificio de paz para Yahvé *es* del rebaño, *sea* macho o hembra, la presentará sin defecto.
 
 ### 3:7
 
-Si cordero él acercante su ofrenda, y lo acercará delante de Jehová.
+Si presenta un cordero como su ofrenda, lo presentará delante de Yahvé.
 
 ### 3:8
 
-Y apoyará su mano sobre cabeza de su ofrenda, y lo degollará delante de tienda de reunión, y echarán hijos de Aarón su sangre sobre el altar alrededor.
+Y apoyará su mano sobre la cabeza de su ofrenda, y *el* lo degollará delante de la tienda de reunión; y los hijos de Aarón esparcirán su sangre sobre el altar por todos lados.
 
 ### 3:9
 
-Y acercará desde sacrificio de los pazes ofrenda de fuego a Jehová: su grasa, la cola íntegra, a la par del espinazo la quitará, y la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará del sacrificio de las ofrendas de paz, su grasa, la cola gorda entera, que quitará junto a la espina dorsal, y la grasa que cubre el interior, y toda la grasa que está sobre el interior, una ofrenda hecha por fuego para Yahvé:
 
 ### 3:10
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará.
+y los dos riñones, y la grasa que *está* sobre ellos *y* que *está* sobre los lomos, y el apéndice sobre el hígado; junto con los riñones lo quitará.
 
 ### 3:11
 
-Y lo hará humear el sacerdote hacia el altar; pan de ofrenda de fuego a Jehová.
+Y el sacerdote lo quemara sobre el altar como alimento de una ofrenda hecha por fuego para Yahvé.
 
 ### 3:12
 
-Y si cabra *es* su ofrenda, y la acercará delante de Jehová.
+Y si su ofrenda *es* una cabra, la presentará ante Yahvé.
 
 ### 3:13
 
-Y apoyará su mano sobre su cabeza, y lo degollará delante de tienda de reunión, y echarán hijos de Aarón su sangre sobre el altar alrededor.
+Y pondrá su mano sobre su cabeza y *el* lo degollará delante de la tienda de reunión; y los hijos de Aarón rociarán su sangre sobre el altar por todos lados.
 
 ### 3:14
 
-Y acercará desde ella su ofrenda, ofrenda de fuego a Jehová: la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará de ello su ofrenda, la grasa que cubre las entrañas y toda la grasa que *está* sobre las entrañas, una ofrenda hecha por fuego para Yahvé:
 
 ### 3:15
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará.
+Y los dos riñones, y la grasa que está sobre ellos, la cual está sobre los lomos, y el apéndice que está sobre el hígado; junto con los riñones lo quitará.
 
 ### 3:16
 
-Y los hará humear el sacerdote hacia el altar; pan de ofrenda de fuego a olor de reposo; toda grasa a Jehová.
+Y el sacerdote los hará humear sobre el altar: alimento de una ofrenda hecha por fuego para un aroma apaciguador. Toda grasa *es* para Yahvé.
 
 ### 3:17
 
-Estatuto de siempre a generaciones de ustedes en todas sus moradas: toda grasa y toda sangre no comerán.
+Estatuto perpetuo para sus generaciones, en todas sus moradas, no comerán ninguna grasa ni ninguna sangre.
 
 ## Capítulo 4
 

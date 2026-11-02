@@ -520,7 +520,8 @@ class SourcePacketTests(unittest.TestCase):
     def test_model_packet_is_compact_but_keeps_primary_evidence(self) -> None:
         packet = build_packet("exodo", 1, 5)
         compact = packet_for_prompt(packet)
-        self.assertEqual(compact["promptProfile"], "canonical-ot-compact-v1")
+        self.assertEqual(compact["promptProfile"], "canonical-ot-compact-v2")
+        self.assertTrue(all(len(item["samples"]) <= 1 for item in compact["corpusEvidence"]))
         self.assertEqual(
             [item["sourceTokenId"] for item in compact["tokens"]],
             [item["sourceTokenId"] for item in packet["tokens"]],

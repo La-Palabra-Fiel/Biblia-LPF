@@ -60,6 +60,25 @@ The user has authorized a GPT-5.6 Sol path. Its governing chapter workflow is
 documented in `WORKFLOW.md`. The Cursor command later in this file is the
 retained legacy implementation and must not be represented as the GPT path.
 
+Team Desk performs a no-cost deterministic preflight before a named human can
+approve a verse. It checks complete packet-token coverage, known token IDs,
+alignment precision, Spanish-unit reconstruction, and identical supplied-word
+italics. This preflight never calls a model. Existing human approvals are
+grandfathered while their Spanish still matches the canonical verse; packet
+fingerprint drift alone does not purchase another draft or force retrospective
+chapter approval.
+
+New Team Desk screening drafts use GPT-5.6 Sol at low reasoning with a
+4,000-token completion ceiling and one best-ranked corpus parallel per lemma.
+Existing compatible medium-reasoning candidates are reused without another
+paid call. The displayed maximum is sent back with the confirmation; if the
+estimate changes, the server refuses to start and asks for a new confirmation.
+
+The named whole-chapter approval records every unchanged candidate that passes
+all deterministic gates and has no uncertainty or failed required audit. It
+does not approve HOLD verses. Those remain the only cards requiring individual
+work, and the chapter manifest is withheld until they are resolved.
+
 This is the procedure. One Protestant verse at a time, from a source
 packet. NT: **TR1894**. OT: the canonical evidence bundle described above.
 

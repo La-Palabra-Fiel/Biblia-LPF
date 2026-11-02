@@ -163,10 +163,12 @@ costo, el auditor independiente no se ejecuta rutinariamente: compara el
 candidato con el mismo paquete, sin reescribir, solamente cuando el candidato
 declara incertidumbre, falla una regla local o la persona solicita la auditoría.
 
-La mesa de equipo fija `reasoning.effort=medium` para la redacción y la
-auditoría independiente de fidelidad cuando esta se requiere. Cada artefacto registra ese esfuerzo;
-un artefacto de redacción o auditoría sin procedencia `gpt-5.6-sol` y `medium`
-se rechaza y debe prepararse de nuevo. La comprobación mecánica del español es
+La mesa de equipo fija `reasoning.effort=low` para la redacción de cribado y
+limita la salida total a 4.000 tokens por versículo. Los candidatos históricos
+de `gpt-5.6-sol` creados con `medium` siguen siendo válidos y se reutilizan; el
+cambio de costo nunca obliga a comprarlos otra vez. La auditoría independiente
+de fidelidad es una escalada pagada de un solo versículo, nunca una fase
+automática del capítulo. Cada artefacto registra su esfuerzo. La comprobación mecánica del español es
 local y determinista; la fluidez final la adjudica la persona que lee el
 versículo y después el capítulo completo. No se paga una tercera llamada para
 suplantar esa lectura humana. Las decisiones difíciles incluyen como máximo
@@ -182,6 +184,38 @@ generales ya fijadas —por ejemplo, conservar imágenes concretas, usar Yahvé 
 no suavizar— son precedentes vinculantes del modelo. Una decisión léxica o
 sintáctica anterior puede alertar al revisor, pero el versículo presente debe
 quedar justificado otra vez por su propia superficie, gramática y contexto.
+
+La mesa clasifica las nuevas decisiones humanas para que los problemas
+repetidos puedan contarse y revisarse. La categoría no convierte una decisión
+en evidencia ni en regla del modelo. Una repetición solamente puede llegar a
+ser regla general mediante una decisión normativa humana explícita que se
+incorpore a este flujo y a las instrucciones correspondientes.
+
+La aprobación explícita del capítulo puede aprobar de una vez, bajo el nombre
+del revisor, los candidatos preparados que estén exactamente sin cambios y
+pasen todos los controles locales: paquete vigente, cobertura y precisión de
+unidades, reconstrucción del español y cursivas, lint, y ausencia de
+incertidumbres, conceptos añadidos, omisiones o fallos de auditoría. Esta acción
+registra una aprobación individual ligada al texto y las unidades exactas de
+cada versículo limpio. Todo versículo en `HOLD` queda sin aprobar y debe
+adjudicarse por separado. El manifiesto final del capítulo solamente se escribe
+cuando ya no queda ningún `HOLD`.
+
+Antes de aprobar, una comprobación local sin costo verifica la cobertura de
+todos los `sourceTokenIds`, rechaza identificadores desconocidos, aplica las
+reglas mecánicas de precisión y comprueba que las unidades reproduzcan en el
+mismo orden todas las palabras españolas y las mismas cursivas de palabras
+suplidas. La puntuación no necesita formar unidades de alineación propias.
+Esta comprobación se muestra mientras la persona edita y se repite en el
+servidor al aprobar; nunca llama a un modelo ni adjudica significado.
+
+Las aprobaciones nuevas registran la huella del español, de las unidades, del
+paquete y de las reglas usadas para conservar procedencia. Las aprobaciones
+anteriores quedan reconocidas mientras coincidan exactamente con el español
+canónico: un cambio posterior de la huella del paquete no inicia por sí solo
+otra llamada pagada ni exige una aprobación retroactiva. Una revisión
+histórica puede señalar fallos mecánicos concretos para inspección humana, pero
+no reabre capítulos enteros automáticamente.
 
 El capítulo entra en `translation/` solamente con los candidatos que pasaron
 la comprobación local y, cuando fue requerida, la auditoría de fidelidad; los

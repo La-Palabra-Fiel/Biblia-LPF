@@ -659,7 +659,10 @@ def packet_for_prompt(packet: dict) -> dict:
     corpus = []
     for entry in packet.get("corpusEvidence") or []:
         samples = []
-        for sample in (entry.get("samples") or [])[:2]:
+        # One best-ranked corpus parallel is enough for the low-cost screening
+        # draft. The complete deterministic corpus evidence remains in the
+        # stored packet for the human reviewer and any verse-level escalation.
+        for sample in (entry.get("samples") or [])[:1]:
             samples.append(
                 {
                     key: sample.get(key)
@@ -684,7 +687,7 @@ def packet_for_prompt(packet: dict) -> dict:
         )
 
     return {
-        "promptProfile": "canonical-ot-compact-v1",
+        "promptProfile": "canonical-ot-compact-v2",
         "sourcePolicy": packet["sourcePolicy"],
         "evidencePolicy": packet["evidencePolicy"],
         "book": packet["book"],

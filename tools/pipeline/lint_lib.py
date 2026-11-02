@@ -9,6 +9,7 @@ from books import ROOT, get_book
 
 RULES = (
     (re.compile(r"\b(?:Jehová|Jehova|Yahweh|Yahveh|Yavé|Yave|YHWH)\b", re.I), "יהוה must be rendered Yahvé"),
+    (re.compile(r"\bfaraón\b"), "the locked proper name must be capitalized Faraón"),
     (re.compile(r"\bvosotros\b", re.I), "Spain vosotros"),
     (re.compile(r"\bvosotras\b", re.I), "Spain vosotras"),
     (re.compile(r"\b(?:hagáis|haréis|habéis|tenéis|veréis|veáis|asistáis|mataréis)\b", re.I), "Spain 2pl verb"),

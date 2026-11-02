@@ -1591,7 +1591,7 @@ Entonces cantaron Moisés y los hijos de Israel esta canción a Yahvé, y dijero
 
 ### 15:2
 
-Mi fuerza y canción Yah, y fue a mí a salvación; este mi Dios, y lo embelleceré; Dios de mi padre, y lo ensalzaré.
+Yah es mi fuerza y mi canción, y llegó a ser mi salvación. Este *es* mi Dios, y lo embelleceré; el Dios de mi padre, y lo exaltaré.
 
 ### 15:3
 
@@ -1599,7 +1599,7 @@ Yahvé *es* hombre de guerra; Yahvé *es* Su nombre.
 
 ### 15:4
 
-Carros de Faraón y su ejército lanzó en el mar, y escogido de sus terceros se hundieron en mar de Suf.
+Arrojó al mar los carros de Faraón y su ejército; y los mejores de sus oficiales fueron hundidos en el mar de juncos.
 
 ### 15:5
 
@@ -1627,7 +1627,7 @@ Soplaste con Tu viento; los cubrió el mar; se hundieron como el plomo en aguas 
 
 ### 15:11
 
-¿Quién como tú entre los dioses, Yahvé? ¿Quién como tú, glorioso en santidad, temible en alabanzas, hacedor de maravilla?
+¿Quién como Tú entre los dioses, Yahvé? ¿Quién como Tú, majestuoso en la santidad, temible en alabanzas, que realiza una maravilla?
 
 ### 15:12
 
@@ -1635,15 +1635,15 @@ Extendiste Tu mano derecha; los tragó la tierra.
 
 ### 15:13
 
-Guiaste en tu misericordia al pueblo que redimiste; conduciste en tu fuerza a morada de tu santidad.
+Guiaste con Tu bondad al pueblo que redimiste; condujiste con Tu fuerza hacia la morada de Tu santidad.
 
 ### 15:14
 
-Oyeron pueblos, tiemblan; estremecimiento agarró a los moradores de Peléshet.
+Oyeron *los* pueblos; se estremecen. *La* angustia se apoderó de los habitantes de Filistia.
 
 ### 15:15
 
-Entonces se turbaron jefes de Edom; fuertes de Moav los agarra temblor; se derritieron todos moradores de Canaán.
+Entonces se aterrorizaron los jefes de Edom; a los líderes de Moab los sobrecogerá un temblor; se derritieron todos los habitantes de Canaán.
 
 ### 15:16
 
@@ -1659,7 +1659,7 @@ Yahvé reinará por siempre y para siempre.
 
 ### 15:19
 
-Porque entró caballo de Faraón en su carro y en sus jinetes en el mar, y volvió Yahvé sobre ellos las aguas del mar, e hijos de Israel anduvieron en la seca en medio del mar.
+Porque el caballo de Faraón entró con su carro y con sus jinetes en el mar, y Yahvé hizo volver sobre ellos las aguas del mar; y los hijos de Israel caminaron por la tierra seca en medio del mar.
 
 ### 15:20
 
@@ -1671,7 +1671,7 @@ Y Miriam les cantó: «Canten a Yahvé, porque se ha elevado grandemente; arroj�
 
 ### 15:22
 
-Y hizo partir Moisés a Israel desde mar de Suf, y salieron a desierto de Shur, y anduvieron tres días en el desierto, y no hallaron aguas.
+Y Moisés hizo partir a Israel del mar de juncos; y salieron hacia el desierto de Shur, y caminaron tres días por el desierto y no encontraron agua.
 
 ### 15:23
 
@@ -1683,7 +1683,7 @@ Y murmuró el pueblo contra Moisés, diciendo: «¿Qué beberemos?»
 
 ### 15:25
 
-Y clamó a Yahvé, y le mostró Yahvé un árbol, y lo arrojó a las aguas, y se endulzaron las aguas. Allí puso a él estatuto y juicio, y allí lo probó.
+Y clamó a Yahvé; y Yahvé le mostró un árbol, y *lo* arrojó a las aguas, y las aguas se endulzaron. Allí estableció para él un estatuto y una ordenanza, y allí lo puso a prueba.
 
 ### 15:26
 
@@ -1697,127 +1697,127 @@ Y llegaron a Elim, y allí había doce manantiales de agua y setenta palmeras; y
 
 ### 16:1
 
-Y partieron desde Elim, y vinieron toda congregación de hijos de Israel a desierto de Sin, que entre Elim y entre Sinai, en el quince día al mes el segundo a su salir desde tierra de Egipto.
+Y partieron de Elim, y toda la congregación de los hijos de Israel llegó al desierto de Sin, que está entre Elim y Sinaí, el día quince del segundo mes después de su salida de la tierra de Egipto.
 
 ### 16:2
 
-Toda congregación de hijos de Israel sobre Moisés y sobre Aarón en el desierto.
+Y murmuró toda la congregación de los hijos de Israel contra Moisés y contra Aarón en el desierto.
 
 ### 16:3
 
-Y dijeron a ellos hijos de Israel: ¡Quién diera muerte nuestra en mano de Yahvé en tierra de Egipto, en nuestro sentarnos sobre olla de la carne, en nuestro comer pan a saciedad! Porque ustedes nos sacaron a este desierto para matar a toda esta asamblea con el hambre.
+Y los hijos de Israel les dijeron: «¡Ojalá hubiéramos muerto por mano de Yahvé en la tierra de Egipto, cuando estábamos sentados junto a la olla de carne, cuando comíamos pan hasta saciarnos; pues nos sacaron a este desierto para matar de hambre a toda esta congregación!»
 
 ### 16:4
 
-Y dijo Yahvé a Moisés: He aquí yo haciendo llover a ustedes pan desde los cielos, y saldrá el pueblo y recogerán cosa de día en su día, a fin de que lo pruebe si andará en mi ley o no.
+Y Yahvé dijo a Moisés: «Mira, Yo haré llover pan para ustedes desde los cielos; y el pueblo saldrá, y recogerán lo de cada día en su día, para que Yo lo ponga a prueba: ¿andará en Mi instrucción o no?»
 
 ### 16:5
 
-Y será en el día el sexto, y prepararán lo que traerán, y será doble sobre lo que recogerán día día.
+Y sucederá que en el día sexto prepararán lo que traigan, y será el doble de lo que recojan cada día.
 
 ### 16:6
 
-Y dijo Moisés y Aarón a todos hijos de Israel: Tarde, y sabrán que Yahvé sacó a ustedes desde tierra de Egipto.
+Y Moisés y Aarón dijeron a todos los hijos de Israel: «Por la tarde sabrán que Yahvé los sacó de la tierra de Egipto».
 
 ### 16:7
 
-Y mañana, y verán gloria de Yahvé, en su oír las murmuraciones de ustedes sobre Yahvé; y nosotros, ¿qué, que murmuran ustedes sobre nosotros?
+Y por la mañana verán la gloria de Yahvé al oír Él las murmuraciones de ustedes contra Yahvé; y nosotros, ¿qué somos para que murmuren contra nosotros?
 
 ### 16:8
 
-Y dijo Moisés: En dar Yahvé a ustedes en la tarde carne para comer, y pan en la mañana a saciarse, en oír Yahvé las murmuraciones de ustedes que ustedes murmurantes sobre él; y nosotros, ¿qué? No sobre nosotros murmuraciones de ustedes, porque sobre Yahvé.
+Y dijo Moisés: «Cuando Yahvé les dé por la tarde carne para comer y pan por la mañana hasta saciarse, al oír Yahvé sus murmuraciones con las que ustedes murmuran contra Él, ¿y qué *somos* nosotros? Sus murmuraciones no *son* contra nosotros, sino contra Yahvé».
 
 ### 16:9
 
-Y dijo Moisés a Aarón: Di a toda congregación de hijos de Israel: Acérquense delante de Yahvé, porque ha oído las murmuraciones de ustedes.
+Y dijo Moisés a Aarón: «Di a toda la congregación de los hijos de Israel: “Acérquense ante Yahvé, porque ha oído sus murmuraciones”».
 
 ### 16:10
 
-Y fue como hablar Aarón a toda congregación de hijos de Israel, y se volvieron al desierto, y he aquí gloria de Yahvé se apareció en la nube.
+Y sucedió que, mientras Aarón hablaba a toda la congregación de los hijos de Israel, se volvieron hacia el desierto; y he aquí, la gloria de Yahvé apareció en la nube.
 
 ### 16:11
 
-Y habló Yahvé a Moisés, diciendo:
+Y Yahvé habló a Moisés, diciendo:
 
 ### 16:12
 
-He oído las murmuraciones de hijos de Israel; habla a ellos, diciendo: Entre las dos tardes comerán carne, y en la mañana se saciarán de pan, y sabrán que yo Yahvé Dios de ustedes.
+He oído las murmuraciones de los hijos de Israel. Háblales diciendo: Entre las dos tardes comerán carne, y por la mañana se saciarán de pan; y sabrán que Yo *soy* Yahvé, su Dios.
 
 ### 16:13
 
-Y fue en la tarde, y subió la codorniz y cubrió el campamento, y en la mañana fue tendido del rocío alrededor al campamento.
+Y sucedió que al atardecer subieron las codornices y cubrieron el campamento; y por la mañana había una capa de rocío alrededor del campamento.
 
 ### 16:14
 
-Y subió tendido del rocío, y he aquí sobre faz del desierto fino escamado, fino como la escarcha sobre la tierra.
+Y se levantó la capa del rocío, y he aquí, sobre la superficie del desierto, algo fino, escamoso, fino como la escarcha sobre la tierra.
 
 ### 16:15
 
-Y vieron hijos de Israel, y dijeron varón a su hermano: ¿Man hu? Porque no conocieron qué él. Y dijo Moisés a ellos: Él el pan que dio Yahvé a ustedes para comida.
+Y los hijos de Israel *lo* vieron y dijeron, cada uno a su hermano: «¿Qué *es* esto?», porque no sabían qué *era*. Y Moisés les dijo: «Esto *es* el pan que Yahvé les dio para comer».
 
 ### 16:16
 
-Esta la palabra que mandó Yahvé: Recojan de él varón según boca de su comer; ómer a la cabeza, número de almas de ustedes, varón para el que en su tienda tomarán.
+Esto *es* lo que Yahvé mandó: «Recojan de él, cada uno según lo que coma, un ómer por cabeza, conforme al número de personas que tengan; tomarán, cada uno, para quienes estén en su tienda».
 
 ### 16:17
 
-Y hicieron así hijos de Israel, y recogieron el que aumentaba y el que disminuía.
+Y los hijos de Israel hicieron así, y recogieron unos mucho y otros poco.
 
 ### 16:18
 
-Y midieron con el ómer, y no sobró el que mucho, y el que poco no faltó; varón según boca de su comer recogieron.
+Y midieron con el ómer, y al que recogió mucho no le sobró; y al que recogió poco no le faltó; cada uno recogió según lo que comía.
 
 ### 16:19
 
-Y dijo Moisés a ellos: Varón no deje sobrar de nosotros hasta la mañana.
+Y Moisés les dijo: «Que ningún hombre deje nada de ello hasta la mañana».
 
 ### 16:20
 
-Y no oyeron a Moisés, e hicieron sobrar varones de él hasta mañana, y crió gusanos y hedía, y se airó sobre ellos Moisés.
+Y no escucharon a Moisés; y algunos hombres dejaron algo de ello hasta la mañana, y produjo gusanos y apestó. Y Moisés se enojó con ellos.
 
 ### 16:21
 
-Y lo recogían en la mañana en la mañana, varón según boca de su comer; y calentaba el sol, y se derretía.
+Y lo recogían mañana tras mañana, cada uno según lo que comía; cuando el sol calentaba, se derretía.
 
 ### 16:22
 
-Y fue en el día el sexto, recogieron pan doble, dos del ómer al uno; y vinieron todos príncipes de la congregación, e hicieron saber a Moisés.
+Y sucedió que en el sexto día recogieron el doble de pan: dos ómeres por cada uno; y vinieron todos los jefes de la congregación e informaron a Moisés.
 
 ### 16:23
 
-Y dijo a ellos: Él lo que habló Yahvé: Shabatón, shabat de santidad a Yahvé mañana; lo que hornearán, horneen, y lo que cocerán, cuezan, y todo el sobrante depongan a ustedes a guarda hasta la mañana.
+Y les dijo: «Esto *es* lo que dijo Yahvé: mañana *es* descanso sabático, sábado santo para Yahvé. Horneen lo que vayan a hornear y cocinen lo que vayan a cocinar; y dejen todo lo que sobre en reserva para ustedes hasta la mañana».
 
 ### 16:24
 
-Y lo depusieron hasta la mañana conforme a lo que mandó Moisés, y no hedió, y gusano no fue en él.
+Y lo dejaron hasta la mañana, como Moisés había ordenado; y no apestó, y no hubo gusano en él.
 
 ### 16:25
 
-Y dijo Moisés: Cómanlo hoy, porque sábado hoy a Yahvé; hoy no lo hallarán en el campo.
+Y Moisés dijo: «Cómanlo hoy, porque hoy *es* sábado para Yahvé; hoy no lo encontrarán en el campo».
 
 ### 16:26
 
-Seis días lo recogerán, y en el día el séptimo shabat; no será en él.
+Seis días lo recogerán, y el séptimo día *es* sábado; no habrá en él.
 
 ### 16:27
 
-Y fue en el día el séptimo, salieron de entre el pueblo a recoger, y no hallaron.
+Y sucedió que en el día séptimo algunos del pueblo salieron a recoger, y no encontraron.
 
 ### 16:28
 
-Y dijo Yahvé a Moisés: ¿Hasta cuándo ustedes se niegan a guardar mis mandamientos y mis leyes?
+Y Yahvé dijo a Moisés: «¿Hasta cuándo se han negado a guardar Mis mandamientos y Mis instrucciones?»
 
 ### 16:29
 
-Vean que Yahvé dio a ustedes el sábado; por eso él dando a ustedes en el día el sexto pan de dos días; siéntense varón debajo de sí, no salga varón desde su lugar en el día el séptimo.
+Vean que Yahvé les ha dado el sábado; por eso Él les da en el sexto día pan para dos días. Quédense cada uno donde está; no salga nadie de su lugar el séptimo día.
 
 ### 16:30
 
-Y reposaron el pueblo en el día el séptimo.
+Y el pueblo descansó en el día séptimo.
 
 ### 16:31
 
-Y llamó casa de Israel su nombre man; y él como semilla de cilantro, blanco, y su sabor como galleta en miel.
+Y la casa de Israel lo llamó Maná; y él *era* como semilla de cilantro blanco, y su sabor *era* como una oblea con miel.
 
 ### 16:32
 
@@ -1825,19 +1825,19 @@ Y dijo Moisés: Esta la palabra que mandó Yahvé: Lleno del ómer de él a guar
 
 ### 16:33
 
-Y dijo Moisés a Aarón: Toma una jarra, y da allí lleno del ómer man, y depónlo delante de Yahvé a guarda a generaciones de ustedes.
+Y Moisés dijo a Aarón: «Toma una vasija y pon allí un ómer lleno de maná; y déjalo delante de Yahvé para conservarlo para sus generaciones».
 
 ### 16:34
 
-Conforme a lo que mandó Yahvé a Moisés, así lo depuso Aarón delante del testimonio a guarda.
+Tal como Yahvé mandó a Moisés, Aarón lo depositó delante del testimonio para guardarlo.
 
 ### 16:35
 
-E hijos de Israel comieron el maná cuarenta año hasta su venir a tierra habitada; el maná comieron hasta su venir a extremo de tierra de Canaán.
+Y los hijos de Israel comieron el maná cuarenta años, hasta que llegaron a tierra habitada; comieron el maná hasta que llegaron al extremo de la tierra de Canaán.
 
 ### 16:36
 
-Y el ómer, décima del efa él.
+Y el ómer era la décima parte del efa.
 
 ## Capítulo 17
 
@@ -3279,11 +3279,11 @@ Y serán sobre Aarón y sobre sus hijos en su entrar a tienda de reunión o en s
 
 ### 29:1
 
-Y esta la palabra que harás a ellos para santificarlos para sacerdotear a mí: toma toro uno hijo de ganado y carneros dos enteros.
+Y esto *es* lo que les harás para consagrarlos, para que me sirvan como sacerdotes: toma un toro joven y dos carneros sin defecto.
 
 ### 29:2
 
-Y pan ázimo y tortas ázimas mezcladas en el aceite y obleas ázimas untadas en el aceite; flor de harina de trigos harás a ellos.
+y pan sin levadura, y tortas sin levadura mezcladas con el aceite, y tortas delgadas sin levadura untadas con el aceite. Los harás de harina fina de trigo.
 
 ### 29:3
 
@@ -3295,31 +3295,31 @@ Y a Aarón y a sus hijos acercarás a abertura de tienda de reunión, y los lava
 
 ### 29:5
 
-Y tomarás los vestidos, y vestirás a Aarón la túnica y el manto del efod y el efod y el joshen, y lo efodarás en cinturón del efod.
+Tomarás las vestiduras y vestirás a Aarón con la túnica, y el manto del efod, y el efod, y la pieza del pecho; y lo ceñirás con la banda del efod.
 
 ### 29:6
 
-Y pondrás el turbante sobre su cabeza, y darás la diadema de la santidad sobre el turbante.
+Y colocarás el turbante sobre su cabeza, y pondrás la corona de santidad sobre el turbante.
 
 ### 29:7
 
-Y tomarás el aceite de la unción, y derramarás sobre su cabeza, y lo ungirás.
+Y tomarás el aceite de la unción y lo derramarás sobre su cabeza, y lo ungirás.
 
 ### 29:8
 
-Y a sus hijos acercarás, y los vestirás túnicas.
+Y acercarás a sus hijos y los vestirás con túnicas.
 
 ### 29:9
 
-Y ceñirás a ellos cinto, Aarón y sus hijos, y atarás a ellos turbantes, y será a ellos sacerdocio a estatuto de siempre, y llenarás mano de Aarón y mano de sus hijos.
+Y los ceñirás con un cinturón —a Aarón y a sus hijos—, y les atarás turbantes; y el sacerdocio será suyo por estatuto perpetuo, y llenarás la mano de Aarón y la mano de sus hijos.
 
 ### 29:10
 
-Y acercarás el toro delante de tienda de reunión, y apoyará Aarón y sus hijos sus manos sobre cabeza del toro.
+Y acercarás el novillo delante de la tienda de reunión, y Aarón y sus hijos pondrán sus manos sobre la cabeza del novillo.
 
 ### 29:11
 
-Y degollarás el toro delante de Yahvé, a abertura de tienda de reunión.
+Y degollarás el toro delante de Yahvé, a la entrada de la tienda de reunión.
 
 ### 29:12
 
@@ -3327,23 +3327,23 @@ Y tomarás desde sangre del toro, y darás sobre cuernos del altar con tu dedo, 
 
 ### 29:13
 
-Y tomarás todo el sebo el cubriente el interior, y el lóbulo sobre el hígado, y las dos los riñones y el sebo que sobre ellos, y harás humear hacia el altar.
+Y tomarás toda la grasa que cubre las entrañas, y el apéndice sobre el hígado, y los dos riñones, y la grasa que está sobre ellos; y los harás humear en el altar.
 
 ### 29:14
 
-Y carne del toro y su piel y su estiércol quemarás en el fuego desde fuera al campamento; pecado él.
+Y quemarás la carne del novillo y su piel y su excremento en el fuego, fuera del campamento. *Es* una ofrenda por el pecado.
 
 ### 29:15
 
-Y el carnero el uno tomarás, y apoyarán Aarón y sus hijos sus manos sobre cabeza del carnero.
+Y tomarás el primer carnero, y Aarón y sus hijos apoyarán sus manos sobre la cabeza del carnero.
 
 ### 29:16
 
-Y degollarás el carnero, y tomarás su sangre, y arrojarás sobre el altar alrededor.
+Y degollarás el carnero, y tomarás su sangre y la esparcirás sobre el altar por todos lados.
 
 ### 29:17
 
-Y el carnero cortarás a sus pedazos, y lavarás su interior y sus piernas, y darás sobre sus pedazos y sobre su cabeza.
+Y cortarás el carnero en sus piezas, y lavarás su interior y sus patas, y los pondrás sobre sus piezas y sobre su cabeza.
 
 ### 29:18
 
@@ -3351,7 +3351,7 @@ Y harás humear todo el carnero hacia el altar; holocausto él a Yahvé; olor de
 
 ### 29:19
 
-Y tomarás el carnero el segundo, y apoyará Aarón y sus hijos sus manos sobre cabeza del carnero.
+Y tomarás el segundo carnero, y Aarón y sus hijos pondrán sus manos sobre la cabeza del carnero.
 
 ### 29:20
 
@@ -3359,7 +3359,7 @@ Y degollarás el carnero, y tomarás desde su sangre, y darás sobre lóbulo de 
 
 ### 29:21
 
-Y tomarás desde la sangre que sobre el altar y desde aceite de la unción, y rociarás sobre Aarón y sobre sus vestidos y sobre sus hijos y sobre vestidos de sus hijos con él, y será santo él y sus vestidos y sus hijos y vestidos de sus hijos con él.
+Y tomarás de la sangre que está sobre el altar y del aceite de la unción, y rociarás sobre Aarón, y sobre sus vestiduras, y sobre sus hijos, y sobre las vestiduras de sus hijos con él; y serán consagrados él, y sus vestiduras, y sus hijos, y las vestiduras de sus hijos con él.
 
 ### 29:22
 
@@ -3367,15 +3367,15 @@ Y tomarás desde el carnero el sebo y la cola y el sebo el cubriente el interior
 
 ### 29:23
 
-Y pan redondo uno y torta de pan de aceite una y oblea una desde canasta de los ázimos que delante de Yahvé.
+Y una hogaza de pan, y una torta de pan con aceite, y una oblea, de la cesta de los panes sin levadura que está delante de Yahvé.
 
 ### 29:24
 
-Y pondrás el todo sobre palmas de Aarón y sobre palmas de sus hijos, y balancearás a ellos balanceo delante de Yahvé.
+Y pondrás todo sobre las palmas de Aarón y sobre las palmas de sus hijos, y los mecerás como ofrenda mecida delante de Yahvé.
 
 ### 29:25
 
-Y los tomarás desde su mano, y harás humear hacia el altar sobre el holocausto, a olor de reposo delante de Yahvé; ofrenda de fuego él a Yahvé.
+Y los tomarás de sus manos y harás que humeen en el altar, sobre la ofrenda quemada por completo, para aroma de sosiego delante de Yahvé. Es una ofrenda hecha por fuego para Yahvé.
 
 ### 29:26
 
@@ -3383,15 +3383,15 @@ Y tomarás el pecho desde carnero de las llenuras que a Aarón, y lo balanceará
 
 ### 29:27
 
-Y santificarás pecho del balanceo y pierna de la ofrenda que fue balanceada y que fue alzada desde carnero de las llenuras, desde lo de Aarón y desde lo de sus hijos.
+Y consagrarás el pecho de la ofrenda mecida, que fue mecido, y la pierna de la ofrenda elevada, que fue elevada, del carnero de la instalación, de lo que es para Aarón y de lo que es para sus hijos.
 
 ### 29:28
 
-Y será a Aarón y a sus hijos a estatuto de siempre de parte de hijos de Israel, porque ofrenda él; y ofrenda será de parte de hijos de Israel desde sacrificios de sus pazes, su ofrenda a Yahvé.
+Y será para Aarón y para sus hijos como porción prescrita para siempre, de parte de los hijos de Israel, porque es una contribución; y será una contribución de parte de los hijos de Israel, de sus sacrificios de paz, su contribución a Yahvé.
 
 ### 29:29
 
-Y vestidos de la santidad que a Aarón serán a sus hijos después de él, a unción en ellos y a llenar en ellos su mano.
+Y las vestiduras sagradas que *son* para Aarón serán para sus hijos después de él, para ungir con ellas y para llenar con ellas sus manos.
 
 ### 29:30
 
@@ -3399,15 +3399,15 @@ Siete días los vestirá el sacerdote debajo de él desde sus hijos, que entra a
 
 ### 29:31
 
-Y el carnero de las llenuras tomarás, y cocerás su carne en lugar santo.
+Y tomarás el carnero de la instalación, y cocinarás su carne en un lugar santo.
 
 ### 29:32
 
-Y comerá Aarón y sus hijos carne del carnero y el pan que en la canasta, a abertura de tienda de reunión.
+Y Aarón y sus hijos comerán la carne del carnero y el pan que está en la canasta, a la entrada de la tienda de reunión.
 
 ### 29:33
 
-Y los comerán que se expió en ellos para llenar su mano para santificarlos, y extraño no comerá, porque santidad ellos.
+Y comerán los con los cuales se hizo expiación para llenar su mano, para consagrarlos; y ningún extraño comerá, porque ellos *son* sagrados.
 
 ### 29:34
 
@@ -3415,23 +3415,23 @@ Y si sobra desde carne de las consagraciones y desde el pan hasta la mañana, y 
 
 ### 29:35
 
-Y harás a Aarón y a sus hijos así, conforme a todo lo que te mandé; siete días llenarás su mano.
+Y harás así con Aarón y con sus hijos, conforme a todo lo que te ordené; durante siete días llenarás su mano.
 
 ### 29:36
 
-Y toro de pecado harás al día sobre las expiaciones, y purificarás sobre el altar en tu expiar sobre él, y lo ungirás para santificarlo.
+Y prepararás cada día un novillo como ofrenda por el pecado para la expiación; y purificarás el altar cuando hagas expiación por él, y lo ungirás para consagrarlo.
 
 ### 29:37
 
-Siete días expiarás sobre el altar, y lo santificarás, y será el altar santo de santos; todo el tocante en el altar se santificará.
+Durante siete días harás expiación por el altar y lo consagrarás; y el altar será santísimo. Todo el que toque el altar será consagrado.
 
 ### 29:38
 
-Y esto lo que harás sobre el altar: corderos hijos de año, dos, al día, siempre.
+Y esto *es* lo que harás sobre el altar: dos corderos de un año al día, continuamente.
 
 ### 29:39
 
-El cordero el uno harás en la mañana, y el cordero el segundo harás entre las dos tardes.
+Ofrecerás el primer cordero por la mañana y ofrecerás el segundo cordero entre las dos tardes.
 
 ### 29:40
 
@@ -3443,7 +3443,7 @@ Y el cordero el segundo harás entre las dos tardes; conforme a ofrenda de la ma
 
 ### 29:42
 
-Holocausto continuo a generaciones de ustedes, a abertura de tienda de reunión delante de Yahvé, que me citaré a ustedes allá para hablar a ti allí.
+Holocausto continuo a lo largo de sus generaciones, a la entrada de la tienda de reunión, delante de Yahvé, donde me reuniré con ustedes para hablar contigo allí.
 
 ### 29:43
 

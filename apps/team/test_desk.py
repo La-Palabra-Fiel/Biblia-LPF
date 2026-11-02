@@ -18,7 +18,7 @@ class DeskTests(unittest.TestCase):
         desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
     def test_model_is_fixed_to_sol(self):
         self.assertEqual(desk.model_name(),"gpt-5.6-sol")
-        self.assertEqual(desk.reasoning_effort(),"medium")
+        self.assertEqual(desk.reasoning_effort(),"low")
         self.assertEqual(desk.SPANISH_GATE_MODEL,"deterministic-local")
         self.assertFalse(desk.audit_required({"uncertainties":[]},{"verdict":"pass"}))
         self.assertTrue(desk.audit_required({"uncertainties":[{"issue":"open"}]},{"verdict":"pass"}))
@@ -29,6 +29,8 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(desk.lint_divine_name("Y dijo Yahvé",packet),[])
         self.assertTrue(desk.lint_divine_name("Y dijo el SEÑOR",packet))
         self.assertTrue(desk.lint_spanish("Y dijo Jehová"))
+        self.assertTrue(desk.lint_spanish("el faraón dijo"))
+        self.assertEqual(desk.lint_spanish("Faraón dijo"),[])
     def test_supplied_word_markup_is_well_formed(self):
         self.assertEqual(desk.lint_spanish("Yo *soy* Yahvé"),[])
         self.assertTrue(desk.lint_spanish("Yo *soy Yahvé"))
@@ -47,6 +49,28 @@ class DeskTests(unittest.TestCase):
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]}])
         self.assertEqual(len(desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"dos","sourceTokenIds":["h2"]}],"Uno, dos.")),2)
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]},{"es":"tres","sourceTokenIds":["h2"]}],"Uno, dos.")
+    def test_alignment_preflight_reports_direct_object_marker_before_approval(self):
+        packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2","morphExpanded":"Hebrew; direct object marker"},{"sourceTokenId":"h3"}]}
+        units,findings=desk.alignment_preflight_findings(packet,[
+            {"es":"extendió","sourceTokenIds":["h1"]},
+            {"es":"su mano","sourceTokenIds":["h3"]},
+        ],"Extendió su mano.")
+        self.assertEqual([unit["es"] for unit in units],["extendió","su mano"])
+        self.assertEqual(findings[-1]["code"],"missing-source-tokens")
+        self.assertEqual(findings[-1]["sourceTokenIds"],["h2"])
+    def test_alignment_preflight_preserves_supplied_markup_but_ignores_punctuation(self):
+        packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
+        units=[{"es":"Yo","sourceTokenIds":["h1"]},{"es":"*soy* Yahvé","sourceTokenIds":["h2"]}]
+        self.assertEqual(desk.alignment_preflight_findings(packet,units,"Yo *soy* Yahvé.")[1],[])
+        wrong=[{"es":"Yo","sourceTokenIds":["h1"]},{"es":"soy Yahvé","sourceTokenIds":["h2"]}]
+        findings=desk.alignment_preflight_findings(packet,wrong,"Yo *soy* Yahvé.")[1]
+        self.assertEqual(findings[-1]["code"],"supplied-markup-mismatch")
+        with self.assertRaisesRegex(ValueError,"Supplied-word italics differ"):
+            desk.validate_units(packet,wrong,"Yo *soy* Yahvé.")
+    def test_alignment_preflight_allows_legitimate_repeated_source_id(self):
+        packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
+        units=[{"es":"Y","sourceTokenIds":["h1"]},{"es":"el rey","sourceTokenIds":["h2"]},{"es":"dijo","sourceTokenIds":["h1"]}]
+        self.assertEqual(desk.alignment_preflight_findings(packet,units,"Y el rey dijo.")[1],[])
     def test_alignment_consolidates_repeated_source_ids(self):
         packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
         units=desk.validate_units(packet,[
@@ -96,6 +120,20 @@ class DeskTests(unittest.TestCase):
             self.assertTrue(desk.human_review_is_current("exodo",6,26))
             translation.write_text("# Éxodo\n\n## Capítulo 6\n\n### 6:26\n\nTexto cambiado.\n",encoding="utf-8")
             self.assertFalse(desk.human_review_is_current("exodo",6,26))
+    def test_existing_human_review_is_grandfathered_across_packet_changes(self):
+        root=Path(self.tmp.name); human=root/"human.json"; translation=root/"exodo.md"
+        translation.write_text("# Éxodo\n\n## Capítulo 1\n\n### 1:1\n\nTexto aprobado.\n",encoding="utf-8")
+        human.write_text('{"schema":"lbf-human-reviewed-candidate-v1","packetSha256":"old","spanish":"Texto aprobado.","adjudication":{"humanApprovedInTeamDesk":true}}\n',encoding="utf-8")
+        with patch.object(desk,"human_path",return_value=human),patch.object(desk,"translation_file",return_value=translation):
+            self.assertTrue(desk.human_review_is_current("exodo",1,1))
+    def test_new_approval_binding_records_provenance_without_approving_status(self):
+        packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]}
+        units=[{"es":"Texto","sourceTokenIds":["h1"]}]
+        binding=desk.approval_binding("Texto",units,packet)
+        self.assertEqual(binding["reviewSpecVersion"],desk.REVIEW_SPEC_VERSION)
+        self.assertEqual(binding["sourcePolicy"],"lbf-source-policy-v4")
+        self.assertIn("packetSha256",binding)
+        self.assertIn("rulesSha256",binding)
     def test_prepare_estimate_skips_current_human_approval(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1,2])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=True):
@@ -111,6 +149,35 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(estimate["reusedCandidates"],1)
         self.assertEqual(estimate["maximumPaidCalls"],0)
         self.assertEqual(estimate["auditCalls"],0)
+    def test_existing_medium_draft_remains_compatible(self):
+        packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[]}
+        candidate={"model":"gpt-5.6-sol","reasoningEffort":"medium","packetSha256":desk.packet_fingerprint(packet),"draftSpecVersion":"lbf-full-reverse-interlinear-v5"}
+        self.assertTrue(desk.compatible_paid_draft(candidate,packet))
+    def test_clean_chapter_gate_keeps_uncertainty_on_hold(self):
+        root=Path(self.tmp.name); candidate_path=root/"draft.json"; packet_path=root/"packet.json"
+        packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[{"sourceTokenId":"h1"}]}
+        candidate={"schema":"lbf-gpt-draft-v1","model":"gpt-5.6-sol","reasoningEffort":"low","packetSha256":desk.packet_fingerprint(packet),"draftSpecVersion":desk.DRAFT_SPEC_VERSION,"spanish":"Texto","units":[{"es":"Texto","sourceTokenIds":["h1"]}],"uncertainties":[],"addedConcepts":[],"droppedUncitedUnits":0,"alignmentPrecisionFindings":[]}
+        desk.write_json(candidate_path,candidate);desk.write_json(packet_path,packet)
+        gate={"promptCurrent":True,"spanish":"pass","fidelity":"not-required","auditRequired":False,"fidelityFindings":[],"spanishFindings":[],"alignmentFindings":[]}
+        with patch.object(desk,"candidate_path",return_value=candidate_path),patch.object(desk,"packet_path",return_value=packet_path),patch.object(desk,"gate_for",return_value=gate):
+            clean,reasons=desk.clean_candidate_for_chapter_approval("exodo",1,1)
+            self.assertEqual(clean["spanish"],"Texto");self.assertEqual(reasons,[])
+            candidate["uncertainties"]=[{"issue":"choice"}];desk.write_json(candidate_path,candidate)
+            clean,reasons=desk.clean_candidate_for_chapter_approval("exodo",1,1)
+            self.assertIsNone(clean);self.assertIn("el candidato declaró incertidumbre",reasons)
+    def test_whole_chapter_approval_approves_clean_and_leaves_hold(self):
+        root=Path(self.tmp.name); translation=root/"exodo.md";translation.write_text("# Éxodo\n\n## Capítulo 1\n\n### 1:1\n\nTexto.\n\n### 1:2\n\nPendiente.\n",encoding="utf-8")
+        book=type("B",(),{"slug":"exodo","label":"Éxodo"})();packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]};clean={"spanish":"Texto.","units":[{"es":"Texto","sourceTokenIds":["h1"]}],"packet":packet,"candidate":{}}
+        claims={"exodo:1":{"name":"Ana"}}
+        def human_current(slug,chapter,verse): return (root/f"human-{verse}.json").is_file()
+        def clean_for(slug,chapter,verse): return (clean,[]) if verse==1 else (None,["incertidumbre"])
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder",return_value=(claims,"exodo:1")),patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"),patch.object(desk,"translation_file",return_value=translation),patch.object(desk,"human_path",side_effect=lambda s,c,v:root/f"human-{v}.json"),patch.object(desk,"human_review_is_current",side_effect=human_current),patch.object(desk,"clean_candidate_for_chapter_approval",side_effect=clean_for),patch.object(desk,"chapter_view",return_value={"verses":[]}):
+            result=desk.approve_clean_chapter({"name":"Ana","token":"x","book":"exodo","chapter":1,"contextConfirmed":True,"cleanCandidatesConfirmed":True})
+        self.assertEqual(result["chapterApproval"]["approvedNow"],[1])
+        self.assertEqual(result["chapterApproval"]["missing"],[2])
+        saved=desk.read_json(root/"human-1.json",{})
+        self.assertEqual(saved["adjudication"]["approvalMode"],"whole-chapter-clean-candidate")
+        self.assertFalse((root/"exodo-1.human-review.json").exists())
     def test_candidate_path_never_treats_request_json_as_draft(self):
         root=Path(self.tmp.name)
         (root/"exodo-2-1.draft-team-gpt.request.json").write_text('{"spanish":"wrong request"}\n',encoding="utf-8")
@@ -178,11 +245,25 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Español alineado",html)
         self.assertIn("morphologySpanish",html)
         self.assertIn("refreshTokenSpanish",html)
+        self.assertIn("refreshPreflight",html)
+        self.assertIn("Comprobación local completa",html)
+        self.assertIn('class="decision-category"',html)
+        self.assertIn("EXPECTED_REVIEW_SPEC",html)
+        self.assertIn("Patrones para evaluación humana",html)
+        self.assertIn("no los convierte automáticamente en reglas",html)
         self.assertIn("mergeSeedUnits",html)
         self.assertIn("mergeUnitsBySourceId",html)
         self.assertIn("EXPECTED_DRAFT_SPEC",html)
         self.assertIn("server is out of date",html)
         self.assertIn("Añadir unidad",html)
+        self.assertIn('class="insert-unit"',html)
+        self.assertIn('class="drag-handle"',html)
+        self.assertIn('class="move-up"',html)
+        self.assertIn('class="move-down"',html)
+        self.assertIn('className="token-link"',html)
+        self.assertIn("function linkToken",html)
+        self.assertIn("Alt+flecha",html)
+        self.assertIn("Ctrl/⌘+Enter",html)
         self.assertIn("Quitar esta unidad de alineación",html)
         self.assertIn("¿Seguro que quieres quitar esta unidad de alineación?",html)
         self.assertIn("unitsComplete:true",html)
@@ -193,5 +274,10 @@ class DeskTests(unittest.TestCase):
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):
             with self.assertRaisesRegex(ValueError,"cost estimate"):
                 desk.prepare("Ana","exodo",5,"11111111",False)
+    def test_prepare_rejects_missing_confirmed_maximum(self):
+        book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])),patch.object(desk,"prepare_estimate",return_value={"estimatedMaximumUsd":0.25}):
+            with self.assertRaisesRegex(ValueError,"displayed maximum"):
+                desk.prepare("Ana","exodo",5,"11111111",True)
 
 if __name__=="__main__":unittest.main()

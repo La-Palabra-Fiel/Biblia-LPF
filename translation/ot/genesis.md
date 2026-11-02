@@ -569,7 +569,7 @@ Y fue Noé hijo de cinco cientas año, y engendró Noé a Sem, a Cam y a Yafet.
 
 ### 6:1
 
-Y fue que comenzó el hombre a multiplicarse sobre la faz del suelo, y hijas les fueron paridas.
+Y sucedió que, cuando los seres humanos comenzaron a multiplicarse sobre la faz de la tierra y les nacieron hijas,
 
 ### 6:2
 
@@ -6234,4 +6234,3 @@ Y juramentó José a hijos de Israel, diciendo: De visitar visitará Dios a uste
 ### 50:26
 
 Y murió José, hijo de cien y diez años. Y janotaron a él, y puso en el arón en Egipto.
-

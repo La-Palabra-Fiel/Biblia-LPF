@@ -1533,11 +1533,11 @@ Y los egipcios sabrán que Yo *soy* Yahvé cuando sea glorificado por medio de F
 
 ### 14:19
 
-Y partió ángel de Dios el andante delante del campamento de Israel, y fue de detrás de ellos, y partió columna de la nube de delante de ellos y se paró de detrás de ellos.
+Y el mensajero de Dios, que iba delante del campamento de Israel, se desplazó y fue detrás de ellos; y la columna de nube se desplazó de delante de ellos y se detuvo detrás de ellos.
 
 ### 14:20
 
-Y vino entre campamento de Egipto y entre campamento de Israel, y fue la nube y la oscuridad, y alumbró la noche, y no se acercó este a este toda la noche.
+Y se puso entre el campamento de Egipto y el campamento de Israel, y *allí* estaban la nube y la oscuridad, y alumbró la noche; y el uno no se acercó al otro toda la noche.
 
 ### 14:21
 
@@ -1545,19 +1545,19 @@ Y Moisés extendió su mano sobre el mar, y Yahvé hizo que se retirara el mar c
 
 ### 14:22
 
-Y entraron hijos de Israel en medio del mar en lo seco, y las aguas a ellos muro desde su derecha y desde su izquierda.
+Y entraron los hijos de Israel en medio del mar por tierra seca; y las aguas eran un muro para ellos a su derecha y a su izquierda.
 
 ### 14:23
 
-Y persiguieron Egipto, y entraron detrás de ellos todo caballo de Faraón, su carro y sus jinetes, hacia medio del mar.
+Y los egipcios persiguieron, y todos los caballos de Faraón, sus carros y sus jinetes entraron tras ellos en medio del mar.
 
 ### 14:24
 
-Y fue en vigilia de la mañana, y miró Yahvé hacia el campamento de Egipto en columna de fuego y nube, y turbó el campamento de Egipto.
+Y sucedió que, durante la vigilia de la mañana, Yahvé miró desde la columna de fuego y nube hacia el campamento de Egipto y puso en confusión al campamento de Egipto.
 
 ### 14:25
 
-Y quitó rueda de sus carros, y los conducía en pesadez, y dijo Egipto: Huyamos de faces de Israel, porque Yahvé pelea a ellos en Egipto.
+Y quitó las ruedas de sus carros e hizo que avanzara con dificultad. Y dijo Egipto: «Huiré ante Israel, porque Yahvé está luchando por ellos contra Egipto».
 
 ### 14:26
 
@@ -1565,29 +1565,29 @@ Y Yahvé dijo a Moisés: «Extiende tu mano sobre el mar, y que vuelvan las agua
 
 ### 14:27
 
-Y extendió Moisés su mano sobre el mar, y volvió el mar al volver de mañana a su corriente, y Egipto huyentes a su encuentro, y sacudió Yahvé a Egipto en medio del mar.
+Y Moisés extendió su mano sobre el mar, y el mar volvió, al despuntar la mañana, a su flujo permanente; y los egipcios huían a su encuentro. Y Yahvé sacudió a los egipcios en medio del mar.
 
 ### 14:28
 
-Y volvieron las aguas y cubrieron el carro y los jinetes, a todo ejército de Faraón los vinientes detrás de ellos en el mar; no quedó en ellos hasta uno.
+Y las aguas volvieron y cubrieron los carros y los jinetes de todo el ejército de Faraón que habían entrado tras ellos en el mar; no quedó entre ellos ni uno solo.
 
 ### 14:29
 
-E hijos de Israel anduvieron en la seca en medio del mar, y las aguas a ellos muro desde su derecha y desde su izquierda.
+Y los hijos de Israel caminaron por tierra seca en medio del mar, y las aguas *eran* para ellos un muro a su derecha y a su izquierda.
 
 ### 14:30
 
-Y salvó Yahvé en el día aquel a Israel de mano de Egipto, y vio Israel a Egipto muerto sobre labio del mar.
+Y Yahvé salvó en aquel día a Israel de la mano de Egipto; e Israel vio a Egipto muerto sobre la orilla del mar.
 
 ### 14:31
 
-Y vio Israel la mano grande que hizo Yahvé en Egipto, y temieron el pueblo a Yahvé, y creyeron en Yahvé y en Moisés su siervo.
+Y vio Israel la gran mano que Yahvé usó en Egipto; y temió el pueblo a Yahvé y creyó en Yahvé y en Moisés, Su siervo.
 
 ## Capítulo 15
 
 ### 15:1
 
-Entonces cantó Moisés e hijos de Israel este cántico a Yahvé, y dijeron, diciendo: Cantaré a Yahvé, porque exaltando se exaltó; caballo y su jinete arrojó en el mar.
+Entonces cantaron Moisés y los hijos de Israel esta canción a Yahvé, y dijeron así: «Cantaré a Yahvé, porque se ha exaltado sobremanera; caballo y su jinete arrojó al mar».
 
 ### 15:2
 
@@ -1595,7 +1595,7 @@ Mi fuerza y canción Yah, y fue a mí a salvación; este mi Dios, y lo embellece
 
 ### 15:3
 
-Yahvé varón de guerra; Yahvé su nombre.
+Yahvé *es* hombre de guerra; Yahvé *es* Su nombre.
 
 ### 15:4
 
@@ -1603,27 +1603,27 @@ Carros de Faraón y su ejército lanzó en el mar, y escogido de sus terceros se
 
 ### 15:5
 
-Abismos los cubren; descendieron en honduras como piedra.
+Los abismos los cubrían; descendieron a las profundidades como una piedra.
 
 ### 15:6
 
-Tu derecha, Yahvé, gloriosa en la fuerza; tu derecha, Yahvé, quebrará a enemigo.
+Tu mano derecha, Yahvé, es majestuosa en poder; Tu mano derecha, Yahvé, destroza al enemigo.
 
 ### 15:7
 
-Y en muchedumbre de tu exaltación derribas a tus levantados; envías tu ardor, los come como rastrojo.
+Y con la grandeza de Tu majestad derribas a los que se levantan contra Ti; envías Tu ira; los consume como el rastrojo.
 
 ### 15:8
 
-Y con viento de tus narices se amontonaron aguas; se pararon como montón corrientes; se cuajaron abismos en corazón de mar.
+Y con el soplo de Tus narices se amontonaron las aguas; se alzaron como un montón las corrientes; se condensaron las profundidades en el corazón del mar.
 
 ### 15:9
 
-Dijo el enemigo: Perseguiré, alcanzaré, repartiré despojo; se llenará de ellos mi alma; desenvainaré mi espada, los desposeerá mi mano.
+El enemigo dijo: «Perseguiré, alcanzaré, repartiré el botín; mi alma se llenará de ellos; sacaré mi espada; los destruirá mi mano».
 
 ### 15:10
 
-Soplaste con tu viento, los cubrió mar; se hundieron como plomo en aguas poderosas.
+Soplaste con Tu viento; los cubrió el mar; se hundieron como el plomo en aguas majestuosas.
 
 ### 15:11
 
@@ -1631,7 +1631,7 @@ Soplaste con tu viento, los cubrió mar; se hundieron como plomo en aguas podero
 
 ### 15:12
 
-Extendiste tu derecha, los traga tierra.
+Extendiste Tu mano derecha; los tragó la tierra.
 
 ### 15:13
 
@@ -1647,15 +1647,15 @@ Entonces se turbaron jefes de Edom; fuertes de Moav los agarra temblor; se derri
 
 ### 15:16
 
-Caiga sobre ellos terror y pavor; con grandeza de tu brazo enmudezcan como piedra, hasta que pase tu pueblo, Yahvé, hasta que pase pueblo este que adquiriste.
+Caerá sobre ellos terror y pavor; por la grandeza de Tu brazo permanecerán inmóviles como piedra, hasta que pase Tu pueblo, Yahvé, hasta que pase el pueblo que adquiriste.
 
 ### 15:17
 
-Los traerás y los plantarás en monte de tu heredad, lugar a tu sentarte que obraste, Yahvé; santuario, Adonai, fundaron tus manos.
+Los introducirás y los plantarás en el monte de Tu heredad, lugar establecido para Tu morada, que hiciste, Yahvé; santuario, Señor, que Tus manos establecieron.
 
 ### 15:18
 
-Yahvé reinará por siempre y eternidad.
+Yahvé reinará por siempre y para siempre.
 
 ### 15:19
 
@@ -1663,11 +1663,11 @@ Porque entró caballo de Faraón en su carro y en sus jinetes en el mar, y volvi
 
 ### 15:20
 
-Y tomó Miryam la profetisa, hermana de Aarón, el pandero en su mano, y salieron todas las mujeres detrás de ella con panderos y con danzas.
+Y Miriam, la profetisa, hermana de Aarón, tomó el pandero en su mano; y todas las mujeres salieron tras ella con panderos y danzas.
 
 ### 15:21
 
-Y respondió a ellos Miryam: Canten a Yahvé, porque exaltando se exaltó; caballo y su jinete arrojó en el mar.
+Y Miriam les cantó: «Canten a Yahvé, porque se ha elevado grandemente; arrojó al mar al caballo y a su jinete».
 
 ### 15:22
 
@@ -1675,11 +1675,11 @@ Y hizo partir Moisés a Israel desde mar de Suf, y salieron a desierto de Shur, 
 
 ### 15:23
 
-Y vinieron a Mará, y no pudieron beber aguas desde Mará, porque amargas ellas; por eso llamó su nombre Mará.
+Y llegaron a Mará, y no pudieron beber las aguas de Mará, porque eran amargas. Por eso le puso por nombre Mará.
 
 ### 15:24
 
-Y murmuró el pueblo sobre Moisés, diciendo: ¿Qué beberemos?
+Y murmuró el pueblo contra Moisés, diciendo: «¿Qué beberemos?»
 
 ### 15:25
 
@@ -1687,11 +1687,11 @@ Y clamó a Yahvé, y le mostró Yahvé un árbol, y lo arrojó a las aguas, y se
 
 ### 15:26
 
-Y dijo: Si oyendo oyes a voz de Yahvé tu Dios, y lo recto en sus ojos haces, y das oído a sus mandamientos, y guardas todos sus estatutos, toda la enfermedad que puse en Egipto no pondré sobre ti, porque yo Yahvé tu sanador.
+Y dijo: Si escuchas atentamente la voz de Yahvé tu Dios, y haces lo recto a Sus ojos, y prestas oído a Sus mandamientos, y guardas todos Sus estatutos, no pondré sobre ti ninguna enfermedad que puse en Egipto, porque yo *soy* Yahvé, el que te sana.
 
 ### 15:27
 
-Y vinieron a Elim, y allí doce fuentes de aguas y setenta palmeras, y acamparon allí sobre las aguas.
+Y llegaron a Elim, y allí había doce manantiales de agua y setenta palmeras; y acamparon allí junto a las aguas.
 
 ## Capítulo 16
 

@@ -56,6 +56,13 @@ La política cerrada y normativa de evidencia está en
 no se usa para traducir, auditar ni alinear. Si el paquete autorizado no basta,
 el versículo queda en `HOLD`; no se consulta otra fuente para completarlo.
 
+## Cuaderno público de traducción
+
+Las decisiones, cuestiones abiertas y explicaciones para lectores se conservan
+en el [`cuaderno público de traducción`](notes/README.md). Estas notas
+documentan el trabajo humano, pero no son otra copia del texto bíblico ni una
+fuente autorizada para traducir, auditar o alinear.
+
 El Nuevo Testamento se traduce del **Textus Receptus de Scrivener de 1894**.
 La fuente de trabajo es `source/greek/TR1894/robinson-parsed/`.
 

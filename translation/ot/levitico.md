@@ -77,179 +77,179 @@ Y lo partirá por sus alas; *mas* no lo separará. Y el sacerdote lo hará humea
 
 ### 2:1
 
-Y alma, cuando acerque ofrenda de oblación a Jehová, harina fina será su ofrenda, y derramará sobre ella aceite, y dará sobre ella incienso.
+Y cuando alguna persona presente una ofrenda de grano a Yahvé, su ofrenda será harina fina; y verterá sobre ella aceite, y pondrá sobre ella incienso.
 
 ### 2:2
 
-Y la traerá a hijos de Aarón, los sacerdotes, y tomará de allí lleno su puño desde su sólet y desde su aceite, sobre todo su incienso, y hará humear el sacerdote su memorial hacia el altar; ofrenda de fuego, olor de reposo a Jehová.
+Y la llevará a los hijos de Aarón, los sacerdotes; y tomará de allí lo que llene su puño, de su harina fina y de su aceite, junto con todo su incienso; y el sacerdote hará humear su ofrenda conmemorativa en el altar como una ofrenda hecha por fuego, aroma apaciguador para Yahvé.
 
 ### 2:3
 
-Y la restante desde la ofrenda a Aarón y a sus hijos; santidad de santidades desde ofrendas de fuego de Jehová.
+Y lo restante de la ofrenda es para Aarón y para sus hijos; es lo más santo de las ofrendas hechas por fuego de Yahvé.
 
 ### 2:4
 
-Y cuando acerques ofrenda de minjá, cocido de horno, sólet, tortas ázimas amasadas en el aceite, y obleas ázimas untadas en el aceite.
+Y si presentas una ofrenda de cereal cocida en horno, *será de* tortas de flor de harina sin levadura mezcladas con el aceite y hojuelas sin levadura untadas con el aceite.
 
 ### 2:5
 
-Y si oblación sobre la plancha tu ofrenda, harina fina mezclada en el aceite, ázima será.
+Y si tu ofrenda *es* una ofrenda de cereal sobre la plancha, será de harina fina mezclada con aceite, sin levadura.
 
 ### 2:6
 
-La partirás a pedazos, y derramarás sobre ella aceite; ofrenda *es* ella.
+Divídela en pedazos y derramarás aceite sobre ella. Ella *es* una ofrenda *de cereal*.
 
 ### 2:7
 
-Y si oblación de sartén tu ofrenda, harina fina en el aceite será hecha.
+Y si tu ofrenda *es* una ofrenda *preparada* en cacerola, será hecha de harina fina con el aceite.
 
 ### 2:8
 
-Y traerás la ofrenda que será hecha desde estas a Jehová, y la presentará al sacerdote, y la acercará al altar.
+Y llevarás para Yahvé la ofrenda que se haga de estas ; y *se* la presentará al sacerdote, y *el* la acercará al altar.
 
 ### 2:9
 
-Y alzará el sacerdote desde la ofrenda su memorial, y hará humear hacia el altar; ofrenda de fuego de olor de reposo a Jehová.
+Y el sacerdote alzará de la ofrenda *de cereal* su ofrenda conmemorativa y la hará humear sobre el altar: ofrenda hecha por fuego, aroma tranquilizador para Yahvé.
 
 ### 2:10
 
-Y lo restante desde la ofrenda a Aarón y a sus hijos; santidad de santidades desde ofrendas de fuego de Jehová.
+Y lo que queda de la ofrenda *será* para Aarón y para sus hijos; *es* lo mas santo de las ofrendas hechas por fuego de Yahvé.
 
 ### 2:11
 
-Toda la ofrenda que acercarán a Jehová no será hecha con leudado, porque toda levadura y toda miel no harán humear desde nosotros ofrenda de fuego a Jehová.
+Toda ofrenda *de cereal* que presenten a Yahvé no se hará leudada, porque nada de levadura ni nada de miel harán humear de ello como ofrenda hecha por fuego a Yahvé.
 
 ### 2:12
 
-Ofrenda de principio las acercarán a Jehová, y al altar ellas no subirán a olor de reposo.
+Como ofrenda de lo primero, los presentarán a Yahvé, y no subirán al altar como aroma apaciguador.
 
 ### 2:13
 
-Y toda ofrenda de tu oblación con la sal salarás, y no harás cesar sal de pacto de tu Dios de sobre tu oblación; sobre toda tu ofrenda acercarás sal.
+Y salarás con sal toda ofrenda de tu ofrenda de cereal; y no quitarás de tu ofrenda de cereal la sal del pacto de tu Dios. Sobre toda ofrenda tuya presentarás sal.
 
 ### 2:14
 
-Y si acercas ofrenda de primicias a Jehová, espiga tierna tostada en el fuego, grano triturado de espiga fresca acercarás la ofrenda de tus primicias.
+Y si presentas a Yahvé una ofrenda de *los* primeros frutos, presentarás como ofrenda de tus primeros frutos espigas tiernas tostadas al fuego, grano triturado del fruto.
 
 ### 2:15
 
-Y darás sobre ella aceite, y pondrás sobre ella incienso; ofrenda *es* ella.
+Y pondrás aceite sobre ella, y pondrás incienso sobre ella. Es una ofrenda.
 
 ### 2:16
 
-Y hará humear el sacerdote su memorial desde su grano triturado y desde su aceite, sobre todo su incienso; ofrenda de fuego a Jehová.
+Y quemara el sacerdote la porción conmemorativa de su grano triturado y de su aceite, junto con todo su incienso: una ofrenda hecha por fuego para Yahvé.
 
 ## Capítulo 3
 
 ### 3:1
 
-Y si sacrificio de pazes su ofrenda, si desde el ganado él acercante, si macho si hembra, íntegro lo acercará delante de Jehová.
+Y si su ofrenda *es* un sacrificio de paz, si él presenta un macho o hembra del ganado, lo presentará sin defecto delante de Yahvé.
 
 ### 3:2
 
-Y apoyará su mano sobre cabeza de su ofrenda, y la degollará a abertura de tienda de reunión, y echarán hijos de Aarón, los sacerdotes, la sangre sobre el altar alrededor.
+Y pondrá su mano sobre la cabeza de su ofrenda, y lo degollara a la entrada de la tienda de reunión; y los hijos de Aarón, los sacerdotes, esparcirán la sangre sobre el altar por todos lados.
 
 ### 3:3
 
-Y acercará desde sacrificio de los pazes ofrenda de fuego a Jehová: la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará, del sacrificio de las ofrendas de paz, la grasa que cubre el interior y toda la grasa que está sobre el interior, una ofrenda hecha por fuego para Yahvé.
 
 ### 3:4
 
-y los dos riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones lo quitará.
+Y los dos riñones, y la grasa que *está* sobre ellos, que *está* sobre los lomos, y el apéndice sobre el hígado, junto con los riñones lo quitará.
 
 ### 3:5
 
-Y harán humear a él hijos de Aarón hacia el altar, sobre el holocausto que sobre los leños que sobre el fuego; ofrenda de fuego de olor de reposo a Jehová.
+Y lo quemaran los hijos de Aarón en el altar, sobre el holocausto *de la grasa* que está sobre los maderos que están sobre el fuego, como ofrenda hecha por fuego de aroma apaciguador para Yahvé.
 
 ### 3:6
 
-Y si desde el rebaño su ofrenda a sacrificio de pazes a Jehová, macho o hembra, íntegro lo acercará.
+Y si su ofrenda como sacrificio de paz para Yahvé *es* del rebaño, *sea* macho o hembra, la presentará sin defecto.
 
 ### 3:7
 
-Si cordero él acercante su ofrenda, y lo acercará delante de Jehová.
+Si presenta un cordero como su ofrenda, lo presentará delante de Yahvé.
 
 ### 3:8
 
-Y apoyará su mano sobre cabeza de su ofrenda, y lo degollará delante de tienda de reunión, y echarán hijos de Aarón su sangre sobre el altar alrededor.
+Y apoyará su mano sobre la cabeza de su ofrenda, y *el* lo degollará delante de la tienda de reunión; y los hijos de Aarón esparcirán su sangre sobre el altar por todos lados.
 
 ### 3:9
 
-Y acercará desde sacrificio de los pazes ofrenda de fuego a Jehová: su grasa, la cola íntegra, a la par del espinazo la quitará, y la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará del sacrificio de las ofrendas de paz, su grasa, la cola gorda entera, que quitará junto a la espina dorsal, y la grasa que cubre el interior, y toda la grasa que está sobre el interior, una ofrenda hecha por fuego para Yahvé:
 
 ### 3:10
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará.
+y los dos riñones, y la grasa que *está* sobre ellos *y* que *está* sobre los lomos, y el apéndice sobre el hígado; junto con los riñones lo quitará.
 
 ### 3:11
 
-Y lo hará humear el sacerdote hacia el altar; pan de ofrenda de fuego a Jehová.
+Y el sacerdote lo quemara sobre el altar como alimento de una ofrenda hecha por fuego para Yahvé.
 
 ### 3:12
 
-Y si cabra *es* su ofrenda, y la acercará delante de Jehová.
+Y si su ofrenda *es* una cabra, la presentará ante Yahvé.
 
 ### 3:13
 
-Y apoyará su mano sobre su cabeza, y lo degollará delante de tienda de reunión, y echarán hijos de Aarón su sangre sobre el altar alrededor.
+Y pondrá su mano sobre su cabeza y *el* lo degollará delante de la tienda de reunión; y los hijos de Aarón rociarán su sangre sobre el altar por todos lados.
 
 ### 3:14
 
-Y acercará desde ella su ofrenda, ofrenda de fuego a Jehová: la grasa la cubriente el interior, y toda la grasa que sobre el interior,
+Y presentará de ello su ofrenda, la grasa que cubre las entrañas y toda la grasa que *está* sobre las entrañas, una ofrenda hecha por fuego para Yahvé:
 
 ### 3:15
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará.
+Y los dos riñones, y la grasa que está sobre ellos, la cual está sobre los lomos, y el apéndice que está sobre el hígado; junto con los riñones lo quitará.
 
 ### 3:16
 
-Y los hará humear el sacerdote hacia el altar; pan de ofrenda de fuego a olor de reposo; toda grasa a Jehová.
+Y el sacerdote los hará humear sobre el altar: alimento de una ofrenda hecha por fuego para un aroma apaciguador. Toda grasa *es* para Yahvé.
 
 ### 3:17
 
-Estatuto de siempre a generaciones de ustedes en todas sus moradas: toda grasa y toda sangre no comerán.
+Estatuto perpetuo para sus generaciones, en todas sus moradas, no comerán ninguna grasa ni ninguna sangre.
 
 ## Capítulo 4
 
 ### 4:1
 
-Y habló Jehová a Moisés, diciendo:
+Y habló Yahvé a Moisés, diciendo:
 
 ### 4:2
 
-Habla a hijos de Israel, diciendo: Alma, cuando peque por error desde todos mandamientos de Jehová que no se harán, y hiciere desde una desde ellas:
+Habla a los hijos de Israel, diciendo: *Para* cuando una persona peque sin intención contra cualquiera de los mandamientos de Yahvé, *lo* que no *se* debe hacer, y haga uno de ellos:
 
 ### 4:3
 
-Si el sacerdote el ungido pecare a culpa del pueblo, y acercará sobre su pecado que pecó, toro hijo de ganado íntegro a Jehová a pecado.
+Si el sacerdote ungido peca para culpabilidad del pueblo, presentará por el pecado que él cometió un novillo del ganado, sin defecto, a Yahvé como ofrenda por el pecado.
 
 ### 4:4
 
-Y traerá el toro a abertura de tienda de reunión delante de Jehová, y apoyará su mano sobre cabeza del toro, y degollará el toro delante de Jehová.
+Y llevará el novillo a la entrada de la tienda de reunión, ante Yahvé; y pondrá su mano sobre la cabeza del novillo, y degollará el novillo ante Yahvé.
 
 ### 4:5
 
-Y tomará el sacerdote el ungido desde sangre del toro, y la traerá a tienda de reunión.
+Y tomará el sacerdote ungido de la sangre del toro joven *el novillo* y la llevará a la tienda de reunión.
 
 ### 4:6
 
-Y mojará el sacerdote su dedo en la sangre, y rociará desde la sangre siete veces delante de Jehová, faces de parójet de la santidad.
+Y mojará el sacerdote su dedo en la sangre, y rociará parte de la sangre siete veces delante de Yahvé, hacia la superficie del velo de lo sagrado.
 
 ### 4:7
 
-Y dará el sacerdote desde la sangre sobre cuernos de altar de incienso de los aromas delante de Jehová que en tienda de reunión, y toda sangre del toro derramará a base de altar del holocausto que abertura de tienda de reunión.
+Y el sacerdote pondrá parte de la sangre sobre los cuernos del altar del incienso de las especias, el cual *está* delante de Yahvé en la tienda de reunión; y derramará toda la sangre del novillo en la base del altar del holocausto, el cual *está* a la entrada de la tienda de reunión.
 
 ### 4:8
 
-Y toda grasa de toro del pecado alzará desde él: la grasa la cubriente sobre el interior, y toda la grasa que sobre el interior,
+Y *el sacerdote* quitará de ello toda la grasa del novillo de la ofrenda por el pecado: la grasa que cubre las entrañas y toda la grasa que *está* sobre las entrañas.
 
 ### 4:9
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará,
+y los dos riñones, y la grasa que está sobre ellos, que está sobre los lomos, y el apéndice sobre el hígado, junto con los riñones, lo quitará.
 
 ### 4:10
 
-conforme a lo que se alza desde toro de sacrificio de las paces; y los hará humear el sacerdote sobre altar del holocausto.
+Tal como será retirado de la res del sacrificio de paz, y el sacerdote los hará humear sobre el altar del holocausto.
 
 ### 4:11
 

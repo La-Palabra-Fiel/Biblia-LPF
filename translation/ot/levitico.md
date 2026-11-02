@@ -233,23 +233,23 @@ Y tomará el sacerdote ungido de la sangre del toro joven *el novillo* y la llev
 
 ### 4:6
 
-Y mojará el sacerdote su dedo en la sangre, y rociará desde la sangre siete veces delante de Jehová, faces de parójet de la santidad.
+Y mojará el sacerdote su dedo en la sangre, y rociará parte de la sangre siete veces delante de Yahvé, hacia la superficie del velo de lo sagrado.
 
 ### 4:7
 
-Y dará el sacerdote desde la sangre sobre cuernos de altar de incienso de los aromas delante de Jehová que en tienda de reunión, y toda sangre del toro derramará a base de altar del holocausto que abertura de tienda de reunión.
+Y el sacerdote pondrá parte de la sangre sobre los cuernos del altar del incienso de las especias, el cual *está* delante de Yahvé en la tienda de reunión; y derramará toda la sangre del novillo en la base del altar del holocausto, el cual *está* a la entrada de la tienda de reunión.
 
 ### 4:8
 
-Y toda grasa de toro del pecado alzará desde él: la grasa la cubriente sobre el interior, y toda la grasa que sobre el interior,
+Y *el sacerdote* quitará de ello toda la grasa del novillo de la ofrenda por el pecado: la grasa que cubre las entrañas y toda la grasa que *está* sobre las entrañas.
 
 ### 4:9
 
-y los dos los riñones y la grasa que sobre ellos, que sobre los lomos, y el lóbulo sobre el hígado, sobre los riñones la quitará,
+y los dos riñones, y la grasa que está sobre ellos, que está sobre los lomos, y el apéndice sobre el hígado, junto con los riñones, lo quitará.
 
 ### 4:10
 
-conforme a lo que se alza desde toro de sacrificio de las paces; y los hará humear el sacerdote sobre altar del holocausto.
+Tal como será retirado de la res del sacrificio de paz, y el sacerdote los hará humear sobre el altar del holocausto.
 
 ### 4:11
 

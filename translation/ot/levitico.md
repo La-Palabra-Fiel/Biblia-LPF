@@ -213,23 +213,23 @@ Estatuto perpetuo para sus generaciones, en todas sus moradas, no comerán ningu
 
 ### 4:1
 
-Y habló Jehová a Moisés, diciendo:
+Y habló Yahvé a Moisés, diciendo:
 
 ### 4:2
 
-Habla a hijos de Israel, diciendo: Alma, cuando peque por error desde todos mandamientos de Jehová que no se harán, y hiciere desde una desde ellas:
+Habla a los hijos de Israel, diciendo: *Para* cuando una persona peque sin intención contra cualquiera de los mandamientos de Yahvé, *lo* que no *se* debe hacer, y haga uno de ellos:
 
 ### 4:3
 
-Si el sacerdote el ungido pecare a culpa del pueblo, y acercará sobre su pecado que pecó, toro hijo de ganado íntegro a Jehová a pecado.
+Si el sacerdote ungido peca para culpabilidad del pueblo, presentará por el pecado que él cometió un novillo del ganado, sin defecto, a Yahvé como ofrenda por el pecado.
 
 ### 4:4
 
-Y traerá el toro a abertura de tienda de reunión delante de Jehová, y apoyará su mano sobre cabeza del toro, y degollará el toro delante de Jehová.
+Y llevará el novillo a la entrada de la tienda de reunión, ante Yahvé; y pondrá su mano sobre la cabeza del novillo, y degollará el novillo ante Yahvé.
 
 ### 4:5
 
-Y tomará el sacerdote el ungido desde sangre del toro, y la traerá a tienda de reunión.
+Y tomará el sacerdote ungido de la sangre del toro joven *el novillo* y la llevará a la tienda de reunión.
 
 ### 4:6
 

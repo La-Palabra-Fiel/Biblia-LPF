@@ -2055,7 +2055,7 @@ Y Yahvé dijo a Moisés: «Mira, Yo vengo a ti en la nube espesa, para que el pu
 
 ### 19:10
 
-Y dijo Yahvé a Moisés: Anda al pueblo, y santifícalos hoy y mañana, y laven sus vestidos.
+Y Yahvé dijo a Moisés: «Ve al pueblo, y los consagrarás hoy y mañana; y lavarán sus ropas».
 
 ### 19:11
 
@@ -2071,7 +2071,7 @@ Ninguna mano lo tocará, sino que sin falta será apedreado o sin falta será at
 
 ### 19:14
 
-Y descendió Moisés desde el monte al pueblo, y santificó al pueblo, y lavaron sus vestidos.
+Y Moisés descendió del monte al pueblo y consagró al pueblo; y lavaron sus vestiduras.
 
 ### 19:15
 
@@ -2083,61 +2083,61 @@ Y sucedió que, en el tercer día, al amanecer, hubo truenos y relámpagos y una
 
 ### 19:17
 
-Y sacó Moisés al pueblo al encuentro de Dios desde el campamento, y se plantaron en lo bajo del monte.
+Y Moisés sacó al pueblo del campamento al encuentro de Dios, y se situaron al pie del monte.
 
 ### 19:18
 
-Y monte Sinai humeaba todo él, de faces de que descendió sobre él Yahvé en el fuego, y subió su humo como humo del horno, y tembló todo el monte mucho.
+Y todo el monte Sinaí humeaba porque Yahvé descendió sobre él en el fuego; y su humo subió como el humo del horno, y todo el monte tembló mucho.
 
 ### 19:19
 
-Y era voz del shofar andante y fortaleciéndose mucho; Moisés habla, y Dios le responde en voz.
+Y sucedió que el sonido del cuerno iba haciéndose muy fuerte; Moisés hablaba, y Dios le respondía con *Su* voz.
 
 ### 19:20
 
-Y descendió Yahvé sobre monte Sinai, a cabeza del monte, y llamó Yahvé a Moisés a cabeza del monte, y subió Moisés.
+Y Yahvé descendió sobre el monte Sinaí, hasta la cima del monte; y Yahvé llamó a Moisés a la cima del monte, y Moisés subió.
 
 ### 19:21
 
-Y dijo Yahvé a Moisés: Desciende, amonesta en el pueblo, no sea que irrumpan a Yahvé a ver, y caiga de él mucho.
+Y Yahvé dijo a Moisés: «Desciende; advierte al pueblo, no sea que se abran paso hacia Yahvé para ver y caigan muchos de ellos».
 
 ### 19:22
 
-Y también los sacerdotes los acercantes a Yahvé se santificarán, no sea que prorrumpa en ellos Yahvé.
+Que se consagren también los sacerdotes que se acercan a Yahvé, no sea que Yahvé irrumpa contra ellos.
 
 ### 19:23
 
-Y dijo Moisés a Yahvé: No puede el pueblo subir a monte Sinai, porque tú amonestaste en nosotros, diciendo: Limita el monte y santifícalo.
+Y dijo Moisés a Yahvé: «El pueblo no puede subir al monte Sinaí, porque Tú nos advertiste diciendo: “Pon límites al monte y conságralo”».
 
 ### 19:24
 
-Y dijo a él Yahvé: Anda, desciende, y subirás tú y Aarón contigo, y los sacerdotes y el pueblo no rompan a subir a Yahvé, no sea que prorrumpa en ellos.
+Y Yahvé le dijo: «Ve, desciende; y subirás tú, y Aarón contigo. Pero que los sacerdotes y el pueblo no se abran paso para subir hacia Yahvé, no sea que arremeta contra ellos».
 
 ### 19:25
 
-Y descendió Moisés al pueblo, y dijo a ellos.
+Y Moisés descendió al pueblo y les dijo.
 
 ## Capítulo 20
 
 ### 20:1
 
-Y habló Dios todas las palabras estas, diciendo:
+Y habló Dios todas estas palabras, diciendo:
 
 ### 20:2
 
-Yo Yahvé tu Dios, que te saqué desde tierra de Egipto, desde casa de siervos.
+Yo *soy* Yahvé, tu Dios, que te saqué de la tierra de Egipto, de *la* casa de esclavos.
 
 ### 20:3
 
-No habrá a ti dioses otros sobre mis faces.
+No tendrás otros dioses delante de Mí.
 
 ### 20:4
 
-No harás a ti ídolo tallado, ni toda semejanza que en los cielos desde arriba, y que en la tierra desde abajo, y que en las aguas desde debajo a la tierra.
+No harás para ti una imagen tallada ni semejanza alguna de lo que está arriba en los cielos, ni de lo que está abajo en la tierra, ni de lo que está en las aguas debajo de la tierra.
 
 ### 20:5
 
-No te postrarás a ellos, y no los servirás, porque yo Yahvé tu Dios, Dios celoso, visitante iniquidad de padres sobre hijos, sobre terceros y sobre cuartos, a mis aborrecedores.
+No te postrarás ante ellos ni los servirás, porque Yo, Yahvé tu Dios, *soy* un Dios celoso que castiga la iniquidad de los padres en los hijos hasta la tercera y la cuarta *generación* de quienes Me odian.
 
 ### 20:6
 
@@ -2145,7 +2145,7 @@ Y haciendo misericordia a miles, a mis amadores y a guardadores de mis mandamien
 
 ### 20:7
 
-No alzarás el nombre de Yahvé tu Dios a la vanidad, porque no dejará limpio Yahvé al que alza su nombre a la vanidad.
+No tomarás el nombre de Yahvé, tu Dios, en vano, porque Yahvé no tendrá por inocente al que tome Su nombre en vano.
 
 ### 20:8
 
@@ -2153,7 +2153,7 @@ Recordar el día del sábado para santificarlo.
 
 ### 20:9
 
-Seis días servirás, y harás toda tu obra.
+Seis días trabajarás y harás todo tu trabajo.
 
 ### 20:10
 

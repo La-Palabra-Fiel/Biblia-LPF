@@ -293,63 +293,63 @@ Y hará con el toro como hizo con el toro de la ofrenda por el pecado; así har�
 
 ### 4:21
 
-Y sacará el toro a fuera al campamento, y lo quemará conforme a lo que quemó el toro el primero; pecado de la asamblea él.
+Y sacará el novillo fuera del campamento y lo quemará como quemó el primer novillo; este *es* la ofrenda por el pecado de la congregación .
 
 ### 4:22
 
-Que príncipe pecare, e hiciere una de todos los mandamientos de Jehová su Dios que no se harán, por error, y fuere culpable:
+*Y* cuando un jefe peque y haga sin intención alguna cosa contra cualquiera de los mandamientos de Yahvé, su Dios, y resulte culpable.
 
 ### 4:23
 
-o se le hubiere hecho saber su pecado que pecó en ella, y traerá su ofrenda, macho cabrío de cabras, macho íntegro.
+O si se le da a conocer su pecado con el cual pecó, entonces traerá su ofrenda: un macho cabrío, macho, sin defecto.
 
 ### 4:24
 
-Y apoyará su mano sobre cabeza del macho cabrío, y lo degollará en lugar que se degüella el holocausto delante de Jehová; pecado él.
+Y pondrá su mano sobre la cabeza del macho cabrío, y *el* lo matará en el lugar donde *se* mata el holocausto delante de Yahvé. Es una ofrenda por el pecado.
 
 ### 4:25
 
-Y tomará el sacerdote desde sangre del pecado en su dedo, y dará sobre cuernos de altar del holocausto, y su sangre derramará a base de altar del holocausto.
+Y tomará el sacerdote de la sangre de la ofrenda por el pecado con su dedo, y la pondrá sobre los cuernos del altar del holocausto; y derramará su sangre en la base del altar del holocausto.
 
 ### 4:26
 
-Y toda su grasa hará humear hacia el altar, como grasa de sacrificio de los pazes; y expiará sobre él el sacerdote desde su pecado, y será perdonado a él.
+Y toda su grasa la hará humear sobre el altar, como la grasa del sacrificio de paz; y el sacerdote hará expiación por él a causa de su pecado, y le será perdonado.
 
 ### 4:27
 
-Y si alma una pecare en error desde pueblo de la tierra, en su hacer una desde mandamientos de Jehová que no se harán, y será culpable:
+Y si una persona del pueblo de la tierra peca sin intención al hacer uno de los mandamientos de Yahvé que no deben hacerse, y resulta culpable,
 
 ### 4:28
 
-o se le hizo saber su pecado que pecó, y traerá su ofrenda, cabra de cabras íntegra, hembra, sobre su pecado que pecó.
+O si se le hace saber su pecado que cometió, entonces traerá su ofrenda: una cabra hembra sin defecto, por su pecado que cometió.
 
 ### 4:29
 
-Y apoyará su mano sobre la cabeza del pecado, y degollará el pecado en el lugar del holocausto.
+Y apoyará su mano sobre la cabeza de la ofrenda por el pecado, y matará la ofrenda por el pecado en el sitio del holocausto.
 
 ### 4:30
 
-Y tomará el sacerdote desde su sangre en su dedo, y dará sobre cuernos de altar del holocausto, y toda su sangre derramará a base del altar.
+Y el sacerdote tomará de su sangre con su dedo y la pondrá sobre los cuernos del altar del holocausto; y derramará toda su sangre en la base del altar.
 
 ### 4:31
 
-Y toda su grasa quitará, conforme a lo que fue quitada grasa de sobre sacrificio de los pazes, y hará humear el sacerdote hacia el altar a olor de reposo a Jehová; y expiará sobre él el sacerdote, y será perdonado a él.
+Y quitará toda su grasa, como fue quitada la grasa de encima del sacrificio de paz; y el sacerdote la hará humear en el altar como aroma apaciguador para Yahvé. Y el sacerdote hará expiación por él, y le será perdonado.
 
 ### 4:32
 
-Y si cordero trajere su ofrenda a pecado, hembra íntegra la traerá.
+Y si trae un cordero como su ofrenda por el pecado *será* —una hembra sin defecto—, *así* la traerá.
 
 ### 4:33
 
-Y apoyará su mano sobre cabeza del pecado, y la degollará a pecado en lugar que se degüella el holocausto.
+Y apoyará su mano sobre la cabeza de la ofrenda por el pecado, y la degollará como ofrenda por el pecado en el lugar donde se degüella el holocausto.
 
 ### 4:34
 
-Y tomará el sacerdote desde sangre del pecado en su dedo, y dará sobre cuernos de altar del holocausto, y toda su sangre derramará a base del altar.
+Y tomará el sacerdote de la sangre de la ofrenda por el pecado con su dedo, y la pondrá sobre los cuernos del altar del holocausto; y derramará toda su sangre en la base del altar.
 
 ### 4:35
 
-Y toda su grasa quitará, conforme a lo que se quita grasa del cordero desde sacrificio de los pazes, y hará humear el sacerdote a ellas hacia el altar, sobre ofrendas de fuego de Jehová; y expiará sobre él el sacerdote sobre su pecado que pecó, y será perdonado a él.
+Y quitará toda sus grasas, tal como se quita la grasa del cordero del sacrificio de las ofrendas de paz; y el sacerdote las hará humear en el altar, sobre las ofrendas por fuego de Yahvé. Y el sacerdote hará expiación por él, por su pecado que cometió, y le será perdonado.
 
 ## Capítulo 5
 

@@ -320,6 +320,13 @@ class DeskTests(unittest.TestCase):
         self.assertIn("/api/reopen-verse",html)
         self.assertIn("/api/cancel-revision",html)
         self.assertIn("Ninguna llamada GPT se hará al guardar",html)
+        self.assertIn("Lectura continua del capítulo",html)
+        self.assertIn("Siguiente excepción",html)
+        self.assertIn("Ir a aprobación de limpios",html)
+        self.assertIn('reviewFilter="exceptions"',html)
+        self.assertIn("function reviewStatus",html)
+        self.assertIn("function enhanceReviewQueue",html)
+        self.assertIn("la aprobación sigue siendo una acción humana separada",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

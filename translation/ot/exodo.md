@@ -1189,7 +1189,7 @@ Y estará bajo custodia de ustedes hasta el día catorce de este mes, y lo matar
 
 ### 12:7
 
-Y tomarán de la sangre y darán sobre las dos jambas y sobre el dintel, sobre las casas que comerán a él en ellas.
+Y tomarán de la sangre y *la* pondrán sobre los dos postes y sobre el dintel, en las casas en las que lo comerán.
 
 ### 12:8
 
@@ -2141,7 +2141,7 @@ No te postrarás ante ellos ni los servirás, porque Yo, Yahvé tu Dios, *soy* u
 
 ### 20:6
 
-Y haciendo misericordia a miles, a mis amadores y a guardadores de mis mandamientos.
+y muestro misericordia a miles, a los que Me aman y a los que guardan Mis mandamientos.
 
 ### 20:7
 
@@ -2149,7 +2149,7 @@ No tomarás el nombre de Yahvé, tu Dios, en vano, porque Yahvé no tendrá por 
 
 ### 20:8
 
-Recordar el día del sábado para santificarlo.
+Recuerda el día del sábado para santificarlo.
 
 ### 20:9
 
@@ -2157,15 +2157,15 @@ Seis días trabajarás y harás todo tu trabajo.
 
 ### 20:10
 
-Y día el séptimo sábado a Yahvé tu Dios; no harás ninguna obra, tú y tu hijo y tu hija, tu siervo y tu sierva y tu bestia y tu extranjero que en tus puertas.
+Pero el séptimo día *es* sábado para Yahvé, tu Dios; no harás ningún trabajo, ni tú, ni tu hijo, ni tu hija, ni tu esclavo, ni tu esclava, ni tus animales, ni tu forastero que está dentro de tus puertas.
 
 ### 20:11
 
-Porque seis días hizo Yahvé los cielos y la tierra, el mar y todo lo que en ellos, y reposó en el día séptimo; por eso bendijo Yahvé el día del sábado, y lo santificó.
+Porque en seis días Yahvé hizo los cielos y la tierra, el mar y todo lo que hay en ellos; y descansó en el día séptimo. Por eso Yahvé bendijo el día del sábado y lo santificó.
 
 ### 20:12
 
-Honra a tu padre y a tu madre, a fin de que se alarguen tus días sobre el suelo que Yahvé tu Dios te da.
+Honra a tu padre y a tu madre, para que se prolonguen tus días sobre la tierra que Yahvé tu Dios te da.
 
 ### 20:13
 
@@ -2173,55 +2173,55 @@ No asesinarás.
 
 ### 20:14
 
-No adulterarás.
+No cometerás adulterio.
 
 ### 20:15
 
-No hurtarás.
+No robarás.
 
 ### 20:16
 
-No responderás testigo de mentira contra tu compañero.
+No darás testimonio falso contra tu prójimo.
 
 ### 20:17
 
-No codiciarás casa de tu compañero; no codiciarás mujer de tu compañero, y su siervo y su sierva y su buey y su asno y todo lo que a tu compañero.
+No codiciarás la casa de tu prójimo. No codiciarás a la esposa de tu prójimo, ni a su esclavo, ni a su esclava, ni su buey, ni su asno, ni nada que pertenezca a tu prójimo.
 
 ### 20:18
 
-Y todo el pueblo viendo las voces y las antorchas y la voz de la bocina y el monte humeante; y vio el pueblo, y se estremecieron, y se pararon desde lejos.
+Y todo el pueblo veía los truenos y las antorchas y el sonido del cuerno y el monte humeante; y el pueblo vio, y tembló y se mantuvo a distancia.
 
 ### 20:19
 
-Y dijeron a Moisés: Habla tú con nosotros, y oiremos; y no hable con nosotros Dios, no sea que muramos.
+Y dijeron a Moisés: «Habla tú con nosotros, y escucharemos; y que no hable Dios con nosotros, no sea que muramos».
 
 ### 20:20
 
-Y dijo Moisés al pueblo: No teman, porque a causa de probar a ustedes vino Dios, y a causa de que sea su temor sobre faces de ustedes, para no pecar ustedes.
+Y dijo Moisés al pueblo: «No teman, porque Dios ha venido para probarlos y para que Su temor esté sobre sus rostros, para que no pequen».
 
 ### 20:21
 
-Y se paró el pueblo desde lejos, y Moisés se acercó a la densa oscuridad que allí *estaba* Dios.
+Y el pueblo permaneció a lo lejos, y Moisés se acercó a la nube donde estaba Dios.
 
 ### 20:22
 
-Y dijo Yahvé a Moisés: Así dirás a hijos de Israel: Ustedes vieron que desde los cielos hablé con ustedes.
+Y Yahvé dijo a Moisés: «Así dirás a los hijos de Israel: “Ustedes vieron que desde los cielos hablé con ustedes”».
 
 ### 20:23
 
-No harán conmigo dioses de plata y dioses de oro; no harán a ustedes.
+No hagan junto a Mí dioses de plata ni dioses de oro; no los hagan para ustedes.
 
 ### 20:24
 
-Altar de suelo harás a mí, y sacrificarás sobre él tus holocaustos y tus ofrendas de paz, tu rebaño y tu ganado; en todo el lugar que haré recordar mi nombre, vendré a ti y te bendeciré.
+Harás para Mí un altar de tierra, y sacrificarás sobre él tus holocaustos y tus sacrificios de paz, tu rebaño y tu ganado vacuno. En todo lugar donde haga que se recuerde Mi nombre, vendré a ti y te bendeciré.
 
 ### 20:25
 
-Y si altar de piedras harás a mí, no las edificarás de piedra labrada; porque tu espada balanceaste sobre ella, y la profanaste.
+Y si haces para Mí un altar de piedras, no construirás con piedras labradas, porque has alzado tu espada sobre ella y la has profanado.
 
 ### 20:26
 
-Y no subirás en gradas sobre mi altar, que no sea descubierta tu desnudez sobre él.
+Y no subirás por escalones a Mi altar, para que tu desnudez no quede descubierta sobre él.
 
 ## Capítulo 21
 
@@ -2247,7 +2247,7 @@ Y si diciendo dice el siervo: Amé a mi señor, a mi mujer y a mis hijos; no sal
 
 ### 21:6
 
-Y lo acercará su señor a Dios, y lo acercará a la puerta o al quicial, y perforará su señor su oreja con el perforador, y lo servirá para siempre.
+Y su amo lo llevará ante Dios, y lo llevará a la puerta o al poste de la puerta; y su amo le perforará la oreja con el punzón, y servirá a su amo para siempre.
 
 ### 21:7
 
@@ -2263,7 +2263,7 @@ Y si a su hijo la designa, conforme a juicio de las hijas hará a ella.
 
 ### 21:10
 
-Si otra toma a sí, su carne, su vestido y su cohabitación no disminuirá.
+Si toma para sí a otra, no reducirá su alimento, su ropa ni sus relaciones conyugales.
 
 ### 21:11
 
@@ -2755,7 +2755,7 @@ Y fundirás a ella cuatro anillos de oro, y los darás sobre sus cuatro pies; y 
 
 ### 25:13
 
-Y harás varas de maderas de acacia, y las revestirás de oro.
+Y harás varas de madera de acacia, y las recubrirás de oro.
 
 ### 25:14
 
@@ -3027,7 +3027,7 @@ Y harás sus cuernos sobre cuatro sus esquinas; desde él serán sus cuernos, y 
 
 ### 27:3
 
-Y harás sus ollas para desgrasarlo, y sus palas y sus tazones y sus garfios y sus braseros; a todos sus utensilios harás bronce.
+Y harás sus ollas para quitarle las cenizas, y sus palas y sus tazones y sus tenedores y sus braseros; harás de bronce todos sus utensilios.
 
 ### 27:4
 
@@ -3287,11 +3287,11 @@ y pan sin levadura, y tortas sin levadura mezcladas con el aceite, y tortas delg
 
 ### 29:3
 
-Y los darás sobre canasta una, y los acercarás en la canasta, y el toro y los dos los carneros.
+Y los pondrás en una sola canasta, y los presentarás en la canasta junto con el toro joven y los dos carneros.
 
 ### 29:4
 
-Y a Aarón y a sus hijos acercarás a abertura de tienda de reunión, y los lavarás en las aguas.
+Y acercarás a Aarón y a sus hijos a la entrada de la tienda de reunión, y los lavarás con el agua.
 
 ### 29:5
 
@@ -3323,7 +3323,7 @@ Y degollarás el toro delante de Yahvé, a la entrada de la tienda de reunión.
 
 ### 29:12
 
-Y tomarás desde sangre del toro, y darás sobre cuernos del altar con tu dedo, y toda la sangre derramarás a base del altar.
+Y tomarás de la sangre del novillo y *la* pondrás sobre los cuernos del altar con tu dedo; y derramarás toda la sangre al pie del altar.
 
 ### 29:13
 
@@ -3347,7 +3347,7 @@ Y cortarás el carnero en sus piezas, y lavarás su interior y sus patas, y los 
 
 ### 29:18
 
-Y harás humear todo el carnero hacia el altar; holocausto él a Yahvé; olor de reposo, ofrenda de fuego a Yahvé él.
+Y harás humear todo el carnero en el altar. *Es* un holocausto para Yahvé, un aroma tranquilizador; *es* una ofrenda hecha con fuego para Yahvé.
 
 ### 29:19
 
@@ -3355,7 +3355,7 @@ Y tomarás el segundo carnero, y Aarón y sus hijos pondrán sus manos sobre la 
 
 ### 29:20
 
-Y degollarás el carnero, y tomarás desde su sangre, y darás sobre lóbulo de oreja de Aarón y sobre lóbulo de oreja de sus hijos la derecha, y sobre pulgar de su mano la derecha y sobre pulgar de su pie el derecho, y rociarás la sangre sobre el altar alrededor.
+Y matarás el carnero; y tomarás de su sangre y *la* pondrás sobre el lóbulo de la oreja de Aarón, y sobre el lóbulo de la oreja derecha de sus hijos, y sobre el pulgar de su mano derecha, y sobre el dedo gordo de su pie derecho; y arrojarás la sangre sobre el altar por todos lados.
 
 ### 29:21
 
@@ -3363,7 +3363,7 @@ Y tomarás de la sangre que está sobre el altar y del aceite de la unción, y r
 
 ### 29:22
 
-Y tomarás desde el carnero el sebo y la cola y el sebo el cubriente el interior y el lóbulo del hígado y las dos los riñones y el sebo que sobre ellos y pierna la derecha, porque carnero de llenuras él.
+Y tomarás del carnero la grasa y la cola grasa, y la grasa que cubre las entrañas, y el apéndice del hígado, y los dos riñones y la grasa que está sobre ellos, y la pierna derecha, porque *es* un carnero de investidura.
 
 ### 29:23
 
@@ -3379,7 +3379,7 @@ Y los tomarás de sus manos y harás que humeen en el altar, sobre la ofrenda qu
 
 ### 29:26
 
-Y tomarás el pecho desde carnero de las llenuras que a Aarón, y lo balancearás balanceo delante de Yahvé, y será a ti a porción.
+Y tomarás el pecho del carnero de las instalaciones que es para Aarón, y lo mecerás como ofrenda mecida delante de Yahvé; y será tu porción.
 
 ### 29:27
 
@@ -3395,7 +3395,7 @@ Y las vestiduras sagradas que *son* para Aarón serán para sus hijos después d
 
 ### 29:30
 
-Siete días los vestirá el sacerdote debajo de él desde sus hijos, que entra a tienda de reunión para ministrar en el santo.
+Durante siete días los vestirá el sacerdote de entre sus hijos que lo suceda, que entre en la tienda de reunión para servir en el santuario.
 
 ### 29:31
 
@@ -3411,7 +3411,7 @@ Y comerán los con los cuales se hizo expiación para llenar su mano, para consa
 
 ### 29:34
 
-Y si sobra desde carne de las consagraciones y desde el pan hasta la mañana, y quemarás lo sobrante en el fuego; no se comerá, porque santidad él.
+Y si queda de la carne de la investidura y del pan hasta la mañana, quemarás lo que quede en el fuego; no se comerá, porque *es* santo.
 
 ### 29:35
 
@@ -3435,11 +3435,11 @@ Ofrecerás el primer cordero por la mañana y ofrecerás el segundo cordero entr
 
 ### 29:40
 
-Y décima de flor de harina mezclada en aceite molido cuarto del hin, y libación cuarto del hin vino, al cordero el uno.
+y una décima parte de harina fina mezclada con un cuarto de hin de aceite prensado, y una libación de un cuarto de hin de vino para el primer cordero.
 
 ### 29:41
 
-Y el cordero el segundo harás entre las dos tardes; conforme a ofrenda de la mañana y conforme a su libación harás a ella, a olor de reposo, ofrenda de fuego a Yahvé.
+Y prepararás el segundo cordero entre las dos tardes; harás para ella lo mismo que con la ofrenda de cereal de la mañana y con su libación, para un aroma tranquilizador, una ofrenda hecha con fuego para Yahvé.
 
 ### 29:42
 
@@ -3447,19 +3447,19 @@ Holocausto continuo a lo largo de sus generaciones, a la entrada de la tienda de
 
 ### 29:43
 
-Y me citaré allá a hijos de Israel, y será santificado en mi gloria.
+Y Me reuniré allí con los hijos de Israel, y será santificado por Mi gloria.
 
 ### 29:44
 
-Y santificaré tienda de reunión y el altar, y a Aarón y a sus hijos santificaré para sacerdotear a mí.
+Y consagraré la tienda de reunión y el altar; y a Aarón y a sus hijos consagraré para que ejerzan el sacerdocio para Mí.
 
 ### 29:45
 
-Y moraré en medio de hijos de Israel, y seré a ellos a Dios.
+Y habitaré en medio de los hijos de Israel, y seré su Dios.
 
 ### 29:46
 
-Y conocerán que yo Yahvé Dios de ellos, que saqué a ellos desde tierra de Egipto para mi morar en medio de ellos; yo Yahvé Dios de ellos.
+Y sabrán que Yo soy Yahvé, su Dios, que los saqué de la tierra de Egipto para habitar en medio de ellos. Yo soy Yahvé, su Dios.
 
 ## Capítulo 30
 
@@ -4155,7 +4155,7 @@ Y vinieron todo varón que lo alzó su corazón, y todo al que impulsó su espí
 
 ### 35:22
 
-Y vinieron los varones sobre las mujeres; todo noble de corazón trajeron gancho y aro y anillo y adorno, todo objeto de oro, y todo varón que balanceó balanceo de oro a Yahvé.
+Y vinieron los hombres junto con las mujeres. Todos los de corazón generoso y todo hombre que presentó una ofrenda mecida de oro para Yahvé trajeron ganchos y aros y anillos y adornos, toda clase de objetos de oro.
 
 ### 35:23
 

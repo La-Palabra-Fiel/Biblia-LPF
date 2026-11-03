@@ -217,6 +217,16 @@ otra llamada pagada ni exige una aprobación retroactiva. Una revisión
 histórica puede señalar fallos mecánicos concretos para inspección humana, pero
 no reabre capítulos enteros automáticamente.
 
+Para corregir deliberadamente un versículo ya aprobado, la persona abre su
+tarjeta y pulsa **Reabrir para revisión**. Esa acción local copia el español y
+las unidades de la aprobación vigente a un borrador temporal; no llama a GPT,
+no modifica todavía el texto canónico y permite cancelar conservando intacta
+la aprobación anterior. Al aprobar la revisión, la mesa archiva la aprobación
+reemplazada dentro del nuevo artefacto de procedencia. Si cambió el español o
+alguna unidad, invalida la aprobación del capítulo; si cambió el español
+canónico, también devuelve a `draft` las firmas aplicables de `STATUS.md`.
+Después se vuelve a aprobar el capítulo completo.
+
 El capítulo entra en `translation/` solamente con los candidatos que pasaron
 la comprobación local y, cuando fue requerida, la auditoría de fidelidad; los
 demás conservan el texto anterior y quedan en el informe como `HOLD`. Después una persona lee el capítulo completo para comprobar

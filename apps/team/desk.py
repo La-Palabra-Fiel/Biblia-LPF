@@ -57,7 +57,7 @@ _chapter_counts: dict[str, int] = {}
 # about 0.341 per UTF-8 byte. Keep a small safety margin without incorrectly
 # charging every byte as a full token in the preflight estimate.
 INPUT_TOKENS_PER_UTF8_BYTE = 0.36
-REVIEW_SPEC_VERSION = "lbf-team-review-v2"
+REVIEW_SPEC_VERSION = "lbf-team-review-v3"
 DEFAULT_DECISION = "The named reviewer confirmed the wording against the complete canonical packet."
 DECISION_CATEGORIES = {
     "confirmed",
@@ -306,6 +306,27 @@ def recovered_path(slug: str, chapter: int) -> Path:
     return RECOVERED / f"{slug}-{chapter}.json"
 
 
+def recovered_verse_state(slug: str, chapter: int, verse: int) -> dict:
+    recovered = read_json(recovered_path(slug, chapter), {})
+    verses = recovered.get("verses") if isinstance(recovered, dict) else {}
+    state = verses.get(str(verse)) if isinstance(verses, dict) else {}
+    return state if isinstance(state, dict) else {}
+
+
+def revision_is_open(slug: str, chapter: int, verse: int) -> bool:
+    """Return true only while the open revision is bound to this approval."""
+    state = recovered_verse_state(slug, chapter, verse)
+    if state.get("revisionOpen") is not True:
+        return False
+    artifact = read_json(human_path(slug, chapter, verse), {})
+    expected = str(state.get("reopenedFromApprovalSha256") or "")
+    return bool(
+        artifact.get("schema") == "lbf-human-reviewed-candidate-v1"
+        and expected
+        and expected == object_fingerprint(artifact)
+    )
+
+
 def save_review_attempt(book, chapter: int, verse: int, person: str, payload: dict) -> None:
     """Preserve a named human's exact form state even when validation rejects it."""
     path = recovered_path(book.slug, chapter)
@@ -315,6 +336,7 @@ def save_review_attempt(book, chapter: int, verse: int, person: str, payload: di
     recovered.update(schema="lbf-recovered-browser-review-v1", book=book.slug, chapter=chapter)
     recovered.setdefault("note", "Trabajo humano guardado antes de la validación canónica.")
     verses = recovered.setdefault("verses", {})
+    previous = verses.get(str(verse)) if isinstance(verses.get(str(verse)), dict) else {}
     verses[str(verse)] = {
         "spanish": str(payload.get("spanish") or ""),
         "units": payload.get("units") if isinstance(payload.get("units"), list) else [],
@@ -327,7 +349,27 @@ def save_review_attempt(book, chapter: int, verse: int, person: str, payload: di
         "auditOverrideConfirmed": bool(payload.get("auditOverrideConfirmed")),
         "lastAttemptedBy": person,
         "lastAttemptedOn": now(),
+        "revisionOpen": bool(payload.get("revisionOpen", previous.get("revisionOpen", False))),
+        "reopenedFromApprovalSha256": str(
+            payload.get("reopenedFromApprovalSha256")
+            or previous.get("reopenedFromApprovalSha256")
+            or ""
+        ),
     }
+    write_json(path, recovered)
+
+
+def close_revision(book, chapter: int, verse: int, person: str, *, cancelled: bool = False) -> None:
+    path = recovered_path(book.slug, chapter)
+    recovered = read_json(path, {})
+    verses = recovered.get("verses") if isinstance(recovered, dict) else {}
+    state = verses.get(str(verse)) if isinstance(verses, dict) else None
+    if not isinstance(state, dict):
+        return
+    state["revisionOpen"] = False
+    state["revisionClosedBy"] = person
+    state["revisionClosedOn"] = now()
+    state["revisionCancelled"] = bool(cancelled)
     write_json(path, recovered)
 
 
@@ -469,10 +511,12 @@ def chapter_review_is_current(slug: str, chapter: int, verses: list[int]) -> boo
     artifact = read_json(pipeline_dir(slug) / f"{slug}-{chapter}.human-review.json", {})
     return bool(
         artifact.get("schema") == "lbf-human-chapter-review-v1"
+        and artifact.get("invalidated") is not True
         and artifact.get("continuityVoiceFlowConfirmed") is True
         and artifact.get("verseWordingConfirmed") == verses
         and artifact.get("alignmentSeedsConfirmed") == verses
         and all(human_review_is_current(slug, chapter, verse) for verse in verses)
+        and not any(revision_is_open(slug, chapter, verse) for verse in verses)
     )
 
 
@@ -529,7 +573,9 @@ def chapter_view(slug: str, chapter) -> dict:
             "spanishFindings": [],
             "alignmentFindings": [],
         }
-        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_review_is_current(slug, number, verse)})
+        human_current = human_review_is_current(slug, number, verse)
+        revision_open = revision_is_open(slug, number, verse)
+        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_current and not revision_open, "priorApprovalCurrent": human_current, "revisionOpen": revision_open})
     return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "chapterReviewed": chapter_review_is_current(slug, number, verses), "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
@@ -725,6 +771,48 @@ def invalidate_status(slug: str) -> None:
     STATUS.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def invalidate_chapter_review(book, chapter: int, verse: int, person: str) -> None:
+    """Invalidate chapter-level confirmations after a material verse revision."""
+    review_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}.human-review.json"
+    review = read_json(review_path, {})
+    if isinstance(review, dict) and review.get("schema") == "lbf-human-chapter-review-v1":
+        review.update(
+            invalidated=True,
+            invalidatedBy=person,
+            invalidatedOn=now(),
+            invalidatedVerse=verse,
+            invalidationReason="A previously approved verse was materially revised.",
+        )
+        write_json(review_path, review)
+    seed_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}.alignment-seed.json"
+    seed = read_json(seed_path, {})
+    if isinstance(seed, dict) and seed.get("schema") == "lbf-alignment-seed-manifest-v1":
+        seed.update(
+            status="seeded-hand-incomplete",
+            chapterReviewInvalidated=True,
+            invalidatedBy=person,
+            invalidatedOn=now(),
+            invalidatedVerse=verse,
+        )
+        for item in seed.get("verses") or []:
+            if isinstance(item, dict) and item.get("verse") == verse:
+                item["confirmed"] = False
+        write_json(seed_path, seed)
+
+
+def archived_approval(prior: dict, person: str) -> dict:
+    """Keep an immutable, noncanonical record of an approval being replaced."""
+    return {
+        "schema": "lbf-human-approval-history-entry-v1",
+        "archivedBy": person,
+        "archivedOn": now(),
+        "spanish": prior.get("spanish") or "",
+        "units": prior.get("units") if isinstance(prior.get("units"), list) else [],
+        "approvalBinding": prior.get("approvalBinding") if isinstance(prior.get("approvalBinding"), dict) else {},
+        "adjudication": prior.get("adjudication") if isinstance(prior.get("adjudication"), dict) else {},
+    }
+
+
 def clean_candidate_for_chapter_approval(slug: str, chapter: int, verse: int) -> tuple[dict | None, list[str]]:
     """Return the exact server candidate only when every no-cost gate is clean."""
     path = candidate_path(slug, chapter, verse)
@@ -805,11 +893,61 @@ def finish_chapter_locked(book, chapter: int, verses: list[int], person: str) ->
     write_json(pipeline_dir(book.slug) / f"{book.slug}-{chapter}.alignment-seed.json", {"schema": "lbf-alignment-seed-manifest-v1", "book": book.slug, "chapter": chapter, "status": "seeded-hand", "canonicalAlignmentChanged": False, "instruction": "Named reviewers confirmed these visible unit links. They remain a noncanonical seed until copied into and validated in the canonical reverse-links file.", "verses": [{"verse": v, "candidate": human_path(book.slug, chapter, v).name, "confirmed": True} for v in verses]})
 
 
+def reopen_verse(payload: dict) -> dict:
+    """Open a no-cost revision seeded from the exact current approval."""
+    person = authorize(payload.get("name"), payload.get("token"))
+    book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter"))
+    verse = int(payload.get("verse") or 0)
+    if verse not in verses:
+        raise ValueError("That verse is not in this Protestant chapter.")
+    with _lock:
+        claims, key = assert_holder(person, book.slug, chapter)
+        if not human_review_is_current(book.slug, chapter, verse):
+            raise ValueError("Only a current human-approved verse can be reopened.")
+        artifact = read_json(human_path(book.slug, chapter, verse), {})
+        save_review_attempt(book, chapter, verse, person, {
+            "spanish": artifact.get("spanish") or "",
+            "units": artifact.get("units") if isinstance(artifact.get("units"), list) else [],
+            "unitsComplete": True,
+            "decision": "",
+            "decisionCategory": "confirmed",
+            "sourceConfirmed": False,
+            "alignmentConfirmed": False,
+            "suppliedConfirmed": False,
+            "auditOverrideConfirmed": False,
+            "revisionOpen": True,
+            "reopenedFromApprovalSha256": object_fingerprint(artifact),
+        })
+        claims[key].update(verse=verse, note=f"Revision opened for {chapter}:{verse}; no paid call made", updated=now())
+        save_claims(claims)
+    return chapter_view(book.slug, chapter)
+
+
+def cancel_revision(payload: dict) -> dict:
+    """Discard the temporary revision while leaving the approval untouched."""
+    person = authorize(payload.get("name"), payload.get("token"))
+    book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter"))
+    verse = int(payload.get("verse") or 0)
+    if verse not in verses:
+        raise ValueError("That verse is not in this Protestant chapter.")
+    with _lock:
+        claims, key = assert_holder(person, book.slug, chapter)
+        if not revision_is_open(book.slug, chapter, verse):
+            raise ValueError("This verse does not have an open revision.")
+        close_revision(book, chapter, verse, person, cancelled=True)
+        claims[key].update(verse=verse, note=f"Revision cancelled for {chapter}:{verse}; prior approval preserved", updated=now())
+        save_claims(claims)
+    return chapter_view(book.slug, chapter)
+
+
 def approve_verse(payload: dict) -> dict:
     person = authorize(payload.get("name"), payload.get("token")); book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter")); verse = int(payload.get("verse") or 0)
     if verse not in verses: raise ValueError("That verse is not in this Protestant chapter.")
     with _lock:
         assert_holder(person, book.slug, chapter)
+        prior_human_current = human_review_is_current(book.slug, chapter, verse)
+        prior_human = read_json(human_path(book.slug, chapter, verse), {})
+        revision_was_open = revision_is_open(book.slug, chapter, verse)
         save_review_attempt(book, chapter, verse, person, payload)
         packet = read_json(packet_path(book.slug, chapter, verse), {})
         if packet.get("sourcePolicy") != "lbf-source-policy-v4" or packet.get("evidenceStatus") != "READY_FOR_MODEL": raise ValueError("The canonical packet is not READY_FOR_MODEL under lbf-source-policy-v4.")
@@ -833,14 +971,55 @@ def approve_verse(payload: dict) -> dict:
                 gate = gate_for(book.slug, chapter, verse, prior_path, prior)
                 enforce_human_adjudication(prior, gate, spanish, decision, bool(payload.get("auditOverrideConfirmed")))
         binding = approval_binding(spanish, units, packet)
-        artifact = {"schema": "lbf-human-reviewed-candidate-v1", "reviewSpecVersion": REVIEW_SPEC_VERSION, "book": book.slug, "reference": f"{book.label} {chapter}:{verse}", "chapter": chapter, "verse": verse, "sourcePolicy": packet.get("sourcePolicy"), "packetSha256": packet_fingerprint(packet), "approvalBinding": binding, "spanish": spanish, "units": units, "adjudication": {"status": "approved", "decisionCategory": decision_category, "decision": decision or DEFAULT_DECISION, "reviewedBy": person, "reviewedOn": today(), "humanApprovedInTeamDesk": True, "sourceEvidenceConfirmed": True, "alignmentUnitsConfirmed": True, "suppliedWordsConfirmed": True, "failedAuditOverrideConfirmed": bool(payload.get("auditOverrideConfirmed")), "scope": "verse wording and alignment seed; not STATUS.md done approval"}}
+        history = list(prior_human.get("approvalHistory") or []) if isinstance(prior_human.get("approvalHistory"), list) else []
+        if prior_human_current and prior_human.get("schema") == "lbf-human-reviewed-candidate-v1":
+            history.append(archived_approval(prior_human, person))
+        artifact = {
+            "schema": "lbf-human-reviewed-candidate-v1",
+            "reviewSpecVersion": REVIEW_SPEC_VERSION,
+            "book": book.slug,
+            "reference": f"{book.label} {chapter}:{verse}",
+            "chapter": chapter,
+            "verse": verse,
+            "sourcePolicy": packet.get("sourcePolicy"),
+            "packetSha256": packet_fingerprint(packet),
+            "approvalBinding": binding,
+            "spanish": spanish,
+            "units": units,
+            "approvalHistory": history,
+            "adjudication": {
+                "status": "approved",
+                "decisionCategory": decision_category,
+                "decision": decision or DEFAULT_DECISION,
+                "reviewedBy": person,
+                "reviewedOn": today(),
+                "humanApprovedInTeamDesk": True,
+                "sourceEvidenceConfirmed": True,
+                "alignmentUnitsConfirmed": True,
+                "suppliedWordsConfirmed": True,
+                "failedAuditOverrideConfirmed": bool(payload.get("auditOverrideConfirmed")),
+                "scope": "verse wording and alignment seed; not STATUS.md done approval",
+            },
+        }
         current_path = translation_file(book.slug)
         current_text = current_path.read_text(encoding="utf-8") if current_path.is_file() else ""
         changed = verse_body(current_text, chapter, verse) != spanish
+        prior_units = prior_human.get("units") if isinstance(prior_human.get("units"), list) else []
+        material_revision = bool(
+            prior_human_current
+            and (
+                " ".join(str(prior_human.get("spanish") or "").split()) != spanish
+                or prior_units != units
+            )
+        )
+        if material_revision:
+            invalidate_chapter_review(book, chapter, verse, person)
         if changed:
             invalidate_status(book.slug)
             write_verse(book.slug, chapter, verse, spanish)
         write_json(human_path(book.slug, chapter, verse), artifact)
+        if revision_was_open:
+            close_revision(book, chapter, verse, person)
         claims, key = assert_holder(person, book.slug, chapter); claims[key].update(verse=verse, note=f"Approved {chapter}:{verse}; alignment seed confirmed", updated=now()); save_claims(claims)
     return chapter_view(book.slug, chapter)
 
@@ -859,6 +1038,9 @@ def approve_clean_chapter(payload: dict) -> dict:
         planned: list[tuple[int, dict]] = []
         excluded = {int(value) for value in (payload.get("excludedVerses") or []) if str(value).isdigit()}
         for verse in verses:
+            if revision_is_open(book.slug, chapter, verse):
+                holds[verse] = ["hay una revisión abierta"]
+                continue
             if human_review_is_current(book.slug, chapter, verse):
                 continue
             if verse in excluded:
@@ -883,7 +1065,7 @@ def approve_clean_chapter(payload: dict) -> dict:
             )
             write_json(human_path(book.slug, chapter, verse), artifact)
             approved_now.append(verse)
-        missing = [verse for verse in verses if not human_review_is_current(book.slug, chapter, verse)]
+        missing = [verse for verse in verses if not human_review_is_current(book.slug, chapter, verse) or revision_is_open(book.slug, chapter, verse)]
         complete = not missing
         if complete:
             finish_chapter_locked(book, chapter, verses, person)
@@ -900,7 +1082,7 @@ def finish_chapter(payload: dict) -> dict:
     person = authorize(payload.get("name"), payload.get("token")); book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter"))
     if not payload.get("contextConfirmed"): raise ValueError("Confirm the complete chapter continuity, voice, and flow review.")
     with _lock:
-        claims, key = assert_holder(person, book.slug, chapter); missing = [v for v in verses if not human_review_is_current(book.slug, chapter, v)]
+        claims, key = assert_holder(person, book.slug, chapter); missing = [v for v in verses if not human_review_is_current(book.slug, chapter, v) or revision_is_open(book.slug, chapter, v)]
         if missing: raise ValueError("Human review is missing for verse(s): " + ", ".join(map(str, missing)))
         finish_chapter_locked(book, chapter, verses, person)
         claims[key].update(note="Chapter review complete; canonical alignment still pending", updated=now()); save_claims(claims)

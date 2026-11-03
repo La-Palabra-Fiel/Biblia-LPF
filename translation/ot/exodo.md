@@ -2075,11 +2075,11 @@ Y descendió Moisés desde el monte al pueblo, y santificó al pueblo, y lavaron
 
 ### 19:15
 
-Y dijo al pueblo: Sean preparados a tres días; no se acerquen a mujer.
+Y dijo al pueblo: «Estén preparados para el tercer día; no se acerquen a una mujer».
 
 ### 19:16
 
-Y fue en el día el tercero, en ser la mañana, y fue voces y relámpagos y nube pesada sobre el monte, y voz de trompeta fuerte mucho, y tembló todo el pueblo que en el campamento.
+Y sucedió que, en el tercer día, al amanecer, hubo truenos y relámpagos y una nube espesa sobre el monte, y un sonido de cuerno muy fuerte; y tembló todo el pueblo que *estaba* en el campamento.
 
 ### 19:17
 

@@ -129,9 +129,47 @@ class DeskTests(unittest.TestCase):
     def test_chapter_review_is_current_only_with_all_bound_verses(self):
         root=Path(self.tmp.name);manifest=root/"exodo-16.human-review.json"
         desk.write_json(manifest,{"schema":"lbf-human-chapter-review-v1","continuityVoiceFlowConfirmed":True,"verseWordingConfirmed":[1,2],"alignmentSeedsConfirmed":[1,2]})
-        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"human_review_is_current",return_value=True):
+        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"revision_is_open",return_value=False):
             self.assertTrue(desk.chapter_review_is_current("exodo",16,[1,2]))
             self.assertFalse(desk.chapter_review_is_current("exodo",16,[1,2,3]))
+        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"revision_is_open",side_effect=lambda s,c,v:v==2):
+            self.assertFalse(desk.chapter_review_is_current("exodo",16,[1,2]))
+    def test_reopen_verse_seeds_a_local_revision_without_model_call(self):
+        root=Path(self.tmp.name);human=root/"human.json"
+        artifact={"schema":"lbf-human-reviewed-candidate-v1","spanish":"Texto aprobado.","units":[{"es":"Texto aprobado","sourceTokenIds":["h1"]}],"adjudication":{"humanApprovedInTeamDesk":True}}
+        desk.write_json(human,artifact);book=type("B",(),{"slug":"exodo","label":"Éxodo"})();claims={"exodo:3":{"name":"Ana"}}
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,3,[1])),patch.object(desk,"assert_holder",return_value=(claims,"exodo:3")),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"human_path",return_value=human),patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"),patch.object(desk,"chapter_view",return_value={"verses":[]}),patch.object(desk,"_run") as run:
+            desk.reopen_verse({"name":"Ana","token":"x","book":"exodo","chapter":3,"verse":1})
+        run.assert_not_called()
+        saved=desk.read_json(desk.recovered_path("exodo",3),{})["verses"]["1"]
+        self.assertTrue(saved["revisionOpen"])
+        self.assertEqual(saved["spanish"],"Texto aprobado.")
+        self.assertFalse(saved["sourceConfirmed"])
+        self.assertEqual(saved["reopenedFromApprovalSha256"],desk.object_fingerprint(artifact))
+    def test_revised_approval_archives_prior_and_invalidates_chapter(self):
+        root=Path(self.tmp.name);human=root/"human.json";packet_file=root/"packet.json";translation=root/"exodo.md"
+        prior={"schema":"lbf-human-reviewed-candidate-v1","spanish":"Texto anterior.","units":[{"es":"Texto anterior","sourceTokenIds":["h1"]}],"approvalBinding":{"spanishSha256":"old"},"adjudication":{"humanApprovedInTeamDesk":True,"reviewedBy":"Ana"}}
+        packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[{"sourceTokenId":"h1"}]}
+        desk.write_json(human,prior);desk.write_json(packet_file,packet);translation.write_text("# Éxodo\n\n## Capítulo 3\n\n### 3:1\n\nTexto anterior.\n",encoding="utf-8")
+        book=type("B",(),{"slug":"exodo","label":"Éxodo"})();claims={"exodo:3":{"name":"Ana"}}
+        payload={"name":"Ana","token":"x","book":"exodo","chapter":3,"verse":1,"spanish":"Texto revisado.","units":[{"es":"Texto revisado","sourceTokenIds":["h1"]}],"unitsComplete":True,"decision":"Se corrigió el texto.","decisionCategory":"lexical","sourceConfirmed":True,"alignmentConfirmed":True,"suppliedConfirmed":True}
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,3,[1])),patch.object(desk,"assert_holder",return_value=(claims,"exodo:3")),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"revision_is_open",return_value=True),patch.object(desk,"human_path",return_value=human),patch.object(desk,"packet_path",return_value=packet_file),patch.object(desk,"candidate_path",return_value=human),patch.object(desk,"translation_file",return_value=translation),patch.object(desk,"invalidate_status") as invalidate_status,patch.object(desk,"invalidate_chapter_review") as invalidate_chapter,patch.object(desk,"write_verse"),patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"),patch.object(desk,"chapter_view",return_value={"verses":[]}):
+            desk.approve_verse(payload)
+        saved=desk.read_json(human,{})
+        self.assertEqual(saved["spanish"],"Texto revisado.")
+        self.assertEqual(saved["approvalHistory"][0]["spanish"],"Texto anterior.")
+        invalidate_status.assert_called_once_with("exodo")
+        invalidate_chapter.assert_called_once_with(book,3,1,"Ana")
+    def test_material_revision_invalidates_chapter_manifests(self):
+        root=Path(self.tmp.name);book=type("B",(),{"slug":"exodo"})()
+        review=root/"exodo-3.human-review.json";seed=root/"exodo-3.alignment-seed.json"
+        desk.write_json(review,{"schema":"lbf-human-chapter-review-v1","verseWordingConfirmed":[1]})
+        desk.write_json(seed,{"schema":"lbf-alignment-seed-manifest-v1","status":"seeded-hand","verses":[{"verse":1,"confirmed":True}]})
+        with patch.object(desk,"pipeline_dir",return_value=root):desk.invalidate_chapter_review(book,3,1,"Ana")
+        self.assertTrue(desk.read_json(review,{})["invalidated"])
+        saved_seed=desk.read_json(seed,{})
+        self.assertEqual(saved_seed["status"],"seeded-hand-incomplete")
+        self.assertFalse(saved_seed["verses"][0]["confirmed"])
     def test_new_approval_binding_records_provenance_without_approving_status(self):
         packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]}
         units=[{"es":"Texto","sourceTokenIds":["h1"]}]
@@ -278,6 +316,10 @@ class DeskTests(unittest.TestCase):
         self.assertIn("unitsComplete:true",html)
         self.assertIn("Puedes cancelar y revisar localmente sin pagar",html)
         self.assertIn('g.source!=="canonical-local-seed"',html)
+        self.assertIn("Reabrir para revisión",html)
+        self.assertIn("/api/reopen-verse",html)
+        self.assertIn("/api/cancel-revision",html)
+        self.assertIn("Ninguna llamada GPT se hará al guardar",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

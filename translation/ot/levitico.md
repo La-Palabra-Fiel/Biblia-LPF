@@ -253,7 +253,7 @@ Tal como será retirado de la res del sacrificio de paz, y el sacerdote los har�
 
 ### 4:11
 
-Y piel del toro y toda su carne, sobre su cabeza y sobre sus piernas, y su interior y su estiércol,
+Y *así mismo* la piel del novillo, y toda su carne con su cabeza y con sus patas, y sus entrañas y su excremento;
 
 ### 4:12
 

@@ -257,39 +257,39 @@ Y *así mismo* la piel del novillo, y toda su carne con su cabeza y con sus pata
 
 ### 4:12
 
-y sacará todo el toro a fuera al campamento, a lugar puro, a derrame de la ceniza, y lo quemará sobre leños en el fuego; sobre derrame de la ceniza será quemado.
+Y sacará todo el toro fuera del campamento, a un lugar limpio, al lugar donde se vierten las cenizas; y lo quemará sobre leños en el fuego. En el lugar donde se vierten las cenizas será quemado.
 
 ### 4:13
 
-Y si toda congregación de Israel erraren, y se ocultare cosa desde ojos de la asamblea, e hicieren una desde todos mandamientos de Jehová que no se harán, y serán culpados:
+Y si toda la congregación de Israel se equivoca, y el asunto queda oculto a los ojos de la asamblea, y hacen alguna de las cosas que, según cualquiera de los mandamientos de Yahvé, no deben hacerse, y quedan culpables.
 
 ### 4:14
 
-y fuere conocido el pecado que pecaron sobre ella, y acercarán la asamblea toro hijo de ganado a pecado, y lo traerán delante de tienda de reunión.
+Y cuando se conozca el pecado que cometieron, la congregación presentará un toro joven del ganado como ofrenda por el pecado, y lo llevará ante la tienda de reunión.
 
 ### 4:15
 
-Y apoyarán ancianos de la congregación sus manos sobre cabeza del toro delante de Jehová, y degollará el toro delante de Jehová.
+Y los ancianos de la congregación apoyarán sus manos sobre la cabeza del novillo delante de Yahvé, y será degollado el novillo delante de Yahvé.
 
 ### 4:16
 
-Y traerá el sacerdote el ungido desde sangre del toro a tienda de reunión.
+Y el sacerdote ungido llevará parte de la sangre del novillo a la tienda de reunión.
 
 ### 4:17
 
-Y sumergirá el sacerdote su dedo desde la sangre, y rociará siete veces delante de Jehová, ante faces del velo.
+Y sumergirá el sacerdote su dedo en parte de la sangre y *la* rociará siete veces delante de Yahvé, hacia la cara de la cortina.
 
 ### 4:18
 
-Y desde la sangre dará sobre cuernos del altar que delante de Jehová que en tienda de reunión, y toda la sangre derramará a base de altar del holocausto que a abertura de tienda de reunión.
+Y pondrá parte de la sangre sobre los cuernos del altar que está delante de Yahvé que está en la tienda de reunión; y derramará toda la sangre en la base del altar del holocausto que está a la entrada de la tienda de reunión.
 
 ### 4:19
 
-Y toda su grasa alzará desde nosotros, y hará humear hacia el altar.
+Y quitará de ello * el novillo* toda su grasa y hará que humee en el altar.
 
 ### 4:20
 
-Y hará al toro conforme a lo que hizo a toro del pecado; así hará a él. Y expiará sobre ellos el sacerdote, y será perdonado a ellos.
+Y hará con el toro como hizo con el toro de la ofrenda por el pecado; así hará con él. Y el sacerdote hará expiación por ellos *la congregación*, y les será perdonado.
 
 ### 4:21
 

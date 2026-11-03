@@ -355,11 +355,11 @@ Y quitará toda sus grasas, tal como se quita la grasa del cordero del sacrifici
 
 ### 5:1
 
-Y alma, cuando peque, y oyere voz de maldición, y él testigo, o vio o conoció, si no declarare, y alzará su iniquidad.
+Y si una persona peca y oye una voz de maldición, y él es testigo, ya sea que vio o supo, si no declara, llevará su iniquidad.
 
 ### 5:2
 
-O alma que tocare en toda cosa impura, o en cadáver de bestia viva impura, o en cadáver de animal impuro, o en cadáver de reptil impuro, y se ocultare desde él, y él impuro, y culpado.
+O una persona que toque cualquier cosa impura, ya sea el cadáver de un animal salvaje impuro, o el cadáver de un animal *domestico* impuro, o el cadáver de un ser impuro que pulula *se mueve en enjambre*, y quede oculto de él, él estará impuro y será culpable.
 
 ### 5:3
 

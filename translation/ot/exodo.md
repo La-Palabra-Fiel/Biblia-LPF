@@ -2227,23 +2227,23 @@ Y no subirás por escalones a Mi altar, para que tu desnudez no quede descubiert
 
 ### 21:1
 
-Y estos los juicios que pondrás delante de ellos.
+Y estas *son* las ordenanzas que pondrás delante de ellos.
 
 ### 21:2
 
-Cuando compres siervo hebreo, seis años servirá, y en el séptimo saldrá a libre, gratis.
+Cuando compres un esclavo hebreo, servirá seis años; y al séptimo año saldrá libre sin pagar nada.
 
 ### 21:3
 
-Si en su cuerpo viene, en su cuerpo saldrá; si él *es* dueño de mujer, y saldrá su mujer con él.
+Si entra solo, saldrá solo; si él *es* esposo de una mujer, su esposa saldrá con él.
 
 ### 21:4
 
-Si su señor da a él mujer, y da a luz a él hijos o hijas, la mujer y sus hijos serán a su señor, y él saldrá en su soledad.
+Si su amo le da una esposa y ella da a luz para él hijos o hijas, la esposa y sus hijos serán de su amo, y él saldrá solo.
 
 ### 21:5
 
-Y si diciendo dice el siervo: Amé a mi señor, a mi mujer y a mis hijos; no saldré libre.
+Pero si el esclavo declara expresamente: «Amo a mi señor, a mi esposa y a mis hijos; no saldré libre»
 
 ### 21:6
 
@@ -2251,15 +2251,15 @@ Y su amo lo llevará ante Dios, y lo llevará a la puerta o al poste de la puert
 
 ### 21:7
 
-Y cuando vende varón a su hija a sierva, no saldrá como salir los siervos.
+Y cuando venda un hombre a su hija como sierva, no saldrá como salen los siervos.
 
 ### 21:8
 
-Si mala en ojos de su señor que a sí la designó, la rescatará; a pueblo extranjero no señoreará para venderla, en su traicionar en ella.
+Si *es* desagradable a los ojos de su señor, que la designó para sí, hará que sea rescatada. No podrá venderla a un pueblo extranjero por actuar traicioneramente contra ella.
 
 ### 21:9
 
-Y si a su hijo la designa, conforme a juicio de las hijas hará a ella.
+Y si la destina para su hijo, la tratará según el derecho de las hijas.
 
 ### 21:10
 
@@ -2267,59 +2267,59 @@ Si toma para sí a otra, no reducirá su alimento, su ropa ni sus relaciones con
 
 ### 21:11
 
-Y si estas tres no hace a ella, y saldrá de gratis, no hay plata.
+Y si no hace para ella estas tres, saldrá gratis, sin dinero.
 
 ### 21:12
 
-Hiriente de varón, y muere, de morir morirá.
+Quien golpee a un hombre y este muera, ciertamente será ejecutado.
 
 ### 21:13
 
-Y el que no acechó, y Dios lo hizo encontrar a su mano, y pondré a ti lugar adonde huirá allá.
+Pero el que no acechó, sino que Dios lo hizo llegar a su mano, yo pondré para ti un lugar al que huirá.
 
 ### 21:14
 
-Y cuando se ensoberbece varón sobre su compañero para matarlo con astucia, desde con mi altar lo tomarás a morir.
+Pero si un hombre actúa con presunción contra su prójimo para matarlo con astucia, lo tomarás de junto a Mi altar para que muera.
 
 ### 21:15
 
-Y hiriente de su padre y su madre, de morir será muerto.
+Y el que golpee a su padre o a su madre sin falta será ejecutado.
 
 ### 21:16
 
-Y hurtante de varón, y lo vende, y es hallado en su mano, de morir morirá.
+Y quien robe a un hombre y lo venda, y sea hallado en su mano, será ejecutado sin falta.
 
 ### 21:17
 
-Y maldiciente de su padre y su madre, de morir será muerto.
+Y el que maldiga a su padre y a su madre, sin falta será ejecutado.
 
 ### 21:18
 
-Y cuando contienden varones, e hiere varón a su compañero con piedra o con puño, y no muere, y cae a lecho.
+Si unos hombres riñen y uno golpea a su compañero con una piedra o con el puño, pero no muere y cae en cama,
 
 ### 21:19
 
-Si se levanta y anda afuera sobre su bastón, y quedará limpio el hiriente; solo su sentarse dará, y sanando sanará.
+Si se levanta y camina afuera apoyándose en su bastón, el que golpeó quedará exento; solo pagará por su inactividad y *lo* sanará sin falta.
 
 ### 21:20
 
-Y cuando hiere varón a su siervo o a su sierva con la vara, y muere debajo de su mano, vengando será vengado.
+Y si un hombre golpea a su esclavo o a su esclava con la vara, y muere bajo su mano, ciertamente será vengado.
 
 ### 21:21
 
-Solo si día o dos días se para, no será vengado, porque su plata él.
+Pero si sobrevive un día o dos días, no será vengado, porque él *es* su dinero.
 
 ### 21:22
 
-Y cuando riñen varones, y golpean mujer encinta, y salen sus hijos, y no habrá desastre, penado será penado conforme a lo que impondrá sobre él dueño de la mujer, y dará en jueces.
+Y cuando peleen unos hombres y golpeen a una mujer embarazada, y salgan sus hijos, pero no haya daño, será multado sin falta según lo que le imponga el marido de la mujer, y pagará ante los jueces.
 
 ### 21:23
 
-Y si desastre hubiere, y darás alma debajo de alma,
+Pero si ocurre daño, entonces darás vida por vida.
 
 ### 21:24
 
-ojo debajo de ojo, diente debajo de diente, mano debajo de mano, pie debajo de pie,
+ojo por ojo, diente por diente, mano por mano, pie por pie.
 
 ### 21:25
 
@@ -2327,47 +2327,47 @@ quemadura por quemadura, herida por herida, magulladura por magulladura.
 
 ### 21:26
 
-Y cuando hiere varón ojo de su siervo o ojo de su sierva, y lo echa a perder, a libre lo enviará debajo de su ojo.
+Y cuando un hombre golpee el ojo de su esclavo o el ojo de su esclava y lo arruine, lo dejará libre a cambio de su ojo.
 
 ### 21:27
 
-Y si diente de su siervo o diente de su sierva hace caer, a libre lo enviará debajo de su diente.
+Y si hace caer el diente de su esclavo o el diente de su esclava, lo dejará ir en libertad a cambio de su diente.
 
 ### 21:28
 
-Y cuando embiste buey a varón o a mujer, y muere, apedreando será apedreado el buey, y no se comerá su carne, y el dueño del buey *será* limpio.
+Y si un buey cornea a un hombre o a una mujer y muere, sin falta el buey será apedreado, y no se comerá su carne; y el dueño del buey quedará exento.
 
 ### 21:29
 
-Y si buey embistente él desde ayer anteayer, y fue amonestado en sus dueños, y no lo guarda, y mata varón o mujer, el buey será apedreado, y también sus dueños morirán.
+Y si un toro era corneador desde ayer y anteayer, y se había advertido a su dueño, pero no lo guardó, y mató a un hombre o a una mujer, el toro será apedreado, y también su dueño será muerto.
 
 ### 21:30
 
-Si rescate es impuesto sobre él, y dará rescate de su alma conforme a todo lo que es impuesto sobre él.
+Si se le impone un rescate, dará como rescate por su vida todo lo que se le imponga.
 
 ### 21:31
 
-O hijo embiste, o hija embiste, conforme a este juicio será hecho a él.
+Ya sea que acornee a un hijo o que acornee a una hija, conforme a esta norma se hará con él.
 
 ### 21:32
 
-Si siervo embiste el buey, o sierva, plata treinta siclos dará a su señor, y el buey será apedreado.
+Si el toro cornea a un esclavo o a una esclava, dará treinta siclos de plata a sus amos, y el toro será apedreado.
 
 ### 21:33
 
-Y cuando abre varón cisterna, o cuando cava varón cisterna, y no la cubre, y cae allá buey o asno,
+Si un hombre abre un pozo, o si un hombre cava un pozo y no lo cubre, y cae allí un buey o un asno,
 
 ### 21:34
 
-dueño de la cisterna pagará; plata devolverá a sus dueños, y el muerto será a él.
+El dueño del pozo pagará; devolverá dinero a sus dueños, y el muerto será suyo.
 
 ### 21:35
 
-Y cuando golpea buey de varón a buey de su compañero, y muere, y venderán el buey vivo, y partirán su plata, y también el muerto partirán.
+Si el toro de un hombre golpea al toro de su prójimo y muere, venderán el toro vivo y dividirán su dinero; y también dividirán el muerto.
 
 ### 21:36
 
-O conocido que buey embistente él desde ayer anteayer, y no lo guardan sus dueños, pagando pagará buey debajo del buey, y el muerto será a él.
+O si se sabía que el buey era corneador desde ayer *y* anteayer, y su dueño no lo guardó, sin falta pagará un buey por el buey, y el muerto será suyo.
 
 ## Capítulo 22
 
@@ -2377,7 +2377,7 @@ Cuando hurta varón buey o animal del rebaño, y lo degüella o lo ha vendido, c
 
 ### 22:2
 
-Si en el allanamiento es hallado el ladrón, y es herido y muere, no hay a él sangres.
+Si el ladrón es hallado forzando la entrada y es golpeado y muere, no hay sangre para él.
 
 ### 22:3
 

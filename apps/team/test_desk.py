@@ -327,6 +327,13 @@ class DeskTests(unittest.TestCase):
         self.assertIn("function reviewStatus",html)
         self.assertIn("function enhanceReviewQueue",html)
         self.assertIn("la aprobación sigue siendo una acción humana separada",html)
+        self.assertIn("Siguiente alineación",html)
+        self.assertIn("Trabajo de alineación requerido",html)
+        self.assertIn("function splitUnitAtCursor",html)
+        self.assertIn("Dividir esta unidad en el cursor",html)
+        self.assertIn("La segunda queda sin enlaces",html)
+        self.assertIn("function unresolvedBoundaryFindings",html)
+        self.assertIn("La cobertura está completa; solo falta dividir",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

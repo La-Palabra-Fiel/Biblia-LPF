@@ -19,6 +19,10 @@ from usage_lib import extract_usage
 
 PROMPT_PATH = Path(__file__).resolve().parent / "draft_prompt.md"
 DRAFT_SCHEMA = "lbf-gpt-draft-v1"
+# The named-human Team Desk path has one shared model contract. Keep it here
+# so the UI and the subprocess making the paid request cannot drift apart.
+TEAM_DRAFT_MODEL = "gpt-5.6-sol"
+TEAM_DRAFT_REASONING = "low"
 # The budget includes reasoning as well as the Spanish and full alignment JSON.
 # Team Desk now uses low reasoning for the screening draft; 4,000 tokens leaves
 # room for the complete JSON while placing a firm per-verse cost ceiling.

@@ -1821,7 +1821,7 @@ Y la casa de Israel lo llamó Maná; y él *era* como semilla de cilantro blanco
 
 ### 16:32
 
-Y dijo Moisés: Esta la palabra que mandó Yahvé: Lleno del ómer de él a guarda a generaciones de ustedes, a fin de que vean el pan que hice comer a ustedes en el desierto en mi sacar a ustedes desde tierra de Egipto.
+Y dijo Moisés: «Esto *es* lo que Yahvé mandó: “Guarden de él un ómer completo para las generaciones de ustedes, a fin de que vean el pan que les di a comer en el desierto cuando los saqué de la tierra de Egipto”».
 
 ### 16:33
 
@@ -1843,215 +1843,215 @@ Y el ómer era la décima parte del efa.
 
 ### 17:1
 
-Y partieron toda congregación de hijos de Israel desde desierto de Sin a sus partidas sobre boca de Yahvé, y acamparon en Refidim, y no había aguas para beber el pueblo.
+Y toda la congregación de los hijos de Israel partió del desierto de Sin por sus etapas, conforme al mandato de Yahvé; y acampó en Refidim, y no había agua para que bebiera el pueblo.
 
 ### 17:2
 
-Y contendió el pueblo con Moisés, y dijeron: Den a nosotros aguas, y beberemos. Y dijo a ellos Moisés: ¿Qué contienden conmigo? ¿Qué prueban a Yahvé?
+Y el pueblo contendió con Moisés, y dijeron: «Dennos agua, y beberemos». Y Moisés les dijo: «¿Por qué contienden conmigo? ¿Por qué ponen a prueba a Yahvé?»
 
 ### 17:3
 
-Y tuvo sed allí el pueblo por las aguas, y murmuró el pueblo sobre Moisés, y dijo: ¿Por qué esto nos subiste desde Egipto para matar a mí y a mis hijos y a mi ganado con la sed?
+Y allí el pueblo tuvo sed de agua, y el pueblo murmuró contra Moisés y dijo: «¿Por qué nos hiciste subir de Egipto para hacer que yo, mis hijos y mi ganado muramos de sed?»
 
 ### 17:4
 
-Y clamó Moisés a Yahvé, diciendo: ¿Qué haré a este pueblo? Todavía poco, y me apedrearán.
+Y clamó Moisés a Yahvé, diciendo: «¿Qué haré con este pueblo? Un poco más y me apedrearán».
 
 ### 17:5
 
-Y dijo Yahvé a Moisés: Pasa delante del pueblo, y toma contigo de ancianos de Israel, y tu vara con que heriste en ella al Yeor, toma en tu mano, y anda.
+Y Yahvé dijo a Moisés: «Pasa delante del pueblo y toma contigo a algunos de los ancianos de Israel; y tu vara, con la que golpeaste el Nilo, tómala en tu mano y ve».
 
 ### 17:6
 
-He aquí yo parado delante de ti allí sobre la roca en Jorev, y herirás en la roca, y saldrán de ella aguas, y beberá el pueblo. Y hizo así Moisés a ojos de ancianos de Israel.
+Mira, Yo estaré allí de pie delante de ti, sobre la roca en Horeb; y golpearás la roca, y saldrá agua de ella, y beberá el pueblo. Y Moisés lo hizo así ante los ojos de los ancianos de Israel.
 
 ### 17:7
 
-Y llamó nombre del lugar Masá y Meribá, sobre contienda de hijos de Israel y sobre su probar a Yahvé, diciendo: ¿Hay Yahvé en medio de nosotros o no?
+Y nombró el lugar Masá y Meribá por la disputa de los hijos de Israel y porque pusieron a prueba a Yahvé al decir: «¿Está Yahvé en medio de nosotros o no?»
 
 ### 17:8
 
-Y vino Amaleq, y peleó con Israel en Refidim.
+Y vino Amalec y luchó contra Israel en Refidim.
 
 ### 17:9
 
-Y dijo Moisés a Josué: Escoge a nosotros varones, y sal, pelea en Amaleq; mañana yo parado sobre cabeza de la colina, y vara de Dios en mi mano.
+Y Moisés dijo a Josué: «Escoge hombres para nosotros, y sal a luchar contra Amalec. Mañana yo estaré de pie en la cima de la colina, y la vara de Dios *estará* en mi mano».
 
 ### 17:10
 
-Y hizo Josué conforme a lo que dijo a él Moisés, para pelear en Amaleq; y Moisés, Aarón y Jur subieron a cabeza de la colina.
+Y Josué hizo como Moisés le había dicho que luchara contra Amalec; y Moisés, Aarón y Hur subieron a la cima de la colina.
 
 ### 17:11
 
-Y era como que alzaba Moisés su mano, y prevalecía Israel; y como que reposaba su mano, y prevalecía Amaleq.
+Y sucedía que cuando Moisés levantaba su mano, Israel prevalecía; y cuando dejaba descansar su mano, Amalec prevalecía.
 
 ### 17:12
 
-Y manos de Moisés pesadas, y tomaron piedra y pusieron debajo de él, y se sentó sobre ella; y Aarón y Jur sostuvieron en sus manos, desde este uno y desde este uno, y fueron sus manos firmeza hasta venir el sol.
+Y las manos de Moisés estaban pesadas; y tomaron una piedra y la pusieron debajo de él, y se sentó sobre ella. Y Aarón y Hur sostuvieron sus manos, uno de un lado y otro del otro. Y sus manos permanecieron firmes hasta la puesta del sol.
 
 ### 17:13
 
-Y debilitó Josué a Amaleq y a su pueblo a boca de espada.
+Y Josué derrotó a Amalec y a su pueblo a filo de espada.
 
 ### 17:14
 
-Y dijo Yahvé a Moisés: Escribe esto memorial en el libro, y pon en oídos de Josué, porque borrando borraré el recuerdo de Amaleq de debajo de los cielos.
+Y dijo Yahvé a Moisés: «Escribe esto como memorial en el libro y ponlo en los oídos de Josué: que ciertamente borraré la memoria de Amalec de debajo de los cielos».
 
 ### 17:15
 
-Y edificó Moisés altar, y llamó su nombre Yahvé mi estandarte.
+Y Moisés construyó un altar y le puso por nombre: «Yahvé *es* mi estandarte».
 
 ### 17:16
 
-Y dijo: Porque mano sobre trono de Yah; guerra a Yahvé en Amaleq desde generación generación.
+Y dijo: «Porque una mano *está* sobre el trono de Yah, *hay* guerra para Yahvé contra Amalec de generación en generación».
 
 ## Capítulo 18
 
 ### 18:1
 
-Y oyó Yitró, sacerdote de Midyán, suegro de Moisés, todo lo que hizo Dios a Moisés y a Israel su pueblo, porque sacó Yahvé a Israel desde Egipto.
+Y Jetro, sacerdote de Madián, suegro de Moisés, oyó todo lo que Dios había hecho por Moisés y por Israel, Su pueblo, pues Yahvé había sacado a Israel de Egipto.
 
 ### 18:2
 
-Y tomó Yitró, suegro de Moisés, a Tsiporá, mujer de Moisés, después de sus envíos.
+Y Jetro, suegro de Moisés, llevó consigo a Séfora, esposa de Moisés, después de haber sido enviada.
 
 ### 18:3
 
-Y a sus dos hijos, que nombre del uno Guershom, porque dijo: Peregrino fui en tierra extranjera.
+y a sus dos hijos, de los cuales el nombre de uno *era* Gersón, porque dijo: «Forastero fui en tierra extranjera».
 
 ### 18:4
 
-Y nombre del uno Eliézer, porque Dios de mi padre en mi ayuda, y me libró de espada de Faraón.
+Y el nombre del otro *era* Eliezer, porque el Dios de mi padre *fue* mi ayuda y me libró de la espada de Faraón.
 
 ### 18:5
 
-Y vino Yitró, suegro de Moisés, y sus hijos y su mujer, a Moisés, al desierto que él acampaba allí, monte de Dios.
+Y llegaron Jetro, suegro de Moisés, los hijos de Moisés y la esposa de Moisés a Moisés, al desierto donde él estaba acampado, en el monte de Dios.
 
 ### 18:6
 
-Y dijo a Moisés: Yo, tu suegro Yitró, viniendo a ti, y tu mujer y sus dos hijos con ella.
+Y dijo a Moisés: «Yo, tu suegro Jetro, vengo a ti, y tu esposa y sus dos hijos con ella».
 
 ### 18:7
 
-Y salió Moisés al encuentro de su suegro, y se postró y besó a él, y preguntaron varón a su compañero a paz, y entraron a la tienda.
+Y salió Moisés al encuentro de su suegro, y se inclinó y lo besó; y preguntaron el uno al otro por su bienestar, y entraron en la tienda.
 
 ### 18:8
 
-Y contó Moisés a su suegro todo lo que hizo Yahvé a Faraón y a Egipto a causa de Israel, toda la fatiga que los halló en el camino, y los libró Yahvé.
+Y Moisés contó a su suegro todo lo que Yahvé había hecho a Faraón y a Egipto por causa de Israel, toda la adversidad que les había sobrevenido en el camino y cómo Yahvé los había librado.
 
 ### 18:9
 
-Y se alegró Yitró sobre todo el bien que hizo Yahvé a Israel, que lo libró de mano de Egipto.
+Y Jetro se alegró por todo el bien que Yahvé había hecho a favor de Israel, a quien había librado de la mano de Egipto.
 
 ### 18:10
 
-Y dijo Yitró: Bendito Yahvé, que libró a ustedes de mano de Egipto y de mano de Faraón, que libró al pueblo de debajo de mano de Egipto.
+Y Jetro dijo: «Bendito sea Yahvé, que los libró de la mano de Egipto y de la mano de Faraón, y que libró al pueblo de debajo de la mano de Egipto».
 
 ### 18:11
 
-Ahora he conocido que grande Yahvé más que todos los dioses, porque en la palabra que se ensoberbecieron sobre ellos.
+Ahora sé que Yahvé es más grande que todos los dioses, por el asunto en el que actuaron con insolencia contra ellos.
 
 ### 18:12
 
-Y tomó Yitró, suegro de Moisés, holocausto y sacrificios a Dios, y vino Aarón y todos ancianos de Israel a comer pan con suegro de Moisés delante de Dios.
+Y Jetro, suegro de Moisés, presentó un holocausto y sacrificios a Dios; y Aarón y todos los ancianos de Israel vinieron a comer pan con el suegro de Moisés delante de Dios.
 
 ### 18:13
 
-Y fue desde el día siguiente, y se sentó Moisés para juzgar al pueblo, y se paró el pueblo sobre Moisés desde la mañana hasta la tarde.
+Y sucedió que, al día siguiente, Moisés se sentó a juzgar al pueblo, y el pueblo permaneció de pie junto a Moisés desde la mañana hasta la tarde.
 
 ### 18:14
 
-Y vio suegro de Moisés todo lo que él haciendo al pueblo, y dijo: ¿Qué la palabra esta que tú haciendo al pueblo? ¿Por qué tú sentado solo, y todo el pueblo parado sobre ti desde la mañana hasta la tarde?
+Y el suegro de Moisés vio todo lo que él hacía por el pueblo y dijo: «¿Qué *es* esto que tú haces por el pueblo? ¿Por qué tú estás sentado solo y todo el pueblo está de pie junto a ti desde la mañana hasta la tarde?»
 
 ### 18:15
 
-Y dijo Moisés a su suegro: Porque viene a mí el pueblo a inquirir a Dios.
+Y Moisés dijo a su suegro: «Porque el pueblo viene a mí para consultar a Dios».
 
 ### 18:16
 
-Porque será a ellos palabra, vino a mí, y juzgaré entre varón y entre su compañero, y haré conocer estatutos de Dios y sus leyes.
+Cuando hay un asunto entre ellos, llega a mí; y juzgo entre un hombre y su compañero, y doy a conocer los estatutos de Dios y Sus instrucciones.
 
 ### 18:17
 
-Y dijo suegro de Moisés a él: No buena la palabra que tú haciendo.
+Y el suegro de Moisés le dijo: «No es bueno lo que tú haces».
 
 ### 18:18
 
-Desgastando te desgastarás, también tú, también este pueblo que contigo, porque pesada de ti la palabra; no podrás hacerlo solo.
+Sin duda desfallecerás, tanto tú como este pueblo que está contigo, porque el asunto es demasiado pesado para ti; no podrás hacerlo por ti solo.
 
 ### 18:19
 
-Ahora, oye en mi voz; te aconsejaré, y sea Dios contigo: sé tú al pueblo enfrente de Dios, y harás venir tú las palabras a Dios.
+Ahora escucha mi voz; te aconsejaré, y que Dios esté contigo. Sé tú el representante del pueblo ante Dios, y llevarás tú los asuntos a Dios.
 
 ### 18:20
 
-Y les advertirás a ellos los estatutos y las leyes, y les harás conocer a ellos el camino, andarán en él, y la obra que harán.
+Y les enseñarás los estatutos y las instrucciones, y les darás a conocer el camino por el que deberán andar y la obra que deberán hacer.
 
 ### 18:21
 
-Y tú verás desde todo el pueblo varones de fuerza, temerosos de Dios, varones de verdad, aborrecedores de ganancia, y pondrás sobre ellos príncipes de miles, príncipes de cientos, príncipes de cincuenta y príncipes de dieces.
+Y tú escogerás de entre todo el pueblo hombres capaces, temerosos de Dios, hombres confiables, que odien la ganancia injusta; y pondrás sobre el pueblo jefes de mil, jefes de cien, jefes de cincuenta y jefes de diez.
 
 ### 18:22
 
-Y juzgarán al pueblo en todo tiempo, y será toda la palabra grande la traerán a ti, y toda la palabra pequeña juzgarán ellos; y aligerarás de sobre ti, y llevarán contigo.
+Y juzgarán al pueblo en todo momento; y sucederá que te traerán todo asunto mayor, y todo asunto menor lo juzgarán ellos. Y aligera tu carga, y la llevarán contigo.
 
 ### 18:23
 
-Si la palabra esta haces, y te manda Dios, y podrás pararte, y también todo este pueblo sobre su lugar vendrá en paz.
+Si haces esto y Dios te lo ordena, podrás mantenerte en pie, y también todo este pueblo llegará en paz a su lugar.
 
 ### 18:24
 
-Y oyó Moisés a la voz de su suegro, e hizo todo lo que dijo.
+Y Moisés escuchó la voz de su suegro e hizo todo lo que dijo.
 
 ### 18:25
 
-Y escogió Moisés varones de fuerza desde todo Israel, y los dio cabezas sobre el pueblo, príncipes de miles, príncipes de cientos, príncipes de cincuenta y príncipes de dieces.
+Y Moisés escogió hombres capaces de entre todo Israel, y los puso como jefes sobre el pueblo: jefes de mil, jefes de cien, jefes de cincuenta y jefes de diez.
 
 ### 18:26
 
-Y juzgaban al pueblo en todo tiempo; la palabra dura la traían a Moisés, y toda la palabra pequeña juzgaban ellos.
+Y juzgaban al pueblo en todo momento; llevaban el asunto difícil a Moisés, y ellos juzgaban todo asunto pequeño.
 
 ### 18:27
 
-Y envió Moisés a su suegro, y anduvo a sí a su tierra.
+Y Moisés despidió a su suegro, y se fue a su tierra.
 
 ## Capítulo 19
 
 ### 19:1
 
-En el mes el tercero a salir hijos de Israel desde tierra de Egipto, en el día este vinieron a desierto de Sinai.
+En el tercer mes después de la salida de los hijos de Israel de la tierra de Egipto, en este día llegaron al desierto de Sinaí.
 
 ### 19:2
 
-Y partieron desde Refidim, y vinieron a desierto de Sinai, y acamparon en el desierto; y acampó allí Israel frente al monte.
+Y partieron de Refidim, y llegaron al desierto de Sinaí, y acamparon en el desierto; e Israel acampó allí frente al monte.
 
 ### 19:3
 
-Y Moisés subió a Dios, y llamó a él Yahvé desde el monte, diciendo: Así dirás a casa de Jacob, y harás saber a hijos de Israel:
+Y Moisés subió hacia Dios, y Yahvé lo llamó desde el monte, diciendo: «Así dirás a la casa de Jacob y anunciarás a los hijos de Israel:
 
 ### 19:4
 
-Ustedes vieron lo que hice a Egipto, y los alcé sobre alas de águilas, y los traje a mí.
+Ustedes vieron lo que hice a Egipto, y los llevé sobre alas de águilas y los traje a Mí.
 
 ### 19:5
 
-Y ahora, si oyendo oyen en mi voz, y guardan mi pacto, y serán a mí posesión especial desde todos los pueblos, porque a mí toda la tierra.
+Y ahora, si de veras escuchan Mi voz y guardan Mi pacto, serán Mi posesión de entre todos los pueblos, porque toda la tierra Me pertenece.
 
 ### 19:6
 
-Y ustedes serán a mí reino de sacerdotes y nación santa. Estas las palabras que hablarás a hijos de Israel.
+Y ustedes serán para Mí un reino de sacerdotes y una nación santa. Estas *son* las palabras que hablarás a los hijos de Israel.
 
 ### 19:7
 
-Y vino Moisés, y llamó a los ancianos del pueblo, y puso delante de ellos todas las palabras estas que le mandó Yahvé.
+Y Moisés vino y llamó a los ancianos del pueblo, y puso delante de ellos todas estas palabras que Yahvé le había mandado.
 
 ### 19:8
 
-Y respondieron todo el pueblo juntos, y dijeron: Todo lo que habló Yahvé haremos. Y devolvió Moisés las palabras del pueblo a Yahvé.
+Y todo el pueblo respondió en conjunto y dijo: «Haremos todo lo que Yahvé ha dicho». Y Moisés llevó de vuelta a Yahvé las palabras del pueblo.
 
 ### 19:9
 
-Y dijo Yahvé a Moisés: He aquí yo viniendo a ti en densura de la nube, a causa de que oiga el pueblo en mi hablar contigo, y también en ti crean para siempre. Y hizo saber Moisés las palabras del pueblo a Yahvé.
+Y Yahvé dijo a Moisés: «Mira, Yo vengo a ti en la nube espesa, para que el pueblo oiga cuando Yo hable contigo y también ellos confíen en ti para siempre». Y Moisés comunicó las palabras del pueblo a Yahvé.
 
 ### 19:10
 
@@ -2059,15 +2059,15 @@ Y dijo Yahvé a Moisés: Anda al pueblo, y santifícalos hoy y mañana, y laven 
 
 ### 19:11
 
-Y sean preparados al día el tercero, porque en el día el tercero descenderá Yahvé a ojos de todo el pueblo sobre monte Sinai.
+Y estarán preparados para el tercer día, porque en el tercer día descenderá Yahvé ante los ojos de todo el pueblo sobre el monte Sinaí.
 
 ### 19:12
 
-Y limitarás al pueblo alrededor, diciendo: Guárdense a ustedes de subir en el monte y de tocar en su extremo; todo el tocante en el monte de morir morirá.
+Y pondrás límites al pueblo por todos lados, diciendo: «Cuídense de subir al monte y de tocar su borde. Todo el que toque el monte será ejecutado sin falta.
 
 ### 19:13
 
-No tocará en él mano, porque apedreando será apedreado o arrojando será arrojado; si bestia, si varón, no vivirá. Al prolongar el cuerno, ellos subirán en el monte.
+Ninguna mano lo tocará, sino que sin falta será apedreado o sin falta será atravesado por flechas; sea animal o sea hombre, no vivirá. Cuando suene prolongadamente el cuerno de carnero, ellos subirán al monte».
 
 ### 19:14
 

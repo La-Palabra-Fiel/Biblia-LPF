@@ -126,6 +126,12 @@ class DeskTests(unittest.TestCase):
         human.write_text('{"schema":"lbf-human-reviewed-candidate-v1","packetSha256":"old","spanish":"Texto aprobado.","adjudication":{"humanApprovedInTeamDesk":true}}\n',encoding="utf-8")
         with patch.object(desk,"human_path",return_value=human),patch.object(desk,"translation_file",return_value=translation):
             self.assertTrue(desk.human_review_is_current("exodo",1,1))
+    def test_chapter_review_is_current_only_with_all_bound_verses(self):
+        root=Path(self.tmp.name);manifest=root/"exodo-16.human-review.json"
+        desk.write_json(manifest,{"schema":"lbf-human-chapter-review-v1","continuityVoiceFlowConfirmed":True,"verseWordingConfirmed":[1,2],"alignmentSeedsConfirmed":[1,2]})
+        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"human_review_is_current",return_value=True):
+            self.assertTrue(desk.chapter_review_is_current("exodo",16,[1,2]))
+            self.assertFalse(desk.chapter_review_is_current("exodo",16,[1,2,3]))
     def test_new_approval_binding_records_provenance_without_approving_status(self):
         packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]}
         units=[{"es":"Texto","sourceTokenIds":["h1"]}]
@@ -264,6 +270,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("function linkToken",html)
         self.assertIn("Alt+flecha",html)
         self.assertIn("Ctrl/⌘+Enter",html)
+        self.assertIn("function setupApprovedCard",html)
+        self.assertIn("Capítulo aprobado ✓",html)
+        self.assertIn("chapterReviewed",html)
         self.assertIn("Quitar esta unidad de alineación",html)
         self.assertIn("¿Seguro que quieres quitar esta unidad de alineación?",html)
         self.assertIn("unitsComplete:true",html)

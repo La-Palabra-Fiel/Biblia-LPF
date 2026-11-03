@@ -24,6 +24,8 @@ from books import get_book
 from draft_lib import (
     DRAFT_MAX_COMPLETION_TOKENS,
     OpenAIResponseError,
+    TEAM_DRAFT_MODEL,
+    TEAM_DRAFT_REASONING,
     build_user_prompt,
     call_openai,
     draft_path,
@@ -34,6 +36,13 @@ from draft_lib import (
 )
 from source_packet import build_packet, packet_path, validate_packet, write_packet
 from usage_lib import record_call
+
+
+def enforce_team_contract(label: str) -> None:
+    """Apply the fixed Team Desk contract before writing or sending a request."""
+    if label == "team-gpt":
+        os.environ["LBF_GPT_MODEL"] = TEAM_DRAFT_MODEL
+        os.environ["LBF_GPT_REASONING"] = TEAM_DRAFT_REASONING
 
 
 def main() -> int:
@@ -50,9 +59,7 @@ def main() -> int:
     # must hold even when this script is invoked directly and a private env
     # file contains cheaper exploratory defaults.  Otherwise the paid call
     # succeeds but Team Desk necessarily rejects the resulting candidate.
-    if args.label == "team-gpt":
-        os.environ["LBF_GPT_MODEL"] = "gpt-5.6-sol"
-        os.environ["LBF_GPT_REASONING"] = "medium"
+    enforce_team_contract(args.label)
 
     book = get_book(args.book)
     stored = packet_path(book, args.chapter, args.verse)

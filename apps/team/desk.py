@@ -22,11 +22,12 @@ ROOT = Path(__file__).resolve().parents[2]
 PIPELINE = ROOT / "tools" / "pipeline"
 sys.path.insert(0, str(PIPELINE))
 import env_load  # noqa: E402,F401
+from draft_lib import TEAM_DRAFT_MODEL, TEAM_DRAFT_REASONING  # noqa: E402
 
 # The team workflow is deliberately not model-configurable. Changing this is a
 # policy change, not an operator preference.
-TEAM_MODEL = "gpt-5.6-sol"
-TEAM_REASONING = "low"
+TEAM_MODEL = TEAM_DRAFT_MODEL
+TEAM_REASONING = TEAM_DRAFT_REASONING
 COMPATIBLE_DRAFT_REASONING = {"low", "medium"}
 SPANISH_GATE_MODEL = "deterministic-local"
 os.environ["LBF_GPT_MODEL"] = TEAM_MODEL
@@ -463,6 +464,18 @@ def human_review_is_current(slug: str, chapter: int, verse: int) -> bool:
     )
 
 
+def chapter_review_is_current(slug: str, chapter: int, verses: list[int]) -> bool:
+    """A chapter is complete only while every bound verse approval is current."""
+    artifact = read_json(pipeline_dir(slug) / f"{slug}-{chapter}.human-review.json", {})
+    return bool(
+        artifact.get("schema") == "lbf-human-chapter-review-v1"
+        and artifact.get("continuityVoiceFlowConfirmed") is True
+        and artifact.get("verseWordingConfirmed") == verses
+        and artifact.get("alignmentSeedsConfirmed") == verses
+        and all(human_review_is_current(slug, chapter, verse) for verse in verses)
+    )
+
+
 def chapter_view(slug: str, chapter) -> dict:
     book, number, verses = chapter_or_raise(slug, chapter)
     path = translation_file(slug)
@@ -517,7 +530,7 @@ def chapter_view(slug: str, chapter) -> dict:
             "alignmentFindings": [],
         }
         rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_review_is_current(slug, number, verse)})
-    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
+    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "chapterReviewed": chapter_review_is_current(slug, number, verses), "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
 def _run(args: list[str], *, allow_gate_failure: bool = False) -> None:

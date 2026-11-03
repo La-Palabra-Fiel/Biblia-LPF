@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import os
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -17,12 +19,22 @@ from draft_lib import (
     normalize_draft,
     prompt_fingerprint,
 )
+from draft_gpt import enforce_team_contract
 from morph import expand_hebrew_morph
 from polish_lib import freeze_from, normalize_polish
 from source_packet import build_packet, dump_prompt, packet_for_prompt
 
 
 class SourcePacketTests(unittest.TestCase):
+    def test_team_paid_path_cannot_override_low_reasoning(self) -> None:
+        with patch.dict(
+            os.environ,
+            {"LBF_GPT_MODEL": "other", "LBF_GPT_REASONING": "medium"},
+        ):
+            enforce_team_contract("team-gpt")
+            self.assertEqual(os.environ["LBF_GPT_MODEL"], "gpt-5.6-sol")
+            self.assertEqual(os.environ["LBF_GPT_REASONING"], "low")
+
     def test_exodo_1_16_dual_stones(self) -> None:
         packet = build_packet("exodo", 1, 16)
         self.assertEqual(packet["textualBasis"], "OSHB/WLC")

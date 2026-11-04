@@ -17,13 +17,21 @@ class DeskTests(unittest.TestCase):
     def tearDown(self):
         desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
     def test_model_is_fixed_to_sol(self):
-        self.assertEqual(desk.model_name(),"gpt-5.6-sol")
+        self.assertEqual(desk.model_name(),"gpt-6.1-sol")
         self.assertEqual(desk.reasoning_effort(),"low")
+        self.assertEqual(desk.board()["modelReviewOn"],"2026-11-30")
         self.assertEqual(desk.SPANISH_GATE_MODEL,"deterministic-local")
         self.assertFalse(desk.audit_required({"uncertainties":[]},{"verdict":"pass"}))
         self.assertTrue(desk.audit_required({"uncertainties":[{"issue":"open"}]},{"verdict":"pass"}))
         self.assertTrue(desk.audit_required({"uncertainties":[]},{"verdict":"fail"}))
         self.assertEqual(desk.board()["draftSpecVersion"],desk.DRAFT_SPEC_VERSION)
+
+    def test_current_and_historical_paid_models_are_compatible(self):
+        packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[]}
+        common={"reasoningEffort":"low","packetSha256":desk.packet_fingerprint(packet),"draftSpecVersion":desk.DRAFT_SPEC_VERSION}
+        self.assertTrue(desk.compatible_paid_draft({**common,"model":"gpt-6.1-sol"},packet))
+        self.assertTrue(desk.compatible_paid_draft({**common,"model":"gpt-5.6-sol"},packet))
+        self.assertFalse(desk.compatible_paid_draft({**common,"model":"gpt-5.5-sol"},packet))
     def test_divine_name_is_locked(self):
         packet={"tokens":[{"sourceTokenId":"h1","lemma":"c/3068"}]}
         self.assertEqual(desk.lint_divine_name("Y dijo Yahvé",packet),[])

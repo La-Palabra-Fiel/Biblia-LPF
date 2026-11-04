@@ -1,5 +1,30 @@
 # Translation pipeline
 
+## Blind model comparison
+
+`compare_draft_models.py` compares GPT-5.6 Sol and GPT-6.1 Sol on twelve
+approved Exodus verses without exposing the approved answer to either model.
+It is noncanonical, writes only under `/tmp`, and never changes translation,
+alignment, status, or Team Desk candidates.
+
+Prepare the bound sample and display the paid-call ceiling:
+
+```bash
+python3 tools/pipeline/compare_draft_models.py prepare
+```
+
+`prepare` makes no API calls. The paid phase requires the person to copy the
+displayed `maximumUsd` explicitly and refuses if a packet, approval, prompt,
+sample, or price assumption changed:
+
+```bash
+python3 tools/pipeline/compare_draft_models.py run --confirm-max-usd <maximumUsd>
+```
+
+Automatic results are written to `report.json`; anonymous candidates and the
+human review fields are written to `blind-review.json`. Neither file approves
+Spanish or alignment.
+
 `SOURCE_POLICY.md` is the closed, normative source boundary. Any model-facing
 packet must bind `lbf-source-policy-v4`; mismatched packets are refused. No
 other Bible, lexicon, syntax tree, web lookup, retrieval source, or existing
@@ -56,7 +81,7 @@ Without `OPENAI_API_KEY`, these commands preserve request JSON for the
 authorized GPT task. They never write translation Markdown, alignment, or
 `STATUS.md`.
 
-The user has authorized a GPT-5.6 Sol path. Its governing chapter workflow is
+The user has authorized a GPT-6.1 Sol path. Its governing chapter workflow is
 documented in `WORKFLOW.md`. The Cursor command later in this file is the
 retained legacy implementation and must not be represented as the GPT path.
 
@@ -68,11 +93,13 @@ grandfathered while their Spanish still matches the canonical verse; packet
 fingerprint drift alone does not purchase another draft or force retrospective
 chapter approval.
 
-New Team Desk screening drafts use GPT-5.6 Sol at low reasoning with a
+New Team Desk screening drafts use GPT-6.1 Sol at low reasoning with a
 4,000-token completion ceiling and one best-ranked corpus parallel per lemma.
-Existing compatible medium-reasoning candidates are reused without another
-paid call. The displayed maximum is sent back with the confirmation; if the
-estimate changes, the server refuses to start and asks for a new confirmation.
+The model choice is scheduled for human review beginning 2026-11-30; the date
+does not change it automatically. Existing compatible GPT-5.6 Sol candidates
+at low or medium reasoning are reused without another paid call. The displayed
+maximum is sent back with the confirmation; if the estimate changes, the
+server refuses to start and asks for a new confirmation.
 
 The named whole-chapter approval records every unchanged candidate that passes
 all deterministic gates and has no uncertainty or failed required audit. It

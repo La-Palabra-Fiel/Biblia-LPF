@@ -21,8 +21,13 @@ PROMPT_PATH = Path(__file__).resolve().parent / "draft_prompt.md"
 DRAFT_SCHEMA = "lbf-gpt-draft-v1"
 # The named-human Team Desk path has one shared model contract. Keep it here
 # so the UI and the subprocess making the paid request cannot drift apart.
-TEAM_DRAFT_MODEL = "gpt-5.6-sol"
+TEAM_DRAFT_MODEL = "gpt-6.1-sol"
 TEAM_DRAFT_REASONING = "low"
+# Existing paid candidates remain valid review seeds. The model switch must
+# never repurchase work merely to replace the producer label.
+COMPATIBLE_TEAM_DRAFT_MODELS = {"gpt-5.6-sol", TEAM_DRAFT_MODEL}
+# Human review date only. Nothing changes automatically on this date.
+TEAM_DRAFT_MODEL_REVIEW_ON = "2026-11-30"
 # The budget includes reasoning as well as the Spanish and full alignment JSON.
 # Team Desk now uses low reasoning for the screening draft; 4,000 tokens leaves
 # room for the complete JSON while placing a firm per-verse cost ceiling.
@@ -202,7 +207,7 @@ def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
             evidence_decisions.append({"sourceTokenIds": ids, "issue": issue, "evidenceLevel": level, "rationale": rationale, "alternatives": alternatives})
     return {
         "schema": DRAFT_SCHEMA,
-        "drafter": "Cursor Auto" if label == "auto" else "GPT-5.6",
+        "drafter": "Cursor Auto" if label == "auto" else os.environ.get("LBF_GPT_MODEL", TEAM_DRAFT_MODEL),
         "model": os.environ.get("LBF_GPT_MODEL", "gpt-5.1"),
         "label": label,
         "book": packet["book"],

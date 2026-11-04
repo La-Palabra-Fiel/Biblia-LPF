@@ -43,6 +43,17 @@ describir opciones o señalar un problema, pero no eligen el sentido del
 contexto. Una afirmación que la evidencia canónica no justifica queda en
 `HOLD`.
 
+### Política léxica: נְחֹשֶׁת, bronce
+
+Por decisión editorial humana del 4 de noviembre de 2026, נְחֹשֶׁת
+(H5178; lema aumentado `5178 a`) se traduce de manera consistente como
+**bronce**, con las adaptaciones gramaticales necesarias, por ejemplo
+**de bronce**. No se alterna con **cobre** por preferencia del modelo.
+Esta adjudicación fija la denominación española; no afirma una composición
+química exacta ni incorpora fuentes externas al paquete autorizado.
+Se aplica a las nuevas propuestas y a las revisiones humanas solicitadas;
+no reabre aprobaciones ni autoriza una sustitución masiva del texto existente.
+
 ### Política léxica: arrepentimiento, pesar y cambio de rumbo
 
 La LBF no usa **arrepentirse** ni **arrepentimiento** como glosas universales.
@@ -155,7 +166,7 @@ lema, morfología y relación sintáctica de manera determinista.
 
 ### Camino GPT autorizado
 
-Cuando el usuario autoriza explícitamente el camino pagado, GPT-5.6 Sol redacta
+Cuando el usuario autoriza explícitamente el camino pagado, GPT-6.1 Sol redacta
 un versículo a la vez desde el paquete canónico. Devuelve solamente el español,
 las unidades con `sourceTokenIds`, incertidumbres y conceptos añadidos (que
 debe dejar vacíos). El lint local comprueba reglas mecánicas. Para contener el
@@ -164,9 +175,12 @@ candidato con el mismo paquete, sin reescribir, solamente cuando el candidato
 declara incertidumbre, falla una regla local o la persona solicita la auditoría.
 
 La mesa de equipo fija `reasoning.effort=low` para la redacción de cribado y
-limita la salida total a 4.000 tokens por versículo. Los candidatos históricos
-de `gpt-5.6-sol` creados con `medium` siguen siendo válidos y se reutilizan; el
-cambio de costo nunca obliga a comprarlos otra vez. La auditoría independiente
+limita la salida total a 4.000 tokens por versículo. GPT-6.1 Sol queda fijado
+para las llamadas nuevas hasta una revisión humana que comenzará el 30 de
+noviembre de 2026; esa fecha no activa ningún cambio automático. Los candidatos
+históricos de `gpt-5.6-sol` creados con `low` o `medium` siguen siendo válidos y
+se reutilizan; el cambio de modelo o costo nunca obliga a comprarlos otra vez.
+La auditoría independiente
 de fidelidad es una escalada pagada de un solo versículo, nunca una fase
 automática del capítulo. Cada artefacto registra su esfuerzo. La comprobación mecánica del español es
 local y determinista; la fluidez final la adjudica la persona que lee el

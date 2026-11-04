@@ -52,6 +52,12 @@ METHOD:
 - The rules in this prompt are binding project precedents. Apply them
   consistently. They are policy, not additional lexical evidence. Never infer
   a contextual sense from a previous Spanish verse or human decision.
+- Binding human editorial decision (2026-11-04): render the material noun
+  נְחֹשֶׁת (H5178; augmented lemma 5178 a) consistently as bronce, including
+  grammatical phrases such as de bronce. Do not alternate with cobre or
+  reopen this terminology choice merely because the packet lexicon lists
+  both copper and bronze. This fixes the Spanish designation, not an exact
+  chemical composition; it authorizes no evidence outside the packet.
 - Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
   distinctions among reconsidering, changing one's mind or judgment, feeling
   sorrow, turning/returning, relenting, compassion, and comfort whenever the

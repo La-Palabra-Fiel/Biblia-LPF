@@ -8,11 +8,16 @@ from pathlib import Path
 
 from books import ROOT, get_book
 
-# USD per 1M tokens. GPT-5.6 alias → Sol. Reasoning is inside output.
+# USD per 1M tokens. Reasoning is inside output.
 RATES = {
     "openai": {"input": 4.00, "cached": 0.40, "output": 20.00},
     "xai": {"input": 2.00, "cached": 0.50, "output": 6.00},
     "anthropic": {"input": 2.00, "cached": 0.20, "output": 10.00},
+}
+MODEL_RATES = {
+    "gpt-5.6": {"input": 4.00, "cached": 0.40, "output": 20.00},
+    "gpt-5.6-sol": {"input": 4.00, "cached": 0.40, "output": 20.00},
+    "gpt-6.1-sol": {"input": 2.00, "cached": 0.10, "output": 10.00},
 }
 
 BIBLE_VERSES = 31_098
@@ -57,8 +62,13 @@ def extract_usage(provider: str, model: str, payload: dict) -> dict:
     }
 
 
+def rates_for(usage: dict) -> dict[str, float]:
+    model = str(usage.get("model") or "")
+    return MODEL_RATES.get(model, RATES.get(usage.get("provider") or "", RATES["openai"]))
+
+
 def call_cost(usage: dict) -> float:
-    rates = RATES.get(usage.get("provider") or "", RATES["openai"])
+    rates = rates_for(usage)
     cached = int(usage.get("cachedInput") or 0)
     billed_in = max(0, int(usage.get("input") or 0) - cached)
     output_n = int(usage.get("output") or 0)

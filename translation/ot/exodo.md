@@ -2373,7 +2373,7 @@ O si se sabía que el buey era corneador desde ayer *y* anteayer, y su dueño no
 
 ### 22:1
 
-Cuando hurta varón buey o animal del rebaño, y lo degüella o lo ha vendido, cinco reses pagará en lugar del buey, y cuatro cabezas de rebaño en lugar del animal del rebaño.
+Si un hombre roba una res o un animal del rebaño y lo sacrifica o lo vende, pagará cinco reses por la res y cuatro animales del rebaño por el animal del rebaño.
 
 ### 22:2
 
@@ -2381,327 +2381,327 @@ Si el ladrón es hallado forzando la entrada y es golpeado y muere, no hay sangr
 
 ### 22:3
 
-Si nace el sol sobre él, sangres a él; pagando pagará; si no hay a él, y será vendido en su hurto.
+Si el sol ha salido sobre él, él será culpable de sangre. Sin falta pagará; si no tiene nada, será vendido por lo que robó.
 
 ### 22:4
 
-Si siendo hallado es hallado en su mano el hurto, desde buey hasta asno hasta animal del rebaño, vivos, dos pagará.
+Si lo robado —ya sea un buey, un asno o un animal del rebaño— efectivamente se encuentra con vida en su mano, pagará el doble.
 
 ### 22:5
 
-Cuando hace pastar varón campo o viña, y envía lo suyo, y pasta en campo de otro, lo mejor de su campo y lo mejor de su viña pagará.
+Si un hombre hace pastar un campo o una viña, y suelta su ganado, y este pasta en el campo de otro, pagará lo mejor de su campo y lo mejor de su viña.
 
 ### 22:6
 
-Cuando sale fuego, y halla espinos, y es comido montón o la mies o el campo, pagando pagará el que hace arder la quemazón.
+Si se desata un fuego y alcanza espinos, y se consume un montón, o el grano en pie, o el campo, sin falta pagará quien provoque el incendio.
 
 ### 22:7
 
-Cuando da varón a su compañero plata o utensilios a guardar, y es hurtado desde casa del varón, si es hallado el ladrón, pagará dos.
+Si un hombre entrega a su compañero dinero u objetos para guardar, y se los roban de la casa del hombre, si se encuentra al ladrón, pagará el doble.
 
 ### 22:8
 
-Si no es hallado el ladrón, y se acercará dueño de la casa a Dios, si no envió su mano en obra de su compañero.
+Si no se encuentra al ladrón, entonces el dueño de la casa se acercará a Dios *para ver* si no ha extendido su mano contra los bienes de su prójimo.
 
 ### 22:9
 
-Sobre toda palabra de delito, sobre buey, sobre asno, sobre cordero, sobre vestido, sobre toda pérdida que diga: Porque esto él, hasta Dios vendrá palabra de ambos; al que condenen dioses, pagará dos a su compañero.
+En todo caso de transgresión —por un buey, por un asno, por un animal del rebaño, por una prenda de vestir, por cualquier objeto perdido del que se diga: «Este es el objeto»—, el caso de ambos llegará ante los jueces; aquel a quien los jueces declaren culpable pagará el doble a su compañero.
 
 ### 22:10
 
-Cuando da varón a su compañero asno o buey o animal del rebaño y toda bestia a guardar, y muere o es quebrado o capturado, no hay quien vea,
+Si un hombre entrega a su compañero un asno o un buey o un animal del rebaño o cualquier animal para cuidarlo, y muere o se quiebra o es llevado cautivo sin que nadie lo vea,
 
 ### 22:11
 
-juramento de Yahvé será entre ambos, si no envió su mano en obra de su compañero, y tomará sus dueños, y no pagará.
+El juramento de Yahvé estará entre ambos, de que no extendió su mano contra la propiedad de su prójimo; y su dueño lo aceptará y no pagará.
 
 ### 22:12
 
-Y si hurtando es hurtado de con él, pagará a sus dueños.
+Y si realmente le es robado, pagará a sus dueños.
 
 ### 22:13
 
-Si ciertamente es desgarrado, lo traerá como testigo; por el desgarrado no pagará.
+Si en verdad es despedazado, lo traerá como evidencia; no pagará por el animal despedazado.
 
 ### 22:14
 
-Y cuando pide prestado varón de con su compañero, y es quebrado o muere, sus dueños no con él, pagando pagará.
+Y si un hombre pide prestado *algo* a su prójimo, y se rompe o muere, no estando sus dueños con él, ciertamente pagará.
 
 ### 22:15
 
-Si sus dueños con él, no pagará; si alquilado él, vino en su alquiler.
+Si su dueño está con él, no pagará. Si él es alquilado, vino en su alquiler.
 
 ### 22:16
 
-Y cuando seduce varón a virgen que no está desposada, y yace con ella, dotando la dotará a sí a mujer.
+Si un hombre seduce a una virgen que no ha sido desposada y se acuesta con ella, sin falta pagará el precio por ella para que sea su esposa.
 
 ### 22:17
 
-Si negando niega su padre a darla a él, plata pesará conforme a dote de las vírgenes.
+Si su padre se niega rotundamente a dársela, pesará plata conforme al precio de compra de las vírgenes.
 
 ### 22:18
 
-Hechicera no harás vivir.
+A una hechicera no la dejarás vivir.
 
 ### 22:19
 
-Todo yacente con bestia, de morir será muerto.
+Cualquiera que se acueste con un animal será ejecutado sin falta.
 
 ### 22:20
 
-Sacrificante a los dioses será destruido, excepto a Yahvé solo.
+El que sacrifique a los dioses, excepto a Yahvé únicamente, será exterminado.
 
 ### 22:21
 
-Y a peregrino no oprimirás, y no lo apretarás, porque peregrinos fueron ustedes en tierra de Egipto.
+Y no maltratarás al extranjero ni lo oprimirás, porque fueron extranjeros en la tierra de Egipto.
 
 ### 22:22
 
-Toda viuda y huérfano no afligirán.
+No afligirán a ninguna viuda ni a ningún huérfano.
 
 ### 22:23
 
-Si afligiendo afliges a él, porque si clamando clama a mí, oyendo oiré su clamor.
+Si de veras lo afliges, porque si de veras clama a Mí, sin falta oiré su clamor.
 
 ### 22:24
 
-Y arderá mi nariz, y mataré a ustedes con la espada, y serán mujeres de ustedes viudas, e hijos de ustedes huérfanos.
+y arderá mi ira, y los mataré con la espada; y sus esposas serán viudas, y sus hijos, huérfanos.
 
 ### 22:25
 
-Si plata prestas a mi pueblo, al pobre contigo, no serás a él como acreedor; no pondrán sobre él interés.
+Si prestas dinero a mi pueblo, al pobre que está contigo, no serás para él como acreedor; no le impondrán interés.
 
 ### 22:26
 
-Si tomas en prenda el vestido de tu compañero, hasta que venga el sol se lo devolverás a él.
+Si de veras tomas en prenda el manto de tu compañero, se lo devolverás antes de que se ponga el sol.
 
 ### 22:27
 
-Porque ella sola ella, su vestido a su piel; ¿en qué yacerá? Y será cuando clame a mí, y oiré, porque clemente yo.
+Porque ella es su única cubierta; ella es su manto para su piel. ¿Con qué se acostará? Y sucederá que, cuando clame a Mí, escucharé, porque Yo soy clemente.
 
 ### 22:28
 
-A Dios no injuriarás, y a príncipe en tu pueblo no maldecirás.
+No trates con desprecio a Dios ni maldigas a un jefe de tu pueblo.
 
 ### 22:29
 
-Tu plenitud y tu lágrima no retardarás; primogénito de tus hijos darás a mí.
+No retrasarás tu abundancia ni tu jugo; me darás al primogénito de tus hijos.
 
 ### 22:30
 
-Así harás a tu buey, a tu rebaño; siete días será con su madre, en el día el octavo lo darán a mí.
+Así harás con tu buey, con tu rebaño: siete días estará con su madre; al octavo día me lo darás.
 
 ### 22:31
 
-Y varones de santidad serán ustedes a mí, y carne en el campo desgarrada no comerán; al perro echarán a él.
+Y serán hombres de santidad para Mí, y no comerán carne despedazada en el campo; al perro la arrojarán.
 
 ## Capítulo 23
 
 ### 23:1
 
-No alzarás rumor de vanidad; no pondrás tu mano con malo para ser testigo de violencia.
+No difundas un informe falso; no unas tu mano a la de un malvado para ser un testigo injusto.
 
 ### 23:2
 
-No serás detrás de muchos a males, y no responderás sobre contienda para inclinarte detrás de muchos para torcer.
+No seguirás a muchos para *hacer* maldades, ni testificarás en una disputa para desviarte tras muchos, para torcer.
 
 ### 23:3
 
-Y a pobre no honrarás en su contienda.
+Y no honrarás a un pobre en su disputa.
 
 ### 23:4
 
-Cuando encuentras buey de tu enemigo o su asno errante, devolviendo lo devolverás a él.
+Si encuentras extraviado el buey de tu enemigo o su asno, sin falta se lo devolverás.
 
 ### 23:5
 
-Cuando ves asno de tu aborrecedor yaciendo debajo de su carga, y cesarás de dejar a él, dejar dejarás con él.
+Si ves el asno de quien te odia echado bajo su carga y te abstienes de liberárselo, ciertamente lo liberarás con él.
 
 ### 23:6
 
-No torcerás juicio de tu necesitado en su contienda.
+No tuerzas el derecho de tu necesitado en su disputa.
 
 ### 23:7
 
-Desde palabra de mentira te alejarás, e inocente y justo no matarás, porque no justificaré al malo.
+Aléjate de un asunto falso. Y no mates al inocente ni al justo, porque no declararé justo al malvado.
 
 ### 23:8
 
-Y soborno no tomarás, porque el soborno ciega a abiertos y tuerce palabras de justos.
+Y no aceptarás soborno, porque el soborno ciega a quienes ven y tuerce palabras de justos.
 
 ### 23:9
 
-Y a peregrino no apretarás, y ustedes conocieron el alma del peregrino, porque peregrinos fueron ustedes en tierra de Egipto.
+Y no oprimas al extranjero; y ustedes conocen el alma del extranjero, porque fueron extranjeros en la tierra de Egipto.
 
 ### 23:10
 
-Y seis años sembrarás tu tierra, y recogerás su producto.
+Y seis años sembrarás tu tierra y recogerás su producto.
 
 ### 23:11
 
-Y el séptimo la soltarás y la abandonarás, y comerán necesitados de tu pueblo, y su resto lo comerá el animal del campo; así harás a tu viña, a tu olivo.
+Pero en el séptimo la dejarás sin cultivar y la abandonarás; y comerán los necesitados de tu pueblo, y el animal del campo comerá lo que les sobre. Así harás con tu viñedo y con tu olivo.
 
 ### 23:12
 
-Seis días harás tus obras, y en el día el séptimo reposarás, a fin de que repose tu buey y tu asno, y tome aliento el hijo de tu sierva y el peregrino.
+Seis días harás tus trabajos, y el séptimo día cesarás, para que descansen tu buey y tu asno, y tomen aliento el hijo de tu sierva y el extranjero.
 
 ### 23:13
 
-Y en todo lo que dije a ustedes se guardarán, y nombre de dioses otros no harán recordar; no se oirá sobre tu boca.
+Y estén atentos a todo lo que les dije. Y no mencionen el nombre de otros dioses; no se oiga en tu boca.
 
 ### 23:14
 
-Tres pies celebrarás a mí en el año.
+Tres veces al año celebrarás una fiesta para Mí.
 
 ### 23:15
 
-La fiesta de los panes ázimos guardarás; siete días comerás panes ázimos, conforme a lo que te mandé, al tiempo de mes del Aviv, porque en él saliste desde Egipto; y no se verán mis faces vacíos.
+Observarás la fiesta de los panes sin levadura; durante siete días comerás panes sin levadura, como te ordené, en el tiempo señalado del mes de Abib, porque en él saliste de Egipto. Y no se presentarán vacíos ante Mí.
 
 ### 23:16
 
-Y fiesta de la siega, primicias de tus obras que siembras en el campo; y fiesta de la recolección en salir el año, en tu recoger tus obras desde el campo.
+Y la fiesta de la cosecha, las primicias de tus obras que siembras en el campo; y la fiesta de la recolección, al salir el año, cuando recojas tus obras del campo.
 
 ### 23:17
 
-Tres veces en el año será visto todo tu varón a faces del Señor Yahvé.
+Tres veces al año aparecerá todo varón tuyo ante el rostro del Señor Yahvé.
 
 ### 23:18
 
-No sacrificarás sobre leudado sangre de mi sacrificio, y no pernoctará sebo de mi fiesta hasta la mañana.
+No ofrecerás la sangre de Mi sacrificio con algo leudado, ni quedará la grasa de Mi sacrificio festivo hasta la mañana.
 
 ### 23:19
 
-Principio de primicias de tu suelo traerás a casa de Yahvé tu Dios; no cocerás cabrito en leche de su madre.
+Lo primero de las primicias de tu tierra traerás a la casa de Yahvé, tu Dios. No cocinarás un cabrito en la leche de su madre.
 
 ### 23:20
 
-He aquí yo enviando mensajero delante de ti, para guardarte en el camino y para hacerte venir al lugar que preparé.
+He aquí, Yo envío un mensajero delante de ti para guardarte en el camino y llevarte al lugar que he preparado.
 
 ### 23:21
 
-Guárdate de sus faces, y oye en su voz; no amargues en él, porque no alzará a delito de ustedes, porque mi nombre en medio de él.
+Mantente alerta ante Él y escucha Su voz; no Lo provoques, porque no perdonará la transgresión de ustedes, porque Mi nombre está en Su interior.
 
 ### 23:22
 
-Porque si oyendo oyes en su voz, y haces todo lo que hablo, y seré enemigo a tus enemigos, y afligiré a tus afligidores.
+Pero si escuchas atentamente Su voz y haces todo lo que Yo diga, seré enemigo de tus enemigos y seré adversario de tus adversarios.
 
 ### 23:23
 
-Porque andará mi ángel delante de ti, y te hará venir al amorreo y al hitita y al ferezeo y al cananeo, al heveo y al jebuseo, y lo exterminaré.
+Porque Mi mensajero irá delante de ti y te llevará al amorreo y al hitita y al ferezeo y al cananeo, al heveo y al jebuseo, y lo destruiré.
 
 ### 23:24
 
-No te postrarás a sus dioses, y no se te hará servirlos, y no harás conforme a sus obras, porque destruyendo los destruirás, y quebrando quebrarás sus estelas.
+No te postrarás ante sus dioses, ni los servirás ni actuarás según sus obras, sino que los derribarás sin falta y quebrarás sin falta sus pilares.
 
 ### 23:25
 
-Y servirán a Yahvé Dios de ustedes, y bendecirá tu pan y tus aguas, y quitaré enfermedad de medio de ti.
+Y servirán a Yahvé su Dios, y bendecirá tu pan y tus aguas; y quitaré la enfermedad de en medio de ti.
 
 ### 23:26
 
-No habrá malparienta y estéril en tu tierra; el número de tus días llenaré.
+No habrá mujer que aborte ni mujer estéril en tu tierra; completaré el número de tus días.
 
 ### 23:27
 
-Mi terror enviaré delante de ti, y confundiré a todo el pueblo que entras en ellos, y daré a todos tus enemigos a ti nuca.
+Enviaré Mi terror delante de ti, y confundiré a todo el pueblo en medio del cual entres, y pondré a todos tus enemigos con la nuca hacia ti.
 
 ### 23:28
 
-Y enviaré la avispa delante de ti, y echará al heveo, al cananeo y al hitita de delante de ti.
+Y enviaré el avispón delante de ti, y expulsará al heveo, al cananeo y al hitita de delante de ti.
 
 ### 23:29
 
-No lo echaré de delante de ti en un año, no sea que sea la tierra desolación, y se multiplique sobre ti animal del campo.
+No lo expulsaré de delante de ti en un solo año, no sea que la tierra se convierta en una desolación y los animales del campo se multipliquen contra ti.
 
 ### 23:30
 
-Poco a poco lo echaré de delante de ti, hasta que fructifiques y heredes la tierra.
+Poco a poco lo expulsaré de delante de ti, hasta que fructifiques y tomes posesión de la tierra.
 
 ### 23:31
 
-Y pondré tu límite desde mar de junco y hasta mar de filisteos, y desde desierto hasta el río, porque daré en mano de ustedes a moradores de la tierra, y los echarás de delante de ti.
+Y fijaré tu frontera desde el mar de juncos hasta el mar de los filisteos, y desde el desierto hasta el río; porque entregaré en manos de ustedes a los habitantes de la tierra, y los expulsarás de delante de ti.
 
 ### 23:32
 
-No cortarás a ellos y a sus dioses pacto.
+No harás pacto con ellos ni con sus dioses.
 
 ### 23:33
 
-No habitarán en tu tierra, no sea que te hagan pecar a mí, porque servirás a sus dioses, porque será a ti a lazo.
+No habitarán en tu tierra, no sea que te hagan pecar contra Mí; porque servirás a sus dioses, porque será para ti una trampa.
 
 ## Capítulo 24
 
 ### 24:1
 
-Y a Moisés dijo: Sube a Yahvé, tú y Aarón, Nadav y Avihú, y setenta de ancianos de Israel, y se postrarán desde lejos.
+Y dijo a Moisés: «Sube tú hacia Yahvé con Aarón, Nadab y Abiú, y con setenta de los ancianos de Israel; y póstrense desde lejos».
 
 ### 24:2
 
-Y se acercará Moisés solo a Yahvé, y ellos no se acercarán, y el pueblo no subirá con él.
+Y Moisés se acercará solo a Yahvé, y ellos no se acercarán, y el pueblo no subirá con él.
 
 ### 24:3
 
-Y vino Moisés, y contó al pueblo todas las palabras de Yahvé y todos los juicios, y respondió todo el pueblo voz una, y dijeron: Todas las palabras que habló Yahvé haremos.
+Y vino Moisés y relató al pueblo todas las palabras de Yahvé y todas las ordenanzas. Y respondió todo el pueblo a una voz, y dijeron: «Todas las palabras que habló Yahvé, las cumpliremos».
 
 ### 24:4
 
-Y escribió Moisés todas las palabras de Yahvé, y madrugó en la mañana, y edificó altar debajo del monte, y doce estelas a doce tribus de Israel.
+Y Moisés escribió todas las palabras de Yahvé. Y se levantó temprano por la mañana y construyó un altar bajo el monte, y doce pilares para las doce tribus de Israel.
 
 ### 24:5
 
-Y envió a los jóvenes de hijos de Israel, y subieron holocaustos, y sacrificaron sacrificios de pazes a Yahvé, toros.
+Y envió a los jóvenes de los hijos de Israel, y ofrecieron holocaustos y sacrificaron toros como sacrificios de paz a Yahvé.
 
 ### 24:6
 
-Y tomó Moisés mitad de la sangre, y puso en las vasijas, y mitad de la sangre roció sobre el altar.
+Y Moisés tomó la mitad de la sangre y *la* puso en los tazones; y la mitad de la sangre la arrojó sobre el altar.
 
 ### 24:7
 
-Y tomó el libro del pacto, y leyó en oídos del pueblo, y dijeron: Todo lo que habló Yahvé haremos y oiremos.
+Y tomó el libro del pacto y leyó a oídos del pueblo. Y dijeron: «Todo lo que ha hablado Yahvé haremos y escucharemos».
 
 ### 24:8
 
-Y tomó Moisés la sangre, y roció sobre el pueblo, y dijo: He aquí sangre del pacto que cortó Yahvé con ustedes sobre todas las palabras estas.
+Y Moisés tomó la sangre y *la* esparció sobre el pueblo, y dijo: «He aquí la sangre del pacto que Yahvé hizo con ustedes conforme a todas estas palabras».
 
 ### 24:9
 
-Y subió Moisés y Aarón, Nadav y Avihú, y setenta de ancianos de Israel.
+Y subieron Moisés y Aarón, Nadab y Abiú, y setenta de los ancianos de Israel.
 
 ### 24:10
 
-Y vieron a Dios de Israel, y debajo de sus pies como obra de transparencia del zafiro, y como hueso de los cielos a pureza.
+Y vieron al Dios de Israel; y debajo de Sus pies *había* como una obra de pavimento de zafiro, y como la sustancia de los cielos en pureza.
 
 ### 24:11
 
-Y a nobles de hijos de Israel no envió su mano, y contemplaron a Dios, y comieron y bebieron.
+Y no extendió Su mano contra los nobles de los hijos de Israel; y vieron a Dios, y comieron y bebieron.
 
 ### 24:12
 
-Y dijo Yahvé a Moisés: Sube a mí al monte, y sé allí, y te daré las tablas de la piedra y la ley y el mandamiento, que escribí para enseñarlos.
+Y dijo Yahvé a Moisés: «Sube hacia Mí, al monte, y quédate allí; y te daré las tablas de piedra, y la instrucción y el mandamiento que escribí para instruirlos».
 
 ### 24:13
 
-Y se levantó Moisés y Josué su ministro, y subió Moisés al monte de Dios.
+Y se levantaron Moisés y Josué, su servidor, y Moisés subió al monte de Dios.
 
 ### 24:14
 
-Y a los ancianos dijo: Siéntense a nosotros en este, hasta que volvamos a ustedes; y he aquí Aarón y Jur con ustedes; quien *sea* dueño de palabras, se acerque a ellos.
+Y dijo a los ancianos: «Espérennos aquí hasta que volvamos a ustedes. Y miren: Aarón y Hur están con ustedes. Quien tenga asuntos se acercará a ellos».
 
 ### 24:15
 
-Y subió Moisés al monte, y cubrió la nube el monte.
+Y Moisés subió al monte, y la nube cubrió el monte.
 
 ### 24:16
 
-Y moró gloria de Yahvé sobre monte Sinai, y lo cubrió la nube seis días, y llamó a Moisés en el día el séptimo desde medio de la nube.
+Y la gloria de Yahvé habitó sobre el monte Sinaí, y la nube lo cubrió seis días. Y llamó a Moisés el séptimo día desde en medio de la nube.
 
 ### 24:17
 
-Y apariencia de gloria de Yahvé como fuego comiente en cabeza del monte, a ojos de hijos de Israel.
+Y la apariencia de la gloria de Yahvé *era* como un fuego que consume en la cima del monte, a los ojos de los hijos de Israel.
 
 ### 24:18
 
-Y entró Moisés en medio de la nube, y subió al monte; y fue Moisés en el monte cuarenta días y cuarenta noches.
+Y Moisés entró en medio de la nube y subió al monte; y Moisés estuvo en el monte cuarenta días y cuarenta noches.
 
 ## Capítulo 25
 
@@ -2711,47 +2711,47 @@ Y habló Yahvé a Moisés, diciendo:
 
 ### 25:2
 
-Habla a hijos de Israel, y tomen a mí ofrenda; de parte de todo varón que lo impulse su corazón tomarán mi ofrenda.
+Habla a los hijos de Israel: que tomen para Mí una contribución. De todo hombre cuyo corazón lo impulse, tomarán Mi contribución.
 
 ### 25:3
 
-Y esta la ofrenda que tomarán de ellos: oro y plata y bronce,
+Y esta *es* la contribución que tomarán de ellos: oro y plata y bronce.
 
 ### 25:4
 
-y azul y púrpura y carmesí y lino fino y cabras,
+Y violeta, y púrpura, y material escarlata, y biso, y cabras.
 
 ### 25:5
 
-y pieles de carneros enrojecidas y pieles de tahash y maderas de shitím,
+y pieles de carneros teñidas de rojo, y cuero trabajado, y madera de acacia.
 
 ### 25:6
 
-aceite a la lumbrera, aromas a aceite de la unción y a incienso de las especias,
+aceite para la luminaria, especias para el aceite del ungüento y para el incienso de las especias
 
 ### 25:7
 
-piedras de ónice y piedras de engastes al efod y al pectoral.
+piedras de ónice y piedras de engaste para el efod y para el pectoral.
 
 ### 25:8
 
-Y harán a mí santuario, y moraré en medio de ellos.
+Y harán para mí un santuario, y habitaré en medio de ellos.
 
 ### 25:9
 
-Conforme a todo lo que yo te muestro, el modelo del tabernáculo y el modelo de todos sus utensilios, y así harán.
+Y conforme a todo lo que Yo te muestro —el diseño del tabernáculo y el diseño de todos sus utensilios—, así harán.
 
 ### 25:10
 
-Y harán arca de maderas de acacia; dos codos y medio su largo, y codo y medio su ancho, y codo y medio su alto.
+Y harán un arca de madera de acacia. Su longitud será de dos codos y medio, su anchura será de un codo y medio, y su altura será de un codo y medio.
 
 ### 25:11
 
-Y la revestirás oro puro; desde dentro y desde fuera la revestirás, y harás sobre ella moldura de oro alrededor.
+Y lo recubrirás de oro puro; por dentro y por fuera lo recubrirás, y harás sobre él un borde de oro alrededor.
 
 ### 25:12
 
-Y fundirás a ella cuatro anillos de oro, y los darás sobre sus cuatro pies; y dos anillos sobre su costado el uno, y dos anillos sobre su costado el segundo.
+Y le fundirás cuatro anillos de oro y *los* pondrás sobre sus cuatro patas; y dos anillos *estarán* en uno de sus lados, y dos anillos *estarán* en el otro de sus lados.
 
 ### 25:13
 
@@ -2759,117 +2759,117 @@ Y harás varas de madera de acacia, y las recubrirás de oro.
 
 ### 25:14
 
-Y harás entrar las varas en los anillos sobre costados del arca, para alzar el arca en ellas.
+Y introducirás las varas por los anillos que están en los lados del arca, para llevar el arca con ellas.
 
 ### 25:15
 
-En anillos del arca serán las varas; no se apartarán de él.
+En los anillos del arca estarán las varas; no se apartarán de ella.
 
 ### 25:16
 
-Y darás al arca el testimonio que daré a ti.
+Y pondrás en el arca el testimonio que te daré.
 
 ### 25:17
 
-Y harás cubierta de oro puro; dos codos y medio su largo, y codo y medio su ancho.
+Y harás una cubierta de oro puro: su longitud, dos codos y medio, y su anchura, un codo y medio.
 
 ### 25:18
 
-Y harás dos querubines de oro; de obra de martillo harás a ellos desde dos extremos de la cubierta.
+Y harás dos querubines de oro; los harás de obra martillada, de los dos extremos de la cubierta.
 
 ### 25:19
 
-Y haz querubín uno desde extremo desde este, y querubín uno desde extremo desde este; desde la cubierta harán a los querubines sobre sus dos extremos.
+Y haz un querubín en el extremo de un lado y un querubín en el extremo del otro lado. De la cubierta harán los querubines sobre sus dos extremos.
 
 ### 25:20
 
-Y serán los querubines extendientes alas hacia arriba, cubriendo con sus alas sobre la kappóret, y sus faces varón a su hermano; hacia la kappóret serán faces de los querubines.
+Y los querubines estarán extendiendo las alas hacia arriba, cubriendo con sus alas la cubierta; y sus rostros *estarán* uno hacia el otro. Hacia la cubierta estarán los rostros de los querubines.
 
 ### 25:21
 
-Y darás la cubierta sobre el arca desde arriba, y al arca darás el testimonio que daré a ti.
+Y pondrás la cubierta sobre el arca, por encima, y dentro del arca pondrás el testimonio que te daré.
 
 ### 25:22
 
-Y me citaré a ti allí, y hablaré contigo desde sobre la kappóret, desde entre los dos querubines que sobre arca del testimonio, todo lo que mandaré a ti a hijos de Israel.
+Y me reuniré contigo allí, y hablaré contigo desde encima de la tapa, desde entre los dos querubines que están sobre el arca del testimonio, todo lo que te ordene para los hijos de Israel.
 
 ### 25:23
 
-Y harás mesa de maderas de acacia; dos codos su largo, y codo su ancho, y codo y medio su alto.
+Y harás una mesa de madera de acacia; su longitud *será* de dos codos, y su anchura *será* de un codo, y su altura *será* de un codo y medio.
 
 ### 25:24
 
-Y la revestirás oro puro, y harás a ella moldura de oro alrededor.
+Y lo recubrirás de oro puro, y le harás un borde de oro alrededor.
 
 ### 25:25
 
-Y harás a ella marco de palmo alrededor, y harás moldura de oro a su marco alrededor.
+Y harás para ella un borde del ancho de una mano alrededor, y harás un ribete de oro alrededor de su borde.
 
 ### 25:26
 
-Y harás a ella cuatro anillos de oro, y darás los anillos sobre cuatro las esquinas que a cuatro sus pies.
+Y harás para ella cuatro anillos de oro, y pondrás los anillos sobre las cuatro esquinas que corresponden a sus cuatro patas.
 
 ### 25:27
 
-A la par del marco serán los anillos, a casas a varas para alzar la mesa.
+Junto al borde estarán los anillos como receptáculos para las varas, para llevar la mesa.
 
 ### 25:28
 
-Y harás las varas de maderas de shitím, y las revestirás oro, y será alzada en ellas la mesa.
+Y harás las varas de madera de acacia, y las recubrirás de oro, y con ellas será llevada la mesa.
 
 ### 25:29
 
-Y harás sus platos y sus cucharas y sus jarras y sus tazones que se derrama en ellas; oro puro harás a ellos.
+Y harás sus platos y sus cuencos y sus jarras y sus tazones sacrificiales, con los que se harán libaciones; los harás de oro puro.
 
 ### 25:30
 
-Y darás sobre la mesa pan de faces delante de mí siempre.
+Y pondrás sobre la mesa pan de presencia delante de Mí continuamente.
 
 ### 25:31
 
-Y harás el candelabro de oro puro; a martillo será hecho el candelabro; su muslo y su caña, sus cálices, sus bulbos y sus flores, desde él serán.
+Y harás un candelabro de oro puro. El candelabro —su base y su caña— se hará a martillo; sus copas, sus botones y sus brotes serán de él.
 
 ### 25:32
 
-Y seis cañas salientes desde sus lados; tres cañas de candelabro desde su lado el uno, y tres cañas de candelabro desde su lado el segundo.
+Y seis brazos salen de sus lados: tres brazos del candelabro de uno de sus lados y tres brazos del candelabro de su otro lado.
 
 ### 25:33
 
-Tres cálices almendrados en la caña la una, botón y flor, y tres cálices almendrados en la caña la una, botón y flor; así a las seis cañas las salientes desde el candelabro.
+Tres copas en forma de almendra en una rama, con un botón y un brote; y tres copas en forma de almendra en una rama, con un botón y un brote; así para las seis ramas que salen del candelabro.
 
 ### 25:34
 
-Y en el candelabro cuatro cálices almendrados, sus bulbos y sus flores.
+Y en el candelabro *habrá* cuatro copas en forma de almendra, con sus botones y sus flores.
 
 ### 25:35
 
-Y botón debajo de las dos cañas desde ella, y botón debajo de las dos cañas desde ella, y botón debajo de las dos cañas desde ella, a las seis cañas las salientes desde el candelabro.
+Y *habrá* un botón debajo de dos de sus brazos, y un botón debajo de dos de sus brazos, y un botón debajo de dos de sus brazos, para los seis brazos que salen de el candelabro.
 
 ### 25:36
 
-Sus botones y sus cañas desde ella serán; toda ella obra batida una, oro puro.
+Sus botones y sus brazos serán de él; todo él *será* una sola obra martillada de oro puro.
 
 ### 25:37
 
-Y harás sus lámparas siete, y hará subir sus lámparas, e iluminará sobre lado de sus faces.
+Y harás sus siete lámparas; y elevará sus lámparas y alumbrará hacia el lado de su rostro.
 
 ### 25:38
 
-Y sus despabiladeras y sus braseros oro puro.
+Y sus tenazas y sus recipientes para el fuego *serán* de oro puro.
 
 ### 25:39
 
-Talento de oro puro hará a ella, con todos los utensilios estos.
+De un talento de oro puro la hará, con todos estos utensilios.
 
 ### 25:40
 
-Y ve y haz en su modelo que te está siendo mostrado en el monte.
+Y mira y haz conforme a su diseño que se te muestra en el monte.
 
 ## Capítulo 26
 
 ### 26:1
 
-Y el tabernáculo harás diez cortinas; lino fino torcido y azul y púrpura y carmesí; querubines, obra de pensador, harás a ellos.
+Y harás la morada con diez cortinas; las harás de biso retorcido, y de violeta, y de púrpura, y de escarlata, con querubines, obra de diseñador.
 
 ### 26:2
 
@@ -2885,7 +2885,7 @@ Y harás lazos de azul sobre labio de la cortina la una desde extremo en la junt
 
 ### 26:5
 
-Cincuenta lazos harás en la cortina la una, y cincuenta lazos harás en extremo de la cortina que en la juntura la segunda; enfrentados los lazos, mujer a su hermana.
+Harás cincuenta presillas en una de las cortinas, y harás cincuenta presillas en el extremo de la cortina que *está* en el segundo conjunto; las presillas quedarán unas frente a otras.
 
 ### 26:6
 
@@ -3013,7 +3013,7 @@ Y harás una cortina a la abertura de la tienda, azul y púrpura y carmesí y li
 
 ### 26:37
 
-Y harás a la cortina cinco columnas de acacia, y las revestirás de oro, sus ganchos de oro, y fundirás a ellas cinco basas de bronce.
+Y harás cinco columnas de acacia para la cortina; y las recubrirás de oro; sus ganchos *serán* de oro. Y fundirás para ellas cinco bases de bronce.
 
 ## Capítulo 27
 

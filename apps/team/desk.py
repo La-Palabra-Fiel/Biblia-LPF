@@ -22,12 +22,15 @@ ROOT = Path(__file__).resolve().parents[2]
 PIPELINE = ROOT / "tools" / "pipeline"
 sys.path.insert(0, str(PIPELINE))
 import env_load  # noqa: E402,F401
-from draft_lib import TEAM_DRAFT_MODEL, TEAM_DRAFT_REASONING  # noqa: E402
+from draft_lib import COMPATIBLE_TEAM_DRAFT_MODELS, TEAM_DRAFT_MODEL, TEAM_DRAFT_MODEL_REVIEW_ON, TEAM_DRAFT_REASONING  # noqa: E402
+from usage_lib import rates_for  # noqa: E402
 
 # The team workflow is deliberately not model-configurable. Changing this is a
 # policy change, not an operator preference.
 TEAM_MODEL = TEAM_DRAFT_MODEL
 TEAM_REASONING = TEAM_DRAFT_REASONING
+TEAM_MODEL_REVIEW_ON = TEAM_DRAFT_MODEL_REVIEW_ON
+TEAM_RATES = rates_for({"provider": "openai", "model": TEAM_MODEL})
 COMPATIBLE_DRAFT_REASONING = {"low", "medium"}
 SPANISH_GATE_MODEL = "deterministic-local"
 os.environ["LBF_GPT_MODEL"] = TEAM_MODEL
@@ -53,7 +56,7 @@ _threads: dict[str, threading.Thread] = {}
 _stops: dict[str, threading.Event] = {}
 _chapter_counts: dict[str, int] = {}
 
-# Measured across the stored GPT-5.6 Sol requests, input tokens are at most
+# Measured across the stored Sol requests, input tokens are at most
 # about 0.341 per UTF-8 byte. Keep a small safety margin without incorrectly
 # charging every byte as a full token in the preflight estimate.
 INPUT_TOKENS_PER_UTF8_BYTE = 0.36
@@ -406,7 +409,7 @@ def reusable_candidate(slug: str, chapter: int, verse: int) -> tuple[Path | None
 def compatible_paid_draft(candidate: dict, packet: dict) -> bool:
     """Accept prior medium drafts while creating all new drafts at low effort."""
     return bool(
-        candidate.get("model") == TEAM_MODEL
+        candidate.get("model") in COMPATIBLE_TEAM_DRAFT_MODELS
         and candidate.get("reasoningEffort") in COMPATIBLE_DRAFT_REASONING
         and candidate.get("packetSha256") == packet_fingerprint(packet)
         and draft_specification_is_current(candidate)
@@ -624,8 +627,8 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         # paid one-verse audit explicitly from the verse card.
     output_cap_tokens = draft_calls * DRAFT_MAX_COMPLETION_TOKENS + audit_calls * AUDIT_MAX_COMPLETION_TOKENS
     likely_output_tokens = draft_calls * DRAFT_EXPECTED_COMPLETION_TOKENS
-    likely_usd = estimated_input_tokens / 1_000_000 * 4 + likely_output_tokens / 1_000_000 * 20
-    conservative_usd = estimated_input_tokens / 1_000_000 * 4 + output_cap_tokens / 1_000_000 * 20
+    likely_usd = estimated_input_tokens / 1_000_000 * TEAM_RATES["input"] + likely_output_tokens / 1_000_000 * TEAM_RATES["output"]
+    conservative_usd = estimated_input_tokens / 1_000_000 * TEAM_RATES["input"] + output_cap_tokens / 1_000_000 * TEAM_RATES["output"]
     all_flagged_usd = conservative_usd
     maximum_paid_calls = draft_calls
     likely_new_audits = 0
@@ -694,7 +697,7 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             with _lock:
                 claims = load_claims(); claims[key].update(verse=verse, note=f"Preparing {chapter}:{verse}", updated=now()); save_claims(claims)
             # Rebuild the derived packet from pinned sources. A stale packet
-            # from an earlier policy must never reach GPT-5.6 Sol.
+            # from an earlier policy must never reach the paid Sol model.
             _run([sys.executable, str(PIPELINE / "build_source_packet.py"), slug, str(chapter), str(verse)])
             existing_path, existing_candidate = reusable_candidate(slug, chapter, verse)
             if existing_path and existing_candidate:
@@ -824,7 +827,7 @@ def clean_candidate_for_chapter_approval(slug: str, chapter: int, verse: int) ->
     if packet.get("sourcePolicy") != "lbf-source-policy-v4" or packet.get("evidenceStatus") != "READY_FOR_MODEL":
         reasons.append("el paquete canónico no está READY_FOR_MODEL")
     if not compatible_paid_draft(candidate, packet):
-        reasons.append("el candidato no está ligado al paquete vigente de GPT-5.6 Sol")
+        reasons.append("el candidato no está ligado al paquete vigente de un modelo Sol autorizado")
     if candidate.get("uncertainties"):
         reasons.append("el candidato declaró incertidumbre")
     if candidate.get("addedConcepts"):
@@ -1101,7 +1104,7 @@ def chapter_count(slug: str) -> int:
 
 
 def board() -> dict:
-    return {"model": model_name(), "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
+    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
 
 
 def warm_totals() -> None:

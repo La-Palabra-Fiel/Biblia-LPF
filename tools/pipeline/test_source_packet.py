@@ -32,7 +32,7 @@ class SourcePacketTests(unittest.TestCase):
             {"LBF_GPT_MODEL": "other", "LBF_GPT_REASONING": "medium"},
         ):
             enforce_team_contract("team-gpt")
-            self.assertEqual(os.environ["LBF_GPT_MODEL"], "gpt-5.6-sol")
+            self.assertEqual(os.environ["LBF_GPT_MODEL"], "gpt-6.1-sol")
             self.assertEqual(os.environ["LBF_GPT_REASONING"], "low")
 
     def test_exodo_1_16_dual_stones(self) -> None:
@@ -511,6 +511,23 @@ class SourcePacketTests(unittest.TestCase):
         self.assertEqual(usage["output"], 3600)
         self.assertEqual(usage["reasoning"], 3000)
         self.assertAlmostEqual(call_cost(usage), 2900 / 1_000_000 * 4 + 3600 / 1_000_000 * 20)
+
+    def test_gpt_61_sol_uses_its_model_specific_rates(self) -> None:
+        from usage_lib import call_cost
+
+        usage = {
+            "provider": "openai",
+            "model": "gpt-6.1-sol",
+            "input": 2900,
+            "cachedInput": 900,
+            "output": 3600,
+        }
+        self.assertAlmostEqual(
+            call_cost(usage),
+            2000 / 1_000_000 * 2
+            + 900 / 1_000_000 * 0.10
+            + 3600 / 1_000_000 * 10,
+        )
 
     def test_ot_prompt_packet_has_complete_canonical_evidence_bundle(self) -> None:
         packet = build_packet("exodo", 1, 16)

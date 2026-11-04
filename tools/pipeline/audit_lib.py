@@ -79,6 +79,14 @@ PROPER NAMES: conventional Spanish form when one exists
 identify the referent, keep the traditional name. Common nouns stay
 Spanish.
 
+LBF MATERIAL TERMINOLOGY — binding human editorial decision (2026-11-04):
+the material noun נְחֹשֶׁת (H5178; augmented lemma 5178 a) is rendered
+consistently as bronce, including de bronce. Do not flag bronce as uncertain
+merely because the packet lexicon also lists copper. Flag cobre for this
+material as a terminology-policy mismatch, citing the corresponding source
+token. This convention does not assert an exact chemical composition or
+authorize evidence outside the packet.
+
 TARGET SPANISH: current Latin American (tú / ustedes). Vosotros (hagáis,
 veréis, mataréis, os) is the wrong variety. Hebrew/Greek 2pl including 2fp
 → ustedes verbs (hagan, vean, matarán) is licensed 2nd-person address, not

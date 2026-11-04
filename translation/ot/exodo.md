@@ -2873,15 +2873,15 @@ Y harás la morada con diez cortinas; las harás de biso retorcido, y de violeta
 
 ### 26:2
 
-Largo de la cortina la una ocho y veinte en el codo, y ancho cuatro en el codo la cortina la una; medida una a todas las cortinas.
+La longitud de cada cortina *es* de veintiocho codos, y la anchura de cada cortina *es* de cuatro codos; la medida de todas las cortinas *es* la misma.
 
 ### 26:3
 
-Cinco las cortinas estarán juntándose, mujer a su hermana, y cinco cortinas juntándose, mujer a su hermana.
+Las cinco cortinas estarán unidas una a otra, y cinco cortinas estarán unidas una a otra.
 
 ### 26:4
 
-Y harás lazos de azul sobre labio de la cortina la una desde extremo en la juntura, y así harás en labio de la cortina la extrema en la juntura la segunda.
+Y harás lazadas de hilo violeta en el borde de una cortina del extremo del conjunto; y así harás en el borde de la cortina exterior del segundo conjunto.
 
 ### 26:5
 
@@ -2889,127 +2889,127 @@ Harás cincuenta presillas en una de las cortinas, y harás cincuenta presillas 
 
 ### 26:6
 
-Y harás cincuenta ganchos de oro, y juntarás las cortinas mujer a su hermana en los ganchos, y será el mishkán uno.
+Y harás cincuenta ganchos de oro, y unirás las cortinas una con otra con los ganchos; y el tabernáculo será uno.
 
 ### 26:7
 
-Y harás cortinas de cabras a tienda sobre el tabernáculo; once cortinas las harás.
+Y harás cortinas de cabras para una tienda sobre el tabernáculo; once cortinas, las harás.
 
 ### 26:8
 
-Largo de la cortina la una treinta en el codo, y ancho cuatro en el codo la cortina la una; medida una a once cortinas.
+La longitud de cada cortina es de treinta codos, y la anchura de cada cortina es de cuatro codos; las once cortinas tienen una misma medida.
 
 ### 26:9
 
-Y juntarás las cinco cortinas a solas, y las seis cortinas a solas, y doblarás la cortina la sexta al frente de faces de la tienda.
+Y unirás las cinco cortinas por separado y las seis cortinas por separado; y doblarás la sexta cortina hacia el frente de la tienda.
 
 ### 26:10
 
-Y harás cincuenta lazos sobre labio de la cortina la una la extrema en la juntura, y cincuenta lazos sobre labio de la cortina la juntura la segunda.
+Y harás cincuenta lazadas en el borde de la cortina exterior del primer conjunto, y cincuenta lazadas en el borde de la cortina del segundo conjunto.
 
 ### 26:11
 
-Y harás ganchos de bronce cincuenta, y harás entrar los ganchos en los lazos, y juntarás la tienda, y será uno.
+Y harás cincuenta ganchos de oro, y meterás los ganchos en los lazos, y unirás la tienda, y será una sola.
 
 ### 26:12
 
-Y sobrante el excedente en las cortinas de la tienda, mitad de la cortina la excedente sobrará sobre detrás del tabernáculo.
+Y el excedente que quede de las cortinas de la tienda, la mitad de la cortina que quede, colgará sobre la parte posterior del tabernáculo.
 
 ### 26:13
 
-Y el codo desde este y el codo desde este en el excedente en largo de cortinas de la tienda será colgante sobre los lados del tabernáculo desde este y desde este para cubrirlo.
+Y el codo de un lado y el codo del otro, que quedan de sobra en la longitud de las cortinas de la tienda, estarán colgando sobre los lados del tabernáculo, a un lado y al otro, para cubrirlo.
 
 ### 26:14
 
-Y harás cubierta a la tienda pieles de carneros enrojecidas, y cubierta de pieles de tahash desde arriba.
+Y harás para la tienda una cubierta de pieles de carneros teñidas de rojo y una cubierta de cuero trabajado por encima.
 
 ### 26:15
 
-Y harás las tablas al tabernáculo, maderas de acacia, paradas.
+Y harás las tablas para el tabernáculo de madera de acacia que estén de pie.
 
 ### 26:16
 
-Diez codos largo de la tabla, y codo y medio del codo ancho de la tabla la una.
+La longitud de la tabla *será* de diez codos, y la anchura de cada tabla *será* de un codo y medio.
 
 ### 26:17
 
-Dos manos a la tabla la una, ensambladas mujer a su hermana; así harás a todas las tablas del tabernáculo.
+Dos espigas para cada tabla estarán unidas una con la otra; así harás para todas las tablas del tabernáculo.
 
 ### 26:18
 
-Y harás las tablas al tabernáculo, veinte tabla al lado sur hacia el sur.
+Y harás las tablas para el tabernáculo: veinte tablas para el lado sur, hacia el sur.
 
 ### 26:19
 
-Y cuarenta basas de plata harás debajo de veinte la tabla; dos basas debajo de la tabla la una a dos sus manos, y dos basas debajo de la tabla la una a dos sus manos.
+Y harás cuarenta bases de plata debajo de las veinte tablas: dos bases debajo de una tabla para sus dos espigas, y dos bases debajo de otra tabla para sus dos espigas.
 
 ### 26:20
 
-Y al segundo costado del tabernáculo, al lado norte, veinte tabla.
+Y para el segundo lado del tabernáculo, hacia el norte: veinte tablas.
 
 ### 26:21
 
-Y cuarenta sus basas plata; dos basas debajo de la tabla la una, y dos basas debajo de la tabla la una.
+y sus cuarenta bases de plata: dos bases debajo de una tabla y dos bases debajo de otra tabla.
 
 ### 26:22
 
-Y a fondos del mishkán hacia el mar harás seis tablas.
+Y para los extremos del tabernáculo, hacia el mar, harás seis tablas.
 
 ### 26:23
 
-Y dos tablas harás para los ángulos del tabernáculo en los dos lados posteriores.
+Y harás dos tablas para las dos esquinas posteriores del tabernáculo.
 
 ### 26:24
 
-Y serán gemelos desde abajo, y juntos serán enteros sobre su cabeza al anillo el uno; así será a ambos, a los dos ángulos serán.
+Y serán gemelas desde abajo, y juntas serán completas sobre su cabeza, hacia el anillo único. Así será para ambas; serán para las dos estructuras de esquina.
 
 ### 26:25
 
-Y serán ocho tablas, y sus basas plata, dieciséis basas; dos basas debajo de la tabla la una, y dos basas debajo de la tabla la una.
+Y serán ocho tablas, y sus bases de plata: dieciséis bases; dos bases debajo de una tabla y dos bases debajo de otra tabla.
 
 ### 26:26
 
-Y harás travesaños maderas de acacia, cinco a tablas de costado del tabernáculo el uno.
+Y harás barras de madera de acacia: cinco para las tablas de un lado del tabernáculo.
 
 ### 26:27
 
-Y cinco travesaños a tablas del segundo costado del tabernáculo, y cinco travesaños a tablas de costado del tabernáculo a los dos fondos hacia mar.
+Y cinco barras para las tablas del segundo lado del tabernáculo, y cinco barras para las tablas del lado del tabernáculo, para los dos extremos hacia el mar.
 
 ### 26:28
 
-Y el travesaño el medio en medio de las tablas pasando desde el extremo al extremo.
+Y la barra central, en medio de las tablas, pasa de un extremo al otro extremo.
 
 ### 26:29
 
-Y las tablas revestirás oro, y sus anillos harás oro, casas a los travesaños, y revestirás los travesaños oro.
+Y recubrirás las tablas de oro, y harás sus anillos de oro, receptáculos para las barras; y recubrirás las barras de oro.
 
 ### 26:30
 
-Y levantarás el tabernáculo conforme a su juicio que te fue mostrado en el monte.
+Y erigirás el tabernáculo conforme a su diseño, que se te mostró en el monte.
 
 ### 26:31
 
-Y harás velo de azul y púrpura y carmesí y lino fino torcido; obra de pensador hará a ella querubines.
+Y harás un velo de violeta y púrpura y gusano de escarlata y biso torcido; como obra de diseñador, lo hará con querubines.
 
 ### 26:32
 
-Y la darás sobre cuatro columnas de acacia revestidas de oro, sus ganchos de oro, sobre cuatro basas de plata.
+Y la pondrás sobre cuatro columnas de acacia recubiertas de oro; sus ganchos serán de oro sobre cuatro bases de plata.
 
 ### 26:33
 
-Y darás la parójet debajo de los ganchos, y harás entrar allá desde dentro a la parójet el arca del testimonio, y separará la parójet a ustedes entre el santo y entre santo de los santos.
+Y pondrás el velo debajo de los ganchos, e introducirás allí, al lado interior del velo, el arca del testimonio; y el velo hará separación para ustedes entre lo santo y lo santo de los santos.
 
 ### 26:34
 
-Y darás la kappóret sobre arca del testimonio en santo de los santos.
+Y pondrás la cubierta sobre el arca del testimonio, en el santo de los santos.
 
 ### 26:35
 
-Y pondrás la mesa fuera del velo, y el candelabro frente a la mesa sobre el costado del tabernáculo hacia el sur, y la mesa darás sobre el costado norte.
+Y pondrás la mesa fuera de la cortina y el candelabro frente a la mesa, en el lado sur del tabernáculo; y pondrás la mesa en el lado norte.
 
 ### 26:36
 
-Y harás una cortina a la abertura de la tienda, azul y púrpura y carmesí y lino fino torcido, obra de bordador.
+Y harás una cortina para la entrada de la tienda, de violeta y púrpura y gusano de escarlata y biso torcido, obra de un recamador.
 
 ### 26:37
 
@@ -3031,11 +3031,11 @@ Y harás sus ollas para quitarle las cenizas, y sus palas y sus tazones y sus te
 
 ### 27:4
 
-Y harás a él enrejado, obra de red de bronce, y harás sobre la red cuatro anillos de bronce sobre cuatro sus extremos.
+Y le harás una rejilla hecha de malla de bronce; y harás sobre la malla cuatro anillos de bronce en sus cuatro extremos.
 
 ### 27:5
 
-Y la darás debajo del borde del altar desde abajo, y será la red hasta mitad del altar.
+Y la pondrás debajo del borde del altar, por abajo, y la malla llegará hasta la mitad del altar.
 
 ### 27:6
 
@@ -3043,7 +3043,7 @@ Y harás varas al altar, varas de maderas de acacia, y las revestirás de bronce
 
 ### 27:7
 
-Y serán hechas entrar sus varas en los anillos, y serán las varas sobre dos costados del altar en alzar a él.
+Y serán introducidas sus varas en los anillos, y las varas estarán sobre los dos lados del altar al cargarlo.
 
 ### 27:8
 
@@ -3055,11 +3055,11 @@ Y harás el atrio del mishkán; a lado sur hacia el sur, colgaduras al atrio lin
 
 ### 27:10
 
-Y sus columnas veinte, y sus basas veinte bronce; ganchos de las columnas y sus bandas plata.
+Y sus columnas *serán* veinte, y sus bases *serán* veinte, de bronce; los ganchos de las columnas y sus bandas *serán* de plata.
 
 ### 27:11
 
-Y así a lado norte en el largo, colgaduras cien largo; veinte, y sus basas veinte bronce; ganchos de las columnas y sus bandas plata.
+Y asimismo, a lo largo del lado norte, *habrá* cortinas cuya longitud *será* de cien; y sus veinte columnas y sus veinte bases *serán* de bronce; los ganchos de las columnas y sus bandas *serán* de plata.
 
 ### 27:12
 

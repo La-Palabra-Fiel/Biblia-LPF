@@ -2885,7 +2885,7 @@ Y harás lazos de azul sobre labio de la cortina la una desde extremo en la junt
 
 ### 26:5
 
-Cincuenta lazos harás en la cortina la una, y cincuenta lazos harás en extremo de la cortina que en la juntura la segunda; enfrentados los lazos, mujer a su hermana.
+Harás cincuenta presillas en una de las cortinas, y harás cincuenta presillas en el extremo de la cortina que *está* en el segundo conjunto; las presillas quedarán unas frente a otras.
 
 ### 26:6
 

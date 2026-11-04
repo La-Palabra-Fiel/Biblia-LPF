@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "salmos",
   "label": "Salmos",
   "testament": "ot",
@@ -9,21 +12,29 @@
   "verse": 11,
   "oshbOsis": "Ps.2.11",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h19002011001",
       "oshbId": "19Cof",
+      "oshbRef": "Ps.2.11!1",
       "position": 1,
       "surface": "עִבְד֣וּ",
       "paleo": "𐤏𐤁𐤃𐤅",
@@ -31,16 +42,13 @@
       "strongs": "H5647",
       "morph": "HVqv2mp",
       "morphExpanded": "Hebrew; qal imperative 2nd masculine plural",
-      "ahrc": {
-        "concreteSense": "SERVE (V)",
-        "definition": "To provide a service to another, as a servant or slave or to work at a profession. Edenics: obey, obedience",
-        "parentRoot": "עב",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "izb",
+      "corpusEvidenceId": "5647"
     },
     {
       "sourceTokenId": "h19002011002",
       "oshbId": "19YWU",
+      "oshbRef": "Ps.2.11!2",
       "position": 2,
       "surface": "אֶת",
       "paleo": "𐤀𐤕",
@@ -48,27 +56,27 @@
       "strongs": "H853",
       "morph": "HTo",
       "morphExpanded": "Hebrew; direct object marker",
-      "ahrc": {
-        "concreteSense": "AT",
-        "definition": "A function word to indicate presence or occurrence, a goal of an implied or indicated action, etc. Commonly used as a grammatical tool to identify the direct object of a verb. Alternate Translations: by; for; to; with Edenics: at - a moving at something",
-        "parentRoot": "את",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "bhu",
+      "corpusEvidenceId": "853"
     },
     {
       "sourceTokenId": "h19002011003",
       "oshbId": "19rAQ",
+      "oshbRef": "Ps.2.11!3",
       "position": 3,
       "surface": "יְהוָ֣ה",
       "paleo": "𐤉𐤄𐤅𐤄",
       "lemma": "3068",
       "strongs": "H3068",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "evt",
+      "corpusEvidenceId": "3068"
     },
     {
       "sourceTokenId": "h19002011004",
       "oshbId": "19fLi",
+      "oshbRef": "Ps.2.11!4",
       "position": 4,
       "surface": "בְּיִרְאָ֑ה",
       "paleo": "𐤁𐤉𐤓𐤀𐤄",
@@ -76,16 +84,13 @@
       "strongs": "H3374",
       "morph": "HR/Ncfsa",
       "morphExpanded": "Hebrew; preposition; noun common feminine singular absolute",
-      "ahrc": {
-        "concreteSense": "FEARFULNESS",
-        "definition": "Inclined to be afraid.",
-        "parentRoot": "יר",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "fic",
+      "corpusEvidenceId": "3374"
     },
     {
       "sourceTokenId": "h19002011005",
       "oshbId": "19Ptj",
+      "oshbRef": "Ps.2.11!5",
       "position": 5,
       "surface": "וְ֝גִ֗ילוּ",
       "paleo": "𐤅𐤂𐤉𐤋𐤅",
@@ -93,16 +98,13 @@
       "strongs": "H1523",
       "morph": "HC/Vqv2mp",
       "morphExpanded": "Hebrew; conjunction; qal imperative 2nd masculine plural",
-      "ahrc": {
-        "concreteSense": "DANCE AROUND (V)",
-        "definition": "To celebrate or rejoice by spinning or moving around in a circle. Alternate Spellings: גול",
-        "parentRoot": "גי",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "cji",
+      "corpusEvidenceId": "1523"
     },
     {
       "sourceTokenId": "h19002011006",
       "oshbId": "19AJj",
+      "oshbRef": "Ps.2.11!6",
       "position": 6,
       "surface": "בִּרְעָדָֽה",
       "paleo": "𐤁𐤓𐤏𐤃𐤄",
@@ -110,12 +112,812 @@
       "strongs": "H7461",
       "morph": "HR/Ncfsa",
       "morphExpanded": "Hebrew; preposition; noun common feminine singular absolute",
-      "ahrc": {
-        "concreteSense": "SHAKING IN FEAR",
-        "definition": "Being physically effected by shivering or shaking from a dreadful event.",
-        "parentRoot": "רע",
-        "binding": "investigative-nonbinding"
+      "lexicalEvidenceId": "mad",
+      "corpusEvidenceId": "7461 b"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "5647",
+      "lexicalIndexId": "izb",
+      "headword": "עָבַד",
+      "transliteration": "ʿābad",
+      "partOfSpeech": "V",
+      "indexDefinition": "work",
+      "bdbEntryId": "p.ac.aa",
+      "possibleSenses": [
+        "work",
+        "serve",
+        "labour",
+        "do work",
+        "work for another",
+        "serve him by labour",
+        "serve as subjects",
+        "with Levitical service",
+        "be tilled",
+        "cultivated",
+        "worked",
+        "compel to labour",
+        "make to serve as subjects",
+        "cause to serve",
+        "be led",
+        "enticed to serve"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "853",
+      "lexicalIndexId": "bhu",
+      "headword": "אֵת",
+      "transliteration": "ʾēt",
+      "partOfSpeech": "T",
+      "indexDefinition": "mark of the accusative",
+      "bdbEntryId": "a.gm.aa",
+      "possibleSenses": [
+        "mark of the accusative"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3068",
+      "lexicalIndexId": "evt",
+      "headword": "יהוה",
+      "transliteration": "yhwh",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Jehovah",
+      "bdbEntryId": "e.az.ae",
+      "possibleSenses": [
+        "Yahweh",
+        "the one bringing into being",
+        "life-giver"
+      ],
+      "corpusReferences": [
+        "Exod.3.12-Exod.3.15"
+      ],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3374",
+      "lexicalIndexId": "fic",
+      "headword": "יִרְאָה",
+      "transliteration": "yirʾâ",
+      "partOfSpeech": "N",
+      "indexDefinition": "fear",
+      "bdbEntryId": "j.df.ac",
+      "possibleSenses": [
+        "fear",
+        "terror",
+        "a terror",
+        "obj. of terror",
+        "fear of God",
+        "reverence",
+        "piety",
+        "revered"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "1523",
+      "lexicalIndexId": "cji",
+      "headword": "גִּיל",
+      "transliteration": "gîl",
+      "partOfSpeech": "V",
+      "indexDefinition": "rejoice",
+      "bdbEntryId": "c.bw.aa",
+      "possibleSenses": [
+        "rejoice",
+        "go around",
+        "about",
+        "be excited",
+        "tremble"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "7461b",
+      "lexicalIndexId": "mad",
+      "headword": "רְעַדָה",
+      "transliteration": "rĕʿadâ",
+      "partOfSpeech": "N",
+      "indexDefinition": "shudder",
+      "bdbEntryId": "t.dj.ac",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 6,
+      "total": 6,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m190020001",
+        "sourceTokenIds": [
+          "h19002011001",
+          "h19002011002",
+          "h19002011003",
+          "h19002011004",
+          "h19002011005",
+          "h19002011006"
+        ]
+      },
+      {
+        "nodeId": "m190020002",
+        "class": "cl",
+        "rule": "V-O-PP",
+        "head": "true",
+        "sourceTokenIds": [
+          "h19002011001",
+          "h19002011002",
+          "h19002011003",
+          "h19002011004"
+        ]
+      },
+      {
+        "nodeId": "m190020003",
+        "class": "np",
+        "rule": "OmpNP",
+        "role": "o",
+        "head": "true",
+        "sourceTokenIds": [
+          "h19002011002",
+          "h19002011003"
+        ]
+      },
+      {
+        "nodeId": "m190020004",
+        "class": "pp",
+        "rule": "PrepNp",
+        "role": "pp",
+        "head": "true",
+        "sourceTokenIds": [
+          "h19002011004"
+        ]
+      },
+      {
+        "nodeId": "m190020005",
+        "class": "cl",
+        "rule": "V-PP",
+        "sourceTokenIds": [
+          "h19002011005",
+          "h19002011006"
+        ]
+      },
+      {
+        "nodeId": "m190020006",
+        "class": "pp",
+        "rule": "PrepNp",
+        "role": "pp",
+        "head": "true",
+        "sourceTokenIds": [
+          "h19002011006"
+        ]
       }
+    ],
+    "tokenRoles": {
+      "h19002011001": [
+        "v"
+      ],
+      "h19002011005": [
+        "v"
+      ]
+    }
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Salmos 2:10",
+      "oshbOsis": "Ps.2.10",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "19Gq9",
+          "oshbRef": "Ps.2.10!1",
+          "surface": "וְ֭עַתָּה",
+          "lemma": "c/6258",
+          "morph": "HC/D"
+        },
+        {
+          "oshbId": "193y8",
+          "oshbRef": "Ps.2.10!2",
+          "surface": "מְלָכִ֣ים",
+          "lemma": "4428",
+          "morph": "HNcmpa"
+        },
+        {
+          "oshbId": "19TXw",
+          "oshbRef": "Ps.2.10!3",
+          "surface": "הַשְׂכִּ֑ילוּ",
+          "lemma": "7919 a",
+          "morph": "HVhv2mp"
+        },
+        {
+          "oshbId": "19Y4K",
+          "oshbRef": "Ps.2.10!4",
+          "surface": "הִ֝וָּסְר֗וּ",
+          "lemma": "3256",
+          "morph": "HVNv2mp"
+        },
+        {
+          "oshbId": "19C32",
+          "oshbRef": "Ps.2.10!5",
+          "surface": "שֹׁ֣פְטֵי",
+          "lemma": "8199",
+          "morph": "HVqrmpc"
+        },
+        {
+          "oshbId": "19aMT",
+          "oshbRef": "Ps.2.10!6",
+          "surface": "אָֽרֶץ",
+          "lemma": "776",
+          "morph": "HNcbsa"
+        }
+      ]
+    },
+    {
+      "reference": "Salmos 2:11",
+      "oshbOsis": "Ps.2.11",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "19Cof",
+          "oshbRef": "Ps.2.11!1",
+          "surface": "עִבְד֣וּ",
+          "lemma": "5647",
+          "morph": "HVqv2mp"
+        },
+        {
+          "oshbId": "19YWU",
+          "oshbRef": "Ps.2.11!2",
+          "surface": "אֶת",
+          "lemma": "853",
+          "morph": "HTo"
+        },
+        {
+          "oshbId": "19rAQ",
+          "oshbRef": "Ps.2.11!3",
+          "surface": "יְהוָ֣ה",
+          "lemma": "3068",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "19fLi",
+          "oshbRef": "Ps.2.11!4",
+          "surface": "בְּיִרְאָ֑ה",
+          "lemma": "b/3374",
+          "morph": "HR/Ncfsa"
+        },
+        {
+          "oshbId": "19Ptj",
+          "oshbRef": "Ps.2.11!5",
+          "surface": "וְ֝גִ֗ילוּ",
+          "lemma": "c/1523",
+          "morph": "HC/Vqv2mp"
+        },
+        {
+          "oshbId": "19AJj",
+          "oshbRef": "Ps.2.11!6",
+          "surface": "בִּרְעָדָֽה",
+          "lemma": "b/7461 b",
+          "morph": "HR/Ncfsa"
+        }
+      ]
+    },
+    {
+      "reference": "Salmos 2:12",
+      "oshbOsis": "Ps.2.12",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "199Hv",
+          "oshbRef": "Ps.2.12!1",
+          "surface": "נַשְּׁקוּ",
+          "lemma": "5401 a",
+          "morph": "HVpv2mp"
+        },
+        {
+          "oshbId": "19j1i",
+          "oshbRef": "Ps.2.12!2",
+          "surface": "בַ֡ר",
+          "lemma": "1248",
+          "morph": "HNcmsa"
+        },
+        {
+          "oshbId": "19J9J",
+          "oshbRef": "Ps.2.12!3",
+          "surface": "פֶּן",
+          "lemma": "6435",
+          "morph": "HC"
+        },
+        {
+          "oshbId": "19U4n",
+          "oshbRef": "Ps.2.12!4",
+          "surface": "יֶאֱנַ֤ף",
+          "lemma": "599",
+          "morph": "HVqi3ms"
+        },
+        {
+          "oshbId": "192Kt",
+          "oshbRef": "Ps.2.12!5",
+          "surface": "וְתֹ֬אבְדוּ",
+          "lemma": "c/6",
+          "morph": "HC/Vqi2mp"
+        },
+        {
+          "oshbId": "19RmH",
+          "oshbRef": "Ps.2.12!6",
+          "surface": "דֶ֗רֶךְ",
+          "lemma": "1870",
+          "morph": "HNcbsa"
+        },
+        {
+          "oshbId": "19SWL",
+          "oshbRef": "Ps.2.12!7",
+          "surface": "כִּֽי",
+          "lemma": "3588 a",
+          "morph": "HC"
+        },
+        {
+          "oshbId": "1975P",
+          "oshbRef": "Ps.2.12!8",
+          "surface": "יִבְעַ֣ר",
+          "lemma": "1197 a",
+          "morph": "HVqi3ms"
+        },
+        {
+          "oshbId": "193Lj",
+          "oshbRef": "Ps.2.12!9",
+          "surface": "כִּמְעַ֣ט",
+          "lemma": "k/4592",
+          "morph": "HR/Ncmsa"
+        },
+        {
+          "oshbId": "19Qa3",
+          "oshbRef": "Ps.2.12!10",
+          "surface": "אַפּ֑וֹ",
+          "lemma": "639",
+          "morph": "HNcmsc/Sp3ms"
+        },
+        {
+          "oshbId": "19WTe",
+          "oshbRef": "Ps.2.12!11",
+          "surface": "אַ֝שְׁרֵ֗י",
+          "lemma": "835",
+          "morph": "HNcmpa"
+        },
+        {
+          "oshbId": "196VM",
+          "oshbRef": "Ps.2.12!12",
+          "surface": "כָּל",
+          "lemma": "3605",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "19sKn",
+          "oshbRef": "Ps.2.12!13",
+          "surface": "ח֥וֹסֵי",
+          "lemma": "2620",
+          "morph": "HVqrmpc"
+        },
+        {
+          "oshbId": "19oAj",
+          "oshbRef": "Ps.2.12!14",
+          "surface": "בֽוֹ",
+          "lemma": "b",
+          "morph": "HR/Sp3ms"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "5647",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "5647",
+      "totalOccurrences": 288,
+      "exactMorphOccurrences": 10,
+      "samples": [
+        {
+          "reference": "Gen.2.5",
+          "surface": "לַֽעֲבֹ֖ד",
+          "lemma": "l/5647",
+          "morph": "HR/Vqc",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "S-P-PP",
+          "oshbId": "01idy",
+          "originalContext": [
+            "וְאָדָ֣ם",
+            "אַ֔יִן",
+            "לַֽעֲבֹ֖ד",
+            "אֶת",
+            "הָֽאֲדָמָֽה"
+          ]
+        },
+        {
+          "reference": "Gen.3.23",
+          "surface": "לַֽעֲבֹד֙",
+          "lemma": "l/5647",
+          "morph": "HR/Vqc",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "V-O-S-PP-PP",
+          "oshbId": "01RqC",
+          "originalContext": [
+            "מִגַּן",
+            "עֵ֑דֶן",
+            "לַֽעֲבֹד֙",
+            "אֶת",
+            "הָ֣אֲדָמָ֔ה"
+          ]
+        },
+        {
+          "reference": "Gen.4.12",
+          "surface": "תַֽעֲבֹד֙",
+          "lemma": "5647",
+          "morph": "HVqi2ms",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "V-O",
+          "oshbId": "01FQu",
+          "originalContext": [
+            "כִּ֤י",
+            "תַֽעֲבֹד֙",
+            "אֶת",
+            "הָ֣אֲדָמָ֔ה"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HVqv2mp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "853",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "853",
+      "totalOccurrences": 10977,
+      "exactMorphOccurrences": 7053,
+      "samples": [
+        {
+          "reference": "Gen.2.5",
+          "surface": "אֶת",
+          "lemma": "853",
+          "morph": "HTo",
+          "syntaxRoles": [],
+          "clauseRule": "S-P-PP",
+          "oshbId": "01PU6",
+          "originalContext": [
+            "אַ֔יִן",
+            "לַֽעֲבֹ֖ד",
+            "אֶת",
+            "הָֽאֲדָמָֽה"
+          ]
+        },
+        {
+          "reference": "Gen.3.23",
+          "surface": "אֶת",
+          "lemma": "853",
+          "morph": "HTo",
+          "syntaxRoles": [],
+          "clauseRule": "V-O-S-PP-PP",
+          "oshbId": "01ESM",
+          "originalContext": [
+            "עֵ֑דֶן",
+            "לַֽעֲבֹד֙",
+            "אֶת",
+            "הָ֣אֲדָמָ֔ה",
+            "אֲשֶׁ֥ר"
+          ]
+        },
+        {
+          "reference": "Gen.4.12",
+          "surface": "אֶת",
+          "lemma": "853",
+          "morph": "HTo",
+          "syntaxRoles": [],
+          "clauseRule": "V-O",
+          "oshbId": "01rxc",
+          "originalContext": [
+            "כִּ֤י",
+            "תַֽעֲבֹד֙",
+            "אֶת",
+            "הָ֣אֲדָמָ֔ה",
+            "לֹֽא"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HTo"
+      ]
+    },
+    {
+      "corpusEvidenceId": "3068",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3068",
+      "totalOccurrences": 6521,
+      "exactMorphOccurrences": 5701,
+      "samples": [
+        {
+          "reference": "Gen.24.48",
+          "surface": "יְהוָה֙",
+          "lemma": "3068",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "CLaCL",
+          "oshbId": "017zY",
+          "originalContext": [
+            "וָאֲבָרֵ֗ךְ",
+            "אֶת",
+            "יְהוָה֙",
+            "אֱלֹהֵי֙",
+            "אֲדֹנִ֣י"
+          ]
+        },
+        {
+          "reference": "Gen.24.56",
+          "surface": "וַֽיהוָ֖ה",
+          "lemma": "c/3068",
+          "morph": "HC/Np",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "S-V-O",
+          "oshbId": "01NyE",
+          "originalContext": [
+            "תְּאַחֲר֣וּ",
+            "אֹתִ֔י",
+            "וַֽיהוָ֖ה",
+            "הִצְלִ֣יחַ",
+            "דַּרְכִּ֑י"
+          ]
+        },
+        {
+          "reference": "Gen.25.22",
+          "surface": "יְהוָֽה",
+          "lemma": "3068",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "V-PP",
+          "oshbId": "01hkL",
+          "originalContext": [
+            "לִדְרֹ֥שׁ",
+            "אֶת",
+            "יְהוָֽה"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "3374",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3374",
+      "totalOccurrences": 42,
+      "exactMorphOccurrences": 1,
+      "samples": [
+        {
+          "reference": "Ps.2.11",
+          "surface": "בְּיִרְאָ֑ה",
+          "lemma": "b/3374",
+          "morph": "HR/Ncfsa",
+          "syntaxRoles": [],
+          "clauseRule": "V-O-PP",
+          "oshbId": "19fLi",
+          "originalContext": [
+            "אֶת",
+            "יְהוָ֣ה",
+            "בְּיִרְאָ֑ה",
+            "וְ֝גִ֗ילוּ",
+            "בִּרְעָדָֽה"
+          ]
+        },
+        {
+          "reference": "Gen.20.11",
+          "surface": "יִרְאַ֣ת",
+          "lemma": "3374",
+          "morph": "HNcfsc",
+          "syntaxRoles": [],
+          "clauseRule": "ADV-P-S-PP",
+          "oshbId": "01wyg",
+          "originalContext": [
+            "רַ֚ק",
+            "אֵין",
+            "יִרְאַ֣ת",
+            "אֱלֹהִ֔ים",
+            "בַּמָּק֖וֹם"
+          ]
+        },
+        {
+          "reference": "Ezek.30.13",
+          "surface": "יִרְאָ֖ה",
+          "lemma": "3374",
+          "morph": "HNcfsa",
+          "syntaxRoles": [
+            "o"
+          ],
+          "clauseRule": "V-O-PP",
+          "oshbId": "26Dk3",
+          "originalContext": [
+            "ע֑וֹד",
+            "וְנָתַתִּ֥י",
+            "יִרְאָ֖ה",
+            "בְּאֶ֥רֶץ",
+            "מִצְרָֽיִם"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HR/Ncfsa"
+      ]
+    },
+    {
+      "corpusEvidenceId": "1523",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "1523",
+      "totalOccurrences": 44,
+      "exactMorphOccurrences": 4,
+      "samples": [
+        {
+          "reference": "Ps.2.11",
+          "surface": "וְ֝גִ֗ילוּ",
+          "lemma": "c/1523",
+          "morph": "HC/Vqv2mp",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "V-PP",
+          "oshbId": "19Ptj",
+          "originalContext": [
+            "יְהוָ֣ה",
+            "בְּיִרְאָ֑ה",
+            "וְ֝גִ֗ילוּ",
+            "בִּרְעָדָֽה"
+          ]
+        },
+        {
+          "reference": "Isa.65.18",
+          "surface": "וְגִ֨ילוּ֙",
+          "lemma": "c/1523",
+          "morph": "HC/Vqv2mp",
+          "syntaxRoles": [],
+          "clauseRule": "cjpCLx",
+          "oshbId": "23Ksb",
+          "originalContext": [
+            "אִם",
+            "שִׂ֤ישׂוּ",
+            "וְגִ֨ילוּ֙",
+            "עֲדֵי",
+            "עַ֔ד"
+          ]
+        },
+        {
+          "reference": "Isa.66.10",
+          "surface": "וְגִ֥ילוּ",
+          "lemma": "c/1523",
+          "morph": "HC/Vqv2mp",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ClCl",
+          "oshbId": "23wuz",
+          "originalContext": [
+            "אֶת",
+            "יְרוּשָׁלִַ֛ם",
+            "וְגִ֥ילוּ",
+            "בָ֖הּ",
+            "כָּל"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Vqv2mp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "7461 b",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "7461 b",
+      "totalOccurrences": 3,
+      "exactMorphOccurrences": 1,
+      "samples": [
+        {
+          "reference": "Ps.2.11",
+          "surface": "בִּרְעָדָֽה",
+          "lemma": "b/7461 b",
+          "morph": "HR/Ncfsa",
+          "syntaxRoles": [],
+          "clauseRule": "V-PP",
+          "oshbId": "19AJj",
+          "originalContext": [
+            "בְּיִרְאָ֑ה",
+            "וְ֝גִ֗ילוּ",
+            "בִּרְעָדָֽה"
+          ]
+        },
+        {
+          "reference": "Ps.48.7",
+          "surface": "רְ֭עָדָה",
+          "lemma": "7461 b",
+          "morph": "HNcfsa",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "ClCl",
+          "oshbId": "198Zb",
+          "originalContext": [
+            "רְ֭עָדָה",
+            "אֲחָזָ֣תַם",
+            "שָׁ֑ם"
+          ]
+        },
+        {
+          "reference": "Isa.33.14",
+          "surface": "רְעָדָ֖ה",
+          "lemma": "7461 b",
+          "morph": "HNcfsa",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "V-S-O",
+          "oshbId": "23ZPC",
+          "originalContext": [
+            "חַטָּאִ֔ים",
+            "אָחֲזָ֥ה",
+            "רְעָדָ֖ה",
+            "חֲנֵפִ֑ים",
+            "מִ֣י"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HR/Ncfsa"
+      ]
     }
   ]
 }

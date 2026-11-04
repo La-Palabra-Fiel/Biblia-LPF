@@ -54,6 +54,27 @@ química exacta ni incorpora fuentes externas al paquete autorizado.
 Se aplica a las nuevas propuestas y a las revisiones humanas solicitadas;
 no reabre aprobaciones ni autoriza una sustitución masiva del texto existente.
 
+### Política léxica: תּוֹלַעַת שָׁנִי, gusano de escarlata
+
+Por instrucción humana del 4 de noviembre de 2026, la expresión
+תּוֹלַעַת שָׁנִי se traduce consistentemente como **gusano de escarlata**,
+conservando tanto תּוֹלַעַת (H8438; lema aumentado `8438 b`) como
+שָׁנִי (H8144) y su relación de constructo. Queda retirada la propuesta de
+reducir este compuesto a **escarlata**. La fluidez o una preferencia editorial
+no autorizan omitir la referencia explícita al gusano.
+
+Esta regla preserva el contenido de la superficie; no identifica una especie,
+un procedimiento de teñido ni una técnica textil. No fija por sí sola el
+sentido de las apariciones independientes de ninguno de los dos términos,
+ni sustituye la jerarquía de evidencia del paquete de cada versículo.
+**Gusano de escarlata** no lleva cursivas: traduce palabras presentes en la
+fuente. En la alineación, **gusano** y **de escarlata** se enlazan con sus
+respectivos tokens; una conjunción unida al primer token se conserva con él.
+
+Se aplica a las nuevas propuestas y a las revisiones solicitadas. No autoriza
+sustituciones masivas, cambios automáticos de aprobaciones ni modificaciones
+de los artefactos históricos para simular una adjudicación humana en la app.
+
 ### Política léxica: arrepentimiento, pesar y cambio de rumbo
 
 La LBF no usa **arrepentirse** ni **arrepentimiento** como glosas universales.

@@ -33,6 +33,7 @@ FORBIDDEN_MACULA_ATTRS = {
 }
 ACCENTS = re.compile(r"[\u0591-\u05AF\u05BD\u05BF\u05C0\u05C4\u05C5\u05C7]")
 OSIS_NS = "http://www.bibletechnologies.net/2003/OSIS/namespace"
+XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 
 
 def _blob_sha1(path: Path) -> str:
@@ -102,6 +103,15 @@ def _word_groups(root: ET.Element) -> dict[tuple[int, int, int], list[ET.Element
         parts = _ref_parts(word.get("ref") or "")
         if parts:
             out[parts].append(word)
+    # Lowfat is a syntax tree, so XML traversal order is not necessarily the
+    # surface order of the morphemes that share an orthographic-word ref.
+    # MACULA's xml:id retains that surface order (for example, PSA 10:7!4 is
+    # stored as the noun before its conjunction in the tree, while the ids end
+    # in 42 and 41 respectively). Reconstruct each word in id order before the
+    # exact comparison with authoritative OSHB/WLC.
+    for morphs in out.values():
+        if all(word.get(XML_ID) for word in morphs):
+            morphs.sort(key=lambda word: word.get(XML_ID) or "")
     return out
 
 

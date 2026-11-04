@@ -48,6 +48,18 @@ class SourcePacketTests(unittest.TestCase):
         self.assertIn("paleo", stones)
         self.assertNotIn("ahrc", stones)
 
+    def test_salmos_10_7_reconstructs_macula_morphemes_in_surface_order(self) -> None:
+        packet = build_packet("salmos", 10, 7)
+        deceit = next(
+            token for token in packet["tokens"] if token["oshbRef"] == "Ps.10.7!4"
+        )
+        self.assertEqual(deceit["surface"], "וּמִרְמ֣וֹת")
+        self.assertEqual(packet["syntax"]["mapping"]["status"], "exact")
+        self.assertEqual(
+            packet["syntax"]["mapping"]["matched"],
+            packet["syntax"]["mapping"]["total"],
+        )
+
     def test_hebrew_dual_morph(self) -> None:
         self.assertIn("dual", expand_hebrew_morph("HTd/Ncmda"))
 

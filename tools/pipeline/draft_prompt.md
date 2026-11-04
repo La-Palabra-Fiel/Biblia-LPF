@@ -58,6 +58,16 @@ METHOD:
   reopen this terminology choice merely because the packet lexicon lists
   both copper and bronze. This fixes the Spanish designation, not an exact
   chemical composition; it authorizes no evidence outside the packet.
+- Binding source-preservation instruction (2026-11-04): render the construct
+  expression תּוֹלַעַת שָׁנִי as gusano de escarlata, retaining both תּוֹלַעַת
+  (H8438; augmented lemma 8438 b) and שָׁנִי (H8144). The proposal to reduce
+  this compound to escarlata is withdrawn. Do not omit the explicit worm
+  reference for fluency or an assumed textile/color interpretation. This
+  preserves source wording; it does not identify a species, dyeing process,
+  or textile technique, and does not fix independent uses of either term.
+  Do not italicize gusano de escarlata: its words are source-supported.
+  Align gusano and de escarlata separately to their respective tokens,
+  retaining an attached conjunction with the first token when present.
 - Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
   distinctions among reconsidering, changing one's mind or judgment, feeling
   sorrow, turning/returning, relenting, compassion, and comfort whenever the

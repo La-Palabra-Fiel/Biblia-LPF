@@ -87,6 +87,17 @@ material as a terminology-policy mismatch, citing the corresponding source
 token. This convention does not assert an exact chemical composition or
 authorize evidence outside the packet.
 
+LBF SOURCE-PRESERVATION INSTRUCTION (2026-11-04): the construct expression
+תּוֹלַעַת שָׁנִי is rendered as gusano de escarlata, preserving both תּוֹלַעַת
+(H8438; augmented lemma 8438 b) and שָׁנִי (H8144). The proposal to reduce
+this compound to escarlata is withdrawn. Flag omission of the explicit worm
+reference, citing its source token; fluency or an assumed textile/color
+interpretation does not authorize that omission. Do not flag the source-based
+phrase itself merely because the exact species or textile process is unknown.
+It does not identify either, authorize external evidence, or fix independent
+uses of either term. Its words are not supplied and do not require italics.
+Other unresolved issues must still be reported for human review.
+
 TARGET SPANISH: current Latin American (tú / ustedes). Vosotros (hagáis,
 veréis, mataréis, os) is the wrong variety. Hebrew/Greek 2pl including 2fp
 → ustedes verbs (hagan, vean, matarán) is licensed 2nd-person address, not

@@ -21,7 +21,6 @@ RULES = (
         ),
         "archaic parir",
     ),
-    (re.compile(r"\bque viva\b", re.I), "jussive que viva; qal is vivirá"),
     (re.compile(r"\bel sexo\b", re.I), "el sexo is not in the packet; gender is si hijo / si hija"),
     (re.compile(r"entre las piernas", re.I), "entre las piernas interprets dual stones"),
     (re.compile(r"\b(?:el|sus|los) partos?\b", re.I), "extra noun parto"),
@@ -45,7 +44,7 @@ def lint_path(slug: str, chapter: int, verse: int) -> Path:
     )
 
 
-def lint_spanish(spanish: str) -> list[dict]:
+def lint_spanish(spanish: str, packet: dict | None = None) -> list[dict]:
     text = spanish or ""
     findings = []
     seen = set()
@@ -77,6 +76,22 @@ def lint_spanish(spanish: str) -> list[dict]:
                 "spanishSpan": match.group(0),
             }
         )
+    # The established vivirá rule concerns the sequential perfect in Exodus
+    # 1:16, not every Spanish subjunctive. Qal is a stem, not a mood: Psalm
+    # 119:17 has first-person cohortatives that license para que viva.
+    life_token = next((
+        token for token in (packet or {}).get("tokens") or []
+        if token.get("sourceTokenId") == "h02001016016"
+        and token.get("morph") == "HC/Vqq3fs"
+    ), None)
+    match = re.search(r"\bque\s+viva\b", text, re.I) if life_token else None
+    if match:
+        findings.append({
+            "severity": "fail",
+            "sourceTokenIds": [life_token["sourceTokenId"]],
+            "issue": "In Exodus 1:16 the qal sequential perfect is vivirá, not que viva",
+            "spanishSpan": match.group(0),
+        })
     return findings
 
 

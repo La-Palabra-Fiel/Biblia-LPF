@@ -62,8 +62,9 @@ let reviewFilter="exceptions";
 function reviewStatus(row){
   if(row.humanReviewed)return"approved";
   const candidate=row.candidate||{},gate=row.gate||{},alignment=alignmentFindingsFor(row);
-  if(!String(candidate.spanish||"").trim()||!gate.source||gate.source==="missing")return"missing";
+  if(!String(candidate.spanish||"").trim()||!gate.source||gate.source==="missing"||gate.source==="canonical-local-seed")return"missing";
   if(alignment.length||Number(candidate.droppedUncitedUnits||0)>0)return"alignment";
+  if(Object.keys(row.recovered||{}).length)return"hold";
   if((candidate.uncertainties||[]).length||(candidate.addedConcepts||[]).length||gate.fidelity==="fail"||gate.spanish==="fail")return"hold";
   return"clean";
 }

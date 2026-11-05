@@ -8199,119 +8199,119 @@ Den gracias a Jehová porque es bueno, porque para siempre su misericordia.
 
 ### 119:1
 
-Dichosos los íntegros de camino, los que andan en la ley de Jehová.
+Felices los íntegros en el camino, los que caminan en la instrucción de Yahvé.
 
 ### 119:2
 
-Dichosos los que guardan sus testimonios; con todo corazón le buscan.
+Dichosos los que guardan Sus testimonios; con todo el corazón Lo buscan.
 
 ### 119:3
 
-También no obraron iniquidad; en sus caminos anduvieron.
+Tampoco han cometido injusticia; han caminado por Sus caminos.
 
 ### 119:4
 
-Tú mandaste tus preceptos para guardar en gran manera.
+Tú has ordenado guardar Tus preceptos rigurosamente.
 
 ### 119:5
 
-¡Ojalá se afirmen mis caminos para guardar tus estatutos!
+¡Ojalá mis caminos se afiancen para guardar Tus estatutos!
 
 ### 119:6
 
-Entonces no me avergonzaré al mirar yo hacia todos tus mandamientos.
+Entonces no sentiré vergüenza al mirar hacia todos Tus mandamientos.
 
 ### 119:7
 
-Te alabaré con rectitud de corazón, al aprender yo los juicios de tu justicia.
+Te alabaré con rectitud de corazón al aprender los juicios de Tu justicia.
 
 ### 119:8
 
-Tus estatutos guardaré; no me dejes en gran manera.
+Guardaré Tus estatutos; no me abandones por completo.
 
 ### 119:9
 
-¿Con qué limpiará el joven su senda, para guardar conforme a tu palabra?
+¿Cómo limpiará un joven su camino? Velando conforme a Tu palabra.
 
 ### 119:10
 
-Con todo mi corazón te busqué; no me hagas errar de tus mandamientos.
+Con todo mi corazón Te he buscado; no me hagas desviarme de Tus mandamientos.
 
 ### 119:11
 
-En mi corazón guardé tu dicho, a fin de que no peque contra ti.
+En mi corazón he guardado Tu palabra para no pecar contra Ti.
 
 ### 119:12
 
-Bendito eres tú, Jehová; enséñame tus estatutos.
+Bendito *eres* Tú, Yahvé; enséñame Tus estatutos.
 
 ### 119:13
 
-Con mis labios conté todos los juicios de tu boca.
+Con mis labios he relatado todos los juicios de Tu boca.
 
 ### 119:14
 
-En el camino de tus testimonios me alegré como sobre toda riqueza.
+En el camino de Tus testimonios me he alegrado como por toda riqueza.
 
 ### 119:15
 
-En tus preceptos meditaré, y miraré tus sendas.
+Meditaré en Tus preceptos y miraré Tus senderos.
 
 ### 119:16
 
-En tus estatutos me deleitaré; no olvidaré tu palabra.
+En Tus estatutos me deleitaré; no olvidaré Tu palabra.
 
 ### 119:17
 
-Haz bien sobre tu siervo; viviré y guardaré tu palabra.
+Trata con generosidad a Tu siervo, para que viva y guarde Tu palabra.
 
 ### 119:18
 
-Descubre mis ojos, y miraré las maravillas de tu ley.
+Descubre mis ojos para que contemple maravillas de Tu instrucción.
 
 ### 119:19
 
-Peregrino soy yo en la tierra; no ocultes de mí tus mandamientos.
+Yo *soy* forastero en la tierra; no escondas de mí Tus mandamientos.
 
 ### 119:20
 
-Se quebranta mi alma de anhelo hacia tus juicios en todo tiempo.
+Mi alma se ha quebrantado de anhelo por Tus juicios en todo momento.
 
 ### 119:21
 
-Reprendiste a insolentes, malditos, los que erran de tus mandamientos.
+Has reprendido a los insolentes malditos, los que se desvían de Tus mandamientos.
 
 ### 119:22
 
-Quita de sobre mí la afrenta y el desprecio, porque tus testimonios guardé.
+Haz rodar de encima de mí el oprobio y el desprecio, porque he guardado Tus testimonios.
 
 ### 119:23
 
-También se sentaron príncipes; contra mí hablaron; tu siervo medita en tus estatutos.
+También se sentaron los príncipes; hablaron entre sí contra mí. Tu siervo meditaba en Tus estatutos.
 
 ### 119:24
 
-También tus testimonios son mis deleites, hombres de mi consejo.
+También Tus testimonios *son* mis delicias, los hombres de mi consejo.
 
 ### 119:25
 
-Se pegó al polvo mi alma; vivifícame conforme a tu palabra.
+Mi alma se ha adherido al polvo; dame vida conforme a Tu palabra.
 
 ### 119:26
 
-Mis caminos conté, y me respondiste; enséñame tus estatutos.
+Relaté mis caminos y me respondiste; enséñame Tus estatutos.
 
 ### 119:27
 
-El camino de tus preceptos hazme entender, y meditaré en tus maravillas.
+Hazme comprender el camino de Tus preceptos, y meditaré en Tus maravillas.
 
 ### 119:28
 
-Gotea mi alma de tristeza; susténtame conforme a tu palabra.
+Mi alma ha goteado de tristeza; afírmame conforme a Tu palabra.
 
 ### 119:29
 
-El camino de mentira quita de mí, y tu ley concédeme.
+Aparta de mí el camino de falsedad y favoréceme con Tu instrucción.
 
 ### 119:30
 
@@ -8319,55 +8319,55 @@ He elegido el camino de la fidelidad; he dispuesto Tus juicios.
 
 ### 119:31
 
-Me pegué a tus testimonios, Jehová; no me avergüences.
+Me he aferrado a Tus testimonios, Yahvé; no me avergüences.
 
 ### 119:32
 
-Por el camino de tus mandamientos correré, porque ensancharás mi corazón.
+Correré por el camino de Tus mandamientos, porque ensancharás mi corazón.
 
 ### 119:33
 
-Enséñame, Jehová, el camino de tus estatutos, y lo guardaré hasta el fin.
+Enséñame, Yahvé, el camino de Tus estatutos, y lo guardaré hasta el final.
 
 ### 119:34
 
-Hazme entender, y guardaré tu ley, y la observaré con todo corazón.
+Hazme entender para que guarde Tu instrucción, y la observaré con todo el corazón.
 
 ### 119:35
 
-Hazme andar en la senda de tus mandamientos, porque en ella me complací.
+Hazme andar por el sendero de Tus mandamientos, porque en él me he deleitado.
 
 ### 119:36
 
-Inclina mi corazón hacia tus testimonios, y no hacia ganancia.
+Inclina mi corazón hacia Tus testimonios y no hacia la ganancia.
 
 ### 119:37
 
-Pasa mis ojos de ver vanidad; en tu camino vivifícame.
+Aparta mis ojos de ver vanidad; en Tus caminos dame vida.
 
 ### 119:38
 
-Establece a tu siervo tu dicho, que es para tu temor.
+Confirma a Tu siervo Tu palabra, que *es* para el temor a Ti.
 
 ### 119:39
 
-Pasa mi afrenta que temí, porque tus juicios son buenos.
+Aparta mi deshonra, que he temido, porque Tus juicios *son* buenos.
 
 ### 119:40
 
-He aquí, anhelé tus preceptos; en tu justicia vivifícame.
+Mira, he anhelado Tus preceptos; en Tu justicia, dame vida.
 
 ### 119:41
 
-Y vengan a mí tus misericordias, Jehová, tu salvación conforme a tu dicho.
+Y que vengan a mí Tus misericordias, Yahvé, Tu salvación conforme a Tu palabra.
 
 ### 119:42
 
-Y responderé al que me afrenta palabra, porque confié en tu palabra.
+Y responderé a quien me insulta con una palabra, porque he confiado en Tu palabra.
 
 ### 119:43
 
-Y no arrebates de mi boca palabra de verdad hasta el extremo, porque a tu juicio esperé.
+Y no retires por completo de mi boca la palabra de verdad, porque he esperado en Tu juicio.
 
 ### 119:44
 
@@ -8375,71 +8375,71 @@ Y quiero guardar Tu ley continuamente, por siempre y para siempre.
 
 ### 119:45
 
-Y andaré en anchura, porque tus preceptos busqué.
+Y que camine por lo ancho, porque he buscado Tus preceptos.
 
 ### 119:46
 
-Y hablaré en tus testimonios delante de reyes, y no me avergonzaré.
+Y hablaré de Tus testimonios ante reyes y no me avergonzaré.
 
 ### 119:47
 
-Y me deleitaré en tus mandamientos, que amé.
+Y me deleitaré en Tus mandamientos, que he amado.
 
 ### 119:48
 
-Y alzaré mis palmas hacia tus mandamientos, que amé, y meditaré en tus estatutos.
+Y levantaré mis manos hacia Tus mandamientos, que he amado, y quiero meditar en Tus estatutos.
 
 ### 119:49
 
-Acuerda la palabra a tu siervo, sobre la cual me hiciste esperar.
+Recuerda la palabra para Tu siervo, en la que me has hecho esperar.
 
 ### 119:50
 
-Esta es mi consolación en mi aflicción, porque tu dicho me vivificó.
+Este *es* mi consuelo en mi aflicción, porque Tu palabra me ha dado vida.
 
 ### 119:51
 
-Insolentes me escarnecieron hasta el extremo; de tu ley no me desvié.
+Los insolentes se burlaron de mí en extremo; no me desvié de Tu instrucción.
 
 ### 119:52
 
-Recordé tus juicios desde siempre, Jehová, y me consolé.
+Recordé Tus juicios de antaño, Yahvé, y me consolé.
 
 ### 119:53
 
-Horror me tomó a causa de malos, abandonadores de tu ley.
+Un calor abrasador se apoderó de mí a causa de los malvados que abandonan Tu instrucción.
 
 ### 119:54
 
-Cánticos fueron para mí tus estatutos en casa de mis moradas.
+Tus estatutos han sido cantos para mí en la casa de mis estancias.
 
 ### 119:55
 
-Recordé en la noche tu nombre, Jehová, y guardé tu ley.
+Recordé Tu nombre en la noche, Yahvé, y guardé Tu instrucción.
 
 ### 119:56
 
-Esto fue para mí, porque tus preceptos guardé.
+Esto me ha sucedido porque he guardado Tus preceptos.
 
 ### 119:57
 
-Mi porción es Jehová, dije, para guardar tus palabras.
+Yahvé *es* mi porción; he dicho que guardaré Tus palabras.
 
 ### 119:58
 
-Imploré tu rostro con todo corazón; tenme misericordia conforme a tu dicho.
+He suplicado a Tu rostro con todo el corazón; favoréceme conforme a Tu palabra.
 
 ### 119:59
 
-Consideré mis caminos, y volví mis pies hacia tus testimonios.
+Consideré mis caminos y volví mis pies hacia Tus testimonios.
 
 ### 119:60
 
-Me apresuré y no me demoré para guardar tus mandamientos.
+Me apresuré y no me demoré en guardar Tus mandamientos.
 
 ### 119:61
 
-Lazos de malos me rodearon; tu ley no olvidé.
+Las cuerdas de los malvados me rodearon; no olvidé Tu ley.
 
 ### 119:62
 
@@ -8447,459 +8447,459 @@ A medianoche me levantaré para dar gracias a Ti por los juicios de Tu justicia.
 
 ### 119:63
 
-Compañero soy yo a todos los que te temen y a guardadores de tus preceptos.
+Yo *soy* compañero de todos los que Te temen y de quienes guardan Tus preceptos.
 
 ### 119:64
 
-De tu misericordia, Jehová, está llena la tierra; tus estatutos enséñame.
+Yahvé, la tierra está llena de Tu bondad; enséñame Tus estatutos.
 
 ### 119:65
 
-Bien hiciste con tu siervo, Jehová, conforme a tu palabra.
+Has hecho el bien a Tu siervo, Yahvé, conforme a Tu palabra.
 
 ### 119:66
 
-Buen gusto y conocimiento enséñame, porque en tus mandamientos creí.
+Enséñame buen juicio y conocimiento, porque he confiado en Tus mandamientos.
 
 ### 119:67
 
-Antes de ser yo afligido, yo erraba; y ahora tu dicho guardé.
+Antes de ser afligido, yo erraba; y ahora he guardado Tu palabra.
 
 ### 119:68
 
-Bueno eres tú y haces bien; enséñame tus estatutos.
+Tú *eres* bueno y haces el bien; enséñame Tus estatutos.
 
 ### 119:69
 
-Pegaron sobre mí mentira insolentes; yo con todo corazón guardaré tus preceptos.
+Los insolentes han untado falsedad sobre mí; yo guardaré Tus preceptos con todo el corazón.
 
 ### 119:70
 
-Se engrosó como sebo su corazón; yo en tu ley me deleité.
+Su corazón se ha vuelto grueso como la grasa; yo me he deleitado en Tu instrucción.
 
 ### 119:71
 
-Bueno es para mí que fui afligido, a fin de que aprenda tus estatutos.
+Fue bueno para mí que fuera afligido, para que aprendiera Tus estatutos.
 
 ### 119:72
 
-Buena es para mí la ley de tu boca más que miles de oro y plata.
+La instrucción de tu boca *es* mejor para mí que miles de oro y plata.
 
 ### 119:73
 
-Tus manos me hicieron y me establecieron; hazme entender, y aprenderé tus mandamientos.
+Tus manos me hicieron y me formaron; dame entendimiento para que aprenda Tus mandamientos.
 
 ### 119:74
 
-Tus temerosos me verán y se alegrarán, porque a tu palabra esperé.
+Los que Te temen me verán y se alegrarán, porque he esperado en Tu palabra.
 
 ### 119:75
 
-Supe, Jehová, que justicia son tus juicios, y en fidelidad me afligiste.
+Sé, Yahvé, que Tus juicios *son* justos y con fidelidad me has afligido.
 
 ### 119:76
 
-Sea ahora tu misericordia para consolarme, conforme a tu dicho a tu siervo.
+Que Tu bondad sea, por favor, para consolarme, conforme a Tu palabra a Tu siervo.
 
 ### 119:77
 
-Vengan a mí tus misericordias, y viviré, porque tu ley es mis deleites.
+Que vengan a mí Tus compasiones, y viviré, porque Tu instrucción *son* mis delicias.
 
 ### 119:78
 
-Sean avergonzados insolentes, porque con mentira me torcieron; yo medito en tus preceptos.
+Que se avergüencen los insolentes, porque con falsedad han actuado torcidamente contra mí; yo meditaré en Tus preceptos.
 
 ### 119:79
 
-Vuelvan a mí tus temerosos, y los conocedores de tus testimonios.
+Que vuelvan a mí los que Te temen y conocen Tus testimonios.
 
 ### 119:80
 
-Sea mi corazón íntegro en tus estatutos, a fin de que no me avergüence.
+Que mi corazón sea íntegro en Tus estatutos, para que no sienta vergüenza.
 
 ### 119:81
 
-Se consume por tu salvación mi alma; a tu palabra esperé.
+Mi alma se ha consumido por Tu salvación; he esperado en Tu palabra.
 
 ### 119:82
 
-Se consumieron mis ojos por tu dicho, diciendo: ¿Cuándo me consolarás?
+Mis ojos se han agotado por Tu palabra, diciendo: «¿Cuándo me consolarás?»
 
 ### 119:83
 
-Porque fui como odre en humo; tus estatutos no olvidé.
+Aunque he sido como un odre en el humo espeso, no he olvidado Tus estatutos.
 
 ### 119:84
 
-¿Cuántos son los días de tu siervo? ¿Cuándo harás juicio en mis perseguidores?
+¿Cuántos *son* los días de Tu siervo? ¿Cuándo harás justicia contra mis perseguidores?
 
 ### 119:85
 
-Cavaron para mí insolentes fosas, que no conforme a tu ley.
+Los insolentes, que no *actúan* conforme a Tu ley, cavaron fosas para mí.
 
 ### 119:86
 
-Todos tus mandamientos son fidelidad; con mentira me persiguieron; ayúdame.
+Todos Tus mandamientos *son* fidelidad; falsamente me han perseguido. Ayúdame.
 
 ### 119:87
 
-Casi me acabaron en la tierra, y yo no abandoné tus preceptos.
+Casi me destruyeron en la tierra, pero yo no abandoné Tus preceptos.
 
 ### 119:88
 
-Conforme a tu misericordia vivifícame, y guardaré el testimonio de tu boca.
+Conforme a Tu bondad, mantenme con vida para que guarde el testimonio de Tu boca.
 
 ### 119:89
 
-Para siempre, Jehová, tu palabra está firme en los cielos.
+Para siempre, Yahvé, Tu palabra permanece firme en los cielos.
 
 ### 119:90
 
-De generación en generación tu fidelidad; estableciste la tierra, y se mantuvo.
+Tu fidelidad *es* de generación en generación; estableciste la tierra, y se mantuvo en pie.
 
 ### 119:91
 
-Conforme a tus juicios se mantuvieron hoy, porque el todo son tus siervos.
+Conforme a Tus juicios, permanecen en pie hoy, porque todos *son* Tus siervos.
 
 ### 119:92
 
-Si no fuera tu ley mis deleites, entonces hubiera perecido en mi aflicción.
+Si Tu ley no *hubiera sido* mis delicias, entonces habría perecido en mi aflicción.
 
 ### 119:93
 
-Para siempre no olvidaré tus preceptos, porque en ellos me vivificaste.
+No olvidaré jamás Tus preceptos, porque por ellos me has mantenido con vida.
 
 ### 119:94
 
-Tuyo soy yo; sálvame, porque tus preceptos busqué.
+Tuyo *soy* yo; sálvame, porque he buscado Tus preceptos.
 
 ### 119:95
 
-A mí esperaron malos para destruirme; tus testimonios consideraré.
+Los malvados me han acechado para destruirme; consideraré Tus testimonios.
 
 ### 119:96
 
-A toda consumación vi fin; ancha es tu mandamiento en gran manera.
+He visto un fin a toda perfección; Tu mandamiento *es* muy amplio.
 
 ### 119:97
 
-¡Cuánto amé tu ley! Todo el día ella es mi meditación.
+¡Cuánto amo Tu instrucción! Todo el día ella *es* mi meditación.
 
 ### 119:98
 
-Más que mis enemigos me hacen sabio tus mandamientos, porque para siempre ella es para mí.
+Tus mandamientos me hacen más sabio que mis enemigos, porque ellos *son* míos para siempre.
 
 ### 119:99
 
-Más que todos mis maestros entendí, porque tus testimonios son meditación para mí.
+He comprendido más que todos mis maestros, porque Tus testimonios *son* meditación para mí.
 
 ### 119:100
 
-Más que ancianos considero, porque tus preceptos guardé.
+Comprendo más que los ancianos, porque he guardado Tus preceptos.
 
 ### 119:101
 
-De toda senda mala refrené mis pies, a fin de guardar tu palabra.
+He mantenido mis pies apartados de todo mal camino para guardar Tu palabra.
 
 ### 119:102
 
-De tus juicios no me aparté, porque tú me enseñaste.
+No me he apartado de Tus juicios, porque Tú me has enseñado.
 
 ### 119:103
 
-¡Cuán suaves son a mi paladar tu dicho, más que miel a mi boca!
+¡Cuán suave es Tu dicho a mi paladar, más que miel a mi boca!
 
 ### 119:104
 
-De tus preceptos considero; por eso aborrecí toda senda de mentira.
+De Tus preceptos obtengo entendimiento; por eso odio todo camino de falsedad.
 
 ### 119:105
 
-Lámpara a mi pie es tu palabra, y luz a mi sendero.
+Tu palabra *es* lámpara para mi pie y luz para mi sendero.
 
 ### 119:106
 
-Juré y lo cumpliré, para guardar los juicios de tu justicia.
+He jurado y lo he ratificado: guardar los juicios de Tu justicia.
 
 ### 119:107
 
-Fui afligido hasta el extremo; Jehová, vivifícame conforme a tu palabra.
+He sido afligido en extremo; Yahvé, dame vida conforme a Tu palabra.
 
 ### 119:108
 
-Ofrendas voluntarias de mi boca acepta ahora, Jehová, y tus juicios enséñame.
+Acepta, por favor, Yahvé, las ofrendas voluntarias de mi boca, y enséñame Tus juicios.
 
 ### 119:109
 
-Mi alma está en mi palma continuamente, y tu ley no olvidé.
+Mi vida *está* continuamente en mi mano, y no he olvidado Tu ley.
 
 ### 119:110
 
-Pusieron malos lazo para mí, y de tus preceptos no me extravié.
+Los malvados me tendieron una trampa para aves, y no me desvié de Tus preceptos.
 
 ### 119:111
 
-Heredé tus testimonios para siempre, porque gozo de mi corazón son ellos.
+He tomado como posesión Tus testimonios para siempre, porque ellos *son* el gozo de mi corazón.
 
 ### 119:112
 
-Incliné mi corazón a hacer tus estatutos, para siempre, hasta el fin.
+He inclinado mi corazón a cumplir Tus estatutos para siempre, hasta el fin.
 
 ### 119:113
 
-A los de doble ánimo aborrecí, y tu ley amé.
+He odiado a los divididos, y he amado Tu instrucción.
 
 ### 119:114
 
-Mi escondite y mi escudo eres tú; a tu palabra esperé.
+Tú *eres* mi escondite y mi escudo; en Tu palabra he esperado.
 
 ### 119:115
 
-Apártense de mí, malhechores, y guardaré los mandamientos de mi Dios.
+Apártense de mí, malhechores, para que guarde los mandamientos de mi Dios.
 
 ### 119:116
 
-Sosténme conforme a tu dicho, y viviré; y no me avergüences de mi esperanza.
+Sostenme conforme a Tu palabra y viviré; y no me avergüences por mi esperanza.
 
 ### 119:117
 
-Apóyame, y seré salvo, y miraré en tus estatutos continuamente.
+Sosténme para que sea salvado, y fijaré la mirada en Tus estatutos continuamente.
 
 ### 119:118
 
-Desechaste a todos los que erran de tus estatutos, porque mentira es su engaño.
+Has despreciado a todos los que se desvían de Tus estatutos, porque su engaño *es* falsedad.
 
 ### 119:119
 
-Escorias hiciste cesar a todos los malos de la tierra; por eso amé tus testimonios.
+Has eliminado como escorias a todos los malvados de la tierra; por eso he amado Tus testimonios.
 
 ### 119:120
 
-Se eriza de tu temor mi carne, y de tus juicios temí.
+Mi carne se ha erizado de temor a Ti, y ante Tus juicios he sentido temor.
 
 ### 119:121
 
-Hice juicio y justicia; no me dejes a mis opresores.
+He practicado justicia y rectitud; no me abandones a mis opresores.
 
 ### 119:122
 
-Sal fiador por tu siervo para bien; no me opriman insolentes.
+Sé fiador de Tu siervo para bien; no me opriman los insolentes.
 
 ### 119:123
 
-Mis ojos se consumieron por tu salvación y por el dicho de tu justicia.
+Mis ojos se han agotado por Tu salvación y por la palabra de Tu justicia.
 
 ### 119:124
 
-Haz con tu siervo conforme a tu misericordia, y tus estatutos enséñame.
+Actúa con Tu siervo conforme a Tu bondad y enséñame Tus estatutos.
 
 ### 119:125
 
-Tu siervo soy yo; hazme entender, y conoceré tus testimonios.
+Yo *soy* Tu siervo; hazme entender para que conozca Tus testimonios.
 
 ### 119:126
 
-Tiempo de hacer para Jehová; quebrantaron tu ley.
+*Es* tiempo de que Yahvé actúe; han quebrantado Tu ley.
 
 ### 119:127
 
-Por eso amé tus mandamientos más que oro y más que oro fino.
+Por eso he amado Tus mandamientos más que el oro y que el oro puro.
 
 ### 119:128
 
-Por eso todos los preceptos de todo estimé rectos; toda senda de mentira aborrecí.
+Por eso he considerado rectos todos los preceptos acerca de todas las cosas; he odiado todo sendero de falsedad.
 
 ### 119:129
 
-Maravillas son tus testimonios; por eso los guardó mi alma.
+Tus testimonios *son* maravillas; por eso mi alma los ha guardado.
 
 ### 119:130
 
-La apertura de tus palabras alumbra, hace entender a sencillos.
+La apertura de Tus palabras ilumina; da entendimiento a los simples.
 
 ### 119:131
 
-Mi boca abrí y jadeé, porque a tus mandamientos anhelé.
+Abrí de par en par mi boca y jadeé, porque anhelaba Tus mandamientos.
 
 ### 119:132
 
-Vuélvete hacia mí y tenme misericordia, conforme a juicio para amadores de tu nombre.
+Vuélvete hacia mí y concédeme favor, como acostumbras con quienes aman Tu nombre.
 
 ### 119:133
 
-Mis pasos afirma en tu dicho, y no dejes señorear en mí toda iniquidad.
+Afirma mis pasos en Tu palabra y no dejes que ninguna maldad me domine.
 
 ### 119:134
 
-Redímeme de la opresión de hombre, y guardaré tus preceptos.
+Rescátame de la opresión de los hombres, y guardaré Tus preceptos.
 
 ### 119:135
 
-Tu rostro haz brillar sobre tu siervo, y enséñame tus estatutos.
+Haz brillar Tu rostro sobre Tu siervo y enséñame Tus estatutos.
 
 ### 119:136
 
-Arroyos de aguas bajaron mis ojos, sobre que no guardaron tu ley.
+Mis ojos derramaron canales de agua porque no guardaron Tu instrucción.
 
 ### 119:137
 
-Justo eres tú, Jehová, y rectos tus juicios.
+Tú *eres* justo, Yahvé, y Tus juicios *son* rectos.
 
 ### 119:138
 
-Mandaste en justicia tus testimonios, y fidelidad en gran manera.
+Has ordenado Tus testimonios en justicia y gran fidelidad.
 
 ### 119:139
 
-Me consumió mi celo, porque olvidaron tus palabras mis adversarios.
+Mi celo me ha aniquilado, porque mis adversarios han olvidado Tus palabras.
 
 ### 119:140
 
-Acrisolado es tu dicho en gran manera, y tu siervo lo ama.
+Tu palabra está muy refinada, y Tu siervo la ama.
 
 ### 119:141
 
-Pequeño soy yo y despreciado; tus preceptos no olvidé.
+Yo *soy* pequeño y despreciado; no he olvidado Tus preceptos.
 
 ### 119:142
 
-Tu justicia es justicia para siempre, y tu ley verdad.
+Tu justicia *es* justicia para siempre, y Tu instrucción *es* verdad.
 
 ### 119:143
 
-Angustia y aprieto me hallaron; tus mandamientos son mis deleites.
+La angustia y la aflicción me han encontrado; Tus mandamientos *son* mis delicias.
 
 ### 119:144
 
-Justicia son tus testimonios para siempre; hazme entender, y viviré.
+Tus testimonios *son* justicia para siempre; hazme entender y viviré.
 
 ### 119:145
 
-Clamé con todo corazón; respóndeme, Jehová; tus estatutos guardaré.
+Clamé con todo el corazón; respóndeme, Yahvé. Quiero guardar Tus estatutos.
 
 ### 119:146
 
-Te clamé; sálvame, y guardaré tus testimonios.
+Te he llamado; sálvame, y guardaré Tus testimonios.
 
 ### 119:147
 
-Me anticipé en el alba y clamé; a tu palabra esperé.
+Me anticipé a clamar al amanecer; en Tu palabra he esperado.
 
 ### 119:148
 
-Se anticiparon mis ojos a las vigilias, para meditar en tu dicho.
+Mis ojos se adelantaron a las vigilias para meditar en Tu palabra.
 
 ### 119:149
 
-Mi voz oye conforme a tu misericordia; Jehová, conforme a tu juicio vivifícame.
+Escucha mi voz conforme a Tu bondad; Yahvé, dame vida conforme a Tu juicio.
 
 ### 119:150
 
-Se acercaron perseguidores de maldad; de tu ley se alejaron.
+Se han acercado los que persiguen la maldad; se han alejado de Tu instrucción.
 
 ### 119:151
 
-Cercano eres tú, Jehová, y todos tus mandamientos son verdad.
+Tú *estás* cerca, Yahvé, y todos Tus mandamientos *son* verdad.
 
 ### 119:152
 
-De antemano supe de tus testimonios, porque para siempre los fundaste.
+Desde hace tiempo sé por Tus testimonios que los fundaste para siempre.
 
 ### 119:153
 
-Mira mi aflicción y líbrame, porque tu ley no olvidé.
+Mira mi aflicción y rescátame, porque no he olvidado Tu instrucción.
 
 ### 119:154
 
-Aboga mi causa y redímeme; conforme a tu dicho vivifícame.
+Defiende mi causa y redímeme; conforme a Tu palabra, dame vida.
 
 ### 119:155
 
-Lejos de malos es salvación, porque tus estatutos no buscaron.
+La salvación *está* lejos de los malvados, porque no han buscado Tus estatutos.
 
 ### 119:156
 
-Tus misericordias son muchas, Jehová; conforme a tus juicios vivifícame.
+Tus compasiones *son* muchas, Yahvé; conforme a Tus juicios, dame vida.
 
 ### 119:157
 
-Muchos son mis perseguidores y mis adversarios; de tus testimonios no me desvié.
+Muchos *son* mis perseguidores y mis adversarios; no me he desviado de Tus testimonios.
 
 ### 119:158
 
-Vi traidores y me disgusté, que tu dicho no guardaron.
+Vi a los desleales, que no guardaron Tu palabra, y sentí repugnancia.
 
 ### 119:159
 
-Mira que tus preceptos amé; Jehová, conforme a tu misericordia vivifícame.
+Mira que he amado Tus preceptos; Yahvé, conforme a Tu bondad, dame vida.
 
 ### 119:160
 
-La cabeza de tu palabra es verdad, y para siempre todo juicio de tu justicia.
+La suma de Tu palabra es verdad, y para siempre todo juicio de tu justicia.
 
 ### 119:161
 
-Príncipes me persiguieron de balde; y de tu palabra temió mi corazón.
+Gobernantes me persiguieron sin causa, y ante Tu palabra mi corazón sintió temor.
 
 ### 119:162
 
-Me alegro yo sobre tu dicho como el que halla botín mucho.
+Yo me regocijo por Tu palabra, como quien encuentra abundante botín.
 
 ### 119:163
 
-Mentira aborrecí y abominé; tu ley amé.
+He odiado la falsedad y quiero aborrecerla; he amado Tu instrucción.
 
 ### 119:164
 
-Siete veces en el día te alabé sobre los juicios de tu justicia.
+Siete veces al día Te he alabado por los juicios de Tu justicia.
 
 ### 119:165
 
-Paz mucha a los amadores de tu ley, y no hay para ellos tropiezo.
+Los que aman Tu ley tienen abundante paz, y no hay tropiezo para ellos.
 
 ### 119:166
 
-Esperé tu salvación, Jehová, y tus mandamientos hice.
+He esperado Tu salvación, Yahvé, y he cumplido Tus mandamientos.
 
 ### 119:167
 
-Guardó mi alma tus testimonios, y los amé en gran manera.
+Mi alma ha guardado Tus testimonios, y los he amado mucho.
 
 ### 119:168
 
-Guardé tus preceptos y tus testimonios, porque todos mis caminos están delante de ti.
+He guardado Tus preceptos y Tus testimonios, porque todos mis caminos *están* delante de Ti.
 
 ### 119:169
 
-Acérquese mi clamor delante de ti, Jehová; conforme a tu palabra hazme entender.
+Que se acerque mi clamor ante Ti, Yahvé; conforme a Tu palabra, hazme entender.
 
 ### 119:170
 
-Venga mi súplica delante de ti; conforme a tu dicho líbrame.
+Que llegue mi súplica ante Ti; rescátame conforme a Tu palabra.
 
 ### 119:171
 
-Broten mis labios alabanza, porque me enseñas tus estatutos.
+Mis labios derramarán alabanza, porque me enseñas Tus estatutos.
 
 ### 119:172
 
-Responda mi lengua tu dicho, porque todos tus mandamientos son justicia.
+Mi lengua cantará Tu palabra, porque todos Tus mandamientos *son* justicia.
 
 ### 119:173
 
-Sea tu mano para ayudarme, porque tus preceptos elegí.
+Que Tu mano esté para ayudarme, porque he elegido Tus preceptos.
 
 ### 119:174
 
-Anhelé tu salvación, Jehová, y tu ley es mis deleites.
+He anhelado Tu salvación, Yahvé, y Tu instrucción *es* mis delicias.
 
 ### 119:175
 
-Viva mi alma y te alabe, y tus juicios me ayuden.
+Que viva mi alma y Te alabe; y que Tu juicio me ayude.
 
 ### 119:176
 
-Erré como oveja perdida; busca a tu siervo, porque tus mandamientos no olvidé.
+Me he extraviado como una oveja perdida; busca a Tu siervo, porque no he olvidado Tus mandamientos.
 
 ## Capítulo 120
 

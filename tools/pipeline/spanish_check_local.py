@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from books import ROOT, get_book
 from lint_lib import lint_spanish
+from source_packet import packet_path
 
 
 def artifact_path(slug: str, chapter: int, verse: int, label: str) -> Path:
@@ -36,7 +37,9 @@ def main() -> int:
     spanish = str(candidate.get("spanish") or "").strip()
     if not spanish:
         raise SystemExit("--candidate-file must contain nonempty Spanish")
-    findings = lint_spanish(spanish)
+    source_path = packet_path(get_book(args.book), args.chapter, args.verse)
+    packet = json.loads(source_path.read_text(encoding="utf-8")) if source_path.is_file() else {}
+    findings = lint_spanish(spanish, packet)
     result = {
         "schema": "lbf-spanish-check-v1",
         "policy": "lbf-spanish-deterministic-v1",

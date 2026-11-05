@@ -93,6 +93,13 @@ grandfathered while their Spanish still matches the canonical verse; packet
 fingerprint drift alone does not purchase another draft or force retrospective
 chapter approval.
 
+Spanish mood checks must be tied to their source. The established **vivirá**
+check belongs to the qal sequential perfect in Exodus 1:16; it is not a global
+ban on **que viva**. Psalm 119:17 has first-person cohortatives and allows
+**para que viva y guarde**. Team Desk recomputes existing deterministic lint
+results with current rules without rewriting historical artifacts or clearing
+independent fidelity-audit findings.
+
 New Team Desk screening drafts use GPT-6.1 Sol at low reasoning with a
 4,000-token completion ceiling and one best-ranked corpus parallel per lemma.
 The model choice is scheduled for human review beginning 2026-11-30; the date

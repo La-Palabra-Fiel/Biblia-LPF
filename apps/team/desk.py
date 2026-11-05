@@ -319,6 +319,13 @@ def recovered_verse_state(slug: str, chapter: int, verse: int) -> dict:
     return state if isinstance(state, dict) else {}
 
 
+def restore_recovered_units(state: dict, candidate: dict) -> dict:
+    """Restore seed units only when a browser review attempt really exists."""
+    if state and not state.get("units") and candidate.get("units"):
+        return {**state, "units": candidate["units"]}
+    return state
+
+
 def revision_is_open(slug: str, chapter: int, verse: int) -> bool:
     """Return true only while the open revision is bound to this approval."""
     state = recovered_verse_state(slug, chapter, verse)
@@ -441,8 +448,14 @@ def gate_for(slug: str, chapter: int, verse: int, path: Path, candidate: dict) -
     check_current = check.get("candidateSha256") == fingerprint and check.get("model") == SPANISH_GATE_MODEL
     current_audit = audit if audit_current else {}
     current_check = check if check_current else {}
-    required = audit_required(candidate, current_check)
     packet = read_json(packet_path(slug, chapter, verse), {})
+    if check_current:
+        # Recompute deterministic findings with today's rules. Keep historical
+        # artifacts unchanged; only independent audits retain their verdicts.
+        findings = [*lint_spanish(str(candidate.get("spanish") or ""), packet),
+                    *lint_divine_name(str(candidate.get("spanish") or ""), packet)]
+        current_check = {**check, "verdict": "fail" if findings else "pass", "findings": findings}
+    required = audit_required(candidate, current_check)
     _, alignment_findings = alignment_preflight_findings(packet, candidate.get("units") or [], str(candidate.get("spanish") or ""))
     return {"source": path.name, "label": label, "draftModel": candidate.get("model") or "unverified", "draftReasoning": candidate.get("reasoningEffort") or "unverified", "promptCurrent": draft_specification_is_current(candidate), "auditModel": current_audit.get("model") or "unverified", "auditReasoning": current_audit.get("reasoningEffort") or "unverified", "spanishModel": current_check.get("model") or "unverified", "spanishReasoning": current_check.get("reasoningEffort") or "unverified", "auditRequired": required, "fidelity": current_audit.get("verdict") or ("missing" if required else "not-required"), "fidelityFindings": current_audit.get("findings") or [], "spanish": current_check.get("verdict") or "missing", "spanishFindings": current_check.get("findings") or [], "alignmentFindings": alignment_findings}
 
@@ -561,12 +574,7 @@ def chapter_view(slug: str, chapter) -> dict:
         # no alignment rows.  Preserve that text while restoring the model's
         # visible seed as an editable starting point; it remains unapproved
         # and must still pass exact Spanish/unit validation.
-        if (
-            isinstance(recovered_verse, dict)
-            and not recovered_verse.get("units")
-            and candidate.get("units")
-        ):
-            recovered_verse = {**recovered_verse, "units": candidate["units"]}
+        recovered_verse = restore_recovered_units(recovered_verse, candidate)
         gate = gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {
             "source": "canonical-local-seed",
             "draftModel": "human-local",
@@ -854,7 +862,7 @@ def clean_candidate_for_chapter_approval(slug: str, chapter: int, verse: int) ->
     spanish = " ".join(str(candidate.get("spanish") or "").split())
     if not spanish:
         reasons.append("falta el texto español")
-    policy_findings = [*lint_spanish(spanish), *lint_divine_name(spanish, packet)]
+    policy_findings = [*lint_spanish(spanish, packet), *lint_divine_name(spanish, packet)]
     reasons.extend(item["issue"] for item in policy_findings)
     try:
         units = validate_units(packet, candidate.get("units"), spanish)
@@ -981,7 +989,7 @@ def approve_verse(payload: dict) -> dict:
         if not payload.get("suppliedConfirmed"): raise ValueError("Confirm that every supplied Spanish word is marked in italics.")
         spanish = " ".join(str(payload.get("spanish") or "").split()); units = validate_units(packet, payload.get("units"), spanish)
         if not spanish: raise ValueError("Spanish text is required.")
-        policy_findings = [*lint_spanish(spanish), *lint_divine_name(spanish, packet)]
+        policy_findings = [*lint_spanish(spanish, packet), *lint_divine_name(spanish, packet)]
         if policy_findings:
             raise ValueError("Spanish policy failed: " + "; ".join(item["issue"] for item in policy_findings))
         prior_path = candidate_path(book.slug, chapter, verse); prior = read_json(prior_path, {}) if prior_path else {}; decision = " ".join(str(payload.get("decision") or "").split())

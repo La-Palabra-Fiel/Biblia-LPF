@@ -45,6 +45,41 @@ class DeskTests(unittest.TestCase):
         self.assertTrue(desk.lint_spanish("Yo **soy** Yahvé"))
         self.assertTrue(desk.lint_spanish("Él, Aarón y Moisés, a quienes Yahvé dijo."))
         self.assertEqual(desk.lint_spanish("Estos *son* Aarón y Moisés."),[])
+    def test_para_que_viva_is_not_a_global_spanish_error(self):
+        spanish="Trata con generosidad a Tu siervo, para que viva y guarde Tu palabra."
+        packet={"tokens":[
+            {"sourceTokenId":"h19119017004","lemma":"2421","morph":"HVqh1cs","morphExpanded":"Hebrew; qal cohortative 1st common singular"},
+            {"sourceTokenId":"h19119017005","lemma":"c/8104","morph":"HC/Vqh1cs"},
+        ]}
+        self.assertEqual(desk.lint_spanish(spanish),[])
+        self.assertEqual(desk.lint_spanish(spanish,packet),[])
+    def test_exodus_life_rule_is_bound_to_its_source(self):
+        packet={"tokens":[{"sourceTokenId":"h02001016016","lemma":"c/2425","morph":"HC/Vqq3fs"}]}
+        findings=desk.lint_spanish("Si ella es hija, que viva.",packet)
+        self.assertEqual(len(findings),1)
+        self.assertEqual(findings[0]["sourceTokenIds"],["h02001016016"])
+        self.assertEqual(desk.lint_spanish("Si ella es hija, vivirá.",packet),[])
+        other={"tokens":[{"sourceTokenId":"other","lemma":"2421","morph":"HVqj3ms"}]}
+        self.assertEqual(desk.lint_spanish("Que viva.",other),[])
+    def test_gate_rechecks_cached_local_lint_without_erasing_audit(self):
+        root=Path(self.tmp.name); path=root/"draft.json"; packet_file=root/"packet.json"
+        candidate={"label":"team-gpt","spanish":"Trata con generosidad a Tu siervo, para que viva y guarde Tu palabra.","units":[]}
+        packet={"tokens":[{"sourceTokenId":"h19119017004","lemma":"2421","morph":"HVqh1cs"}]}
+        desk.write_json(path,candidate);desk.write_json(packet_file,packet)
+        historical={"model":"deterministic-local","candidateSha256":desk.object_fingerprint(candidate),"verdict":"fail","findings":[{"issue":"jussive que viva; qal is vivirá"}]}
+        check_path=root/"salmos-119-17.spanish-check-team-gpt.json"
+        desk.write_json(check_path,historical)
+        with patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"packet_path",return_value=packet_file):
+            gate=desk.gate_for("salmos",119,17,path,candidate)
+            self.assertEqual(gate["spanish"],"pass")
+            self.assertEqual(gate["spanishFindings"],[])
+            self.assertFalse(gate["auditRequired"])
+            self.assertEqual(desk.read_json(check_path),historical)
+            audit={"model":"independent-auditor","candidateSha256":desk.object_fingerprint(candidate),"verdict":"fail","findings":[{"issue":"Needs human fidelity review"}]}
+            desk.write_json(root/"salmos-119-17.audit-gpt-team-gpt.json",audit)
+            gate=desk.gate_for("salmos",119,17,path,candidate)
+            self.assertEqual(gate["fidelity"],"fail")
+            self.assertEqual(gate["fidelityFindings"],audit["findings"])
     def test_claim_is_per_chapter(self):
         with patch.object(desk,"chapter_or_raise",side_effect=lambda s,c:(type("B",(),{"slug":s,"label":"Éxodo"})(),int(c),[1])):
             desk.claim("Ana","exodo",3,"11111111");desk.claim("Luis","exodo",4,"22222222")

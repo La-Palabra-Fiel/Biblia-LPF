@@ -31,11 +31,11 @@ Porque he levantado a los caldeos, ese pueblo cruel e impetuoso, que marcha por 
 
 ### 1:7
 
-Es temible y terrible, su juicio y su gloria saldrán de él.
+Él *es* terrible y temible; de él salen su juicio y su dignidad.
 
 ### 1:8
 
-Correrán más que leones los caballos de sus ejércitos, y rugirán como leones. Se dispersarán y volarán como águilas, y se apoderarán de la presa.
+Y sus caballos serán más veloces que leopardos, y serán más feroces que lobos de la tarde; y sus jinetes saltarán, y sus jinetes vendrán de lejos; volarán como un águila que se apresura a comer.
 
 ### 1:9
 

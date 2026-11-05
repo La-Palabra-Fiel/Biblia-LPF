@@ -4423,52 +4423,51 @@ así rociará naciones muchas; sobre él cerrarán reyes su boca; porque lo que 
 
 ### 53:1
 
-¿A quién creerán en nuestro anuncio? ¿Y el brazo de Jehová se ha manifestado ante quién?
+¿Quién ha creído nuestro mensaje? ¿Y a quién se ha revelado el brazo de Yahvé?
 
 ### 53:2
 
-Y subió como renuevo delante de él, y como raíz de tierra seca; no figura a él y no hermosura; y lo veremos, y no apariencia, y lo desearemos.
+Y creció como el brote ante él y como la raíz de tierra seca. No tenía forma ni esplendor para que lo miráramos, ni apariencia para que lo deseáramos.
 
 ### 53:3
 
-Es despreciado y menospreciado de entre los hombres, un hombre de dolores y familiar con enfermedades, y como uno que oculta su rostro de nosotros, es despreciado y no le damos importancia.
+Despreciado y abandonado por los hombres, varón de dolores y familiar con la enfermedad; y como *uno* de quien se oculta el rostro, *era* despreciado, y no lo estimamos.
 
 ### 53:4
 
-Ciertamente nuestras enfermedades él llevó, y nuestros dolores los cargó; y nosotros lo estimamos herido, golpeado de Dios y afligido.
+Ciertamente, él llevó nuestras enfermedades, y nuestros dolores los cargó; y nosotros lo consideramos herido, golpeado por Dios y afligido.
 
 ### 53:5
 
-Y él es herido por nuestras rebeliones, y oprimido por nuestros pecados, y la disciplina de nuestra paz está sobre él, y por sus heridas somos nosotros sanados.
+Y Él fue traspasado por nuestras transgresiones, aplastado por nuestras iniquidades; la disciplina para nuestra paz *estaba* sobre Él, y por Su herida fuimos sanados.
 
 ### 53:6
 
-Todos nosotros como ovejas erramos; cada uno a su camino nos volvimos; y Jehová hizo encontrar en él la iniquidad de todos nosotros.
+Todos nosotros nos extraviamos como el rebaño; nos volvimos cada uno hacia su camino, y Yahvé hizo recaer sobre él la iniquidad de todos nosotros.
 
 ### 53:7
 
-Fue oprimido, y él afligido, y no abrirá su boca; como cordero al matadero será llevado, y como oveja delante de sus trasquiladores enmudeció, y no abrirá su boca.
+Fue oprimido, y él era afligido, y no abría su boca; como la res menor que es llevada a la matanza, y como una oveja que queda muda ante quienes la esquilan, y no abría su boca.
 
 ### 53:8
 
-De restricción y de juicio fue tomado; y a su generación ¿quién hablará? Porque fue cortado de tierra de vivos; por rebelión de mi pueblo herida a ellos.
+Por coacción y por juicio fue llevado. ¿Y quién considerará Su generación? Porque fue cortado de la tierra de los vivos; por la transgresión de Mi pueblo, el golpe *fue* para ellos.
 
 ### 53:9
 
-Y dio con malvados su sepulcro, y con rico en sus muertes; sobre no violencia hizo, y no engaño en su boca.
+Y dispuso su sepulcro con los malvados, y con un rico en su muerte, porque no había cometido violencia ni *había* engaño en su boca.
 
 ### 53:10
 
-Y Jehová se complació en humillarlo, si le hace expiar su vida, verá su descendencia prolongada, y el deseo de Jehová en su mano prosperará.
+Y Yahvé se complació en aplastarlo; *Lo* hizo enfermar. Si Su alma se hace ofrenda por la culpa, verá descendencia, prolongará Sus días, y la voluntad de Yahvé prosperará en Su mano.
 
 ### 53:11
 
-De trabajo de su alma verá, se saciará; por su conocimiento justificará justo mi siervo a los muchos, y sus iniquidades él cargará.
+Tras el sufrimiento de Su alma, verá *y* quedará satisfecho; por Su conocimiento, Mi Siervo justo justificará a los muchos, y Él cargará con las iniquidades de ellos.
 
 ### 53:12
 
-Por tanto repartiré a él en los muchos, y con fuertes repartirá botín, a cambio de que derramó a la muerte su alma, y con rebeldes fue contado; y él pecado de muchos llevó, y por los rebeldes intercederá.
-
+Por eso Le daré parte entre los muchos, y con los poderosos repartirá botín, porque derramó Su vida hasta la muerte y fue contado con rebeldes; y Él llevó el pecado de muchos e intercederá por los rebeldes.
 
 ## Capítulo 54
 

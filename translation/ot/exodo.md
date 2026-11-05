@@ -3019,11 +3019,11 @@ Y harás cinco columnas de acacia para la cortina; y las recubrirás de oro; sus
 
 ### 27:1
 
-Y harás el altar maderas de acacia; cinco codos largo y cinco codos ancho; cuadrado será el altar, y tres codos su alto.
+Y harás el altar de madera de acacia: cinco codos de largo y cinco codos de ancho; el altar será cuadrado y de tres codos de altura.
 
 ### 27:2
 
-Y harás sus cuernos sobre cuatro sus esquinas; desde él serán sus cuernos, y lo revestirás bronce.
+Y harás sus cuernos en sus cuatro esquinas; de él serán sus cuernos, y lo recubrirás de bronce.
 
 ### 27:3
 
@@ -3039,7 +3039,7 @@ Y la pondrás debajo del borde del altar, por abajo, y la malla llegará hasta l
 
 ### 27:6
 
-Y harás varas al altar, varas de maderas de acacia, y las revestirás de bronce.
+Y harás varas para el altar, varas de madera de acacia, y las recubrirás de bronce.
 
 ### 27:7
 
@@ -3047,11 +3047,11 @@ Y serán introducidas sus varas en los anillos, y las varas estarán sobre los d
 
 ### 27:8
 
-Hueco de tablas harás a él; conforme a lo que fue mostrado a ti en el monte, así harán.
+Lo harás hueco con tablas; como te mostró en el monte, así harán.
 
 ### 27:9
 
-Y harás el atrio del mishkán; a lado sur hacia el sur, colgaduras al atrio lino fino torcido, cien en el codo largo al lado el uno.
+Y harás el atrio del tabernáculo. Para el lado sur, hacia el sur, harás cortinas para el atrio de biso torcido, cien codos de largo para uno de los lados.
 
 ### 27:10
 
@@ -3063,43 +3063,43 @@ Y asimismo, a lo largo del lado norte, *habrá* cortinas cuya longitud *será* d
 
 ### 27:12
 
-Y ancho del atrio a lado de mar, colgaduras cincuenta codo; sus columnas diez, y sus basas diez.
+Y a lo ancho del atrio, por el lado del mar, habrá cortinas de cincuenta codos; sus columnas serán diez, y sus bases, diez.
 
 ### 27:13
 
-Y ancho del atrio a lado del oriente hacia el este, cincuenta codo.
+Y el ancho del atrio por el lado oriental, hacia el este, *es de* cincuenta codos.
 
 ### 27:14
 
-Y quince codo colgaduras al hombro; sus columnas tres, y sus basas tres.
+Y para el lado, cortinas de quince codos; sus columnas, tres, y sus bases, tres.
 
 ### 27:15
 
-Y al hombro el segundo quince colgaduras; sus columnas tres, y sus basas tres.
+Y para el segundo lado: quince cortinas; sus columnas, tres; y sus bases, tres.
 
 ### 27:16
 
-Y a puerta del atrio masaj de veinte codo, azul y púrpura y carmesí y lino fino torcido, obra de bordador; sus columnas cuatro, y sus basas cuatro.
+Y para la puerta del atrio *habrá* una cortina de veinte codos, de violeta y de púrpura y de escarlata de gusano y de biso torcido, obra de quien da variedad de colores; sus columnas *serán* cuatro, y sus bases *serán* cuatro.
 
 ### 27:17
 
-Todas las columnas del atrio alrededor bandeadas plata, sus ganchos plata, y sus basas bronce.
+Todos los pilares del atrio, en todo el contorno, están guarnecidos de plata; sus ganchos *son* de plata y sus bases *son* de bronce.
 
 ### 27:18
 
-Largo del atrio cien en el codo, y ancho cincuenta en cincuenta, y alto cinco codos, lino fino torcido, y sus basas bronce.
+La longitud del atrio *será* de cien codos, y de anchura, cincuenta por cincuenta, y de altura, cinco codos, de biso torcido; y sus bases *serán* de bronce.
 
 ### 27:19
 
-A todos los utensilios del tabernáculo en todo su servicio, y todas sus estacas y todas las estacas del atrio, bronce.
+En cuanto a todos los utensilios del tabernáculo en todo su servicio, y todas sus estacas, y todas las estacas del atrio, *son* de bronce.
 
 ### 27:20
 
-Y tú mandarás a hijos de Israel, y tomarán a ti aceite de olivo puro golpeado a la lumbrera, para hacer subir lámpara de continuidad.
+Y tú ordenarás a los hijos de Israel que te traigan aceite de oliva puro, machacado, para el alumbrado, para elevar una lámpara continuamente.
 
 ### 27:21
 
-En tienda de reunión, fuera del velo que sobre el testimonio, lo pondrá en orden Aarón y sus hijos desde tarde hasta mañana delante de Yahvé; estatuto de siempre a sus generaciones de parte de hijos de Israel.
+En la tienda de reunión, fuera de la cortina que está sobre el testimonio, Aarón y sus hijos lo dispondrán desde la tarde hasta la mañana delante de Yahvé. *Será* un estatuto perpetuo para sus generaciones, de parte de los hijos de Israel.
 
 ## Capítulo 28
 
@@ -3113,11 +3113,11 @@ Y harás vestidos de santidad a Aarón tu hermano, a gloria y a hermosura.
 
 ### 28:3
 
-Y tú hablarás a todos sabios de corazón que lo llené espíritu de sabiduría, y harán los vestidos de Aarón para santificarlo, para sacerdotear a mí.
+Y tú hablarás a todos los sabios de corazón que he llenado de espíritu de sabiduría, y harán las vestiduras de Aarón para consagrarlo, para que ejerza como sacerdote para Mí.
 
 ### 28:4
 
-Y estos los vestidos que harán: joshen y efod y manto y túnica de cuadros, turbante y cinto; y harán vestidos de santidad a Aarón tu hermano y a sus hijos, para sacerdotear a mí.
+Y estas *son* las vestiduras que harán: una pieza pectoral, y un efod, y un manto, y una túnica ajedrezada, un turbante y un cinturón. Y harán vestiduras de santidad para Aarón, tu hermano, y para sus hijos, para que él actúe como sacerdote para Mí.
 
 ### 28:5
 
@@ -3173,7 +3173,7 @@ Y llenarás en él llenura de piedra, cuatro filas piedra; fila ódem, pitdá y 
 
 ### 28:18
 
-Y la fila la segunda: nófej, sapir y yahalom.
+Y la segunda hilera: carbunclo, zafiro y diamante.
 
 ### 28:19
 
@@ -3197,7 +3197,7 @@ Y harás sobre el pectoral dos anillos de oro, y darás los dos anillos sobre do
 
 ### 28:24
 
-Y darás los dos cordones del oro sobre los dos anillos a extremos del pectoral.
+Y pondrás los dos cordones de oro sobre los dos anillos, en los extremos del pectoral.
 
 ### 28:25
 
@@ -3205,7 +3205,7 @@ Y los dos extremos de los dos cordones darás sobre los dos engastes, y darás s
 
 ### 28:26
 
-Y harás dos anillos de oro, y los pondrás sobre dos extremos del pectoral, sobre su labio que a lado del efod hacia la casa.
+Y harás dos anillos de oro, y los pondrás en los dos extremos del pectoral, sobre su borde que *está* hacia el lado del efod, por dentro.
 
 ### 28:27
 
@@ -3217,7 +3217,7 @@ Y atarán el pectoral a anillos del efod con cordón de azul, para ser sobre cin
 
 ### 28:29
 
-Y alzará Aarón los nombres de hijos de Israel en joshen del juicio sobre su corazón en su entrar al santo, a memorial delante de Yahvé siempre.
+Y Aarón llevará los nombres de los hijos de Israel en el pectoral del juicio, sobre su corazón, cuando entre en el lugar sagrado, como recordatorio constante ante Yahvé.
 
 ### 28:30
 
@@ -3245,15 +3245,15 @@ Y será sobre Aarón para ministrar, y se oirá su voz en su entrar a lo santo d
 
 ### 28:36
 
-Y harás una lámina de oro puro, y grabarás sobre ella grabados de sello: santidad a Yahvé.
+Y harás una lámina de oro puro, y grabarás sobre él grabados de sello: «Santidad para Yahvé».
 
 ### 28:37
 
-Y la pondrás sobre cordón de azul, y será sobre el turbante; al frente de faces del turbante será.
+Y lo pondrás sobre un cordón violeta, y estará sobre el turbante; estará hacia el frente del turbante.
 
 ### 28:38
 
-Y será sobre frente de Aarón, y alzará Aarón la iniquidad de las santidades que santificarán hijos de Israel a todos dones de sus santidades, y será sobre su frente siempre, a favor a ellos delante de Yahvé.
+Y estará sobre la frente de Aarón, y Aarón cargará con la culpa de las cosas sagradas que los hijos de Israel consagren en todas sus ofrendas sagradas. Y estará siempre sobre su frente, para que sean aceptados ante Yahvé.
 
 ### 28:39
 
@@ -3261,7 +3261,7 @@ Y tejerás a cuadros la túnica de lino fino, y harás turbante de lino fino, y 
 
 ### 28:40
 
-Y a hijos de Aarón harás túnicas, y harás a ellos cintos, y gorros harás a ellos, a gloria y a hermosura.
+Y para los hijos de Aarón harás túnicas; y les harás cinturones, y les harás tocados para honra y para belleza.
 
 ### 28:41
 
@@ -3269,7 +3269,7 @@ Y vestirás a ellos a Aarón tu hermano y a sus hijos con él, y los ungirás, y
 
 ### 28:42
 
-Y haz a ellos calzones de lino para cubrir carne de desnudez; desde lomos y hasta muslos serán.
+Y hazles calzoncillos de lino blanco para cubrir la carne desnuda; desde los lomos hasta los muslos se extenderán.
 
 ### 28:43
 

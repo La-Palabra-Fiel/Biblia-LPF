@@ -75,6 +75,43 @@ Se aplica a las nuevas propuestas y a las revisiones solicitadas. No autoriza
 sustituciones masivas, cambios automáticos de aprobaciones ni modificaciones
 de los artefactos históricos para simular una adjudicación humana en la app.
 
+### Política léxica: las doce piedras del pectoral
+
+Por adjudicación editorial humana del 4 de noviembre de 2026, la LBF usa las
+siguientes denominaciones convencionales para las doce piedras de Éxodo
+28:17–20, sus repeticiones en Éxodo 39:10–13 y las menciones inequívocas de
+esas mismas piedras dentro del contexto de las vestiduras sacerdotales:
+
+| Posición | Lema hebreo | Denominación LBF |
+| --- | --- | --- |
+| 1 | אֹדֶם (H124) | **cornalina** |
+| 2 | פִּטְדָה (H6357) | **topacio** |
+| 3 | בָּרֶקֶת (H1304) | **esmeralda** |
+| 4 | נֹפֶךְ (H5306) | **carbunclo** |
+| 5 | סַפִּיר (H5601) | **zafiro** |
+| 6 | יַהֲלֹם (H3095) | **diamante** |
+| 7 | לֶשֶׁם (H3958) | **rubí** |
+| 8 | שְׁבוֹ (H7618) | **ágata** |
+| 9 | אַחְלָמָה (H306) | **amatista** |
+| 10 | תַּרְשִׁישׁ (H8658) | **jaspe amarillo** |
+| 11 | שֹׁהַם (H7718) | **ónice** |
+| 12 | יָשְׁפֵה (H3471) | **jaspe** |
+
+Estas formas conservan doce designaciones españolas distintas y fijan la
+terminología del proyecto; no afirman una identificación mineralógica
+concluyente. **Diamante** en esta lista es la denominación editorial de
+יַהֲלֹם, no una deducción de otra traducción ni una equiparación con
+שָׁמִיר. En Jeremías 17:1, donde שָׁמִיר describe la punta dura que
+graba, la adjudicación contextual es **pedernal**. Esa decisión no fija las
+apariciones de שָׁמִיר que designen espinos ni autoriza trasladar **pedernal**
+a otro lema.
+
+La alineación enlaza cada denominación con su propio token; cuando una
+conjunción está unida a la piedra en hebreo, permanece en la misma unidad
+española, por ejemplo **y diamante**. Esta adjudicación se aplica a propuestas
+nuevas y revisiones humanas solicitadas. No reabre aprobaciones ni autoriza
+sustituciones masivas o alteraciones de artefactos históricos.
+
 ### Política léxica: arrepentimiento, pesar y cambio de rumbo
 
 La LBF no usa **arrepentirse** ni **arrepentimiento** como glosas universales.

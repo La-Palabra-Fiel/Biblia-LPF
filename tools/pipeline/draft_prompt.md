@@ -68,6 +68,24 @@ METHOD:
   Do not italicize gusano de escarlata: its words are source-supported.
   Align gusano and de escarlata separately to their respective tokens,
   retaining an attached conjunction with the first token when present.
+- Binding priestly-stone terminology (human editorial adjudication,
+  2026-11-04): in the twelve-stone lists of Exod 28:17-20 and 39:10-13, and
+  unequivocal references to those stones in the priestly-garment context, use
+  these conventional Spanish designations consistently: אֹדֶם H124 =
+  cornalina; פִּטְדָה H6357 = topacio; בָּרֶקֶת H1304 = esmeralda;
+  נֹפֶךְ H5306 = carbunclo; סַפִּיר H5601 = zafiro; יַהֲלֹם H3095 =
+  diamante; לֶשֶׁם H3958 = rubí; שְׁבוֹ H7618 = ágata; אַחְלָמָה H306 =
+  amatista; תַּרְשִׁישׁ H8658 = jaspe amarillo; שֹׁהַם H7718 =
+  ónice; יָשְׁפֵה H3471 = jaspe. These are conventional project
+  designations that preserve twelve distinct Hebrew terms; they do not claim
+  conclusive modern mineral identification and do not derive from another
+  translation. Do not reopen these names merely because the packet lexicon
+  lists alternatives. Align each name to its own source token, retaining an
+  attached conjunction in that unit (for example, y diamante).
+- Binding context-specific adjudication (2026-11-04): in Jer 17:1, where
+  שָׁמִיר H8068 names the hard engraving point, render it pedernal, not
+  diamante. This does not fix occurrences where שָׁמִיר denotes thorns and
+  does not transfer pedernal to any other lemma.
 - Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
   distinctions among reconsidering, changing one's mind or judgment, feeling
   sorrow, turning/returning, relenting, compassion, and comfort whenever the

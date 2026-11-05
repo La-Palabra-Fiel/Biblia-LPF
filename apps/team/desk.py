@@ -608,13 +608,17 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         if human_review_is_current(book.slug, number, verse):
             skipped_human += 1
             continue
-        existing_path, existing_candidate = reusable_candidate(book.slug, number, verse)
-        if existing_path and existing_candidate:
-            reused_candidates += 1
-            continue
         # Preparation always rebuilds the derived packet. Do the same in
         # memory here so a stale stored packet cannot understate paid calls.
         packet = build_packet(book.slug, number, verse)
+        existing_path, existing_candidate = reusable_candidate(book.slug, number, verse)
+        if (
+            existing_path
+            and existing_candidate
+            and compatible_paid_draft(existing_candidate, packet)
+        ):
+            reused_candidates += 1
+            continue
         path = pipeline_dir(book.slug) / f"{book.slug}-{number}-{verse}.draft-team-gpt.json"
         candidate = read_json(path, {})
         fresh_draft = bool(packet and path.is_file() and compatible_paid_draft(candidate, packet))
@@ -699,13 +703,17 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             # Rebuild the derived packet from pinned sources. A stale packet
             # from an earlier policy must never reach the paid Sol model.
             _run([sys.executable, str(PIPELINE / "build_source_packet.py"), slug, str(chapter), str(verse)])
+            packet = read_json(packet_path(slug, chapter, verse), {})
             existing_path, existing_candidate = reusable_candidate(slug, chapter, verse)
-            if existing_path and existing_candidate:
+            if (
+                existing_path
+                and existing_candidate
+                and compatible_paid_draft(existing_candidate, packet)
+            ):
                 continue
             path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"
             candidate = read_json(path, {})
             if candidate.get("schema") == "lbf-human-reviewed-candidate-v1": continue
-            packet = read_json(packet_path(slug, chapter, verse), {})
             if not path.is_file() or not compatible_paid_draft(candidate, packet):
                 _run([sys.executable, str(PIPELINE / "draft_gpt.py"), slug, str(chapter), str(verse), "--label", "team-gpt"])
                 path = pipeline_dir(slug) / f"{slug}-{chapter}-{verse}.draft-team-gpt.json"; candidate = read_json(path, {})

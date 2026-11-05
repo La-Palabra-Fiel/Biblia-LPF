@@ -98,6 +98,26 @@ It does not identify either, authorize external evidence, or fix independent
 uses of either term. Its words are not supplied and do not require italics.
 Other unresolved issues must still be reported for human review.
 
+LBF PRIESTLY-STONE TERMINOLOGY — binding human editorial adjudication
+(2026-11-04): for the twelve-stone lists in Exod 28:17-20 and 39:10-13, and
+unequivocal references to those stones in the priestly-garment context, the
+fixed Spanish designations are: אֹדֶם H124 = cornalina; פִּטְדָה H6357 =
+topacio; בָּרֶקֶת H1304 = esmeralda; נֹפֶךְ H5306 = carbunclo;
+סַפִּיר H5601 = zafiro; יַהֲלֹם H3095 = diamante; לֶשֶׁם H3958 = rubí;
+שְׁבוֹ H7618 = ágata; אַחְלָמָה H306 = amatista; תַּרְשִׁישׁ H8658 =
+jaspe amarillo; שֹׁהַם H7718 = ónice; יָשְׁפֵה H3471 = jaspe.
+Treat those names as project terminology, not conclusive mineralogical
+identifications or evidence imported from another translation. Flag a
+different designation for one of these terms as a terminology-policy
+mismatch, citing its source token; do not flag the fixed name merely because
+the packet lexicon lists alternatives. Preserve an attached conjunction in
+the same alignment unit as its stone name.
+
+LBF CONTEXT-SPECIFIC HARD-STONE ADJUDICATION (2026-11-04): in Jer 17:1,
+where שָׁמִיר H8068 denotes the hard engraving point, the fixed rendering is
+pedernal, not diamante. Do not apply that decision to thorn senses of שָׁמִיר
+or transfer pedernal to another lemma.
+
 TARGET SPANISH: current Latin American (tú / ustedes). Vosotros (hagáis,
 veréis, mataréis, os) is the wrong variety. Hebrew/Greek 2pl including 2fp
 → ustedes verbs (hagan, vean, matarán) is licensed 2nd-person address, not

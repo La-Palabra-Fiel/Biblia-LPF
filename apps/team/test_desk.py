@@ -192,14 +192,15 @@ class DeskTests(unittest.TestCase):
             estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
         self.assertEqual(estimate["humanReviewedSkipped"],2)
         self.assertEqual(estimate["maximumPaidCalls"],0)
-    def test_prepare_estimate_reuses_existing_candidate_without_paid_calls(self):
+    def test_prepare_estimate_does_not_reuse_unverified_legacy_seed(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         candidate=Path(self.tmp.name)/"existing.json";candidate.write_text('{"spanish":"Texto","units":[{"es":"Texto","sourceTokenIds":["h1"]}]}\n',encoding="utf-8")
-        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"reusable_candidate",return_value=(candidate,{"spanish":"Texto"})),patch.object(desk,"build_packet") as build:
+        packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]}
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"reusable_candidate",return_value=(candidate,{"spanish":"Texto"})),patch.object(desk,"build_packet",return_value=packet) as build,patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
             estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
-        build.assert_not_called()
-        self.assertEqual(estimate["reusedCandidates"],1)
-        self.assertEqual(estimate["maximumPaidCalls"],0)
+        build.assert_called_once_with("exodo",6,1)
+        self.assertEqual(estimate["reusedCandidates"],0)
+        self.assertEqual(estimate["maximumPaidCalls"],1)
         self.assertEqual(estimate["auditCalls"],0)
     def test_existing_medium_draft_remains_compatible(self):
         packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[]}
@@ -268,7 +269,12 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Y dijo ← s1",prompt)
         self.assertIn("unambiguously God, Jesus Christ, or the Holy Spirit",prompt)
         self.assertIn("Él, Tú, Ti",prompt)
+        self.assertRegex(prompt,r"יַהֲלֹם H3095 =\s+diamante")
+        self.assertIn("לֶשֶׁם H3958 = rubí",prompt)
+        self.assertIn("שָׁמִיר H8068 names the hard engraving point",prompt)
         self.assertIn("LBF HOUSE STYLE",desk.AUDIT_SYSTEM)
+        self.assertRegex(desk.AUDIT_SYSTEM,r"יַהֲלֹם H3095 =\s+diamante")
+        self.assertIn("the fixed rendering is\npedernal, not diamante",desk.AUDIT_SYSTEM)
         self.assertNotIn("doctrinal capitalization not in the tokens",desk.AUDIT_SYSTEM)
     def test_notification_ui_is_accessible_and_explains_credentials(self):
         html=(Path(desk.__file__).resolve().parent/"public"/"index.html").read_text(encoding="utf-8")

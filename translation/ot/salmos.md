@@ -8315,7 +8315,7 @@ El camino de mentira quita de mí, y tu ley concédeme.
 
 ### 119:30
 
-El camino de fidelidad elegí; tus juicios puse delante.
+He elegido el camino de la fidelidad; he dispuesto Tus juicios.
 
 ### 119:31
 
@@ -8371,7 +8371,7 @@ Y no arrebates de mi boca palabra de verdad hasta el extremo, porque a tu juicio
 
 ### 119:44
 
-Y guardaré tu ley continuamente, por siempre y jamás.
+Y quiero guardar Tu ley continuamente, por siempre y para siempre.
 
 ### 119:45
 
@@ -8443,7 +8443,7 @@ Lazos de malos me rodearon; tu ley no olvidé.
 
 ### 119:62
 
-A medianoche me levanto para alabarte sobre los juicios de tu justicia.
+A medianoche me levantaré para dar gracias a Ti por los juicios de Tu justicia.
 
 ### 119:63
 

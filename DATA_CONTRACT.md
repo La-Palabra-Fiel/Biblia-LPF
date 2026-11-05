@@ -64,9 +64,9 @@ Chapter approval is independent of book completion. A chapter explicitly
 approved in Team Desk has human-approved Spanish and canonical reverse links
 and may appear on the LPF project website. It does not set either book state
 to `done` and does not authorize export to `cgv-data`. On the website,
-approved chapters are ordinary LPF; every other chapter is labeled `Draft
-only`, and the book is labeled `Book unfinished` until the separate named-human
-book approval is complete.
+approved chapters are ordinary LPF; every other chapter is labeled `Solo
+borrador`, and the book is labeled `Libro sin terminar` until the separate
+named-human book approval is complete.
 
 For alignment, unit-level `method: hand` is not enough. Every link must also
 carry a human-confirmed link status (`hand`, `manual`, or `manual-realign`).
@@ -154,8 +154,8 @@ show the latest committed work before a book is finished. Its generated state
 uses `lpf-website-progress-v1` and validates chapter approval against current
 Team Desk manifests, approved verse artifacts, canonical Spanish, and
 canonical human-confirmed alignment. Approved chapters carry no chapter badge;
-all other chapters carry `Draft only`. An unfinished book always carries
-`Book unfinished`.
+all other chapters carry `Solo borrador`. An unfinished book always carries
+`Libro sin terminar`.
 
 ## Prohibited
 

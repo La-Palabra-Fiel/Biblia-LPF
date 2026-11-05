@@ -383,7 +383,7 @@ def main() -> None:
                 "",
                 "Libros con texto de trabajo disponible en la edición LPF. Los",
                 "capítulos aprobados se muestran como LPF; los demás se identifican",
-                "como Draft only. Cada libro conserva su estado hasta la aprobación final.",
+                "como Solo borrador. Cada libro conserva su estado hasta la aprobación final.",
                 "",
             ]
         ),

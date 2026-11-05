@@ -61,7 +61,7 @@ async function prepareOne(verse,button){try{const e=await post("/api/prepare-ver
 let reviewFilter="exceptions";
 function reviewStatus(row){
   if(row.humanReviewed)return"approved";
-  const candidate=row.candidate||{},gate=row.gate||{},alignment=[...(candidate.alignmentPrecisionFindings||[]),...(gate.alignmentFindings||[])];
+  const candidate=row.candidate||{},gate=row.gate||{},alignment=alignmentFindingsFor(row);
   if(!String(candidate.spanish||"").trim()||!gate.source||gate.source==="missing")return"missing";
   if(alignment.length||Number(candidate.droppedUncitedUnits||0)>0)return"alignment";
   if((candidate.uncertainties||[]).length||(candidate.addedConcepts||[]).length||gate.fidelity==="fail"||gate.spanish==="fail")return"hold";
@@ -80,7 +80,9 @@ function applyReviewFilter(){
 function setReviewFilter(filter){reviewFilter=filter;applyReviewFilter();V.querySelector(".review-toolbar")?.scrollIntoView({behavior:"smooth",block:"start"})}
 function openVerseFromReader(verse){reviewFilter="all";applyReviewFilter();const card=V.querySelector(`article[data-verse="${verse}"]`);if(!card)return;card.hidden=false;card.classList.add("expanded");card.scrollIntoView({behavior:"smooth",block:"start"})}
 function nextException(){const cards=[...V.querySelectorAll('article.verse[data-verse]')].filter(card=>["hold","alignment","missing"].includes(card.dataset.reviewStatus));if(!cards.length){notify("success","No quedan excepciones","Todos los versículos restantes están limpios o aprobados.");return}const below=cards.find(card=>card.getBoundingClientRect().top>150),target=below||cards[0];reviewFilter="exceptions";applyReviewFilter();target.hidden=false;target.classList.add("expanded");target.scrollIntoView({behavior:"smooth",block:"start"})}
-function alignmentFindingsFor(row){const raw=[...((row.candidate||{}).alignmentPrecisionFindings||[]),...((row.gate||{}).alignmentFindings||[])];const seen=new Set();return raw.filter(item=>{const key=JSON.stringify([item.code,item.issue,item.spanishSpan,item.sourceTokenIds]);if(seen.has(key))return false;seen.add(key);return true})}
+// The server rechecks precision against the current packet and rules. Stored
+// candidate findings describe the historical draft, not the current blocker.
+function alignmentFindingsFor(row){const raw=(row.gate||{}).alignmentFindings||[];const seen=new Set();return raw.filter(item=>{const key=JSON.stringify([item.code,item.issue,item.spanishSpan,item.sourceTokenIds]);if(seen.has(key))return false;seen.add(key);return true})}
 function decorateAlignmentCard(card,row){
   const findings=alignmentFindingsFor(row);card._alignmentFindings=findings;if(!findings.length){refreshTokenSpanish(card);return}
   const panel=document.createElement("section");panel.className="alignment-diagnostic";panel.innerHTML=`<h4>Trabajo de alineación requerido</h4>${findings.map(item=>`<p>${esc(friendly(item.issue||"Problema de alineación"))}${item.spanishSpan?`<br><b>Unidad:</b> ${esc(item.spanishSpan)}`:""}${(item.sourceTokenIds||[]).length?`<br><code>${esc(item.sourceTokenIds.join(", "))}</code>`:""}</p>`).join("")}<p><b>Dividir</b> separa el texto en el cursor, conserva los enlaces en la primera mitad y deja la segunda sin enlaces para que tú los asignes.</p>`;

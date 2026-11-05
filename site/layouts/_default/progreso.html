@@ -16,7 +16,7 @@
   <h2>Disponibilidad de texto preliminar</h2>
 
   <div class="aviso">
-    <p>Los capítulos aprobados tienen texto y alineamiento confirmados por una persona. Los demás siguen disponibles como <em>Draft only</em>. Un libro permanece <em>Book unfinished</em> hasta su aprobación final. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver las firmas registradas por etapa.</p>
+    <p>Los capítulos aprobados tienen texto y alineamiento confirmados por una persona. Los demás siguen disponibles como <em>Solo borrador</em>. Un libro permanece <em>Libro sin terminar</em> hasta su aprobación final. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver las firmas registradas por etapa.</p>
   </div>
 
   {{ range $t := slice "at" "nt" }}
@@ -37,7 +37,7 @@
           <td>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</td>
           <td>{{ if .publicado }}{{ .capitulosAprobados }} / {{ .capitulos }}{{ else }}—{{ end }}</td>
           <td>{{ if .publicado }}{{ .versiculos }}{{ else }}—{{ end }}</td>
-          <td>{{ if not .publicado }}No disponible{{ else if eq .estadoLibro "approved" }}LPF{{ else }}Book unfinished{{ end }}</td>
+          <td>{{ if not .publicado }}No disponible{{ else if eq .estadoLibro "approved" }}LPF{{ else }}Libro sin terminar{{ end }}</td>
         </tr>
         {{ end }}
       </tbody>

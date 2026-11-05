@@ -65,7 +65,7 @@ class PublicationProgressTests(unittest.TestCase):
         self.assertEqual(public["bookStatus"], "unfinished")
         self.assertEqual(public["schema"], "lpf-website-progress-v1")
         self.assertEqual(public["chapterStatuses"], {"1": "approved", "2": "draft-only"})
-        self.assertEqual(public["chapterLabels"], {"1": None, "2": "Draft only"})
+        self.assertEqual(public["chapterLabels"], {"1": None, "2": "Solo borrador"})
 
     def test_revision_demotes_chapter_without_deleting_links(self):
         with patch.object(progress, "ROOT", self.root):

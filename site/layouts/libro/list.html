@@ -8,7 +8,7 @@
 
   <h1>{{ .Title }}</h1>
   {{ if ne .Params.estadoLibro "approved" }}
-  <p class="estado-publicacion"><span class="estado-libro">Book unfinished</span></p>
+  <p class="estado-publicacion"><span class="estado-libro">Libro sin terminar</span></p>
   {{ end }}
   <p class="subtitulo-pagina">
     {{ .Params.capitulos }} capítulo{{ if ne .Params.capitulos 1 }}s{{ end }} ·
@@ -22,7 +22,7 @@
     {{ range .Pages.ByWeight }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Params.capitulo }}</a>
-      {{ if eq .Params.estadoCapitulo "draft-only" }}<span class="estado-borrador estado-borrador-corto" aria-label="Draft only">Draft</span>{{ end }}
+      {{ if eq .Params.estadoCapitulo "draft-only" }}<span class="estado-borrador estado-borrador-corto" aria-label="Solo borrador">Borrador</span>{{ end }}
     </li>
     {{ end }}
   </ul>

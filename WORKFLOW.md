@@ -632,8 +632,8 @@ canónico de este repositorio. Por eso puede mostrar el trabajo más reciente
 antes de que el libro esté terminado.
 
 Un capítulo aprobado se muestra como LPF, sin etiqueta de capítulo. Los demás
-capítulos llevan `Draft only`. Mientras traducción y alineamiento del libro no
-estén ambas en `done`, todas sus páginas conservan `Book unfinished`. Esto es
+capítulos llevan `Solo borrador`. Mientras traducción y alineamiento del libro no
+estén ambas en `done`, todas sus páginas conservan `Libro sin terminar`. Esto es
 estado del sitio, no una publicación del reader app ni una exportación a
 `cgv-data`.
 

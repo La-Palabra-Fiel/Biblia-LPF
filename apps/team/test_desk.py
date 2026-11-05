@@ -264,6 +264,26 @@ class DeskTests(unittest.TestCase):
             candidate["uncertainties"]=[{"issue":"choice"}];desk.write_json(candidate_path,candidate)
             clean,reasons=desk.clean_candidate_for_chapter_approval("exodo",1,1)
             self.assertIsNone(clean);self.assertIn("el candidato declaró incertidumbre",reasons)
+    def test_clean_chapter_rechecks_historical_precision_findings(self):
+        root=Path(self.tmp.name); candidate_path=root/"draft.json"; packet_path=root/"packet.json"
+        packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[
+            {"sourceTokenId":"h1","lemma":"1008+","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h2","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+        ]}
+        historical=[{"severity":"fail","issue":"The alignment unit combines independently alignable proper names; put each name in its own unit.","spanishSpan":"Betel","sourceTokenIds":["h1","h2"]}]
+        candidate={"schema":"lbf-gpt-draft-v1","model":"gpt-6.1-sol","reasoningEffort":"low","packetSha256":desk.packet_fingerprint(packet),"draftSpecVersion":desk.DRAFT_SPEC_VERSION,"spanish":"Betel","units":[{"es":"Betel","sourceTokenIds":["h1","h2"]}],"alignmentPrecisionFindings":historical}
+        desk.write_json(candidate_path,candidate);desk.write_json(packet_path,packet)
+        gate={"promptCurrent":True,"spanish":"pass","fidelity":"not-required","auditRequired":False,"alignmentFindings":[]}
+        with patch.object(desk,"candidate_path",return_value=candidate_path),patch.object(desk,"packet_path",return_value=packet_path),patch.object(desk,"gate_for",return_value=gate):
+            clean,reasons=desk.clean_candidate_for_chapter_approval("genesis",12,8)
+            self.assertIsNotNone(clean);self.assertEqual(reasons,[])
+            self.assertEqual(desk.read_json(candidate_path)["alignmentPrecisionFindings"],historical)
+            # Recomputing precision must still block independently alignable names.
+            packet["tokens"].append({"sourceTokenId":"h3","lemma":"c/d/5857","morphExpanded":"Hebrew; conjunction; noun proper"})
+            candidate.update(packetSha256=desk.packet_fingerprint(packet),spanish="Betel y Hai",units=[{"es":"Betel y Hai","sourceTokenIds":["h1","h2","h3"]}])
+            desk.write_json(candidate_path,candidate);desk.write_json(packet_path,packet)
+            clean,reasons=desk.clean_candidate_for_chapter_approval("genesis",12,8)
+            self.assertIsNone(clean);self.assertTrue(any("proper names" in reason for reason in reasons))
     def test_whole_chapter_approval_approves_clean_and_leaves_hold(self):
         root=Path(self.tmp.name); translation=root/"exodo.md";translation.write_text("# Éxodo\n\n## Capítulo 1\n\n### 1:1\n\nTexto.\n\n### 1:2\n\nPendiente.\n",encoding="utf-8")
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})();packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]};clean={"spanish":"Texto.","units":[{"es":"Texto","sourceTokenIds":["h1"]}],"packet":packet,"candidate":{}}

@@ -1245,7 +1245,7 @@ Y tomó Abram a Sarai su mujer y a Lot hijo de su hermano y a todo su adquirido 
 
 ### 12:6
 
-Y pasó Abram en la tierra hasta lugar de Siquem, hasta encina de Moré; y el cananeo entonces en la tierra.
+Y Abram pasó por la tierra hasta el lugar de Siquem, hasta el terebinto de Moré. Y el cananeo *estaba* entonces en la tierra.
 
 ### 12:7
 
@@ -1253,7 +1253,7 @@ Y se vio Jehová a Abram, y dijo: A tu semilla daré la tierra esta. Y edificó 
 
 ### 12:8
 
-Y trasladó de allí hacia el monte, del oriente a Bet El, y tendió su tienda; Bet El desde el mar y el Ai del oriente; y edificó allí altar a Jehová, y llamó en el nombre de Jehová.
+Y se trasladó de allí a la montaña al este de Betel, y extendió su tienda, con Betel al oeste y Hai al este. Y construyó allí un altar para Yahvé e invocó el nombre de Yahvé.
 
 ### 12:9
 
@@ -1289,11 +1289,11 @@ Y a Abram hizo bien por causa de ella; y fue a él rebaño y ganado y asnos y si
 
 ### 12:17
 
-Y plagó Jehová a Faraón plagas grandes y a su casa, sobre palabra de Sarai mujer de Abram.
+Y Yahvé hirió a Faraón y a su casa con grandes plagas por causa de Sarai, esposa de Abram.
 
 ### 12:18
 
-Y llamó Faraón a Abram, y dijo: ¿Qué esto hiciste a mí? ¿Por qué no declaraste a mí que tu mujer ella?
+Y Faraón llamó a Abram y dijo: «¿Qué *es* esto que me hiciste? ¿Por qué no me dijiste que ella *era* tu esposa?»
 
 ### 12:19
 
@@ -1301,7 +1301,7 @@ Y llamó Faraón a Abram, y dijo: ¿Qué esto hiciste a mí? ¿Por qué no decla
 
 ### 12:20
 
-Y mandó sobre él Faraón varones, y enviaron a él y a su mujer y a todo lo que a él.
+Y Faraón dio órdenes a unos hombres acerca de él, y lo despidieron a él y a su esposa y a todo lo que le pertenecía.
 
 ## Capítulo 13
 

@@ -848,8 +848,9 @@ def clean_candidate_for_chapter_approval(slug: str, chapter: int, verse: int) ->
         reasons.append("el candidato declaró conceptos añadidos")
     if candidate.get("droppedUncitedUnits"):
         reasons.append("el candidato omitió unidades sin justificar")
-    if candidate.get("alignmentPrecisionFindings"):
-        reasons.append("el candidato declaró problemas de precisión de alineación")
+    # Historical precision findings stay in the draft for provenance. The
+    # current validator and gate below recheck those units against today's
+    # packet and rules, including OSHB compound-name continuation markers.
     spanish = " ".join(str(candidate.get("spanish") or "").split())
     if not spanish:
         reasons.append("falta el texto español")

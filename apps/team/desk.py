@@ -1,8 +1,9 @@
 """Named-human chapter review for the closed LBF GPT workflow.
 
 Models prepare evidence-bound candidates. Only the explicit review action
-writes canonical Spanish. This module never writes a `done` status and never
-promotes alignment seeds to canonical alignment.
+writes canonical Spanish. This module never writes a `done` status. Explicit
+chapter approval promotes the already-confirmed units to canonical alignment;
+book completion remains a separate named-human approval.
 """
 
 from __future__ import annotations
@@ -21,7 +22,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PIPELINE = ROOT / "tools" / "pipeline"
 sys.path.insert(0, str(PIPELINE))
+sys.path.insert(0, str(ROOT / "tools"))
 import env_load  # noqa: E402,F401
+from publication_progress import demote_chapter_alignment, promote_chapter_alignment  # noqa: E402
 from draft_lib import COMPATIBLE_TEAM_DRAFT_MODELS, TEAM_DRAFT_MODEL, TEAM_DRAFT_MODEL_REVIEW_ON, TEAM_DRAFT_REASONING  # noqa: E402
 from usage_lib import rates_for  # noqa: E402
 
@@ -809,6 +812,9 @@ def invalidate_chapter_review(book, chapter: int, verse: int, person: str) -> No
             if isinstance(item, dict) and item.get("verse") == verse:
                 item["confirmed"] = False
         write_json(seed_path, seed)
+    testament = getattr(book, "testament", "")
+    if testament:
+        demote_chapter_alignment(book=book.slug, testament=testament, chapter=chapter)
 
 
 def archived_approval(prior: dict, person: str) -> dict:
@@ -894,14 +900,21 @@ def human_artifact(book, chapter: int, verse: int, person: str, spanish: str, un
             "alignmentUnitsConfirmed": True,
             "suppliedWordsConfirmed": True,
             "failedAuditOverrideConfirmed": False,
-            "scope": "verse wording and alignment seed; not STATUS.md done approval",
+            "scope": "verse wording and reviewed alignment units; canonical promotion requires explicit chapter approval; not STATUS.md book-done approval",
         },
     }
 
 
 def finish_chapter_locked(book, chapter: int, verses: list[int], person: str) -> None:
-    write_json(pipeline_dir(book.slug) / f"{book.slug}-{chapter}.human-review.json", {"schema": "lbf-human-chapter-review-v1", "book": book.slug, "chapter": chapter, "reviewedBy": person, "reviewedOn": today(), "continuityVoiceFlowConfirmed": True, "verseWordingConfirmed": verses, "alignmentSeedsConfirmed": verses, "statusScope": "chapter review only; not STATUS.md done and not canonical alignment"})
-    write_json(pipeline_dir(book.slug) / f"{book.slug}-{chapter}.alignment-seed.json", {"schema": "lbf-alignment-seed-manifest-v1", "book": book.slug, "chapter": chapter, "status": "seeded-hand", "canonicalAlignmentChanged": False, "instruction": "Named reviewers confirmed these visible unit links. They remain a noncanonical seed until copied into and validated in the canonical reverse-links file.", "verses": [{"verse": v, "candidate": human_path(book.slug, chapter, v).name, "confirmed": True} for v in verses]})
+    canonical_path = promote_chapter_alignment(
+        book=book.slug,
+        testament=book.testament,
+        label=book.label,
+        chapter=chapter,
+        verses=verses,
+    )
+    write_json(pipeline_dir(book.slug) / f"{book.slug}-{chapter}.human-review.json", {"schema": "lbf-human-chapter-review-v1", "book": book.slug, "chapter": chapter, "reviewedBy": person, "reviewedOn": today(), "continuityVoiceFlowConfirmed": True, "verseWordingConfirmed": verses, "alignmentSeedsConfirmed": verses, "canonicalAlignmentConfirmed": True, "canonicalAlignmentFile": str(canonical_path.relative_to(ROOT)), "statusScope": "chapter review and canonical alignment only; not STATUS.md book-done approval"})
+    write_json(pipeline_dir(book.slug) / f"{book.slug}-{chapter}.alignment-seed.json", {"schema": "lbf-alignment-seed-manifest-v1", "book": book.slug, "chapter": chapter, "status": "promoted-hand", "canonicalAlignmentChanged": True, "canonicalAlignmentFile": str(canonical_path.relative_to(ROOT)), "instruction": "Named reviewers confirmed these visible unit links and explicit chapter approval promoted them to canonical reverse links. Book completion remains separate.", "verses": [{"verse": v, "candidate": human_path(book.slug, chapter, v).name, "confirmed": True, "canonical": True} for v in verses]})
 
 
 def reopen_verse(payload: dict) -> dict:
@@ -1009,7 +1022,7 @@ def approve_verse(payload: dict) -> dict:
                 "alignmentUnitsConfirmed": True,
                 "suppliedWordsConfirmed": True,
                 "failedAuditOverrideConfirmed": bool(payload.get("auditOverrideConfirmed")),
-                "scope": "verse wording and alignment seed; not STATUS.md done approval",
+                "scope": "verse wording and reviewed alignment units; canonical promotion requires explicit chapter approval; not STATUS.md book-done approval",
             },
         }
         current_path = translation_file(book.slug)
@@ -1080,7 +1093,7 @@ def approve_clean_chapter(payload: dict) -> dict:
         complete = not missing
         if complete:
             finish_chapter_locked(book, chapter, verses, person)
-            note = "Chapter review complete; canonical alignment still pending"
+            note = "Chapter review complete; canonical alignment promoted"
         else:
             note = f"Clean candidates approved; HOLD verses: {', '.join(map(str, missing))}"
         claims[key].update(note=note, updated=now()); save_claims(claims)
@@ -1096,7 +1109,7 @@ def finish_chapter(payload: dict) -> dict:
         claims, key = assert_holder(person, book.slug, chapter); missing = [v for v in verses if not human_review_is_current(book.slug, chapter, v) or revision_is_open(book.slug, chapter, v)]
         if missing: raise ValueError("Human review is missing for verse(s): " + ", ".join(map(str, missing)))
         finish_chapter_locked(book, chapter, verses, person)
-        claims[key].update(note="Chapter review complete; canonical alignment still pending", updated=now()); save_claims(claims)
+        claims[key].update(note="Chapter review complete; canonical alignment promoted", updated=now()); save_claims(claims)
     return chapter_view(book.slug, chapter)
 
 

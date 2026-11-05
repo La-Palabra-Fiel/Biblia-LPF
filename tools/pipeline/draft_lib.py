@@ -150,11 +150,28 @@ def merge_source_units_by_id(units: list[dict]) -> list[dict]:
 def alignment_precision_findings(packet: dict, units: list[dict]) -> list[dict]:
     """Find plainly coarse units without pretending to solve alignment locally."""
     tokens = packet.get("tokens") or []
-    proper_ids = {
-        str(token.get("sourceTokenId"))
-        for token in tokens
-        if "noun proper" in str(token.get("morphExpanded") or "").casefold()
-    }
+    proper_groups: dict[str, int] = {}
+    previous = None
+    for index, token in enumerate(tokens):
+        if "noun proper" not in str(token.get("morphExpanded") or "").casefold():
+            previous = None
+            continue
+        tid = str(token.get("sourceTokenId"))
+        lemma_parts = str(token.get("lemma") or "").split("/")
+        lemma = lemma_parts[-1]
+        # OSHB marks a multi-token name with a continuation lemma, e.g.
+        # l/1008+ followed by 1008 for Betel. Equal unmarked lemmas alone
+        # do not prove a compound: repeated names must remain independent.
+        if (
+            previous is not None
+            and previous[1].endswith("+")
+            and previous[1][:-1] == lemma.removesuffix("+")
+            and "c" not in lemma_parts[:-1]
+        ):
+            proper_groups[tid] = proper_groups[previous[0]]
+        else:
+            proper_groups[tid] = index
+        previous = (tid, lemma)
     findings = []
     for unit in units:
         surface = " ".join(str((unit or {}).get("es") or "").split())
@@ -163,7 +180,7 @@ def alignment_precision_findings(packet: dict, units: list[dict]) -> list[dict]:
         issue = ""
         if len(ids) >= 4 and len(words) >= 4:
             issue = "The alignment unit is too broad; split it into the smallest defensible Spanish-to-source correspondences."
-        elif len(set(ids) & proper_ids) >= 2:
+        elif len({proper_groups[tid] for tid in ids if tid in proper_groups}) >= 2:
             issue = "The alignment unit combines independently alignable proper names; put each name in its own unit."
         if issue:
             findings.append({"severity": "fail", "issue": issue, "spanishSpan": surface, "sourceTokenIds": ids})

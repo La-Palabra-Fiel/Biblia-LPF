@@ -1,6 +1,6 @@
 # Translator
 
-Editor for La Biblia Fiel. It does not own the text.
+Editor for LPF. It does not own the text.
 
 Spanish is in `translation/`. Alignment is in `alignment/`.
 Finished is in `STATUS.md`. This app records `done` only when a named human

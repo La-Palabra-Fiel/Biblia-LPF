@@ -27,7 +27,7 @@ from usage_lib import extract_usage
 
 AUDIT_SCHEMA = "lbf-grok-audit-v1"
 
-SYSTEM = """You are the source-fidelity auditor for La Biblia Fiel.
+SYSTEM = """You are the source-fidelity auditor for LPF.
 
 You do NOT translate. You do NOT rewrite. You only judge whether the candidate
 Spanish is licensed by the supplied source packet.

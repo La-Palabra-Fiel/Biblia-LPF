@@ -33,7 +33,7 @@ export function renderTranslationDocument(book, verses) {
   const lines = [
     `# ${book.title}`,
     "",
-    `> La Biblia Fiel — ${book.title}. Borrador de primera pasada generado por IA con Ollama; requiere revisión humana completa.`,
+    `> LPF — ${book.title}. Borrador de primera pasada generado por IA con Ollama; requiere revisión humana completa.`,
     `> Fuente: ${book.textualBasis}.`,
     ""
   ];

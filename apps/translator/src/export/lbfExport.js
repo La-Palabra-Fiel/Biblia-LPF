@@ -46,7 +46,7 @@ export function buildLbfMarkdown({ bookLabel = "Titus", phrases = [], includeDra
   const lines = [
     `# ${bookLabel}`,
     "",
-    "> La Biblia Fiel — borrador de trabajo. Solo texto aprobado entra en el cuerpo.",
+    "> LPF — borrador de trabajo. Solo texto aprobado entra en el cuerpo.",
     ""
   ];
 

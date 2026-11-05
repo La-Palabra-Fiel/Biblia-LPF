@@ -371,7 +371,7 @@ export async function describeAiAvailability() {
 
 export async function runChatCompletion({
   prompt,
-  system = "You assist La Biblia Fiel. Follow the user instructions exactly.",
+  system = "You assist LPF. Follow the user instructions exactly.",
   json = false
 } = {}) {
   const config = getAiConfig();

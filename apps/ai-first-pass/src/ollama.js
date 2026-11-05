@@ -63,7 +63,7 @@ function promptForChunk({ book, verses, previousSpanish }) {
     source: verse.sourceText,
     morphology: verse.morphology
   }));
-  return `Translate the supplied source-language verses into faithful, contemporary Spanish for La Biblia Fiel.
+  return `Translate the supplied source-language verses into faithful, contemporary Spanish for LPF.
 
 TRANSLATOR'S OATH
 The translator is not the author. Do not improve, soften, strengthen, harmonize, explain, modernize the theology, or add what the source leaves unsaid. Preserve repetition, questions, tension, simplicity, force, ambiguity, and silence. Say neither more nor less than the source.

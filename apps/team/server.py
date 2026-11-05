@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Serve the LBF named-human chapter review desk."""
+"""Serve the LPF named-human chapter review desk."""
 from __future__ import annotations
 import json, os, sys, threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -40,6 +40,6 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as exc: self.send_value(500, {"error": str(exc)})
 
 def main():
-    threading.Thread(target=desk.warm_totals, daemon=True).start(); server = ThreadingHTTPServer((HOST, PORT), Handler); print(f"LBF chapter review http://127.0.0.1:{PORT}/ model={desk.model_name()}", flush=True); server.serve_forever()
+    threading.Thread(target=desk.warm_totals, daemon=True).start(); server = ThreadingHTTPServer((HOST, PORT), Handler); print(f"LPF chapter review http://127.0.0.1:{PORT}/ model={desk.model_name()}", flush=True); server.serve_forever()
 
 if __name__ == "__main__": main()

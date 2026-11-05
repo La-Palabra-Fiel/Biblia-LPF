@@ -45,7 +45,7 @@ DEFAULT_BASE = (
     or "http://127.0.0.1:11434"
 ).rstrip("/")
 
-SYSTEM = """You verify Bible reverse-link alignment for La Biblia Fiel.
+SYSTEM = """You verify Bible reverse-link alignment for LPF.
 
 Each phrase lists Spanish alignment units and the source tokens they claim.
 Each token includes: Hebrew/Greek surface, lemma/Strong's id, and an optional

@@ -134,6 +134,6 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`LBF AI First Pass: http://127.0.0.1:${port}/`);
+  console.log(`LPF AI First Pass: http://127.0.0.1:${port}/`);
   console.log(`Ollama: ${ollamaBaseUrl()}`);
 });

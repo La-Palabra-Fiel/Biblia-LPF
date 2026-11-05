@@ -1,6 +1,6 @@
-# LBF AI First Pass
+# LPF AI First Pass
 
-A local, source-first Ollama batch drafter for all 66 LBF books.
+A local, source-first Ollama batch drafter for all 66 LPF books.
 
 It reads the repository-owned sources and writes only the canonical Spanish
 files under `translation/`. It never creates alignment, replaces an existing

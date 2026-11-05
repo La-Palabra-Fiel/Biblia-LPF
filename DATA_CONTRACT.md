@@ -4,7 +4,9 @@ Status: normative
 
 ## Purpose
 
-`Biblia-LBF` is the only editable source of truth for La Biblia Fiel.
+`Biblia-LBF` is the only editable source of truth for LPF. `LBF` remains the
+historical technical identifier in repository names, schemas, filenames, and
+consumer paths; it is not the current public name.
 It owns the Spanish text, the source-to-Spanish alignment, and the
 record of whether that work is finished.
 
@@ -58,6 +60,13 @@ or disputed cases. A model pass cannot substitute for that adjudication.
 A book is finished only when translation and alignment are both `done`.
 Machine-produced Spanish or alignment stays `draft`.
 
+Chapter approval is independent of book completion. A chapter explicitly
+approved in Team Desk has human-approved Spanish and canonical reverse links
+and may be published progressively. It does not set either book state to
+`done`. In a progressive publication, approved chapters are ordinary LPF;
+every other chapter is labeled `Draft only`, and the book is labeled
+`Book unfinished` until the separate named-human book approval is complete.
+
 For alignment, unit-level `method: hand` is not enough. Every link must also
 carry a human-confirmed link status (`hand`, `manual`, or `manual-realign`).
 Statuses such as `seeded-hand`, `seeded-auto`, or `seeded-ai` are unfinished
@@ -95,13 +104,30 @@ Two tools, in order. `tools/export.py` writes the package. `tools/publish.py`
 is the canonical validated publisher: it is the only sanctioned writer of LBF
 data into `cgv-data`.
 
+The default export remains the finished-book path. Progressive publication is
+an explicit mode:
+
+```sh
+python3 tools/export.py <book> --progressive
+```
+
+It requires at least one current human-approved chapter, canonical alignment
+for every such chapter, and committed translation, alignment, chapter-review,
+and verse-approval artifacts. It exports the full working text so unfinished
+chapters remain readable, together with authoritative status metadata. It
+never changes `STATUS.md` and never represents the book as finished.
+
 | Data | Path in `cgv-data` |
 | --- | --- |
 | Consumer text | `bibles/LBF/{book}.lbf.md` |
 | Consumer alignment | `bibles/LBF/alignments/{book}.alignment.json` |
+| Consumer progress | `bibles/LBF/status/{book}.status.json` |
 
-Those two paths are the entire published surface for a book. A publisher
-commit contains nothing else.
+Those three historical technical paths are the entire published surface for a
+book. A publisher commit contains nothing else. The progress document uses
+schema `lpf-publication-progress-v1`, exposes public name `LPF`, records overall
+`approved` or `unfinished` book status, and records every chapter as `approved`
+or `draft-only`.
 
 `publish.py` commits in a temporary `git worktree` cut from `origin/{base}`.
 It does not switch the caller's branch and cannot carry unrelated working-tree
@@ -112,16 +138,21 @@ It must require explicit confirmation before invoking `publish.py`, must never
 pass `--push`, and must stop after displaying the local publisher branch,
 commit, and pull-request link emitted by the canonical publisher.
 Translator must label that result **publisher branch prepared**, not
-**published**. Publication is complete when the two canonical LBF paths on
+**published**. Finished-book publication is complete when the three canonical LBF paths on
 `cgv-data/main` already carry this book's finished content: either the
 package `sourceCommit`, or an earlier publish whose translation and alignment
 files are unchanged at `HEAD`. A later re-export or leftover publisher branch
 must not reopen the create-branch step.
 
+Progressive publication is current only while its text, alignment, and progress
+file carry the same committed `sourceCommit` and its approved-chapter list
+still matches the current chapter-review bindings. It never constitutes
+finished-book publication.
+
 A published `sourceCommit` must name a commit that contains the work it
-claims. The book's translation, its alignment, and its `STATUS.md` row must
-all be committed before a package is written, and the package must still
-match `HEAD` when it is published.
+claims. The book's translation, alignment, `STATUS.md` row, and every approval
+artifact named by progressive status must be committed before a package is
+written, and the package must still match `HEAD` when it is published.
 
 Both tools enforce this. `export.py` refuses to write a package from an
 uncommitted tree; `publish.py` checks again before it commits. An export

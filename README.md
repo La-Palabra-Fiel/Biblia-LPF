@@ -1,4 +1,4 @@
-# LA BIBLIA FIEL
+# LPF
 
 Una traducción fiel de las Escrituras en español contemporáneo,
 comprometida con dejar que las Escrituras hablen por sí mismas.
@@ -9,7 +9,7 @@ El texto se publica bajo **[CC BY-NC-ND 4.0](https://creativecommons.org/license
 Puede copiarlo y compartirlo tal cual, con atribución, para uso no comercial.
 No puede publicar un texto LBF adaptado bajo esa licencia pública.
 
-La Biblia Fiel es propiedad de
+LPF es propiedad de
 **[Cultivados en Gracia y Verdad](https://github.com/Cultivados-en-Gracia-y-Verdad)**.
 Ellos pueden autorizar Biblias, aplicaciones y publicaciones comerciales
 **por acuerdo escrito**.

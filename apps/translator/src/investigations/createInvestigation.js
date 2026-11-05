@@ -179,7 +179,7 @@ function buildScaffold({
 
 Project
 
-La Biblia Fiel
+LPF
 
 Book
 

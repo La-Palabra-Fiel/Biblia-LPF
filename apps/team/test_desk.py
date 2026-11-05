@@ -105,6 +105,52 @@ class DeskTests(unittest.TestCase):
             desk.validate_units(packet,[{"es":"Moisés y Aarón","sourceTokenIds":["h1","h2"]}])
         precise=[{"es":"Moisés","sourceTokenIds":["h1"]},{"es":"y Aarón","sourceTokenIds":["h2"]}]
         self.assertEqual(len(desk.validate_units(packet,precise,"Moisés y Aarón")),2)
+    def test_alignment_accepts_oshb_compound_name_betel(self):
+        packet={"tokens":[
+            {"sourceTokenId":"h01012008005","lemma":"l/1008+","morphExpanded":"Hebrew; preposition; noun proper"},
+            {"sourceTokenId":"h01012008006","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h01012008007","lemma":"c/5186","morphExpanded":"Hebrew; conjunction; verb"},
+            {"sourceTokenId":"h01012008009","lemma":"1008+","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h01012008010","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+        ]}
+        units=[
+            {"es":"de Betel","sourceTokenIds":["h01012008005","h01012008006"]},
+            {"es":"y extendió","sourceTokenIds":["h01012008007"]},
+            {"es":"con Betel","sourceTokenIds":["h01012008009","h01012008010"]},
+        ]
+        self.assertEqual(desk.alignment_preflight_findings(packet,units)[1],[])
+        self.assertEqual(desk.validate_units(packet,units),units)
+        with self.assertRaisesRegex(ValueError,"proper names"):
+            desk.validate_units(packet,[{"es":"Betel y Betel","sourceTokenIds":[t["sourceTokenId"] for t in packet["tokens"] if "noun proper" in t["morphExpanded"]]}])
+    def test_compound_name_does_not_absorb_an_independent_name(self):
+        packet={"tokens":[
+            {"sourceTokenId":"h1","lemma":"1008+","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h2","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h3","lemma":"c/d/5857","morphExpanded":"Hebrew; conjunction; noun proper"},
+        ]}
+        with self.assertRaisesRegex(ValueError,"proper names"):
+            desk.validate_units(packet,[{"es":"Betel y Hai","sourceTokenIds":["h1","h2","h3"]}])
+    def test_repeated_unmarked_lemmas_are_independent_names(self):
+        packet={"tokens":[
+            {"sourceTokenId":"h1","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h2","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+        ]}
+        with self.assertRaisesRegex(ValueError,"proper names"):
+            desk.validate_units(packet,[{"es":"Betel Betel","sourceTokenIds":["h1","h2"]}])
+    def test_compound_continuation_must_be_adjacent_and_match(self):
+        for second in (
+            {"sourceTokenId":"h2","lemma":"5857","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"h2","lemma":"c/1008","morphExpanded":"Hebrew; conjunction; noun proper"},
+        ):
+            with self.subTest(second=second):
+                packet={"tokens":[{"sourceTokenId":"h1","lemma":"1008+","morphExpanded":"Hebrew; noun proper"},second]}
+                self.assertTrue(desk.alignment_precision_findings(packet,[{"es":"Dos nombres","sourceTokenIds":["h1","h2"]}]))
+        packet={"tokens":[
+            {"sourceTokenId":"h1","lemma":"1008+","morphExpanded":"Hebrew; noun proper"},
+            {"sourceTokenId":"verb","lemma":"5186","morphExpanded":"Hebrew; verb"},
+            {"sourceTokenId":"h2","lemma":"1008","morphExpanded":"Hebrew; noun proper"},
+        ]}
+        self.assertTrue(desk.alignment_precision_findings(packet,[{"es":"Dos nombres","sourceTokenIds":["h1","h2"]}]))
     def test_verse_scanner(self):
         text="# Éxodo\n\n## Capítulo 3\n\n### 3:1\n\nTexto.\n\n### 3:2\n\n"
         self.assertEqual(desk.verse_body(text,3,1),"Texto.");self.assertEqual(desk.verse_body(text,3,2),"");self.assertIsNone(desk.verse_body(text,3,9))

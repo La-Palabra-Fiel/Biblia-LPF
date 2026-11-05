@@ -38,7 +38,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | proverbios | ot | draft | none |  |  |  |  | names pass 2026-09-19 |
 | eclesiastes | ot | draft | none |  |  |  |  | names pass 2026-09-19 |
 | cantares | ot | draft | none |  |  |  |  | names pass 2026-09-19 |
-| isaias | ot | draft | none |  |  |  |  |  |
+| isaias | ot | ready | draft |  |  |  |  |  |
 | jeremias | ot | draft | none |  |  |  |  |  |
 | lamentaciones | ot | ready | none |  |  |  |  |  |
 | ezequiel | ot | ready | none |  |  |  |  |  |

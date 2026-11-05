@@ -7,27 +7,27 @@
 
 ### 1:1
 
-La visión que vio Habacuc, el profeta.
+El oráculo que vio Habacuc, el profeta.
 
 ### 1:2
 
-Hasta cuándo, Señor, clamaré y no escuchas? Daré voces de angustia y no me salvas?
+¿Hasta cuándo, Yahvé? He clamado y no escuchas. Grito a Ti: «¡Violencia!», y no salvas.
 
 ### 1:3
 
-¿Por qué me miras con la vista del mal y te inclinas ante la injusticia? Por qué me miras y permites la corrupción y la violencia? Por qué hay litigio y contienda siempre delante de ti?
+¿Por qué me haces ver maldad y contemplas sufrimiento? Y devastación y violencia *están* ante mí; y hay disputa, y la contienda se alza.
 
 ### 1:4
 
-Por eso la ley se desvanece y la justicia no sale eternlicaente, porque el malvado rodea al justo. Por eso la justicia sale retorcida.
+Por eso la ley se entumece y la justicia no sale jamás, porque el malvado rodea al justo; por eso sale la justicia torcida.
 
 ### 1:5
 
-Mirad entre las naciones y ved, y asombrados quedaréis. Porque hará cosas en vuestros días que no creeréis, aunque se os cuente.
+Vean entre las naciones y miren; asómbrense, queden asombrados, porque hago una obra en los días de ustedes; no creerán aunque se cuente.
 
 ### 1:6
 
-Porque he levantado a los caldeos, ese pueblo cruel e impetuoso, que marcha por el ancho país para tomar casas que no son suyas.
+Porque he aquí que Yo estoy levantando a los caldeos, la nación amarga e impetuosa, que marcha por los espacios abiertos de la tierra para tomar posesión de moradas que no le pertenecen.
 
 ### 1:7
 
@@ -39,39 +39,39 @@ Y sus caballos serán más veloces que leopardos, y serán más feroces que lobo
 
 ### 1:9
 
-Todos vendrán para la violencia, y su frente marchará hacia adelante. Recogerán como el viento el polvo.
+Toda ella vendrá para la violencia; la concentración de sus rostros *estará* hacia el este y juntará cautivos como la arena.
 
 ### 1:10
 
-Y él se burlará de los reyes, y los príncipes serán para él como el polvo. Él se burlará de todas las fortalezas, y amontonará polvo y lo tomará.
+Y él se burla de los reyes, y los gobernantes *son* objeto de burla para él. Él se ríe de toda fortificación, y amontona tierra y la captura.
 
 ### 1:11
 
-Entonces pasará el espíritu, y se volverá, y será avergonzado. Eso es su fuerza, su poder con Dios.
+Entonces pasó como el viento y siguió adelante; y se hizo culpable aquel cuya fuerza *es* su dios.
 
 ### 1:12
 
-¿Acaso no eres desde antiguo, oh Jehová, mi Dios, mi Santo? No morirás. Jehová ha establecido su justicia, y ha fundado la roca para el juicio.
+¿No *eres* Tú desde antiguo, Yahvé, mi Dios, mi Santo? No moriremos. Yahvé, lo has puesto para juicio; y, Roca, lo has establecido para corregir.
 
 ### 1:13
 
-Ojos puros, que no ven el mal, y que miran el sufrimiento, no pueden hacerlo. ¿Por qué miras a los que traicionan? Callarás cuando el devorador devora al impío. El justo está a salvo de él.
+*Eres* demasiado puro de ojos para ver el mal, y no puedes mirar hacia el daño. ¿Por qué miras a los traidores? ¿Guardas silencio cuando el malvado devora a alguien más justo que él?
 
 ### 1:14
 
-El hombre se convierte en peces del mar, como reptiles que no tienen quien los domine.
+Y haces al ser humano como los peces del mar, como los seres que se mueven, sin quien gobierne sobre ellos.
 
 ### 1:15
 
-Todo en él es esperanza, lo hace subir y lo hace descender, lo hace subir y lo hace descender. Por eso se alegra y se regocija.
+Todo lo ha hecho subir con un anzuelo; lo arrastra con su red y lo recoge en su red de pesca; por eso se alegra y se regocija.
 
 ### 1:16
 
-Por eso sacrificará a su ofrenda y quemará a su holocausto, porque en ellos está su grasa y su alimento. Él los consume.
+Por eso ofrece sacrificios a su red y quema incienso a su red de pesca, porque por medio de ellas su porción *es* grasosa y su alimento *es* graso.
 
 ### 1:17
 
-Por eso extenderá su ofrenda y no tendrá compasión de matar a las naciones.
+¿Por eso vaciará su red y no tendrá piedad al matar naciones continuamente?
 
 ## Capítulo 2
 

@@ -17,8 +17,14 @@
 
   <div class="estado-publicacion" aria-label="Estado de publicación">
     {{ if ne .Params.estadoLibro "approved" }}<span class="estado-libro">Book unfinished</span>{{ end }}
-    {{ if eq .Params.estadoCapitulo "draft-only" }}<span class="estado-borrador">Draft only</span>{{ end }}
   </div>
+
+  {{ if eq .Params.estadoCapitulo "draft-only" }}
+  <aside class="aviso-capitulo-borrador" aria-label="Capítulo sin aprobar">
+    <strong>Draft only</strong>
+    <p>Este capítulo sigue en revisión y todavía no ha sido aprobado.</p>
+  </aside>
+  {{ end }}
 
   <ul class="capitulos" aria-label="Capítulos de {{ $libro.Title }}">
     {{ $actual := .Params.capitulo }}

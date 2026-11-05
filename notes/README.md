@@ -9,6 +9,7 @@ paquete canónico de cada versículo.
 
 ## Notas actuales
 
+- [Génesis 12:9 — hacia el sur y el Neguev](ot/genesis/12-9.md)
 - [Éxodo 14:19 — el mensajero de Dios](ot/exodo/14-19.md)
 - [Arrepentimiento, cambio de mente, pesar y regreso](topics/arrepentimiento.md)
 - [Los nefilim](topics/nefilim.md)

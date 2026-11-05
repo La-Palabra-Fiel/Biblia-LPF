@@ -1225,23 +1225,23 @@ Y fueron los días de Téraj cinco años y dos cientas año, y murió Téraj en 
 
 ### 12:1
 
-Y dijo Jehová a Abram: Ve para ti de tu tierra y de tu parentela y de la casa de tu padre, a la tierra que te haré ver.
+Y dijo Yahvé a Abram: «Vete de tu tierra y de tu parentela y de la casa de tu padre a la tierra que te mostraré».
 
 ### 12:2
 
-Y te haré a nación grande, y te bendeciré, y engrandeceré tu nombre, y sé bendición.
+Y te haré una nación grande, y te bendeciré, y engrandeceré tu nombre; y sé una bendición.
 
 ### 12:3
 
-Y bendeciré a tus bendicientes, y a tu maldiciente maldeciré; y se bendecirán en ti todas las familias del suelo.
+Y bendeciré a quienes te bendigan, y a quien te maldiga lo maldeciré; y en ti serán bendecidas todas las familias de la tierra.
 
 ### 12:4
 
-Y fue Abram conforme a lo que habló a él Jehová, y fue con él Lot; y Abram hijo de cinco años y setenta año en su salir de Jarán.
+Y Abram se fue como Yahvé le había hablado, y Lot se fue con él. Y Abram tenía setenta y cinco años cuando salió de Harán.
 
 ### 12:5
 
-Y tomó Abram a Sarai su mujer y a Lot hijo de su hermano y a todo su adquirido que adquirieron y al alma que hicieron en Jarán, y salieron para ir a tierra de Canaán, y vinieron a tierra de Canaán.
+Y Abram tomó a Sarai, su esposa, y a Lot, hijo de su hermano, y todos sus bienes que habían reunido, y a las personas que habían adquirido en Harán. Y salieron para ir a la tierra de Canaán, y llegaron a la tierra de Canaán.
 
 ### 12:6
 
@@ -1249,7 +1249,7 @@ Y Abram pasó por la tierra hasta el lugar de Siquem, hasta el terebinto de Mor�
 
 ### 12:7
 
-Y se vio Jehová a Abram, y dijo: A tu semilla daré la tierra esta. Y edificó allí altar a Jehová el visto a él.
+Y Yahvé Se apareció a Abram y dijo: «A tu descendencia daré esta tierra». Y construyó allí un altar a Yahvé, quien Se le había aparecido.
 
 ### 12:8
 
@@ -1257,35 +1257,35 @@ Y se trasladó de allí a la montaña al este de Betel, y extendió su tienda, c
 
 ### 12:9
 
-Y partió Abram, yendo y partiendo hacia el Neguev.
+Y Abram partió y siguió viajando hacia el sur.
 
 ### 12:10
 
-Y fue hambre en la tierra, y descendió Abram a Egipto para morar allí, porque pesado el hambre en la tierra.
+Y hubo hambre en la tierra, y Abram bajó a Egipto para residir allí, porque el hambre pesaba en la tierra.
 
 ### 12:11
 
-Y fue cuando acercó a entrar a Egipto, y dijo a Sarai su mujer: He aquí ahora, he conocido que mujer bella de aspecto tú.
+Y sucedió que, cuando se acercó a entrar en Egipto, dijo a Sarai, su esposa: «Mira, por favor, sé que tú *eres* una mujer de hermosa apariencia».
 
 ### 12:12
 
-Y será que verán a ti los egipcios, y dirán: Su mujer esta; y matarán a mí, y a ti vivificarán.
+Y sucederá que, cuando los egipcios te vean, dirán: «Esta *es* su esposa». Y me matarán, y a ti te mantendrán con vida.
 
 ### 12:13
 
-Di ahora: Mi hermana tú, para que sea bueno a mí por causa de ti, y viva mi alma por razón de ti.
+Di, por favor: «Tú *eres* mi hermana», para que me vaya bien por ti, y mi alma vivirá por tu causa.
 
 ### 12:14
 
-Y fue al entrar Abram a Egipto, y vieron los egipcios a la mujer, que bella ella mucho.
+Y sucedió que, al entrar Abram en Egipto, los egipcios vieron a la mujer, que *era* muy hermosa.
 
 ### 12:15
 
-Y vieron a ella príncipes de Faraón, y alabaron a ella a Faraón; y fue tomada la mujer casa de Faraón.
+Y los funcionarios de Faraón la vieron y la elogiaron ante Faraón, y la mujer fue llevada a la casa de Faraón.
 
 ### 12:16
 
-Y a Abram hizo bien por causa de ella; y fue a él rebaño y ganado y asnos y siervos y siervas y asnas y camellos.
+Y trató bien a Abram por causa de ella; y tuvo ovejas y cabras, y ganado vacuno, y asnos, y siervos, y siervas, y asnas, y camellos.
 
 ### 12:17
 
@@ -1297,7 +1297,7 @@ Y Faraón llamó a Abram y dijo: «¿Qué *es* esto que me hiciste? ¿Por qué n
 
 ### 12:19
 
-¿Por qué dijiste: Mi hermana ella? Y tomé a ella para mí por mujer. Y ahora, he aquí tu mujer: toma y ve.
+¿Por qué dijiste: «Ella *es* mi hermana», y la tomé para mí como esposa? Y ahora, aquí *está* tu esposa; toma y vete.
 
 ### 12:20
 

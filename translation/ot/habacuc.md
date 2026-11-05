@@ -77,83 +77,83 @@ Por eso ofrece sacrificios a su red y quema incienso a su red de pesca, porque p
 
 ### 2:1
 
-Me mantendré en mi puesto de guardia y me estableceré en mi torre, y vigilaré para ver lo que dice a mí y qué responderé a su reprimenda.
+Me mantendré en mi puesto de guardia y me situaré sobre una fortificación; y vigilaré para ver qué me dirá y qué responderé respecto de mi reproche.
 
 ### 2:2
 
-Y me respondió el SEÑOR y me dijo: Escribe el visión, y llénala con explicaciones, para que el que la lea corra.
+Y Yahvé me respondió y dijo: «Escribe la visión y hazla clara sobre las tablas, para que corra quien lea en ella».
 
 ### 2:3
 
-Porque aún está el visión para el tiempo señalado; y al final se apresurará, y no miente. Si se retrasa, espera; porque ciertamente vendrá, no tardará.
+Porque la visión *es* aún para el tiempo señalado; y jadea hacia el fin, y no miente. Si se retrasa, espérala, porque ciertamente vendrá; no tardará.
 
 ### 2:4
 
-He aquí que el soberbio no es recto en su alma, pero el justo por su fe vivirá.
+Mira: su alma está hinchada; no es recta en él. Y el justo vivirá por su firmeza.
 
 ### 2:5
 
-Y aunque el vino es traicionero, el hombre es soberbio y no guarda, el que extiende como el mar su alma, y es como el muerto y no se sacia; y reúne a él todas las naciones, y a él juntan todas las gentes.
+Pues además el vino traiciona al hombre arrogante, y no permanece quien ha ensanchado su apetito como el Seol; y él *es* como la muerte y no se sacia. Y reunió hacia sí todas las naciones y congregó hacia sí todos los pueblos.
 
 ### 2:6
 
-¿No son todos estos contra mí proverbios y adivinanzas? Y dirá: ¡Ay del que multiplica lo que no le pertenece! ¿Hasta cuándo? Y el que carga sobre él, ¿no será cansado?
+¿No entonarán todos estos un proverbio contra él, y una sátira, enigmas para él? Y dirá: «¡Ay del que aumenta lo que no *es* suyo —¿hasta cuándo?— y carga sobre sí pesadas deudas!»
 
 ### 2:7
 
-¿No es pronto a levantarse el que te devora y te asusta? Y serás para ellos en despojos.
+¿No se levantarán de repente los que te muerden y despertarán los que te sacuden violentamente? Y serás botín para ellos.
 
 ### 2:8
 
-Porque tú has pedido ayuda a muchos pueblos, y todos los demás pueblos te responderán. Por la sangre de los hombres y la violencia de la tierra, por la ciudad y todos sus habitantes.
+Porque tú saqueaste muchas naciones, todo el resto de los pueblos te saqueará por la sangre humana y la violencia contra la tierra, la ciudad y todos los que habitan en ella.
 
 ### 2:9
 
-Ay de aquel que construye su casa con maldad, para poner su nido en lo alto, para escapar del castigo de la maldad.
+¡Ay del que obtiene ganancias injustas para su casa, para poner su nido en lo alto, para librarse de la mano del mal!
 
 ### 2:10
 
-Has aconsejado vergüenza para tu casa, has conspirado contra muchos pueblos y has pecado contra tu alma.
+Has tramado vergüenza para tu casa al acabar con muchos pueblos, y pecas contra ti mismo.
 
 ### 2:11
 
-Porque te quejarás a una piedra, y a un madero clavado en el muro, dirá: ¿No somos madera como tú?
+Porque la piedra clamará desde el muro, y la viga le responderá desde la madera.
 
 ### 2:12
 
-Ay del que construye una ciudad con sangre y funda una aldea con engaño.
+¡Ay de quien construye una ciudad con sangre y establece una ciudad con injusticia!
 
 ### 2:13
 
-¿Acaso no viene de Jehová de los ejércitos, para que los pueblos se fatiguen por el fuego y las naciones por la vanidad? Y se cansarán.
+¿Acaso no *es* esto de parte de Yahvé de los ejércitos? Y los pueblos se fatigarán solo para el fuego, y las naciones se cansarán para nada.
 
 ### 2:14
 
-Porque se llenará la tierra de conocer la gloria de Jehová, como las aguas cubren el mar.
+Porque la tierra se llenará del conocimiento de la gloria de Yahvé, como las aguas cubren el mar.
 
 ### 2:15
 
-Ay del que da de beber a su vecino, que le echa fuego en el corazón, y bebe para ver sus desnudeces.
+¡Ay del que da de beber a su compañero, arrimando tu odre y además embriagando, para mirar sus desnudeces!
 
 ### 2:16
 
-Has saciado tu alma con la maldad y con la gloria, bebe también tú y se te dará vómito. Se te dará un cáliz de la mano de Jehová, y la escarnecedora en lugar de tu gloria.
+Te has saciado de deshonra en vez de honor. Bebe también tú y sé tenido por incircunciso. La copa de la mano derecha de Yahvé girará hacia ti, y la deshonra *estará* sobre tu honor.
 
 ### 2:17
 
-Porque la violencia de Líbano te cubrirá, y el saqueo de las bestias te hará temblar, por la sangre de los hombres y la violencia de la tierra, por la ciudad y todos sus habitantes.
+Porque la violencia contra el Líbano te cubrirá, y la devastación de las bestias las aterrorizará, por la sangre humana y la violencia contra la tierra, la ciudad y todos los que habitan en ella.
 
 ### 2:18
 
-¿Qué provecho tiene el ídolo, que su artífice lo forja, el orfebre lo reviste de oro y el plateador le pone una cubierta de plata? Porque el artífice confía en su obra, para hacer ídolos vanos.
+¿De qué ha servido el ídolo —una imagen fundida y un maestro de mentira—, cuando su artífice lo ha tallado? Pues quien forma su figura ha confiado en él para hacer ídolos mudos.
 
 ### 2:19
 
-Ay del que dice al madero: Despierta, y al silencioso piedra: Levántate. ¿Acaso es él un dios que da oro y plata, y no hay espírituve en él?
+¡Ay del que dice al madero: «Despierta», a la piedra silenciosa: «Despierta»! ¿Él enseñará? Mira: él está recubierto de oro y plata, y no hay aliento alguno en su interior.
 
 ### 2:20
 
-Y el SEÑOR en su santuario: ¡Callad, toda la tierra, ante mí!
+Y Yahvé *está* en Su santo templo. ¡Silencio ante Él, toda la tierra!
 
 ## Capítulo 3
 

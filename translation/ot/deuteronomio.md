@@ -3211,119 +3211,119 @@ Y te hará volver Jehová a Egipto en naves, por el camino que dije a ti: No añ
 
 ### 29:1
 
-Estas las palabras del pacto que mandó Jehová a Moisés a cortar con hijos de Israel en tierra de Moab, aparte del pacto que cortó con ellos en Joreb.
+Estas *son* las palabras del pacto que Yahvé ordenó a Moisés celebrar con los hijos de Israel en la tierra de Moab, además del pacto que celebró con ellos en Horeb.
 
 ### 29:2
 
-Y llamó Moisés a todo Israel, y dijo a ellos: Ustedes vieron todo lo que hizo Jehová a ojos de ustedes en tierra de Egipto, a Faraón y a todos sus siervos y a toda su tierra,
+Y Moisés llamó a todo Israel y les dijo: «Ustedes han visto todo lo que hizo Yahvé ante los ojos de ustedes en la tierra de Egipto, a Faraón y a todos sus siervos y a toda su tierra».
 
 ### 29:3
 
-las pruebas las grandes que vieron tus ojos, las señales y los prodigios los grandes aquellos.
+Las grandes pruebas que vieron tus ojos, aquellas grandes señales y prodigios.
 
 ### 29:4
 
-Y no dio Jehová a ustedes corazón para conocer, y ojos para ver, y oídos para oír, hasta este día.
+Y Yahvé no les ha dado corazón para conocer, y ojos para ver, y oídos para oír, hasta este día.
 
 ### 29:5
 
-Y anduve a ustedes cuarenta año en el desierto; no se gastaron sus vestidos de sobre ustedes, y tu sandalia no se gastó de sobre tu pie.
+Y los conduje cuarenta años por el desierto; sus prendas no se desgastaron sobre ustedes, y tu sandalia no se desgastó sobre tu pie.
 
 ### 29:6
 
-Pan no comieron ustedes, y vino y bebida fuerte no bebieron ustedes, a fin de que conozcan que yo Jehová Dios de ustedes.
+No comieron pan, y no bebieron vino ni bebida embriagante, para que sepan que Yo *soy* Yahvé, su Dios.
 
 ### 29:7
 
-Y vinieron ustedes a este lugar, y salió Sihón, rey de Jeshbón, y Og, rey del Basán, a nuestro encuentro a la guerra, y los herimos.
+Y llegaron a este lugar; y salieron Sehón, rey de Hesbón, y Og, rey de Basán, a nuestro encuentro para la batalla, y los derrotamos.
 
 ### 29:8
 
-Y tomamos su tierra, y la dimos a heredad al reubenita y al gadita y a la mitad de tribu del menashita.
+Y tomamos su tierra y la dimos como herencia a los rubenitas, a los gaditas y a la mitad de la tribu manasita.
 
 ### 29:9
 
-Y guardarán las palabras de este pacto, y las harán, a fin de que prosperen todo lo que hagan.
+Y guardarán las palabras de este pacto y las cumplirán, para que comprendan todo lo que hagan.
 
 ### 29:10
 
-Ustedes parados hoy todos ustedes delante de Jehová Dios de ustedes: sus cabezas, sus tribus, sus ancianos y sus oficiales, todo hombre de Israel,
+Hoy todos ustedes están de pie ante Yahvé, su Dios: sus jefes, sus tribus, sus ancianos y sus oficiales, todo hombre de Israel.
 
 ### 29:11
 
-su pequeño, sus mujeres, y tu peregrino que en medio de tus campamentos, desde cortador de tus leños hasta aguador de tus aguas,
+Sus niños, sus mujeres y tu extranjero que *está* en medio de tus campamentos, desde el que corta tu leña hasta el que saca tu agua.
 
 ### 29:12
 
-para tu pasar en pacto de Jehová tu Dios y en su juramento que Jehová tu Dios corta contigo hoy,
+Para que entres en el pacto de Yahvé, tu Dios, y en Su juramento, que Yahvé, tu Dios, establece contigo hoy.
 
 ### 29:13
 
-a fin de levantar a ti hoy a él a pueblo, y él será a ti a Dios, como que habló a ti, y como que juró a tus padres, a Abraham, a Isaac y a Jacob.
+Para que te establezca hoy como pueblo para Él y Él sea Dios para ti, tal como te habló y tal como juró a tus padres, a Abraham, a Isaac y a Jacob.
 
 ### 29:14
 
-Y no con ustedes solos yo cortante este pacto y este juramento,
+Y no solo con ustedes establezco yo este pacto y este juramento.
 
 ### 29:15
 
-sino con el que hay aquí con nosotros parado hoy delante de Jehová nuestro Dios, y con el que no hay aquí con nosotros hoy.
+sino con quien está aquí con nosotros hoy, de pie ante Yahvé nuestro Dios, y con quien no está aquí con nosotros hoy.
 
 ### 29:16
 
-Porque ustedes conocieron lo que habitamos en tierra de Egipto, y lo que pasamos en medio de las naciones que pasaron ustedes,
+Porque ustedes saben que habitamos en la tierra de Egipto y que pasamos en medio de las naciones por las que pasaron.
 
 ### 29:17
 
-y vieron ustedes sus abominaciones y sus ídolos, madera y piedra, plata y oro, que con ellos.
+Y vieron sus cosas detestables y sus ídolos de madera y piedra, de plata y oro, que *estaban* con ellos.
 
 ### 29:18
 
-No sea que haya en ustedes hombre o mujer o familia o tribu cuyo corazón se vuelva hoy de con Jehová nuestro Dios, para andar a servir a dioses de las naciones aquellas; no sea que haya en ustedes raíz fructificante veneno y ajenjo,
+No sea que haya entre ustedes un hombre o una mujer o un clan o una tribu cuyo corazón se aparte hoy de Yahvé, nuestro Dios, para ir a servir a los dioses de aquellas naciones; no sea que haya entre ustedes una raíz que produzca veneno y ajenjo.
 
 ### 29:19
 
-y sea en su oír las palabras de este juramento, y se bendiga en su corazón, diciendo: Paz será a mí, porque en terquedad de mi corazón andaré, a fin de acabar lo saturado con lo sediento.
+Y sucederá que, al oír las palabras de esta maldición, se congratulará en su corazón, diciendo: «Tendré paz, aunque ande en la obstinación de mi corazón», para destruir lo regado junto con lo sediento.
 
 ### 29:20
 
-No querrá Jehová perdonar a él, porque entonces humeará nariz de Jehová y su celo en aquel hombre, y se echará en él todo el juramento el escrito en este libro, y borrará Jehová su nombre de debajo de los cielos.
+Yahvé no querrá perdonarlo, porque entonces humearán la ira de Yahvé y Su celo contra aquel hombre; y toda la maldición escrita en este libro se tenderá sobre él, y Yahvé borrará su nombre de debajo de los cielos.
 
 ### 29:21
 
-Y lo apartará Jehová para mal desde todas las tribus de Israel, conforme a todas las maldiciones del pacto la escrita en libro de esta torá.
+Y Yahvé lo separará de todas las tribus de Israel para el mal, conforme a todas las maldiciones del pacto escrito en este libro de la ley.
 
 ### 29:22
 
-Y dirá la generación la posterior, sus hijos que se levantarán de detrás de ustedes, y el extranjero que venga desde tierra lejana, y verán las heridas de aquella tierra y sus enfermedades que enfermó Jehová en ella:
+Y dirán la generación venidera, sus hijos que surgirán después de ustedes, y el extranjero que vendrá de una tierra lejana; y verán las heridas de aquella tierra y sus enfermedades, con las que Yahvé la hizo enfermar.
 
 ### 29:23
 
-azufre y sal, quemazón, toda su tierra; no será sembrada, y no brotará, y no subirá en ella toda hierba, como derribo de Sodoma y Amoré, Admá y Zeboim, que derribó Jehová en su nariz y en su furor.
+Toda su tierra *será* azufre y sal, una quemazón; no será sembrada ni producirá brotes, y no crecerá en ella ninguna hierba, como la destrucción de Sodoma y Gomorra, Adma y Zeboim, que Yahvé destruyó en Su ira y en Su furor.
 
 ### 29:24
 
-Y dirán todas las naciones: ¿Sobre qué hizo Jehová así a esta tierra? ¿Qué el ardor de esta nariz la grande?
+Y todas las naciones dirán: «¿Por qué ha tratado Yahvé así a esta tierra? ¿Qué *es* el ardor de esta gran ira?»
 
 ### 29:25
 
-Y dirán: Sobre que abandonaron el pacto de Jehová, Dios de sus padres, que cortó con ellos en su sacar a ellos desde tierra de Egipto,
+Y dirán: «Porque abandonaron el pacto de Yahvé, Dios de sus padres, que concertó con ellos cuando los sacó de la tierra de Egipto».
 
 ### 29:26
 
-y anduvieron y sirvieron dioses otros, y se postraron a ellos, dioses que no conocieron, y no repartió a ellos.
+Y fueron y sirvieron a otros dioses y se postraron ante ellos, dioses que no habían conocido y que no les había asignado.
 
 ### 29:27
 
-Y ardió nariz de Jehová en aquella tierra, para traer sobre ella toda la maldición la escrita en este libro.
+Y se encendió la ira de Yahvé contra aquella tierra, para traer sobre ella toda la maldición escrita en este libro.
 
 ### 29:28
 
-Y los arrancó Jehová de sobre su suelo en nariz y en furor y en ira grande, y los echó a tierra otra, como este día.
+Y Yahvé los arrancó de su tierra con ira, y con furia, y con gran indignación, y los arrojó a otra tierra, como en este día.
 
 ### 29:29
 
-Las ocultas a Jehová nuestro Dios, y las reveladas a nosotros y a nuestros hijos hasta siempre, para hacer todas las palabras de esta torá.
+Las cosas ocultas *son* de Yahvé, nuestro Dios, y las reveladas *son* para nosotros y para nuestros hijos por siempre, para cumplir todas las palabras de esta ley.
 
 ## Capítulo 30
 

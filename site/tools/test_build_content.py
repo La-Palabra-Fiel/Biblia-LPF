@@ -75,6 +75,28 @@ class RenderTextoVersiculoTests(unittest.TestCase):
             [("1", "Estos *son* los nombres.", ["*son* se suple para completar la oración."])],
         )
 
+    def test_writes_book_and_chapter_website_status(self) -> None:
+        with TemporaryDirectory() as directory:
+            function_globals = build_content["escribir_libro"].__globals__
+            original = function_globals["DIR_BIBLIA"]
+            function_globals["DIR_BIBLIA"] = Path(directory)
+            try:
+                book = build_content["Libro"]("isaias", "Isaías", "at", 23)
+                book.capitulos = {52: [("1", "Texto borrador.", [])], 53: [("1", "Texto aprobado.", [])]}
+                book.estado_libro = "unfinished"
+                book.estados_capitulos = {"52": "draft-only", "53": "approved"}
+                build_content["escribir_libro"](book)
+                draft = (Path(directory) / "isaias" / "52.md").read_text(encoding="utf-8")
+                approved = (Path(directory) / "isaias" / "53.md").read_text(encoding="utf-8")
+                index = (Path(directory) / "isaias" / "_index.md").read_text(encoding="utf-8")
+            finally:
+                function_globals["DIR_BIBLIA"] = original
+
+        self.assertIn('estadoLibro: "unfinished"', index)
+        self.assertIn("capitulosAprobados: 1", index)
+        self.assertIn('estadoCapitulo: "draft-only"', draft)
+        self.assertIn('estadoCapitulo: "approved"', approved)
+
 
 if __name__ == "__main__":
     unittest.main()

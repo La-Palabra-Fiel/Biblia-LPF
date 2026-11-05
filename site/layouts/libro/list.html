@@ -7,6 +7,9 @@
   </nav>
 
   <h1>{{ .Title }}</h1>
+  {{ if ne .Params.estadoLibro "approved" }}
+  <p class="estado-publicacion"><span class="estado-libro">Book unfinished</span></p>
+  {{ end }}
   <p class="subtitulo-pagina">
     {{ .Params.capitulos }} capítulo{{ if ne .Params.capitulos 1 }}s{{ end }} ·
     {{ .Params.versiculos }} versículos
@@ -17,7 +20,10 @@
   <h2 class="testamento-titulo" style="margin-top:2.5rem">Capítulos</h2>
   <ul class="capitulos">
     {{ range .Pages.ByWeight }}
-    <li><a href="{{ .RelPermalink }}">{{ .Params.capitulo }}</a></li>
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Params.capitulo }}</a>
+      {{ if eq .Params.estadoCapitulo "draft-only" }}<span class="estado-borrador estado-borrador-corto" aria-label="Draft only">Draft</span>{{ end }}
+    </li>
     {{ end }}
   </ul>
 

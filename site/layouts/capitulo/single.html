@@ -15,6 +15,11 @@
     <span class="cap-num">Capítulo {{ .Params.capitulo }}</span>
   </h1>
 
+  <div class="estado-publicacion" aria-label="Estado de publicación">
+    {{ if ne .Params.estadoLibro "approved" }}<span class="estado-libro">Book unfinished</span>{{ end }}
+    {{ if eq .Params.estadoCapitulo "draft-only" }}<span class="estado-borrador">Draft only</span>{{ end }}
+  </div>
+
   <ul class="capitulos" aria-label="Capítulos de {{ $libro.Title }}">
     {{ $actual := .Params.capitulo }}
     {{ range $libro.Pages.ByWeight }}

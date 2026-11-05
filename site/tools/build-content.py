@@ -31,6 +31,9 @@ RAIZ_REPO = RAIZ_SITIO.parent
 DIR_TRADUCCION = RAIZ_REPO / "translation"
 ARCHIVO_ESTADO = RAIZ_REPO / "STATUS.md"
 
+sys.path.insert(0, str(RAIZ_REPO / "tools"))
+from publication_progress import publication_progress  # noqa: E402
+
 DIR_BIBLIA = RAIZ_SITIO / "content" / "biblia"
 DIR_DATOS = RAIZ_SITIO / "data"
 DIR_ESTATICO = RAIZ_SITIO / "static"
@@ -101,6 +104,10 @@ class Libro:
         self.titulo_archivo = titulo
         self.notas: list[str] = []
         self.capitulos: dict[int, list[tuple[str, str, list[str]]]] = {}
+        self.slug_fuente = slug
+        self.testamento_fuente = "ot" if testamento == "at" else "nt"
+        self.estado_libro = "unfinished"
+        self.estados_capitulos: dict[str, str] = {}
 
     @property
     def n_versiculos(self) -> int:
@@ -122,6 +129,8 @@ def parsear_libro(ruta: Path, meta: dict) -> Libro:
         raise SystemExit(f"Libro desconocido (no está en el canon): {ruta}")
     info = meta[slug]
     libro = Libro(slug, info["titulo"], info["testamento"], info["orden"])
+    libro.slug_fuente = ruta.stem.lower()
+    libro.testamento_fuente = ruta.parent.name
 
     capitulo_actual: int | None = None
     versiculo_actual: str | None = None
@@ -232,6 +241,8 @@ def escribir_libro(libro: Libro) -> None:
         f"weight: {libro.orden}",
         f"capitulos: {libro.n_capitulos}",
         f"versiculos: {libro.n_versiculos}",
+        f'estadoLibro: "{libro.estado_libro}"',
+        f'capitulosAprobados: {sum(estado == "approved" for estado in libro.estados_capitulos.values())}',
         f'slugLibro: "{libro.slug}"',
         f"description: {yaml_txt(f'{libro.titulo} en La Palabra Fiel (LPF): {libro.n_capitulos} capítulos, {libro.n_versiculos} versículos.')}",
     ]
@@ -264,6 +275,8 @@ def escribir_libro(libro: Libro) -> None:
             f'testamento: "{libro.testamento}"',
             f"weight: {cap}",
             f"versiculos: {len(versiculos)}",
+            f'estadoLibro: "{libro.estado_libro}"',
+            f'estadoCapitulo: "{libro.estados_capitulos.get(str(cap), "draft-only")}"',
             f"description: {yaml_txt(f'{libro.titulo} {cap} — La Palabra Fiel (LPF). {descripcion}')}",
         ]
         if idx > 0:
@@ -316,6 +329,7 @@ def leer_estado() -> list[dict]:
                 "traduccion_el": t_el,
                 "alineacion_por": a_por,
                 "alineacion_el": a_el,
+                "estado_libro": "approved" if trad == "done" and alin == "done" else "unfinished",
             }
         )
     return salida
@@ -340,6 +354,21 @@ def main() -> None:
     libros = [parsear_libro(a, meta) for a in archivos]
     libros.sort(key=lambda l: l.orden)
 
+    estado_por_slug = {fila["slug"]: fila for fila in leer_estado()}
+    for libro in libros:
+        estado = estado_por_slug.get(libro.slug, {})
+        terminado = (
+            estado.get("traduccion") == "done"
+            and estado.get("alineacion") == "done"
+        )
+        progreso = publication_progress(
+            book=libro.slug_fuente,
+            testament=libro.testamento_fuente,
+            book_finished=terminado,
+        )
+        libro.estado_libro = progreso["bookStatus"]
+        libro.estados_capitulos = progreso["chapterStatuses"]
+
     if DIR_BIBLIA.exists():
         shutil.rmtree(DIR_BIBLIA)
     DIR_BIBLIA.mkdir(parents=True)
@@ -352,9 +381,9 @@ def main() -> None:
                 'description: "Libros de la Biblia con textos de trabajo disponibles en La Palabra Fiel (LPF), todavía en revisión."',
                 "---",
                 "",
-                "Libros con texto de trabajo disponible en la edición LPF. Estos",
-                "borradores siguen en revisión y no representan una traducción",
-                "completa terminada ni aprobada.",
+                "Libros con texto de trabajo disponible en la edición LPF. Los",
+                "capítulos aprobados se muestran como LPF; los demás se identifican",
+                "como Draft only. Cada libro conserva su estado hasta la aprobación final.",
                 "",
             ]
         ),
@@ -381,13 +410,17 @@ def main() -> None:
         canon.append({"slug": slug, "titulo": titulo, "testamento": "at",
                       "capitulos": l.n_capitulos if l else caps,
                       "versiculos": l.n_versiculos if l else 0,
-                      "publicado": bool(l)})
+                      "publicado": bool(l),
+                      "estadoLibro": l.estado_libro if l else "unavailable",
+                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0})
     for slug, titulo, caps in CANON_NT:
         l = publicados.get(slug)
         canon.append({"slug": slug, "titulo": titulo, "testamento": "nt",
                       "capitulos": l.n_capitulos if l else caps,
                       "versiculos": l.n_versiculos if l else 0,
-                      "publicado": bool(l)})
+                      "publicado": bool(l),
+                      "estadoLibro": l.estado_libro if l else "unavailable",
+                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0})
 
     n_at = sum(1 for l in libros if l.testamento == "at")
     n_nt = sum(1 for l in libros if l.testamento == "nt")
@@ -399,6 +432,10 @@ def main() -> None:
             "porcentajeAT": round(n_at / len(CANON_AT) * 100),
             "porcentajeNT": round(n_nt / len(CANON_NT) * 100),
             "porcentajeCanon": round(len(libros) / (len(CANON_AT) + len(CANON_NT)) * 100),
+            "capitulosAprobados": sum(
+                sum(estado == "approved" for estado in libro.estados_capitulos.values())
+                for libro in libros
+            ),
         },
         "publicados": [
             {
@@ -407,6 +444,8 @@ def main() -> None:
                 "testamento": l.testamento,
                 "capitulos": l.n_capitulos,
                 "versiculos": l.n_versiculos,
+                "estadoLibro": l.estado_libro,
+                "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()),
             }
             for l in libros
         ],

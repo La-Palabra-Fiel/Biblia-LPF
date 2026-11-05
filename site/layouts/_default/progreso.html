@@ -10,12 +10,13 @@
     <li class="cifra"><b>{{ .totales.libros }}</b><span>Libros con algún texto preliminar</span></li>
     <li class="cifra"><b>{{ .totales.capitulos }}</b><span>Capítulos con archivo de borrador</span></li>
     <li class="cifra"><b>{{ lang.FormatNumber 0 .totales.versiculos }}</b><span>Versículos con texto preliminar</span></li>
+    <li class="cifra"><b>{{ .totales.capitulosAprobados }}</b><span>Capítulos aprobados</span></li>
   </ul>
 
   <h2>Disponibilidad de texto preliminar</h2>
 
   <div class="aviso">
-    <p>Estas cifras cuentan únicamente los archivos y versículos con algún texto. No representan un porcentaje de avance, calidad, revisión ni aprobación. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver la revisión y las firmas registradas por etapa.</p>
+    <p>Los capítulos aprobados tienen texto y alineamiento confirmados por una persona. Los demás siguen disponibles como <em>Draft only</em>. Un libro permanece <em>Book unfinished</em> hasta su aprobación final. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver las firmas registradas por etapa.</p>
   </div>
 
   {{ range $t := slice "at" "nt" }}
@@ -28,15 +29,15 @@
   <div class="tabla-envoltura">
     <table>
       <thead>
-        <tr><th>Libro</th><th>Capítulos</th><th>Versículos</th><th>Borrador preliminar</th></tr>
+        <tr><th>Libro</th><th>Capítulos aprobados</th><th>Versículos</th><th>Estado del libro</th></tr>
       </thead>
       <tbody>
         {{ range $libros }}
         <tr>
           <td>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</td>
-          <td>{{ if .publicado }}{{ .capitulos }}{{ else }}—{{ end }}</td>
+          <td>{{ if .publicado }}{{ .capitulosAprobados }} / {{ .capitulos }}{{ else }}—{{ end }}</td>
           <td>{{ if .publicado }}{{ .versiculos }}{{ else }}—{{ end }}</td>
-          <td>{{ if .publicado }}Sí, muy preliminar{{ else }}No disponible{{ end }}</td>
+          <td>{{ if not .publicado }}No disponible{{ else if eq .estadoLibro "approved" }}LPF{{ else }}Book unfinished{{ end }}</td>
         </tr>
         {{ end }}
       </tbody>

@@ -33,7 +33,7 @@ python3 tools/build-content.py && hugo --gc --minify
 | --- | --- |
 | `content/biblia/<libro>/_index.md` | Página de cada libro |
 | `content/biblia/<libro>/<n>.md` | Página de cada capítulo (versículos en HTML) |
-| `data/libros.json` | Índice del canon, estado y estadísticas |
+| `data/libros.json` | Índice del canon, aprobación de capítulos, estado y estadísticas |
 | `data/versiones.json` | Estado leído de `../STATUS.md` |
 | `static/indice.json` | Índice de búsqueda del lado del cliente |
 
@@ -103,7 +103,9 @@ site/
 ## Publicación
 
 `.github/workflows/pages.yml` (en la raíz del repositorio) compila y publica en
-GitHub Pages con cada `push` que toque `site/`, `translation/` o `STATUS.md`.
+GitHub Pages con cada `push` que toque el sitio, la traducción, el estado, las
+aprobaciones de capítulo o el alineamiento canónico. El sitio lee estos datos
+directamente de `Biblia-LBF`; no publica capítulos en `cgv-data`.
 En el repositorio: **Settings → Pages → Source: GitHub Actions**.
 
 El `baseURL` lo inyecta el propio flujo de trabajo, así que el sitio funciona

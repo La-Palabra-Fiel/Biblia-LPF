@@ -12,6 +12,7 @@
           <th>Libro</th>
           <th>Traducción</th>
           <th>Alineación</th>
+          <th>Libro</th>
           <th>Firmado</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@
           <td>{{ .titulo }}</td>
           <td>{{ .traduccion }}</td>
           <td>{{ .alineacion }}</td>
+          <td>{{ if eq .estado_libro "approved" }}LPF{{ else }}Book unfinished{{ end }}</td>
           <td>
             {{ if eq .traduccion "done" }}
               {{ .traduccion_por }}{{ with .traduccion_el }}, {{ . }}{{ end }}

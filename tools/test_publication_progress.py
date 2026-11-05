@@ -63,6 +63,7 @@ class PublicationProgressTests(unittest.TestCase):
         self.assertEqual(document["links"][0]["status"], "hand")
         self.assertTrue(all(unit["status"] == "confirmed" for unit in document["links"][0]["units"]))
         self.assertEqual(public["bookStatus"], "unfinished")
+        self.assertEqual(public["schema"], "lpf-website-progress-v1")
         self.assertEqual(public["chapterStatuses"], {"1": "approved", "2": "draft-only"})
         self.assertEqual(public["chapterLabels"], {"1": None, "2": "Draft only"})
 

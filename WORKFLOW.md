@@ -282,8 +282,9 @@ archivo canónico `alignment/{nt|ot}/{libro}/{libro}-reverse-links.json` con
 estado humano `hand`. No repite ni infiere la alineación: materializa exactamente
 los enlaces revisados. Una revisión posterior invalida el manifiesto del
 capítulo y devuelve sus enlaces a `seeded-hand` hasta una nueva aprobación.
-La aprobación del capítulo permite publicación progresiva, pero no escribe
-`done` ni sustituye la aprobación completa del libro.
+La aprobación del capítulo permite que el sitio web lo muestre como LPF, pero
+no exporta a `cgv-data`, no escribe `done` ni sustituye la aprobación completa
+del libro.
 
 Antes de aprobar, una comprobación local sin costo verifica la cobertura de
 todos los `sourceTokenIds`, rechaza identificadores desconocidos, aplica las
@@ -579,27 +580,13 @@ Son dos pasos. Primero exportar:
 python3 tools/export.py filipenses
 ```
 
-Para publicar progreso antes de que el libro esté terminado, después de que
-Team Desk haya aprobado por lo menos un capítulo:
-
-```sh
-python3 tools/export.py isaias --progressive
-```
-
-El paquete progresivo conserva el libro como `unfinished`. Los capítulos
-aprobados se muestran como LPF normal; los demás llevan `Draft only`. Esta
-publicación no cambia `STATUS.md` ni constituye aprobación del libro.
-
 Eso escribe el paquete en `/tmp/lbf-export/`. No copie esos archivos a un
 árbol local de `cgv-data`.
 
-Sin `--progressive`, `export.py` se niega si el libro no está `done` y firmado.
-En ambos modos se niega si el texto, la alineación o la fila de `STATUS.md` de
-ese libro no están *commiteados*. Un
+`export.py` se niega si el libro no está `done` y firmado, o si el texto, la
+alineación o la fila de `STATUS.md` de ese libro no están *commiteados*. Un
 `sourceCommit` debe nombrar un *commit* que contenga el trabajo, así que la
 negativa llega antes de escribir el paquete, no después de intentar publicarlo.
-El modo progresivo comprueba además que los manifiestos de capítulo y las
-aprobaciones de versículo estén *commiteados* y ligados a la alineación canónica.
 
 Después publicar. `tools/publish.py` es el publicador:
 
@@ -608,13 +595,12 @@ python3 tools/publish.py filipenses --data-repo ../cgv-data
 ```
 
 Eso corta la rama `lbf-<libro>-<fecha>` desde `origin/main` y hace un solo
-*commit* con tres archivos:
+*commit* con dos archivos:
 
 | Archivo | Destino en `cgv-data` |
 | --- | --- |
 | `<libro>.lbf.md` | `bibles/LBF/<libro>.lbf.md` |
 | `<libro>.alignment.json` | `bibles/LBF/alignments/<libro>.alignment.json` |
-| `<libro>.status.json` | `bibles/LBF/status/<libro>.status.json` |
 
 El *commit* se hace en un `git worktree` temporal. Su copia de trabajo de
 `cgv-data` no se toca: no cambia de rama y sus archivos sucios no entran.
@@ -624,9 +610,7 @@ abrir el *pull request*. Revise el `--stat` antes de empujar.
 
 `publish.py` se niega si:
 
-- una publicación final no tiene el libro `done` y firmado en `STATUS.md`
-- una publicación progresiva no tiene capítulos aprobados, alineados y ligados
-  al mismo `sourceCommit`
+- el libro no está `done` y firmado en `STATUS.md`
 - el texto, la alineación o la fila de `STATUS.md` de ese libro no están
   *commiteados* — `export.py` ya lo comprueba; `publish.py` lo vuelve a comprobar
 - el paquete no coincide con `HEAD` — reexporte
@@ -639,6 +623,19 @@ Ese último caso importa: un `git init` vacío llamado `cgv-data` acepta
 archivos y no publica nada.
 
 Este repositorio no importa texto desde `cgv-data`.
+
+### Sitio web de LPF
+
+El sitio web no usa `cgv-data`. GitHub Pages lo compila directamente desde
+`translation/`, `STATUS.md`, los manifiestos de Team Desk y el alineamiento
+canónico de este repositorio. Por eso puede mostrar el trabajo más reciente
+antes de que el libro esté terminado.
+
+Un capítulo aprobado se muestra como LPF, sin etiqueta de capítulo. Los demás
+capítulos llevan `Draft only`. Mientras traducción y alineamiento del libro no
+estén ambas en `done`, todas sus páginas conservan `Book unfinished`. Esto es
+estado del sitio, no una publicación del reader app ni una exportación a
+`cgv-data`.
 
 Translator presenta este publicador como su último paso. La app no vuelve a
 implementar la publicación: entrega el libro y la ruta de la copia existente de

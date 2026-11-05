@@ -24,6 +24,7 @@
           <a href="{{ .RelPermalink }}">
             <span class="libro-nombre">{{ .Title }}</span>
             <span class="libro-caps">{{ .Params.capitulos }} cap.</span>
+            {{ if ne .Params.estadoLibro "approved" }}<span class="estado-libro">Book unfinished</span>{{ end }}
           </a>
         </li>
         {{ end }}
@@ -34,9 +35,9 @@
 
   <div class="aviso">
     <p>
-      La traducción está en una fase inicial. Los textos disponibles son
-      borradores muy preliminares e incompletos; su presencia aquí no significa
-      que estén terminados ni aprobados. Consulta el <a href="{{ "progreso/" | relURL }}">progreso</a> y
+      El sitio incluye el trabajo más reciente. Cada capítulo sin aprobación
+      humana está marcado <em>Draft only</em>; un capítulo aprobado se muestra como LPF.
+      El libro sigue marcado <em>Book unfinished</em> hasta su aprobación final. Consulta el <a href="{{ "progreso/" | relURL }}">progreso</a> y
       el <a href="{{ "versiones/" | relURL }}">estado de revisión</a>.
     </p>
   </div>

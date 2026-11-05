@@ -3,7 +3,7 @@
 
 Consumes the package written by `tools/export.py`. It does not write the
 caller's `cgv-data` working tree: the commit is made in a temporary git
-worktree cut from `<remote>/<base>`, so the branch contains only the three
+worktree cut from `<remote>/<base>`, so the branch contains only the two
 historical LBF technical paths and a dirty local checkout is left untouched.
 
 `cgv-data` is output only. This script never reads LBF text or alignment
@@ -31,11 +31,9 @@ from export import (  # noqa: E402
     parse_status_row,
     sha256_file,
 )
-from publication_progress import approved_progress_source_paths, publication_progress  # noqa: E402
 
 TEXT_TARGET = "bibles/LBF/{book}.lbf.md"
 ALIGN_TARGET = "bibles/LBF/alignments/{book}.alignment.json"
-STATUS_TARGET = "bibles/LBF/status/{book}.status.json"
 
 DATA_REPO_SLUG = "cgv-data"
 COMPARE_URL = (
@@ -79,27 +77,19 @@ def require_data_repo(repo: Path) -> None:
         raise SystemExit(f"{repo} has no commits. That is not the real cgv-data.")
 
 
-def read_package(pkg: Path, book: str) -> tuple[Path, Path, Path, dict, dict]:
+def read_package(pkg: Path, book: str) -> tuple[Path, Path, dict]:
     text_path = pkg / f"{book}.lbf.md"
     align_path = pkg / f"{book}.alignment.json"
-    status_path = pkg / f"{book}.status.json"
-    missing = [str(p) for p in (text_path, align_path, status_path) if not p.is_file()]
+    missing = [str(p) for p in (text_path, align_path) if not p.is_file()]
     if missing:
         raise SystemExit(
             "export package incomplete: " + ", ".join(missing) + f"\nRun: python3 tools/export.py {book} --out {pkg}"
         )
     meta = json.loads(align_path.read_text(encoding="utf-8"))
-    progress = json.loads(status_path.read_text(encoding="utf-8"))
-    return text_path, align_path, status_path, meta, progress
+    return text_path, align_path, meta
 
 
-def check_package_current(
-    book: str,
-    row: dict[str, str],
-    text_path: Path,
-    meta: dict,
-    progress: dict,
-) -> None:
+def check_package_current(book: str, row: dict[str, str], text_path: Path, meta: dict) -> None:
     """Refuse a package that no longer matches the repository it came from."""
     head = git_head()
     header = HEADER_COMMIT.search(text_path.read_text(encoding="utf-8"))
@@ -107,11 +97,10 @@ def check_package_current(
         raise SystemExit(f"{text_path} has no sourceCommit header. Re-export.")
     text_commit = header.group(1)
     align_commit = meta.get("sourceCommit")
-    progress_commit = progress.get("sourceCommit")
-    if text_commit != align_commit or text_commit != progress_commit:
+    if text_commit != align_commit:
         raise SystemExit(
             f"package is inconsistent: text sourceCommit {text_commit[:12]} "
-            f"alignment {str(align_commit)[:12]} progress {str(progress_commit)[:12]}. Re-export."
+            f"but alignment sourceCommit {str(align_commit)[:12]}. Re-export."
         )
     if text_commit != head:
         raise SystemExit(
@@ -129,28 +118,12 @@ def check_package_current(
             f"{source_file} changed since the export. The signature no longer binds it.\n"
             f"Re-export, or clear the `done` signature per DATA_CONTRACT.md."
         )
-    finished = progress.get("bookStatus") == "approved"
-    if finished:
-        if row["translation"] != "done" or row["alignment"] != "done":
-            raise SystemExit(
-                f"{book} is not finished. translation={row['translation']} alignment={row['alignment']}"
-            )
-        if not row["translation_by"] or not row["alignment_by"]:
-            raise SystemExit(f"{book} is done but unsigned")
-    else:
-        if progress.get("schema") != "lpf-publication-progress-v1":
-            raise SystemExit("progressive package has no supported LPF status schema. Re-export.")
-        current = publication_progress(
-            book=book,
-            testament=row["testament"],
-            book_finished=False,
-            source_commit=head,
+    if row["translation"] != "done" or row["alignment"] != "done":
+        raise SystemExit(
+            f"{book} is not finished. translation={row['translation']} alignment={row['alignment']}"
         )
-        for key in ("bookStatus", "chapterStatuses", "approvedChapters", "draftChapters"):
-            if progress.get(key) != current.get(key):
-                raise SystemExit(f"progressive package {key} is stale. Re-export.")
-        if not progress.get("approvedChapters"):
-            raise SystemExit(f"{book} has no approved chapter to publish progressively")
+    if not row["translation_by"] or not row["alignment_by"]:
+        raise SystemExit(f"{book} is done but unsigned")
 
 
 def status_gate(book: str) -> None:
@@ -195,7 +168,6 @@ def publish(
     base_ref: str,
     text_path: Path,
     align_path: Path,
-    status_path: Path,
     message: str,
 ) -> str:
     if git(repo, "rev-parse", "--verify", branch, check=False):
@@ -210,7 +182,6 @@ def publish(
         targets = {
             TEXT_TARGET.format(book=book): text_path,
             ALIGN_TARGET.format(book=book): align_path,
-            STATUS_TARGET.format(book=book): status_path,
         }
         for rel, src in targets.items():
             dest = work / rel
@@ -220,7 +191,7 @@ def publish(
         staged = git(work, "diff", "--cached", "--name-only")
         if not staged:
             raise SystemExit(f"{book} is already published at {base_ref}. Nothing to do.")
-        # Only the three historical LBF technical paths may appear. Fewer is normal: republishing an
+        # Only the two LBF paths may appear. Fewer is normal: republishing an
         # unchanged book restages only the alignment, whose publishedAt moves.
         unexpected = sorted(set(staged.splitlines()) - set(targets))
         if unexpected:
@@ -265,26 +236,21 @@ def main() -> int:
 
     book = args.book
     row = parse_status_row(book)
-    text_path, align_path, progress_path, meta, progress = read_package(args.package, book)
-    progress_sources = approved_progress_source_paths(progress, row["testament"])
-    problem = committed_source_problem(book, row, progress_sources)
+    text_path, align_path, meta = read_package(args.package, book)
+    problem = committed_source_problem(book, row)
     if problem:
         raise SystemExit(problem)
-    check_package_current(book, row, text_path, meta, progress)
-    if progress.get("bookStatus") == "approved":
-        status_gate(book)
+    check_package_current(book, row, text_path, meta)
+    status_gate(book)
 
     repo = resolve_data_repo(args.data_repo)
     require_data_repo(repo)
     branch = args.branch or branch_name(book, meta)
     base_ref = start_point(repo, args.remote, args.base, fetch=not args.no_fetch)
     label = DISPLAY_NAME.get(book, book.capitalize())
-    mode = "approved" if progress.get("bookStatus") == "approved" else "unfinished"
-    message = f"Publish {mode} {label} LPF text, alignment, and status."
+    message = f"Publish signed {label} LPF text and alignment."
 
-    sha = publish(
-        book, repo, branch, base_ref, text_path, align_path, progress_path, message
-    )
+    sha = publish(book, repo, branch, base_ref, text_path, align_path, message)
 
     print(f"\nbranch {branch}")
     print(f"commit {sha}")

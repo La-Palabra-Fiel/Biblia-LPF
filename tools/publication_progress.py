@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Canonical chapter alignment promotion and progressive LPF publication state.
+"""Canonical chapter alignment promotion and LPF website progress state.
 
 ``LBF`` remains the historical technical identifier used by paths and schemas.
 The public/editorial name is LPF.
@@ -16,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VERSE_HEADING = re.compile(r"^###\s+(\d+):(\d+)\s*$")
 REF_IN_LINK = re.compile(r"(\d+):(\d+)")
-FINISHED_LINK_STATUSES = {"mapped", "hand", "manual", "manual-realign"}
+FINISHED_LINK_STATUSES = {"hand", "manual", "manual-realign"}
 
 
 def read_json(path: Path, default):
@@ -301,7 +301,7 @@ def publication_progress(
     approved = [int(chapter) for chapter, status in chapter_statuses.items() if status == "approved"]
     drafts = [int(chapter) for chapter, status in chapter_statuses.items() if status == "draft-only"]
     return {
-        "schema": "lpf-publication-progress-v1",
+        "schema": "lpf-website-progress-v1",
         "technicalBibleId": "LBF",
         "displayName": "LPF",
         "bookId": book,
@@ -316,14 +316,3 @@ def publication_progress(
         "sourceCommit": source_commit,
         "validationErrors": chapter_errors,
     }
-
-
-def approved_progress_source_paths(progress: dict, testament: str) -> list[Path]:
-    book = str(progress["bookId"])
-    paths: list[Path] = []
-    for chapter in progress.get("approvedChapters") or []:
-        paths.append(chapter_review_path(book, testament, int(chapter)))
-        review = read_json(paths[-1], {})
-        for verse in review.get("verseWordingConfirmed") or []:
-            paths.append(human_candidate_path(book, testament, int(chapter), int(verse)))
-    return paths

@@ -33,7 +33,7 @@ TEAM_DRAFT_MODEL_REVIEW_ON = "2026-11-30"
 # room for the complete JSON while placing a firm per-verse cost ceiling.
 DRAFT_MAX_COMPLETION_TOKENS = 4000
 DRAFT_EXPECTED_COMPLETION_TOKENS = 1200
-DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v6"
+DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v7"
 COMPATIBLE_DRAFT_SPEC_VERSIONS = {
     "lbf-full-reverse-interlinear-v1",
     "lbf-full-reverse-interlinear-v2",
@@ -126,11 +126,26 @@ def allowed_token_ids(packet: dict) -> set[str]:
     }
 
 
+def lexical_alignment_surface(value: str) -> str:
+    """Keep alignment words and supplied-word markup, never punctuation."""
+    pieces: list[str] = []
+    pattern = r"(?<!\*)\*([^*\n]+)\*(?!\*)|[^\W_]+"
+    for match in re.finditer(pattern, str(value or ""), re.UNICODE):
+        supplied = match.group(1)
+        if supplied is None:
+            pieces.append(match.group(0))
+            continue
+        words = re.findall(r"[^\W_]+", supplied, re.UNICODE)
+        if words:
+            pieces.append("*" + " ".join(words) + "*")
+    return " ".join(pieces)
+
+
 def merge_source_units_by_id(units: list[dict]) -> list[dict]:
     """Merge adjacent overlapping rows without bridging Spanish reordering."""
     clean: list[dict] = []
     for item in units or []:
-        surface = " ".join(str((item or {}).get("es") or "").split())
+        surface = lexical_alignment_surface((item or {}).get("es") or "")
         ids = list(dict.fromkeys(str(x) for x in ((item or {}).get("sourceTokenIds") or [])))
         if not surface or not ids:
             continue

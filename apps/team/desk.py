@@ -43,7 +43,7 @@ from auto_pass import write_verse  # noqa: E402
 from books import OT, get_book  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
 from source_packet import build_packet, list_verses  # noqa: E402
-from draft_lib import DRAFT_EXPECTED_COMPLETION_TOKENS, DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
+from draft_lib import DRAFT_EXPECTED_COMPLETION_TOKENS, DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, lexical_alignment_surface, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
 from audit_gpt import AUDIT_MAX_COMPLETION_TOKENS  # noqa: E402
 from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_prompt  # noqa: E402
 
@@ -141,7 +141,7 @@ def alignment_preflight_findings(packet: dict, units, spanish: str = "") -> tupl
     covered: set[str] = set()
     clean: list[dict] = []
     for index, unit in enumerate(units, start=1):
-        surface = " ".join(str((unit or {}).get("es") or "").split())
+        surface = lexical_alignment_surface((unit or {}).get("es") or "")
         ids = list(dict.fromkeys(str(value) for value in ((unit or {}).get("sourceTokenIds") or []) if str(value)))
         if not surface or not ids:
             findings.append({"severity": "fail", "code": "unit-incomplete", "issue": f"Alignment unit {index} needs Spanish and source tokens.", "sourceTokenIds": ids, "spanishSpan": surface})
@@ -565,6 +565,7 @@ def chapter_view(slug: str, chapter) -> dict:
                 "uncertainties": [],
                 "evidenceDecisions": [],
             }
+        gate_candidate = candidate
         if candidate.get("units"):
             candidate = {**candidate, "units": merge_source_units_by_id(candidate["units"])}
         recovered_verse = recovered_verses.get(str(verse)) or {}
@@ -575,7 +576,7 @@ def chapter_view(slug: str, chapter) -> dict:
         # visible seed as an editable starting point; it remains unapproved
         # and must still pass exact Spanish/unit validation.
         recovered_verse = restore_recovered_units(recovered_verse, candidate)
-        gate = gate_for(slug, number, verse, candidate_file, candidate) if candidate_file else {
+        gate = gate_for(slug, number, verse, candidate_file, gate_candidate) if candidate_file else {
             "source": "canonical-local-seed",
             "draftModel": "human-local",
             "draftReasoning": "not-required",

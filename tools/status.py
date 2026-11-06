@@ -96,6 +96,10 @@ HAND_LINK_STATUSES = FINISHED_LINK_STATUSES  # alias for older callers
 CHECKED_STATES = {"ready", "done"}
 
 
+def words_only_surface(text: str) -> bool:
+    return bool(re.fullmatch(r"[^\W_]+(?:\s+[^\W_]+)*", str(text or ""), re.UNICODE))
+
+
 def translation_path(book: str, testament: str) -> Path:
     return ROOT / "translation" / testament / f"{book}.md"
 
@@ -249,6 +253,7 @@ def alignment_errors(book: str, testament: str, expected: int | None) -> list[st
 
     verses = parse_verses(translation_path(book, testament))
     links_by_verse: dict[tuple[int, int], list[dict]] = {}
+    word_surface_errors: set[tuple[int, int]] = set()
     for link in links:
         match = REF_IN_LINK.search(str(link.get("reference") or ""))
         if not match:
@@ -259,6 +264,13 @@ def alignment_errors(book: str, testament: str, expected: int | None) -> list[st
         for unit in link.get("units") or []:
             if not unit.get("sourceTokenIds"):
                 errors.append(f"{book} {key[0]}:{key[1]}: a unit has no source tokens")
+                break
+            if not words_only_surface(unit.get("surface") or ""):
+                if key not in word_surface_errors:
+                    errors.append(
+                        f"{book} {key[0]}:{key[1]}: alignment surfaces must contain words only"
+                    )
+                    word_surface_errors.add(key)
                 break
 
     for key, verse_links in links_by_verse.items():

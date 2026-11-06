@@ -77,6 +77,30 @@ class PublicationProgressTests(unittest.TestCase):
         self.assertEqual(document["links"][0]["status"], "seeded-hand")
         self.assertEqual(document["links"][0]["units"][0]["status"], "seeded")
 
+    def test_canonical_units_exclude_punctuation_and_markdown(self):
+        units = progress.canonical_units(
+            "¿Y *es* verdad, para siempre?",
+            [
+                {"es": "¿Y *es* verdad,", "sourceTokenIds": ["h1"]},
+                {"es": "para siempre?", "sourceTokenIds": ["h2"]},
+            ],
+            7,
+        )
+
+        self.assertEqual(
+            [unit["surface"] for unit in units],
+            ["Y", "es", "verdad", "para siempre"],
+        )
+        self.assertTrue(all(progress.words_only_surface(unit["surface"]) for unit in units))
+        self.assertEqual(
+            [unit["sourceTokenIds"] for unit in units],
+            [["h1"], ["h1"], ["h1"], ["h2"]],
+        )
+        self.assertEqual(
+            ["¿Y *es* verdad, para siempre?"[unit["charStart"]:unit["charEnd"]] for unit in units],
+            ["Y", "es", "verdad", "para siempre"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

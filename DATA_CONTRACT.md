@@ -29,6 +29,14 @@ Every editable verse exists once. Every editable alignment exists once.
 Verse labels are Protestant. Token IDs are persisted. Alignments name
 token IDs, not character offsets as the source of truth.
 
+Canonical alignment surfaces contain words only. Punctuation, quotation
+marks, exclamation and question marks, and Markdown emphasis markers belong
+to the Spanish translation, never to a reverse-link `surface`. When
+punctuation separates words that cite the same source token, the canonical
+alignment uses separate lexical units with the same `sourceTokenIds`; its
+character spans cover only the words and intervening whitespace inside each
+unit.
+
 ## Source boundary
 
 `SOURCE_POLICY.md` is normative. Translation, audit, and alignment may use

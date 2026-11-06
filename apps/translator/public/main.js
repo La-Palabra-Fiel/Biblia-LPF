@@ -2145,7 +2145,7 @@ async function showFinalizationView() {
   finalizationView.hidden = false;
   sidebar.hidden = true;
   setInvestigationListOpen(false);
-  finalizationBookTitle.textContent = activeBookLabel() || state.workflow?.label || "this book";
+  finalizationBookTitle.textContent = state.workflow?.label || activeBookLabel() || "this book";
   finalizationView.scrollTop = 0;
   await loadBookWorkflow();
 }
@@ -3448,20 +3448,29 @@ window.addEventListener("hashchange", () => {
   }
 });
 
-await loadInvestigations();
-renderTabs();
-await loadAvailableBooks();
-await loadTranslationDocument();
-await loadBookWorkflow();
-await Promise.all([
-  enrichPhraseReferencesFromUnits(),
-  loadContinuationUnits(),
-  loadAiAvailability()
-]);
-state.phraseIndex = firstIncompletePhraseIndex();
-renderTranslationPhrase();
-await loadApprovedDecisions({ applyToText: !state.translationLoadedFromDisk });
-await openInitialRoute();
+if (new URLSearchParams(window.location.search).get("view") === "finish") {
+  // Book publication uses canonical files and does not require legacy phrase seeds.
+  // Never initialize the phrase editor (or its save hooks) in this entry point.
+  state.view = "finalization";
+  closeFinalizationButton.hidden = true;
+  await loadBookWorkflow();
+  await showFinalizationView();
+} else {
+  await loadInvestigations();
+  renderTabs();
+  await loadAvailableBooks();
+  await loadTranslationDocument();
+  await loadBookWorkflow();
+  await Promise.all([
+    enrichPhraseReferencesFromUnits(),
+    loadContinuationUnits(),
+    loadAiAvailability()
+  ]);
+  state.phraseIndex = firstIncompletePhraseIndex();
+  renderTranslationPhrase();
+  await loadApprovedDecisions({ applyToText: !state.translationLoadedFromDisk });
+  await openInitialRoute();
+}
 
 bookSelect?.addEventListener("change", async () => {
   if (isTranslationDirty()) {

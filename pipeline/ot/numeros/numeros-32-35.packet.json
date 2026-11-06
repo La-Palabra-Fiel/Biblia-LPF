@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "numeros",
   "label": "Números",
   "testament": "ot",
@@ -9,21 +12,29 @@
   "verse": 35,
   "oshbOsis": "Num.32.35",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h04032035001",
       "oshbId": "04mhR",
+      "oshbRef": "Num.32.35!1",
       "position": 1,
       "surface": "וְאֶת",
       "paleo": "𐤅𐤀𐤕",
@@ -31,38 +42,41 @@
       "strongs": "H853",
       "morph": "HC/To",
       "morphExpanded": "Hebrew; conjunction; direct object marker",
-      "ahrc": {
-        "concreteSense": "AT",
-        "definition": "A function word to indicate presence or occurrence, a goal of an implied or indicated action, etc. Commonly used as a grammatical tool to identify the direct object of a verb. Alternate Translations: by; for; to; with Edenics: at - a moving at something",
-        "parentRoot": "את",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "bhu",
+      "corpusEvidenceId": "853"
     },
     {
       "sourceTokenId": "h04032035002",
       "oshbId": "043Kw",
+      "oshbRef": "Num.32.35!2",
       "position": 2,
       "surface": "עַטְרֹ֥ת",
       "paleo": "𐤏𐤈𐤓𐤕",
       "lemma": "5855+",
       "strongs": "H5855",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": null,
+      "corpusEvidenceId": "5855+"
     },
     {
       "sourceTokenId": "h04032035003",
       "oshbId": "04YYF",
+      "oshbRef": "Num.32.35!3",
       "position": 3,
       "surface": "שׁוֹפָ֛ן",
       "paleo": "𐤔𐤅𐤐𐤍",
       "lemma": "5855",
       "strongs": "H5855",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "jhs",
+      "corpusEvidenceId": "5855"
     },
     {
       "sourceTokenId": "h04032035004",
       "oshbId": "04Cwd",
+      "oshbRef": "Num.32.35!4",
       "position": 4,
       "surface": "וְאֶת",
       "paleo": "𐤅𐤀𐤕",
@@ -70,34 +84,599 @@
       "strongs": "H853",
       "morph": "HC/To",
       "morphExpanded": "Hebrew; conjunction; direct object marker",
-      "ahrc": {
-        "concreteSense": "AT",
-        "definition": "A function word to indicate presence or occurrence, a goal of an implied or indicated action, etc. Commonly used as a grammatical tool to identify the direct object of a verb. Alternate Translations: by; for; to; with Edenics: at - a moving at something",
-        "parentRoot": "את",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "bhu",
+      "corpusEvidenceId": "853"
     },
     {
       "sourceTokenId": "h04032035005",
       "oshbId": "04fbE",
+      "oshbRef": "Num.32.35!5",
       "position": 5,
       "surface": "יַעְזֵ֖ר",
       "paleo": "𐤉𐤏𐤆𐤓",
       "lemma": "3270",
       "strongs": "H3270",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "fdx",
+      "corpusEvidenceId": "3270"
     },
     {
       "sourceTokenId": "h04032035006",
       "oshbId": "04SUQ",
+      "oshbRef": "Num.32.35!6",
       "position": 6,
       "surface": "וְיָגְבֳּהָֽה",
       "paleo": "𐤅𐤉𐤂𐤁𐤄𐤄",
       "lemma": "c/3011",
       "strongs": "H3011",
       "morph": "HC/Np",
-      "morphExpanded": "Hebrew; conjunction; noun proper"
+      "morphExpanded": "Hebrew; conjunction; noun proper",
+      "lexicalEvidenceId": "etq",
+      "corpusEvidenceId": "3011"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "853",
+      "lexicalIndexId": "bhu",
+      "headword": "אֵת",
+      "transliteration": "ʾēt",
+      "partOfSpeech": "T",
+      "indexDefinition": "mark of the accusative",
+      "bdbEntryId": "a.gm.aa",
+      "possibleSenses": [
+        "mark of the accusative"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "5855",
+      "lexicalIndexId": "jhs",
+      "headword": "עַטְרוֹת שׁוֹפָן",
+      "transliteration": "ʿaṭrôt šôpān",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Atroth",
+      "bdbEntryId": "p.ch.ae",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3270",
+      "lexicalIndexId": "fdx",
+      "headword": "יַעְזֵר",
+      "transliteration": "yaʿzēr",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Jaazer",
+      "bdbEntryId": "p.bz.an",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3011",
+      "lexicalIndexId": "etq",
+      "headword": "יׇגְבְּהָה",
+      "transliteration": "yogbĕhâ",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Jogbehah",
+      "bdbEntryId": "c.ah.ae",
+      "possibleSenses": [
+        "exalted"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 6,
+      "total": 6,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m040320001",
+        "sourceTokenIds": [
+          "h04032035001",
+          "h04032035002",
+          "h04032035003",
+          "h04032035004",
+          "h04032035005",
+          "h04032035006"
+        ]
+      },
+      {
+        "nodeId": "m040320002",
+        "class": "cl",
+        "rule": "O2CL",
+        "sourceTokenIds": [
+          "h04032035001",
+          "h04032035002",
+          "h04032035003",
+          "h04032035004",
+          "h04032035005",
+          "h04032035006"
+        ]
+      },
+      {
+        "nodeId": "m040320003",
+        "class": "np",
+        "rule": "Conj3Np",
+        "role": "o",
+        "head": "true",
+        "sourceTokenIds": [
+          "h04032035001",
+          "h04032035002",
+          "h04032035003",
+          "h04032035004",
+          "h04032035005",
+          "h04032035006"
+        ]
+      },
+      {
+        "nodeId": "m040320004",
+        "class": "np",
+        "rule": "OmpNP",
+        "sourceTokenIds": [
+          "h04032035001",
+          "h04032035002",
+          "h04032035003"
+        ]
+      },
+      {
+        "nodeId": "m040320005",
+        "class": "np",
+        "rule": "OmpNP",
+        "sourceTokenIds": [
+          "h04032035004",
+          "h04032035005"
+        ]
+      }
+    ],
+    "tokenRoles": {}
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Números 32:34",
+      "oshbOsis": "Num.32.34",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "04Auy",
+          "oshbRef": "Num.32.34!1",
+          "surface": "וַיִּבְנ֣וּ",
+          "lemma": "c/1129",
+          "morph": "HC/Vqw3mp"
+        },
+        {
+          "oshbId": "04x4h",
+          "oshbRef": "Num.32.34!2",
+          "surface": "בְנֵי",
+          "lemma": "1121 a",
+          "morph": "HNcmpc"
+        },
+        {
+          "oshbId": "04Xay",
+          "oshbRef": "Num.32.34!3",
+          "surface": "גָ֔ד",
+          "lemma": "1410",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04Ce9",
+          "oshbRef": "Num.32.34!4",
+          "surface": "אֶת",
+          "lemma": "853",
+          "morph": "HTo"
+        },
+        {
+          "oshbId": "04Vim",
+          "oshbRef": "Num.32.34!5",
+          "surface": "דִּיבֹ֖ן",
+          "lemma": "1769",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04KKr",
+          "oshbRef": "Num.32.34!6",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "04rJw",
+          "oshbRef": "Num.32.34!7",
+          "surface": "עֲטָרֹ֑ת",
+          "lemma": "5852",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04693",
+          "oshbRef": "Num.32.34!8",
+          "surface": "וְאֵ֖ת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "04p4k",
+          "oshbRef": "Num.32.34!9",
+          "surface": "עֲרֹעֵֽר",
+          "lemma": "6177",
+          "morph": "HNp"
+        }
+      ]
+    },
+    {
+      "reference": "Números 32:35",
+      "oshbOsis": "Num.32.35",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "04mhR",
+          "oshbRef": "Num.32.35!1",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "043Kw",
+          "oshbRef": "Num.32.35!2",
+          "surface": "עַטְרֹ֥ת",
+          "lemma": "5855+",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04YYF",
+          "oshbRef": "Num.32.35!3",
+          "surface": "שׁוֹפָ֛ן",
+          "lemma": "5855",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04Cwd",
+          "oshbRef": "Num.32.35!4",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "04fbE",
+          "oshbRef": "Num.32.35!5",
+          "surface": "יַעְזֵ֖ר",
+          "lemma": "3270",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04SUQ",
+          "oshbRef": "Num.32.35!6",
+          "surface": "וְיָגְבֳּהָֽה",
+          "lemma": "c/3011",
+          "morph": "HC/Np"
+        }
+      ]
+    },
+    {
+      "reference": "Números 32:36",
+      "oshbOsis": "Num.32.36",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "043iL",
+          "oshbRef": "Num.32.36!1",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "04nv3",
+          "oshbRef": "Num.32.36!2",
+          "surface": "בֵּ֥ית",
+          "lemma": "1039+",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04bRP",
+          "oshbRef": "Num.32.36!3",
+          "surface": "נִמְרָ֖ה",
+          "lemma": "1039",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "046Qb",
+          "oshbRef": "Num.32.36!4",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To"
+        },
+        {
+          "oshbId": "04MDC",
+          "oshbRef": "Num.32.36!5",
+          "surface": "בֵּ֣ית",
+          "lemma": "1028+",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "044rc",
+          "oshbRef": "Num.32.36!6",
+          "surface": "הָרָ֑ן",
+          "lemma": "1028",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "04cTV",
+          "oshbRef": "Num.32.36!7",
+          "surface": "עָרֵ֥י",
+          "lemma": "5892 b",
+          "morph": "HNcfpc"
+        },
+        {
+          "oshbId": "04TQj",
+          "oshbRef": "Num.32.36!8",
+          "surface": "מִבְצָ֖ר",
+          "lemma": "4013",
+          "morph": "HNcmsa"
+        },
+        {
+          "oshbId": "0436t",
+          "oshbRef": "Num.32.36!9",
+          "surface": "וְגִדְרֹ֥ת",
+          "lemma": "c/1448",
+          "morph": "HC/Ncfpc"
+        },
+        {
+          "oshbId": "04f3m",
+          "oshbRef": "Num.32.36!10",
+          "surface": "צֹֽאן",
+          "lemma": "6629",
+          "morph": "HNcbsa"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "853",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "853",
+      "totalOccurrences": 10977,
+      "exactMorphOccurrences": 2193,
+      "samples": [
+        {
+          "reference": "Gen.1.1",
+          "surface": "וְאֵ֥ת",
+          "lemma": "c/853",
+          "morph": "HC/To",
+          "syntaxRoles": [],
+          "clauseRule": "PP-V-S-O",
+          "oshbId": "01k5P",
+          "originalContext": [
+            "אֵ֥ת",
+            "הַשָּׁמַ֖יִם",
+            "וְאֵ֥ת",
+            "הָאָֽרֶץ"
+          ]
+        },
+        {
+          "reference": "1Sam.6.11",
+          "surface": "וְאֵ֣ת",
+          "lemma": "c/853",
+          "morph": "HC/To",
+          "syntaxRoles": [],
+          "clauseRule": "CLaCL",
+          "oshbId": "09oiN",
+          "originalContext": [
+            "אֶל",
+            "הָעֲגָלָ֑ה",
+            "וְאֵ֣ת",
+            "הָאַרְגַּ֗ז",
+            "וְאֵת֙"
+          ]
+        },
+        {
+          "reference": "Mal.1.13",
+          "surface": "וְאֶת",
+          "lemma": "c/853",
+          "morph": "HC/To",
+          "syntaxRoles": [],
+          "clauseRule": "CLaCL",
+          "oshbId": "39n9v",
+          "originalContext": [
+            "וְאֶת",
+            "הַפִּסֵּ֨חַ֙",
+            "וְאֶת",
+            "הַ֣חוֹלֶ֔ה",
+            "וַהֲבֵאתֶ֖ם"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/To"
+      ]
+    },
+    {
+      "corpusEvidenceId": "5855+",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "5855+",
+      "totalOccurrences": 1,
+      "exactMorphOccurrences": 1,
+      "samples": [
+        {
+          "reference": "Num.32.35",
+          "surface": "עַטְרֹ֥ת",
+          "lemma": "5855+",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "O2CL",
+          "oshbId": "043Kw",
+          "originalContext": [
+            "וְאֶת",
+            "עַטְרֹ֥ת",
+            "שׁוֹפָ֛ן",
+            "וְאֶת"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "5855",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "5855",
+      "totalOccurrences": 1,
+      "exactMorphOccurrences": 1,
+      "samples": [
+        {
+          "reference": "Num.32.35",
+          "surface": "שׁוֹפָ֛ן",
+          "lemma": "5855",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "O2CL",
+          "oshbId": "04YYF",
+          "originalContext": [
+            "וְאֶת",
+            "עַטְרֹ֥ת",
+            "שׁוֹפָ֛ן",
+            "וְאֶת",
+            "יַעְזֵ֖ר"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "3270",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3270",
+      "totalOccurrences": 13,
+      "exactMorphOccurrences": 11,
+      "samples": [
+        {
+          "reference": "Num.21.32",
+          "surface": "יַעְזֵ֔ר",
+          "lemma": "3270",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "V-S-PP",
+          "oshbId": "04dqs",
+          "originalContext": [
+            "לְרַגֵּ֣ל",
+            "אֶת",
+            "יַעְזֵ֔ר",
+            "וַֽיִּלְכְּד֖וּ",
+            "בְּנֹתֶ֑יהָ"
+          ]
+        },
+        {
+          "reference": "Josh.21.39",
+          "surface": "יַעְזֵ֖ר",
+          "lemma": "3270",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "O2CL",
+          "oshbId": "06Yuc",
+          "originalContext": [
+            "מִגְרָשֶׁ֔הָ",
+            "אֶת",
+            "יַעְזֵ֖ר",
+            "וְאֶת",
+            "מִגְרָשֶׁ֑הָ"
+          ]
+        },
+        {
+          "reference": "1Chr.6.66",
+          "surface": "יַעְזֵ֖יר",
+          "lemma": "3270",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "O2CL",
+          "oshbId": "133Gd",
+          "originalContext": [
+            "מִגְרָשֶׁ֔יהָ",
+            "וְאֶת",
+            "יַעְזֵ֖יר",
+            "וְאֶת",
+            "מִגְרָשֶֽׁיהָ"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "3011",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3011",
+      "totalOccurrences": 2,
+      "exactMorphOccurrences": 2,
+      "samples": [
+        {
+          "reference": "Num.32.35",
+          "surface": "וְיָגְבֳּהָֽה",
+          "lemma": "c/3011",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "O2CL",
+          "oshbId": "04SUQ",
+          "originalContext": [
+            "וְאֶת",
+            "יַעְזֵ֖ר",
+            "וְיָגְבֳּהָֽה"
+          ]
+        },
+        {
+          "reference": "Judg.8.11",
+          "surface": "וְיָגְבֳּהָ֑ה",
+          "lemma": "c/3011",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "V-S-ADV-PP",
+          "oshbId": "07fLk",
+          "originalContext": [
+            "מִקֶּ֥דֶם",
+            "לְנֹ֖בַח",
+            "וְיָגְבֳּהָ֑ה",
+            "וַיַּךְ֙",
+            "אֶת"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Np"
+      ]
     }
   ]
 }

@@ -159,76 +159,76 @@ Y Yahvé *está* en Su santo templo. ¡Silencio ante Él, toda la tierra!
 
 ### 3:1
 
-Oración de Habacuc, el profeta, acerca de las quejas.
+Oración de Habacuc, el profeta, según Shigyonot.
 
 ### 3:2
 
-SEÑOR, he oído tu voz; temo tus obras, SEÑOR, en medio de los años has hecho conocer tu juicio. En medio de los años, enojado, recuerda piedad.
+Yahvé, he oído el relato acerca de Ti; he sentido temor. Yahvé, Tu obra, en medio de los años, dale vida; en medio de los años, da a conocer. En la agitación, recuerda tener compasión.
 
 ### 3:3
 
-Dios viene de Temán, y el Santo procede del monte Paran. Cubre los cielos su gloria, y su majestad llena la tierra.
+Dios vendrá de Temán, y el Santo del monte Parán. Selá. Su esplendor cubrió los cielos, y la tierra se llenó de Su alabanza.
 
 ### 3:4
 
-Y su resplandor será como la luz, y de su mano saldrán cuernos; allí hay la ocultación de su poder.
+Y el resplandor será como la luz; dos rayos de Su mano Le pertenecen, y allí *está* el escondite de Su fuerza.
 
 ### 3:5
 
-Ante él marcha el hielo, y salen tormentas de sus pies.
+Delante de Él irá la peste, y saldrá una llama a Sus pies.
 
 ### 3:6
 
-Se detuvo y midió la tierra; vio y echó a los pueblos a perder; hizo desmoronarse las montañas para siempre, y las colinas para siempre; sus caminos son eterns.
+Se detuvo e hizo temblar la tierra; miró e hizo saltar a las naciones; y se dispersaron las montañas perpetuas; se inclinaron las colinas antiguas; las marchas de antiguo Le pertenecen.
 
 ### 3:7
 
-Vi a los tiendas de Cushán temblando, las tiendas de Midián en pánico.
+Vi las tiendas de Cusán bajo aflicción; temblaban las cortinas de la tierra de Madián.
 
 ### 3:8
 
-¿Se enoja el SEÑOR en los ríos, o se irrita su cólera en los ríos, o su ira en el mar? ¿Porque montas sobre tus caballos, sobre tus carros de salvación?
+¿Contra los ríos Se enojó Yahvé? ¿O contra los ríos *era* Tu ira, o contra el mar Tu furia, cuando cabalgabas sobre Tus caballos, Tus carros de salvación?
 
 ### 3:9
 
-Despiértate con tu arco, juras sobre las flechas de la alianza. Rompe las aguas hasta la tierra, selah.
+Tu arco quedó descubierto, desnudo; con juramentos ordenaste *Tus* flechas. Selá. Con ríos hendiste la tierra.
 
 ### 3:10
 
-Vieron, temblaron los montes, corrió el agua, el abismo dio voces, levantó sus manos hasta los cielos.
+Los montes Te vieron; se retorcían. Un torrente de aguas pasó; el abismo emitió su voz, levantó en alto sus dos manos.
 
 ### 3:11
 
-El sol y la luna se detuvieron en su lugar, a la luz de tus flechas, a la resplandeciente luz de tu cimitarra.
+El sol y la luna se detuvieron en la morada, a la luz de Tus flechas que avanzaban, al resplandor del relámpago de Tu lanza.
 
 ### 3:12
 
-En tu ira caminarás la tierra, en tu enojo aplastarás naciones.
+Con indignación marchas por la tierra; con ira trillas naciones.
 
 ### 3:13
 
-Saliste para socorrer a tu pueblo, para socorrer a tu Ungido. Rompiste la cabeza del malvado, descarnaste a los que se refugian en la tierra. Selah.
+Saliste para la salvación de Tu pueblo, para la salvación con Tu ungido; destrozaste la cabeza de la casa del malvado, dejando al descubierto el cimiento hasta el cuello. Selá.
 
 ### 3:14
 
-Con tu vara golpearás a los que se refugian en la tierra. Los que se refugian en la tierra se estremecerán. Tu furor es como comer a un pobre en secreto.
+Perforaste con sus varas la cabeza de sus guerreros; avanzaban como una tempestad para dispersarme. Su regocijo *era* como devorar a un pobre en el escondite.
 
 ### 3:15
 
-Has pasado por el mar tus caballos, las olas de los mares en polvo.
+Marchaste por el mar con Tus caballos, por un cúmulo de aguas abundantes.
 
 ### 3:16
 
-Escuché, y mi vientre se estremeció. Mi labio tembló, mis huesos se derramaron, y mi pie se deslizó. Me escondí por temor al día de la calamidad, para que llegue al pueblo que me ha decaído.
+Escuché, y mi vientre se estremeció; al sonido temblaron mis labios. Entró podredumbre en mis huesos, y temblaba en mi lugar; pues descansaré para el día de angustia, cuando suba contra el pueblo que nos invade.
 
 ### 3:17
 
-Porque la higuera no dará fruto, y no habrá cosecha en los viñedos. El olivo no dará su fruto, y no habrá pan. Se ha cortado el ganado, y no hay vacas en los corrales.
+Aunque la higuera no brote y no haya fruto en las vides, falle la obra del olivo y los campos no produzcan alimento, el rebaño sea separado del redil y no haya ganado en los establos.
 
 ### 3:18
 
-Pero yo me alegraré en Jehová, me regocijaré en el Dios de mi salvación.
+Pero yo he de exultar en Yahvé; he de alegrarme en el Dios de mi salvación.
 
 ### 3:19
 
-Jehová, mi Señor, es mi fortaleza. Ha puesto mis pies como los de los ciervos, y me ha dirigido sobre las alturas. Al tocar el músico, se dirá esto.
+Yahvé, mi Señor, *es* mi fuerza; e hizo mis pies como *los de* las ciervas, y sobre mis alturas me hará pisar. Para el director, con mi música.

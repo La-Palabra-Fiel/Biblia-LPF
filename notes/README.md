@@ -12,6 +12,7 @@ paquete canónico de cada versículo.
 - [Génesis 12:9 — hacia el sur y el Neguev](ot/genesis/12-9.md)
 - [Éxodo 14:19 — el mensajero de Dios](ot/exodo/14-19.md)
 - [Salmos 119:147–148 — la luz entre el día y la noche](ot/salmos/119-147.md)
+- [Habacuc 3:4 — dos rayos y la imagen de los cuernos](ot/habacuc/3-4.md)
 - [Arrepentimiento, cambio de mente, pesar y regreso](topics/arrepentimiento.md)
 - [Los nefilim](topics/nefilim.md)
 

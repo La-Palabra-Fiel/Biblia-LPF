@@ -23,6 +23,7 @@ import {
   statusRow,
   workflowForRow
 } from "./src/workflow/bookWorkflow.js";
+import { readSourcePublication } from "./src/workflow/sourcePublication.js";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 await loadTranslatorEnv(rootDir);
@@ -416,11 +417,12 @@ async function runCanonicalPublisher(bookSlug, dataRepo) {
   }
 }
 
-async function runGit(args, { allowFailure = false } = {}) {
+async function runGit(args, { allowFailure = false, timeoutMs } = {}) {
   try {
     const result = await execFileAsync("git", args, {
       cwd: repoRoot,
       encoding: "utf8",
+      timeout: timeoutMs,
       maxBuffer: 8 * 1024 * 1024
     });
     return { ok: true, stdout: String(result.stdout || "").trim(), stderr: String(result.stderr || "").trim() };
@@ -779,6 +781,11 @@ async function readBookWorkflow(bookId) {
     readBookProvenance(bookId),
     readExportState(bookId)
   ]);
+  const sourcePaths = gitPathsForBook(bookId);
+  const sourcePublication = await readSourcePublication({
+    runGit, book: slug, translation: sourcePaths.translation,
+    alignment: sourcePaths.alignment, liveRow: row
+  });
   const workflow = workflowForRow(row);
   const alignmentProgress = alignmentMethodCounts(alignment);
   const alignmentRemaining = alignmentProgress.auto
@@ -803,6 +810,7 @@ async function readBookWorkflow(bookId) {
     row,
     workflow,
     provenance,
+    sourcePublication,
     export: exported,
     publisher,
     progress: {

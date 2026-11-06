@@ -1197,6 +1197,13 @@ function showWorkflowOutput(text = "") {
 
 function renderBookWorkflow(payload) {
   if (!payload?.row) return;
+  const sourceNotice = document.querySelector("#source-publication-state");
+  if (sourceNotice) {
+    sourceNotice.hidden = !payload.sourcePublication;
+    sourceNotice.textContent = payload.sourcePublication?.message || "";
+    sourceNotice.dataset.state = payload.sourcePublication?.checked && payload.sourcePublication?.bookOnMain
+      ? "current" : "pending";
+  }
   state.workflow = payload;
   const row = payload.row;
   const tr = row.translation;
@@ -1233,7 +1240,7 @@ function renderBookWorkflow(payload) {
   setWorkflowStep("workflow-verify-alignment", alignmentDone || (al === "ready" && alignmentRemaining === 0) ? "complete" : (translationDone && alignmentRemaining === 0 ? "active" : "locked"));
   setWorkflowStep("workflow-approve-alignment", alignmentDone ? "complete" : (translationDone && al === "ready" && alignmentRemaining === 0 ? "active" : "locked"));
   setWorkflowStep("workflow-commit", finished && committed ? "complete" : (finished ? "active" : "locked"));
-  setWorkflowStep("workflow-export", exported ? "complete" : (finished && committed ? "active" : "locked"));
+  setWorkflowStep("workflow-export", exported || published ? "complete" : (finished && committed ? "active" : "locked"));
   setWorkflowStep("workflow-publish", branchPrepared || published ? "complete" : (exported ? "active" : "locked"));
   setWorkflowStep("workflow-publication", published ? "complete" : (branchPrepared ? "active" : "locked"));
 
@@ -1242,9 +1249,11 @@ function renderBookWorkflow(payload) {
     : finished
       ? `${provenance.changes?.length || 0} selected-book changes`
       : "Waiting for both approvals";
-  workflowExportState.textContent = exported
-    ? `Package ready at ${payload.export.packageDir}`
-    : (payload.export?.problem || "Waiting for the source commit");
+  workflowExportState.textContent = published
+    ? "Published package is on cgv-data/main — no new export needed"
+    : exported
+      ? `Package ready at ${payload.export.packageDir}`
+      : (payload.export?.problem || "Waiting for the source commit");
   workflowPublishState.textContent = published
     ? "Already on cgv-data/main — no new branch needed"
     : branchPrepared
@@ -1277,8 +1286,8 @@ function renderBookWorkflow(payload) {
   approveAlignmentButton.disabled = state.workflowBusy || !translationDone || al !== "ready" || alignmentRemaining !== 0;
   reviewCommitButton.disabled = state.workflowBusy || state.commitBusy || !finished || committed || provenance.commitBlocked;
   reviewCommitButton.textContent = provenance.commitBlocked ? "Unstage other work first" : "Review changes";
-  exportBookButton.disabled = state.workflowBusy || !finished || !committed || exported;
-  exportBookButton.textContent = exported ? "Exported" : "Export book";
+  exportBookButton.disabled = state.workflowBusy || !finished || !committed || exported || published;
+  exportBookButton.textContent = exported || published ? "Exported" : "Export book";
   publishBookButton.disabled = state.workflowBusy || state.publishBusy || !exported || branchPrepared || published;
   publishBookButton.textContent = published
     ? "Published"
@@ -1299,7 +1308,9 @@ function renderBookWorkflow(payload) {
     complete: "This book's finished content is on cgv-data/main. Publication is complete."
   };
   workflowSummary.dataset.state = "ready";
-  workflowSummary.textContent = messages[payload.workflow?.nextAction] || "Continue with the highlighted step.";
+  workflowSummary.textContent = published && payload.sourcePublication && !payload.sourcePublication.bookOnMain
+    ? "Published to cgv-data/main. The LPF source website is a separate delivery: see the source status below."
+    : messages[payload.workflow?.nextAction] || "Continue with the highlighted step.";
 }
 
 async function loadBookWorkflow() {

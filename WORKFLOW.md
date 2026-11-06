@@ -545,6 +545,15 @@ El trabajo frase por frase permanece en la vista de traducción. **Terminar
 libro** abre una vista final separada para verificación, firmas, commit,
 exportación y entrega al publicador; el flujo final no ocupa el espacio de edición de frases.
 
+La vista final comprueba por separado el repositorio fuente: actualiza solo
+`origin/main`, muestra si la rama local está adelantada, atrasada o divergente,
+y compara el español, la alineación y la fila de aprobación del libro con
+GitHub. Nunca fusiona, reescribe ni empuja ramas automáticamente. Un commit
+local no actualiza el sitio LPF: la persona debe reconciliar las ramas cuando
+sea necesario y empujar sus cambios. Después debe terminar correctamente el
+despliegue de Pages. Publicar en `cgv-data/main` es una entrega distinta y no
+empuja `Biblia-LBF` ni reconstruye por sí solo el Reader.
+
 Solo la acción siguiente queda habilitada. Los botones de verificación llaman
 a `tools/verify.py`; no duplican sus reglas. Las aprobaciones exigen `ready`,
 nombre y confirmación humana, y escriben solamente la fila canónica del libro

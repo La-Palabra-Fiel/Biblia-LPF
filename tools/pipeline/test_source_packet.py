@@ -15,6 +15,7 @@ from draft_lib import (
     ACCEPTED_UNVERSIONED_PROMPT_SHA256,
     DRAFT_SPEC_VERSION,
     draft_specification_is_current,
+    lexical_alignment_surface,
     merge_source_units_by_id,
     normalize_draft,
     prompt_fingerprint,
@@ -152,6 +153,22 @@ class SourcePacketTests(unittest.TestCase):
             {"es": "Y dijo", "sourceTokenIds": ["h02001015001"]},
             {"es": "el rey de Egipto", "sourceTokenIds": ["h02001015002", "h02001015003"]},
         ])
+
+    def test_alignment_surfaces_keep_words_and_supplied_markup_only(self) -> None:
+        self.assertEqual(
+            lexical_alignment_surface('¿Y *es verdad*, "para siempre"?'),
+            "Y *es verdad* para siempre",
+        )
+        self.assertEqual(
+            merge_source_units_by_id([
+                {"es": "¡Yahvé!", "sourceTokenIds": ["h1"]},
+                {"es": "habló.", "sourceTokenIds": ["h2"]},
+            ]),
+            [
+                {"es": "Yahvé", "sourceTokenIds": ["h1"]},
+                {"es": "habló", "sourceTokenIds": ["h2"]},
+            ],
+        )
 
     def test_discontinuous_source_id_does_not_absorb_intervening_subject(self) -> None:
         units = merge_source_units_by_id([

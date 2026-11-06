@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VERSE_HEADING = re.compile(r"^###\s+(\d+):(\d+)\s*$")
 REF_IN_LINK = re.compile(r"(\d+):(\d+)")
 FINISHED_LINK_STATUSES = {"hand", "manual", "manual-realign"}
+WORD_RE = re.compile(r"[^\W_]+", re.UNICODE)
 
 
 def read_json(path: Path, default):
@@ -65,6 +66,11 @@ def normalize_lexical(text: str) -> str:
     return re.sub(r"[^\w]+", "", text, flags=re.UNICODE).casefold()
 
 
+def words_only_surface(text: str) -> bool:
+    """True when a canonical surface contains words separated only by space."""
+    return bool(re.fullmatch(r"[^\W_]+(?:\s+[^\W_]+)*", str(text or ""), re.UNICODE))
+
+
 def alignment_path(book: str, testament: str) -> Path:
     return ROOT / "alignment" / testament / book / f"{book}-reverse-links.json"
 
@@ -89,43 +95,56 @@ def reference_key(link: dict) -> tuple[int, int] | None:
 
 
 def canonical_units(spanish: str, units: list[dict], phrase_index: int) -> list[dict]:
-    """Bind approved continuous Spanish units to exact character spans."""
+    """Bind approved words to exact spans without canonicalizing punctuation."""
     result: list[dict] = []
     cursor = 0
-    for index, unit in enumerate(units):
+    for unit in units:
         surface = str(unit.get("es") or "")
         ids = [str(value) for value in (unit.get("sourceTokenIds") or []) if str(value)]
         if not surface or not ids:
             raise ValueError("Approved alignment units require Spanish and source token IDs.")
-        match = re.compile(re.escape(surface), re.IGNORECASE).search(spanish, cursor)
-        if not match:
-            # Team Desk validates punctuation independently of alignment units.
-            # A question mark can move before a preceding conjunction in
-            # idiomatic Spanish (``Y`` + ``¿quién`` → ``¿Y quién``), so fall
-            # back to the same lexical unit without edge punctuation.
-            lexical_surface = surface.strip(" ¿?¡!.,;:")
-            if lexical_surface:
-                match = re.compile(re.escape(lexical_surface), re.IGNORECASE).search(
-                    spanish, cursor
-                )
-        if not match:
-            raise ValueError(
-                f'Approved unit {surface!r} does not occur in order in {spanish!r}.'
+        word_matches: list[tuple[int, int]] = []
+        for source_word in WORD_RE.findall(surface):
+            pattern = re.compile(
+                rf"(?<![^\W_]){re.escape(source_word)}(?![^\W_])", re.IGNORECASE
             )
-        start, end = match.span()
-        canonical_surface = spanish[start:end]
-        result.append(
-            {
-                "unitId": f"{phrase_index}:{index}",
-                "surface": canonical_surface,
-                "charStart": start,
-                "charEnd": end,
-                "sourceTokenIds": ids,
-                "method": "hand",
-                "status": "confirmed",
-            }
-        )
-        cursor = end
+            match = pattern.search(spanish, cursor)
+            if not match:
+                raise ValueError(
+                    f'Approved word {source_word!r} from unit {surface!r} '
+                    f'does not occur in order in {spanish!r}.'
+                )
+            word_matches.append(match.span())
+            cursor = match.end()
+        if not word_matches:
+            raise ValueError(f"Approved alignment unit {surface!r} has no words.")
+
+        runs: list[tuple[int, int]] = []
+        run_start, run_end = word_matches[0]
+        for start, end in word_matches[1:]:
+            separator = spanish[run_end:start]
+            if not separator or separator.isspace():
+                run_end = end
+            else:
+                runs.append((run_start, run_end))
+                run_start, run_end = start, end
+        runs.append((run_start, run_end))
+
+        for start, end in runs:
+            canonical_surface = spanish[start:end]
+            if not words_only_surface(canonical_surface):
+                raise ValueError(f"Canonical alignment surface is not word-only: {canonical_surface!r}")
+            result.append(
+                {
+                    "unitId": f"{phrase_index}:{len(result)}",
+                    "surface": canonical_surface,
+                    "charStart": start,
+                    "charEnd": end,
+                    "sourceTokenIds": ids,
+                    "method": "hand",
+                    "status": "confirmed",
+                }
+            )
     if normalize_lexical("".join(unit["surface"] for unit in result)) != normalize_lexical(spanish):
         raise ValueError("Approved alignment units do not reconstruct the canonical Spanish.")
     return result

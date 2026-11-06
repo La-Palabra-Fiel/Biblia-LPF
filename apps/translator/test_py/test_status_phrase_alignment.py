@@ -64,6 +64,16 @@ class PhraseAlignmentStatusTests(unittest.TestCase):
                     ["sample 1:1: units do not reconstruct Spanish"],
                 )
 
+    def test_punctuation_in_alignment_surface_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.write_book(root, final_surface="Dios.")
+            with patch.object(status, "ROOT", root):
+                self.assertEqual(
+                    status.alignment_errors("sample", "nt", 1),
+                    ["sample 1:1: alignment surfaces must contain words only"],
+                )
+
     def test_seeded_hand_units_are_not_human_confirmed(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -74,7 +84,7 @@ class PhraseAlignmentStatusTests(unittest.TestCase):
                     [
                         "sample: alignment still has auto=0 gloss=0 unwalked=0 "
                         "unconfirmed=2 other=0",
-                        "sample: alignment has no hand units",
+                        "sample: alignment has no finished map units",
                     ],
                 )
 

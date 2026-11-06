@@ -193,6 +193,11 @@ METHOD:
   complete Spanish identification clause, preserve the source relationship,
   and mark a genuinely supplied copula with asterisks.
 - Every Spanish unit must cite sourceTokenIds from the packet.
+- Put words only in each unit's `es` field. Never include commas, periods,
+  colons, semicolons, quotation marks, question marks, exclamation marks, or
+  other punctuation. Keep single asterisks only around genuinely supplied
+  words so Team Desk can verify them; canonical promotion removes those
+  formatting marks from reverse-link surfaces.
 - Alignment is a full reverse interlinear, not a clause-level summary. Use the
   smallest continuous Spanish unit that has a defensible source
   correspondence. Split subjects, verbs, objects, prepositions, conjunctions,

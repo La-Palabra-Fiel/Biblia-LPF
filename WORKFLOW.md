@@ -575,6 +575,13 @@ enlace incorrecto y pulse **Confirmar frase completa**. Esa acción humana marca
 como `hand` solamente las unidades visibles y el estado de esa frase, y avanza a la
 siguiente; nunca confirma un libro entero ni ejecuta autoalineación.
 
+Las superficies canónicas de alineación contienen solamente palabras. La
+puntuación y los signos de apertura o cierre permanecen exclusivamente en el
+texto español. Al promover una aprobación, Team Desk elimina también los
+asteriscos de formato y divide una unidad en tramos léxicos cuando entre sus
+palabras hay puntuación; cada tramo conserva los mismos `sourceTokenIds` y sus
+posiciones abarcan únicamente las palabras correspondientes.
+
 ## Publicar
 
 Publicar no es marcar `done`. Publicar es posterior:

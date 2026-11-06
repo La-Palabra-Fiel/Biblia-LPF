@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "deuteronomio",
   "label": "Deuteronomio",
   "testament": "ot",
@@ -9,21 +12,29 @@
   "verse": 19,
   "oshbOsis": "Deut.5.19",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h05005019001",
       "oshbId": "05suR",
+      "oshbRef": "Deut.5.19!1",
       "position": 1,
       "surface": "וְלֹ֖א",
       "paleo": "𐤅𐤋𐤀",
@@ -31,16 +42,13 @@
       "strongs": "H3808",
       "morph": "HC/Tn",
       "morphExpanded": "Hebrew; conjunction; negative",
-      "ahrc": {
-        "concreteSense": "NOT",
-        "definition": "A function word to stand for the negative. As being without. Alternate Translations: cannot; no; nothing; without Alternate Spellings: לוה",
-        "parentRoot": "לו",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "gav",
+      "corpusEvidenceId": "3808"
     },
     {
       "sourceTokenId": "h05005019002",
       "oshbId": "05LXw",
+      "oshbRef": "Deut.5.19!2",
       "position": 2,
       "surface": "תִּגְנֹֽב",
       "paleo": "𐤕𐤂𐤍𐤁",
@@ -48,12 +56,301 @@
       "strongs": "H1589",
       "morph": "HVqi2ms",
       "morphExpanded": "Hebrew; qal imperfect 2nd masculine singular",
-      "ahrc": {
-        "concreteSense": "STEAL (V)",
-        "definition": "To wrongfully take the property of another; rob. Alternate Translations: steal away (when written in the piel [intensive] form)",
-        "parentRoot": "גנ",
-        "binding": "investigative-nonbinding"
+      "lexicalEvidenceId": "cma",
+      "corpusEvidenceId": "1589"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3808",
+      "lexicalIndexId": "gav",
+      "headword": "לֹא",
+      "transliteration": "lōʾ",
+      "partOfSpeech": "D",
+      "indexDefinition": "not",
+      "bdbEntryId": "l.ab.aa",
+      "possibleSenses": [
+        "not"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "1589",
+      "lexicalIndexId": "cma",
+      "headword": "גָּנַב",
+      "transliteration": "gānab",
+      "partOfSpeech": "V",
+      "indexDefinition": "steal",
+      "bdbEntryId": "c.cn.aa",
+      "possibleSenses": [
+        "steal",
+        "be stolen",
+        "steal away",
+        "be stolen away",
+        "go by stealth",
+        "syeal away"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 2,
+      "total": 2,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m050050001",
+        "sourceTokenIds": [
+          "h05005019001",
+          "h05005019002"
+        ]
+      },
+      {
+        "nodeId": "m050050002",
+        "class": "cl",
+        "rule": "ADV-V",
+        "sourceTokenIds": [
+          "h05005019001",
+          "h05005019002"
+        ]
       }
+    ],
+    "tokenRoles": {
+      "h05005019001": [
+        "adv"
+      ],
+      "h05005019002": [
+        "v"
+      ]
+    }
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Deuteronomio 5:18",
+      "oshbOsis": "Deut.5.18",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "05Lun",
+          "oshbRef": "Deut.5.18!1",
+          "surface": "וְלֹ֖א",
+          "lemma": "c/3808",
+          "morph": "HC/Tn"
+        },
+        {
+          "oshbId": "05PbF",
+          "oshbRef": "Deut.5.18!2",
+          "surface": "תִּנְאָֽף",
+          "lemma": "5003",
+          "morph": "HVqi2ms"
+        }
+      ]
+    },
+    {
+      "reference": "Deuteronomio 5:19",
+      "oshbOsis": "Deut.5.19",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "05suR",
+          "oshbRef": "Deut.5.19!1",
+          "surface": "וְלֹ֖א",
+          "lemma": "c/3808",
+          "morph": "HC/Tn"
+        },
+        {
+          "oshbId": "05LXw",
+          "oshbRef": "Deut.5.19!2",
+          "surface": "תִּגְנֹֽב",
+          "lemma": "1589",
+          "morph": "HVqi2ms"
+        }
+      ]
+    },
+    {
+      "reference": "Deuteronomio 5:20",
+      "oshbOsis": "Deut.5.20",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "05una",
+          "oshbRef": "Deut.5.20!1",
+          "surface": "וְלֹֽא",
+          "lemma": "c/3808",
+          "morph": "HC/Tn"
+        },
+        {
+          "oshbId": "05em6",
+          "oshbRef": "Deut.5.20!2",
+          "surface": "תַעֲנֶ֥ה",
+          "lemma": "6030 b",
+          "morph": "HVqi2ms"
+        },
+        {
+          "oshbId": "05157",
+          "oshbRef": "Deut.5.20!3",
+          "surface": "בְרֵֽעֲךָ֖",
+          "lemma": "b/7453",
+          "morph": "HR/Ncmsc/Sp2ms"
+        },
+        {
+          "oshbId": "05quT",
+          "oshbRef": "Deut.5.20!4",
+          "surface": "עֵ֥ד",
+          "lemma": "5707",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "056Vo",
+          "oshbRef": "Deut.5.20!5",
+          "surface": "שָֽׁוְא",
+          "lemma": "7723",
+          "morph": "HNcmsa"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "3808",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3808",
+      "totalOccurrences": 5171,
+      "exactMorphOccurrences": 1588,
+      "samples": [
+        {
+          "reference": "Exod.20.15",
+          "surface": "לֹ֖א",
+          "lemma": "3808",
+          "morph": "HTn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "02g1p",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּגְנֹֽב"
+          ]
+        },
+        {
+          "reference": "Lev.19.11",
+          "surface": "לֹ֖א",
+          "lemma": "3808",
+          "morph": "HTn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "03hto",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּגְנֹ֑בוּ",
+            "וְלֹא"
+          ]
+        },
+        {
+          "reference": "Obad.1.5",
+          "surface": "הֲל֥וֹא",
+          "lemma": "i/3808",
+          "morph": "HTi/Tn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ClCl2",
+          "oshbId": "315gQ",
+          "originalContext": [
+            "אֵ֣יךְ",
+            "נִדְמֵ֔יתָה",
+            "הֲל֥וֹא",
+            "יִגְנְב֖וּ",
+            "דַּיָּ֑ם"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Tn"
+      ]
+    },
+    {
+      "corpusEvidenceId": "1589",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "1589",
+      "totalOccurrences": 40,
+      "exactMorphOccurrences": 2,
+      "samples": [
+        {
+          "reference": "Exod.20.15",
+          "surface": "תִּגְנֹֽב",
+          "lemma": "1589",
+          "morph": "HVqi2ms",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "02xBa",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּגְנֹֽב"
+          ]
+        },
+        {
+          "reference": "Lev.19.11",
+          "surface": "תִּגְנֹ֑בוּ",
+          "lemma": "1589",
+          "morph": "HVqi2mp",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "03d9Z",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּגְנֹ֑בוּ",
+            "וְלֹא",
+            "תְכַחֲשׁ֥וּ"
+          ]
+        },
+        {
+          "reference": "Obad.1.5",
+          "surface": "יִגְנְב֖וּ",
+          "lemma": "1589",
+          "morph": "HVqi3mp",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ClCl2",
+          "oshbId": "31Xw6",
+          "originalContext": [
+            "נִדְמֵ֔יתָה",
+            "הֲל֥וֹא",
+            "יִגְנְב֖וּ",
+            "דַּיָּ֑ם",
+            "אִם"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HVqi2ms"
+      ]
     }
   ]
 }

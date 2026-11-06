@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "deuteronomio",
   "label": "Deuteronomio",
   "testament": "ot",
@@ -9,21 +12,29 @@
   "verse": 18,
   "oshbOsis": "Deut.5.18",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h05005018001",
       "oshbId": "05Lun",
+      "oshbRef": "Deut.5.18!1",
       "position": 1,
       "surface": "וְלֹ֖א",
       "paleo": "𐤅𐤋𐤀",
@@ -31,16 +42,13 @@
       "strongs": "H3808",
       "morph": "HC/Tn",
       "morphExpanded": "Hebrew; conjunction; negative",
-      "ahrc": {
-        "concreteSense": "NOT",
-        "definition": "A function word to stand for the negative. As being without. Alternate Translations: cannot; no; nothing; without Alternate Spellings: לוה",
-        "parentRoot": "לו",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "gav",
+      "corpusEvidenceId": "3808"
     },
     {
       "sourceTokenId": "h05005018002",
       "oshbId": "05PbF",
+      "oshbRef": "Deut.5.18!2",
       "position": 2,
       "surface": "תִּנְאָֽף",
       "paleo": "𐤕𐤍𐤀𐤐",
@@ -48,12 +56,274 @@
       "strongs": "H5003",
       "morph": "HVqi2ms",
       "morphExpanded": "Hebrew; qal imperfect 2nd masculine singular",
-      "ahrc": {
-        "concreteSense": "COMMIT ADULTERY (V)",
-        "definition": "To perform voluntary violation of the marriage bed.",
-        "parentRoot": "נא",
-        "binding": "investigative-nonbinding"
+      "lexicalEvidenceId": "hxt",
+      "corpusEvidenceId": "5003"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "3808",
+      "lexicalIndexId": "gav",
+      "headword": "לֹא",
+      "transliteration": "lōʾ",
+      "partOfSpeech": "D",
+      "indexDefinition": "not",
+      "bdbEntryId": "l.ab.aa",
+      "possibleSenses": [
+        "not"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "5003",
+      "lexicalIndexId": "hxt",
+      "headword": "נָאַף",
+      "transliteration": "nāʾap",
+      "partOfSpeech": "V",
+      "indexDefinition": "commit adultery",
+      "bdbEntryId": "n.ae.aa",
+      "possibleSenses": [
+        "commit adultery"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 2,
+      "total": 2,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m050050001",
+        "sourceTokenIds": [
+          "h05005018001",
+          "h05005018002"
+        ]
+      },
+      {
+        "nodeId": "m050050002",
+        "class": "cl",
+        "rule": "ADV-V",
+        "sourceTokenIds": [
+          "h05005018001",
+          "h05005018002"
+        ]
       }
+    ],
+    "tokenRoles": {
+      "h05005018001": [
+        "adv"
+      ],
+      "h05005018002": [
+        "v"
+      ]
+    }
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Deuteronomio 5:17",
+      "oshbOsis": "Deut.5.17",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "051i2",
+          "oshbRef": "Deut.5.17!1",
+          "surface": "לֹ֖א",
+          "lemma": "3808",
+          "morph": "HTn"
+        },
+        {
+          "oshbId": "05Lzv",
+          "oshbRef": "Deut.5.17!2",
+          "surface": "תִּרְצָֽח",
+          "lemma": "7523",
+          "morph": "HVqi2ms"
+        }
+      ]
+    },
+    {
+      "reference": "Deuteronomio 5:18",
+      "oshbOsis": "Deut.5.18",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "05Lun",
+          "oshbRef": "Deut.5.18!1",
+          "surface": "וְלֹ֖א",
+          "lemma": "c/3808",
+          "morph": "HC/Tn"
+        },
+        {
+          "oshbId": "05PbF",
+          "oshbRef": "Deut.5.18!2",
+          "surface": "תִּנְאָֽף",
+          "lemma": "5003",
+          "morph": "HVqi2ms"
+        }
+      ]
+    },
+    {
+      "reference": "Deuteronomio 5:19",
+      "oshbOsis": "Deut.5.19",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "05suR",
+          "oshbRef": "Deut.5.19!1",
+          "surface": "וְלֹ֖א",
+          "lemma": "c/3808",
+          "morph": "HC/Tn"
+        },
+        {
+          "oshbId": "05LXw",
+          "oshbRef": "Deut.5.19!2",
+          "surface": "תִּגְנֹֽב",
+          "lemma": "1589",
+          "morph": "HVqi2ms"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "3808",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "3808",
+      "totalOccurrences": 5171,
+      "exactMorphOccurrences": 1588,
+      "samples": [
+        {
+          "reference": "Exod.20.14",
+          "surface": "לֹ֖א",
+          "lemma": "3808",
+          "morph": "HTn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "02ZQ4",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּנְאָֽף"
+          ]
+        },
+        {
+          "reference": "Gen.2.25",
+          "surface": "וְלֹ֖א",
+          "lemma": "c/3808",
+          "morph": "HC/Tn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "01fE2",
+          "originalContext": [
+            "הָֽאָדָ֖ם",
+            "וְאִשְׁתּ֑וֹ",
+            "וְלֹ֖א",
+            "יִתְבֹּשָֽׁשׁוּ"
+          ]
+        },
+        {
+          "reference": "Mal.3.11",
+          "surface": "וְלֹא",
+          "lemma": "c/3808",
+          "morph": "HC/Tn",
+          "syntaxRoles": [
+            "adv"
+          ],
+          "clauseRule": "ADV-V-PP-S",
+          "oshbId": "39Doj",
+          "originalContext": [
+            "פְּרִ֣י",
+            "הָאֲדָמָ֑ה",
+            "וְלֹא",
+            "תְשַׁכֵּ֨ל",
+            "לָכֶ֤ם"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Tn"
+      ]
+    },
+    {
+      "corpusEvidenceId": "5003",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "5003",
+      "totalOccurrences": 31,
+      "exactMorphOccurrences": 2,
+      "samples": [
+        {
+          "reference": "Exod.20.14",
+          "surface": "תִּנְאָֽף",
+          "lemma": "5003",
+          "morph": "HVqi2ms",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "02Aoa",
+          "originalContext": [
+            "לֹ֖א",
+            "תִּנְאָֽף"
+          ]
+        },
+        {
+          "reference": "Deut.5.18",
+          "surface": "תִּנְאָֽף",
+          "lemma": "5003",
+          "morph": "HVqi2ms",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ADV-V",
+          "oshbId": "05PbF",
+          "originalContext": [
+            "וְלֹ֖א",
+            "תִּנְאָֽף"
+          ]
+        },
+        {
+          "reference": "Lev.20.10",
+          "surface": "יִנְאַף֙",
+          "lemma": "5003",
+          "morph": "HVqi3ms",
+          "syntaxRoles": [
+            "v"
+          ],
+          "clauseRule": "ClCl2",
+          "oshbId": "039hY",
+          "originalContext": [
+            "וְאִ֗ישׁ",
+            "אֲשֶׁ֤ר",
+            "יִנְאַף֙",
+            "אֶת",
+            "אֵ֣שֶׁת"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HVqi2ms"
+      ]
     }
   ]
 }

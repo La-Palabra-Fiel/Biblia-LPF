@@ -50,7 +50,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | jonas | ot | ready | none |  |  |  |  |  |
 | miqueas | ot | ready | none |  |  |  |  |  |
 | nahum | ot | ready | none |  |  |  |  |  |
-| habacuc | ot | draft | none |  |  |  |  |  |
+| habacuc | ot | done | done | John Wry | 2026-11-06 | John Wry | 2026-11-06 |  |
 | sofonias | ot | ready | none |  |  |  |  |  |
 | hageo | ot | ready | none |  |  |  |  |  |
 | zacarias | ot | ready | draft |  |  |  |  | 211 `mapped`; AI audit pass (93/118/0; 9:17 H1715 false-fail overruled) — unsiged pending repair |

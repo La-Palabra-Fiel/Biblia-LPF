@@ -30,11 +30,32 @@ YHWH ni SEÑOR como sustituto de יהוה. Esto no altera el tratamiento distint
 de אדני como **Adonai** cuando funciona como apelativo fijado.
 
 Como norma editorial de la LPF, se escriben con mayúscula los pronombres y
-formas posesivas cuyo referente es inequívocamente Dios, Jesucristo o el
+formas posesivas cuyo referente es inequívocamente Dios, Jesús o el
 Espíritu Santo: **Él, Tú, Ti, Te, Lo, Le, Se, Su, Sus, Suyo** y sus formas
 flexionadas. Esta mayúscula reverencial no añade significado ni resuelve un
 referente ambiguo. Los pronombres referidos a seres humanos permanecen en
 minúscula.
+
+### Política nominal: Jesús y Cristo
+
+Por adjudicación editorial humana del 9 de noviembre de 2026, la LPF conserva
+**Jesús** y **Cristo** como dos palabras españolas distintas y mantiene el
+orden de los dos tokens griegos:
+
+- `Ἰησοῦς Χριστός` y sus formas flexionadas → **Jesús, *el* Cristo**, con las
+  adaptaciones de caso y sintaxis que exija la oración;
+- `Χριστός Ἰησοῦς` y sus formas flexionadas → **Cristo Jesús**.
+
+No se usa **Jesucristo**, porque fusiona dos tokens, ni **Jesús Cristo**, porque
+no es español natural. El artículo **el** de **Jesús, *el* Cristo** es una
+palabra suplida y siempre lleva cursiva. En la alineación, **Jesús** se enlaza
+con el token de `Ἰησοῦς` y ***el* Cristo** con el token de `Χριστός`; la coma
+permanece solo en el texto español y nunca entra en la superficie de la unidad.
+No se invierte el orden para imitar otra edición griega.
+
+Esta decisión se aplica a candidatos nuevos y revisiones humanas solicitadas.
+No autoriza una sustitución masiva, no reabre aprobaciones y no altera por sí
+sola los borradores históricos del NT.
 
 La decisión de significado sigue esta evidencia, en este orden de trabajo:
 
@@ -255,6 +276,20 @@ rama afectada. No se usan anclas de dos fuentes.
 `python3 tools/build_nt_macula_candidate.py <libro> <capítulo>` genera material
 de revisión en `nt-syntax/candidates/`; nunca lo convierte en sintaxis canónica
 ni resuelve automáticamente un `HOLD`.
+
+Team Desk muestra los candidatos existentes en **Estructura griega del NT —
+solo revisión**. Esa vista vuelve a comprobar el manifiesto, el hash del
+mapeo, la política de acuerdo triple y la cobertura completa del capítulo.
+Es deliberadamente de solo lectura: no habilita la redacción, la aprobación ni
+la publicación del NT, y no escribe una segunda copia de la sintaxis.
+
+Cuando una persona resuelve una rama `HOLD` directamente desde TR1894 y
+Robinson, la decisión se registra en
+`source/greek/TR1894/MACULA_STRUCTURE_ADJUDICATIONS.json`. El generador
+reemplaza solamente la rama nombrada por terminales nativos TR, conserva el
+orden TR y propaga la procedencia humana a sus antepasados mínimos. Nunca crea
+un enlace MACULA ficticio. Team Desk distingue en azul **TR resuelto**, en
+verde el acuerdo triple y en ámbar los `HOLD` todavía abiertos.
 
 La autorización de esta fuente no desbloquea por sí sola el NT. Antes de una
 llamada de modelo deben pasar la verificación del commit y los checksums, la

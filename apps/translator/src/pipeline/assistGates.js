@@ -321,7 +321,7 @@ export function validateDraftAgainstGates(draft, analysis, rationale = []) {
     flags.push("Rejected: φιλανθρωπία → 'amor a los hombres', not bare 'humanidad'.");
   }
   if (/Ἰησοῦ\s+Χριστοῦ/u.test(greek) && /\bJesús\b/i.test(text) && !/\bCristo\b/i.test(text)) {
-    flags.push("Rejected: Greek has Ἰησοῦ Χριστοῦ — keep Jesucristo / Jesús Cristo.");
+    flags.push("Rejected: Greek has Ἰησοῦ Χριστοῦ — keep both tokens as Jesús, *el* Cristo.");
   }
   // Spillover: if this phrase is a short imperative clause, reject long multi-clause dumps
   const tokenCount = (analysis?.gates?.morphology?.constraints || []).length;

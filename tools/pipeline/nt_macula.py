@@ -29,6 +29,7 @@ MACULA_ATTRIBUTION = (
     "https://github.com/Clear-Bible/macula-greek/"
 )
 MAPPING_POLICY = "tr1894-robinson-macula-token-agreement-v2"
+STRUCTURE_ADJUDICATION_SCHEMA = "tr1894-native-structure-adjudications-v1"
 
 LOWFAT_FILENAMES = {
     book.utr_stem: f"{index:02d}-{name}.xml"
@@ -333,10 +334,12 @@ def validate_candidate(candidate: dict) -> None:
     if candidate.get("schema") != "tr1894-macula-structure-candidate-v1":
         raise ValueError("noncanonical MACULA structure candidate schema")
     mapped_ids: list[str] = []
-    exact_groups = hold_groups = mapped_words = unmatched_words = 0
+    exact_groups = hold_groups = human_groups = 0
+    mapped_words = human_words = unmatched_words = 0
 
-    def walk(node: dict) -> bool:
-        nonlocal exact_groups, hold_groups, mapped_words, unmatched_words
+    def walk(node: dict) -> tuple[bool, bool, set[str]]:
+        nonlocal exact_groups, hold_groups, human_groups
+        nonlocal mapped_words, human_words, unmatched_words
         kind = node.get("kind")
         if kind == "word":
             mapped_words += 1
@@ -344,25 +347,46 @@ def validate_candidate(candidate: dict) -> None:
             if not token_id:
                 raise ValueError("mapped candidate word lacks TR token identity")
             mapped_ids.append(token_id)
-            return True
+            return True, True, set()
+        if kind == "tr-word":
+            human_words += 1
+            token_id = node.get("trTokenId")
+            decision_id = node.get("decisionId")
+            if (
+                node.get("status") != "human-adjudicated-tr"
+                or not token_id
+                or not decision_id
+                or node.get("maculaTerminalId")
+            ):
+                raise ValueError("native TR candidate word lacks adjudication provenance")
+            mapped_ids.append(token_id)
+            return True, False, {decision_id}
         if kind == "reference-word":
             unmatched_words += 1
             if node.get("status") != "hold-token-disagreement" or node.get("trTokenId"):
                 raise ValueError("unmatched MACULA terminal is not isolated as HOLD")
-            return False
+            return False, False, set()
         if kind != "group" or not node.get("children"):
             raise ValueError("candidate structural group is empty or malformed")
         child_results = [walk(child) for child in node["children"]]
-        children_exact = all(child_results)
+        children_resolved = all(row[0] for row in child_results)
+        children_exact = all(row[1] for row in child_results)
+        child_decisions = set().union(*(row[2] for row in child_results))
         if node.get("status") == "exact-candidate":
             exact_groups += 1
-            if not children_exact:
+            if not children_resolved or not children_exact:
                 raise ValueError("exact structural candidate contains a HOLD child")
-            return True
+            return True, True, set()
+        if node.get("status") == "human-adjudicated-tr":
+            human_groups += 1
+            decisions = set(node.get("decisionIds") or [])
+            if not children_resolved or not decisions or decisions != child_decisions:
+                raise ValueError("human-adjudicated TR group lacks complete decision provenance")
+            return True, False, decisions
         if node.get("status") != "hold-token-disagreement":
             raise ValueError("candidate group has an unknown review status")
         hold_groups += 1
-        return False
+        return False, False, child_decisions
 
     for sentence in candidate.get("sentences") or []:
         for root in sentence.get("roots") or []:
@@ -375,11 +399,152 @@ def validate_candidate(candidate: dict) -> None:
     actual = {
         "exactGroups": exact_groups,
         "holdGroups": hold_groups,
+        "humanAdjudicatedGroups": human_groups,
         "mappedWords": mapped_words,
+        "humanAdjudicatedWords": human_words,
         "unmatchedMaculaWords": unmatched_words,
+        "trOnlyTokens": len(candidate.get("trOnlyTokenIds") or []),
     }
     if any(expected.get(key) != value for key, value in actual.items()):
         raise ValueError(f"candidate summary differs from tree counts: {actual}")
+
+
+def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
+    """Overlay explicit human TR-native branches without inventing MACULA links."""
+    if adjudications.get("schema") != STRUCTURE_ADJUDICATION_SCHEMA:
+        raise ValueError("noncanonical NT structure adjudication schema")
+    nodes: dict[str, dict] = {}
+
+    def index(node: dict) -> None:
+        node_id = node.get("candidateNodeId")
+        if node_id:
+            if node_id in nodes:
+                raise ValueError(f"duplicate candidate node id: {node_id}")
+            nodes[node_id] = node
+        for child in node.get("children") or []:
+            index(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            index(root)
+
+    applied: list[dict] = []
+    for decision in adjudications.get("decisions") or []:
+        if decision.get("book") != candidate.get("book") or decision.get("chapter") != candidate.get("chapter"):
+            continue
+        decision_id = decision.get("decisionId")
+        target = nodes.get(decision.get("targetCandidateNodeId"))
+        token_ids = decision.get("trTokenIds") or []
+        terminal_ids = decision.get("replacedMaculaTerminalIds") or []
+        native = decision.get("nativeGroup") or {}
+        if (
+            not decision_id
+            or not target
+            or target.get("kind") != "group"
+            or target.get("status") != "hold-token-disagreement"
+            or decision.get("decision") != "replace-macula-order-with-native-tr-group"
+            or not decision.get("reviewer")
+            or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(decision.get("date") or ""))
+            or len(token_ids) < 2
+            or len(token_ids) != len(set(token_ids))
+            or any(not token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids)
+        ):
+            raise ValueError(f"invalid native TR structure adjudication: {decision_id!r}")
+        current_terminals = [
+            child.get("maculaTerminalId")
+            for child in target.get("children") or []
+            if child.get("kind") == "reference-word"
+        ]
+        if current_terminals != terminal_ids or len(current_terminals) != len(target.get("children") or []):
+            raise ValueError(f"{decision_id}: target MACULA branch changed")
+        target["status"] = "human-adjudicated-tr"
+        target["decisionIds"] = [decision_id]
+        target["children"] = [
+            {
+                "kind": "tr-word",
+                "status": "human-adjudicated-tr",
+                "trTokenId": token_id,
+                "decisionId": decision_id,
+            }
+            for token_id in token_ids
+        ]
+        for field in ("category", "rule", "function", "clauseType"):
+            if native.get(field):
+                target[field] = native[field]
+            else:
+                target.pop(field, None)
+        applied.append({
+            "decisionId": decision_id,
+            "reference": decision["reference"],
+            "reviewer": decision["reviewer"],
+            "date": decision["date"],
+            "targetCandidateNodeId": decision["targetCandidateNodeId"],
+            "reason": decision.get("reason"),
+        })
+
+    def propagate(node: dict) -> tuple[bool, set[str]]:
+        if node.get("kind") == "reference-word":
+            return False, set()
+        if node.get("kind") == "tr-word":
+            return True, {node["decisionId"]}
+        if node.get("kind") == "word":
+            return True, set()
+        child_rows = [propagate(child) for child in node.get("children") or []]
+        resolved = all(row[0] for row in child_rows)
+        decisions = set().union(*(row[1] for row in child_rows))
+        if node.get("status") == "hold-token-disagreement" and resolved and decisions:
+            node["status"] = "human-adjudicated-tr"
+            node["decisionIds"] = sorted(decisions)
+        return resolved, decisions
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            propagate(root)
+    resolved_token_ids = {
+        token_id
+        for decision in adjudications.get("decisions") or []
+        if decision.get("book") == candidate.get("book") and decision.get("chapter") == candidate.get("chapter")
+        for token_id in decision.get("trTokenIds") or []
+    }
+    candidate["trOnlyTokenIds"] = [
+        token_id for token_id in candidate.get("trOnlyTokenIds") or []
+        if token_id not in resolved_token_ids
+    ]
+    candidate["structureAdjudications"] = applied
+
+    counts = {
+        "exactGroups": 0,
+        "holdGroups": 0,
+        "humanAdjudicatedGroups": 0,
+        "mappedWords": 0,
+        "humanAdjudicatedWords": 0,
+        "unmatchedMaculaWords": 0,
+    }
+
+    def recount(node: dict) -> None:
+        kind = node.get("kind")
+        if kind == "word":
+            counts["mappedWords"] += 1
+        elif kind == "tr-word":
+            counts["humanAdjudicatedWords"] += 1
+        elif kind == "reference-word":
+            counts["unmatchedMaculaWords"] += 1
+        elif kind == "group":
+            key = {
+                "exact-candidate": "exactGroups",
+                "hold-token-disagreement": "holdGroups",
+                "human-adjudicated-tr": "humanAdjudicatedGroups",
+            }[node["status"]]
+            counts[key] += 1
+        for child in node.get("children") or []:
+            recount(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            recount(root)
+    candidate["summary"] = {**counts, "trOnlyTokens": len(candidate["trOnlyTokenIds"])}
+    validate_candidate(candidate)
+    return candidate
 
 
 def project_chapter_candidate(book: Book, chapter: int, mapping_ledger: dict) -> dict:
@@ -411,7 +576,14 @@ def project_chapter_candidate(book: Book, chapter: int, mapping_ledger: dict) ->
     tree = ET.parse(lowfat_path(book))
     candidates = []
     node_sequence = 0
-    counts = {"exactGroups": 0, "holdGroups": 0, "mappedWords": 0, "unmatchedMaculaWords": 0}
+    counts = {
+        "exactGroups": 0,
+        "holdGroups": 0,
+        "humanAdjudicatedGroups": 0,
+        "mappedWords": 0,
+        "humanAdjudicatedWords": 0,
+        "unmatchedMaculaWords": 0,
+    }
 
     def convert(element: ET.Element) -> tuple[dict | None, list[str], bool]:
         nonlocal node_sequence

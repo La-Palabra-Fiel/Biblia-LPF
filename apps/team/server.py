@@ -24,6 +24,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):  # noqa: N802
         parsed = urlparse(self.path)
         if parsed.path == "/api/board": return self.send_value(200, desk.board())
+        if parsed.path == "/api/nt-syntax-board":
+            try: return self.send_value(200, desk.nt_syntax_board())
+            except ValueError as exc: return self.send_value(400, {"error": str(exc)})
+        if parsed.path == "/api/nt-syntax":
+            query = parse_qs(parsed.query)
+            try: return self.send_value(200, desk.nt_syntax_view((query.get("book") or [""])[0], (query.get("chapter") or [""])[0]))
+            except ValueError as exc: return self.send_value(400, {"error": str(exc)})
         if parsed.path == "/api/chapter":
             query = parse_qs(parsed.query)
             try: return self.send_value(200, desk.chapter_view((query.get("book") or [""])[0], (query.get("chapter") or [""])[0]))

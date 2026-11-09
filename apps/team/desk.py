@@ -40,7 +40,13 @@ os.environ["LBF_GPT_MODEL"] = TEAM_MODEL
 os.environ["LBF_GPT_REASONING"] = TEAM_REASONING
 
 from auto_pass import write_verse  # noqa: E402
-from books import OT, get_book  # noqa: E402
+from books import NT, OT, get_book  # noqa: E402
+from nt_macula import (  # noqa: E402
+    MAPPING_POLICY as NT_MACULA_MAPPING_POLICY,
+    validate_candidate as validate_nt_syntax_candidate,
+    validate_mapping_ledger as validate_nt_mapping_ledger,
+)
+from nt_source import TR_CODE_BY_STEM, load_reconciled_verse  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
 from source_packet import build_packet, list_verses  # noqa: E402
 from draft_lib import DRAFT_EXPECTED_COMPLETION_TOKENS, DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, lexical_alignment_surface, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
@@ -53,11 +59,16 @@ VAR = Path(__file__).resolve().parent / "var"
 CLAIMS, PEOPLE = VAR / "claims.json", VAR / "people.json"
 RECOVERED = VAR / "recovered-reviews"
 STATUS = ROOT / "STATUS.md"
+NT_SYNTAX_CANDIDATES = ROOT / "nt-syntax" / "candidates"
+NT_MACULA_MAPPING = ROOT / "source" / "greek" / "TR1894" / "macula-structure-mapping.json"
+NT_MACULA_MANIFEST = ROOT / "source" / "greek" / "TR1894" / "MACULA_GREEK_MANIFEST.json"
+NT_STRUCTURE_ADJUDICATIONS = ROOT / "source" / "greek" / "TR1894" / "MACULA_STRUCTURE_ADJUDICATIONS.json"
 MAX_RUNNING = max(1, int(os.environ.get("LBF_TEAM_WORKERS", "4")))
 _lock = threading.RLock()
 _threads: dict[str, threading.Thread] = {}
 _stops: dict[str, threading.Event] = {}
 _chapter_counts: dict[str, int] = {}
+_nt_mapping_cache: tuple[str, dict] | None = None
 
 # Measured across the stored Sol requests, input tokens are at most
 # about 0.341 per UTF-8 byte. Keep a small safety margin without incorrectly
@@ -112,6 +123,10 @@ def packet_fingerprint(packet: dict) -> str:
 def object_fingerprint(value: dict) -> str:
     raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(raw).hexdigest()
+
+
+def file_fingerprint(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def text_fingerprint(value: str) -> str:
@@ -1132,6 +1147,182 @@ def chapter_count(slug: str) -> int:
         count = max(headings, default=0)
         _chapter_counts[slug] = count
     return _chapter_counts[slug]
+
+
+def nt_syntax_candidate_path(book, chapter: int) -> Path:
+    return NT_SYNTAX_CANDIDATES / f"{book.utr_stem}.{chapter}.macula.json"
+
+
+def validate_nt_candidate_adjudication_binding(candidate: dict) -> None:
+    binding = (candidate.get("provenance") or {}).get("structureAdjudications") or {}
+    if (
+        binding.get("path") != str(NT_STRUCTURE_ADJUDICATIONS.relative_to(ROOT))
+        or not NT_STRUCTURE_ADJUDICATIONS.is_file()
+        or binding.get("sha256") != file_fingerprint(NT_STRUCTURE_ADJUDICATIONS)
+    ):
+        raise ValueError("The NT structural candidate is not bound to current human adjudications.")
+
+
+def load_validated_nt_mapping() -> dict:
+    """Load the pinned triple-agreement ledger once per content hash."""
+    global _nt_mapping_cache
+    manifest = read_json(NT_MACULA_MANIFEST, {})
+    mapping = read_json(NT_MACULA_MAPPING, {})
+    expected = (manifest.get("mapping") or {}).get("sha256")
+    actual = file_fingerprint(NT_MACULA_MAPPING) if NT_MACULA_MAPPING.is_file() else ""
+    if not expected or actual != expected:
+        raise ValueError("The NT MACULA mapping ledger is missing or stale.")
+    if (manifest.get("mapping") or {}).get("policy") != NT_MACULA_MAPPING_POLICY:
+        raise ValueError("The NT MACULA mapping policy is not current.")
+    if _nt_mapping_cache is None or _nt_mapping_cache[0] != actual:
+        validate_nt_mapping_ledger(mapping)
+        _nt_mapping_cache = (actual, mapping)
+    return _nt_mapping_cache[1]
+
+
+def nt_syntax_board() -> dict:
+    """List review-only NT structural candidates without enabling translation."""
+    available = []
+    by_stem = {book.utr_stem: book for book in NT}
+    for path in sorted(NT_SYNTAX_CANDIDATES.glob("*.macula.json")):
+        parts = path.name.split(".")
+        if len(parts) != 4 or parts[2:] != ["macula", "json"]:
+            continue
+        book = by_stem.get(parts[0])
+        if book is None or not parts[1].isdigit():
+            continue
+        candidate = read_json(path, {})
+        validate_nt_syntax_candidate(candidate)
+        validate_nt_candidate_adjudication_binding(candidate)
+        if candidate.get("book") != book.slug or candidate.get("chapter") != int(parts[1]):
+            raise ValueError(f"{path.name}: candidate identity does not match its filename.")
+        available.append({
+            "book": book.slug,
+            "label": book.label,
+            "chapter": int(parts[1]),
+            "status": candidate["status"],
+            "summary": candidate["summary"],
+        })
+    return {
+        "status": "review-only-not-canonical",
+        "translationEnabled": False,
+        "approvalEnabled": False,
+        "mappingPolicy": NT_MACULA_MAPPING_POLICY,
+        "candidates": available,
+    }
+
+
+def nt_syntax_view(slug: str, chapter) -> dict:
+    """Return a validated NT structural candidate and its three-source tokens."""
+    try:
+        book = get_book(str(slug or ""))
+        number = int(chapter)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Choose an available NT structural candidate.") from exc
+    if book.testament != "nt" or number < 1:
+        raise ValueError("Choose an available NT structural candidate.")
+    path = nt_syntax_candidate_path(book, number)
+    candidate = read_json(path, {})
+    if not candidate:
+        raise ValueError(f"No review-only structural candidate exists for {book.label} {number}.")
+    validate_nt_syntax_candidate(candidate)
+    validate_nt_candidate_adjudication_binding(candidate)
+    if (
+        candidate.get("book") != book.slug
+        or candidate.get("chapter") != number
+        or (candidate.get("provenance") or {}).get("mappingPolicy") != NT_MACULA_MAPPING_POLICY
+    ):
+        raise ValueError("The NT structural candidate is not bound to the current mapping policy.")
+    mapping = load_validated_nt_mapping()
+    code = TR_CODE_BY_STEM[book.utr_stem]
+    verse_rows = [
+        row for row in mapping.get("verses") or []
+        if row["reference"].startswith(f"{code}.{number}.")
+    ]
+    verse_rows.sort(key=lambda row: int(row["reference"].rsplit(".", 1)[-1]))
+    verses = []
+    all_token_ids: set[str] = set()
+    mapped_candidate_ids: set[str] = set()
+    adjudicated_tokens: dict[str, str] = {}
+
+    def collect_candidate_ids(node: dict) -> None:
+        if node.get("kind") in {"word", "tr-word"}:
+            mapped_candidate_ids.add(node["trTokenId"])
+        if node.get("kind") == "tr-word":
+            adjudicated_tokens[node["trTokenId"]] = node["decisionId"]
+        for child in node.get("children") or []:
+            collect_candidate_ids(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            collect_candidate_ids(root)
+    for row in verse_rows:
+        verse = int(row["reference"].rsplit(".", 1)[-1])
+        source = load_reconciled_verse(book, number, verse)
+        terminal_by_token = {
+            item["trTokenId"]: item["maculaTerminalId"]
+            for item in row.get("mapping") or []
+        }
+        nonagreeing = set(row.get("nonAgreeingRobinsonTokenIds") or [])
+        tokens = []
+        for token in source["trTokens"]:
+            token_id = token["tokenId"]
+            all_token_ids.add(token_id)
+            terminal_id = terminal_by_token.get(token_id)
+            decision_id = adjudicated_tokens.get(token_id)
+            tokens.append({
+                "tokenId": token_id,
+                "surface": token["surfaceGreek"],
+                "surfaceBeta": token["surfaceBeta"],
+                "robinsonMorphology": (token.get("morphology") or {}).get("rawTag"),
+                "strongs": (token.get("morphology") or {}).get("strongs") or [],
+                "maculaTerminalId": terminal_id,
+                "tripleAgreement": terminal_id is not None,
+                "structurallyResolved": decision_id is not None,
+                "structureDecisionId": decision_id,
+                "holdReason": (
+                    None
+                    if decision_id is not None
+                    else
+                    "SCV y Robinson no concuerdan en un solo token."
+                    if token_id in nonagreeing
+                    else "MACULA no ofrece una correspondencia inequívoca para este token."
+                    if terminal_id is None
+                    else None
+                ),
+            })
+        unresolved = [
+            token for token in tokens
+            if not token["tripleAgreement"] and not token["structurallyResolved"]
+        ]
+        verses.append({
+            "verse": verse,
+            "reference": row["reference"],
+            "status": (
+                "human-adjudicated-tr"
+                if not unresolved and any(token["structurallyResolved"] for token in tokens)
+                else "exact"
+                if not unresolved
+                else "hold-token-disagreement"
+            ),
+            "tokens": tokens,
+            "maculaSurfaceOnHold": row.get("maculaSurface"),
+        })
+    candidate_coverage = mapped_candidate_ids | set(candidate.get("trOnlyTokenIds") or [])
+    if candidate_coverage != all_token_ids:
+        raise ValueError("The NT structural candidate does not cover the complete TR chapter.")
+    return {
+        "book": book.slug,
+        "label": book.label,
+        "chapter": number,
+        "status": "review-only-not-canonical",
+        "translationEnabled": False,
+        "approvalEnabled": False,
+        "mappingPolicy": NT_MACULA_MAPPING_POLICY,
+        "summary": candidate["summary"],
+        "verses": verses,
+        "candidate": candidate,
+    }
 
 
 def board() -> dict:

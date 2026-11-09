@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "tools" / "pipeline"))
 
 from books import get_book  # noqa: E402
 from nt_macula import (  # noqa: E402
+    apply_structure_adjudications,
     project_chapter_candidate,
     sha256,
     validate_mapping_ledger,
@@ -20,6 +21,7 @@ from nt_macula import (  # noqa: E402
 
 MAPPING = ROOT / "source" / "greek" / "TR1894" / "macula-structure-mapping.json"
 MANIFEST = ROOT / "source" / "greek" / "TR1894" / "MACULA_GREEK_MANIFEST.json"
+ADJUDICATIONS = ROOT / "source" / "greek" / "TR1894" / "MACULA_STRUCTURE_ADJUDICATIONS.json"
 
 
 def main() -> int:
@@ -37,14 +39,22 @@ def main() -> int:
     if book.testament != "nt":
         raise ValueError("MACULA Greek candidates are NT only")
     candidate = project_chapter_candidate(book, args.chapter, mapping)
+    adjudications = json.loads(ADJUDICATIONS.read_text(encoding="utf-8"))
+    candidate = apply_structure_adjudications(candidate, adjudications)
+    candidate["provenance"]["structureAdjudications"] = {
+        "path": str(ADJUDICATIONS.relative_to(ROOT)),
+        "sha256": sha256(ADJUDICATIONS),
+    }
     output = ROOT / "nt-syntax" / "candidates" / f"{book.utr_stem}.{args.chapter}.macula.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(candidate, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"candidate {output.relative_to(ROOT)}: "
         f"{candidate['summary']['exactGroups']} exact groups; "
+        f"{candidate['summary']['humanAdjudicatedGroups']} human-adjudicated groups; "
         f"{candidate['summary']['holdGroups']} HOLD groups; "
-        f"{candidate['summary']['mappedWords']} mapped words"
+        f"{candidate['summary']['mappedWords']} mapped words; "
+        f"{candidate['summary']['humanAdjudicatedWords']} native TR words"
     )
     return 0
 

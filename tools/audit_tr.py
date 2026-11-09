@@ -18,7 +18,8 @@ repository, so they need no maintenance and no second Greek edition:
 
   inventory   every TR verse has a Spanish verse, and no extras
   names       proper nouns and place names in the TR appear in the Spanish
-  order       adjacent Ihsou/Cristou pairs keep the TR's order in Spanish
+  order       adjacent Ihsou/Cristou pairs keep the TR's order and approved
+              distinct Spanish forms
   brevity     a verse far shorter than its neighbours may have dropped a
               clause the TR has and the critical text lacks
 
@@ -234,8 +235,29 @@ def check_name_order(greek, spanish, findings: list[Finding], touched: set) -> N
         if not (want_jc or want_cj):
             continue
         touched.add(key)
-        got_jc = len(re.findall(r"jesus\s+crist", text))
+        approved_jc = len(re.findall(r"\bjesus\s*,\s*\*el\*\s+crist\w*\b", text))
+        bare_jc = len(re.findall(r"\bjesus\s+crist\w*\b", text))
+        fused_jc = len(re.findall(r"\bjesucrist\w*\b", text))
+        got_jc = approved_jc + bare_jc + fused_jc
         got_cj = len(re.findall(r"crist\w*\s+jesus", text))
+        if fused_jc:
+            findings.append(
+                Finding(
+                    f"{key[0]}:{key[1]}",
+                    "order",
+                    "FAIL",
+                    "LPF keeps Jesus and Cristo as distinct tokens; replace «Jesucristo» with the approved ordered form",
+                )
+            )
+        if bare_jc:
+            findings.append(
+                Finding(
+                    f"{key[0]}:{key[1]}",
+                    "order",
+                    "FAIL",
+                    "LPF renders Ihsou Cristou as «Jesús, *el* Cristo», not «Jesús Cristo»",
+                )
+            )
         if got_jc < want_jc and got_cj > want_cj:
             findings.append(
                 Finding(
@@ -251,7 +273,7 @@ def check_name_order(greek, spanish, findings: list[Finding], touched: set) -> N
                     f"{key[0]}:{key[1]}",
                     "order",
                     "FAIL",
-                    f"TR reads Cristou Ihsou ({want_cj}x) but the Spanish reads «Jesús Cristo»",
+                    f"TR reads Cristou Ihsou ({want_cj}x) but the Spanish uses the Jesus-Christ order",
                 )
             )
         elif got_jc + got_cj < want_jc + want_cj:

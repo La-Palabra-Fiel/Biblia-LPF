@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from books import get_book
 from nt_macula import (
+    apply_structure_adjudications,
     assert_allowed_projection,
     load_macula_words,
     map_verse,
@@ -89,6 +90,38 @@ class NtMaculaTests(unittest.TestCase):
             (ROOT / "source/greek/TR1894/macula-structure-mapping.json").read_text()
         )
         validate_mapping_ledger(ledger)
+
+    def test_philippians_1_1_human_adjudication_uses_native_tr_tokens(self) -> None:
+        import json
+        from books import ROOT
+
+        ledger = json.loads(
+            (ROOT / "source/greek/TR1894/macula-structure-mapping.json").read_text()
+        )
+        decisions = json.loads(
+            (ROOT / "source/greek/TR1894/MACULA_STRUCTURE_ADJUDICATIONS.json").read_text()
+        )
+        candidate = project_chapter_candidate(get_book("filipenses"), 1, ledger)
+        apply_structure_adjudications(candidate, decisions)
+        native_words = []
+
+        def collect(node):
+            if node.get("kind") == "tr-word":
+                native_words.append(node)
+            for child in node.get("children") or []:
+                collect(child)
+
+        for sentence in candidate["sentences"]:
+            for root in sentence["roots"]:
+                collect(root)
+        self.assertEqual(
+            [word["trTokenId"] for word in native_words],
+            ["PHP.1.1.w005", "PHP.1.1.w006"],
+        )
+        self.assertTrue(all("maculaTerminalId" not in word for word in native_words))
+        self.assertEqual(candidate["summary"]["humanAdjudicatedWords"], 2)
+        self.assertEqual(candidate["summary"]["trOnlyTokens"], 38)
+        validate_candidate(candidate)
 
 
 if __name__ == "__main__":

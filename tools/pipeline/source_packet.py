@@ -24,6 +24,7 @@ from hebrew_lexicon import (
     lookup as lookup_hebrew_lexicon,
 )
 from morph import expand_hebrew_morph
+from nt_source import load_reconciled_verse, validate_manifest
 from ot_evidence import (
     MACULA_ATTRIBUTION,
     MACULA_COMMIT,
@@ -50,14 +51,6 @@ NT_ALLOWED_SOURCES = ["TR1894-surface", "Robinson-morph", "Strongs-id-only"]
 
 OSIS_NS = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
 VERSE_LINE = re.compile(r"^(\d+):(\d+)\s+(.*)$")
-TOKEN = re.compile(r"([^{}]*)\{([^}]*)\}")
-
-BETA_MAP = {
-    "a": "α", "b": "β", "g": "γ", "d": "δ", "e": "ε", "z": "ζ", "h": "η",
-    "q": "θ", "i": "ι", "k": "κ", "l": "λ", "m": "μ", "n": "ν", "c": "χ",
-    "o": "ο", "p": "π", "r": "ρ", "s": "σ", "v": "ς", "t": "τ", "u": "υ",
-    "f": "φ", "x": "ξ", "y": "ψ", "w": "ω",
-}
 
 
 def local_name(tag: str) -> str:
@@ -355,101 +348,47 @@ def build_ot_packet(book: Book, chapter: int, verse: int) -> dict:
         "corpusEvidence": list(corpus_entries.values()),
     }
 
-def beta_to_unicode(beta: str) -> str:
-    out: list[str] = []
-    chars = list((beta or "").lower())
-    i = 0
-    while i < len(chars):
-        ch = chars[i]
-        if ch == "*":
-            i += 1
-            if i < len(chars):
-                mapped = BETA_MAP.get(chars[i], chars[i])
-                out.append(mapped.upper() if mapped.isalpha() else mapped)
-                i += 1
-            continue
-        if ch == "s":
-            nxt = chars[i + 1] if i + 1 < len(chars) else ""
-            out.append("ς" if not nxt or nxt not in BETA_MAP else "σ")
-            i += 1
-            continue
-        out.append(BETA_MAP.get(ch, ch))
-        i += 1
-    return "".join(out)
-
-
-def parse_utr_verse(path: Path, chapter: int, verse: int) -> list[dict]:
-    current = None
-    buffer: list[str] = []
-    found: list[str] | None = None
-
-    def flush() -> None:
-        nonlocal found
-        if current == (chapter, verse):
-            found = buffer.copy()
-
-    for line in path.read_text(encoding="utf-8").splitlines():
-        match = VERSE_LINE.match(line)
-        if match:
-            flush()
-            current = (int(match.group(1)), int(match.group(2)))
-            buffer = [match.group(3)]
-        elif current is not None and line.strip():
-            buffer.append(line.strip())
-    flush()
-    if found is None:
-        raise KeyError(f"{path.name} {chapter}:{verse} not in TR1894")
-    body = " ".join(found)
-    tokens = []
-    position = 0
-    for chunk, morph in TOKEN.findall(body):
-        words = chunk.replace("|", " ").split()
-        strongs: list[str] = []
-        surfaces: list[str] = []
-        for word in words:
-            if word.isdigit():
-                strongs.append(word)
-            else:
-                surfaces.append(word.strip("[]"))
-        if not surfaces and not strongs:
-            continue
-        position += 1
-        beta = surfaces[0] if surfaces else ""
-        tokens.append(
-            {
-                "position": position,
-                "surfaceBeta": beta,
-                "surfaceGreek": beta_to_unicode(beta),
-                "surfaceVariants": [beta_to_unicode(item) for item in surfaces[1:]],
-                "strongs": f"G{int(strongs[0])}" if strongs else None,
-                "morph": morph,
-            }
-        )
-    return tokens
-
-
 def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
-    if not book.utr_path.is_file():
-        raise FileNotFoundError(f"TR1894 UTR missing: {book.utr_path}")
-    rows = parse_utr_verse(book.utr_path, chapter, verse)
+    manifest = validate_manifest()
+    reconciliation = load_reconciled_verse(book, chapter, verse)
+    rows = reconciliation["trTokens"]
     tokens = []
     for row in rows:
+        morphology = row["morphology"]
+        strongs = morphology["strongs"]
         tokens.append(
             {
-                "sourceTokenId": token_id(book, chapter, verse, row["position"]),
-                "position": row["position"],
+                "sourceTokenId": token_id(book, chapter, verse, row["ordinal"]),
+                "trTokenId": row["tokenId"],
+                "position": row["ordinal"],
                 "surface": row["surfaceGreek"],
                 "surfaceBeta": row["surfaceBeta"],
-                "surfaceVariants": row["surfaceVariants"],
                 "lemma": None,
-                "strongs": row["strongs"],
-                "morph": row["morph"],
+                "strongs": f"G{strongs[0]}" if strongs else None,
+                "strongsAll": [f"G{item}" for item in strongs],
+                "morph": morphology["rawTag"],
+                "morphProvider": "Robinson",
+                "morphProviderRevision": morphology["providerRevision"],
+                "sourceLocator": row["sourceLocator"],
             }
         )
     return {
         "schema": "lbf-source-packet-v1",
         "sourcePolicy": SOURCE_POLICY,
         "evidencePolicy": NT_EVIDENCE_POLICY,
+        "evidenceStatus": (
+            "READY_TEXT_MORPH"
+            if reconciliation["status"] in {
+                "exact",
+                "human-approved-variant-path",
+                "human-approved-scv-surface",
+                "human-approved-verse-boundary",
+                "policy-scv-subsequence",
+                "human-approved-morphology-path",
+                "human-approved-morphology-merge",
+            }
+            else "HOLD_SOURCE_MISMATCH"
+        ),
         "book": book.slug,
         "label": book.label,
         "testament": "nt",
@@ -458,6 +397,15 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
         "chapter": chapter,
         "verse": verse,
         "allowedSources": list(NT_ALLOWED_SOURCES),
+        "sourceManifest": {
+            "schema": manifest["schema"],
+            "path": "source/greek/TR1894/MANIFEST.json",
+            "reconciliationPolicy": manifest["reconciliation"]["policy"],
+        },
+        "textMorphologyReconciliation": {
+            "status": reconciliation["status"],
+            "reason": reconciliation["reason"],
+        },
         "forbiddenSources": [
             "memory",
             "theology",
@@ -572,6 +520,34 @@ def validate_packet(packet: dict) -> None:
         assert_no_forbidden_macula_fields(packet)
         if packet.get("evidencePolicy") != OT_EVIDENCE_POLICY or packet.get("evidenceStatus") != "READY_FOR_MODEL":
             raise ValueError("OT evidence bundle is not ready for model use")
+    elif testament == "nt":
+        validate_manifest()
+        reconciliation = packet.get("textMorphologyReconciliation") or {}
+        expected_status = (
+            "READY_TEXT_MORPH"
+            if reconciliation.get("status") in {
+                "exact",
+                "human-approved-variant-path",
+                "human-approved-scv-surface",
+                "human-approved-verse-boundary",
+                "policy-scv-subsequence",
+                "human-approved-morphology-path",
+                "human-approved-morphology-merge",
+            }
+            else "HOLD_SOURCE_MISMATCH"
+        )
+        if packet.get("evidencePolicy") != NT_EVIDENCE_POLICY:
+            raise ValueError("NT packet has a noncanonical evidence policy")
+        if packet.get("evidenceStatus") != expected_status:
+            raise ValueError("NT packet has an invalid text/morphology status")
+        for token in packet.get("tokens") or []:
+            if (
+                token.get("morphProvider") != "Robinson"
+                or not token.get("trTokenId")
+                or not token.get("surfaceBeta")
+                or not token.get("morph")
+            ):
+                raise ValueError("NT token is not bound to TR1894 + Robinson")
 
 
 def packet_for_prompt(packet: dict) -> dict:

@@ -83,19 +83,96 @@ en hebreo, arameo o griego tomada de la misma base textual canónica.
 Autoridad textual única:
 
 - **Textus Receptus de Scrivener de 1894**.
-- Archivo de trabajo: `source/greek/TR1894/robinson-parsed/*.UTR`.
-- `source/greek/TR1894/scrivener-textonly/*.SCV` se permite solamente para
-  comprobar la transcripción de la misma edición de Scrivener 1894.
+- Archivo de trabajo morfológico: `source/greek/TR1894/robinson-parsed/*.UTR`.
+- `source/greek/TR1894/scrivener-textonly/*.SCV` es la comprobación textual
+  directa de la misma edición de Scrivener 1894. Si SCV y UTR difieren en una
+  correspondencia uno-a-uno, la superficie SCV permanece autoritativa y la
+  morfología Robinson puede vincularse a ella. Una diferencia de cantidad,
+  orden o lectura sin correspondencia uno-a-uno produce `HOLD`; nunca se
+  escoge una secuencia automáticamente.
+
+Las etiquetas y límites de versículo de SCV son igualmente autoritativos. Si
+dos o más versículos adyacentes reconstruyen exactamente la misma secuencia
+combinada en SCV y UTR, la morfología UTR se reasigna determinísticamente a los
+límites SCV, conservando su referencia y ordinal UTR originales. Esto no es
+una elección de lectura. Si la secuencia combinada no es exacta, permanece
+`HOLD`.
 
 Evidencia auxiliar permitida en el paquete:
 
 - forma griega de TR1894;
 - variantes de transcripción que el mismo archivo TR1894 marque;
 - análisis morfológico Robinson;
-- número de Strong como identificador, no como definición.
+- número de Strong como identificador, no como definición;
+- **MACULA Greek**, exclusivamente como andamiaje estructural comparativo
+  proyectado sobre los tokens de TR1894 conforme a la excepción cerrada de
+  abajo.
 
 La morfología y el identificador nunca pueden cambiar, reemplazar ni ampliar
 la lectura griega de TR1894.
+
+### Excepción estructural cerrada: MACULA Greek sobre TR1894
+
+Se autoriza `Clear-Bible/macula-greek` únicamente como fuente comparativa de
+estructura griega, fijada en el commit
+`8423afe47b9e8f24b7772e808af45c7159a6fe7e`. Licencia CC BY 4.0;
+atribución requerida: *MACULA Greek Linguistic Datasets, available at
+https://github.com/Clear-Bible/macula-greek/*.
+
+Esta autorización no convierte Nestle 1904 ni SBLGNT en testigos textuales de
+LPF. La superficie, el orden y la identidad de cada terminal canónico siguen
+procediendo exclusivamente de Scrivener TR1894. La morfología canónica de
+trabajo sigue siendo Robinson, sujeta a validación y corrección humana
+documentada; MACULA no la reemplaza.
+
+De MACULA Greek solo pueden entrar en la capa comparativa:
+
+- límites de oración, cláusula y frase;
+- anidamiento y orden estructural;
+- clase o categoría estructural, regla, función o rol gramatical, cabeza y
+  tipo de cláusula;
+- el identificador de nodo MACULA únicamente como referencia de procedencia;
+- la forma griega únicamente durante la correspondencia mecánica con TR1894,
+  nunca como terminal ni como evidencia textual dentro del paquete final.
+
+Quedan excluidos y deben provocar rechazo: glosas, traducciones, lemas o
+morfología que pretendan reemplazar a Robinson, números Strong procedentes de
+MACULA, sentidos, dominios léxicos o semánticos, marcos, roles semánticos,
+referentes de participantes, sinonimia, información inglesa o china, y toda
+lectura de Nestle 1904 o SBLGNT que no esté presente en TR1894.
+
+La proyección debe cumplir todas estas condiciones:
+
+1. cada terminal canónico es un `sourceTokenId` de TR1894 y aparece exactamente
+   una vez en el árbol resultante;
+2. un terminal MACULA solo puede enlazarse cuando el token SCV, un único token
+   Robinson y el terminal MACULA concuerdan en la misma superficie normalizada
+   y en un orden no ambiguo; una diferencia ortográfica adjudicada o una unión
+   de tokens puede conservar morfología Robinson, pero no constituye acuerdo de
+   las tres fuentes ni autoriza estructura MACULA;
+3. la correspondencia conserva el orden y reconstruye la superficie TR1894;
+4. una normalización ortográfica o diferencia de tokenización solo se acepta
+   cuando sea determinista, reversible y quede registrada;
+5. una diferencia textual invalida la rama estructural mínima que la contiene;
+   nunca se proyecta estructura a través de ella como si los textos fueran
+   idénticos;
+6. toda rama invalidada queda `HOLD` hasta que una persona establezca y
+   documente su estructura directamente desde la superficie TR1894, la
+   morfología Robinson y el contexto griego autorizado;
+7. los nodos canónicos resultantes pertenecen a una capa sintáctica nativa de
+   TR1894; un token o nodo MACULA nunca es su identidad primaria;
+8. el repositorio, commit, licencia, atribución, manifiesto de archivos y
+   checksums de la copia local deben verificarse antes de construir un paquete;
+9. las pruebas deben demostrar cobertura terminal completa, árbol acíclico,
+   paternidad única, rendimiento en orden TR1894, correspondencia del índice
+   de cláusulas y rechazo de todos los campos prohibidos.
+
+Un proyector, parser o modelo puede proponer una rama; no puede aprobarla ni
+resolver una diferencia textual. La ausencia de correspondencia validada o de
+una decisión humana exigida produce `HOLD`. El paquete del NT solo podrá llevar
+`evidenceStatus: READY_FOR_MODEL` cuando además contenga contexto discursivo
+TR1894, uso de corpus TR1894 y toda evidencia léxica autorizada requerida por
+esta política.
 
 ## Antiguo Testamento
 
@@ -193,9 +270,13 @@ Quedan prohibidas como evidencia para redactar, corregir, auditar o alinear:
 
 - cualquier Biblia traducida, incluida la LBF existente, RV1909, RVR1960,
   KJV, NVI, LBLA y toda otra versión;
-- texto crítico griego, SBLGNT, NA/UBS, Majority Text, LXX y otros testigos;
-- Macula Greek, cualquier campo MACULA Hebrew no permitido arriba y cualquier
-  otro árbol sintáctico no enumerado arriba;
+- texto crítico griego, SBLGNT, NA/UBS, Majority Text, LXX y otros testigos,
+  salvo la forma usada transitoriamente para la correspondencia estructural
+  cerrada de MACULA Greek autorizada arriba; ninguna de esas lecturas puede
+  entrar como superficie o autoridad textual;
+- Macula Greek fuera de la excepción estructural cerrada anterior, cualquier
+  campo MACULA Hebrew no permitido arriba y cualquier otro árbol sintáctico no
+  enumerado arriba;
 - BLE, glosas interlineales, gloss DP y concordancias de traducciones;
 - AHRC/AHLB como autoridad primaria y cualquier léxico no fijado y autorizado;
 - comentarios, teología, tipología, tradición y paralelos bíblicos usados para

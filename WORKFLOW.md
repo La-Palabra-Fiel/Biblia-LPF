@@ -226,6 +226,43 @@ discrepancia produce `HOLD_SOURCE_MISMATCH`. El contexto inmediato se construye
 del OSHB y el uso de corpus se recupera localmente del mismo OSHB, priorizando
 lema, morfología y relación sintáctica de manera determinista.
 
+La sintaxis del NT se construye como una capa nativa de TR1894. MACULA Greek,
+en el commit y bajo la lista positiva fijados por `SOURCE_POLICY.md`, puede
+proponer solamente límites, anidamiento, categorías, reglas, funciones,
+cabezas y tipos de cláusula. Scrivener TR1894 conserva todos los terminales y
+Robinson conserva la morfología de trabajo. Una rama que corresponda de manera
+exacta puede proyectarse con su procedencia; una diferencia textual reabre la
+rama mínima afectada y la deja en `HOLD` hasta una decisión humana documentada.
+Nunca se importan como autoridad una palabra de Nestle 1904 o SBLGNT, una
+glosa, un sentido, un dominio, un marco, un rol semántico ni un referente de
+MACULA.
+
+En la capa previa de texto y morfología, Scrivener SCV decide la superficie
+cuando existe una correspondencia uno-a-uno con un token UTR; Robinson aporta
+el análisis, no una lectura sustitutiva. Si cambian la cantidad o el orden de
+los tokens, el versículo queda `HOLD` hasta una adjudicación humana específica.
+
+SCV también decide los límites protestantes de versículo. Una secuencia UTR
+idéntica que cruce otro límite se redistribuye al límite SCV sin consulta
+textual adicional; cada análisis conserva su localizador UTR de procedencia.
+
+La proyección MACULA comienza con `python3 tools/build_nt_macula_mapping.py`.
+Solo un token cuya superficie y orden concuerden inequívocamente en SCV,
+Robinson y MACULA puede ser anclaje terminal. Una adjudicación SCV/Robinson
+con superficies distintas o una unión de tokens sigue disponible para la
+morfología, pero queda excluida de la proyección MACULA y produce `HOLD` en la
+rama afectada. No se usan anclas de dos fuentes.
+`python3 tools/build_nt_macula_candidate.py <libro> <capítulo>` genera material
+de revisión en `nt-syntax/candidates/`; nunca lo convierte en sintaxis canónica
+ni resuelve automáticamente un `HOLD`.
+
+La autorización de esta fuente no desbloquea por sí sola el NT. Antes de una
+llamada de modelo deben pasar la verificación del commit y los checksums, la
+correspondencia completa con los tokens TR1894, las pruebas de rechazo de
+campos prohibidos, la validación del árbol TR1894 y las capas requeridas de
+contexto, corpus y evidencia léxica. Hasta entonces el paquete permanece
+`HOLD` y Team Desk no ofrece ese capítulo para redacción o aprobación.
+
 ### Camino GPT autorizado
 
 Cuando el usuario autoriza explícitamente el camino pagado, GPT-6.1 Sol redacta

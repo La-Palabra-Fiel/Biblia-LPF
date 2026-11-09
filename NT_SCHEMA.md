@@ -1,13 +1,30 @@
 # TR1894-Based NT Syntax Schema
 
-Status: proposed specification, 2026-09-09. This is a schema proposal for a small validated prototype, not an NT corpus build and not a replacement text edition.
+Status: proposed specification, 2026-09-09; structural-source policy authorized
+2026-11-09. This remains a schema proposal for a small validated prototype,
+not an NT corpus build and not a replacement text edition.
+
+The prerequisite TR1894 + Robinson text/morphology layer completed human and
+mechanical reconciliation on 2026-11-09: 7,957 Protestant verses and 140,655
+SCV-authoritative tokens, all bound to Robinson morphology, with zero `REVIEW`
+and zero `HOLD`. This does not complete or authorize the syntax layer.
+
+The MACULA Greek comparison gate requires token-level agreement among SCV,
+Robinson, and the pinned Nestle1904 lowfat terminal before MACULA structure can
+use an anchor. A human-approved SCV/Robinson spelling difference or token merge
+remains valid morphology evidence but cannot anchor MACULA structure. Current
+counts are generated in `MACULA_GREEK_MANIFEST.json`; unresolved differences
+are not syntax decisions. A review-only Filipenses 1 candidate demonstrates
+minimal branch isolation; it is not canonical syntax.
 
 ## Design commitments
 
 1. TR1894 is the only NT text authority. Every terminal is reconstructible from a pinned TR source record.
 2. Morphology is bound to TR tokens but is a separate layer. A morphology provider never changes a TR surface or token order.
 3. Syntax is a proper rooted tree of stable nodes. Lowfat and TSV are deterministic projections, not alternative sources of truth.
-4. Clause decisions have evidence and a decision status. MACULA Greek is comparison evidence only.
+4. Clause decisions have evidence and a decision status. The pinned MACULA
+   Greek source authorized by `SOURCE_POLICY.md` is structure-only comparison
+   evidence; its Greek readings and semantic annotations are never canonical.
 5. Semantic roles, referents, senses, and discourse annotations are deferred until syntax is stable.
 
 ## Canonical document
@@ -48,7 +65,14 @@ Numbers are source order within the containing verse/sentence. They are never re
 
 ### Text and morphology: `tokens[]`
 
-Each token has a stable TR `token_id`, exact source surface, reference, ordinal, and source locator. `after` retains punctuation/whitespace without creating phantom word tokens. The `morphology` object preserves the provider's raw tag and may expose normalized features: part of speech, case, number, gender, person, tense, voice, mood, Strong's, and lemma. Null/absent means unavailable, never guessed.
+Each token has a stable TR `token_id`, exact UTR beta-code surface, optional
+deterministic Unicode display, reference, ordinal, and source locator. The
+Robinson morphology object preserves the provider's raw tag and Strong's
+identifiers and may later expose normalized features: part of speech, case,
+number, gender, person, tense, voice, mood, and lemma. Null/absent means
+unavailable, never guessed. The corresponding whole-verse SCV comparison must
+be `exact`; otherwise the verse remains `HOLD` and cannot enter syntax
+projection.
 
 ### Canonical syntax: `nodes[]`
 

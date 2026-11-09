@@ -7,127 +7,127 @@
 
 ### 1:1
 
-En el principio creó Dios los cielos y la tierra.
+En el principio Dios creó los cielos y la tierra.
 
 ### 1:2
 
-Y la tierra era desolación y vacío, y oscuridad sobre la faz del abismo, y el espíritu de Dios se cernía sobre la faz de las aguas.
+Y la tierra era desolación y vacío, y *había* oscuridad sobre la faz del abismo, y el espíritu de Dios se cernía sobre la faz de las aguas.
 
 ### 1:3
 
-Y dijo Dios: Sea *la* luz. Y fue *la* luz.
+Y dijo Dios: «Que haya luz». Y hubo luz.
 
 ### 1:4
 
-Y vio Dios la luz, que era buena, y separó Dios entre la luz y entre la oscuridad.
+Y Dios vio que la luz *era* buena, y Dios separó la luz de la oscuridad.
 
 ### 1:5
 
-Y llamó Dios a la luz día, y a la oscuridad llamó noche. Y fue tarde, y fue mañana: día uno.
+Y Dios llamó día a la luz, y a la oscuridad llamó noche. Y hubo tarde y hubo mañana: día uno.
 
 ### 1:6
 
-Y dijo Dios: Sea firmamento en medio de las aguas, y sea separando entre aguas y aguas.
+Y dijo Dios: «Que haya una extensión en medio de las aguas, y que separe aguas de aguas».
 
 ### 1:7
 
-Y hizo Dios el firmamento, y separó entre las aguas que estaban debajo del firmamento y entre las aguas que estaban encima del firmamento. Y fue así.
+Y Dios hizo la expansión y separó las aguas que *estaban* debajo de la expansión de las aguas que *estaban* encima de la expansión. Y fue así.
 
 ### 1:8
 
-Y llamó Dios al firmamento cielos. Y fue tarde, y fue mañana: día segundo.
+Y Dios llamó «cielos» a la expansión. Y hubo tarde y hubo mañana: segundo día.
 
 ### 1:9
 
-Y dijo Dios: Reúnanse las aguas de debajo de los cielos a un lugar, y aparezca lo seco. Y fue así.
+Y dijo Dios: «Reúnanse las aguas de debajo de los cielos en un solo lugar, y aparezca la tierra seca». Y fue así.
 
 ### 1:10
 
-Y llamó Dios a lo seco tierra, y a la reunión de las aguas llamó mares. Y vio Dios que era bueno.
+Y Dios llamó tierra a la tierra seca, y a la reunión de las aguas llamó mares. Y Dios vio que *era* bueno.
 
 ### 1:11
 
-Y dijo Dios: Produzca la tierra verdor, hierba que hace sembrar semilla, árbol de fruto que hace fruto según su especie, cuya semilla está en él, sobre la tierra. Y fue así.
+Y dijo Dios: «Que la tierra haga brotar pasto, hierba que produzca semilla, árbol frutal que produzca fruto según su especie, cuya semilla *esté* en él, sobre la tierra». Y fue así.
 
 ### 1:12
 
-Y produjo la tierra verdor, hierba que hace sembrar semilla según su especie, y árbol que hace fruto cuya semilla está en él, según su especie. Y vio Dios que era bueno.
+Y la tierra produjo pasto, hierba que produce semilla según su especie, y árboles que producen fruto cuya semilla *está* en él, según su especie. Y Dios vio que *era* bueno.
 
 ### 1:13
 
-Y fue tarde, y fue mañana: día tercero.
+Y hubo tarde y hubo mañana: tercer día.
 
 ### 1:14
 
-Y dijo Dios: Sean luminares en el firmamento de los cielos para separar entre el día y entre la noche, y sean por señales y por tiempos señalados y por días y años.
+Y dijo Dios: «Que haya lumbreras en la expansión de los cielos para distinguir entre el día y la noche; y sirvan para señales y para tiempos señalados y para días y años».
 
 ### 1:15
 
-Y sean por luminares en el firmamento de los cielos para alumbrar sobre la tierra. Y fue así.
+Y sean luminarias en la extensión de los cielos para alumbrar sobre la tierra. Y fue así.
 
 ### 1:16
 
-Y hizo Dios los dos luminares grandes: el luminar grande para dominio del día, y el luminar pequeño para dominio de la noche, y las estrellas.
+Y Dios hizo las dos lumbreras grandes: la lumbrera grande para gobernar el día y la lumbrera pequeña para gobernar la noche, y las estrellas.
 
 ### 1:17
 
-Y los puso Dios en el firmamento de los cielos para alumbrar sobre la tierra,
+Y Dios los puso en la extensión de los cielos para alumbrar sobre la tierra.
 
 ### 1:18
 
-y para señorear en el día y en la noche, y para separar entre la luz y entre la oscuridad. Y vio Dios que era bueno.
+Y para gobernar sobre el día y sobre la noche, y para distinguir entre la luz y la oscuridad. Y vio Dios que *era* bueno.
 
 ### 1:19
 
-Y fue tarde, y fue mañana: día cuarto.
+Y llegó la tarde y llegó la mañana: cuarto día.
 
 ### 1:20
 
-Y dijo Dios: Abunden las aguas en enjambre de alma viviente, y vuele el ave sobre la tierra, sobre la faz del firmamento de los cielos.
+Y dijo Dios: «Pululen las aguas de enjambres de seres vivos, y las criaturas voladoras vuelen sobre la tierra, sobre la superficie de la expansión de los cielos».
 
 ### 1:21
 
-Y creó Dios los grandes dragones, y toda alma viviente que se arrastra, que las aguas hicieron abundar según sus especies, y toda ave de ala según su especie. Y vio Dios que era bueno.
+Y creó Dios los grandes monstruos marinos y todos los seres vivos que se mueven, de los que bulleron las aguas, según sus especies, y toda criatura alada según su especie. Y vio Dios que *era* bueno.
 
 ### 1:22
 
-Y los bendijo Dios, diciendo: Fructifiquen y multiplíquense y llenen las aguas en los mares, y el ave multiplíquese en la tierra.
+Y Dios los bendijo diciendo: «Den fruto y multiplíquense y llenen las aguas en los mares, y que se multipliquen las aves en la tierra».
 
 ### 1:23
 
-Y fue tarde, y fue mañana: día quinto.
+Y llegó la tarde y llegó la mañana: quinto día.
 
 ### 1:24
 
-Y dijo Dios: Produzca la tierra alma viviente según su especie, ganado y reptil y animal de tierra según su especie. Y fue así.
+Y dijo Dios: «Que la tierra haga salir seres vivos según su especie: ganado y seres que se arrastran y animales de la tierra según su especie». Y fue así.
 
 ### 1:25
 
-Y hizo Dios el animal de la tierra según su especie, y el ganado según su especie, y todo reptil del suelo según su especie. Y vio Dios que era bueno.
+Y Dios hizo los animales de la tierra según su especie, y el ganado según su especie, y todo animal que se arrastra del suelo según su especie. Y Dios vio que *era* bueno.
 
 ### 1:26
 
-Y dijo Dios: Hagamos hombre en nuestra imagen, conforme a nuestra semejanza, y señoreen en el pez del mar y en el ave de los cielos y en el ganado y en toda la tierra y en todo reptil que se arrastra sobre la tierra.
+Y dijo Dios: «Hagamos al ser humano a nuestra imagen, conforme a nuestra semejanza, y que dominen sobre los peces del mar, y sobre las aves de los cielos, y sobre el ganado, y sobre toda la tierra, y sobre todo ser rastrero que se arrastra sobre la tierra».
 
 ### 1:27
 
-Y creó Dios al hombre en su imagen, en imagen de Dios lo creó; varón y hembra los creó.
+Y creó Dios al ser humano a Su imagen; a imagen de Dios lo creó; varón y mujer los creó.
 
 ### 1:28
 
-Y los bendijo Dios, y les dijo Dios: Fructifiquen y multiplíquense y llenen la tierra y sojúzguenla, y señoreen en el pez del mar y en el ave de los cielos y en todo animal que se arrastra sobre la tierra.
+Y Dios los bendijo, y Dios les dijo: «Den fruto y multiplíquense, y llenen la tierra y sométanla, y gobiernen sobre los peces del mar y sobre las aves de los cielos y sobre todo ser viviente que se mueve sobre la tierra».
 
 ### 1:29
 
-Y dijo Dios: He aquí, les he dado toda hierba que siembra semilla que está sobre la faz de toda la tierra, y todo árbol en el que hay fruto de árbol que siembra semilla; les será para comida.
+Y dijo Dios: «Miren, les he dado toda hierba que produce semilla, que *está* sobre la superficie de toda la tierra, y todos los árboles en los que *hay* fruto de árbol que produce semilla; será para ustedes como alimento».
 
 ### 1:30
 
-Y a todo animal de la tierra y a toda ave de los cielos y a todo lo que se arrastra sobre la tierra en que hay alma viviente, toda verdura de hierba para comida. Y fue así.
+Y para todo animal de la tierra, y para toda ave de los cielos, y para todo lo que se mueve sobre la tierra, en el que hay alma viviente, *he dado* todo el verdor de la hierba como alimento. Y fue así.
 
 ### 1:31
 
-Y vio Dios todo lo que había hecho, y he aquí, era muy bueno. Y fue tarde, y fue mañana: el día sexto.
+Y Dios vio todo lo que había hecho, y he aquí: *era* muy bueno. Y hubo tarde y hubo mañana: el sexto día.
 
 ## Capítulo 2
 

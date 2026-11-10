@@ -279,10 +279,11 @@ de revisión en `nt-syntax/candidates/`; nunca lo convierte en sintaxis canónic
 ni resuelve automáticamente un `HOLD`.
 
 Team Desk muestra los candidatos existentes en **Estructura griega del NT —
-solo revisión**. Esa vista vuelve a comprobar el manifiesto, el hash del
+revisión por versículo**. Esa vista vuelve a comprobar el manifiesto, el hash del
 mapeo, la política de acuerdo triple y la cobertura completa del capítulo.
-Es deliberadamente de solo lectura: no habilita la redacción, la aprobación ni
-la publicación del NT, y no escribe una segunda copia de la sintaxis.
+La vista estructural no escribe una segunda copia de la sintaxis. La redacción
+se habilita únicamente para el versículo cuyo paquete individual haya llegado
+a `READY_FOR_MODEL`; los demás permanecen bloqueados aunque compartan capítulo.
 
 Cuando una persona resuelve una rama `HOLD` directamente desde TR1894 y
 Robinson, la decisión se registra en
@@ -296,8 +297,8 @@ La autorización de esta fuente no desbloquea por sí sola el NT. Antes de una
 llamada de modelo deben pasar la verificación del commit y los checksums, la
 correspondencia completa con los tokens TR1894, las pruebas de rechazo de
 campos prohibidos, la validación del árbol TR1894 y las capas requeridas de
-contexto, corpus y evidencia léxica. Hasta entonces el paquete permanece
-`HOLD` y Team Desk no ofrece ese capítulo para redacción o aprobación.
+contexto, corpus y evidencia léxica. Hasta entonces el paquete del versículo
+permanece `HOLD`; esto no bloquea los versículos hermanos que ya estén listos.
 
 El trabajo humano del NT se realiza en una sola sesión por versículo, no en
 tres pasadas independientes. Team Desk presenta primero la superficie

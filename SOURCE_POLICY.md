@@ -60,7 +60,9 @@ la conserva siempre que sea viable en español.
 El paquete del **Antiguo Testamento** implementa la cadena de evidencia de esta
 política y puede entrar al modelo solamente cuando lleve
 `evidenceStatus: READY_FOR_MODEL` y pase el validador canónico. El paquete del
-**Nuevo Testamento continúa bloqueado** hasta construir sus capas equivalentes.
+**Nuevo Testamento se habilita por versículo**. Cada versículo permanece
+bloqueado hasta completar sus capas equivalentes; habilitar uno nunca
+desbloquea otro ni el capítulo entero.
 
 Todo paquete debe:
 
@@ -169,10 +171,11 @@ La proyección debe cumplir todas estas condiciones:
 
 Un proyector, parser o modelo puede proponer una rama; no puede aprobarla ni
 resolver una diferencia textual. La ausencia de correspondencia validada o de
-una decisión humana exigida produce `HOLD`. El paquete del NT solo podrá llevar
-`evidenceStatus: READY_FOR_MODEL` cuando además contenga contexto discursivo
-TR1894, uso de corpus TR1894 y toda evidencia léxica autorizada requerida por
-esta política.
+una decisión humana exigida produce `HOLD`. El paquete de un versículo NT solo
+puede llevar `evidenceStatus: READY_FOR_MODEL` cuando además contiene contexto
+discursivo TR1894, uso de corpus TR1894 con relaciones estructurales, evidencia
+TBESG fijada y una estructura TR completa. Una rama `HOLD` mantiene bloqueado
+ese versículo, no los demás.
 
 ## Antiguo Testamento
 

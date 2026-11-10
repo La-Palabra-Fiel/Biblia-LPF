@@ -71,6 +71,9 @@ class SourcePacketTests(unittest.TestCase):
         self.assertTrue(any(token.get("strongs") == "G3972" for token in packet["tokens"]))
         self.assertTrue(packet["lexicalEvidence"])
         self.assertTrue(all(entry["authority"] == "secondary-possibilities-only" for entry in packet["lexicalEvidence"]))
+        self.assertEqual([row["role"] for row in packet["originalLanguageContext"]], ["current", "next"])
+        self.assertTrue(packet["corpusEvidence"])
+        self.assertTrue(all(token["lexicalEvidenceIds"] and token["corpusEvidenceIds"] for token in packet["tokens"]))
         validate_packet(packet)
 
     def test_uncited_findings_are_discarded(self) -> None:
@@ -617,8 +620,15 @@ class SourcePacketTests(unittest.TestCase):
 
     def test_nt_prompt_remains_blocked(self) -> None:
         packet = build_packet("titus", 1, 1)
-        with self.assertRaisesRegex(RuntimeError, "evidence bundle is incomplete"):
+        with self.assertRaisesRegex(RuntimeError, "model translation blocked"):
             packet_for_prompt(packet)
+
+    def test_nt_prompt_opens_only_for_a_ready_verse(self) -> None:
+        packet = build_packet("filipenses", 1, 7)
+        self.assertEqual(packet["evidenceStatus"], "READY_FOR_MODEL")
+        prompt = packet_for_prompt(packet)
+        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v1")
+        self.assertEqual(prompt["textualBasis"], "TR1894")
 
     def test_macula_mapping_is_exact_and_structural_only(self) -> None:
         packet = build_packet("exodo", 1, 16)

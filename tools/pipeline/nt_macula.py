@@ -380,8 +380,13 @@ def validate_candidate(candidate: dict) -> None:
         if node.get("status") == "human-adjudicated-tr":
             human_groups += 1
             decisions = set(node.get("decisionIds") or [])
-            if not children_resolved or not decisions or decisions != child_decisions:
-                raise ValueError("human-adjudicated TR group lacks complete decision provenance")
+            local_decisions = set(node.get("localDecisionIds") or [])
+            if not children_resolved or not decisions or decisions != child_decisions | local_decisions:
+                raise ValueError(
+                    f"human-adjudicated TR group lacks complete decision provenance: "
+                    f"{node.get('candidateNodeId')} decisions={sorted(decisions)} "
+                    f"children={sorted(child_decisions)} local={sorted(local_decisions)}"
+                )
             return True, False, decisions
         if node.get("status") != "hold-token-disagreement":
             raise ValueError("candidate group has an unknown review status")
@@ -415,6 +420,7 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
         raise ValueError("noncanonical NT structure adjudication schema")
     nodes: dict[str, dict] = {}
     reference_words: dict[str, dict] = {}
+    mapped_words: dict[str, dict] = {}
 
     def index(node: dict) -> None:
         node_id = node.get("candidateNodeId")
@@ -423,6 +429,9 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
                 raise ValueError(f"duplicate candidate node id: {node_id}")
             nodes[node_id] = node
         terminal_id = node.get("maculaTerminalId")
+        token_id = node.get("trTokenId")
+        if node.get("kind") == "word" and token_id:
+            mapped_words[token_id] = node
         if node.get("kind") == "reference-word" and terminal_id:
             if terminal_id in reference_words:
                 raise ValueError(f"duplicate unmatched MACULA terminal id: {terminal_id}")
@@ -444,14 +453,102 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
         token_ids = decision.get("trTokenIds") or []
         terminal_ids = decision.get("replacedMaculaTerminalIds") or []
         native = decision.get("nativeGroup") or {}
-        common_valid = (
+        metadata_valid = (
             bool(decision_id)
             and bool(decision.get("reviewer"))
             and bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(decision.get("date") or "")))
-            and bool(token_ids)
-            and len(token_ids) == len(set(token_ids))
-            and all(token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids)
         )
+        common_valid = metadata_valid and bool(token_ids) and len(token_ids) == len(set(token_ids)) and all(
+            token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids
+        )
+        if decision_type == "rebuild-group-in-tr-order-from-existing-anchors":
+            child_specs = decision.get("nativeChildren") or []
+            if (
+                not metadata_valid
+                or token_ids
+                or not target
+                or target.get("kind") != "group"
+                or target.get("status") != "hold-token-disagreement"
+                or not child_specs
+            ):
+                raise ValueError(f"invalid native TR order adjudication: {decision_id!r}")
+
+            def leaf_tokens(node: dict) -> list[str]:
+                if node.get("kind") == "word":
+                    return [node["trTokenId"]]
+                return [token for child in node.get("children") or [] for token in leaf_tokens(child)]
+
+            existing_tokens = set(leaf_tokens(target))
+            children = []
+            selected_tokens: list[str] = []
+            for spec in child_specs:
+                if spec.get("trTokenId"):
+                    child = mapped_words.get(spec["trTokenId"])
+                else:
+                    child = nodes.get(spec.get("candidateNodeId"))
+                if child is None:
+                    raise ValueError(f"{decision_id}: native child no longer exists")
+                children.append(child)
+                selected_tokens.extend(leaf_tokens(child))
+            if set(selected_tokens) != existing_tokens or len(selected_tokens) != len(existing_tokens):
+                raise ValueError(f"{decision_id}: native children do not preserve the target TR anchors")
+            target["children"] = children
+            target["status"] = "human-adjudicated-tr"
+            target["decisionIds"] = [decision_id]
+            target["localDecisionIds"] = [decision_id]
+            for field in ("category", "rule", "function", "clauseType"):
+                if field in native:
+                    target[field] = native[field]
+                else:
+                    target.pop(field, None)
+            applied.append({
+                "decisionId": decision_id,
+                "reference": decision["reference"],
+                "reviewer": decision["reviewer"],
+                "date": decision["date"],
+                "targetCandidateNodeId": decision["targetCandidateNodeId"],
+                "reason": decision.get("reason"),
+            })
+            continue
+        if decision_type == "remove-macula-terminal-and-promote-only-child":
+            if (
+                not metadata_valid
+                or token_ids
+                or len(terminal_ids) != 1
+                or not target
+                or target.get("kind") != "group"
+                or target.get("status") != "hold-token-disagreement"
+                or len(target.get("children") or []) != 2
+            ):
+                raise ValueError(f"invalid native TR elision adjudication: {decision_id!r}")
+            removed = target["children"][0]
+            kept = target["children"][1]
+            if (
+                removed.get("kind") != "reference-word"
+                or removed.get("maculaTerminalId") != terminal_ids[0]
+                or kept.get("kind") != "group"
+            ):
+                raise ValueError(f"{decision_id}: target MACULA elision branch changed")
+            target_id = target["candidateNodeId"]
+            promoted = {key: value for key, value in kept.items() if key != "candidateNodeId"}
+            target.clear()
+            target.update({
+                "candidateNodeId": target_id,
+                **promoted,
+                "status": "human-adjudicated-tr",
+                "decisionIds": [decision_id],
+                "localDecisionIds": [decision_id],
+            })
+            applied.append({
+                "decisionId": decision_id,
+                "reference": decision["reference"],
+                "reviewer": decision["reviewer"],
+                "date": decision["date"],
+                "targetCandidateNodeId": target_id,
+                "removedMaculaTerminalIds": terminal_ids,
+                "reason": decision.get("reason"),
+            })
+            continue
         if decision_type == "replace-macula-terminal-with-native-tr-word":
             if not common_valid or len(token_ids) != 1 or len(terminal_ids) != 1:
                 raise ValueError(f"invalid native TR terminal adjudication: {decision_id!r}")
@@ -524,7 +621,7 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
             return True, set()
         child_rows = [propagate(child) for child in node.get("children") or []]
         resolved = all(row[0] for row in child_rows)
-        decisions = set().union(*(row[1] for row in child_rows))
+        decisions = set(node.get("localDecisionIds") or []).union(*(row[1] for row in child_rows))
         if node.get("status") == "hold-token-disagreement" and resolved and decisions:
             node["status"] = "human-adjudicated-tr"
             node["decisionIds"] = sorted(decisions)

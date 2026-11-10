@@ -252,8 +252,6 @@ def book_or_raise(slug: str):
         book = get_book(str(slug or ""))
     except KeyError as exc:
         raise ValueError(str(exc)) from exc
-    if book.testament != "ot":
-        raise ValueError("The New Testament is blocked until its equivalent evidence packet is authorized.")
     return book
 
 
@@ -606,7 +604,7 @@ def chapter_view(slug: str, chapter) -> dict:
         human_current = human_review_is_current(slug, number, verse)
         revision_open = revision_is_open(slug, number, verse)
         rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_current and not revision_open, "priorApprovalCurrent": human_current, "revisionOpen": revision_open})
-    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "chapterReviewed": chapter_review_is_current(slug, number, verses), "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
+    return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "TR1894" if book.testament == "nt" else "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "chapterReviewed": chapter_review_is_current(slug, number, verses), "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
 def _run(args: list[str], *, allow_gate_failure: bool = False) -> None:
@@ -638,6 +636,11 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         # Preparation always rebuilds the derived packet. Do the same in
         # memory here so a stale stored packet cannot understate paid calls.
         packet = build_packet(book.slug, number, verse)
+        if getattr(book, "testament", "ot") == "nt" and packet.get("evidenceStatus") != "READY_FOR_MODEL":
+            raise ValueError(
+                f"{book.label} {number}:{verse} no está listo para el modelo: "
+                f"{packet.get('evidenceStatus')}. Resuelve su evidencia estructural en esta misma sesión."
+            )
         existing_path, existing_candidate = reusable_candidate(book.slug, number, verse)
         if (
             existing_path
@@ -1326,8 +1329,8 @@ def nt_syntax_view(slug: str, chapter) -> dict:
 
 
 def board() -> dict:
-    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in OT], "claims": load_claims(), "ntBlocked": True}
+    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC + TR1894", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in (*OT, *NT) if chapter_count(b.slug)], "claims": load_claims(), "ntBlocked": False, "ntReadiness": "verse-gated"}
 
 
 def warm_totals() -> None:
-    for book in OT: chapter_count(book.slug)
+    for book in (*OT, *NT): chapter_count(book.slug)

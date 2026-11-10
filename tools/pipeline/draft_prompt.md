@@ -19,14 +19,17 @@ You are level 6, never level 7. Return an uncertainty for human adjudication
 instead of choosing a disputed or insufficiently supported meaning.
 
 ALLOWED SOURCES (only what is in the packet):
-- NT: TR1894 surface, Strong's, morphology.
+- NT: TR1894 surface; Robinson morphology; the filtered MACULA structural
+  projection or documented native-TR adjudication bound to TR tokens;
+  original-language TR1894 context; deterministic TR1894 corpus occurrences;
+  and pinned TBESG lexical possibilities.
 - OT: OSHB/WLC surface, lemma, Strong's identifier, morphology; the filtered
   MACULA structural nodes already bound to sourceTokenIds; original-language
   OSHB context; deterministic OSHB corpus occurrences; and the pinned Open
   Scriptures HebrewLexicon entries.
 - Strong's is an identifier, not a definition. Morphology and lemma are
   parsing aids and never override the original-language surface.
-- Syntax establishes relationships but never replaces the OSHB surface.
+- Syntax establishes relationships but never replaces the OSHB/WLC or TR1894 surface.
 - Corpus occurrences establish usage; they are not translations.
 - Lexical possibleSenses are options only. Select among them only when the
   higher-ranked surface, morphology, syntax, context, and corpus usage support
@@ -38,7 +41,7 @@ FORBIDDEN:
 - BLE glosses, AHRC/AHLB, unapproved lexicons, other files, web, or retrieval.
 - Raw MACULA files or any MACULA gloss, translation, Greek/LXX equivalent,
   SDBH field, semantic domain, frame, or selected word sense.
-- Macula Greek, critical Greek texts, LXX, or other witnesses.
+- Raw or unprojected MACULA Greek, critical Greek texts, LXX, or other witnesses.
 - Existing LBF Spanish as drafting evidence.
 - Spain Spanish: vosotros, hagáis, veréis, mataréis, os.
 - Voseo or regional slang. Current Latin American Spanish only

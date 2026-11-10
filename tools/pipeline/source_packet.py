@@ -33,6 +33,7 @@ from hebrew_lexicon import (
 )
 from morph import expand_hebrew_morph
 from nt_source import load_reconciled_verse, validate_manifest
+from nt_evidence import corpus_usage as nt_corpus_usage, original_language_context as nt_original_language_context, syntax_for_verse as nt_syntax_for_verse
 from ot_evidence import (
     MACULA_ATTRIBUTION,
     MACULA_COMMIT,
@@ -46,7 +47,7 @@ from paleo import strongs_from_lemma, to_paleo
 
 SOURCE_POLICY = "lbf-source-policy-v4"
 OT_EVIDENCE_POLICY = "canonical-ot-evidence-bundle-v1"
-NT_EVIDENCE_POLICY = "blocked-pending-canonical-evidence-bundle"
+NT_EVIDENCE_POLICY = "canonical-nt-evidence-bundle-v1"
 OT_ALLOWED_SOURCES = [
     "OSHB/WLC-surface",
     "OSHB-lemma-morph",
@@ -60,6 +61,8 @@ NT_ALLOWED_SOURCES = [
     "Robinson-morph",
     "Strongs-id-only",
     f"STEPBible-TBESG@{GREEK_LEXICON_COMMIT}",
+    "MACULA-Greek-structure-only@8423afe47b9e8f24b7772e808af45c7159a6fe7e",
+    "TR1894-corpus-usage",
 ]
 
 OSIS_NS = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
@@ -255,6 +258,7 @@ def build_ot_packet(book: Book, chapter: int, verse: int) -> dict:
 
     tokens = []
     lexical_entries: dict[str, dict] = {}
+    corpus_entries: dict[str, dict] = {}
     for position, word in enumerate(word_nodes, start=1):
         lemma = word.get("lemma") or ""
         morph = word.get("morph") or ""
@@ -367,6 +371,7 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
     rows = reconciliation["trTokens"]
     tokens = []
     lexical_entries: dict[str, dict] = {}
+    corpus_entries: dict[str, dict] = {}
     for row in rows:
         morphology = row["morphology"]
         strongs = morphology["strongs"]
@@ -375,6 +380,9 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
             for entry in lookup_greek_lexicon(strong):
                 lexical_entries[entry["lexicalEvidenceId"]] = entry
                 lexical_ids.append(entry["lexicalEvidenceId"])
+            for occurrence in nt_corpus_usage(strong, row["reference"]):
+                evidence_id = f"TR1894:{strong}:{occurrence['trTokenId']}"
+                corpus_entries[evidence_id] = {"corpusEvidenceId": evidence_id, "strong": f"G{strong:04d}", **occurrence}
         tokens.append(
             {
                 "sourceTokenId": token_id(book, chapter, verse, row["ordinal"]),
@@ -386,29 +394,59 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
                 "strongs": f"G{strongs[0]}" if strongs else None,
                 "strongsAll": [f"G{item}" for item in strongs],
                 "lexicalEvidenceIds": lexical_ids,
+                "corpusEvidenceIds": [
+                    evidence_id for evidence_id, entry in corpus_entries.items()
+                    if entry["strong"] in {f"G{item:04d}" for item in strongs}
+                ],
                 "morph": morphology["rawTag"],
                 "morphProvider": "Robinson",
                 "morphProviderRevision": morphology["providerRevision"],
                 "sourceLocator": row["sourceLocator"],
             }
         )
+    syntax = nt_syntax_for_verse(book, chapter, verse, [row["tokenId"] for row in rows])
+    if syntax["status"] == "READY_TR_STRUCTURE":
+        for token in tokens:
+            if token["corpusEvidenceIds"]:
+                continue
+            path = (syntax.get("tokenStructuralPaths") or {}).get(token["trTokenId"])
+            if not path:
+                continue
+            strong = token.get("strongs")
+            evidence_id = f"TR1894:native:{token['trTokenId']}"
+            corpus_entries[evidence_id] = {
+                "corpusEvidenceId": evidence_id,
+                "strong": strong,
+                "reference": token["trTokenId"].rsplit(".w", 1)[0],
+                "trTokenId": token["trTokenId"],
+                "sourceTokenId": token["sourceTokenId"],
+                "surface": token["surface"],
+                "surfaceBeta": token["surfaceBeta"],
+                "morph": token["morph"],
+                "structureStatus": "native-tr-verse-structure",
+                "structuralPath": path,
+            }
+            token["corpusEvidenceIds"] = [evidence_id]
+    source_ready = reconciliation["status"] in {
+        "exact", "human-approved-variant-path", "human-approved-scv-surface",
+        "human-approved-verse-boundary", "policy-scv-subsequence",
+        "human-approved-morphology-path", "human-approved-morphology-merge",
+    }
+    evidence_ready = all(
+        token.get("lexicalEvidenceIds") and token.get("corpusEvidenceIds")
+        for token in tokens
+    )
+    evidence_status = (
+        "HOLD_SOURCE_MISMATCH" if not source_ready
+        else "HOLD_STRUCTURE" if syntax["status"] != "READY_TR_STRUCTURE"
+        else "HOLD_CORPUS_OR_LEXICON" if not evidence_ready
+        else "READY_FOR_MODEL"
+    )
     return {
         "schema": "lbf-source-packet-v1",
         "sourcePolicy": SOURCE_POLICY,
         "evidencePolicy": NT_EVIDENCE_POLICY,
-        "evidenceStatus": (
-            "READY_TEXT_MORPH"
-            if reconciliation["status"] in {
-                "exact",
-                "human-approved-variant-path",
-                "human-approved-scv-surface",
-                "human-approved-verse-boundary",
-                "policy-scv-subsequence",
-                "human-approved-morphology-path",
-                "human-approved-morphology-merge",
-            }
-            else "HOLD_SOURCE_MISMATCH"
-        ),
+        "evidenceStatus": evidence_status,
         "book": book.slug,
         "label": book.label,
         "testament": "nt",
@@ -439,6 +477,9 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
         ],
         "tokens": tokens,
         "lexicalEvidence": list(lexical_entries.values()),
+        "syntax": syntax,
+        "originalLanguageContext": nt_original_language_context(book, chapter, verse),
+        "corpusEvidence": list(corpus_entries.values()),
     }
 
 
@@ -544,9 +585,7 @@ def validate_packet(packet: dict) -> None:
     elif testament == "nt":
         validate_manifest()
         reconciliation = packet.get("textMorphologyReconciliation") or {}
-        expected_status = (
-            "READY_TEXT_MORPH"
-            if reconciliation.get("status") in {
+        source_ready = reconciliation.get("status") in {
                 "exact",
                 "human-approved-variant-path",
                 "human-approved-scv-surface",
@@ -555,12 +594,8 @@ def validate_packet(packet: dict) -> None:
                 "human-approved-morphology-path",
                 "human-approved-morphology-merge",
             }
-            else "HOLD_SOURCE_MISMATCH"
-        )
         if packet.get("evidencePolicy") != NT_EVIDENCE_POLICY:
             raise ValueError("NT packet has a noncanonical evidence policy")
-        if packet.get("evidenceStatus") != expected_status:
-            raise ValueError("NT packet has an invalid text/morphology status")
         for token in packet.get("tokens") or []:
             if (
                 token.get("morphProvider") != "Robinson"
@@ -590,6 +625,39 @@ def validate_packet(packet: dict) -> None:
             for lexical_id in token.get("lexicalEvidenceIds") or []
         ):
             raise ValueError("NT token cites missing Greek lexical evidence")
+        if any(token.get("strongs") and not token.get("lexicalEvidenceIds") for token in packet.get("tokens") or []):
+            raise ValueError("NT token lacks Greek lexical possibilities")
+        if not packet.get("originalLanguageContext") or not any(
+            row.get("role") == "current" for row in packet["originalLanguageContext"]
+        ):
+            raise ValueError("NT packet is missing TR1894 original-language context")
+        syntax = packet.get("syntax") or {}
+        if syntax.get("status") not in {"READY_TR_STRUCTURE", "HOLD_STRUCTURE", "HOLD_NO_CHAPTER_CANDIDATE"}:
+            raise ValueError("NT packet has invalid TR1894 structural evidence")
+        corpus_ids = {row.get("corpusEvidenceId") for row in packet.get("corpusEvidence") or []}
+        if not corpus_ids or any(
+            evidence_id not in corpus_ids
+            for token in packet.get("tokens") or []
+            for evidence_id in token.get("corpusEvidenceIds") or []
+        ):
+            raise ValueError("NT packet is missing TR1894 corpus evidence")
+        if any(token.get("strongs") and not token.get("corpusEvidenceIds") for token in packet.get("tokens") or []):
+            if packet.get("evidenceStatus") == "READY_FOR_MODEL":
+                raise ValueError("NT token lacks TR1894 corpus usage")
+        if any(not row.get("structuralPath") for row in packet.get("corpusEvidence") or []):
+            raise ValueError("NT corpus evidence lacks structural relationships")
+        evidence_ready = all(
+            token.get("lexicalEvidenceIds") and token.get("corpusEvidenceIds")
+            for token in packet.get("tokens") or []
+        )
+        expected_status = (
+            "HOLD_SOURCE_MISMATCH" if not source_ready
+            else "HOLD_STRUCTURE" if syntax.get("status") != "READY_TR_STRUCTURE"
+            else "HOLD_CORPUS_OR_LEXICON" if not evidence_ready
+            else "READY_FOR_MODEL"
+        )
+        if packet.get("evidenceStatus") != expected_status:
+            raise ValueError("NT packet has an invalid evidence readiness status")
 
 
 def packet_for_prompt(packet: dict) -> dict:
@@ -600,10 +668,44 @@ def packet_for_prompt(packet: dict) -> dict:
     not carry semantic evidence and are intentionally omitted here.
     """
     validate_packet(packet)
-    if packet.get("evidencePolicy") == NT_EVIDENCE_POLICY:
-        raise RuntimeError(
-            "model translation blocked: canonical form+morphology+syntax+discourse+corpus evidence bundle is incomplete"
-        )
+    if packet.get("testament") == "nt":
+        if packet.get("evidenceStatus") != "READY_FOR_MODEL":
+            raise RuntimeError(f"model translation blocked for this verse: {packet.get('evidenceStatus')}")
+        cited_corpus = []
+        seen_corpus = set()
+        corpus_by_id = {row["corpusEvidenceId"]: row for row in packet.get("corpusEvidence") or []}
+        for token in packet.get("tokens") or []:
+            for evidence_id in (token.get("corpusEvidenceIds") or [])[:2]:
+                if evidence_id not in seen_corpus:
+                    cited_corpus.append(corpus_by_id[evidence_id])
+                    seen_corpus.add(evidence_id)
+        return {
+            "promptProfile": "canonical-nt-compact-v1",
+            "sourcePolicy": packet["sourcePolicy"],
+            "evidencePolicy": packet["evidencePolicy"],
+            "book": packet["book"],
+            "reference": packet["reference"],
+            "chapter": packet["chapter"],
+            "verse": packet["verse"],
+            "textualBasis": packet["textualBasis"],
+            "tokens": [
+                {key: token.get(key) for key in (
+                    "sourceTokenId", "trTokenId", "surface", "surfaceBeta", "strongs",
+                    "morph", "lexicalEvidenceIds", "corpusEvidenceIds",
+                ) if token.get(key) not in (None, [], "")}
+                for token in packet["tokens"]
+            ],
+            "lexicalEvidence": [
+                {key: entry.get(key) for key in (
+                    "lexicalEvidenceId", "strong", "greek", "transliteration",
+                    "lexicalMorphology", "gloss", "meaning", "authority",
+                ) if entry.get(key) not in (None, [], "")}
+                for entry in packet.get("lexicalEvidence") or []
+            ],
+            "syntax": packet["syntax"],
+            "originalLanguageContext": packet.get("originalLanguageContext") or [],
+            "corpusEvidence": cited_corpus,
+        }
     tokens = []
     for token in packet.get("tokens") or []:
         tokens.append(

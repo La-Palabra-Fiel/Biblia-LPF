@@ -85,8 +85,10 @@ class DeskTests(unittest.TestCase):
             desk.claim("Ana","exodo",3,"11111111");desk.claim("Luis","exodo",4,"22222222")
             with self.assertRaises(ValueError):desk.claim("Luis","exodo",3,"22222222")
             self.assertIn("exodo:3",desk.load_claims());self.assertIn("exodo:4",desk.load_claims())
-    def test_nt_is_blocked(self):
-        with self.assertRaises(ValueError):desk.book_or_raise("mateo")
+    def test_nt_is_allowed_but_readiness_is_per_verse(self):
+        self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
+        self.assertFalse(desk.board()["ntBlocked"])
+        self.assertEqual(desk.board()["ntReadiness"],"verse-gated")
     def test_nt_syntax_pilot_is_review_only_and_does_not_unblock_translation(self):
         board=desk.nt_syntax_board()
         self.assertFalse(board["translationEnabled"])
@@ -107,6 +109,11 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(sixth["status"],"human-adjudicated-tr")
         resolved=[token for token in sixth["tokens"] if token["structurallyResolved"]]
         self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.6.w012","PHP.1.6.w014","PHP.1.6.w015"])
+        seventh=view["verses"][6]
+        self.assertEqual(seventh["status"],"human-adjudicated-tr")
+        resolved=[token for token in seventh["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.7.w030"])
+        self.assertEqual(resolved[0]["structureDecisionId"],"PHP.1.7.synkoinonous-terminal")
         with self.assertRaisesRegex(ValueError,"No review-only structural candidate"):
             desk.nt_syntax_view("mateo",1)
     def test_alignment_requires_complete_token_coverage(self):

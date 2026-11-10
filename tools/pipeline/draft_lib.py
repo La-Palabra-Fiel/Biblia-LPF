@@ -33,7 +33,7 @@ TEAM_DRAFT_MODEL_REVIEW_ON = "2026-11-30"
 # room for the complete JSON while placing a firm per-verse cost ceiling.
 DRAFT_MAX_COMPLETION_TOKENS = 4000
 DRAFT_EXPECTED_COMPLETION_TOKENS = 1200
-DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v8"
+DRAFT_SPEC_VERSION = "lbf-full-reverse-interlinear-v9"
 COMPATIBLE_DRAFT_SPEC_VERSIONS = {
     "lbf-full-reverse-interlinear-v1",
     "lbf-full-reverse-interlinear-v2",

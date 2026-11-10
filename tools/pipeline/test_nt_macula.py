@@ -122,11 +122,12 @@ class NtMaculaTests(unittest.TestCase):
                 "PHP.1.6.w012",
                 "PHP.1.6.w014",
                 "PHP.1.6.w015",
+                "PHP.1.7.w030",
             ],
         )
         self.assertTrue(all("maculaTerminalId" not in word for word in native_words))
-        self.assertEqual(candidate["summary"]["humanAdjudicatedWords"], 5)
-        self.assertEqual(candidate["summary"]["trOnlyTokens"], 35)
+        self.assertEqual(candidate["summary"]["humanAdjudicatedWords"], 6)
+        self.assertEqual(candidate["summary"]["trOnlyTokens"], 34)
         validate_candidate(candidate)
 
 

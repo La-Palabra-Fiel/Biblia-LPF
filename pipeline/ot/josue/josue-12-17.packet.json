@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "josue",
   "label": "Josué",
   "testament": "ot",
@@ -9,21 +12,29 @@
   "verse": 17,
   "oshbOsis": "Josh.12.17",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h06012017001",
       "oshbId": "068nK",
+      "oshbRef": "Josh.12.17!1",
       "position": 1,
       "surface": "מֶ֤לֶךְ",
       "paleo": "𐤌𐤋𐤊",
@@ -31,27 +42,27 @@
       "strongs": "H4428",
       "morph": "HNcmsc",
       "morphExpanded": "Hebrew; noun common masculine singular construct",
-      "ahrc": {
-        "concreteSense": "KING",
-        "definition": "The male ruler of a nation or city state.",
-        "parentRoot": "מל",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "hae",
+      "corpusEvidenceId": "4428"
     },
     {
       "sourceTokenId": "h06012017002",
       "oshbId": "06tSz",
+      "oshbRef": "Josh.12.17!2",
       "position": 2,
       "surface": "תַּפּ֨וּחַ֙",
       "paleo": "𐤕𐤐𐤅𐤇",
       "lemma": "8599 b",
       "strongs": "H8599",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "nvx",
+      "corpusEvidenceId": "8599 b"
     },
     {
       "sourceTokenId": "h06012017003",
       "oshbId": "06FE5",
+      "oshbRef": "Josh.12.17!3",
       "position": 3,
       "surface": "אֶחָ֔ד",
       "paleo": "𐤀𐤇𐤃",
@@ -59,16 +70,13 @@
       "strongs": "H259",
       "morph": "HAcmsa",
       "morphExpanded": "Hebrew; cardinal masculine singular absolute",
-      "ahrc": {
-        "concreteSense": "UNIT",
-        "definition": "A unit within the whole, a unified group. A single quantity. Alternate Translations: first; one; other; few (when in the plural form)",
-        "parentRoot": "אח",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "aks",
+      "corpusEvidenceId": "259"
     },
     {
       "sourceTokenId": "h06012017004",
       "oshbId": "06Hxz",
+      "oshbRef": "Josh.12.17!4",
       "position": 4,
       "surface": "מֶ֥לֶךְ",
       "paleo": "𐤌𐤋𐤊",
@@ -76,27 +84,27 @@
       "strongs": "H4428",
       "morph": "HNcmsc",
       "morphExpanded": "Hebrew; noun common masculine singular construct",
-      "ahrc": {
-        "concreteSense": "KING",
-        "definition": "The male ruler of a nation or city state.",
-        "parentRoot": "מל",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "hae",
+      "corpusEvidenceId": "4428"
     },
     {
       "sourceTokenId": "h06012017005",
       "oshbId": "06B3z",
+      "oshbRef": "Josh.12.17!5",
       "position": 5,
       "surface": "חֵ֖פֶר",
       "paleo": "𐤇𐤐𐤓",
       "lemma": "2660 b",
       "strongs": "H2660",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "eei",
+      "corpusEvidenceId": "2660 b"
     },
     {
       "sourceTokenId": "h06012017006",
       "oshbId": "06XLq",
+      "oshbRef": "Josh.12.17!6",
       "position": 6,
       "surface": "אֶחָֽד",
       "paleo": "𐤀𐤇𐤃",
@@ -104,12 +112,548 @@
       "strongs": "H259",
       "morph": "HAcmsa",
       "morphExpanded": "Hebrew; cardinal masculine singular absolute",
-      "ahrc": {
-        "concreteSense": "UNIT",
-        "definition": "A unit within the whole, a unified group. A single quantity. Alternate Translations: first; one; other; few (when in the plural form)",
-        "parentRoot": "אח",
-        "binding": "investigative-nonbinding"
+      "lexicalEvidenceId": "aks",
+      "corpusEvidenceId": "259"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "4428",
+      "lexicalIndexId": "hae",
+      "headword": "מֶ֫לֶךְ",
+      "transliteration": "melek",
+      "partOfSpeech": "N",
+      "indexDefinition": "king",
+      "bdbEntryId": "m.cd.ab",
+      "possibleSenses": [
+        "king"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "8599b",
+      "lexicalIndexId": "nvx",
+      "headword": "תַּפּוּחַ",
+      "transliteration": "tappûaḥ",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Tappuah",
+      "bdbEntryId": "n.ej.ag",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "259",
+      "lexicalIndexId": "aks",
+      "headword": "אֶחָד",
+      "transliteration": "ʾeḥād",
+      "partOfSpeech": "A",
+      "indexDefinition": "one",
+      "bdbEntryId": "a.cj.aa",
+      "possibleSenses": [
+        "one",
+        "each",
+        "every",
+        "a certain",
+        "only",
+        "once",
+        "another",
+        "the other",
+        "first"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "2660b",
+      "lexicalIndexId": "eei",
+      "headword": "חֵ֫פֶר",
+      "transliteration": "ḥēper",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Hepher",
+      "bdbEntryId": "h.es.ad",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 6,
+      "total": 6,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m060120001",
+        "sourceTokenIds": [
+          "h06012017001",
+          "h06012017002",
+          "h06012017003",
+          "h06012017004",
+          "h06012017005",
+          "h06012017006"
+        ]
+      },
+      {
+        "nodeId": "m060120002",
+        "class": "cl",
+        "rule": "P-S",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06012017001",
+          "h06012017002",
+          "h06012017003"
+        ]
+      },
+      {
+        "nodeId": "m060120003",
+        "class": "np",
+        "rule": "NPofNP",
+        "role": "p",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06012017001",
+          "h06012017002"
+        ]
+      },
+      {
+        "nodeId": "m060120004",
+        "class": "cl",
+        "rule": "P-S",
+        "sourceTokenIds": [
+          "h06012017004",
+          "h06012017005",
+          "h06012017006"
+        ]
+      },
+      {
+        "nodeId": "m060120005",
+        "class": "np",
+        "rule": "NPofNP",
+        "role": "p",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06012017004",
+          "h06012017005"
+        ]
       }
+    ],
+    "tokenRoles": {
+      "h06012017003": [
+        "s"
+      ],
+      "h06012017006": [
+        "s"
+      ]
+    }
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Josué 12:16",
+      "oshbOsis": "Josh.12.16",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "06PFr",
+          "oshbRef": "Josh.12.16!1",
+          "surface": "מֶ֤לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "06YKm",
+          "oshbRef": "Josh.12.16!2",
+          "surface": "מַקֵּדָה֙",
+          "lemma": "4719",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06WHq",
+          "oshbRef": "Josh.12.16!3",
+          "surface": "אֶחָ֔ד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        },
+        {
+          "oshbId": "06KxQ",
+          "oshbRef": "Josh.12.16!4",
+          "surface": "מֶ֥לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "06NKr",
+          "oshbRef": "Josh.12.16!5",
+          "surface": "בֵּֽית",
+          "lemma": "1008+",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06LsJ",
+          "oshbRef": "Josh.12.16!6",
+          "surface": "אֵ֖ל",
+          "lemma": "1008",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06bhZ",
+          "oshbRef": "Josh.12.16!7",
+          "surface": "אֶחָֽד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        }
+      ]
+    },
+    {
+      "reference": "Josué 12:17",
+      "oshbOsis": "Josh.12.17",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "068nK",
+          "oshbRef": "Josh.12.17!1",
+          "surface": "מֶ֤לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "06tSz",
+          "oshbRef": "Josh.12.17!2",
+          "surface": "תַּפּ֨וּחַ֙",
+          "lemma": "8599 b",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06FE5",
+          "oshbRef": "Josh.12.17!3",
+          "surface": "אֶחָ֔ד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        },
+        {
+          "oshbId": "06Hxz",
+          "oshbRef": "Josh.12.17!4",
+          "surface": "מֶ֥לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "06B3z",
+          "oshbRef": "Josh.12.17!5",
+          "surface": "חֵ֖פֶר",
+          "lemma": "2660 b",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06XLq",
+          "oshbRef": "Josh.12.17!6",
+          "surface": "אֶחָֽד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        }
+      ]
+    },
+    {
+      "reference": "Josué 12:18",
+      "oshbOsis": "Josh.12.18",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "06nB1",
+          "oshbRef": "Josh.12.18!1",
+          "surface": "מֶ֤לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc"
+        },
+        {
+          "oshbId": "06h14",
+          "oshbRef": "Josh.12.18!2",
+          "surface": "אֲפֵק֙",
+          "lemma": "663",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06vMU",
+          "oshbRef": "Josh.12.18!3",
+          "surface": "אֶחָ֔ד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        },
+        {
+          "oshbId": "06112",
+          "oshbRef": "Josh.12.18!4",
+          "surface": "מֶ֥לֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsa"
+        },
+        {
+          "oshbId": "063fE",
+          "oshbRef": "Josh.12.18!5",
+          "surface": "לַשָּׁר֖וֹן",
+          "lemma": "l/8289",
+          "morph": "HRd/Np"
+        },
+        {
+          "oshbId": "06zMp",
+          "oshbRef": "Josh.12.18!6",
+          "surface": "אֶחָֽד",
+          "lemma": "259",
+          "morph": "HAcmsa"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "4428",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "4428",
+      "totalOccurrences": 2522,
+      "exactMorphOccurrences": 787,
+      "samples": [
+        {
+          "reference": "Gen.14.1",
+          "surface": "מֶֽלֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc",
+          "syntaxRoles": [],
+          "clauseRule": "V-PP",
+          "oshbId": "01BFg",
+          "originalContext": [
+            "בִּימֵי֙",
+            "אַמְרָפֶ֣ל",
+            "מֶֽלֶךְ",
+            "שִׁנְעָ֔ר",
+            "אַרְי֖וֹךְ"
+          ]
+        },
+        {
+          "reference": "2Kgs.23.29",
+          "surface": "מֶֽלֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc",
+          "syntaxRoles": [],
+          "clauseRule": "PP-V-S-PP-PP",
+          "oshbId": "12LX5",
+          "originalContext": [
+            "פַרְעֹ֨ה",
+            "נְכֹ֧ה",
+            "מֶֽלֶךְ",
+            "מִצְרַ֛יִם",
+            "עַל"
+          ]
+        },
+        {
+          "reference": "Zech.14.5",
+          "surface": "מֶֽלֶךְ",
+          "lemma": "4428",
+          "morph": "HNcmsc",
+          "syntaxRoles": [],
+          "clauseRule": "V-PP",
+          "oshbId": "38PZV",
+          "originalContext": [
+            "בִּימֵ֖י",
+            "עֻזִּיָּ֣ה",
+            "מֶֽלֶךְ",
+            "יְהוּדָ֑ה",
+            "וּבָא֙"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNcmsc"
+      ]
+    },
+    {
+      "corpusEvidenceId": "8599 b",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "8599 b",
+      "totalOccurrences": 5,
+      "exactMorphOccurrences": 3,
+      "samples": [
+        {
+          "reference": "Josh.12.17",
+          "surface": "תַּפּ֨וּחַ֙",
+          "lemma": "8599 b",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "P-S",
+          "oshbId": "06tSz",
+          "originalContext": [
+            "מֶ֤לֶךְ",
+            "תַּפּ֨וּחַ֙",
+            "אֶחָ֔ד",
+            "מֶ֥לֶךְ"
+          ]
+        },
+        {
+          "reference": "Josh.15.34",
+          "surface": "תַּפּ֖וּחַ",
+          "lemma": "8599 b",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "06R4y",
+          "originalContext": [
+            "וְעֵ֣ין",
+            "גַּנִּ֔ים",
+            "תַּפּ֖וּחַ",
+            "וְהָעֵינָֽם"
+          ]
+        },
+        {
+          "reference": "Josh.17.8",
+          "surface": "תַּפּ֑וּחַ",
+          "lemma": "8599 b",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "CLaCL",
+          "oshbId": "06cJc",
+          "originalContext": [
+            "הָיְתָ֖ה",
+            "אֶ֣רֶץ",
+            "תַּפּ֑וּחַ",
+            "וְתַפּ֛וּחַ",
+            "אֶל"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "259",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "259",
+      "totalOccurrences": 970,
+      "exactMorphOccurrences": 497,
+      "samples": [
+        {
+          "reference": "Josh.12.9",
+          "surface": "אֶחָ֑ד",
+          "lemma": "259",
+          "morph": "HAcmsa",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "P-S",
+          "oshbId": "06Zqk",
+          "originalContext": [
+            "מֶ֥לֶךְ",
+            "יְרִיח֖וֹ",
+            "אֶחָ֑ד",
+            "מֶ֧לֶךְ",
+            "הָעַ֛י"
+          ]
+        },
+        {
+          "reference": "Josh.12.10",
+          "surface": "אֶחָ֔ד",
+          "lemma": "259",
+          "morph": "HAcmsa",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "P-S",
+          "oshbId": "06wJM",
+          "originalContext": [
+            "מֶ֤לֶךְ",
+            "יְרוּשָׁלִַ֨ם֙",
+            "אֶחָ֔ד",
+            "מֶ֥לֶךְ",
+            "חֶבְר֖וֹן"
+          ]
+        },
+        {
+          "reference": "Josh.12.11",
+          "surface": "אֶחָ֔ד",
+          "lemma": "259",
+          "morph": "HAcmsa",
+          "syntaxRoles": [
+            "s"
+          ],
+          "clauseRule": "P-S",
+          "oshbId": "06HGY",
+          "originalContext": [
+            "מֶ֤לֶךְ",
+            "יַרְמוּת֙",
+            "אֶחָ֔ד",
+            "מֶ֥לֶךְ",
+            "לָכִ֖ישׁ"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HAcmsa"
+      ]
+    },
+    {
+      "corpusEvidenceId": "2660 b",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "2660 b",
+      "totalOccurrences": 2,
+      "exactMorphOccurrences": 2,
+      "samples": [
+        {
+          "reference": "Josh.12.17",
+          "surface": "חֵ֖פֶר",
+          "lemma": "2660 b",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "P-S",
+          "oshbId": "06B3z",
+          "originalContext": [
+            "אֶחָ֔ד",
+            "מֶ֥לֶךְ",
+            "חֵ֖פֶר",
+            "אֶחָֽד"
+          ]
+        },
+        {
+          "reference": "1Kgs.4.10",
+          "surface": "חֵֽפֶר",
+          "lemma": "2660 b",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "P-S",
+          "oshbId": "11uLw",
+          "originalContext": [
+            "וְכָל",
+            "אֶ֥רֶץ",
+            "חֵֽפֶר"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
     }
   ]
 }

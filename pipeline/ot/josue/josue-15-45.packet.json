@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "josue",
   "label": "Josué",
   "testament": "ot",
@@ -9,32 +12,43 @@
   "verse": 45,
   "oshbOsis": "Josh.15.45",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h06015045001",
       "oshbId": "06j46",
+      "oshbRef": "Josh.15.45!1",
       "position": 1,
       "surface": "עֶקְר֥וֹן",
       "paleo": "𐤏𐤒𐤓𐤅𐤍",
       "lemma": "6138",
       "strongs": "H6138",
       "morph": "HNp",
-      "morphExpanded": "Hebrew; noun proper"
+      "morphExpanded": "Hebrew; noun proper",
+      "lexicalEvidenceId": "jtz",
+      "corpusEvidenceId": "6138"
     },
     {
       "sourceTokenId": "h06015045002",
       "oshbId": "06tWx",
+      "oshbRef": "Josh.15.45!2",
       "position": 2,
       "surface": "וּבְנֹתֶ֖יהָ",
       "paleo": "𐤅𐤁𐤍𐤕𐤉𐤄",
@@ -42,16 +56,13 @@
       "strongs": "H1323",
       "morph": "HC/Ncfpc/Sp3fs",
       "morphExpanded": "Hebrew; conjunction; noun common feminine plural construct; suffix 3rd feminine singular",
-      "ahrc": {
-        "concreteSense": "DAUGHTER",
-        "definition": "A female having the relation of a child to parent. A village that resides outside of the city walls; as \"the daughter of the city.\"",
-        "parentRoot": "בת",
-        "binding": "investigative-nonbinding"
-      }
+      "lexicalEvidenceId": "cav",
+      "corpusEvidenceId": "1323"
     },
     {
       "sourceTokenId": "h06015045003",
       "oshbId": "063VF",
+      "oshbRef": "Josh.15.45!3",
       "position": 3,
       "surface": "וַחֲצֵרֶֽיהָ",
       "paleo": "𐤅𐤇𐤑𐤓𐤉𐤄",
@@ -59,12 +70,447 @@
       "strongs": "H2691",
       "morph": "HC/Ncbpc/Sp3fs",
       "morphExpanded": "Hebrew; conjunction; noun common both plural construct; suffix 3rd feminine singular",
-      "ahrc": {
-        "concreteSense": "COURTYARD",
-        "definition": "The grounds of a building or group of buildings. Villages outside of the larger cities, as \"the yard of the city. \" A courtyard as outside the house.",
-        "parentRoot": "חצ",
-        "binding": "investigative-nonbinding"
+      "lexicalEvidenceId": "efq",
+      "corpusEvidenceId": "2691 b"
+    }
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "6138",
+      "lexicalIndexId": "jtz",
+      "headword": "עֶקְרוֹן",
+      "transliteration": "ʿeqrôn",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Ekron",
+      "bdbEntryId": "p.ez.ah",
+      "possibleSenses": [
+        "Eḳrôn"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "1323",
+      "lexicalIndexId": "cav",
+      "headword": "בַּת",
+      "transliteration": "bat",
+      "partOfSpeech": "N",
+      "indexDefinition": "daughter",
+      "bdbEntryId": "b.ca.at",
+      "possibleSenses": [
+        "daughter",
+        "young women",
+        "women",
+        "villages",
+        "ostrich",
+        "branch"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "2691b",
+      "lexicalIndexId": "efq",
+      "headword": "חָצֵר",
+      "transliteration": "ḥāṣēr",
+      "partOfSpeech": "N",
+      "indexDefinition": "settled abode",
+      "bdbEntryId": "h.fb.ab",
+      "possibleSenses": [
+        "settled abode",
+        "settlement",
+        "village"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 3,
+      "total": 3,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m060150001",
+        "class": "cl",
+        "rule": "S2CL",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06015045001",
+          "h06015045002",
+          "h06015045003"
+        ]
+      },
+      {
+        "nodeId": "m060150002",
+        "class": "np",
+        "rule": "Conj3Np",
+        "role": "s",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06015045001",
+          "h06015045002",
+          "h06015045003"
+        ]
+      },
+      {
+        "nodeId": "m060150003",
+        "class": "np",
+        "rule": "NPofNP",
+        "sourceTokenIds": [
+          "h06015045002"
+        ]
+      },
+      {
+        "nodeId": "m060150004",
+        "class": "np",
+        "rule": "NPofNP",
+        "head": "true",
+        "sourceTokenIds": [
+          "h06015045003"
+        ]
       }
+    ],
+    "tokenRoles": {}
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "Josué 15:44",
+      "oshbOsis": "Josh.15.44",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "06yhE",
+          "oshbRef": "Josh.15.44!1",
+          "surface": "וּקְעִילָ֥ה",
+          "lemma": "c/7084",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "06TCJ",
+          "oshbRef": "Josh.15.44!2",
+          "surface": "וְאַכְזִ֖יב",
+          "lemma": "c/392",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "06HLL",
+          "oshbRef": "Josh.15.44!3",
+          "surface": "וּמָֽרֵאשָׁ֑ה",
+          "lemma": "c/4762",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "06VMR",
+          "oshbRef": "Josh.15.44!4",
+          "surface": "עָרִ֥ים",
+          "lemma": "5892 b",
+          "morph": "HNcfpa"
+        },
+        {
+          "oshbId": "06nHt",
+          "oshbRef": "Josh.15.44!5",
+          "surface": "תֵּ֖שַׁע",
+          "lemma": "8672",
+          "morph": "HAcfsa"
+        },
+        {
+          "oshbId": "06uVh",
+          "oshbRef": "Josh.15.44!6",
+          "surface": "וְחַצְרֵיהֶֽן",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fp"
+        }
+      ]
+    },
+    {
+      "reference": "Josué 15:45",
+      "oshbOsis": "Josh.15.45",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "06j46",
+          "oshbRef": "Josh.15.45!1",
+          "surface": "עֶקְר֥וֹן",
+          "lemma": "6138",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "06tWx",
+          "oshbRef": "Josh.15.45!2",
+          "surface": "וּבְנֹתֶ֖יהָ",
+          "lemma": "c/1323",
+          "morph": "HC/Ncfpc/Sp3fs"
+        },
+        {
+          "oshbId": "063VF",
+          "oshbRef": "Josh.15.45!3",
+          "surface": "וַחֲצֵרֶֽיהָ",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fs"
+        }
+      ]
+    },
+    {
+      "reference": "Josué 15:46",
+      "oshbOsis": "Josh.15.46",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "06a9R",
+          "oshbRef": "Josh.15.46!1",
+          "surface": "מֵעֶקְר֖וֹן",
+          "lemma": "m/6138",
+          "morph": "HR/Np"
+        },
+        {
+          "oshbId": "06BUv",
+          "oshbRef": "Josh.15.46!2",
+          "surface": "וָיָ֑מָּה",
+          "lemma": "c/3220",
+          "morph": "HC/Ncmsa/Sd"
+        },
+        {
+          "oshbId": "066Ay",
+          "oshbRef": "Josh.15.46!3",
+          "surface": "כֹּ֛ל",
+          "lemma": "3605",
+          "morph": "HNcmsa"
+        },
+        {
+          "oshbId": "06buH",
+          "oshbRef": "Josh.15.46!4",
+          "surface": "אֲשֶׁר",
+          "lemma": "834 a",
+          "morph": "HTr"
+        },
+        {
+          "oshbId": "06s74",
+          "oshbRef": "Josh.15.46!5",
+          "surface": "עַל",
+          "lemma": "5921 a",
+          "morph": "HR"
+        },
+        {
+          "oshbId": "06Qem",
+          "oshbRef": "Josh.15.46!6",
+          "surface": "יַ֥ד",
+          "lemma": "3027",
+          "morph": "HNcbsc"
+        },
+        {
+          "oshbId": "06okp",
+          "oshbRef": "Josh.15.46!7",
+          "surface": "אַשְׁדּ֖וֹד",
+          "lemma": "795",
+          "morph": "HNp"
+        },
+        {
+          "oshbId": "065Q5",
+          "oshbRef": "Josh.15.46!8",
+          "surface": "וְחַצְרֵיהֶֽן",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fp"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "6138",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "6138",
+      "totalOccurrences": 22,
+      "exactMorphOccurrences": 15,
+      "samples": [
+        {
+          "reference": "Josh.13.3",
+          "surface": "עֶקְרוֹן֙",
+          "lemma": "6138",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "PP-PP-V",
+          "oshbId": "0628Z",
+          "originalContext": [
+            "וְעַ֨ד",
+            "גְּב֤וּל",
+            "עֶקְרוֹן֙",
+            "צָפ֔וֹנָה",
+            "לַֽכְּנַעֲנִ֖י"
+          ]
+        },
+        {
+          "reference": "1Sam.17.52",
+          "surface": "עֶקְר֑וֹן",
+          "lemma": "6138",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "V-O-PP",
+          "oshbId": "09zxQ",
+          "originalContext": [
+            "וְעַ֖ד",
+            "שַׁעֲרֵ֣י",
+            "עֶקְר֑וֹן",
+            "וַֽיִּפְּל֞וּ",
+            "חַֽלְלֵ֤י"
+          ]
+        },
+        {
+          "reference": "Amos.1.8",
+          "surface": "עֶקְר֗וֹן",
+          "lemma": "6138",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "V-O-PP",
+          "oshbId": "309KV",
+          "originalContext": [
+            "יָדִ֜י",
+            "עַל",
+            "עֶקְר֗וֹן",
+            "וְאָֽבְדוּ֙",
+            "שְׁאֵרִ֣ית"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HNp"
+      ]
+    },
+    {
+      "corpusEvidenceId": "1323",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "1323",
+      "totalOccurrences": 589,
+      "exactMorphOccurrences": 38,
+      "samples": [
+        {
+          "reference": "Josh.15.47",
+          "surface": "בְּנוֹתֶ֣יהָ",
+          "lemma": "1323",
+          "morph": "HNcfpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "06QZB",
+          "originalContext": [
+            "אַשְׁדּ֞וֹד",
+            "בְּנוֹתֶ֣יהָ",
+            "וַחֲצֵרֶ֗יהָ",
+            "עַזָּ֥ה"
+          ]
+        },
+        {
+          "reference": "Josh.15.47",
+          "surface": "בְּנוֹתֶ֥יהָ",
+          "lemma": "1323",
+          "morph": "HNcfpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "062Jq",
+          "originalContext": [
+            "וַחֲצֵרֶ֗יהָ",
+            "עַזָּ֥ה",
+            "בְּנוֹתֶ֥יהָ",
+            "וַחֲצֵרֶ֖יהָ",
+            "עַד"
+          ]
+        },
+        {
+          "reference": "Josh.15.45",
+          "surface": "וּבְנֹתֶ֖יהָ",
+          "lemma": "c/1323",
+          "morph": "HC/Ncfpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "06tWx",
+          "originalContext": [
+            "עֶקְר֥וֹן",
+            "וּבְנֹתֶ֖יהָ",
+            "וַחֲצֵרֶֽיהָ"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Ncfpc/Sp3fs"
+      ]
+    },
+    {
+      "corpusEvidenceId": "2691 b",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "2691 b",
+      "totalOccurrences": 45,
+      "exactMorphOccurrences": 4,
+      "samples": [
+        {
+          "reference": "Josh.15.47",
+          "surface": "וַחֲצֵרֶ֗יהָ",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "06Br9",
+          "originalContext": [
+            "אַשְׁדּ֞וֹד",
+            "בְּנוֹתֶ֣יהָ",
+            "וַחֲצֵרֶ֗יהָ",
+            "עַזָּ֥ה",
+            "בְּנוֹתֶ֥יהָ"
+          ]
+        },
+        {
+          "reference": "Josh.15.47",
+          "surface": "וַחֲצֵרֶ֖יהָ",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "06UQf",
+          "originalContext": [
+            "עַזָּ֥ה",
+            "בְּנוֹתֶ֥יהָ",
+            "וַחֲצֵרֶ֖יהָ",
+            "עַד",
+            "נַ֣חַל"
+          ]
+        },
+        {
+          "reference": "Josh.15.45",
+          "surface": "וַחֲצֵרֶֽיהָ",
+          "lemma": "c/2691 b",
+          "morph": "HC/Ncbpc/Sp3fs",
+          "syntaxRoles": [],
+          "clauseRule": "S2CL",
+          "oshbId": "063VF",
+          "originalContext": [
+            "עֶקְר֥וֹן",
+            "וּבְנֹתֶ֖יהָ",
+            "וַחֲצֵרֶֽיהָ"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Ncbpc/Sp3fs"
+      ]
     }
   ]
 }

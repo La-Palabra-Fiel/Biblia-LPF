@@ -27,6 +27,7 @@ import env_load  # noqa: E402,F401
 from publication_progress import demote_chapter_alignment, promote_chapter_alignment  # noqa: E402
 from draft_lib import COMPATIBLE_TEAM_DRAFT_MODELS, TEAM_DRAFT_MODEL, TEAM_DRAFT_MODEL_REVIEW_ON, TEAM_DRAFT_REASONING  # noqa: E402
 from usage_lib import rates_for  # noqa: E402
+from json_io import write_json_atomic  # noqa: E402
 
 # The team workflow is deliberately not model-configurable. Changing this is a
 # policy change, not an operator preference.
@@ -111,8 +112,7 @@ def read_json(path: Path, default=None):
 
 
 def write_json(path: Path, value) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(path, value)
 
 
 def packet_fingerprint(packet: dict) -> str:
@@ -333,9 +333,16 @@ def recovered_verse_state(slug: str, chapter: int, verse: int) -> dict:
 
 
 def restore_recovered_units(state: dict, candidate: dict) -> dict:
-    """Restore seed units only when a browser review attempt really exists."""
+    """Replace an empty failed attempt with one coherent prepared candidate."""
     if state and not state.get("units") and candidate.get("units"):
-        return {**state, "units": candidate["units"]}
+        return {
+            **state,
+            "spanish": candidate.get("spanish") or state.get("spanish") or "",
+            "units": candidate["units"],
+            "sourceConfirmed": False,
+            "alignmentConfirmed": False,
+            "suppliedConfirmed": False,
+        }
     return state
 
 
@@ -637,17 +644,13 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         assert_holder(person, book.slug, number)
     selected_verses = verses
     selected_verse = None
-    if getattr(book, "testament", "ot") == "nt" and verse is None:
-        raise ValueError(
-            "El NT se prepara versículo por versículo. Usa «Preparar este versículo con Sol» "
-            "en la tarjeta del versículo que ya esté estructuralmente listo."
-        )
     if verse is not None:
         selected_verse = int(verse or 0)
         if selected_verse not in verses:
             raise ValueError("That verse is not in this Protestant chapter.")
         selected_verses = [selected_verse]
     draft_calls = audit_calls = skipped_human = reused_candidates = 0
+    structural_holds: list[dict] = []
     estimated_input_tokens = 0
     possible_audit_input_tokens = 0
     for verse in selected_verses:
@@ -657,11 +660,19 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         # Preparation always rebuilds the derived packet. Do the same in
         # memory here so a stale stored packet cannot understate paid calls.
         packet = build_packet(book.slug, number, verse)
+        # A HOLD packet is still the canonical, no-cost explanation of what
+        # must be adjudicated. Persist it so Team Desk can show the source
+        # tokens without pretending that translation/alignment already exist.
+        write_json(packet_path(book.slug, number, verse), packet)
         if getattr(book, "testament", "ot") == "nt" and packet.get("evidenceStatus") != "READY_FOR_MODEL":
-            raise ValueError(
-                f"{book.label} {number}:{verse} no está listo para el modelo: "
-                f"{packet.get('evidenceStatus')}. Resuelve su evidencia estructural en esta misma sesión."
-            )
+            status = packet.get("evidenceStatus") or "HOLD_STRUCTURE"
+            if selected_verse is not None:
+                raise ValueError(
+                    f"{book.label} {number}:{verse} no está listo para el modelo: "
+                    f"{status}. Resuelve su evidencia estructural en esta misma sesión."
+                )
+            structural_holds.append({"verse": verse, "status": status})
+            continue
         existing_path, existing_candidate = reusable_candidate(book.slug, number, verse)
         if (
             existing_path
@@ -698,6 +709,8 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         "maximumPaidCalls": maximum_paid_calls,
         "humanReviewedSkipped": skipped_human,
         "reusedCandidates": reused_candidates,
+        "structuralHolds": structural_holds,
+        "structuralHoldCount": len(structural_holds),
         "possibleSelectiveAudits": 0,
         "localSpanishChecks": draft_calls,
         "estimatedLikelyUsd": round(likely_usd, 2),
@@ -755,6 +768,11 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             # from an earlier policy must never reach the paid Sol model.
             _run([sys.executable, str(PIPELINE / "build_source_packet.py"), slug, str(chapter), str(verse)])
             packet = read_json(packet_path(slug, chapter, verse), {})
+            # Chapter preparation is allowed to make progress around NT
+            # structural holds. A HOLD packet is displayed to the reviewer
+            # but never reaches a paid model call.
+            if packet.get("evidenceStatus") != "READY_FOR_MODEL":
+                continue
             existing_path, existing_candidate = reusable_candidate(slug, chapter, verse)
             if (
                 existing_path
@@ -1355,7 +1373,7 @@ def nt_syntax_view(slug: str, chapter) -> dict:
 
 
 def board() -> dict:
-    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC + TR1894", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in (*OT, *NT) if chapter_count(b.slug)], "claims": load_claims(), "ntBlocked": False, "ntReadiness": "verse-gated"}
+    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC + TR1894", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in (*OT, *NT) if chapter_count(b.slug)], "claims": load_claims(), "ntBlocked": False, "ntReadiness": "chapter-batch-ready-only"}
 
 
 def warm_totals() -> None:

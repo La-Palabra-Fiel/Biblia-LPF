@@ -461,11 +461,16 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
         common_valid = metadata_valid and bool(token_ids) and len(token_ids) == len(set(token_ids)) and all(
             token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids
         )
-        if decision_type == "rebuild-group-in-tr-order-from-existing-anchors":
+        if decision_type in {
+            "rebuild-group-in-tr-order-from-existing-anchors",
+            "rebuild-group-in-tr-order-with-native-tr-words",
+        }:
             child_specs = decision.get("nativeChildren") or []
+            permits_native_words = decision_type == "rebuild-group-in-tr-order-with-native-tr-words"
             if (
                 not metadata_valid
-                or token_ids
+                or (not permits_native_words and token_ids)
+                or (permits_native_words and not common_valid)
                 or not target
                 or target.get("kind") != "group"
                 or target.get("status") != "hold-token-disagreement"
@@ -481,17 +486,36 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
             existing_tokens = set(leaf_tokens(target))
             children = []
             selected_tokens: list[str] = []
+            selected_native_tokens: list[str] = []
             for spec in child_specs:
-                if spec.get("trTokenId"):
+                native_token_id = spec.get("nativeTrTokenId")
+                if native_token_id:
+                    if not permits_native_words or native_token_id not in token_ids:
+                        raise ValueError(f"{decision_id}: unauthorized native TR child")
+                    child = {
+                        "kind": "tr-word",
+                        "status": "human-adjudicated-tr",
+                        "trTokenId": native_token_id,
+                        "decisionId": decision_id,
+                    }
+                    selected_native_tokens.append(native_token_id)
+                elif spec.get("trTokenId"):
                     child = mapped_words.get(spec["trTokenId"])
                 else:
                     child = nodes.get(spec.get("candidateNodeId"))
                 if child is None:
                     raise ValueError(f"{decision_id}: native child no longer exists")
                 children.append(child)
-                selected_tokens.extend(leaf_tokens(child))
+                if not native_token_id:
+                    selected_tokens.extend(leaf_tokens(child))
             if set(selected_tokens) != existing_tokens or len(selected_tokens) != len(existing_tokens):
                 raise ValueError(f"{decision_id}: native children do not preserve the target TR anchors")
+            if (
+                set(selected_native_tokens) != set(token_ids)
+                or len(selected_native_tokens) != len(token_ids)
+                or any(token_id not in candidate.get("trOnlyTokenIds", []) for token_id in token_ids)
+            ):
+                raise ValueError(f"{decision_id}: native TR children do not match the unresolved TR tokens")
             target["children"] = children
             target["status"] = "human-adjudicated-tr"
             target["decisionIds"] = [decision_id]

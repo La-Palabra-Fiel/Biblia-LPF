@@ -13,6 +13,8 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+from json_io import write_json_atomic
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -835,5 +837,5 @@ def write_packet(packet: dict) -> Path:
     book = get_book(packet["book"])
     path = packet_path(book, packet["chapter"], packet["verse"])
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(path, packet)
     return path

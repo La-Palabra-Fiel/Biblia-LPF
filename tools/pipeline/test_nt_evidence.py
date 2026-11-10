@@ -33,7 +33,9 @@ class NtEvidenceTests(unittest.TestCase):
         ids = [row["tokenId"] for row in load_reconciled_verse(book, 1, 7)["trTokens"]]
         self.assertEqual(syntax_for_verse(book, 1, 7, ids)["status"], "READY_TR_STRUCTURE")
         ids = [row["tokenId"] for row in load_reconciled_verse(book, 1, 8)["trTokens"]]
-        self.assertEqual(syntax_for_verse(book, 1, 8, ids)["status"], "HOLD_STRUCTURE")
+        self.assertEqual(syntax_for_verse(book, 1, 8, ids)["status"], "READY_TR_STRUCTURE")
+        ids = [row["tokenId"] for row in load_reconciled_verse(book, 1, 11)["trTokens"]]
+        self.assertEqual(syntax_for_verse(book, 1, 11, ids)["status"], "READY_TR_STRUCTURE")
 
 
 if __name__ == "__main__":

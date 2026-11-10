@@ -88,13 +88,24 @@ class DeskTests(unittest.TestCase):
     def test_nt_is_allowed_but_readiness_is_per_verse(self):
         self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
         self.assertFalse(desk.board()["ntBlocked"])
-        self.assertEqual(desk.board()["ntReadiness"],"verse-gated")
+        self.assertEqual(desk.board()["ntReadiness"],"chapter-batch-ready-only")
 
-    def test_nt_chapter_wide_preparation_is_rejected_before_any_packet_or_cost(self):
+    def test_nt_chapter_preparation_counts_ready_and_skips_holds(self):
         book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
-        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,7])),patch.object(desk,"assert_holder"):
-            with self.assertRaisesRegex(ValueError,"versículo por versículo"):
-                desk.prepare_estimate("Ana","filipenses",1,"11111111")
+        packets=[{"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[]},{"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"HOLD_STRUCTURE","tokens":[]}]
+        root=Path(self.tmp.name)
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",side_effect=packets),patch.object(desk,"packet_path",side_effect=lambda s,c,v:root/f"{v}.json"),patch.object(desk,"reusable_candidate",return_value=(None,{})),patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
+            estimate=desk.prepare_estimate("Ana","filipenses",1,"11111111")
+        self.assertEqual(estimate["draftCalls"],1)
+        self.assertEqual(estimate["structuralHolds"],[{"verse":2,"status":"HOLD_STRUCTURE"}])
+    def test_nt_hold_estimate_persists_visible_evidence_before_refusing_model(self):
+        book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
+        packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"HOLD_STRUCTURE","tokens":[{"sourceTokenId":"n1"}]}
+        target=Path(self.tmp.name)/"filipenses-1-8.packet.json"
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[8])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",return_value=packet),patch.object(desk,"packet_path",return_value=target):
+            with self.assertRaisesRegex(ValueError,"HOLD_STRUCTURE"):
+                desk.prepare_estimate("Ana","filipenses",1,"11111111",8)
+        self.assertEqual(desk.read_json(target,{}),packet)
     def test_nt_syntax_pilot_is_review_only_and_does_not_unblock_translation(self):
         board=desk.nt_syntax_board()
         self.assertFalse(board["translationEnabled"])
@@ -120,6 +131,14 @@ class DeskTests(unittest.TestCase):
         resolved=[token for token in seventh["tokens"] if token["structurallyResolved"]]
         self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.7.w030"])
         self.assertEqual(resolved[0]["structureDecisionId"],"PHP.1.7.synkoinonous-terminal")
+        eighth=view["verses"][7]
+        self.assertEqual(eighth["status"],"human-adjudicated-tr")
+        resolved=[token for token in eighth["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.8.w004","PHP.1.8.w013","PHP.1.8.w014"])
+        eleventh=view["verses"][10]
+        self.assertEqual(eleventh["status"],"human-adjudicated-tr")
+        resolved=[token for token in eleventh["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.11.w002","PHP.1.11.w004"])
         with self.assertRaisesRegex(ValueError,"No review-only structural candidate"):
             desk.nt_syntax_view("mateo",1)
     def test_alignment_requires_complete_token_coverage(self):
@@ -383,6 +402,13 @@ class DeskTests(unittest.TestCase):
         with patch.object(desk,"list_verses",return_value=[1]),patch.object(desk,"human_review_is_current",return_value=True),patch.object(desk,"_run") as run,patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"):
             desk._prepare("exodo",6,threading.Event())
         run.assert_not_called()
+    def test_prepare_worker_never_sends_hold_packet_to_model(self):
+        key="filipenses:1";claims={key:{"name":"Ana"}}
+        hold={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"HOLD_STRUCTURE","tokens":[]}
+        with patch.object(desk,"list_verses",return_value=[12]),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"_run") as run,patch.object(desk,"read_json",return_value=hold),patch.object(desk,"load_claims",return_value=claims),patch.object(desk,"save_claims"):
+            desk._prepare("filipenses",1,threading.Event())
+        self.assertEqual(run.call_count,1)
+        self.assertIn("build_source_packet.py",str(run.call_args.args[0]))
     def test_failed_audit_cannot_pass_silently(self):
         prior={"spanish":"Él, Aarón y Moisés.","uncertainties":[]}
         gate={"fidelity":"fail","spanish":"pass"}
@@ -447,11 +473,14 @@ class DeskTests(unittest.TestCase):
         self.assertIn("no los convierte automáticamente en reglas",html)
         self.assertIn("mergeSeedUnits",html)
         self.assertIn("mergeUnitsBySourceId",html)
+        self.assertIn("discardSupersededEmptyLocalDrafts",html)
         self.assertIn("EXPECTED_DRAFT_SPEC",html)
         self.assertIn("readyNtSeed",html)
         self.assertIn("Preparar este versículo con",html)
         self.assertIn("ntReadinessVerseCard",html)
         self.assertIn("Aprobación bloqueada por evidencia",html)
+        self.assertIn("Todavía no existe una alineación para este versículo",html)
+        self.assertIn("Superficie griega, español y morfología",html)
         self.assertIn("server is out of date",html)
         self.assertIn("Añadir unidad",html)
         self.assertIn('class="insert-unit"',html)

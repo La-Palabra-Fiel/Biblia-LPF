@@ -34,11 +34,11 @@ Tal como es justo que yo piense esto acerca de todos ustedes, porque los tengo e
 
 ### 1:8
 
-Porque Dios es mi testigo de cuánto los añoro a todos ustedes en las entrañas de Jesús Cristo.
+Pues Dios es mi testigo de cuánto añoro a todos ustedes en las entrañas de Jesús, *el* Cristo.
 
 ### 1:9
 
-Y esto oro: que el amor de ustedes abunde aún más y más en conocimiento y en toda percepción,
+Y esto pido en oración: que el amor de ustedes abunde aún más y más en conocimiento y en todo discernimiento.
 
 ### 1:10
 

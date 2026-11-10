@@ -87,6 +87,28 @@ class DeskTests(unittest.TestCase):
             self.assertIn("exodo:3",desk.load_claims());self.assertIn("exodo:4",desk.load_claims())
     def test_nt_is_blocked(self):
         with self.assertRaises(ValueError):desk.book_or_raise("mateo")
+    def test_nt_syntax_pilot_is_review_only_and_does_not_unblock_translation(self):
+        board=desk.nt_syntax_board()
+        self.assertFalse(board["translationEnabled"])
+        self.assertFalse(board["approvalEnabled"])
+        self.assertEqual(board["mappingPolicy"],desk.NT_MACULA_MAPPING_POLICY)
+        self.assertEqual([(row["book"],row["chapter"]) for row in board["candidates"]],[('filipenses',1)])
+        view=desk.nt_syntax_view("filipenses",1)
+        self.assertEqual(view["status"],"review-only-not-canonical")
+        self.assertEqual(len(view["verses"]),30)
+        self.assertEqual(sum(len(row["tokens"]) for row in view["verses"]),499)
+        self.assertEqual(sum(token["tripleAgreement"] for row in view["verses"] for token in row["tokens"]),459)
+        first=view["verses"][0]
+        self.assertEqual(first["status"],"human-adjudicated-tr")
+        resolved=[token for token in first["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.1.w005","PHP.1.1.w006"])
+        self.assertTrue(all(token["structureDecisionId"]=="PHP.1.1.jesus-christ-order" for token in resolved))
+        sixth=view["verses"][5]
+        self.assertEqual(sixth["status"],"human-adjudicated-tr")
+        resolved=[token for token in sixth["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.6.w012","PHP.1.6.w014","PHP.1.6.w015"])
+        with self.assertRaisesRegex(ValueError,"No review-only structural candidate"):
+            desk.nt_syntax_view("mateo",1)
     def test_alignment_requires_complete_token_coverage(self):
         packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]}])

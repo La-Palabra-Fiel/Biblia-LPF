@@ -23,7 +23,7 @@ from draft_lib import (
 from draft_gpt import enforce_team_contract
 from morph import expand_hebrew_morph
 from polish_lib import freeze_from, normalize_polish
-from source_packet import build_packet, dump_prompt, packet_for_prompt
+from source_packet import build_packet, dump_prompt, packet_for_prompt, validate_packet
 
 
 class SourcePacketTests(unittest.TestCase):
@@ -69,6 +69,9 @@ class SourcePacketTests(unittest.TestCase):
         self.assertEqual(packet["textualBasis"], "TR1894")
         self.assertGreaterEqual(len(packet["tokens"]), 10)
         self.assertTrue(any(token.get("strongs") == "G3972" for token in packet["tokens"]))
+        self.assertTrue(packet["lexicalEvidence"])
+        self.assertTrue(all(entry["authority"] == "secondary-possibilities-only" for entry in packet["lexicalEvidence"]))
+        validate_packet(packet)
 
     def test_uncited_findings_are_discarded(self) -> None:
         packet = build_packet("exodo", 1, 16)
@@ -138,6 +141,7 @@ class SourcePacketTests(unittest.TestCase):
         self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v2"}))
         self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v3"}))
         self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v4"}))
+        self.assertTrue(draft_specification_is_current({"draftSpecVersion": "lbf-full-reverse-interlinear-v7"}))
         self.assertFalse(draft_specification_is_current({"promptSha256": "older-prompt"}))
 
     def test_repeated_source_ids_are_consolidated_into_one_row(self) -> None:
@@ -365,6 +369,16 @@ class SourcePacketTests(unittest.TestCase):
             "Y dijo: Cuando asistan a las hebreas a dar a luz, y verán sobre las dos piedras: si él es hijo, lo matarán; y si ella es hija, vivirá."
         )
         self.assertEqual(clean, [])
+
+    def test_lint_enforces_approved_jesus_christ_forms(self) -> None:
+        from lint_lib import lint_spanish
+
+        self.assertEqual(lint_spanish("Jesús, *el* Cristo"), [])
+        self.assertEqual(lint_spanish("Cristo Jesús"), [])
+        fused = {item["issue"] for item in lint_spanish("Jesucristo")}
+        bare = {item["issue"] for item in lint_spanish("Jesús Cristo")}
+        self.assertTrue(any("fuses two Greek tokens" in issue for issue in fused))
+        self.assertTrue(any("not natural Spanish" in issue for issue in bare))
 
     def test_draft_uncertainties_remain_structured(self) -> None:
         from draft_lib import normalize_draft

@@ -61,10 +61,10 @@ TBESH's `Meaning` field is therefore blocked pending written permission or
 replacement. LBF does not read that field. Other TBESH fields remain excluded
 until a positive-allowlist parser and leakage tests are approved.
 
-TBESG is an approved candidate, not yet an installed canonical source. Its
-exact upstream commit, checksum, license, attribution, parser, and coverage must
-be validated before model use. Locally present TFLSJ files are not approved by
-this notice.
+TBESG is an authorized secondary source for the NT evidence packet through the
+repository's fail-closed positive-allowlist parser. Its exact upstream commit,
+checksum, license, attribution, and Robinson lexical-ID coverage are validated
+before use. Locally present TFLSJ files are not approved by this notice.
 
 ### Open Scriptures HebrewLexicon
 

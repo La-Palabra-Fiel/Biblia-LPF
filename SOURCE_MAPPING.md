@@ -9,8 +9,9 @@ OT text/morphology: OSHB ──┐
                             ├── OT syntax dataset
 OT syntax analysis: MACULA Hebrew ─┘
 
-NT text: Biblia-LBF/source/greek/TR1894/tr1894.txt ─┐
-NT morphology: TR-aligned data ─┼── TR1894 syntax dataset
+NT text: Robinson UTR Scrivener TR1894 surface ─┐
+NT morphology: Robinson tags in the same UTR record ─┼── TR1894 syntax dataset
+NT text check: Scrivener SCV distribution ──────┘
 NT syntax decisions: documented ─┘
 
 MACULA Greek (N1904/SBLGNT) ── reference, comparison, validation only
@@ -34,16 +35,18 @@ MACULA Hebrew exposes a direct OSHB morpheme linkage: OSHB/OpenScriptures `<m n=
 ### Available machine-readable TR resources
 
 The authoritative NT source is the local project directory
-`source/greek/TR1894/`. Within it, `tr1894.txt` is the canonical Unicode text
-layer; the other files in that directory are supporting text and morphology
-resources. The current `tr1894.txt` SHA-256 is
-`9d0dba729aaee22e0054482b0385b58a8365107a9f9621fd2c8535bfd1b8ebcc`.
+`source/greek/TR1894/`. In accordance with `SOURCE_POLICY.md`, the pinned
+`robinson-parsed/*.UTR` records are the working Scrivener TR1894 surface and
+Robinson morphology layer. The independently pinned
+`scrivener-textonly/*.SCV` records verify that surface. `tr1894.txt` is a
+legacy Unicode display resource; it cannot replace a UTR reading or token
+boundary.
 
 | Resource | Format | Content | Identifier situation |
 | --- | --- | --- | --- |
-| `tr1894.txt` | pipe-delimited verse text, Unicode Greek | **Canonical local TR1894 text**, verse-level accents and punctuation | Stable verse record `MAT.1.1`; no word IDs |
-| `scrivener-textonly/*.SCV` | beta-code plain text | Robinson distribution of Scrivener 1894 text | Book/chapter/verse labels; no word IDs or morphology |
-| `robinson-parsed/*.UTR` | beta-code parsed text | Token sequence, Strong's, Robinson morphology | Book/chapter/verse labels and order; no explicit token IDs |
+| `robinson-parsed/*.UTR` | beta-code parsed text | **Canonical working TR1894 token sequence**, Strong's, Robinson morphology | Book/chapter/verse labels and deterministic token order |
+| `scrivener-textonly/*.SCV` | beta-code plain text | Independent check of the same Scrivener 1894 edition | Whole-verse verification; no morphology |
+| `tr1894.txt` | pipe-delimited verse text, Unicode Greek | Legacy display resource | Not allowed to override UTR surface or order |
 | `honza/textus-receptus` | flat/nested JSON, XML, YAML | Accented text, grammar, Strong's, dictionary form, glosses | Ordered word objects; inspect and pin a commit before production use |
 
 The local source records pinned upstream commits: `greektext-scrivener` `6049a43b135ed870f843b83eb6a04764fc796678` (text-only) and `greektext-textus-receptus` `7fd4d02c3e5adebd379ebfbc824040820dde10fc` (parsed). Its README correctly warns that parsed Robinson material is a helper and that text differences must be evaluated against Scrivener 1894.
@@ -60,7 +63,12 @@ MAT.1.1.w001
 MAT.1.1.w008
 ```
 
-Each token must also store `source_ref`, `source_ordinal`, `source_revision`, exact `surface_source`, optional reversible `surface_unicode`, and a source file/record/token `source_locator`. An ID is stable only within its pinned source revision and documented tokenization policy. Do not renumber it to match MACULA, and do not make punctuation into a word token merely to make another edition's counts fit.
+Each token must also store `source_ref`, `source_ordinal`, `source_revision`,
+exact UTR `surface_beta`, optional deterministic `surface_unicode`, and a
+source file/record/token `source_locator`. An ID is stable only within its
+pinned source revision and documented tokenization policy. Do not renumber it
+to match MACULA, and do not make punctuation into a word token merely to make
+another edition's counts fit.
 
 ### TR text/morphology reconciliation gate
 
@@ -68,7 +76,7 @@ The local sources deliberately supply different capabilities: Scrivener text-onl
 
 | Outcome | Action |
 | --- | --- |
-| Same TR token boundary and reading | Bind UTR morphology to the TR token; record both locators. |
+| Same UTR/SCV token boundary and reading | Accept the UTR token and Robinson morphology; record the SCV whole-verse check. |
 | Same reading, representational difference only | Record the reversible normalization rule; preserve source surfaces. |
 | Alternate reading, insertion/deletion, or split/merge | Create an explicit one-to-one/one-to-many mapping and require human review. Do not borrow another edition's word. |
 | Unresolved | Leave morphology/linkage unresolved and block the affected syntax export. |
@@ -91,6 +99,25 @@ A MACULA Greek ID such as `n40001005005` belongs to its edition. If retained, it
 
 A reference link is not a token identity mapping and confers no syntax approval. It is permitted only after a TR tokenization comparison records the relationship.
 
+The production comparison gate is stricter than a same-reference link. A
+MACULA terminal can anchor a candidate branch only when its normalized Greek
+surface agrees with both the SCV token and one Robinson token, and the match is
+forced in the same order. SCV/Robinson spelling adjudications and token merges
+remain valid in the morphology layer but cannot serve as MACULA anchors. Any
+two-source match or ambiguous repeated-word match stays `HOLD`.
+
 ## Reproducibility requirements
 
-Every transformation needs a manifest containing input path, commit/content hash, command/version, output hash, and unresolved mapping count. A TR verse must reconstruct from the local `tr1894.txt` text layer alone, and every syntax terminal must reach a TR `token_id` without consulting MACULA Greek. `schema/tr1894-syntax.schema.json` is the proposed machine-checkable boundary for that separation.
+Every transformation needs a manifest containing input path, commit/content
+hash, command/version, output hash, and unresolved mapping count. A TR verse
+must reconstruct from its pinned UTR record alone, and every syntax terminal
+must reach a TR `token_id` without consulting MACULA Greek. The generated
+`source/greek/TR1894/MANIFEST.json` and
+`tr1894-robinson-reconciliation.json` bind this source layer;
+`schema/tr1894-syntax.schema.json` is the proposed machine-checkable boundary
+for the later syntax layer.
+
+The text/morphology reconciliation was completed on 2026-11-09: all 7,957
+verses and 140,655 SCV-authoritative tokens are accounted for, with every
+token bound to Robinson morphology and no unresolved source rows. Human
+decisions are retained in `source/greek/TR1894/ADJUDICATIONS.json`.

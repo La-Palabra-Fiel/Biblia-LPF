@@ -1,5 +1,11 @@
 # TR1894 Syntax Review
 
+> **Legacy investigation only — not the authorized NT workflow.** This app
+> reads SBLGNT and the superseded `tr1894.txt` token layer. Do not use its
+> projections as LPF syntax. The authorized gate is
+> `tools/build_nt_macula_mapping.py`, based on SCV-authoritative tokens,
+> Robinson morphology, and pinned MACULA Greek Nestle1904 structure-only data.
+
 A local browser app for a bounded, review-first TR1894 syntax-fixture workflow. It projects the completed MACULA Greek SBLGNT clause trees onto local TR1894 terminals, then defaults to `qwen2.5:14b` for help with the remaining decisions.
 
 It is deliberately suggestion-only:

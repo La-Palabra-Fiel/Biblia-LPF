@@ -30,11 +30,32 @@ YHWH ni SEÑOR como sustituto de יהוה. Esto no altera el tratamiento distint
 de אדני como **Adonai** cuando funciona como apelativo fijado.
 
 Como norma editorial de la LPF, se escriben con mayúscula los pronombres y
-formas posesivas cuyo referente es inequívocamente Dios, Jesucristo o el
+formas posesivas cuyo referente es inequívocamente Dios, Jesús o el
 Espíritu Santo: **Él, Tú, Ti, Te, Lo, Le, Se, Su, Sus, Suyo** y sus formas
 flexionadas. Esta mayúscula reverencial no añade significado ni resuelve un
 referente ambiguo. Los pronombres referidos a seres humanos permanecen en
 minúscula.
+
+### Política nominal: Jesús y Cristo
+
+Por adjudicación editorial humana del 9 de noviembre de 2026, la LPF conserva
+**Jesús** y **Cristo** como dos palabras españolas distintas y mantiene el
+orden de los dos tokens griegos:
+
+- `Ἰησοῦς Χριστός` y sus formas flexionadas → **Jesús, *el* Cristo**, con las
+  adaptaciones de caso y sintaxis que exija la oración;
+- `Χριστός Ἰησοῦς` y sus formas flexionadas → **Cristo Jesús**.
+
+No se usa **Jesucristo**, porque fusiona dos tokens, ni **Jesús Cristo**, porque
+no es español natural. El artículo **el** de **Jesús, *el* Cristo** es una
+palabra suplida y siempre lleva cursiva. En la alineación, **Jesús** se enlaza
+con el token de `Ἰησοῦς` y ***el* Cristo** con el token de `Χριστός`; la coma
+permanece solo en el texto español y nunca entra en la superficie de la unidad.
+No se invierte el orden para imitar otra edición griega.
+
+Esta decisión se aplica a candidatos nuevos y revisiones humanas solicitadas.
+No autoriza una sustitución masiva, no reabre aprobaciones y no altera por sí
+sola los borradores históricos del NT.
 
 La decisión de significado sigue esta evidencia, en este orden de trabajo:
 
@@ -212,8 +233,9 @@ eligen la traducción. El cargador sigue también las remisiones internas
 explícitas de BDB ligadas a una forma morfológica; no puede reducir una forma
 remitida a la primera entrada del índice Strong (por ejemplo,
 `לְהָטִים` remite a misterio/encantamiento, mientras el singular de Génesis
-3:24 permanece llama). TBESG es el candidato griego autorizado, pendiente de
-parser y validación de cobertura. El campo `Meaning` de TBESH está bloqueado
+3:24 permanece llama). TBESG entra al paquete griego únicamente mediante el
+cargador de lista positiva fijado por commit y checksum; su cobertura de los
+identificadores léxicos Robinson se valida en pruebas. El campo `Meaning` de TBESH está bloqueado
 por el aviso de Online Bible; el paquete no lo lee. TFLSJ y TFLSJ extra están
 presentes pero no autorizados. HALOT, DCH y BDAG tampoco entran al paquete
 automático sin una licencia escrita específica para ese uso.
@@ -225,6 +247,68 @@ Cada palabra debe coincidir en orden y superficie hebrea con OSHB; una sola
 discrepancia produce `HOLD_SOURCE_MISMATCH`. El contexto inmediato se construye
 del OSHB y el uso de corpus se recupera localmente del mismo OSHB, priorizando
 lema, morfología y relación sintáctica de manera determinista.
+
+La sintaxis del NT se construye como una capa nativa de TR1894. MACULA Greek,
+en el commit y bajo la lista positiva fijados por `SOURCE_POLICY.md`, puede
+proponer solamente límites, anidamiento, categorías, reglas, funciones,
+cabezas y tipos de cláusula. Scrivener TR1894 conserva todos los terminales y
+Robinson conserva la morfología de trabajo. Una rama que corresponda de manera
+exacta puede proyectarse con su procedencia; una diferencia textual reabre la
+rama mínima afectada y la deja en `HOLD` hasta una decisión humana documentada.
+Nunca se importan como autoridad una palabra de Nestle 1904 o SBLGNT, una
+glosa, un sentido, un dominio, un marco, un rol semántico ni un referente de
+MACULA.
+
+En la capa previa de texto y morfología, Scrivener SCV decide la superficie
+cuando existe una correspondencia uno-a-uno con un token UTR; Robinson aporta
+el análisis, no una lectura sustitutiva. Si cambian la cantidad o el orden de
+los tokens, el versículo queda `HOLD` hasta una adjudicación humana específica.
+
+SCV también decide los límites protestantes de versículo. Una secuencia UTR
+idéntica que cruce otro límite se redistribuye al límite SCV sin consulta
+textual adicional; cada análisis conserva su localizador UTR de procedencia.
+
+La proyección MACULA comienza con `python3 tools/build_nt_macula_mapping.py`.
+Solo un token cuya superficie y orden concuerden inequívocamente en SCV,
+Robinson y MACULA puede ser anclaje terminal. Una adjudicación SCV/Robinson
+con superficies distintas o una unión de tokens sigue disponible para la
+morfología, pero queda excluida de la proyección MACULA y produce `HOLD` en la
+rama afectada. No se usan anclas de dos fuentes.
+`python3 tools/build_nt_macula_candidate.py <libro> <capítulo>` genera material
+de revisión en `nt-syntax/candidates/`; nunca lo convierte en sintaxis canónica
+ni resuelve automáticamente un `HOLD`.
+
+Team Desk muestra los candidatos existentes en **Estructura griega del NT —
+solo revisión**. Esa vista vuelve a comprobar el manifiesto, el hash del
+mapeo, la política de acuerdo triple y la cobertura completa del capítulo.
+Es deliberadamente de solo lectura: no habilita la redacción, la aprobación ni
+la publicación del NT, y no escribe una segunda copia de la sintaxis.
+
+Cuando una persona resuelve una rama `HOLD` directamente desde TR1894 y
+Robinson, la decisión se registra en
+`source/greek/TR1894/MACULA_STRUCTURE_ADJUDICATIONS.json`. El generador
+reemplaza solamente la rama nombrada por terminales nativos TR, conserva el
+orden TR y propaga la procedencia humana a sus antepasados mínimos. Nunca crea
+un enlace MACULA ficticio. Team Desk distingue en azul **TR resuelto**, en
+verde el acuerdo triple y en ámbar los `HOLD` todavía abiertos.
+
+La autorización de esta fuente no desbloquea por sí sola el NT. Antes de una
+llamada de modelo deben pasar la verificación del commit y los checksums, la
+correspondencia completa con los tokens TR1894, las pruebas de rechazo de
+campos prohibidos, la validación del árbol TR1894 y las capas requeridas de
+contexto, corpus y evidencia léxica. Hasta entonces el paquete permanece
+`HOLD` y Team Desk no ofrece ese capítulo para redacción o aprobación.
+
+El trabajo humano del NT se realiza en una sola sesión por versículo, no en
+tres pasadas independientes. Team Desk presenta primero la superficie
+Scrivener, la morfología Robinson y la proyección estructural disponible. Si
+la rama MACULA está en `HOLD`, la persona la adjudica allí mismo como estructura
+nativa TR; el modelo no recibe el versículo antes de esa adjudicación. Cuando
+el paquete queda completo, la misma sesión continúa con la redacción española,
+los enlaces inversos palabra-a-token TR y la aprobación humana. El español se
+enlaza siempre a los tokens TR, nunca directamente a un terminal MACULA. La
+decisión estructural queda guardada para el estudio posterior de cláusulas y
+no obliga a volver a recorrer el versículo.
 
 ### Camino GPT autorizado
 

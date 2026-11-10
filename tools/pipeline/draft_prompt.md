@@ -86,6 +86,16 @@ METHOD:
   שָׁמִיר H8068 names the hard engraving point, render it pedernal, not
   diamante. This does not fix occurrences where שָׁמִיר denotes thorns and
   does not transfer pedernal to any other lemma.
+- Binding Jesus/Christ naming policy (human editorial adjudication,
+  2026-11-09): keep the two Greek tokens distinct and preserve their order.
+  Render Ἰησοῦς Χριστός and inflected adjacent forms as Jesús, *el* Cristo;
+  render Χριστός Ἰησοῦς and inflected adjacent forms as Cristo Jesús. Never
+  use Jesucristo, which fuses two tokens, or the unnatural Jesús Cristo. The
+  supplied article *el* must retain its single-asterisk markup in both Spanish
+  and its alignment unit. Align Jesús only to the Ἰησοῦς token and *el* Cristo
+  only to the Χριστός token; punctuation is not part of either unit surface.
+  Do not reverse the order to follow another Greek edition. This policy does
+  not authorize evidence outside the canonical packet.
 - Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
   distinctions among reconsidering, changing one's mind or judgment, feeling
   sorrow, turning/returning, relenting, compassion, and comfort whenever the

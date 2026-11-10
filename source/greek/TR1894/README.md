@@ -19,6 +19,16 @@ For LBF tooling (token spine, morph, reverse-interlinear prep), prefer:
 
 **`robinson-parsed/*.UTR`**
 
+`MANIFEST.json` pins every UTR and SCV input by checksum.
+`tr1894-robinson-reconciliation.json` records the deterministic whole-verse
+comparison. Generate both with `python3 tools/build_nt_source.py`. A `hold`
+entry is deliberately unresolved and must not be repaired by choosing a text
+automatically.
+
+Current validated result (2026-11-09): 7,957 verses, 140,655 canonical SCV
+tokens, 140,655 Robinson morphology bindings, zero `REVIEW`, and zero `HOLD`.
+The authoritative human decisions are recorded in `ADJUDICATIONS.json`.
+
 Format (Robinson / ByzTxt):
 
 ```text

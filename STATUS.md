@@ -65,7 +65,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | 2corintios | nt | ready | none |  |  |  |  |  |
 | galatas | nt | ready | none |  |  |  |  |  |
 | efesios | nt | ready | none |  |  |  |  |  |
-| filipenses | nt | done | done | John Wry | 2026-08-18 | John Wry | 2026-08-19 | español rehecho contra el TR 2026-08-18; alineación caminada capítulo por capítulo, los 4 `walk-ch*.txt` firmados 2026-08-19 |
+| filipenses | nt | draft | draft |  |  |  |  | reclasificado como borrador por decisión humana 2026-11-09; el trabajo anterior se produjo para un propósito específico y no constituye aprobación final |
 | colosenses | nt | ready | none |  |  |  |  |  |
 | 1tesalonicenses | nt | ready | none |  |  |  |  |  |
 | 2tesalonicenses | nt | ready | none |  |  |  |  |  |
@@ -81,7 +81,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | 2juan | nt | ready | none |  |  |  |  |  |
 | 3juan | nt | ready | none |  |  |  |  |  |
 | judas | nt | ready | ready |  |  |  |  | reverse-links claim all-hand; unsigned |
-| apocalipsis | nt | done | done | John Wry | 2026-08-21 | John Wry | 2026-08-21 | later TR revision applied 2026-08-18; alignment not rechecked |
+| apocalipsis | nt | draft | draft |  |  |  |  | reclasificado como borrador por decisión humana 2026-11-09; revisión TR posterior no comprobada y el trabajo anterior no constituye aprobación final |
 
 ## Open human decisions
 

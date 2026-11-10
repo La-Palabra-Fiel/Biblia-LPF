@@ -54,7 +54,8 @@ the immediate verse and local paragraph — not tradition or theology.
 - ἀρχαῖς ἐξουσίαις (dative asyndeton) → "a los gobernantes y a las autoridades", not "en principios"
 - Πιστὸς ὁ λόγος → "Fiel es la palabra" / "Palabra fiel" — never garble (e.g. "fiesta")
 - φιλανθρωπία → "amor a los hombres" / "amor al género humano", not bare "humanidad"
-- Do not drop Χριστοῦ when the Greek has Ἰησοῦ Χριστοῦ
+- Keep the two tokens and their order: Ἰησοῦς Χριστός → "Jesús, *el* Cristo";
+  Χριστός Ἰησοῦς → "Cristo Jesús". Never "Jesucristo" or "Jesús Cristo".
 - Imperative often comes last in Greek (περιΐστασο, παραιτοῦ, πρόπεμψον) — put the Spanish verb where natural, but keep the command force
 - νομικός / μάχας νομικάς → "jurista" / "peleas acerca de la ley", not "intérprete" unless context is clearly that office
 - αἱρετικὸν ἄνθρωπον → "hombre sectario/faccioso" (divisive), not only the later technical "hereje"

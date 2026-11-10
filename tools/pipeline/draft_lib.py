@@ -13,6 +13,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from json_io import write_json_atomic
+
 from books import ROOT, get_book
 from source_packet import dump_prompt, packet_for_prompt
 from usage_lib import extract_usage
@@ -260,8 +262,7 @@ def normalize_draft(raw: dict, packet: dict, label: str) -> dict:
 
 
 def write_json(path: Path, payload: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(path, payload)
 
 
 def call_openai(

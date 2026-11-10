@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from books import ROOT, get_book
 from lint_lib import lint_spanish
 from source_packet import packet_path
+from json_io import write_json_atomic
 
 
 def artifact_path(slug: str, chapter: int, verse: int, label: str) -> Path:
@@ -58,7 +59,7 @@ def main() -> int:
         ).hexdigest(),
     }
     out = artifact_path(args.book, args.chapter, args.verse, args.label)
-    out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(out, result)
     print(f"{result['verdict']}  {out}  findings={len(findings)}")
     return 0 if result["verdict"] == "pass" else 1
 

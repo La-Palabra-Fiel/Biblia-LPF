@@ -12,24 +12,19 @@
     "attribution": "MACULA Greek Linguistic Datasets, available at https://github.com/Clear-Bible/macula-greek/",
     "structureAdjudications": {
       "path": "source/greek/TR1894/MACULA_STRUCTURE_ADJUDICATIONS.json",
-      "sha256": "98be003aae8e75ebba40474cf0442465a388f38bb8962aa8bf00bd80a86542b8"
+      "sha256": "1d2fc89cda577fd4c6482b6d6dd782b72bd2745f157d48593ea5d212412a4584"
     }
   },
   "summary": {
     "exactGroups": 261,
-    "holdGroups": 98,
-    "humanAdjudicatedGroups": 22,
+    "holdGroups": 80,
+    "humanAdjudicatedGroups": 40,
     "mappedWords": 459,
-    "humanAdjudicatedWords": 6,
-    "unmatchedMaculaWords": 36,
-    "trOnlyTokens": 34
+    "humanAdjudicatedWords": 11,
+    "unmatchedMaculaWords": 32,
+    "trOnlyTokens": 29
   },
   "trOnlyTokenIds": [
-    "PHP.1.8.w004",
-    "PHP.1.8.w013",
-    "PHP.1.8.w014",
-    "PHP.1.11.w002",
-    "PHP.1.11.w004",
     "PHP.1.16.w004",
     "PHP.1.16.w005",
     "PHP.1.16.w006",
@@ -1751,7 +1746,7 @@
         {
           "candidateNodeId": "PHP.1.mc00106",
           "kind": "group",
-          "status": "hold-token-disagreement",
+          "status": "human-adjudicated-tr",
           "children": [
             {
               "kind": "word",
@@ -1762,12 +1757,12 @@
             {
               "candidateNodeId": "PHP.1.mc00105",
               "kind": "group",
-              "status": "hold-token-disagreement",
+              "status": "human-adjudicated-tr",
               "children": [
                 {
                   "candidateNodeId": "PHP.1.mc00098",
                   "kind": "group",
-                  "status": "hold-token-disagreement",
+                  "status": "human-adjudicated-tr",
                   "children": [
                     {
                       "candidateNodeId": "PHP.1.mc00096",
@@ -1790,6 +1785,12 @@
                       "category": "np",
                       "rule": "NPofNP",
                       "function": "p"
+                    },
+                    {
+                      "kind": "tr-word",
+                      "status": "human-adjudicated-tr",
+                      "trTokenId": "PHP.1.8.w004",
+                      "decisionId": "PHP.1.8.estin-native-tr-word"
                     },
                     {
                       "candidateNodeId": "PHP.1.mc00097",
@@ -1815,13 +1816,18 @@
                     }
                   ],
                   "category": "cl",
-                  "rule": "P-S",
-                  "clauseType": "verbless"
+                  "rule": "P-V-S",
+                  "decisionIds": [
+                    "PHP.1.8.estin-native-tr-word"
+                  ],
+                  "localDecisionIds": [
+                    "PHP.1.8.estin-native-tr-word"
+                  ]
                 },
                 {
                   "candidateNodeId": "PHP.1.mc00104",
                   "kind": "group",
-                  "status": "hold-token-disagreement",
+                  "status": "human-adjudicated-tr",
                   "children": [
                     {
                       "kind": "word",
@@ -1832,7 +1838,7 @@
                     {
                       "candidateNodeId": "PHP.1.mc00103",
                       "kind": "group",
-                      "status": "hold-token-disagreement",
+                      "status": "human-adjudicated-tr",
                       "children": [
                         {
                           "kind": "word",
@@ -1865,7 +1871,7 @@
                         {
                           "candidateNodeId": "PHP.1.mc00102",
                           "kind": "group",
-                          "status": "hold-token-disagreement",
+                          "status": "human-adjudicated-tr",
                           "children": [
                             {
                               "kind": "word",
@@ -1876,7 +1882,7 @@
                             {
                               "candidateNodeId": "PHP.1.mc00101",
                               "kind": "group",
-                              "status": "hold-token-disagreement",
+                              "status": "human-adjudicated-tr",
                               "children": [
                                 {
                                   "kind": "word",
@@ -1887,47 +1893,72 @@
                                 {
                                   "candidateNodeId": "PHP.1.mc00100",
                                   "kind": "group",
-                                  "status": "hold-token-disagreement",
+                                  "status": "human-adjudicated-tr",
                                   "children": [
                                     {
-                                      "kind": "reference-word",
-                                      "status": "hold-token-disagreement",
-                                      "maculaTerminalId": "n50001008012"
+                                      "kind": "tr-word",
+                                      "status": "human-adjudicated-tr",
+                                      "trTokenId": "PHP.1.8.w013",
+                                      "decisionId": "PHP.1.8.jesus-christ-order"
                                     },
                                     {
-                                      "kind": "reference-word",
-                                      "status": "hold-token-disagreement",
-                                      "maculaTerminalId": "n50001008013"
+                                      "kind": "tr-word",
+                                      "status": "human-adjudicated-tr",
+                                      "trTokenId": "PHP.1.8.w014",
+                                      "decisionId": "PHP.1.8.jesus-christ-order"
                                     }
                                   ],
                                   "category": "np",
                                   "rule": "Np-Appos",
-                                  "clauseType": "apposition"
+                                  "clauseType": "apposition",
+                                  "decisionIds": [
+                                    "PHP.1.8.jesus-christ-order"
+                                  ]
                                 }
                               ],
                               "category": "np",
-                              "rule": "NPofNP"
+                              "rule": "NPofNP",
+                              "decisionIds": [
+                                "PHP.1.8.jesus-christ-order"
+                              ]
                             }
                           ],
                           "category": "pp",
                           "rule": "PrepNp",
-                          "function": "adv"
+                          "function": "adv",
+                          "decisionIds": [
+                            "PHP.1.8.jesus-christ-order"
+                          ]
                         }
                       ],
                       "category": "cl",
-                      "rule": "V-O-ADV"
+                      "rule": "V-O-ADV",
+                      "decisionIds": [
+                        "PHP.1.8.jesus-christ-order"
+                      ]
                     }
                   ],
                   "category": "cl",
-                  "rule": "PtclCL"
+                  "rule": "PtclCL",
+                  "decisionIds": [
+                    "PHP.1.8.jesus-christ-order"
+                  ]
                 }
               ],
               "rule": "ClCl",
-              "clauseType": "group"
+              "clauseType": "group",
+              "decisionIds": [
+                "PHP.1.8.estin-native-tr-word",
+                "PHP.1.8.jesus-christ-order"
+              ]
             }
           ],
           "category": "cl",
-          "rule": "Conj-CL"
+          "rule": "Conj-CL",
+          "decisionIds": [
+            "PHP.1.8.estin-native-tr-word",
+            "PHP.1.8.jesus-christ-order"
+          ]
         }
       ]
     },
@@ -1937,7 +1968,7 @@
         {
           "candidateNodeId": "PHP.1.mc00138",
           "kind": "group",
-          "status": "hold-token-disagreement",
+          "status": "human-adjudicated-tr",
           "children": [
             {
               "kind": "word",
@@ -1948,7 +1979,7 @@
             {
               "candidateNodeId": "PHP.1.mc00137",
               "kind": "group",
-              "status": "hold-token-disagreement",
+              "status": "human-adjudicated-tr",
               "children": [
                 {
                   "kind": "word",
@@ -1965,7 +1996,7 @@
                 {
                   "candidateNodeId": "PHP.1.mc00136",
                   "kind": "group",
-                  "status": "hold-token-disagreement",
+                  "status": "human-adjudicated-tr",
                   "children": [
                     {
                       "kind": "word",
@@ -1976,7 +2007,7 @@
                     {
                       "candidateNodeId": "PHP.1.mc00135",
                       "kind": "group",
-                      "status": "hold-token-disagreement",
+                      "status": "human-adjudicated-tr",
                       "children": [
                         {
                           "candidateNodeId": "PHP.1.mc00108",
@@ -2206,7 +2237,7 @@
                         {
                           "candidateNodeId": "PHP.1.mc00134",
                           "kind": "group",
-                          "status": "hold-token-disagreement",
+                          "status": "human-adjudicated-tr",
                           "children": [
                             {
                               "kind": "word",
@@ -2217,7 +2248,7 @@
                             {
                               "candidateNodeId": "PHP.1.mc00133",
                               "kind": "group",
-                              "status": "hold-token-disagreement",
+                              "status": "human-adjudicated-tr",
                               "children": [
                                 {
                                   "kind": "word",
@@ -2301,7 +2332,7 @@
                                 {
                                   "candidateNodeId": "PHP.1.mc00132",
                                   "kind": "group",
-                                  "status": "hold-token-disagreement",
+                                  "status": "human-adjudicated-tr",
                                   "children": [
                                     {
                                       "kind": "word",
@@ -2312,17 +2343,18 @@
                                     {
                                       "candidateNodeId": "PHP.1.mc00127",
                                       "kind": "group",
-                                      "status": "hold-token-disagreement",
+                                      "status": "human-adjudicated-tr",
                                       "children": [
                                         {
                                           "candidateNodeId": "PHP.1.mc00123",
                                           "kind": "group",
-                                          "status": "hold-token-disagreement",
+                                          "status": "human-adjudicated-tr",
                                           "children": [
                                             {
-                                              "kind": "reference-word",
-                                              "status": "hold-token-disagreement",
-                                              "maculaTerminalId": "n50001011002"
+                                              "kind": "tr-word",
+                                              "status": "human-adjudicated-tr",
+                                              "trTokenId": "PHP.1.11.w002",
+                                              "decisionId": "PHP.1.11.karpon-number-case"
                                             },
                                             {
                                               "kind": "word",
@@ -2332,17 +2364,21 @@
                                             }
                                           ],
                                           "category": "np",
-                                          "rule": "NPofNP"
+                                          "rule": "NPofNP",
+                                          "decisionIds": [
+                                            "PHP.1.11.karpon-number-case"
+                                          ]
                                         },
                                         {
                                           "candidateNodeId": "PHP.1.mc00126",
                                           "kind": "group",
-                                          "status": "hold-token-disagreement",
+                                          "status": "human-adjudicated-tr",
                                           "children": [
                                             {
-                                              "kind": "reference-word",
-                                              "status": "hold-token-disagreement",
-                                              "maculaTerminalId": "n50001011004"
+                                              "kind": "tr-word",
+                                              "status": "human-adjudicated-tr",
+                                              "trTokenId": "PHP.1.11.w004",
+                                              "decisionId": "PHP.1.11.article-number-case"
                                             },
                                             {
                                               "candidateNodeId": "PHP.1.mc00125",
@@ -2383,13 +2419,20 @@
                                             }
                                           ],
                                           "category": "np",
-                                          "rule": "NpPp"
+                                          "rule": "NpPp",
+                                          "decisionIds": [
+                                            "PHP.1.11.article-number-case"
+                                          ]
                                         }
                                       ],
                                       "category": "np",
                                       "rule": "Np-Appos",
                                       "function": "adv",
-                                      "clauseType": "apposition"
+                                      "clauseType": "apposition",
+                                      "decisionIds": [
+                                        "PHP.1.11.article-number-case",
+                                        "PHP.1.11.karpon-number-case"
+                                      ]
                                     },
                                     {
                                       "candidateNodeId": "PHP.1.mc00131",
@@ -2460,31 +2503,59 @@
                                   ],
                                   "category": "cl",
                                   "rule": "V-ADV-ADV",
-                                  "function": "adv"
+                                  "function": "adv",
+                                  "decisionIds": [
+                                    "PHP.1.11.article-number-case",
+                                    "PHP.1.11.karpon-number-case"
+                                  ]
                                 }
                               ],
                               "category": "cl",
-                              "rule": "VC-P-ADV-ADV"
+                              "rule": "VC-P-ADV-ADV",
+                              "decisionIds": [
+                                "PHP.1.11.article-number-case",
+                                "PHP.1.11.karpon-number-case"
+                              ]
                             }
                           ],
                           "category": "cl",
                           "rule": "sub-CL",
-                          "function": "o"
+                          "function": "o",
+                          "decisionIds": [
+                            "PHP.1.11.article-number-case",
+                            "PHP.1.11.karpon-number-case"
+                          ]
                         }
                       ],
-                      "category": "cl"
+                      "category": "cl",
+                      "decisionIds": [
+                        "PHP.1.11.article-number-case",
+                        "PHP.1.11.karpon-number-case"
+                      ]
                     }
                   ],
                   "category": "cl",
                   "rule": "that-VP",
-                  "function": "o"
+                  "function": "o",
+                  "decisionIds": [
+                    "PHP.1.11.article-number-case",
+                    "PHP.1.11.karpon-number-case"
+                  ]
                 }
               ],
-              "category": "cl"
+              "category": "cl",
+              "decisionIds": [
+                "PHP.1.11.article-number-case",
+                "PHP.1.11.karpon-number-case"
+              ]
             }
           ],
           "category": "cl",
-          "rule": "Conj-CL"
+          "rule": "Conj-CL",
+          "decisionIds": [
+            "PHP.1.11.article-number-case",
+            "PHP.1.11.karpon-number-case"
+          ]
         }
       ]
     },
@@ -6800,6 +6871,42 @@
         "n50001007031"
       ],
       "reason": "TR1894 is authoritative. συγκοινωνούς remains the accusative plural predicate with μου τῆς χάριτος; the different MACULA terminal spelling is not reused as the TR token identity."
+    },
+    {
+      "decisionId": "PHP.1.8.estin-native-tr-word",
+      "reference": "PHP.1.8",
+      "reviewer": "John Wry",
+      "date": "2026-11-10",
+      "targetCandidateNodeId": "PHP.1.mc00098",
+      "reason": "TR1894 is authoritative and explicitly contains ἐστίν between the predicate phrase and ὁ θεός. The native TR verb is inserted without assigning it a nonexistent MACULA terminal identity."
+    },
+    {
+      "decisionId": "PHP.1.8.jesus-christ-order",
+      "reference": "PHP.1.8",
+      "reviewer": "John Wry",
+      "date": "2026-11-10",
+      "targetCandidateNodeId": "PHP.1.mc00100",
+      "reason": "TR1894 is authoritative. The genitive name/title phrase modifying σπλάγχνοις remains in TR order; the reversed MACULA terminals are not reused as token identities."
+    },
+    {
+      "decisionId": "PHP.1.11.karpon-number-case",
+      "reference": "PHP.1.11",
+      "reviewer": "John Wry",
+      "date": "2026-11-10",
+      "replacedMaculaTerminalIds": [
+        "n50001011002"
+      ],
+      "reason": "TR1894 is authoritative and reads the genitive plural καρπῶν, not MACULA's accusative singular καρπὸν. The native TR form remains the complement of πεπληρωμένοι without borrowing a MACULA token identity."
+    },
+    {
+      "decisionId": "PHP.1.11.article-number-case",
+      "reference": "PHP.1.11",
+      "reviewer": "John Wry",
+      "date": "2026-11-10",
+      "replacedMaculaTerminalIds": [
+        "n50001011004"
+      ],
+      "reason": "TR1894 is authoritative and reads the genitive plural article τῶν agreeing with καρπῶν, not MACULA's accusative singular τὸν. Its existing modifier attachment is retained without reusing the MACULA terminal identity."
     }
   ]
 }

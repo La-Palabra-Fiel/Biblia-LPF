@@ -89,6 +89,12 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
         self.assertFalse(desk.board()["ntBlocked"])
         self.assertEqual(desk.board()["ntReadiness"],"verse-gated")
+
+    def test_nt_chapter_wide_preparation_is_rejected_before_any_packet_or_cost(self):
+        book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,7])),patch.object(desk,"assert_holder"):
+            with self.assertRaisesRegex(ValueError,"versículo por versículo"):
+                desk.prepare_estimate("Ana","filipenses",1,"11111111")
     def test_nt_syntax_pilot_is_review_only_and_does_not_unblock_translation(self):
         board=desk.nt_syntax_board()
         self.assertFalse(board["translationEnabled"])
@@ -442,6 +448,10 @@ class DeskTests(unittest.TestCase):
         self.assertIn("mergeSeedUnits",html)
         self.assertIn("mergeUnitsBySourceId",html)
         self.assertIn("EXPECTED_DRAFT_SPEC",html)
+        self.assertIn("readyNtSeed",html)
+        self.assertIn("Preparar este versículo con",html)
+        self.assertIn("ntReadinessVerseCard",html)
+        self.assertIn("Aprobación bloqueada por evidencia",html)
         self.assertIn("server is out of date",html)
         self.assertIn("Añadir unidad",html)
         self.assertIn('class="insert-unit"',html)

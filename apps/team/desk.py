@@ -559,6 +559,19 @@ def chapter_view(slug: str, chapter) -> dict:
     recovered = read_json(recovered_path(slug, number), {})
     recovered_verses = recovered.get("verses") if isinstance(recovered, dict) else {}
     recovered_verses = recovered_verses if isinstance(recovered_verses, dict) else {}
+    nt_structure_status: dict[int, str] = {}
+    if book.testament == "nt":
+        try:
+            nt_structure_status = {
+                row["verse"]: (
+                    "HOLD_STRUCTURE"
+                    if row["status"] == "hold-token-disagreement"
+                    else "READY_TR_STRUCTURE"
+                )
+                for row in nt_syntax_view(book.slug, number)["verses"]
+            }
+        except ValueError:
+            nt_structure_status = {verse: "HOLD_NO_CHAPTER_CANDIDATE" for verse in verses}
     rows = []
     for verse in verses:
         packet = read_json(packet_path(slug, number, verse), {})
@@ -603,7 +616,10 @@ def chapter_view(slug: str, chapter) -> dict:
         }
         human_current = human_review_is_current(slug, number, verse)
         revision_open = revision_is_open(slug, number, verse)
-        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": public_packet(packet), "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_current and not revision_open, "priorApprovalCurrent": human_current, "revisionOpen": revision_open})
+        packet_view = public_packet(packet)
+        if book.testament == "nt" and not packet_view.get("evidenceStatus"):
+            packet_view["evidenceStatus"] = nt_structure_status.get(verse, "HOLD_NO_CHAPTER_CANDIDATE")
+        rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": packet_view, "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_current and not revision_open, "priorApprovalCurrent": human_current, "revisionOpen": revision_open})
     return {"book": slug, "label": book.label, "chapter": number, "claim": load_claims().get(claim_key(slug, number)) or {}, "policy": "lbf-source-policy-v4", "textualBasis": "TR1894" if book.testament == "nt" else "OSHB/WLC", "model": TEAM_MODEL, "reasoningEffort": TEAM_REASONING, "promptSha256": draft_prompt_fingerprint(), "reviewSpecVersion": REVIEW_SPEC_VERSION, "chapterReviewed": chapter_review_is_current(slug, number, verses), "precedents": human_precedents(slug), "decisionSummary": decision_summary(slug), "precedentBoundary": "Human adjudication memory guides reviewers only. It is never model evidence and never overrides the canonical source packet. Repeated decisions are candidates for an explicit project rule, never automatic model evidence.", "recoveryNote": recovered.get("note") if isinstance(recovered, dict) else "", "verses": rows}
 
 
@@ -621,6 +637,11 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         assert_holder(person, book.slug, number)
     selected_verses = verses
     selected_verse = None
+    if getattr(book, "testament", "ot") == "nt" and verse is None:
+        raise ValueError(
+            "El NT se prepara versículo por versículo. Usa «Preparar este versículo con Sol» "
+            "en la tarjeta del versículo que ya esté estructuralmente listo."
+        )
     if verse is not None:
         selected_verse = int(verse or 0)
         if selected_verse not in verses:
@@ -1002,7 +1023,12 @@ def approve_verse(payload: dict) -> dict:
         revision_was_open = revision_is_open(book.slug, chapter, verse)
         save_review_attempt(book, chapter, verse, person, payload)
         packet = read_json(packet_path(book.slug, chapter, verse), {})
-        if packet.get("sourcePolicy") != "lbf-source-policy-v4" or packet.get("evidenceStatus") != "READY_FOR_MODEL": raise ValueError("The canonical packet is not READY_FOR_MODEL under lbf-source-policy-v4.")
+        if packet.get("sourcePolicy") != "lbf-source-policy-v4" or packet.get("evidenceStatus") != "READY_FOR_MODEL":
+            status = packet.get("evidenceStatus") or "HOLD_STRUCTURE"
+            raise ValueError(
+                f"{book.label} {chapter}:{verse} no puede aprobarse todavía: {status}. "
+                "Resuelve primero la evidencia estructural de este versículo. Tu trabajo quedó guardado."
+            )
         if not payload.get("sourceConfirmed"): raise ValueError("Confirm the complete source-evidence review.")
         if not payload.get("alignmentConfirmed"): raise ValueError("Confirm every visible Spanish-to-source link.")
         if not payload.get("suppliedConfirmed"): raise ValueError("Confirm that every supplied Spanish word is marked in italics.")

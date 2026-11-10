@@ -30,7 +30,7 @@ estando persuadido de esto mismo: que el que comenzó en ustedes una obra buena 
 
 ### 1:7
 
-como es justo que yo piense esto acerca de todos ustedes, porque los tengo a ustedes en el corazón, tanto en mis cadenas como en la defensa y confirmación del evangelio, siendo todos ustedes copartícipes conmigo de la gracia.
+Tal como es justo que yo piense esto acerca de todos ustedes, porque los tengo en el corazón, tanto en mis cadenas como en la defensa y confirmación del evangelio, siendo todos ustedes partícipes conmigo de la gracia.
 
 ### 1:8
 

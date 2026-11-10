@@ -414,6 +414,7 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
     if adjudications.get("schema") != STRUCTURE_ADJUDICATION_SCHEMA:
         raise ValueError("noncanonical NT structure adjudication schema")
     nodes: dict[str, dict] = {}
+    reference_words: dict[str, dict] = {}
 
     def index(node: dict) -> None:
         node_id = node.get("candidateNodeId")
@@ -421,6 +422,11 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
             if node_id in nodes:
                 raise ValueError(f"duplicate candidate node id: {node_id}")
             nodes[node_id] = node
+        terminal_id = node.get("maculaTerminalId")
+        if node.get("kind") == "reference-word" and terminal_id:
+            if terminal_id in reference_words:
+                raise ValueError(f"duplicate unmatched MACULA terminal id: {terminal_id}")
+            reference_words[terminal_id] = node
         for child in node.get("children") or []:
             index(child)
 
@@ -433,21 +439,48 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
         if decision.get("book") != candidate.get("book") or decision.get("chapter") != candidate.get("chapter"):
             continue
         decision_id = decision.get("decisionId")
+        decision_type = decision.get("decision")
         target = nodes.get(decision.get("targetCandidateNodeId"))
         token_ids = decision.get("trTokenIds") or []
         terminal_ids = decision.get("replacedMaculaTerminalIds") or []
         native = decision.get("nativeGroup") or {}
+        common_valid = (
+            bool(decision_id)
+            and bool(decision.get("reviewer"))
+            and bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(decision.get("date") or "")))
+            and bool(token_ids)
+            and len(token_ids) == len(set(token_ids))
+            and all(token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids)
+        )
+        if decision_type == "replace-macula-terminal-with-native-tr-word":
+            if not common_valid or len(token_ids) != 1 or len(terminal_ids) != 1:
+                raise ValueError(f"invalid native TR terminal adjudication: {decision_id!r}")
+            terminal = reference_words.get(terminal_ids[0])
+            if not terminal or terminal.get("status") != "hold-token-disagreement":
+                raise ValueError(f"{decision_id}: target MACULA terminal changed")
+            terminal.clear()
+            terminal.update({
+                "kind": "tr-word",
+                "status": "human-adjudicated-tr",
+                "trTokenId": token_ids[0],
+                "decisionId": decision_id,
+            })
+            applied.append({
+                "decisionId": decision_id,
+                "reference": decision["reference"],
+                "reviewer": decision["reviewer"],
+                "date": decision["date"],
+                "replacedMaculaTerminalIds": terminal_ids,
+                "reason": decision.get("reason"),
+            })
+            continue
         if (
-            not decision_id
+            not common_valid
             or not target
             or target.get("kind") != "group"
             or target.get("status") != "hold-token-disagreement"
-            or decision.get("decision") != "replace-macula-order-with-native-tr-group"
-            or not decision.get("reviewer")
-            or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(decision.get("date") or ""))
+            or decision_type != "replace-macula-order-with-native-tr-group"
             or len(token_ids) < 2
-            or len(token_ids) != len(set(token_ids))
-            or any(not token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids)
         ):
             raise ValueError(f"invalid native TR structure adjudication: {decision_id!r}")
         current_terminals = [

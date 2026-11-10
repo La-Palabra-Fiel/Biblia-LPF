@@ -15,7 +15,7 @@ by the GitHub Contents API at the ref above.
 
 | File | SHA-256 | Git blob | LBF status |
 | --- | --- | --- | --- |
-| `TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt` | `312f723d7b8ef263bbdfb0451c9b8057125804dfff390b6f8544cff2a84b57f4` | `efe271a1dbb73fa01f8fa6e0f164c6687757a9ae` | Candidate approved; parser and coverage validation still required |
+| `TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt` | `312f723d7b8ef263bbdfb0451c9b8057125804dfff390b6f8544cff2a84b57f4` | `efe271a1dbb73fa01f8fa6e0f164c6687757a9ae` | Authorized through the fail-closed parser; Robinson lexical-ID coverage validated |
 | `TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt` | `464dccadd95fd8620dd05fa0d7a4caba58ec3c4d5db3ebf38e43d046ca25b591` | `a64990a674d13245ae1e9ed426bc69197c2fbad5` | Blocked: its header requires Online Bible permission for the meaning fields |
 | `TFLSJ  0-5624 - Translators Formatted full LSJ Bible lexicon - STEPBible.org CC BY.txt` | `fcc2845412132a7bb91fc3dbb5a544c807daf57e4791c4d9af61efe209e97691` | `db44789a0b3523ad00ba2c93c6fe78ad3db1b4bb` | Present but not approved for LBF |
 | `TFLSJ extra - Translators Formatted full LSJ Bible lexicon - STEPBible.org CC BY.txt` | `fdb2840067faa11301b208a343a9453fbe40b367e94eac981071261626201bc2` | `cee6c1207d68beac2fcd66a7dbbd798803658e73` | Present but not approved for LBF |

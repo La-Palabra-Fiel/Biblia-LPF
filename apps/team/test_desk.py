@@ -103,6 +103,10 @@ class DeskTests(unittest.TestCase):
         resolved=[token for token in first["tokens"] if token["structurallyResolved"]]
         self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.1.w005","PHP.1.1.w006"])
         self.assertTrue(all(token["structureDecisionId"]=="PHP.1.1.jesus-christ-order" for token in resolved))
+        sixth=view["verses"][5]
+        self.assertEqual(sixth["status"],"human-adjudicated-tr")
+        resolved=[token for token in sixth["tokens"] if token["structurallyResolved"]]
+        self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.6.w012","PHP.1.6.w014","PHP.1.6.w015"])
         with self.assertRaisesRegex(ValueError,"No review-only structural candidate"):
             desk.nt_syntax_view("mateo",1)
     def test_alignment_requires_complete_token_coverage(self):

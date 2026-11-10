@@ -233,8 +233,9 @@ eligen la traducción. El cargador sigue también las remisiones internas
 explícitas de BDB ligadas a una forma morfológica; no puede reducir una forma
 remitida a la primera entrada del índice Strong (por ejemplo,
 `לְהָטִים` remite a misterio/encantamiento, mientras el singular de Génesis
-3:24 permanece llama). TBESG es el candidato griego autorizado, pendiente de
-parser y validación de cobertura. El campo `Meaning` de TBESH está bloqueado
+3:24 permanece llama). TBESG entra al paquete griego únicamente mediante el
+cargador de lista positiva fijado por commit y checksum; su cobertura de los
+identificadores léxicos Robinson se valida en pruebas. El campo `Meaning` de TBESH está bloqueado
 por el aviso de Online Bible; el paquete no lo lee. TFLSJ y TFLSJ extra están
 presentes pero no autorizados. HALOT, DCH y BDAG tampoco entran al paquete
 automático sin una licencia escrita específica para ese uso.
@@ -297,6 +298,17 @@ correspondencia completa con los tokens TR1894, las pruebas de rechazo de
 campos prohibidos, la validación del árbol TR1894 y las capas requeridas de
 contexto, corpus y evidencia léxica. Hasta entonces el paquete permanece
 `HOLD` y Team Desk no ofrece ese capítulo para redacción o aprobación.
+
+El trabajo humano del NT se realiza en una sola sesión por versículo, no en
+tres pasadas independientes. Team Desk presenta primero la superficie
+Scrivener, la morfología Robinson y la proyección estructural disponible. Si
+la rama MACULA está en `HOLD`, la persona la adjudica allí mismo como estructura
+nativa TR; el modelo no recibe el versículo antes de esa adjudicación. Cuando
+el paquete queda completo, la misma sesión continúa con la redacción española,
+los enlaces inversos palabra-a-token TR y la aprobación humana. El español se
+enlaza siempre a los tokens TR, nunca directamente a un terminal MACULA. La
+decisión estructural queda guardada para el estudio posterior de cláusulas y
+no obliga a volver a recorrer el versículo.
 
 ### Camino GPT autorizado
 

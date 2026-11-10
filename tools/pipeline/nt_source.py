@@ -126,7 +126,16 @@ def _parse_utr_body(body: str) -> list[RobinsonToken]:
             for field in fields
             if not field.isdigit() and not re.fullmatch(r"\(\d+:\d+\)", field)
         ]
-        strongs = tuple(int(field) for field in fields if field.isdigit() and int(field) > 0)
+        # Robinson UTR may append a numeric parsing code after the lexical
+        # Strong number (G5627-G5799).  The raw Robinson tag below is the
+        # morphology authority; parsing and synonym codes are not lexemes and
+        # must never leak into lexical evidence as extra Strong identifiers.
+        strongs = tuple(
+            number
+            for field in fields
+            if field.isdigit() and (number := int(field)) > 0
+            if not 5627 <= number <= 5893
+        )
         if not surfaces:
             continue
         tokens.append(RobinsonToken(len(tokens) + 1, surfaces[0], strongs, raw_tag))

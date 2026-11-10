@@ -17,6 +17,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from books import ROOT, Book, get_book
+from greek_lexicon import (
+    ATTRIBUTION as GREEK_LEXICON_ATTRIBUTION,
+    AUTHORITY as GREEK_LEXICON_AUTHORITY,
+    LICENSE as GREEK_LEXICON_LICENSE,
+    SHA256 as GREEK_LEXICON_SHA256,
+    UPSTREAM_COMMIT as GREEK_LEXICON_COMMIT,
+    lookup as lookup_greek_lexicon,
+)
 from hebrew_lexicon import (
     ATTRIBUTION as HEBREW_LEXICON_ATTRIBUTION,
     LICENSE as HEBREW_LEXICON_LICENSE,
@@ -47,7 +55,12 @@ OT_ALLOWED_SOURCES = [
     "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
     "OSHB/WLC-corpus-usage",
 ]
-NT_ALLOWED_SOURCES = ["TR1894-surface", "Robinson-morph", "Strongs-id-only"]
+NT_ALLOWED_SOURCES = [
+    "TR1894-surface",
+    "Robinson-morph",
+    "Strongs-id-only",
+    f"STEPBible-TBESG@{GREEK_LEXICON_COMMIT}",
+]
 
 OSIS_NS = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
 VERSE_LINE = re.compile(r"^(\d+):(\d+)\s+(.*)$")
@@ -353,9 +366,15 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
     reconciliation = load_reconciled_verse(book, chapter, verse)
     rows = reconciliation["trTokens"]
     tokens = []
+    lexical_entries: dict[str, dict] = {}
     for row in rows:
         morphology = row["morphology"]
         strongs = morphology["strongs"]
+        lexical_ids = []
+        for strong in strongs:
+            for entry in lookup_greek_lexicon(strong):
+                lexical_entries[entry["lexicalEvidenceId"]] = entry
+                lexical_ids.append(entry["lexicalEvidenceId"])
         tokens.append(
             {
                 "sourceTokenId": token_id(book, chapter, verse, row["ordinal"]),
@@ -366,6 +385,7 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
                 "lemma": None,
                 "strongs": f"G{strongs[0]}" if strongs else None,
                 "strongsAll": [f"G{item}" for item in strongs],
+                "lexicalEvidenceIds": lexical_ids,
                 "morph": morphology["rawTag"],
                 "morphProvider": "Robinson",
                 "morphProviderRevision": morphology["providerRevision"],
@@ -413,11 +433,12 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
             "BLE-gloss",
             "critical-text",
             "other-versions",
-            "lexicons",
+            "unapproved-lexicons",
             "web-or-retrieval",
             "macula",
         ],
         "tokens": tokens,
+        "lexicalEvidence": list(lexical_entries.values()),
     }
 
 
@@ -548,6 +569,27 @@ def validate_packet(packet: dict) -> None:
                 or not token.get("morph")
             ):
                 raise ValueError("NT token is not bound to TR1894 + Robinson")
+        evidence = packet.get("lexicalEvidence")
+        if not isinstance(evidence, list):
+            raise ValueError("NT packet is missing canonical Greek lexical evidence")
+        evidence_ids = set()
+        for entry in evidence:
+            if (
+                entry.get("source") != "STEPBible-TBESG"
+                or entry.get("sourceCommit") != GREEK_LEXICON_COMMIT
+                or entry.get("sourceSha256") != GREEK_LEXICON_SHA256
+                or entry.get("license") != GREEK_LEXICON_LICENSE
+                or entry.get("attribution") != GREEK_LEXICON_ATTRIBUTION
+                or entry.get("authority") != GREEK_LEXICON_AUTHORITY
+            ):
+                raise ValueError("NT packet has noncanonical Greek lexical evidence")
+            evidence_ids.add(entry.get("lexicalEvidenceId"))
+        if any(
+            lexical_id not in evidence_ids
+            for token in packet.get("tokens") or []
+            for lexical_id in token.get("lexicalEvidenceIds") or []
+        ):
+            raise ValueError("NT token cites missing Greek lexical evidence")
 
 
 def packet_for_prompt(packet: dict) -> dict:

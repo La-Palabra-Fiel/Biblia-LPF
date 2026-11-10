@@ -235,8 +235,11 @@ La revisión de los archivos descargados establece:
   el sentido de la entrada inicial. Su licencia es
   CC BY 4.0 y la atribución requerida es *Open Scriptures Hebrew Bible
   Project*. El cargador debe rechazar cualquier archivo cuyo checksum cambie;
-- **TBESG** — aprobado como candidato para ingestión automática, sujeto a
-  fijación de commit, checksum y validación de cobertura;
+- **TBESG** — autorizado para el paquete del NT mediante el cargador cerrado
+  `tools/pipeline/greek_lexicon.py`, fijado al commit y checksum registrados en
+  `Lexicons/PROVENANCE.md`; las pruebas verifican cobertura de todos los
+  identificadores léxicos Robinson. Sus entradas describen posibilidades
+  secundarias y nunca eligen el sentido contextual;
 - **TBESH** — su campo `Meaning` está bloqueado. Su propio encabezado dice que
   ese campo se basa en *Abridged BDB by Online Bible* y que debe obtenerse
   permiso antes de aplicarlo en un proyecto. Ningún cargador LBF puede leer,

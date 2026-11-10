@@ -13,6 +13,13 @@ from nt_source import RobinsonToken, load_reconciled_verse, reconcile_verse, tok
 
 
 class NtSourceTests(unittest.TestCase):
+    def test_robinson_numeric_parsing_code_is_not_a_lexical_strong(self) -> None:
+        from nt_source import _parse_utr_body
+
+        token = _parse_utr_body("anebh 305 5627 {V-2AAI-3S}")[0]
+        self.assertEqual(token.strongs, (305,))
+        self.assertEqual(token.raw_tag, "V-2AAI-3S")
+
     def test_tokenization_reconstructs_punctuation_and_whitespace(self) -> None:
         text = "Βίβλος λόγου, ἐπ’ αὐτόν."
         tokens = tokenize_tr_verse("MAT.1.1", text)

@@ -91,7 +91,7 @@ class NtMaculaTests(unittest.TestCase):
         )
         validate_mapping_ledger(ledger)
 
-    def test_philippians_1_1_human_adjudication_uses_native_tr_tokens(self) -> None:
+    def test_philippians_human_adjudications_use_native_tr_tokens(self) -> None:
         import json
         from books import ROOT
 
@@ -116,11 +116,17 @@ class NtMaculaTests(unittest.TestCase):
                 collect(root)
         self.assertEqual(
             [word["trTokenId"] for word in native_words],
-            ["PHP.1.1.w005", "PHP.1.1.w006"],
+            [
+                "PHP.1.1.w005",
+                "PHP.1.1.w006",
+                "PHP.1.6.w012",
+                "PHP.1.6.w014",
+                "PHP.1.6.w015",
+            ],
         )
         self.assertTrue(all("maculaTerminalId" not in word for word in native_words))
-        self.assertEqual(candidate["summary"]["humanAdjudicatedWords"], 2)
-        self.assertEqual(candidate["summary"]["trOnlyTokens"], 38)
+        self.assertEqual(candidate["summary"]["humanAdjudicatedWords"], 5)
+        self.assertEqual(candidate["summary"]["trOnlyTokens"], 35)
         validate_candidate(candidate)
 
 

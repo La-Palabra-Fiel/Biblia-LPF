@@ -12,22 +12,19 @@
     "attribution": "MACULA Greek Linguistic Datasets, available at https://github.com/Clear-Bible/macula-greek/",
     "structureAdjudications": {
       "path": "source/greek/TR1894/MACULA_STRUCTURE_ADJUDICATIONS.json",
-      "sha256": "dcf7613d7dee896c7c1ded12b12187f3c8e493a6804b5100b2160f41489ead6b"
+      "sha256": "5d564dfdda2118651e382d040bd33dd7c6043b6ac362c8a0797057f583d0f8bc"
     }
   },
   "summary": {
     "exactGroups": 263,
-    "holdGroups": 116,
-    "humanAdjudicatedGroups": 4,
+    "holdGroups": 110,
+    "humanAdjudicatedGroups": 10,
     "mappedWords": 459,
-    "humanAdjudicatedWords": 2,
-    "unmatchedMaculaWords": 41,
-    "trOnlyTokens": 38
+    "humanAdjudicatedWords": 5,
+    "unmatchedMaculaWords": 38,
+    "trOnlyTokens": 35
   },
   "trOnlyTokenIds": [
-    "PHP.1.6.w012",
-    "PHP.1.6.w014",
-    "PHP.1.6.w015",
     "PHP.1.7.w030",
     "PHP.1.8.w004",
     "PHP.1.8.w013",
@@ -1027,7 +1024,7 @@
             {
               "candidateNodeId": "PHP.1.mc00067",
               "kind": "group",
-              "status": "hold-token-disagreement",
+              "status": "human-adjudicated-tr",
               "children": [
                 {
                   "kind": "word",
@@ -1060,7 +1057,7 @@
                 {
                   "candidateNodeId": "PHP.1.mc00066",
                   "kind": "group",
-                  "status": "hold-token-disagreement",
+                  "status": "human-adjudicated-tr",
                   "children": [
                     {
                       "kind": "word",
@@ -1071,7 +1068,7 @@
                     {
                       "candidateNodeId": "PHP.1.mc00065",
                       "kind": "group",
-                      "status": "hold-token-disagreement",
+                      "status": "human-adjudicated-tr",
                       "children": [
                         {
                           "candidateNodeId": "PHP.1.mc00061",
@@ -1157,17 +1154,18 @@
                         {
                           "candidateNodeId": "PHP.1.mc00064",
                           "kind": "group",
-                          "status": "hold-token-disagreement",
+                          "status": "human-adjudicated-tr",
                           "children": [
                             {
-                              "kind": "reference-word",
-                              "status": "hold-token-disagreement",
-                              "maculaTerminalId": "n50001006012"
+                              "kind": "tr-word",
+                              "status": "human-adjudicated-tr",
+                              "trTokenId": "PHP.1.6.w012",
+                              "decisionId": "PHP.1.6.achris-terminal"
                             },
                             {
                               "candidateNodeId": "PHP.1.mc00063",
                               "kind": "group",
-                              "status": "hold-token-disagreement",
+                              "status": "human-adjudicated-tr",
                               "children": [
                                 {
                                   "kind": "word",
@@ -1178,44 +1176,68 @@
                                 {
                                   "candidateNodeId": "PHP.1.mc00062",
                                   "kind": "group",
-                                  "status": "hold-token-disagreement",
+                                  "status": "human-adjudicated-tr",
                                   "children": [
                                     {
-                                      "kind": "reference-word",
-                                      "status": "hold-token-disagreement",
-                                      "maculaTerminalId": "n50001006014"
+                                      "kind": "tr-word",
+                                      "status": "human-adjudicated-tr",
+                                      "trTokenId": "PHP.1.6.w014",
+                                      "decisionId": "PHP.1.6.jesus-christ-order"
                                     },
                                     {
-                                      "kind": "reference-word",
-                                      "status": "hold-token-disagreement",
-                                      "maculaTerminalId": "n50001006015"
+                                      "kind": "tr-word",
+                                      "status": "human-adjudicated-tr",
+                                      "trTokenId": "PHP.1.6.w015",
+                                      "decisionId": "PHP.1.6.jesus-christ-order"
                                     }
                                   ],
                                   "category": "np",
                                   "rule": "Np-Appos",
-                                  "clauseType": "apposition"
+                                  "clauseType": "apposition",
+                                  "decisionIds": [
+                                    "PHP.1.6.jesus-christ-order"
+                                  ]
                                 }
                               ],
                               "category": "np",
-                              "rule": "NPofNP"
+                              "rule": "NPofNP",
+                              "decisionIds": [
+                                "PHP.1.6.jesus-christ-order"
+                              ]
                             }
                           ],
                           "category": "pp",
                           "rule": "PrepNp",
-                          "function": "adv"
+                          "function": "adv",
+                          "decisionIds": [
+                            "PHP.1.6.achris-terminal",
+                            "PHP.1.6.jesus-christ-order"
+                          ]
                         }
                       ],
                       "category": "cl",
-                      "rule": "S-V-ADV"
+                      "rule": "S-V-ADV",
+                      "decisionIds": [
+                        "PHP.1.6.achris-terminal",
+                        "PHP.1.6.jesus-christ-order"
+                      ]
                     }
                   ],
                   "category": "cl",
                   "rule": "that-VP",
-                  "function": "o"
+                  "function": "o",
+                  "decisionIds": [
+                    "PHP.1.6.achris-terminal",
+                    "PHP.1.6.jesus-christ-order"
+                  ]
                 }
               ],
               "category": "cl",
-              "function": "adv"
+              "function": "adv",
+              "decisionIds": [
+                "PHP.1.6.achris-terminal",
+                "PHP.1.6.jesus-christ-order"
+              ]
             },
             {
               "candidateNodeId": "PHP.1.mc00094",
@@ -6699,6 +6721,24 @@
       "date": "2026-11-09",
       "targetCandidateNodeId": "PHP.1.mc00003",
       "reason": "TR1894 is authoritative. The two genitive tokens form the name/title phrase modifying δοῦλοι and remain in TR order; the reversed MACULA terminals are not reused as token identities."
+    },
+    {
+      "decisionId": "PHP.1.6.achris-terminal",
+      "reference": "PHP.1.6",
+      "reviewer": "John Wry",
+      "date": "2026-11-09",
+      "replacedMaculaTerminalIds": [
+        "n50001006012"
+      ],
+      "reason": "TR1894 is authoritative. Its terminal is ἄχρις, not MACULA's ἄχρι; the surrounding PrepNp attachment remains applicable, but the MACULA terminal is not reused as the TR token identity."
+    },
+    {
+      "decisionId": "PHP.1.6.jesus-christ-order",
+      "reference": "PHP.1.6",
+      "reviewer": "John Wry",
+      "date": "2026-11-09",
+      "targetCandidateNodeId": "PHP.1.mc00062",
+      "reason": "TR1894 is authoritative. The genitive name/title phrase modifying ἡμέρας remains in TR order; the reversed MACULA terminals are not reused as token identities."
     }
   ]
 }

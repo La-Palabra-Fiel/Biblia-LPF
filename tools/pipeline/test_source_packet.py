@@ -23,7 +23,7 @@ from draft_lib import (
 from draft_gpt import enforce_team_contract
 from morph import expand_hebrew_morph
 from polish_lib import freeze_from, normalize_polish
-from source_packet import build_packet, dump_prompt, packet_for_prompt
+from source_packet import build_packet, dump_prompt, packet_for_prompt, validate_packet
 
 
 class SourcePacketTests(unittest.TestCase):
@@ -69,6 +69,9 @@ class SourcePacketTests(unittest.TestCase):
         self.assertEqual(packet["textualBasis"], "TR1894")
         self.assertGreaterEqual(len(packet["tokens"]), 10)
         self.assertTrue(any(token.get("strongs") == "G3972" for token in packet["tokens"]))
+        self.assertTrue(packet["lexicalEvidence"])
+        self.assertTrue(all(entry["authority"] == "secondary-possibilities-only" for entry in packet["lexicalEvidence"]))
+        validate_packet(packet)
 
     def test_uncited_findings_are_discarded(self) -> None:
         packet = build_packet("exodo", 1, 16)

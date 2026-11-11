@@ -88,21 +88,28 @@ class DeskTests(unittest.TestCase):
     def test_nt_is_allowed_but_readiness_is_per_verse(self):
         self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
         self.assertFalse(desk.board()["ntBlocked"])
-        self.assertEqual(desk.board()["ntReadiness"],"chapter-batch-ready-only")
+        self.assertEqual(desk.board()["ntReadiness"],"whole-nt-structure-first")
 
     def test_nt_chapter_preparation_counts_ready_and_skips_holds(self):
         book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
         packets=[{"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[]},{"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"HOLD_STRUCTURE","tokens":[]}]
         root=Path(self.tmp.name)
-        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",side_effect=packets),patch.object(desk,"packet_path",side_effect=lambda s,c,v:root/f"{v}.json"),patch.object(desk,"reusable_candidate",return_value=(None,{})),patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1,2])),patch.object(desk,"assert_holder"),patch.object(desk,"nt_structure_phase_status",return_value={"complete":True}),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",side_effect=packets),patch.object(desk,"packet_path",side_effect=lambda s,c,v:root/f"{v}.json"),patch.object(desk,"reusable_candidate",return_value=(None,{})),patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
             estimate=desk.prepare_estimate("Ana","filipenses",1,"11111111")
         self.assertEqual(estimate["draftCalls"],1)
         self.assertEqual(estimate["structuralHolds"],[{"verse":2,"status":"HOLD_STRUCTURE"}])
+
+    def test_nt_preparation_waits_for_the_complete_structure_phase(self):
+        book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
+        phase={"complete":False,"unbuiltChapters":258,"holdChapters":1}
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"nt_structure_phase_status",return_value=phase):
+            with self.assertRaisesRegex(ValueError,"258 capítulos sin candidato"):
+                desk.prepare_estimate("Ana","filipenses",1,"11111111")
     def test_nt_hold_estimate_persists_visible_evidence_before_refusing_model(self):
         book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
         packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"HOLD_STRUCTURE","tokens":[{"sourceTokenId":"n1"}]}
         target=Path(self.tmp.name)/"filipenses-1-8.packet.json"
-        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[8])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",return_value=packet),patch.object(desk,"packet_path",return_value=target):
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,1,[8])),patch.object(desk,"assert_holder"),patch.object(desk,"nt_structure_phase_status",return_value={"complete":True}),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",return_value=packet),patch.object(desk,"packet_path",return_value=target):
             with self.assertRaisesRegex(ValueError,"HOLD_STRUCTURE"):
                 desk.prepare_estimate("Ana","filipenses",1,"11111111",8)
         self.assertEqual(desk.read_json(target,{}),packet)
@@ -111,12 +118,18 @@ class DeskTests(unittest.TestCase):
         self.assertFalse(board["translationEnabled"])
         self.assertFalse(board["approvalEnabled"])
         self.assertEqual(board["mappingPolicy"],desk.NT_MACULA_MAPPING_POLICY)
-        self.assertEqual([(row["book"],row["chapter"]) for row in board["candidates"]],[('filipenses',1)])
+        self.assertEqual(len(board["candidates"]),260)
+        built={(row["book"],row["chapter"]):row["candidateBuilt"] for row in board["candidates"]}
+        self.assertTrue(built[("filipenses",1)])
+        self.assertTrue(built[("mateo",1)])
+        self.assertTrue(all(built.values()))
         view=desk.nt_syntax_view("filipenses",1)
         self.assertEqual(view["status"],"review-only-not-canonical")
         self.assertEqual(len(view["verses"]),30)
         self.assertEqual(sum(len(row["tokens"]) for row in view["verses"]),499)
         self.assertEqual(sum(token["tripleAgreement"] for row in view["verses"] for token in row["tokens"]),459)
+        self.assertFalse([row for row in view["verses"] if row["status"]=="hold-token-disagreement"])
+        self.assertEqual(view["summary"]["holdGroups"],0)
         first=view["verses"][0]
         self.assertEqual(first["status"],"human-adjudicated-tr")
         resolved=[token for token in first["tokens"] if token["structurallyResolved"]]
@@ -140,7 +153,7 @@ class DeskTests(unittest.TestCase):
         resolved=[token for token in eleventh["tokens"] if token["structurallyResolved"]]
         self.assertEqual([token["tokenId"] for token in resolved],["PHP.1.11.w002","PHP.1.11.w004"])
         with self.assertRaisesRegex(ValueError,"No review-only structural candidate"):
-            desk.nt_syntax_view("mateo",1)
+            desk.nt_syntax_view("mateo",29)
     def test_alignment_requires_complete_token_coverage(self):
         packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
         with self.assertRaises(ValueError):desk.validate_units(packet,[{"es":"Uno","sourceTokenIds":["h1"]}])
@@ -164,6 +177,17 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(findings[-1]["code"],"supplied-markup-mismatch")
         with self.assertRaisesRegex(ValueError,"Supplied-word italics differ"):
             desk.validate_units(packet,wrong,"Yo *soy* Yahvé.")
+    def test_canonical_alignment_units_seed_existing_reverse_links(self):
+        root=Path(self.tmp.name)
+        path=root/"alignment"/"nt"/"filipenses"/"filipenses-reverse-links.json"
+        path.parent.mkdir(parents=True)
+        path.write_text('{"links":[{"reference":"Filipenses 1:5","units":[{"surface":"evangelio, ","sourceTokenIds":["n1"]},{"surface":"ahora;","sourceTokenIds":["n2","n3"]}]}]}\n',encoding="utf-8")
+        with patch.object(desk,"ROOT",root):
+            units=desk.canonical_alignment_units("filipenses","nt","Filipenses 1:5")
+        self.assertEqual(units,[
+            {"es":"evangelio","sourceTokenIds":["n1"]},
+            {"es":"ahora","sourceTokenIds":["n2","n3"]},
+        ])
     def test_alignment_preflight_allows_legitimate_repeated_source_id(self):
         packet={"tokens":[{"sourceTokenId":"h1"},{"sourceTokenId":"h2"}]}
         units=[{"es":"Y","sourceTokenIds":["h1"]},{"es":"el rey","sourceTokenIds":["h2"]},{"es":"dijo","sourceTokenIds":["h1"]}]
@@ -474,6 +498,7 @@ class DeskTests(unittest.TestCase):
         self.assertIn("mergeSeedUnits",html)
         self.assertIn("mergeUnitsBySourceId",html)
         self.assertIn("discardSupersededEmptyLocalDrafts",html)
+        self.assertIn("const usable=(saved?.units||[]).some",html)
         self.assertIn("EXPECTED_DRAFT_SPEC",html)
         self.assertIn("readyNtSeed",html)
         self.assertIn("Preparar este versículo con",html)

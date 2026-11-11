@@ -46,7 +46,7 @@ para que ustedes aprueben lo que es excelente, a fin de que sean sinceros y sin 
 
 ### 1:11
 
-llenos de frutos de justicia que son por medio de Jesús Cristo, para gloria y alabanza de Dios.
+Llenos de frutos de justicia, los que *son* por medio de Jesús, *el* Cristo, para gloria y alabanza de Dios.
 
 ### 1:12
 
@@ -54,7 +54,7 @@ Y quiero que sepan, hermanos, que las cosas que me han sucedido han venido más 
 
 ### 1:13
 
-de modo que mis cadenas se hicieron manifiestas en Cristo en todo el pretorio y a todos los demás,
+De modo que mis cadenas en Cristo llegaron a ser conocidas en todo el pretorio y entre todos los demás.
 
 ### 1:14
 

@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import re
 import subprocess
 import unicodedata
 import xml.etree.ElementTree as ET
+from collections import Counter
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -30,6 +32,18 @@ MACULA_ATTRIBUTION = (
 )
 MAPPING_POLICY = "tr1894-robinson-macula-token-agreement-v2"
 STRUCTURE_ADJUDICATION_SCHEMA = "tr1894-native-structure-adjudications-v1"
+TR_AUTHORITY_ADAPTATION_RULE = "tr-authority-isolated-one-to-one-v1"
+APPROVED_ROBINSON_BINDING_RULE = "tr-authority-approved-robinson-binding-v1"
+MACULA_ONLY_PROMOTE_CHILD_RULE = "tr-authority-macula-only-promote-child-v1"
+FLAT_PERMUTATION_RULE = "tr-authority-flat-permutation-v1"
+TR_AUTHORITY_FALLBACK_RULE = "tr-authority-fallback-v1"
+TR_AUTHORITY_ADAPTATION_RULES = {
+    TR_AUTHORITY_ADAPTATION_RULE,
+    APPROVED_ROBINSON_BINDING_RULE,
+    MACULA_ONLY_PROMOTE_CHILD_RULE,
+    FLAT_PERMUTATION_RULE,
+    TR_AUTHORITY_FALLBACK_RULE,
+}
 
 LOWFAT_FILENAMES = {
     book.utr_stem: f"{index:02d}-{name}.xml"
@@ -334,12 +348,13 @@ def validate_candidate(candidate: dict) -> None:
     if candidate.get("schema") != "tr1894-macula-structure-candidate-v1":
         raise ValueError("noncanonical MACULA structure candidate schema")
     mapped_ids: list[str] = []
-    exact_groups = hold_groups = human_groups = 0
-    mapped_words = human_words = unmatched_words = 0
+    exact_groups = hold_groups = human_groups = adapted_groups = 0
+    mapped_words = human_words = adapted_words = unmatched_words = 0
+    unmatched_terminal_ids: set[str] = set()
 
-    def walk(node: dict) -> tuple[bool, bool, set[str]]:
-        nonlocal exact_groups, hold_groups, human_groups
-        nonlocal mapped_words, human_words, unmatched_words
+    def walk(node: dict) -> tuple[bool, bool, set[str], set[str]]:
+        nonlocal exact_groups, hold_groups, human_groups, adapted_groups
+        nonlocal mapped_words, human_words, adapted_words, unmatched_words
         kind = node.get("kind")
         if kind == "word":
             mapped_words += 1
@@ -347,36 +362,46 @@ def validate_candidate(candidate: dict) -> None:
             if not token_id:
                 raise ValueError("mapped candidate word lacks TR token identity")
             mapped_ids.append(token_id)
-            return True, True, set()
+            return True, True, set(), set()
         if kind == "tr-word":
-            human_words += 1
             token_id = node.get("trTokenId")
             decision_id = node.get("decisionId")
-            if (
-                node.get("status") != "human-adjudicated-tr"
-                or not token_id
-                or not decision_id
-                or node.get("maculaTerminalId")
-            ):
-                raise ValueError("native TR candidate word lacks adjudication provenance")
+            adaptation_id = node.get("adaptationRuleId")
+            if node.get("status") == "human-adjudicated-tr":
+                human_words += 1
+                if not token_id or not decision_id or adaptation_id or node.get("maculaTerminalId"):
+                    raise ValueError("native TR candidate word lacks adjudication provenance")
+            elif node.get("status") == "tr-authority-adapted":
+                adapted_words += 1
+                if not token_id or decision_id or adaptation_id not in TR_AUTHORITY_ADAPTATION_RULES or node.get("maculaTerminalId"):
+                    raise ValueError("TR-authority adapted word lacks deterministic provenance")
+            else:
+                raise ValueError("native TR candidate word has an unknown status")
             mapped_ids.append(token_id)
-            return True, False, {decision_id}
+            return (
+                True,
+                False,
+                {decision_id} if decision_id else set(),
+                {adaptation_id} if adaptation_id else set(),
+            )
         if kind == "reference-word":
             unmatched_words += 1
+            unmatched_terminal_ids.add(node.get("maculaTerminalId"))
             if node.get("status") != "hold-token-disagreement" or node.get("trTokenId"):
                 raise ValueError("unmatched MACULA terminal is not isolated as HOLD")
-            return False, False, set()
+            return False, False, set(), set()
         if kind != "group" or not node.get("children"):
             raise ValueError("candidate structural group is empty or malformed")
         child_results = [walk(child) for child in node["children"]]
         children_resolved = all(row[0] for row in child_results)
         children_exact = all(row[1] for row in child_results)
         child_decisions = set().union(*(row[2] for row in child_results))
+        child_adaptations = set().union(*(row[3] for row in child_results))
         if node.get("status") == "exact-candidate":
             exact_groups += 1
             if not children_resolved or not children_exact:
                 raise ValueError("exact structural candidate contains a HOLD child")
-            return True, True, set()
+            return True, True, set(), set()
         if node.get("status") == "human-adjudicated-tr":
             human_groups += 1
             decisions = set(node.get("decisionIds") or [])
@@ -387,11 +412,27 @@ def validate_candidate(candidate: dict) -> None:
                     f"{node.get('candidateNodeId')} decisions={sorted(decisions)} "
                     f"children={sorted(child_decisions)} local={sorted(local_decisions)}"
                 )
-            return True, False, decisions
+            return True, False, decisions, child_adaptations
+        if node.get("status") == "tr-authority-adapted":
+            adapted_groups += 1
+            adaptations = set(node.get("adaptationRuleIds") or [])
+            local_adaptations = set(node.get("localAdaptationRuleIds") or [])
+            if (
+                not children_resolved
+                or adaptations != child_adaptations | local_adaptations
+                or not adaptations
+                or not adaptations.issubset(TR_AUTHORITY_ADAPTATION_RULES)
+            ):
+                raise ValueError(
+                    "TR-authority adapted group lacks complete deterministic provenance: "
+                    f"{node.get('candidateNodeId')} resolved={children_resolved} "
+                    f"declared={sorted(adaptations)} children={sorted(child_adaptations)}"
+                )
+            return True, False, child_decisions, adaptations
         if node.get("status") != "hold-token-disagreement":
             raise ValueError("candidate group has an unknown review status")
         hold_groups += 1
-        return False, False, child_decisions
+        return False, False, child_decisions, child_adaptations
 
     for sentence in candidate.get("sentences") or []:
         for root in sentence.get("roots") or []:
@@ -400,18 +441,461 @@ def validate_candidate(candidate: dict) -> None:
         raise ValueError("a TR token appears more than once in the MACULA candidate")
     if set(mapped_ids) & set(candidate.get("trOnlyTokenIds") or []):
         raise ValueError("a TR-only token also appears as a mapped MACULA anchor")
+    fallbacks = candidate.get("trAuthorityFallbacks")
+    if fallbacks is not None:
+        fallback_tokens: list[str] = []
+        fallback_terminals: list[str] = []
+        for row in fallbacks:
+            if row.get("ruleId") != TR_AUTHORITY_FALLBACK_RULE:
+                raise ValueError("TR fallback has an unknown deterministic rule")
+            if not row.get("reference"):
+                raise ValueError("TR fallback lacks a verse reference")
+            fallback_tokens.extend(row.get("trTokenIds") or [])
+            fallback_terminals.extend(row.get("removedMaculaTerminalIds") or [])
+        if len(fallback_tokens) != len(set(fallback_tokens)):
+            raise ValueError("a TR token appears in more than one fallback")
+        if len(fallback_terminals) != len(set(fallback_terminals)):
+            raise ValueError("a MACULA terminal appears in more than one fallback")
+        fallback_expected_tokens = set(candidate.get("trOnlyTokenIds") or []) | set(
+            candidate.get("unplacedMappedTrTokenIds") or []
+        )
+        if set(fallback_tokens) != fallback_expected_tokens:
+            raise ValueError("TR fallbacks do not cover every remaining TR-only token")
+        retired_noncanonical = set(
+            candidate.get("retiredNoncanonicalMaculaTerminalIds") or []
+        )
+        if retired_noncanonical & set(fallback_terminals):
+            raise ValueError("a MACULA terminal is retired twice")
+        if set(fallback_terminals) | retired_noncanonical != unmatched_terminal_ids:
+            raise ValueError("TR fallbacks do not retire every remaining MACULA terminal")
     expected = candidate.get("summary") or {}
     actual = {
         "exactGroups": exact_groups,
         "holdGroups": hold_groups,
         "humanAdjudicatedGroups": human_groups,
+        "trAuthorityAdaptedGroups": adapted_groups,
         "mappedWords": mapped_words,
         "humanAdjudicatedWords": human_words,
+        "trAuthorityAdaptedWords": adapted_words,
         "unmatchedMaculaWords": unmatched_words,
         "trOnlyTokens": len(candidate.get("trOnlyTokenIds") or []),
+        "trAuthorityFallbackVerses": len(candidate.get("trAuthorityFallbacks") or []),
+        "retiredNoncanonicalMaculaWords": len(
+            candidate.get("retiredNoncanonicalMaculaTerminalIds") or []
+        ),
+        "unplacedMappedTrTokens": len(
+            candidate.get("unplacedMappedTrTokenIds") or []
+        ),
     }
-    if any(expected.get(key) != value for key, value in actual.items()):
+    if any(expected.get(key, 0) != value for key, value in actual.items()):
         raise ValueError(f"candidate summary differs from tree counts: {actual}")
+
+
+def refresh_candidate_summary(candidate: dict) -> None:
+    counts = {
+        "exactGroups": 0,
+        "holdGroups": 0,
+        "humanAdjudicatedGroups": 0,
+        "trAuthorityAdaptedGroups": 0,
+        "mappedWords": 0,
+        "humanAdjudicatedWords": 0,
+        "trAuthorityAdaptedWords": 0,
+        "unmatchedMaculaWords": 0,
+    }
+
+    def recount(node: dict) -> None:
+        kind = node.get("kind")
+        if kind == "word":
+            counts["mappedWords"] += 1
+        elif kind == "tr-word":
+            if node.get("status") == "human-adjudicated-tr":
+                counts["humanAdjudicatedWords"] += 1
+            elif node.get("status") == "tr-authority-adapted":
+                counts["trAuthorityAdaptedWords"] += 1
+        elif kind == "reference-word":
+            counts["unmatchedMaculaWords"] += 1
+        elif kind == "group":
+            key = {
+                "exact-candidate": "exactGroups",
+                "hold-token-disagreement": "holdGroups",
+                "human-adjudicated-tr": "humanAdjudicatedGroups",
+                "tr-authority-adapted": "trAuthorityAdaptedGroups",
+            }[node["status"]]
+            counts[key] += 1
+        for child in node.get("children") or []:
+            recount(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            recount(root)
+    candidate["summary"] = {
+        **counts,
+        "trOnlyTokens": len(candidate.get("trOnlyTokenIds") or []),
+        "trAuthorityFallbackVerses": len(candidate.get("trAuthorityFallbacks") or []),
+        "retiredNoncanonicalMaculaWords": len(
+            candidate.get("retiredNoncanonicalMaculaTerminalIds") or []
+        ),
+        "unplacedMappedTrTokens": len(
+            candidate.get("unplacedMappedTrTokenIds") or []
+        ),
+    }
+
+
+def apply_tr_authority_fallbacks(candidate: dict, mapping_ledger: dict) -> dict:
+    """Record a transparent TR-native fallback for every unresolved verse.
+
+    The comparative MACULA tree remains available for review.  The fallback
+    supplies only canonical TR terminals that the comparison could not place
+    and retires unmatched MACULA terminals from the evidence view.  It makes
+    no claim about their grammatical function or attachment.
+    """
+    book = next(item for item in NT if item.slug == candidate.get("book"))
+    chapter = int(candidate.get("chapter") or 0)
+    code = TR_CODE_BY_STEM[book.utr_stem]
+    terminal_reference = {
+        terminal_id: row["reference"]
+        for row in mapping_ledger.get("verses") or []
+        if row.get("reference", "").startswith(f"{code}.{chapter}.")
+        for terminal_id in row.get("unmatchedMaculaTerminalIds") or []
+    }
+    mapped_token_ids: set[str] = set()
+
+    def collect_mapped(node: dict) -> None:
+        if node.get("kind") in {"word", "tr-word"}:
+            mapped_token_ids.add(node["trTokenId"])
+        for child in node.get("children") or []:
+            collect_mapped(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            collect_mapped(root)
+    canonical_token_ids = {
+        token["tokenId"]
+        for row in mapping_ledger.get("verses") or []
+        if row.get("reference", "").startswith(f"{code}.{chapter}.")
+        for token in load_reconciled_verse(
+            book, chapter, int(row["reference"].rsplit(".", 1)[-1])
+        )["trTokens"]
+    }
+    tr_only = set(candidate.get("trOnlyTokenIds") or [])
+    unplaced_mapped = sorted(canonical_token_ids - mapped_token_ids - tr_only)
+    candidate["unplacedMappedTrTokenIds"] = unplaced_mapped
+    tokens_by_reference: dict[str, list[str]] = {}
+    for token_id in [*(candidate.get("trOnlyTokenIds") or []), *unplaced_mapped]:
+        reference = token_id.rsplit(".w", 1)[0]
+        tokens_by_reference.setdefault(reference, []).append(token_id)
+    terminals_by_reference: dict[str, list[str]] = {}
+    retired_noncanonical: list[str] = []
+
+    def collect(node: dict) -> None:
+        if node.get("kind") == "reference-word":
+            terminal_id = node.get("maculaTerminalId")
+            reference = terminal_reference.get(terminal_id)
+            if not reference:
+                retired_noncanonical.append(terminal_id)
+            else:
+                terminals_by_reference.setdefault(reference, []).append(terminal_id)
+        for child in node.get("children") or []:
+            collect(child)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            collect(root)
+    references = sorted(
+        set(tokens_by_reference) | set(terminals_by_reference),
+        key=lambda reference: int(reference.rsplit(".", 1)[-1]),
+    )
+    candidate["trAuthorityFallbacks"] = [
+        {
+            "ruleId": TR_AUTHORITY_FALLBACK_RULE,
+            "reference": reference,
+            "trTokenIds": tokens_by_reference.get(reference, []),
+            "removedMaculaTerminalIds": terminals_by_reference.get(reference, []),
+            "structuralClaim": "none-beyond-canonical-tr-order",
+        }
+        for reference in references
+    ]
+    candidate["retiredNoncanonicalMaculaTerminalIds"] = retired_noncanonical
+    refresh_candidate_summary(candidate)
+    validate_candidate(candidate)
+    return candidate
+
+
+def apply_tr_authority_adaptations(
+    candidate: dict,
+    mapping_ledger: dict,
+    adjudications: dict,
+) -> dict:
+    """Replace only isolated one-to-one MACULA gaps with native TR terminals."""
+    book = next(item for item in NT if item.slug == candidate.get("book"))
+    chapter = int(candidate.get("chapter") or 0)
+    code = TR_CODE_BY_STEM[book.utr_stem]
+    excluded_tokens = {
+        token_id
+        for decision in adjudications.get("decisions") or []
+        if decision.get("book") == book.slug and decision.get("chapter") == chapter
+        for token_id in decision.get("trTokenIds") or []
+    }
+    excluded_terminals = {
+        terminal_id
+        for decision in adjudications.get("decisions") or []
+        if decision.get("book") == book.slug and decision.get("chapter") == chapter
+        for terminal_id in decision.get("replacedMaculaTerminalIds") or []
+    }
+    excluded_nodes = {
+        str(decision.get("targetCandidateNodeId"))
+        for decision in adjudications.get("decisions") or []
+        if decision.get("book") == book.slug
+        and decision.get("chapter") == chapter
+        and decision.get("targetCandidateNodeId")
+    }
+    reference_words: dict[str, dict] = {}
+    reference_parents: dict[str, dict] = {}
+
+    def index(node: dict, parent: dict | None = None) -> None:
+        if node.get("kind") == "reference-word":
+            reference_words[node["maculaTerminalId"]] = node
+            if parent is not None:
+                reference_parents[node["maculaTerminalId"]] = parent
+        for child in node.get("children") or []:
+            index(child, node)
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            index(root)
+
+    applied = []
+    adapted_tokens: set[str] = set()
+    omission_gaps: list[dict] = []
+    permutation_gaps: list[dict] = []
+    for row in mapping_ledger.get("verses") or []:
+        if not row.get("reference", "").startswith(f"{code}.{chapter}."):
+            continue
+        verse = int(row["reference"].rsplit(".", 1)[-1])
+        tr_tokens = load_reconciled_verse(book, chapter, verse)["trTokens"]
+        macula_words = load_macula_words(book).get(row["reference"], [])
+        tr_positions = {token["tokenId"]: index for index, token in enumerate(tr_tokens)}
+        macula_positions = {word.xml_id: index for index, word in enumerate(macula_words)}
+        anchors = sorted(
+            (
+                tr_positions[item["trTokenId"]],
+                macula_positions[item["maculaTerminalId"]],
+                item["trTokenId"],
+                item["maculaTerminalId"],
+            )
+            for item in row.get("mapping") or []
+        )
+        boundaries = [(-1, -1, None, None), *anchors, (len(tr_tokens), len(macula_words), None, None)]
+        disagreements = set(row.get("nonAgreeingRobinsonTokenIds") or [])
+        for left, right in zip(boundaries, boundaries[1:]):
+            tr_gap = list(range(left[0] + 1, right[0]))
+            macula_gap = list(range(left[1] + 1, right[1]))
+            if not tr_gap and len(macula_gap) == 1:
+                omission_gaps.append({
+                    "reference": row["reference"],
+                    "terminalId": macula_words[macula_gap[0]].xml_id,
+                    "left": left,
+                    "right": right,
+                })
+                continue
+            if len(tr_gap) == len(macula_gap) and len(tr_gap) > 1:
+                gap_tokens = [tr_tokens[index] for index in tr_gap]
+                gap_words = [macula_words[index] for index in macula_gap]
+                approved = all(
+                    token["tokenId"] not in disagreements
+                    or str((token.get("morphology") or {}).get("reconciliation") or "").startswith("human-approved-")
+                    for token in gap_tokens
+                )
+                if approved and Counter(
+                    scv_beta_key(token["surfaceBeta"]) for token in gap_tokens
+                ) == Counter(normalized_greek(word.surface) for word in gap_words):
+                    permutation_gaps.append({
+                        "reference": row["reference"],
+                        "trTokenIds": [token["tokenId"] for token in gap_tokens],
+                        "terminalIds": [word.xml_id for word in gap_words],
+                        "left": left,
+                        "right": right,
+                    })
+                continue
+            if len(tr_gap) != 1 or len(macula_gap) != 1:
+                continue
+            token = tr_tokens[tr_gap[0]]
+            terminal = macula_words[macula_gap[0]]
+            token_id = token["tokenId"]
+            terminal_id = terminal.xml_id
+            node = reference_words.get(terminal_id)
+            reconciliation = str((token.get("morphology") or {}).get("reconciliation") or "")
+            approved_robinson_binding = reconciliation.startswith("human-approved-")
+            if (
+                (token_id in disagreements and not approved_robinson_binding)
+                or token_id in excluded_tokens
+                or terminal_id in excluded_terminals
+                or token_id not in candidate.get("trOnlyTokenIds", [])
+                or not node
+            ):
+                continue
+            rule_id = (
+                APPROVED_ROBINSON_BINDING_RULE
+                if token_id in disagreements
+                else TR_AUTHORITY_ADAPTATION_RULE
+            )
+            node.clear()
+            node.update({
+                "kind": "tr-word",
+                "status": "tr-authority-adapted",
+                "trTokenId": token_id,
+                "adaptationRuleId": rule_id,
+            })
+            adapted_tokens.add(token_id)
+            applied.append({
+                "ruleId": rule_id,
+                "reference": row["reference"],
+                "trTokenId": token_id,
+                "replacedMaculaTerminalId": terminal_id,
+                "leftAnchorTrTokenId": left[2],
+                "leftAnchorMaculaTerminalId": left[3],
+                "rightAnchorTrTokenId": right[2],
+                "rightAnchorMaculaTerminalId": right[3],
+            })
+
+    def rebuild_reference_index() -> None:
+        reference_words.clear()
+        reference_parents.clear()
+        for sentence in candidate.get("sentences") or []:
+            for root in sentence.get("roots") or []:
+                index(root)
+
+    for gap in permutation_gaps:
+        rebuild_reference_index()
+        token_ids = gap["trTokenIds"]
+        terminal_ids = gap["terminalIds"]
+        if (
+            any(token_id in excluded_tokens for token_id in token_ids)
+            or any(terminal_id in excluded_terminals for terminal_id in terminal_ids)
+        ):
+            continue
+        nodes = [reference_words.get(terminal_id) for terminal_id in terminal_ids]
+        parents = [reference_parents.get(terminal_id) for terminal_id in terminal_ids]
+        parent = parents[0] if parents else None
+        if (
+            not parent
+            or any(node is None for node in nodes)
+            or any(item is not parent for item in parents)
+            or parent.get("kind") != "group"
+            or parent.get("status") != "hold-token-disagreement"
+            or parent.get("candidateNodeId") in excluded_nodes
+            or len(parent.get("children") or []) != len(terminal_ids)
+            or any(child.get("kind") != "reference-word" for child in parent["children"])
+            or {child.get("maculaTerminalId") for child in parent["children"]} != set(terminal_ids)
+        ):
+            continue
+        parent["children"] = [
+            {
+                "kind": "tr-word",
+                "status": "tr-authority-adapted",
+                "trTokenId": token_id,
+                "adaptationRuleId": FLAT_PERMUTATION_RULE,
+            }
+            for token_id in token_ids
+        ]
+        parent["status"] = "tr-authority-adapted"
+        parent["adaptationRuleIds"] = [FLAT_PERMUTATION_RULE]
+        parent["localAdaptationRuleIds"] = [FLAT_PERMUTATION_RULE]
+        adapted_tokens.update(token_ids)
+        applied.append({
+            "ruleId": FLAT_PERMUTATION_RULE,
+            "reference": gap["reference"],
+            "targetCandidateNodeId": parent["candidateNodeId"],
+            "trTokenIds": token_ids,
+            "replacedMaculaTerminalIds": terminal_ids,
+            "leftAnchorTrTokenId": gap["left"][2],
+            "leftAnchorMaculaTerminalId": gap["left"][3],
+            "rightAnchorTrTokenId": gap["right"][2],
+            "rightAnchorMaculaTerminalId": gap["right"][3],
+        })
+
+    for gap in omission_gaps:
+        rebuild_reference_index()
+        terminal_id = gap["terminalId"]
+        node = reference_words.get(terminal_id)
+        parent = reference_parents.get(terminal_id)
+        if (
+            terminal_id in excluded_terminals
+            or not node
+            or not parent
+            or parent.get("kind") != "group"
+            or parent.get("status") != "hold-token-disagreement"
+            or parent.get("candidateNodeId") in excluded_nodes
+            or len(parent.get("children") or []) != 2
+        ):
+            continue
+        other = next((child for child in parent["children"] if child is not node), None)
+        if (
+            not other
+            or other.get("kind") != "group"
+            or other.get("candidateNodeId") in excluded_nodes
+            or other.get("status") not in {"exact-candidate", "tr-authority-adapted"}
+        ):
+            continue
+        target_id = parent["candidateNodeId"]
+        inherited_rules = set(other.get("adaptationRuleIds") or [])
+        promoted = {
+            key: value
+            for key, value in other.items()
+            if key not in {
+                "candidateNodeId", "status", "adaptationRuleIds",
+                "localAdaptationRuleIds",
+            }
+        }
+        parent.clear()
+        parent.update({
+            "candidateNodeId": target_id,
+            **promoted,
+            "status": "tr-authority-adapted",
+            "adaptationRuleIds": sorted(inherited_rules | {MACULA_ONLY_PROMOTE_CHILD_RULE}),
+            "localAdaptationRuleIds": [MACULA_ONLY_PROMOTE_CHILD_RULE],
+        })
+        applied.append({
+            "ruleId": MACULA_ONLY_PROMOTE_CHILD_RULE,
+            "reference": gap["reference"],
+            "targetCandidateNodeId": target_id,
+            "replacedMaculaTerminalId": terminal_id,
+            "leftAnchorTrTokenId": gap["left"][2],
+            "leftAnchorMaculaTerminalId": gap["left"][3],
+            "rightAnchorTrTokenId": gap["right"][2],
+            "rightAnchorMaculaTerminalId": gap["right"][3],
+        })
+
+    def propagate(node: dict) -> tuple[bool, set[str]]:
+        if node.get("kind") == "reference-word":
+            return False, set()
+        if node.get("kind") == "tr-word":
+            rule = node.get("adaptationRuleId")
+            return True, ({rule} if rule else set())
+        if node.get("kind") == "word":
+            return True, set()
+        child_rows = [propagate(child) for child in node.get("children") or []]
+        resolved = all(row[0] for row in child_rows)
+        rules = set(node.get("localAdaptationRuleIds") or []).union(*(row[1] for row in child_rows))
+        if node.get("status") == "hold-token-disagreement":
+            if resolved and rules:
+                node["status"] = "tr-authority-adapted"
+                node["adaptationRuleIds"] = sorted(rules)
+                return True, rules
+            return False, rules
+        return resolved, rules
+
+    for sentence in candidate.get("sentences") or []:
+        for root in sentence.get("roots") or []:
+            propagate(root)
+    candidate["trOnlyTokenIds"] = [
+        token_id for token_id in candidate.get("trOnlyTokenIds") or []
+        if token_id not in adapted_tokens
+    ]
+    candidate["trAuthorityAdaptations"] = applied
+    refresh_candidate_summary(candidate)
+    validate_candidate(candidate)
+    return candidate
 
 
 def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
@@ -442,6 +926,15 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
     for sentence in candidate.get("sentences") or []:
         for root in sentence.get("roots") or []:
             index(root)
+    node_templates = {node_id: copy.deepcopy(node) for node_id, node in nodes.items()}
+
+    def subtree_terminals(node: dict) -> list[str]:
+        terminal = node.get("maculaTerminalId")
+        return ([terminal] if terminal else []) + [
+            item
+            for child in node.get("children") or []
+            for item in subtree_terminals(child)
+        ]
 
     applied: list[dict] = []
     for decision in adjudications.get("decisions") or []:
@@ -461,6 +954,69 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
         common_valid = metadata_valid and bool(token_ids) and len(token_ids) == len(set(token_ids)) and all(
             token_id.startswith(f"{decision.get('reference')}.") for token_id in token_ids
         )
+        if decision_type == "replace-subtree-with-rebound-macula-structure":
+            source_template = node_templates.get(decision.get("sourceCandidateNodeId"))
+            terminal_to_token = decision.get("terminalToTrTokenIds") or {}
+
+            source_terminals = subtree_terminals(source_template or {})
+            target_terminals = subtree_terminals(target or {})
+            if (
+                not common_valid
+                or not target
+                or target.get("kind") != "group"
+                or target.get("status") != "hold-token-disagreement"
+                or not source_template
+                or source_template.get("kind") != "group"
+                or set(terminal_to_token) != set(source_terminals)
+                or len(source_terminals) != len(terminal_to_token)
+                or set(terminal_to_token.values()) != set(token_ids)
+                or len(terminal_to_token.values()) != len(token_ids)
+                or terminal_ids != target_terminals
+            ):
+                raise ValueError(f"invalid rebound MACULA structure adjudication: {decision_id!r}")
+            rebound = copy.deepcopy(source_template)
+            target_id = target["candidateNodeId"]
+            group_sequence = 0
+
+            def rebind(node: dict, *, root: bool = False) -> None:
+                nonlocal group_sequence
+                if node.get("kind") == "group":
+                    group_sequence += 1
+                    node["candidateNodeId"] = (
+                        target_id if root else f"{target_id}.native{group_sequence:03d}"
+                    )
+                    node["status"] = "human-adjudicated-tr"
+                    node["decisionIds"] = [decision_id]
+                    node["localDecisionIds"] = [decision_id]
+                    for child in node.get("children") or []:
+                        rebind(child)
+                    return
+                terminal_id = node.get("maculaTerminalId")
+                token_id = terminal_to_token.get(terminal_id)
+                if not token_id:
+                    raise ValueError(f"{decision_id}: source terminal lacks a TR binding")
+                node.clear()
+                node.update({
+                    "kind": "tr-word",
+                    "status": "human-adjudicated-tr",
+                    "trTokenId": token_id,
+                    "decisionId": decision_id,
+                })
+
+            rebind(rebound, root=True)
+            target.clear()
+            target.update(rebound)
+            applied.append({
+                "decisionId": decision_id,
+                "reference": decision["reference"],
+                "reviewer": decision["reviewer"],
+                "date": decision["date"],
+                "targetCandidateNodeId": target_id,
+                "sourceCandidateNodeId": decision["sourceCandidateNodeId"],
+                "replacedMaculaTerminalIds": terminal_ids,
+                "reason": decision.get("reason"),
+            })
+            continue
         if decision_type in {
             "rebuild-group-in-tr-order-from-existing-anchors",
             "rebuild-group-in-tr-order-with-native-tr-words",
@@ -473,7 +1029,10 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
                 or (permits_native_words and not common_valid)
                 or not target
                 or target.get("kind") != "group"
-                or target.get("status") != "hold-token-disagreement"
+                or target.get("status") not in (
+                    {"hold-token-disagreement", "exact-candidate"}
+                    if permits_native_words else {"hold-token-disagreement"}
+                )
                 or not child_specs
             ):
                 raise ValueError(f"invalid native TR order adjudication: {decision_id!r}")
@@ -484,6 +1043,14 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
                 return [token for child in node.get("children") or [] for token in leaf_tokens(child)]
 
             existing_tokens = set(leaf_tokens(target))
+            existing_reference_terminals = subtree_terminals(target)
+            existing_reference_terminals = [
+                terminal_id
+                for terminal_id in existing_reference_terminals
+                if terminal_id in reference_words
+            ]
+            if terminal_ids != existing_reference_terminals:
+                raise ValueError(f"{decision_id}: replaced MACULA terminals do not match the target")
             children = []
             selected_tokens: list[str] = []
             selected_native_tokens: list[str] = []
@@ -636,20 +1203,31 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
             "reason": decision.get("reason"),
         })
 
-    def propagate(node: dict) -> tuple[bool, set[str]]:
+    def propagate(node: dict) -> tuple[bool, bool, set[str]]:
         if node.get("kind") == "reference-word":
-            return False, set()
+            return False, False, set()
         if node.get("kind") == "tr-word":
-            return True, {node["decisionId"]}
+            decision_id = node.get("decisionId")
+            return True, False, ({decision_id} if decision_id else set())
         if node.get("kind") == "word":
-            return True, set()
+            return True, True, set()
         child_rows = [propagate(child) for child in node.get("children") or []]
         resolved = all(row[0] for row in child_rows)
-        decisions = set(node.get("localDecisionIds") or []).union(*(row[1] for row in child_rows))
-        if node.get("status") == "hold-token-disagreement" and resolved and decisions:
-            node["status"] = "human-adjudicated-tr"
-            node["decisionIds"] = sorted(decisions)
-        return resolved, decisions
+        children_exact = all(row[1] for row in child_rows)
+        decisions = set(node.get("localDecisionIds") or []).union(*(row[2] for row in child_rows))
+        if node.get("status") == "hold-token-disagreement" and resolved:
+            if decisions:
+                node["status"] = "human-adjudicated-tr"
+                node["decisionIds"] = sorted(decisions)
+            elif children_exact:
+                # MACULA trees may place postpositive particles before their
+                # clauses or otherwise use structural rather than surface
+                # child order. Once every leaf is an exact triple-agreement
+                # anchor, that ordering is not a token disagreement.
+                node["status"] = "exact-candidate"
+            else:
+                return False, False, decisions
+        return resolved, node.get("status") == "exact-candidate" and children_exact, decisions
 
     for sentence in candidate.get("sentences") or []:
         for root in sentence.get("roots") or []:
@@ -666,37 +1244,7 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
     ]
     candidate["structureAdjudications"] = applied
 
-    counts = {
-        "exactGroups": 0,
-        "holdGroups": 0,
-        "humanAdjudicatedGroups": 0,
-        "mappedWords": 0,
-        "humanAdjudicatedWords": 0,
-        "unmatchedMaculaWords": 0,
-    }
-
-    def recount(node: dict) -> None:
-        kind = node.get("kind")
-        if kind == "word":
-            counts["mappedWords"] += 1
-        elif kind == "tr-word":
-            counts["humanAdjudicatedWords"] += 1
-        elif kind == "reference-word":
-            counts["unmatchedMaculaWords"] += 1
-        elif kind == "group":
-            key = {
-                "exact-candidate": "exactGroups",
-                "hold-token-disagreement": "holdGroups",
-                "human-adjudicated-tr": "humanAdjudicatedGroups",
-            }[node["status"]]
-            counts[key] += 1
-        for child in node.get("children") or []:
-            recount(child)
-
-    for sentence in candidate.get("sentences") or []:
-        for root in sentence.get("roots") or []:
-            recount(root)
-    candidate["summary"] = {**counts, "trOnlyTokens": len(candidate["trOnlyTokenIds"])}
+    refresh_candidate_summary(candidate)
     validate_candidate(candidate)
     return candidate
 

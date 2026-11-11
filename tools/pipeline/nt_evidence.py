@@ -7,7 +7,12 @@ import xml.etree.ElementTree as ET
 from functools import lru_cache
 
 from books import NT, ROOT, Book
-from nt_macula import lowfat_path, validate_candidate, validate_mapping_ledger
+from nt_macula import (
+    TR_AUTHORITY_FALLBACK_RULE,
+    lowfat_path,
+    validate_candidate,
+    validate_mapping_ledger,
+)
 from nt_source import BOOK_BY_TR_CODE, load_reconciled_verse, load_robinson_book
 
 MAPPING = ROOT / "source/greek/TR1894/macula-structure-mapping.json"
@@ -146,7 +151,7 @@ def corpus_usage(strong: int, current_reference: str) -> list[dict]:
 
 
 def syntax_for_verse(book: Book, chapter: int, verse: int, expected_token_ids: list[str]) -> dict:
-    """Project the stored review tree onto one TR verse without resolving HOLDs."""
+    """Project the stored comparison plus its explicit TR-native fallback."""
     path = ROOT / "nt-syntax" / "candidates" / f"{book.utr_stem}.{chapter}.macula.json"
     reference = f"{next(code for code, item in BOOK_BY_TR_CODE.items() if item == book)}.{chapter}.{verse}"
     if not path.is_file():
@@ -155,6 +160,15 @@ def syntax_for_verse(book: Book, chapter: int, verse: int, expected_token_ids: l
     validate_candidate(candidate)
     ledger = json.loads(MAPPING.read_text(encoding="utf-8"))
     row = next(item for item in ledger["verses"] if item["reference"] == reference)
+    fallback = next(
+        (
+            item for item in candidate.get("trAuthorityFallbacks") or []
+            if item.get("reference") == reference
+        ),
+        None,
+    )
+    fallback_tokens = set((fallback or {}).get("trTokenIds") or [])
+    retired_terminals = set((fallback or {}).get("removedMaculaTerminalIds") or [])
     terminal_reference = {
         terminal_id: item["reference"]
         for item in ledger["verses"]
@@ -173,10 +187,19 @@ def syntax_for_verse(book: Book, chapter: int, verse: int, expected_token_ids: l
             if not token_id or not token_id.startswith(reference + "."):
                 return None
             seen.append(token_id)
-            return {key: node[key] for key in ("kind", "status", "trTokenId", "maculaTerminalId", "decisionId") if key in node}
+            return {
+                key: node[key]
+                for key in (
+                    "kind", "status", "trTokenId", "maculaTerminalId",
+                    "decisionId", "adaptationRuleId",
+                )
+                if key in node
+            }
         if kind == "reference-word":
             terminal_id = node.get("maculaTerminalId")
             if terminal_reference.get(terminal_id) != reference:
+                return None
+            if terminal_id in retired_terminals:
                 return None
             holds.append(terminal_id)
             return {"kind": kind, "status": node["status"], "maculaTerminalId": terminal_id}
@@ -185,11 +208,34 @@ def syntax_for_verse(book: Book, chapter: int, verse: int, expected_token_ids: l
             return None
         return {
             key: node[key]
-            for key in ("candidateNodeId", "kind", "status", "category", "rule", "function", "clauseType", "decisionIds")
+            for key in (
+                "candidateNodeId", "kind", "status", "category", "rule",
+                "function", "clauseType", "decisionIds", "adaptationRuleIds",
+            )
             if key in node
         } | {"children": children}
 
     roots = [projected for sentence in candidate["sentences"] for root in sentence["roots"] if (projected := prune(root)) is not None]
+    ordered_fallback_tokens = [
+        token_id for token_id in expected_token_ids if token_id in fallback_tokens
+    ]
+    if ordered_fallback_tokens:
+        roots.append({
+            "candidateNodeId": f"{reference}.tr-fallback",
+            "kind": "group",
+            "status": "tr-authority-adapted",
+            "adaptationRuleIds": [TR_AUTHORITY_FALLBACK_RULE],
+            "children": [
+                {
+                    "kind": "tr-word",
+                    "status": "tr-authority-adapted",
+                    "trTokenId": token_id,
+                    "adaptationRuleId": TR_AUTHORITY_FALLBACK_RULE,
+                }
+                for token_id in ordered_fallback_tokens
+            ],
+        })
+        seen.extend(ordered_fallback_tokens)
     token_paths: dict[str, list[dict]] = {}
 
     def collect_paths(node: dict, ancestors: list[dict]) -> None:
@@ -219,5 +265,6 @@ def syntax_for_verse(book: Book, chapter: int, verse: int, expected_token_ids: l
         "unmatchedMaculaTerminalIds": holds,
         "duplicateTrToken": duplicate,
         "mappingStatus": row["status"],
+        "trAuthorityFallback": fallback,
         "tokenStructuralPaths": token_paths,
     }

@@ -155,12 +155,14 @@ La proyección debe cumplir todas estas condiciones:
 3. la correspondencia conserva el orden y reconstruye la superficie TR1894;
 4. una normalización ortográfica o diferencia de tokenización solo se acepta
    cuando sea determinista, reversible y quede registrada;
-5. una diferencia textual invalida la rama estructural mínima que la contiene;
-   nunca se proyecta estructura a través de ella como si los textos fueran
-   idénticos;
-6. toda rama invalidada queda `HOLD` hasta que una persona establezca y
-   documente su estructura directamente desde la superficie TR1894, la
-   morfología Robinson y el contexto griego autorizado;
+5. una diferencia textual invalida la rama estructural mínima que la contiene,
+   salvo la adaptación determinista cerrada definida abajo; nunca se presenta
+   una adaptación como si los textos fueran idénticos ni como enlace terminal
+   MACULA;
+6. toda rama invalidada queda marcada como discrepancia en el árbol
+   comparativo. Si ninguna adaptación estructural cerrada la resuelve, la
+   capa de evidencia usa el respaldo nativo TR definido abajo, sin atribuirle
+   función, categoría ni dependencia procedentes de MACULA;
 7. los nodos canónicos resultantes pertenecen a una capa sintáctica nativa de
    TR1894; un token o nodo MACULA nunca es su identidad primaria;
 8. el repositorio, commit, licencia, atribución, manifiesto de archivos y
@@ -169,13 +171,103 @@ La proyección debe cumplir todas estas condiciones:
    paternidad única, rendimiento en orden TR1894, correspondencia del índice
    de cláusulas y rechazo de todos los campos prohibidos.
 
-Un proyector, parser o modelo puede proponer una rama; no puede aprobarla ni
-resolver una diferencia textual. La ausencia de correspondencia validada o de
-una decisión humana exigida produce `HOLD`. El paquete de un versículo NT solo
+Por decisión editorial humana del 11 de noviembre de 2026, rige además esta
+adaptación estructural cerrada por autoridad TR:
+
+- entre dos anclajes exactos consecutivos —incluidos los límites del
+  versículo— puede adaptarse automáticamente una brecha que contenga
+  exactamente un token TR1894 y exactamente un terminal MACULA;
+- el token TR debe conservar una correspondencia uno-a-uno con un único token
+  Robinson cuya superficie normalizada concuerde con SCV, o llevar una
+  reconciliación SCV/Robinson humana ya aprobada en
+  `source/greek/TR1894/ADJUDICATIONS.json`; en el segundo caso se usa la regla
+  `tr-authority-approved-robinson-binding-v1` y nunca se lo llama acuerdo
+  triple;
+- el terminal MACULA se elimina como identidad y se coloca en su ranura
+  estructural un terminal nativo TR, con superficie, identidad y morfología
+  exclusivamente TR1894/Robinson;
+- la categoría y el enlace estructural de esa ranura pueden conservarse, pero
+  la operación se registra como `tr-authority-isolated-one-to-one-v1`; nunca se
+  registra como acuerdo triple ni como adjudicación humana del versículo;
+- esta regla no afirma equivalencia léxica entre las dos lecturas. Afirma
+  solamente que, dentro de una ranura aislada por los mismos anclajes
+  inequívocos, TR reemplaza al texto de referencia y hereda su posición
+  estructural;
+- una brecha de cero-a-uno, uno-a-cero, muchos-a-muchos o una transposición no
+  recibe esta adaptación de ranura. Puede recibir otra adaptación cerrada de
+  esta sección; de lo contrario pasa al respaldo nativo TR descrito abajo. Un
+  desacuerdo SCV/Robinson sin adjudicación humana previa sí permanece `HOLD`;
+  una reconciliación ya aprobada no se reabre en la capa MACULA.
+
+La aplicación debe ser reversible y registrar el token TR, el terminal MACULA
+retirado, el versículo y los anclajes delimitadores. Una prueba debe demostrar
+que no cambia ningún anclaje exacto, no duplica terminales TR y no consume una
+decisión humana explícita ya registrada.
+
+Por la misma autoridad TR se permite una segunda adaptación cerrada,
+`tr-authority-macula-only-promote-child-v1`, cuando una brecha entre anclajes
+exactos contiene cero tokens TR y exactamente un terminal MACULA. Solo se
+aplica si ese terminal es uno de exactamente dos hijos de su grupo inmediato y
+el otro hijo es un único grupo estructural ya válido. Se elimina el terminal
+ausente de TR y se promueve ese único grupo, conservando su estructura interna.
+La operación registra el nodo reemplazado, el terminal retirado y los anclajes
+delimitadores. Si quedan dos hijos, si el hijo restante no es un grupo, si la
+rama contiene otro `HOLD` o si existe una adjudicación humana explícita sobre
+la rama, no se aplica esta regla.
+
+También se permite `tr-authority-flat-permutation-v1` para una brecha con dos
+o más tokens cuando las superficies normalizadas de TR y MACULA forman
+exactamente el mismo multiconjunto, todos los enlaces SCV/Robinson están
+resueltos y el grupo mínimo afectado contiene únicamente esos terminales como
+hijos directos, sin subgrupos. El grupo conserva su categoría y función, sus
+terminales MACULA se retiran y se crean terminales nativos en el orden TR. Una
+duplicación no impide la operación porque no se enlazan identidades terminales
+MACULA individuales; se reemplaza y registra el grupo plano completo. Si hay
+un subgrupo, un terminal externo, una lectura distinta o una decisión humana
+explícita, la permutación no recibe esta adaptación específica y pasa al
+respaldo nativo TR, salvo que exista una incertidumbre textual o morfológica
+real que todavía exija `HOLD`.
+
+Por adjudicación editorial humana del 11 de noviembre de 2026, después de
+intentar todas las adaptaciones estructurales cerradas anteriores se aplica
+`tr-authority-fallback-v1` a cualquier discrepancia TR/MACULA restante. El
+árbol comparativo se conserva íntegro para auditoría, pero la capa de evidencia:
+
+- retira todo terminal MACULA que no exista en Scrivener;
+- incorpora, en orden canónico, todo terminal Scrivener que MACULA no pueda
+  colocar inequívocamente;
+- conserva todas las ramas MACULA exactas y todas las adaptaciones más
+  específicas ya validadas;
+- presenta los terminales restantes en una rama nativa TR separada, sin
+  categoría, función, cabeza, dependencia ni equivalencia léxica inventada;
+- registra por versículo los tokens TR incorporados, los terminales MACULA
+  retirados y el identificador de la regla.
+
+Un terminal MACULA situado fuera de los límites canónicos de versículo SCV no
+se reasigna a otro versículo. Se registra como terminal comparativo no canónico
+retirado a nivel de capítulo; SCV conserva sin excepción sus límites y etiquetas.
+Si un token Scrivener tiene correspondencia textual validada pero su terminal
+MACULA no pertenece a ningún árbol proyectable, se registra como token TR
+estructuralmente no colocado y entra en la rama de respaldo. No se lo describe
+como diferencia textual ni se inventa para él una relación ausente.
+
+Este respaldo no afirma que MACULA y TR coincidan y no convierte la lectura
+crítica en evidencia textual. Reconoce explícitamente que en esa rama solo son
+autoritativos la superficie Scrivener, el orden Scrivener y la morfología
+Robinson ya validada. La falta de una relación MACULA para esos terminales se
+expone al modelo; si forma, morfología, contexto y uso de corpus no bastan para
+traducir una construcción concreta, el modelo todavía debe devolver `HOLD`.
+Una incertidumbre real SCV/Robinson tampoco puede entrar en este respaldo.
+
+Un proyector, parser o modelo puede proponer una rama; no puede aprobar una
+función sintáctica ni resolver una incertidumbre textual. Una discrepancia
+puramente TR/MACULA cubierta por `tr-authority-fallback-v1` no produce `HOLD`:
+el paquete declara la ausencia de relación sintáctica para esos terminales y
+conserva el resto de la estructura validada. El paquete de un versículo NT solo
 puede llevar `evidenceStatus: READY_FOR_MODEL` cuando además contiene contexto
-discursivo TR1894, uso de corpus TR1894 con relaciones estructurales, evidencia
-TBESG fijada y una estructura TR completa. Una rama `HOLD` mantiene bloqueado
-ese versículo, no los demás.
+discursivo TR1894, uso de corpus TR1894, evidencia TBESG fijada y cobertura
+terminal TR completa. Una incertidumbre textual o morfológica real sí mantiene
+bloqueado ese versículo, no los demás.
 
 ## Antiguo Testamento
 

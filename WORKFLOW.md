@@ -253,11 +253,40 @@ en el commit y bajo la lista positiva fijados por `SOURCE_POLICY.md`, puede
 proponer solamente límites, anidamiento, categorías, reglas, funciones,
 cabezas y tipos de cláusula. Scrivener TR1894 conserva todos los terminales y
 Robinson conserva la morfología de trabajo. Una rama que corresponda de manera
-exacta puede proyectarse con su procedencia; una diferencia textual reabre la
-rama mínima afectada y la deja en `HOLD` hasta una decisión humana documentada.
+exacta puede proyectarse con su procedencia. Primero se aplican las adaptaciones
+estructurales cerradas de `SOURCE_POLICY.md`, incluida la brecha aislada
+uno-a-uno `tr-authority-isolated-one-to-one-v1`. Después, toda discrepancia
+TR/MACULA que quede recibe `tr-authority-fallback-v1`: se conservan las ramas
+exactas, se retiran los terminales MACULA ausentes de Scrivener y los terminales
+TR restantes se presentan en orden en una rama nativa sin función sintáctica
+inventada. Esta capa transparente no afirma acuerdo textual ni sintáctico.
+Un terminal MACULA fuera de los límites SCV se registra y se retira a nivel de
+capítulo; nunca se fuerza dentro de un versículo Scrivener.
+Un token TR textualmente correspondido cuyo terminal no aparezca en un árbol
+MACULA proyectable se registra aparte como estructuralmente no colocado y entra
+en el respaldo sin perder su condición de correspondencia textual.
+Una reconciliación SCV/Robinson ya aprobada no vuelve a `HOLD` por diferir en
+superficie: cuando ocupa una ranura aislada se adapta mediante
+`tr-authority-approved-robinson-binding-v1`. Si aparece dentro de una brecha
+MACULA mayor, la morfología permanece resuelta y la rama usa el respaldo TR si
+ninguna adaptación más específica puede conservarla.
+Una omisión MACULA aislada también puede resolverse sin decisión por versículo
+cuando al retirar el terminal ausente de TR queda exactamente un solo grupo
+válido: `tr-authority-macula-only-promote-child-v1` promueve ese grupo y
+registra la reparación. Ninguna rama con múltiples hijos restantes se reduce
+automáticamente.
+Una transposición se adapta solamente cuando el grupo mínimo es plano y sus
+terminales forman exactamente el mismo multiconjunto que TR. La regla
+`tr-authority-flat-permutation-v1` reemplaza el grupo entero por terminales
+nativos en orden TR; nunca aplana un subgrupo para conseguirlo.
 Nunca se importan como autoridad una palabra de Nestle 1904 o SBLGNT, una
 glosa, un sentido, un dominio, un marco, un rol semántico ni un referente de
 MACULA.
+
+El respaldo TR elimina el `HOLD` causado únicamente por usar MACULA como texto
+comparativo. No elimina un `HOLD` real de SCV/Robinson ni obliga al modelo a
+traducir una construcción que forma, morfología, contexto y corpus no
+resuelvan. La estructura comparativa original permanece visible para auditoría.
 
 En la capa previa de texto y morfología, Scrivener SCV decide la superficie
 cuando existe una correspondencia uno-a-uno con un token UTR; Robinson aporta
@@ -277,13 +306,20 @@ rama afectada. No se usan anclas de dos fuentes.
 `python3 tools/build_nt_macula_candidate.py <libro> <capítulo>` genera material
 de revisión en `nt-syntax/candidates/`; nunca lo convierte en sintaxis canónica
 ni resuelve automáticamente un `HOLD`.
+`python3 tools/build_all_nt_macula_candidates.py` construye la misma capa
+derivada para los 260 capítulos protestantes del NT, sin llamadas pagadas y sin
+aprobar diferencias. Cada candidato queda ligado solamente a las decisiones
+humanas de su propio capítulo; una adjudicación en otro capítulo no lo vuelve
+obsoleto.
 
-Team Desk muestra los candidatos existentes en **Estructura griega del NT —
-revisión por versículo**. Esa vista vuelve a comprobar el manifiesto, el hash del
+Team Desk muestra los 260 capítulos en **Estructura griega del NT — cola
+completa por capítulo**. Esa vista vuelve a comprobar el manifiesto, el hash del
 mapeo, la política de acuerdo triple y la cobertura completa del capítulo.
-La vista estructural no escribe una segunda copia de la sintaxis. La redacción
-se habilita únicamente para el versículo cuyo paquete individual haya llegado
-a `READY_FOR_MODEL`; los demás permanecen bloqueados aunque compartan capítulo.
+La vista estructural no escribe una segunda copia de la sintaxis. La fase de
+redacción del NT permanece bloqueada mientras falte un candidato o quede un
+`HOLD` estructural en cualquier capítulo. Una vez terminada esa fase global,
+cada paquete individual todavía debe llegar a `READY_FOR_MODEL` antes de una
+llamada de redacción.
 
 Cuando una persona resuelve una rama `HOLD` directamente desde TR1894 y
 Robinson, la decisión se registra en
@@ -291,7 +327,8 @@ Robinson, la decisión se registra en
 reemplaza solamente la rama nombrada por terminales nativos TR, conserva el
 orden TR y propaga la procedencia humana a sus antepasados mínimos. Nunca crea
 un enlace MACULA ficticio. Team Desk distingue en azul **TR resuelto**, en
-verde el acuerdo triple y en ámbar los `HOLD` todavía abiertos.
+violeta **TR adaptado** por la regla determinista, en verde el acuerdo triple y
+en ámbar los `HOLD` todavía abiertos.
 
 La autorización de esta fuente no desbloquea por sí sola el NT. Antes de una
 llamada de modelo deben pasar la verificación del commit y los checksums, la

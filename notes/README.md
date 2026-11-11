@@ -13,6 +13,8 @@ paquete canónico de cada versículo.
 - [Éxodo 14:19 — el mensajero de Dios](ot/exodo/14-19.md)
 - [Salmos 119:147–148 — la luz entre el día y la noche](ot/salmos/119-147.md)
 - [Habacuc 3:4 — dos rayos y la imagen de los cuernos](ot/habacuc/3-4.md)
+- [Marcos 16 — límites de Scrivener y MACULA 16:99](nt/marcos/16-20.md)
+- [Hechos 15:29 — terminal textual sin árbol proyectable](nt/hechos/15-29.md)
 - [Arrepentimiento, cambio de mente, pesar y regreso](topics/arrepentimiento.md)
 - [Los nefilim](topics/nefilim.md)
 

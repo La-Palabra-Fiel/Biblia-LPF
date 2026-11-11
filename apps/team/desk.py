@@ -44,6 +44,7 @@ from auto_pass import write_verse  # noqa: E402
 from books import NT, OT, get_book  # noqa: E402
 from nt_macula import (  # noqa: E402
     MAPPING_POLICY as NT_MACULA_MAPPING_POLICY,
+    TR_AUTHORITY_FALLBACK_RULE,
     validate_candidate as validate_nt_syntax_candidate,
     validate_mapping_ledger as validate_nt_mapping_ledger,
 )
@@ -113,6 +114,32 @@ def read_json(path: Path, default=None):
 
 def write_json(path: Path, value) -> None:
     write_json_atomic(path, value)
+
+
+def canonical_alignment_units(slug: str, testament: str, reference: str) -> list[dict]:
+    """Load an existing canonical reverse alignment as an editable review seed."""
+    path = ROOT / "alignment" / testament / slug / f"{slug}-reverse-links.json"
+    document = read_json(path, {})
+    links = document.get("links") if isinstance(document, dict) else []
+    phrase = next(
+        (row for row in (links or []) if isinstance(row, dict) and row.get("reference") == reference),
+        None,
+    )
+    if not phrase:
+        return []
+    units: list[dict] = []
+    for unit in phrase.get("units") or []:
+        surface = lexical_alignment_surface((unit or {}).get("surface") or "")
+        source_ids = list(
+            dict.fromkeys(
+                str(value)
+                for value in ((unit or {}).get("sourceTokenIds") or [])
+                if str(value)
+            )
+        )
+        if surface and source_ids:
+            units.append({"es": surface, "sourceTokenIds": source_ids})
+    return units
 
 
 def packet_fingerprint(packet: dict) -> str:
@@ -567,7 +594,7 @@ def chapter_view(slug: str, chapter) -> dict:
     recovered_verses = recovered.get("verses") if isinstance(recovered, dict) else {}
     recovered_verses = recovered_verses if isinstance(recovered_verses, dict) else {}
     nt_structure_status: dict[int, str] = {}
-    if book.testament == "nt":
+    if getattr(book, "testament", "ot") == "nt":
         try:
             nt_structure_status = {
                 row["verse"]: (
@@ -594,7 +621,11 @@ def chapter_view(slug: str, chapter) -> dict:
                 "model": "human-local",
                 "reasoningEffort": "not-required",
                 "spanish": canonical_verse,
-                "units": [],
+                "units": canonical_alignment_units(
+                    book.slug,
+                    book.testament,
+                    f"{book.label} {number}:{verse}",
+                ),
                 "uncertainties": [],
                 "evidenceDecisions": [],
             }
@@ -642,6 +673,15 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
     book, number, verses = chapter_or_raise(slug, chapter)
     with _lock:
         assert_holder(person, book.slug, number)
+    if getattr(book, "testament", "ot") == "nt":
+        phase = nt_structure_phase_status()
+        if not phase["complete"]:
+            raise ValueError(
+                "La fase estructural del NT todavía no está completa: "
+                f"{phase['unbuiltChapters']} capítulos sin candidato y "
+                f"{phase['holdChapters']} capítulos con HOLD. "
+                "Resuelve primero toda la cola estructural; después prepara la traducción."
+            )
     selected_verses = verses
     selected_verse = None
     if verse is not None:
@@ -1200,12 +1240,35 @@ def nt_syntax_candidate_path(book, chapter: int) -> Path:
     return NT_SYNTAX_CANDIDATES / f"{book.utr_stem}.{chapter}.macula.json"
 
 
+def nt_chapter_adjudication_fingerprint(book: str, chapter: int) -> str:
+    adjudications = read_json(NT_STRUCTURE_ADJUDICATIONS, {})
+    relevant = [
+        decision
+        for decision in adjudications.get("decisions") or []
+        if decision.get("book") == book and decision.get("chapter") == chapter
+    ]
+    payload = {
+        "schema": adjudications.get("schema"),
+        "book": book,
+        "chapter": chapter,
+        "decisions": relevant,
+    }
+    return hashlib.sha256(
+        json.dumps(
+            payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        ).encode("utf-8")
+    ).hexdigest()
+
+
 def validate_nt_candidate_adjudication_binding(candidate: dict) -> None:
     binding = (candidate.get("provenance") or {}).get("structureAdjudications") or {}
     if (
         binding.get("path") != str(NT_STRUCTURE_ADJUDICATIONS.relative_to(ROOT))
         or not NT_STRUCTURE_ADJUDICATIONS.is_file()
-        or binding.get("sha256") != file_fingerprint(NT_STRUCTURE_ADJUDICATIONS)
+        or binding.get("scope") != "chapter"
+        or binding.get("sha256") != nt_chapter_adjudication_fingerprint(
+            str(candidate.get("book") or ""), int(candidate.get("chapter") or 0)
+        )
     ):
         raise ValueError("The NT structural candidate is not bound to current human adjudications.")
 
@@ -1228,8 +1291,8 @@ def load_validated_nt_mapping() -> dict:
 
 
 def nt_syntax_board() -> dict:
-    """List review-only NT structural candidates without enabling translation."""
-    available = []
+    """List every NT chapter, including candidates not built yet."""
+    available_by_key = {}
     by_stem = {book.utr_stem: book for book in NT}
     for path in sorted(NT_SYNTAX_CANDIDATES.glob("*.macula.json")):
         parts = path.name.split(".")
@@ -1243,12 +1306,46 @@ def nt_syntax_board() -> dict:
         validate_nt_candidate_adjudication_binding(candidate)
         if candidate.get("book") != book.slug or candidate.get("chapter") != int(parts[1]):
             raise ValueError(f"{path.name}: candidate identity does not match its filename.")
-        available.append({
+        available_by_key[(book.slug, int(parts[1]))] = {
             "book": book.slug,
             "label": book.label,
             "chapter": int(parts[1]),
+            "candidateBuilt": True,
             "status": candidate["status"],
             "summary": candidate["summary"],
+        }
+    mapping = load_validated_nt_mapping()
+    by_code = {TR_CODE_BY_STEM[book.utr_stem]: book for book in NT}
+    chapter_rows: dict[tuple[str, int], list[dict]] = {}
+    for row in mapping.get("verses") or []:
+        parts = str(row.get("reference") or "").split(".")
+        if len(parts) != 3 or not parts[1].isdigit():
+            continue
+        book = by_code.get(parts[0])
+        if book is not None:
+            chapter_rows.setdefault((book.slug, int(parts[1])), []).append(row)
+    available = []
+    book_order = {book.slug: index for index, book in enumerate(NT)}
+    for key, rows in sorted(
+        chapter_rows.items(), key=lambda item: (book_order[item[0][0]], item[0][1])
+    ):
+        built = available_by_key.get(key)
+        if built:
+            available.append(built)
+            continue
+        book = get_book(key[0])
+        available.append({
+            "book": book.slug,
+            "label": book.label,
+            "chapter": key[1],
+            "candidateBuilt": False,
+            "status": "not-built",
+            "summary": {
+                "mappedWords": sum(len(row.get("mapping") or []) for row in rows),
+                "trOnlyTokens": sum(len(row.get("unmatchedTrTokenIds") or []) for row in rows),
+                "unmatchedMaculaWords": sum(len(row.get("unmatchedMaculaTerminalIds") or []) for row in rows),
+                "robinsonDisagreements": sum(len(row.get("nonAgreeingRobinsonTokenIds") or []) for row in rows),
+            },
         })
     return {
         "status": "review-only-not-canonical",
@@ -1257,6 +1354,46 @@ def nt_syntax_board() -> dict:
         "mappingPolicy": NT_MACULA_MAPPING_POLICY,
         "candidates": available,
     }
+
+
+def nt_structure_phase_status() -> dict:
+    rows = nt_syntax_board()["candidates"]
+    unbuilt = [row for row in rows if not row["candidateBuilt"]]
+    holds = [
+        row for row in rows
+        if row["candidateBuilt"]
+        and "trAuthorityFallbackVerses" not in row["summary"]
+        and (
+            int(row["summary"].get("holdGroups") or 0) > 0
+            or int(row["summary"].get("trOnlyTokens") or 0) > 0
+            or int(row["summary"].get("unmatchedMaculaWords") or 0) > 0
+        )
+    ]
+    return {
+        "complete": not unbuilt and not holds,
+        "totalChapters": len(rows),
+        "unbuiltChapters": len(unbuilt),
+        "holdChapters": len(holds),
+    }
+
+
+def build_nt_syntax_candidate(payload: dict) -> dict:
+    """Build one no-cost review candidate; this never approves a HOLD."""
+    authorize(payload.get("name"), payload.get("token"))
+    book = book_or_raise(payload.get("book"))
+    try:
+        chapter = int(payload.get("chapter"))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Choose a valid NT chapter.") from exc
+    if book.testament != "nt" or chapter < 1:
+        raise ValueError("Choose a valid NT chapter.")
+    _run([
+        sys.executable,
+        str(ROOT / "tools" / "build_nt_macula_candidate.py"),
+        book.slug,
+        str(chapter),
+    ])
+    return nt_syntax_view(book.slug, chapter)
 
 
 def nt_syntax_view(slug: str, chapter) -> dict:
@@ -1291,12 +1428,26 @@ def nt_syntax_view(slug: str, chapter) -> dict:
     all_token_ids: set[str] = set()
     mapped_candidate_ids: set[str] = set()
     adjudicated_tokens: dict[str, str] = {}
+    adapted_tokens: dict[str, str] = {}
+    unresolved_macula_terminals: set[str] = set()
+    fallback_by_reference = {
+        row["reference"]: row
+        for row in candidate.get("trAuthorityFallbacks") or []
+    }
+    for fallback in fallback_by_reference.values():
+        for token_id in fallback.get("trTokenIds") or []:
+            adapted_tokens[token_id] = TR_AUTHORITY_FALLBACK_RULE
 
     def collect_candidate_ids(node: dict) -> None:
         if node.get("kind") in {"word", "tr-word"}:
             mapped_candidate_ids.add(node["trTokenId"])
         if node.get("kind") == "tr-word":
-            adjudicated_tokens[node["trTokenId"]] = node["decisionId"]
+            if node.get("status") == "human-adjudicated-tr":
+                adjudicated_tokens[node["trTokenId"]] = node["decisionId"]
+            elif node.get("status") == "tr-authority-adapted":
+                adapted_tokens[node["trTokenId"]] = node["adaptationRuleId"]
+        if node.get("kind") == "reference-word" and node.get("maculaTerminalId"):
+            unresolved_macula_terminals.add(node["maculaTerminalId"])
         for child in node.get("children") or []:
             collect_candidate_ids(child)
 
@@ -1311,12 +1462,17 @@ def nt_syntax_view(slug: str, chapter) -> dict:
             for item in row.get("mapping") or []
         }
         nonagreeing = set(row.get("nonAgreeingRobinsonTokenIds") or [])
+        fallback = fallback_by_reference.get(row["reference"])
+        retired_terminals = set(
+            (fallback or {}).get("removedMaculaTerminalIds") or []
+        )
         tokens = []
         for token in source["trTokens"]:
             token_id = token["tokenId"]
             all_token_ids.add(token_id)
             terminal_id = terminal_by_token.get(token_id)
             decision_id = adjudicated_tokens.get(token_id)
+            adaptation_id = adapted_tokens.get(token_id)
             tokens.append({
                 "tokenId": token_id,
                 "surface": token["surfaceGreek"],
@@ -1325,13 +1481,19 @@ def nt_syntax_view(slug: str, chapter) -> dict:
                 "strongs": (token.get("morphology") or {}).get("strongs") or [],
                 "maculaTerminalId": terminal_id,
                 "tripleAgreement": terminal_id is not None,
-                "structurallyResolved": decision_id is not None,
+                "structurallyResolved": decision_id is not None or adaptation_id is not None,
                 "structureDecisionId": decision_id,
+                "structureAdaptationRuleId": adaptation_id,
+                "structureResolution": (
+                    "human" if decision_id is not None
+                    else "tr-authority" if adaptation_id is not None
+                    else None
+                ),
                 "holdReason": (
                     None
-                    if decision_id is not None
+                    if decision_id is not None or adaptation_id is not None
                     else
-                    "SCV y Robinson no concuerdan en un solo token."
+                    "La reconciliación SCV/Robinson ya está aprobada; falta resolver la rama MACULA no aislada."
                     if token_id in nonagreeing
                     else "MACULA no ofrece una correspondencia inequívoca para este token."
                     if terminal_id is None
@@ -1342,20 +1504,37 @@ def nt_syntax_view(slug: str, chapter) -> dict:
             token for token in tokens
             if not token["tripleAgreement"] and not token["structurallyResolved"]
         ]
+        unresolved_terminals = [
+            terminal_id
+            for terminal_id in row.get("unmatchedMaculaTerminalIds") or []
+            if terminal_id in unresolved_macula_terminals
+            and terminal_id not in retired_terminals
+        ]
         verses.append({
             "verse": verse,
             "reference": row["reference"],
             "status": (
                 "human-adjudicated-tr"
-                if not unresolved and any(token["structurallyResolved"] for token in tokens)
+                if not unresolved and not unresolved_terminals and any(token["structureResolution"] == "human" for token in tokens)
+                else "tr-authority-adapted"
+                if not unresolved and not unresolved_terminals and (
+                    fallback is not None
+                    or any(token["structureResolution"] == "tr-authority" for token in tokens)
+                )
                 else "exact"
-                if not unresolved
+                if not unresolved and not unresolved_terminals
                 else "hold-token-disagreement"
             ),
             "tokens": tokens,
+            "trAuthorityFallback": fallback,
+            "unresolvedMaculaTerminalIds": unresolved_terminals,
             "maculaSurfaceOnHold": row.get("maculaSurface"),
         })
-    candidate_coverage = mapped_candidate_ids | set(candidate.get("trOnlyTokenIds") or [])
+    candidate_coverage = (
+        mapped_candidate_ids
+        | set(candidate.get("trOnlyTokenIds") or [])
+        | set(candidate.get("unplacedMappedTrTokenIds") or [])
+    )
     if candidate_coverage != all_token_ids:
         raise ValueError("The NT structural candidate does not cover the complete TR chapter.")
     return {
@@ -1373,7 +1552,7 @@ def nt_syntax_view(slug: str, chapter) -> dict:
 
 
 def board() -> dict:
-    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC + TR1894", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in (*OT, *NT) if chapter_count(b.slug)], "claims": load_claims(), "ntBlocked": False, "ntReadiness": "chapter-batch-ready-only"}
+    return {"model": model_name(), "modelReviewOn": TEAM_MODEL_REVIEW_ON, "reasoningEffort": reasoning_effort(), "draftSpecVersion": DRAFT_SPEC_VERSION, "reviewSpecVersion": REVIEW_SPEC_VERSION, "sourcePolicy": "lbf-source-policy-v4", "textualBasis": "OSHB/WLC + TR1894", "maxRunning": MAX_RUNNING, "running": sum(_alive(k) for k in _threads), "people": sorted(load_people()), "books": [{"slug": b.slug, "label": b.label, "chapters": chapter_count(b.slug)} for b in (*OT, *NT) if chapter_count(b.slug)], "claims": load_claims(), "ntBlocked": False, "ntReadiness": "whole-nt-structure-first"}
 
 
 def warm_totals() -> None:

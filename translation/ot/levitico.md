@@ -363,7 +363,7 @@ O una persona que toque cualquier cosa impura, ya sea el cadáver de un animal s
 
 ### 5:3
 
-O cuando tocare en impureza de adam, a toda su impureza que se impure en ella, y se ocultare desde él, y él conociere, y culpado.
+O si toca la impureza de un ser humano, cualquiera de sus impurezas con la cual quede impuro, y queda oculta para nosotros, y él *lo* sabe y se hace culpable.
 
 ### 5:4
 

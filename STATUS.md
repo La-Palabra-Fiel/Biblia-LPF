@@ -65,7 +65,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | 2corintios | nt | ready | none |  |  |  |  |  |
 | galatas | nt | ready | none |  |  |  |  |  |
 | efesios | nt | ready | none |  |  |  |  |  |
-| filipenses | nt | draft | draft |  |  |  |  | reclasificado como borrador por decisión humana 2026-11-09; el trabajo anterior se produjo para un propósito específico y no constituye aprobación final |
+| filipenses | nt | done | done | John Wry | 2026-11-16 | John Wry | 2026-11-16 | reclasificado como borrador por decisión humana 2026-11-09; el trabajo anterior se produjo para un propósito específico y no constituye aprobación final |
 | colosenses | nt | ready | none |  |  |  |  |  |
 | 1tesalonicenses | nt | ready | none |  |  |  |  |  |
 | 2tesalonicenses | nt | ready | none |  |  |  |  |  |

@@ -255,517 +255,517 @@ Sino que *es* judío quien lo *es* en lo oculto, y la circuncisión *es* del cor
 
 ### 3:1
 
-¿Qué ventaja tiene, pues, el judío? ¿O de qué aprovecha la circuncisión?
+¿Cuál *es*, entonces, la ventaja del judío? ¿O cuál *es* el beneficio de la circuncisión?
 
 ### 3:2
 
-Mucho, en toda manera. Primeramente, porque a ellos les han sido confiados los oráculos de Dios.
+Mucho, en todo sentido. Pues lo primero, ciertamente, *es* que se les confiaron los oráculos de Dios.
 
 ### 3:3
 
-¿Pues qué, si algunos fueron incrédulos? ¿Acaso su incredulidad anulará la fidelidad de Dios?
+¿Qué, pues, si algunos no creyeron? ¿Acaso la incredulidad de ellos anulará la fidelidad de Dios?
 
 ### 3:4
 
-¡De ninguna manera! Antes bien, sea Dios veraz, y todo hombre mentiroso, como está escrito: «Para que seas justificado en tus palabras, y venzas cuando seas juzgado».
+¡Que no suceda! Más bien, sea Dios veraz, pero todo ser humano *es* mentiroso, como está escrito: «Para que seas reconocido justo en Tus palabras y venzas cuando seas juzgado».
 
 ### 3:5
 
-Si nuestra injusticia hace resaltar la justicia de Dios, ¿qué diremos? ¿Será injusto Dios que da castigo? (Hablo como hombre.)
+Pero si nuestra injusticia demuestra la justicia de Dios, ¿qué diremos? ¿Acaso *es* injusto Dios, el que inflige la ira? Hablo en términos humanos.
 
 ### 3:6
 
-¡De ninguna manera! De otro modo, ¿cómo juzgaría Dios al mundo?
+¡Que no suceda! De otro modo, ¿cómo juzgará Dios al mundo?
 
 ### 3:7
 
-Si por mi mentira la verdad de Dios abundó para su gloria, ¿por qué aún soy yo también juzgado como pecador?
+Pues si la verdad de Dios abundó por mi mentira para Su gloria, ¿por qué todavía yo también soy juzgado como pecador?
 
 ### 3:8
 
-¿Y por qué no decir —como se nos calumnia, y como algunos afirman que nosotros decimos—: Hagamos el mal para que venga el bien? La condenación de los tales es justa.
+¿Y por qué no *decir* —como se nos calumnia y como algunos afirman que nosotros decimos—: «Hagamos las cosas malas para que vengan las cosas buenas»? La sentencia contra ellos es justa.
 
 ### 3:9
 
-¿Qué, pues? ¿Somos nosotros mejores? De ninguna manera; pues ya hemos acusado a judíos y a griegos, que todos están bajo pecado,
+¿Qué, pues? ¿Somos nosotros mejores? De ninguna manera; pues ya hemos acusado tanto a judíos como a griegos de estar todos bajo pecado,
 
 ### 3:10
 
-como está escrito: No hay justo, ni aun uno;
+Tal como está escrito que no hay justo, ni siquiera uno.
 
 ### 3:11
 
-no hay quien entienda, no hay quien busque a Dios.
+No hay quien entienda; no hay quien busque a Dios.
 
 ### 3:12
 
-Todos se desviaron, a una se hicieron inútiles; no hay quien haga lo bueno, no hay ni siquiera uno.
+Todos se desviaron; juntos se volvieron inútiles. No hay quien haga el bien; no hay ni siquiera uno.
 
 ### 3:13
 
-Sepulcro abierto es su garganta; con su lengua engañan. Veneno de áspides hay debajo de sus labios;
+La garganta de ellos *es* una tumba abierta; con las lenguas de ellos engañaban; veneno de áspides *está* bajo los labios de ellos.
 
 ### 3:14
 
-su boca está llena de maldición y de amargura.
+Cuya boca está llena de maldición y amargura.
 
 ### 3:15
 
-Sus pies son ligeros para derramar sangre;
+Sus pies *son* veloces para derramar sangre.
 
 ### 3:16
 
-destrucción y miseria hay en sus caminos;
+Destrucción y sufrimiento en sus caminos.
 
 ### 3:17
 
-y no conocieron camino de paz.
+Y no conocieron el camino de paz.
 
 ### 3:18
 
-No hay temor de Dios delante de sus ojos.
+No hay temor de Dios ante sus ojos.
 
 ### 3:19
 
-Sabemos que todo lo que la ley dice, lo dice a los que están bajo la ley, para que toda boca se cierre y todo el mundo quede bajo juicio delante de Dios;
+Ahora bien, sabemos que todo lo que la ley dice, se lo dice a quienes están en la ley, para que toda boca sea cerrada y todo el mundo quede obligado a responder ante Dios.
 
 ### 3:20
 
-porque por las obras de la ley ninguna carne será justificada delante de él; pues por medio de la ley es el conocimiento del pecado.
+Porque por obras de la ley ninguna carne será declarada justa ante Él, pues por medio de la ley *hay* conocimiento del pecado.
 
 ### 3:21
 
-Pero ahora, aparte de la ley, se ha manifestado la justicia de Dios, atestiguada por la ley y por los profetas;
+Pero ahora, aparte de la ley, la justicia de Dios ha sido manifestada, atestiguada por la ley y los profetas.
 
 ### 3:22
 
-la justicia de Dios por medio de la fe de Jesús Cristo, para todos los que creen. Porque no hay distinción,
+y la justicia de Dios por medio de la fe de Jesús, *el* Cristo, para todos y sobre todos los que creen; pues no hay distinción,
 
 ### 3:23
 
-pues todos pecaron y están destituidos de la gloria de Dios,
+Pues todos pecaron y carecen de la gloria de Dios.
 
 ### 3:24
 
-siendo justificados gratuitamente por su gracia mediante la redención que es en Cristo Jesús,
+Siendo justificados gratuitamente por Su gracia mediante la redención que *está* en Cristo Jesús.
 
 ### 3:25
 
-a quien Dios puso como propiciatorio por medio de la fe en su sangre, para demostración de su justicia, a causa del pasar por alto los pecados pasados,
+a quien Dios puso como propiciatorio por medio de la fe en Su sangre, para demostración de Su justicia, a causa de haber pasado por alto los pecados cometidos anteriormente,
 
 ### 3:26
 
-en la tolerancia de Dios, para la demostración de su justicia en el tiempo presente, a fin de que él sea justo y el que justifica al que es de la fe de Jesús.
+en la tolerancia de Dios, para demostrar Su justicia en el tiempo presente, para que Él sea justo y quien declara justo al que *es* de la fe de Jesús.
 
 ### 3:27
 
-¿Dónde, pues, está la jactancia? Queda excluida. ¿Por cuál ley? ¿De las obras? No, sino por la ley de la fe.
+¿Dónde *está*, entonces, la jactancia? Fue excluida. ¿Por qué clase de ley? ¿De las obras? No, sino por la ley de la fe.
 
 ### 3:28
 
-Concluimos, pues, que el hombre es justificado por fe sin las obras de la ley.
+Por tanto, consideramos que una persona es justificada por fe, sin obras de la ley.
 
 ### 3:29
 
-¿Es Dios solamente Dios de los judíos? ¿No es también de los gentiles? Ciertamente, también de los gentiles.
+¿O *es* Dios solo de los judíos? ¿Y no también de los gentiles? Sí, también de los gentiles.
 
 ### 3:30
 
-porque Dios es uno, y él justificará a la circuncisión por la fe, y a la incircuncisión mediante la fe.
+Puesto que Dios *es* uno, quien justificará a los circuncidados por fe y a los incircuncisos mediante la fe.
 
 ### 3:31
 
-¿Luego por la fe invalidamos la ley? ¡De ninguna manera! Antes bien, confirmamos la ley.
+¿Entonces anulamos la ley por medio de la fe? ¡Que no suceda! Al contrario, afirmamos la ley.
 
 ## Capítulo 4
 
 ### 4:1
 
-¿Qué, pues, diremos que halló Abraham, nuestro padre según la carne?
+¿Qué, entonces, diremos que ha encontrado Abraham, nuestro padre, según la carne?
 
 ### 4:2
 
-Porque si Abraham fue justificado por las obras, tiene de qué gloriarse, pero no delante de Dios.
+Pues si Abraham fue declarado justo por obras, tiene motivo para jactarse, pero no ante Dios.
 
 ### 4:3
 
-Porque ¿qué dice la Escritura? Creyó Abraham a Dios, y le fue contado por justicia.
+Pues ¿qué dice la Escritura? «Y Abraham creyó a Dios, y le fue contado como justicia».
 
 ### 4:4
 
-Pero al que obra, el salario no se le cuenta como gracia, sino como deuda;
+Ahora bien, para el que trabaja, el salario no se cuenta como favor, sino como lo debido.
 
 ### 4:5
 
-mas al que no obra, sino cree en aquel que justifica al impío, su fe le es contada por justicia.
+Pero al que no trabaja, sino que confía en el que declara justo al impío, se le cuenta su fe como justicia.
 
 ### 4:6
 
-Como también David habla de la bienaventuranza del hombre a quien Dios atribuye justicia sin obras,
+Tal como también David habla de la dicha del hombre a quien Dios atribuye justicia sin obras:
 
 ### 4:7
 
-diciendo: Bienaventurados aquellos cuyas iniquidades son perdonadas, y cuyos pecados son cubiertos.
+Dichosos aquellos cuyas iniquidades fueron perdonadas y cuyos pecados fueron cubiertos.
 
 ### 4:8
 
-Bienaventurado el hombre a quien el Señor no atribuye pecado.
+Dichoso el hombre a quien el Señor de ningún modo imputará pecado.
 
 ### 4:9
 
-¿Es, pues, esta bienaventuranza solamente para los circuncisos, o también para los incircuncisos? Porque decimos que a Abraham le fue contada la fe por justicia.
+Entonces, ¿esta declaración de dicha *es* para los circuncidados o también para los incircuncisos? Pues decimos que la fe fue contada a Abraham como justicia.
 
 ### 4:10
 
-¿Cómo, pues, le fue contada? ¿Estando en la circuncisión, o en la incircuncisión? No en la circuncisión, sino en la incircuncisión.
+¿Cómo, entonces, fue contada? ¿Estando en estado de circuncisión o en estado de incircuncisión? No en estado de circuncisión, sino en estado de incircuncisión.
 
 ### 4:11
 
-Y recibió la señal de la circuncisión, sello de la justicia de la fe que tuvo estando aún incircunciso; para que él fuera padre de todos los creyentes no circuncidados, a fin de que también a ellos les sea contada la justicia;
+Y recibió la señal de la circuncisión, sello de la justicia de la fe que tenía cuando era incircunciso, para que él fuera padre de todos los que creen sin estar circuncidados, para que también les fuera contada la justicia.
 
 ### 4:12
 
-y padre de la circuncisión, no solamente para los que son de la circuncisión, sino también para los que siguen las pisadas de la fe que tuvo nuestro padre Abraham cuando era incircunciso.
+Y padre de la circuncisión para quienes no solo pertenecen a la circuncisión, sino también para quienes siguen las huellas de la fe de nuestro padre Abraham en la incircuncisión.
 
 ### 4:13
 
-Porque no por la ley fue dada a Abraham o a su simiente la promesa de que él sería heredero del mundo, sino por la justicia de la fe.
+Pues la promesa a Abraham o a su semilla de que él sería heredero del mundo no *fue* por medio de la ley, sino por medio de la justicia de la fe.
 
 ### 4:14
 
-Porque si los que son de la ley son los herederos, vana resulta la fe, y anulada la promesa.
+Porque, si los que dependen de la ley *son* herederos, la fe ha quedado vacía y la promesa ha sido invalidada.
 
 ### 4:15
 
-Pues la ley produce ira; pero donde no hay ley, tampoco hay transgresión.
+Pues la ley produce ira; pues donde no hay ley, tampoco hay transgresión.
 
 ### 4:16
 
-Por tanto, es por fe, para que sea según gracia, a fin de que la promesa sea firme para toda la simiente; no solamente para la que es de la ley, sino también para la que es de la fe de Abraham, el cual es padre de todos nosotros
+Por esto, *es* por fe, para que *sea* conforme a gracia, de modo que la promesa sea firme para toda la semilla, no solo para la que procede de la ley, sino también para la que procede de la fe de Abraham, quien es padre de todos nosotros.
 
 ### 4:17
 
-(como está escrito: Te he puesto por padre de muchas naciones) delante de Dios, a quien creyó, el cual da vida a los muertos, y llama las cosas que no son como si fuesen.
+(Como está escrito: «Te he constituido padre de muchas naciones»), ante Dios, en quien creyó, el que da vida a los muertos y llama a las cosas que no existen como si existieran.
 
 ### 4:18
 
-Él creyó en esperanza contra esperanza, para llegar a ser padre de muchas naciones, conforme a lo que se le había dicho: Así será tu simiente.
+El cual, contra esperanza, creyó con esperanza para que él llegara a ser padre de muchas naciones, según lo dicho: «Así será tu semilla».
 
 ### 4:19
 
-Y no se debilitó en la fe al considerar su cuerpo ya como muerto (siendo de casi cien años), y la muerte de la matriz de Sara;
+Y, sin debilitarse en la fe, no consideró su propio cuerpo ya muerto —tenía unos cien años— ni la muerte de la matriz de Sara.
 
 ### 4:20
 
-ante la promesa de Dios no dudó por incredulidad, sino que se fortaleció en fe, dando gloria a Dios,
+Pero, en cuanto a la promesa de Dios, no dudó por la incredulidad, sino que fue fortalecido en la fe, dando gloria a Dios.
 
 ### 4:21
 
-plenamente convencido de que era también poderoso para hacer todo lo que había prometido;
+Y plenamente convencido de que también es capaz de hacer lo que ha prometido.
 
 ### 4:22
 
-por lo cual también le fue contado por justicia.
+Por eso también le fue contado como justicia.
 
 ### 4:23
 
-No se escribió solamente por causa de él que le fue contada,
+Pero no se escribió solo por él que se le tomó en cuenta.
 
 ### 4:24
 
-sino también con respecto a nosotros a quienes ha de ser contada, a los que creemos en el que levantó de los muertos a Jesús nuestro Señor,
+sino también por nosotros, a quienes habrá de ser tomado en cuenta, a los que creemos en Aquel que levantó de entre los muertos a Jesús, nuestro Señor.
 
 ### 4:25
 
-el cual fue entregado por nuestras transgresiones, y resucitado para nuestra justificación.
+Quien fue entregado por nuestras transgresiones y fue resucitado por nuestra justificación.
 
 ## Capítulo 5
 
 ### 5:1
 
-Justificados, pues, por la fe, tenemos paz para con Dios por medio de nuestro Señor Jesús Cristo
+Por tanto, habiendo sido justificados por fe, tenemos paz con Dios por medio de nuestro Señor Jesús, *el* Cristo.
 
 ### 5:2
 
-por medio de quien también hemos obtenido por la fe el acceso a esta gracia en la cual estamos firmes y nos gloriamos en la esperanza de la gloria de Dios
+Por quien también hemos tenido, por la fe, el acceso a esta gracia en la cual estamos de pie, y nos gloriamos en la esperanza de la gloria de Dios.
 
 ### 5:3
 
-Y no solo eso, sino que también nos gloriamos en las tribulaciones, sabiendo que la tribulación produce paciencia
+Y no solo *eso*, sino que también nos gloriamos en las aflicciones, sabiendo que la aflicción produce perseverancia.
 
 ### 5:4
 
-y la paciencia, prueba; y la prueba, esperanza
+Y la perseverancia, carácter probado; y el carácter probado, esperanza.
 
 ### 5:5
 
-y la esperanza no avergüenza porque el amor de Dios ha sido derramado en nuestros corazones por el Espíritu Santo que nos fue dado
+Y la esperanza no avergüenza, porque el amor de Dios ha sido derramado en nuestros corazones por medio del Espíritu Santo que nos fue dado.
 
 ### 5:6
 
-Porque Cristo, siendo nosotros aún débiles, a su debido tiempo murió por los impíos
+Pues, cuando nosotros todavía éramos débiles, Cristo murió en el momento oportuno por los impíos.
 
 ### 5:7
 
-Porque a duras penas morirá alguien por un justo; por el bueno, quizá alguien incluso se atreva a morir
+Pues difícilmente alguien morirá por un justo; pues por el bueno quizá alguien incluso se atreve a morir.
 
 ### 5:8
 
-Pero Dios demuestra su propio amor hacia nosotros en que, siendo aún pecadores, Cristo murió por nosotros
+Pero Dios demuestra Su propio amor hacia nosotros en que, siendo nosotros todavía pecadores, Cristo murió por nosotros.
 
 ### 5:9
 
-Mucho más, pues, justificados ahora en su sangre, seremos salvos por medio de él de la ira
+Por tanto, habiendo sido justificados ahora por Su sangre, con mucha más razón seremos salvados de la ira por medio de Él.
 
 ### 5:10
 
-Porque si, siendo enemigos, fuimos reconciliados con Dios por medio de la muerte de su Hijo mucho más, reconciliados, seremos salvos en su vida
+Pues si, siendo enemigos, fuimos reconciliados con Dios por medio de la muerte de Su Hijo, mucho más, habiendo sido reconciliados, seremos salvados en Su vida.
 
 ### 5:11
 
-Y no solo eso, sino que también nos gloriamos en Dios por medio de nuestro Señor Jesús Cristo por medio de quien ahora hemos recibido la reconciliación
+Y no solo *eso*, sino que también nos gloriamos en Dios por medio de nuestro Señor Jesús, *el* Cristo, por medio de quien ahora hemos recibido la reconciliación.
 
 ### 5:12
 
-Por esto, así como por medio de un solo hombre el pecado entró en el mundo, y por medio del pecado la muerte y así la muerte pasó a todos los hombres, por cuanto todos pecaron
+Por esto, así como por un solo hombre el pecado entró en el mundo, y por el pecado la muerte, y así la muerte pasó a todos los seres humanos, porque todos pecaron.
 
 ### 5:13
 
-Porque hasta la ley, el pecado estaba en el mundo; pero el pecado no se imputa no habiendo ley
+Pues hasta la ley había pecado en el mundo; pero el pecado no se carga en cuenta cuando no hay ley.
 
 ### 5:14
 
-Sin embargo, reinó la muerte desde Adán hasta Moisés, también sobre los que no pecaron a semejanza de la transgresión de Adán el cual es tipo del que había de venir
+Pero la muerte reinó desde Adán hasta Moisés, incluso sobre los que no pecaron a semejanza de la transgresión de Adán, quien es figura del que vendría.
 
 ### 5:15
 
-Pero no es como la ofensa, así también el don gratuito Porque si por la ofensa de uno murieron los muchos mucho más abundó para los muchos la gracia de Dios y el don en gracia del un solo hombre Jesús Cristo
+Pero tampoco el don gratuito *es* como la transgresión. Pues si por la transgresión de uno solo los muchos murieron, mucho más abundaron para los muchos la gracia de Dios y el regalo por la gracia de un solo hombre, Jesús, *el* Cristo.
 
 ### 5:16
 
-Y el don no es como por medio de uno que pecó Porque el juicio vino de uno solo para condenación pero el don gratuito vino de muchas ofensas para justificación
+Y el regalo no *es* como *lo ocurrido* por medio de uno que pecó. Pues, por una parte, el juicio *procede* de uno con resultado de condena; por otra parte, el don gratuito *procede* de muchas transgresiones con resultado de absolución.
 
 ### 5:17
 
-Porque si por la ofensa de uno reinó la muerte por medio de aquel uno mucho más los que reciben la abundancia de la gracia y del don de la justicia reinarán en vida por medio del uno, Jesús Cristo
+Pues si por la transgresión de uno solo la muerte reinó por medio de uno solo, mucho más los que reciben la abundancia de la gracia y del don de la justicia reinarán en vida por medio de uno solo: Jesús, *el* Cristo.
 
 ### 5:18
 
-Así que, como por medio de una sola ofensa resultó condenación para todos los hombres así también por medio de un solo acto de justicia resultó justificación de vida para todos los hombres
+Así pues, como por una sola transgresión *hubo* condenación para todos los seres humanos, así también por un solo acto justo *hubo* justificación que da vida para todos los seres humanos.
 
 ### 5:19
 
-Porque así como por la desobediencia de un solo hombre los muchos fueron constituidos pecadores así también por la obediencia de uno los muchos serán constituidos justos
+Pues, así como por la desobediencia de un solo hombre los muchos fueron constituidos pecadores, así también por la obediencia de uno solo los muchos serán constituidos justos.
 
 ### 5:20
 
-Pero la ley entró de por medio para que abundara la ofensa; pero donde abundó el pecado, sobreabundó la gracia
+Y la ley se incorporó para que abundara la transgresión; pero donde abundó el pecado, la gracia abundó mucho más.
 
 ### 5:21
 
-para que, así como reinó el pecado en la muerte así también la gracia reine por medio de la justicia para vida eterna por medio de Jesús Cristo nuestro Señor
+Para que, así como el pecado reinó en la muerte, así también la gracia reine por medio de la justicia para vida eterna por medio de Jesús, *el* Cristo, nuestro Señor.
 
 ## Capítulo 6
 
 ### 6:1
 
-¿Qué, pues, diremos? ¿Permaneceremos en el pecado para que abunde la gracia?
+¿Qué diremos entonces? ¿Continuaremos en el pecado para que la gracia aumente?
 
 ### 6:2
 
-¡De ninguna manera! Nosotros que morimos al pecado, ¿cómo viviremos aún en él?
+¡Que no suceda! Los que morimos al pecado, ¿cómo viviremos aún en él?
 
 ### 6:3
 
-¿O ignoran que cuantos fuimos bautizados en Cristo Jesús, fuimos bautizados en su muerte?
+¿O ignoran que todos los que fuimos bautizados en Cristo Jesús fuimos bautizados en Su muerte?
 
 ### 6:4
 
-Fuimos, pues, sepultados con él por medio del bautismo en la muerte para que, así como Cristo fue resucitado de entre los muertos por la gloria del Padre así también nosotros andemos en novedad de vida
+Por tanto, fuimos sepultados con Él mediante el bautismo en la muerte, para que, así como Cristo fue levantado de entre los muertos mediante la gloria del Padre, así también nosotros caminemos en novedad de vida.
 
 ### 6:5
 
-Porque si hemos llegado a ser unidos con él en la semejanza de su muerte, ciertamente también lo seremos en la de su resurrección
+Pues, si hemos quedado unidos a la semejanza de Su muerte, ciertamente también lo estaremos a la de la resurrección.
 
 ### 6:6
 
-sabiendo esto: que nuestro viejo hombre fue crucificado con él para que el cuerpo del pecado sea anulado, a fin de que ya no seamos siervos del pecado
+Sabiendo esto: que nuestro viejo hombre fue crucificado con *Él*, para que el cuerpo del pecado quedara inactivo, para que nosotros ya no sirviéramos como esclavos al pecado.
 
 ### 6:7
 
-Porque el que ha muerto ha sido justificado del pecado
+Pues el que murió ha sido absuelto del pecado.
 
 ### 6:8
 
-Y si morimos con Cristo, creemos que también viviremos con él
+Y si morimos con Cristo, creemos que también viviremos con Él.
 
 ### 6:9
 
-sabiendo que Cristo, habiendo resucitado de entre los muertos, ya no muere; la muerte ya no se enseñorea de él
+Sabiendo que Cristo, habiendo sido levantado de entre los muertos, ya no muere; la muerte ya no domina sobre Él.
 
 ### 6:10
 
-Porque en cuanto murió, al pecado murió de una vez por todas; pero en cuanto vive, vive para Dios
+Pues, en cuanto a que murió, murió al pecado de una vez por todas; pero, en cuanto a que vive, vive para Dios.
 
 ### 6:11
 
-Así también ustedes, considérense muertos al pecado, pero vivos para Dios en Cristo Jesús
+Así también ustedes considérense ciertamente muertos para el pecado, pero vivos para Dios en Cristo Jesús, nuestro Señor.
 
 ### 6:12
 
-No reine, pues, el pecado en su cuerpo mortal, para obedecer a sus deseos
+Por tanto, no reine el pecado en su cuerpo mortal para obedecerle en los deseos de este.
 
 ### 6:13
 
-ni presenten sus miembros como armas de injusticia al pecado sino preséntense a Dios como vivos de entre los muertos, y sus miembros como armas de justicia a Dios
+Tampoco presenten sus miembros al pecado como armas de injusticia, sino preséntense a Dios como vivos de entre los muertos, y sus miembros a Dios como armas de justicia.
 
 ### 6:14
 
-Porque el pecado no se enseñoreará de ustedes, pues no están bajo la ley, sino bajo la gracia
+Pues el pecado no dominará sobre ustedes, porque no están bajo la ley, sino bajo la gracia.
 
 ### 6:15
 
-¿Qué, pues? ¿Pecaremos porque no estamos bajo la ley, sino bajo la gracia? ¡De ninguna manera!
+¿Qué, entonces? ¿Pecaremos porque no estamos bajo la ley, sino bajo la gracia? ¡Que no suceda!
 
 ### 6:16
 
-¿No saben que a quien se presentan a sí mismos como siervos para obediencia siervos son de aquel a quien obedecen, sea del pecado para muerte, o de la obediencia para justicia?
+¿No saben que son esclavos de aquel a quien se presentan como esclavos para obedecer, a quien obedecen, ya sea del pecado para muerte o de la obediencia para justicia?
 
 ### 6:17
 
-Pero gracias a Dios que, aunque eran siervos del pecado, han obedecido de corazón a aquella forma de doctrina a la cual fueron entregados
+Pero gracias a Dios porque eran esclavos del pecado, pero obedecieron de corazón al modelo de enseñanza al que fueron entregados.
 
 ### 6:18
 
-y liberados del pecado, fueron hechos siervos de la justicia
+Y, habiendo sido liberados del pecado, fueron hechos esclavos de la justicia.
 
 ### 6:19
 
-Hablo en términos humanos por la debilidad de su carne Porque así como presentaron sus miembros como siervos a la impureza y a la iniquidad para iniquidad así ahora presenten sus miembros como siervos a la justicia para santificación
+Hablo en términos humanos por la debilidad de la carne de ustedes. Pues, así como presentaron sus miembros como esclavos de la impureza y de la iniquidad para la iniquidad, así ahora presenten sus miembros como esclavos de la justicia para santificación.
 
 ### 6:20
 
-Porque cuando eran siervos del pecado, eran libres respecto a la justicia
+Pues cuando eran esclavos del pecado, eran libres respecto a la justicia.
 
 ### 6:21
 
-¿Qué fruto tenían entonces de aquellas cosas de las cuales ahora se avergüenzan? Porque el fin de ellas es muerte
+¿Qué fruto tenían, pues, entonces en las cosas de las que ahora se avergüenzan? Porque el fin de aquellas cosas *es* la muerte.
 
 ### 6:22
 
-Pero ahora, liberados del pecado y hechos siervos de Dios tienen su fruto para santificación, y como fin, vida eterna
+Pero ahora, habiendo sido liberados del pecado y hechos esclavos de Dios, tienen su fruto para la santificación y, como fin, vida eterna.
 
 ### 6:23
 
-Porque la paga del pecado es muerte, pero el don gratuito de Dios es vida eterna en Cristo Jesús nuestro Señor
+Pues los salarios del pecado *son* muerte, pero el don de Dios *es* vida eterna en Cristo Jesús, nuestro Señor.
 
 ## Capítulo 7
 
 ### 7:1
 
-¿O ignoran, hermanos (pues hablo a los que conocen la ley), que la ley se enseñorea del hombre mientras vive?
+¿O ignoran, hermanos —pues hablo a quienes conocen la ley—, que la ley ejerce dominio sobre el ser humano durante todo el tiempo que vive?
 
 ### 7:2
 
-Porque la mujer casada está ligada por la ley al marido que vive pero si el marido muere, queda liberada de la ley del marido
+Pues la mujer casada está ligada por ley al marido vivo; pero, si el marido muere, queda liberada de la ley del marido.
 
 ### 7:3
 
-Así que, mientras vive el marido, será llamada adúltera si se une a otro hombre pero si el marido muere, es libre de la ley de modo que no es adúltera si se une a otro hombre
+Así pues, mientras viva el marido, será llamada adúltera si se une a otro hombre; pero, si muere el marido, está libre de la ley, de modo que ella no es adúltera aunque se haya unido a otro hombre.
 
 ### 7:4
 
-Así que, hermanos míos, también ustedes fueron hechos morir a la ley por medio del cuerpo de Cristo para pertenecer a otro, al que fue resucitado de entre los muertos, a fin de que demos fruto para Dios
+Así pues, mis hermanos, también a ustedes se les dio muerte respecto de la ley por medio del cuerpo del Cristo, para que ustedes pasaran a ser de otro, del que fue levantado de entre los muertos, a fin de que demos fruto para Dios.
 
 ### 7:5
 
-Porque cuando estábamos en la carne, las pasiones de los pecados que son por medio de la ley operaban en nuestros miembros para dar fruto para muerte
+Pues cuando estábamos en la carne, las pasiones de los pecados —las que *eran* por medio de la ley— actuaban en nuestros miembros para dar fruto para la muerte.
 
 ### 7:6
 
-Pero ahora hemos sido liberados de la ley, habiendo muerto a aquello en lo cual éramos retenidos de modo que sirvamos en novedad de espíritu y no en vejez de letra
+Pero ahora fuimos liberados de la ley, al haber muerto aquello en lo que éramos retenidos, de modo que nosotros servimos en novedad de espíritu y no en antigüedad de letra.
 
 ### 7:7
 
-¿Qué, pues, diremos? ¿La ley es pecado? ¡De ninguna manera! Pero no conocí el pecado sino por medio de la ley Porque tampoco habría conocido la codicia, si la ley no dijera: No codiciarás
+¿Qué diremos, entonces? ¿La ley *es* pecado? ¡De ningún modo! Pero no habría conocido el pecado sino por medio de la ley; pues tampoco habría conocido la codicia si la ley no dijera: «No codiciarás».
 
 ### 7:8
 
-Pero el pecado, tomando ocasión por medio del mandamiento, produjo en mí toda codicia porque sin la ley el pecado está muerto
+Pero el pecado, tomando ocasión, produjo en mí toda clase de deseo por medio del mandamiento; pues sin ley el pecado *está* muerto.
 
 ### 7:9
 
-Y yo vivía sin la ley en otro tiempo; pero venido el mandamiento, el pecado revivió
+Y yo antes vivía sin ley; pero cuando llegó el mandamiento, el pecado revivió, y yo morí.
 
 ### 7:10
 
-y yo morí; y se halló que el mandamiento que era para vida, ese mismo me resultó para muerte
+Y el mandamiento, el que *era* para vida, este resultó para mí para muerte.
 
 ### 7:11
 
-Porque el pecado, tomando ocasión por medio del mandamiento, me engañó y por medio de él me mató
+Pues el pecado, habiendo aprovechado una oportunidad, me engañó por medio del mandamiento y por medio de él me mató.
 
 ### 7:12
 
-De manera que la ley a la verdad es santa, y el mandamiento santo, justo y bueno
+Así pues, la ley ciertamente *es* santa, y el mandamiento *es* santo y justo y bueno.
 
 ### 7:13
 
-¿Acaso, pues, lo que es bueno vino a ser muerte para mí? ¡De ninguna manera! sino que el pecado, para que se mostrara pecado, por medio de lo bueno me produjo muerte a fin de que el pecado por medio del mandamiento llegara a ser pecaminoso en extremo
+Entonces, ¿lo bueno ha llegado a ser muerte para mí? ¡De ningún modo! Pero el pecado, para que se manifestara como pecado, me producía muerte por medio de lo bueno, para que el pecado llegara a ser sumamente pecaminoso por medio del mandamiento.
 
 ### 7:14
 
-Porque sabemos que la ley es espiritual; pero yo soy carnal, vendido bajo el pecado
+Pues sabemos que la ley es espiritual, pero yo soy carnal, vendido bajo el dominio del pecado.
 
 ### 7:15
 
-Porque lo que hago, no lo entiendo; pues no practico lo que quiero, sino que hago lo que aborrezco
+Pues no entiendo lo que realizo; pues lo que quiero, eso no llevo a cabo, sino que lo que odio, eso hago.
 
 ### 7:16
 
-Y si hago lo que no quiero, apruebo que la ley es buena
+Pero si hago eso que no quiero, concuerdo con la ley en que *es* buena.
 
 ### 7:17
 
-Así que ya no soy yo quien lo hace, sino el pecado que mora en mí
+Pero ahora ya no lo realizo yo, sino el pecado que habita en mí.
 
 ### 7:18
 
-Porque sé que en mí, esto es, en mi carne, no mora el bien porque el querer el bien está en mí, pero no el hacerlo
+Pues sé que en mí, es decir, en mi carne, no habita nada bueno; pues el querer está presente en mí, pero no encuentro el realizar lo bueno.
 
 ### 7:19
 
-Porque no hago el bien que quiero, sino el mal que no quiero, eso practico
+Pues no hago el bien que quiero; por el contrario, el mal que no quiero, eso practico.
 
 ### 7:20
 
-Y si hago lo que no quiero, ya no soy yo quien lo hace, sino el pecado que mora en mí
+Pero si yo hago eso que no quiero, ya no lo realizo yo, sino el pecado que habita en mí.
 
 ### 7:21
 
-Hallo, pues, esta ley: que queriendo yo hacer el bien, el mal está en mí
+Encuentro, pues, la ley de que, para mí, que quiero hacer lo bueno, el mal está presente junto a mí.
 
 ### 7:22
 
-Porque según el hombre interior, me deleito en la ley de Dios
+Pues me deleito en la ley de Dios según el hombre interior.
 
 ### 7:23
 
-pero veo otra ley en mis miembros, que se rebela contra la ley de mi mente y me lleva cautivo a la ley del pecado que está en mis miembros
+Pero veo otra ley en mis miembros que hace la guerra contra la ley de mi mente y me hace cautivo de la ley del pecado que está en mis miembros.
 
 ### 7:24
 
-¡Miserable de mí! ¿Quién me librará de este cuerpo de muerte?
+¡Yo *soy* un hombre desdichado! ¿Quién me rescatará de este cuerpo de la muerte?
 
 ### 7:25
 
-Gracias a Dios por medio de Jesús Cristo nuestro Señor Así que yo mismo con la mente sirvo a la ley de Dios pero con la carne, a la ley del pecado
+Doy gracias a Dios por medio de Jesús, *el* Cristo, nuestro Señor. Así pues, yo mismo, por una parte, con la mente sirvo a la ley de Dios, pero con la carne, a la ley del pecado.
 
 ## Capítulo 8
 
 ### 8:1
 
-Ahora, pues, ninguna condenación hay para los que están en Cristo Jesús
+Por tanto, ahora no *hay* condenación alguna para los que *están* en Cristo Jesús, que no caminan según la carne, sino según el Espíritu.
 
 ### 8:2
 
@@ -777,11 +777,11 @@ Porque lo que era imposible para la ley, por cuanto era débil por medio de la c
 
 ### 8:4
 
-para que el requisito de la ley se cumpliera en nosotros, que no andamos conforme a la carne, sino conforme al Espíritu
+Para que el precepto de la ley se cumpla en nosotros, los que no caminamos según la carne, sino según el Espíritu.
 
 ### 8:5
 
-Porque los que son conforme a la carne piensan en las cosas de la carne; pero los que son conforme al Espíritu, en las del Espíritu
+Pues los que viven según la carne piensan en las cosas de la carne; pero los que *viven* según el Espíritu, en las cosas del Espíritu.
 
 ### 8:6
 
@@ -801,7 +801,7 @@ Pero ustedes no están en la carne, sino en el Espíritu si es que el Espíritu 
 
 ### 8:10
 
-Pero si Cristo está en ustedes, el cuerpo a la verdad está muerto a causa del pecado pero el Espíritu es vida a causa de la justicia
+Pero si Cristo *está* en ustedes, el cuerpo ciertamente *está* muerto por causa del pecado, pero el espíritu *es* vida por causa de la justicia.
 
 ### 8:11
 

@@ -618,10 +618,12 @@ class SourcePacketTests(unittest.TestCase):
         refs = [item["reference"] for item in evidence["3409"]["samples"][:2]]
         self.assertEqual(refs, ["Gen.46.26", "Judg.8.30"])
 
-    def test_nt_prompt_remains_blocked(self) -> None:
+    def test_nt_prompt_uses_tr_fallback_instead_of_a_macula_textual_hold(self) -> None:
         packet = build_packet("titus", 1, 1)
-        with self.assertRaisesRegex(RuntimeError, "model translation blocked"):
-            packet_for_prompt(packet)
+        self.assertEqual(packet["evidenceStatus"], "READY_FOR_MODEL")
+        self.assertEqual(packet["syntax"]["status"], "READY_TR_STRUCTURE")
+        prompt = packet_for_prompt(packet)
+        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v1")
 
     def test_nt_prompt_opens_only_for_a_ready_verse(self) -> None:
         packet = build_packet("filipenses", 1, 7)
@@ -629,6 +631,47 @@ class SourcePacketTests(unittest.TestCase):
         prompt = packet_for_prompt(packet)
         self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v1")
         self.assertEqual(prompt["textualBasis"], "TR1894")
+
+    def test_editorial_lexical_policy_is_matched_but_research_stays_human_only(self) -> None:
+        packet = build_packet("hebreos", 9, 16)
+        ids = {entry["id"] for entry in packet["editorialLexicalPolicy"]}
+        self.assertEqual(ids, {"nt-diatheke", "nt-diatithemai"})
+        self.assertEqual(
+            {entry["researchNote"] for entry in packet["editorialLexicalPolicyReview"]},
+            {"notes/research/pacto-testamento.md"},
+        )
+        prompt = packet_for_prompt(packet)
+        rendered = dump_prompt(prompt)
+        self.assertIn('"preferred":["testamento"]', rendered)
+        self.assertNotIn("researchNote", rendered)
+        self.assertNotIn("DDbDP", rendered)
+        self.assertNotIn("Vulgata", rendered)
+
+    def test_editorial_lexical_policy_tampering_is_rejected(self) -> None:
+        packet = build_packet("hebreos", 9, 16)
+        packet["editorialLexicalPolicy"][0]["spanishOptions"][0]["form"] = "otro"
+        with self.assertRaisesRegex(ValueError, "noncanonical editorial lexical policy"):
+            packet_for_prompt(packet)
+
+    def test_legacy_packet_receives_current_policy_without_regeneration(self) -> None:
+        packet = build_packet("hebreos", 9, 16)
+        for key in (
+            "editorialLexicalPolicyVersion",
+            "editorialLexicalPolicy",
+            "editorialLexicalPolicyReview",
+        ):
+            packet.pop(key)
+        prompt = packet_for_prompt(packet)
+        self.assertEqual(
+            {entry["id"] for entry in prompt["editorialLexicalPolicy"]},
+            {"nt-diatheke", "nt-diatithemai"},
+        )
+
+    def test_partial_editorial_policy_is_rejected(self) -> None:
+        packet = build_packet("hebreos", 9, 16)
+        packet.pop("editorialLexicalPolicyReview")
+        with self.assertRaisesRegex(ValueError, "incomplete editorial lexical policy"):
+            packet_for_prompt(packet)
 
     def test_macula_mapping_is_exact_and_structural_only(self) -> None:
         packet = build_packet("exodo", 1, 16)

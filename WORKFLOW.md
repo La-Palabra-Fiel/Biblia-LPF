@@ -6,7 +6,9 @@ técnicos históricos.
 
 Lea el juramento en `README.md` antes de escribir español.
 Lea también `SOURCE_POLICY.md`. Su lista de fuentes es cerrada: si el paquete
-no basta, el versículo queda en `HOLD`. No se busca otra fuente.
+no basta, el versículo queda en `HOLD`. El modelo no busca otra fuente. Una
+persona solo puede investigar ese `HOLD` mediante las excepciones humanas
+cerradas que `SOURCE_POLICY.md` enumere expresamente.
 
 La traducción es el procedimiento de abajo. El detalle de archivos y
 comandos está en `tools/pipeline/README.md`. `STATUS.md` y
@@ -139,11 +141,19 @@ sustituciones masivas o alteraciones de artefactos históricos.
 
 ### Política léxica: arrepentimiento, pesar y cambio de rumbo
 
-La LBF no usa **arrepentirse** ni **arrepentimiento** como glosas universales.
-Esas palabras españolas pueden ocultar distinciones que el original conserva
-entre reconsiderar, sentir pesar, cambiar de conducta, volver, desistir,
-compadecerse y consolar. La semejanza etimológica, la tradición de una versión
-o la primera definición de un léxico no decide el sentido.
+Por adjudicación editorial humana del 11 de noviembre de 2026, el texto bíblico
+de la LPF no usa ninguna forma española de la familia **arrepent-**. Quedan
+prohibidas, entre otras, **arrepentirse**, **arrepentir**, **arrepentimiento**,
+**arrepentido** y todas sus formas conjugadas o flexionadas. La prohibición es
+editorial y global: esas palabras han acumulado sentidos incompatibles y pueden
+ocultar distinciones que el original conserva entre reconsiderar, sentir pesar,
+cambiar de conducta, volver, desistir, compadecerse y consolar.
+
+La documentación puede mencionar esas formas para explicar la prohibición,
+pero nunca aparecen en la traducción canónica ni en superficies de alineación.
+Cada aparición expresa con palabras más precisas lo que sostengan su forma,
+morfología, sintaxis y contexto. La semejanza etimológica, la tradición de una
+versión o la primera definición de un léxico no decide el sentido.
 
 En el NT deben conservarse distintas estas familias:
 
@@ -164,13 +174,14 @@ En el NT deben conservarse distintas estas familias:
   contexto puede acompañar una reconsideración. La redacción parte de
   **sentir pesar** o **lamentar** cuando el pesar es el foco; **cambiar de
   parecer** exige que la construcción y el resultado lo sostengan. No se
-  confunde automáticamente con la familia `μετανοέω` / `μετάνοια`.
+  confunde automáticamente con la familia `μετανοέω` / `μετάνοια` y tampoco
+  se traduce con una forma española prohibida de la familia **arrepent-**.
 
 En el AT tampoco se impone una sola palabra española:
 
 - `נחם` (H5162) se decide por tronco, construcción, participantes y contexto.
   Puede comunicar consuelo, pesar, compasión, reconsideración o desistimiento;
-  **arrepentirse** nunca es su valor predeterminado.
+  ninguna forma española de la familia **arrepent-** está permitida.
 - `שוב` (H7725) comunica volver o cambiar de dirección, física o
   figuradamente. No se le añade por sí solo pesar emocional ni un cambio de
   mente.
@@ -186,6 +197,116 @@ convertir una interpretación soteriológica en significado léxico. Debe mostra
 qué relación expresa realmente el griego —por ejemplo, el contenido juzgado,
 la orientación indicada, la confianza nombrada o la fe coordinada— y guardar
 silencio donde el texto guarde silencio.
+
+### Política léxica: convertirse, conversión, giro y regreso
+
+**Convertirse** y **conversión** son opciones contextuales permitidas, no glosas
+automáticas ni sinónimos de **creer/fe**. Cuando una construcción expresa una
+transformación con resultado explícito, **convertir(se) en** conserva su uso
+normal. Cuando H7725, G1994, G1995, G4762 o G654 expresan giro, regreso,
+orientación, atención o apartamiento, el español se elige por la construcción.
+
+La reorientación religiosa real puede expresarse con **convertirse/conversión**
+si el lector la entiende correctamente. Se prefiere **volver**, **volverse** o
+**regresar** cuando **convertirse** sugeriría falsamente que Israel u otra
+persona cambia de una religión a otra en vez de regresar a una relación ya
+existente. Los complementos expresos —por ejemplo, de los ídolos, a Dios o al
+Señor— deben conservarse.
+
+Cuando `πιστεύω/πίστις` y `ἐπιστρέφω` aparecen juntos, cada familia conserva su
+propia traducción y alineación. La decisión, sus controles documentales y la
+opción aprobada para Hechos 15:3 están documentados en
+[`notes/research/conversion.md`](notes/research/conversion.md).
+
+### Política léxica: Seol, Hades, Gehena y Tártaro
+
+Por adjudicación editorial humana del 12 de noviembre de 2026, **infierno** no
+se usa como traducción alineada de H7585 `שְׁאוֹל`, G86 `ᾅδης`, G1067
+`γέεννα` ni G5020 `ταρταρόω`. La palabra puede aparecer en documentación o
+notas explicativas, pero no reemplaza esas superficies en el texto bíblico.
+
+- H7585 se traduce **Seol**.
+- G86 se traduce **Hades**. La relación intertextual con Seol puede explicarse,
+  pero no borra las dos formas fuente. En particular, no se identifica Hades
+  con el lago de fuego que lo recibe en Apocalipsis 20:14.
+- G1067 se traduce **Gehena**, con una sola *n* conforme a la forma española
+  reconocida. Sus complementos expresos, como **de fuego**, se conservan.
+- G5020 se realiza como verbo con **Tártaro**, por ejemplo **arrojar al
+  Tártaro** o **confinar en el Tártaro**, según la construcción. No se trata
+  como otro sustantivo de lugar.
+
+La investigación canónica, literaria, documental, latina y española está en
+[`notes/research/infierno.md`](notes/research/infierno.md). Esta política se
+aplica a propuestas nuevas y a revisiones humanas abiertas; no autoriza una
+sustitución masiva ni conserva `done` después de cambiar texto o alineación.
+
+### Política léxica: alma, vida y persona
+
+Por adjudicación editorial humana del 12 de noviembre de 2026, H5315
+`נֶפֶשׁ` y G5590 `ψυχή` no reciben una glosa española automática. **Alma**
+permanece permitida, pero la construcción, los participantes y el discurso
+deben seleccionar entre estas realizaciones:
+
+- **alma** cuando el texto contrasta la persona interior con cuerpo o espíritu,
+  o conserva una identidad personal que **vida** o **persona** borrarían;
+- **vida** cuando se mata, salva, arriesga, entrega, pone, pierde o recupera;
+- **persona** o **individuo** cuando seres humanos son contados, identificados
+  como grupo o tratados como personas completas;
+- **ser viviente** o **criatura viviente** cuando la expresión designa al ser
+  completo, incluidos animales;
+- **ánimo**, **ser**, **yo**, **deseo** u otra realización solo cuando la
+  construcción específica y el español natural la sostengan.
+
+La traducción no añade inmortalidad, separabilidad ni una oposición entre
+cuerpo y alma donde el texto no la exprese. Tampoco fusiona H5315 con H5397
+`נְשָׁמָה` o H7307 `רוּחַ`, ni G5590 con G4151 `πνεῦμα` o G2222 `ζωή`.
+Que la realización española sea **vida** no cambia el token fuente ni permite
+alinearla como si fuera `ζωή`.
+
+La investigación canónica, documental, literaria, latina y española está en
+[`notes/research/alma.md`](notes/research/alma.md). La política se aplica a
+propuestas nuevas y revisiones humanas abiertas; no autoriza sustituciones
+masivas ni conserva `done` después de cambiar texto o alineación.
+
+Para una cuestión léxica griega que permanezca en `HOLD`, una persona puede
+consultar el corpus documental DDbDP bajo la excepción cerrada de
+`SOURCE_POLICY.md`. Debe citar el documento, conservar su datación y marcar
+letras restituidas o inciertas. El corpus no se entrega al modelo, una
+frecuencia no decide el sentido y la conclusión humana debe quedar registrada
+en el expediente o la adjudicación correspondiente. `duke-nlp` solo descubre
+candidatos; nunca aporta la evidencia final.
+
+La consulta nunca es silenciosa. Antes de abrir o buscar DDbDP se anuncia
+**«Consultando DDbDP»** con la cuestión concreta. Al terminar se registra en
+`source/greek/documentary-koine/CONSULTATIONS.json`; el resumen entregado al
+usuario cita su `consultationId` e indica expresamente si el modelo recibió o
+no la evidencia. Consultar de nuevo un inventario existente cita su entrada
+original; ampliar la pregunta crea una entrada nueva.
+
+Filón, Josefo, Plutarco, Dión Crisóstomo y Epicteto/Arriano pueden consultarse
+bajo la excepción literaria cerrada de `SOURCE_POLICY.md`. Antes de la
+consulta se anuncia cuál se abre y qué familia se investiga; después se
+registra la consulta en
+`source/greek/literary-koine/CONSULTATIONS.json`. Solo se usan sus ediciones
+griegas fijadas. Las traducciones paralelas y las anotaciones automáticas se
+excluyen.
+
+Los registros se mantienen separados: DDbDP representa documentos; Filón,
+prosa filosófica y exegética; Josefo, prosa histórica y apologética; y los
+tres controles grecorromanos, biografía, oratoria o filosofía de finales del
+siglo I y comienzos del II. No se suman frecuencias entre ellos. No se estudia
+una interpretación teológica, pero sí se lee el contexto lingüístico inmediato,
+porque una superficie aislada no permite reconocer participantes, objeto,
+causa ni resultado. La consulta no entra en el paquete del modelo; solo una
+conclusión humana documentada puede resolver el `HOLD` correspondiente.
+
+La Vulgata Clementina fijada puede consultarse bajo la excepción cerrada de
+`SOURCE_POLICY.md` únicamente para reconstruir la **recepción latina** de una
+familia terminológica. Se anuncia la consulta y se registra en
+`source/latin/clementine-vulgate/CONSULTATIONS.json`. Nunca se la presenta como
+testigo del uso griego del siglo I, como reconstrucción crítica del primer
+texto de Jerónimo ni como autoridad para escoger el español. No entra en el
+paquete del modelo y no resuelve un `HOLD` por sí sola.
 
 En Éxodo 13:17, el nifal `יִנָּחֵם`, seguido por ver la guerra y volver a
 Egipto, describe reconsiderar el rumbo: **cambie de parecer**, no el genérico
@@ -388,6 +509,14 @@ repetidos puedan contarse y revisarse. La categoría no convierte una decisión
 en evidencia ni en regla del modelo. Una repetición solamente puede llegar a
 ser regla general mediante una decisión normativa humana explícita que se
 incorpore a este flujo y a las instrucciones correspondientes.
+
+Las reglas normativas de familias léxicas se registran de forma estructurada en
+`translation/LEXICAL_POLICY.json`. El paquete selecciona mecánicamente solo las
+entradas cuyos Strong o secuencias de Strong aparecen en el versículo. El
+traductor recibe opciones españolas, condiciones y restricciones; debe elegir
+por superficie, gramática, sintaxis, discurso y corpus, o declarar
+incertidumbre. El enlace y resumen del expediente aparecen únicamente en Team
+Desk para la revisión humana: la investigación externa no entra al prompt.
 
 La aprobación explícita del capítulo puede aprobar de una vez, bajo el nombre
 del revisor, los candidatos preparados que estén exactamente sin cambios y

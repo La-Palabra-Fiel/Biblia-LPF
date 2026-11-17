@@ -1,0 +1,749 @@
+{
+  "schema": "lpf-lexical-policy-v1",
+  "version": "2026-11-13",
+  "authority": "named-human-editorial-policy",
+  "evidenceBoundary": "Spanish realization options and constraints only. These entries never override source surface, morphology, syntax, discourse, or canonical corpus evidence.",
+  "entries": [
+    {
+      "id": "nt-jesus-christ-order",
+      "status": "binding",
+      "testament": "nt",
+      "match": {
+        "orderedStrongsSequences": [
+          ["G2424", "G5547"],
+          ["G5547", "G2424"]
+        ]
+      },
+      "instruction": "Keep Jesus and Christ as two aligned words and preserve their Greek order.",
+      "spanishOptions": [
+        {"form": "Jesús, *el* Cristo", "when": "The token order is Jesus then Christ; el is supplied and remains italicized."},
+        {"form": "Cristo Jesús", "when": "The token order is Christ then Jesus."}
+      ],
+      "avoid": ["Jesucristo", "Jesús Cristo", "reversing the source-token order"],
+      "review": {
+        "title": "Política nominal: Jesús y Cristo",
+        "researchNote": "WORKFLOW.md#política-nominal-jesús-y-cristo",
+        "summary": "Human editorial decision preserving two Greek tokens, their order, and full reverse alignment."
+      }
+    },
+    {
+      "id": "nt-metanoeo-metanoia",
+      "status": "binding-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G3340", "G3341"]},
+      "instruction": "Choose the precise contextual realization of changed mind, judgment, or way of thinking. Do not import sorrow, turning, works, or an object not expressed by separate source evidence.",
+      "spanishOptions": [
+        {"form": "cambiar de manera de pensar", "when": "The construction presents a change in thinking."},
+        {"form": "cambiar de parecer", "when": "The construction presents reconsideration of a judgment or position."},
+        {"form": "cambio de mente", "when": "The syntax requires a noun and the expression is natural in context."}
+      ],
+      "avoid": ["arrepent-", "dejar de pecar without separate source tokens", "abandonar los pecados without separate source tokens", "hacer penitencia"],
+      "review": {
+        "title": "μετανοέω, μετάνοια y μεταμέλομαι",
+        "researchNote": "notes/research/metanoeo-metanoia.md",
+        "summary": "Primary documentary and literary controls distinguish changed judgment from sorrow, turning, and subsequent conduct."
+      }
+    },
+    {
+      "id": "nt-metamelomai",
+      "status": "binding-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G3338"]},
+      "instruction": "Express subsequent concern or regret without merging this family into metanoeo/metanoia.",
+      "spanishOptions": [
+        {"form": "sentir pesar", "when": "Subsequent sorrow or concern is in focus."},
+        {"form": "lamentar", "when": "Natural Spanish requires a verbal expression of regret."},
+        {"form": "cambiar de parecer", "when": "The construction and resulting reversal support reconsideration rather than emotion alone."}
+      ],
+      "avoid": ["arrepent-", "treating the family as identical to metanoeo/metanoia"],
+      "review": {
+        "title": "μετανοέω, μετάνοια y μεταμέλομαι",
+        "researchNote": "notes/research/metanoeo-metanoia.md",
+        "summary": "The family commonly marks later concern or regret; context must determine whether reversal is also present."
+      }
+    },
+    {
+      "id": "ot-nacham",
+      "status": "binding-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H5162"]},
+      "instruction": "Choose by stem, construction, participants, and context; do not impose one Spanish gloss on every occurrence.",
+      "spanishOptions": [
+        {"form": "consolar", "when": "Comfort is the contextual relation."},
+        {"form": "sentir pesar", "when": "Sorrow or regret is foregrounded."},
+        {"form": "compadecerse", "when": "Compassion is foregrounded."},
+        {"form": "cambiar de parecer", "when": "Reconsideration of a course is established."},
+        {"form": "desistir", "when": "The construction presents relenting from an announced course."}
+      ],
+      "avoid": ["arrepent-", "one fixed gloss across all stems and constructions"],
+      "review": {
+        "title": "Arrepentimiento, pesar y cambio de rumbo",
+        "researchNote": "notes/topics/arrepentimiento.md",
+        "summary": "The Hebrew family requires contextual separation of comfort, sorrow, compassion, reconsideration, and relenting."
+      }
+    },
+    {
+      "id": "ot-shuv",
+      "status": "binding-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H7725"]},
+      "instruction": "Express physical or figurative turning/returning without adding sorrow or a change of mind unless separate evidence states it.",
+      "spanishOptions": [
+        {"form": "volver", "when": "Return to a person, place, state, or prior course is in view."},
+        {"form": "regresar", "when": "A natural spatial or figurative return is in view."},
+        {"form": "volverse", "when": "Direction or orientation changes toward or away from an expressed object."},
+        {"form": "convertirse", "when": "A real religious reorientation is in view and the Spanish does not falsely suggest exchanging one religion for another."}
+      ],
+      "avoid": ["arrepent-", "adding sorrow", "adding a mental change not otherwise expressed"],
+      "review": {
+        "title": "Arrepentimiento, pesar y cambio de rumbo",
+        "researchNote": "notes/topics/arrepentimiento.md",
+        "summary": "The source verb marks turning or returning; other concepts require their own source support."
+      }
+    },
+    {
+      "id": "nt-epistrepho",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1994"]},
+      "instruction": "Express the contextual turning, return, orientation, or attention. Convertirse is permitted for genuine religious reorientation but is not an automatic gloss and never replaces a separately expressed believing/faith token.",
+      "spanishOptions": [
+        {"form": "volverse a/hacia", "when": "The construction states a new direction or object."},
+        {"form": "volver/regresar", "when": "Return to a place, person, state, or prior relationship is in view."},
+        {"form": "convertirse", "when": "The context describes genuine religious reorientation and the term communicates it accurately without falsely implying a change from one religion to another."},
+        {"form": "hacer caso/prestar atención", "when": "Attention, regard, or response rather than directional movement is in view."}
+      ],
+      "avoid": [
+        "using convertirse automatically",
+        "using convertirse as a synonym for creer or fe",
+        "omitting an expressed source direction such as from idols or to God",
+        "implying that Israel adopted a new religion when the source describes return to Yahvé"
+      ],
+      "review": {
+        "title": "Convertirse, conversión, giro y regreso",
+        "researchNote": "notes/research/conversion.md",
+        "summary": "Biblical and first-century controls distinguish believing, changing judgment, turning, returning, attention, and subsequent conduct; convertirse remains a contextual Spanish option, not a fixed gloss."
+      }
+    },
+    {
+      "id": "nt-epistrophe",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1995"]},
+      "instruction": "Render the nominal turning according to its expressed participants and discourse. Conversión is permitted when it accurately communicates religious reorientation, but it is not the lexical definition of every occurrence.",
+      "spanishOptions": [
+        {"form": "conversión", "when": "Religious reorientation is genuinely in view and the conventional Spanish term communicates the event accurately."},
+        {"form": "el volverse", "when": "The turning image and its participants must remain explicit."},
+        {"form": "vuelta/giro", "when": "The context presents return or directional change and the Spanish noun is natural."}
+      ],
+      "avoid": ["treating conversión as a synonym for faith", "using conversión as an automatic gloss"],
+      "referenceRules": [
+        {
+          "references": ["ACT.15.3"],
+          "strength": "recommended",
+          "preferred": ["la conversión de las naciones"],
+          "reason": "The context describes the Gentiles' religious reorientation, and contemporary Spanish accurately communicates that event without merging a separate faith token in this verse."
+        }
+      ],
+      "review": {
+        "title": "Convertirse, conversión, giro y regreso",
+        "researchNote": "notes/research/conversion.md",
+        "summary": "G1995 occurs once in the TR, at Acts 15:3. Conversión is an approved contextual realization there, not a universal definition imposed on the cognate family."
+      }
+    },
+    {
+      "id": "nt-strepho",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G4762"]},
+      "instruction": "Preserve the concrete or figurative change of direction or orientation established by the construction.",
+      "spanishOptions": [
+        {"form": "girar", "when": "Bodily or spatial rotation is foregrounded."},
+        {"form": "volverse", "when": "A subject changes direction or orientation."},
+        {"form": "cambiar", "when": "The construction presents a change of state or course rather than literal rotation."}
+      ],
+      "avoid": ["using convertirse as a religious label without contextual support"],
+      "review": {
+        "title": "Convertirse, conversión, giro y regreso",
+        "researchNote": "notes/research/conversion.md",
+        "summary": "The family commonly expresses bodily, spatial, or figurative turning; the construction, not religious tradition, selects the Spanish realization."
+      }
+    },
+    {
+      "id": "nt-apostrepho",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G654"]},
+      "instruction": "Preserve the expressed movement or orientation away from someone or something, including rejection or removal when the construction supports it.",
+      "spanishOptions": [
+        {"form": "apartarse de", "when": "The subject turns away from an expressed person, object, or course."},
+        {"form": "volver", "when": "Return or restoration is expressed by the construction."},
+        {"form": "rechazar/no hacer caso", "when": "The context concerns refusing a person, request, or message rather than physical movement."}
+      ],
+      "avoid": ["using convertirse as a default religious gloss", "omitting the expressed source or object of turning"],
+      "review": {
+        "title": "Convertirse, conversión, giro y regreso",
+        "researchNote": "notes/research/conversion.md",
+        "summary": "The prefixed family foregrounds movement or orientation away; Spanish must preserve the construction and its participants."
+      }
+    },
+    {
+      "id": "nt-diatheke",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1242"]},
+      "instruction": "Select among covenant, testamentary, and dispositional realizations from the canonical construction and discourse. Do not use Latin tradition alone to choose.",
+      "spanishOptions": [
+        {"form": "pacto", "when": "A covenant relationship, obligations, covenant blood, ark, tablets, or Israel's covenants are in view."},
+        {"form": "testamento", "when": "A testamentary disposition whose force is discussed in relation to the maker's death is in view."},
+        {"form": "disposición", "when": "The act or result of arranging is in view and the context does not select pacto or testamento."}
+      ],
+      "avoid": ["treating one Spanish option as an automatic gloss for every occurrence"],
+      "referenceRules": [
+        {
+          "references": ["HEB.9.16", "HEB.9.17"],
+          "strength": "recommended",
+          "preferred": ["testamento"],
+          "avoid": ["testador"],
+          "participantOptions": ["quien lo hizo", "quien lo dispuso"],
+          "reason": "Death, validity, and the life of the disposer activate the documented testamentary scenario; the same Greek word remains pacto in the surrounding argument."
+        }
+      ],
+      "review": {
+        "title": "Expediente de pacto y testamento",
+        "researchNote": "notes/research/pacto-testamento.md",
+        "summary": "Contemporary literary and near-contemporary documentary Greek attest both covenantal and testamentary use; Latin reception broadened testamentum across both."
+      }
+    },
+    {
+      "id": "nt-diatithemai",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1303"]},
+      "instruction": "Preserve the verb's relation to diatheke and choose the Spanish construction from its participants and legal or covenantal context.",
+      "spanishOptions": [
+        {"form": "establecer un pacto", "when": "A covenant is established with stated participants."},
+        {"form": "disponer", "when": "The act of arranging or assigning is foregrounded."},
+        {"form": "hacer un testamento", "when": "The subject makes a testamentary disposition."}
+      ],
+      "avoid": ["testador when a verbal participant expression is clearer and more source-transparent"],
+      "referenceRules": [
+        {
+          "references": ["HEB.9.16", "HEB.9.17"],
+          "strength": "recommended",
+          "preferred": ["quien lo hizo", "quien lo dispuso"],
+          "avoid": ["testador"]
+        }
+      ],
+      "review": {
+        "title": "Expediente de pacto y testamento",
+        "researchNote": "notes/research/pacto-testamento.md",
+        "summary": "The related verb can establish covenants or make dispositions; Hebrews 9 requires the participant relation to remain visible."
+      }
+    },
+    {
+      "id": "ot-sheol",
+      "status": "binding",
+      "testament": "ot",
+      "match": {"strongsAny": ["H7585"]},
+      "instruction": "Preserve the Hebrew designation as Seol. Do not replace it with infierno, because the source occurrences include death and the realm of the dead without uniformly expressing final punishment.",
+      "spanishOptions": [
+        {"form": "Seol", "when": "H7585 is the aligned source term; preserve the designation and let the construction state descent, concealment, deliverance, or other contextual relations."}
+      ],
+      "avoid": ["infierno as the aligned translation", "adding eternal punishment when the construction does not express it"],
+      "review": {
+        "title": "Seol, Hades, Gehena y Tártaro",
+        "researchNote": "notes/research/infierno.md",
+        "summary": "Human editorial decision preserves Seol because its canonical uses are broader than the primary contemporary Spanish sense of infierno."
+      }
+    },
+    {
+      "id": "nt-hades",
+      "status": "binding",
+      "testament": "nt",
+      "match": {"strongsAny": ["G86"]},
+      "instruction": "Preserve the Greek designation as Hades. Do not replace it with infierno; the NT distinguishes Hades from the lake of fire and relates it intertextually to Seol without erasing either source form.",
+      "spanishOptions": [
+        {"form": "Hades", "when": "G86 is the aligned source term; preserve the designation and its grammatical relation in the verse."}
+      ],
+      "avoid": ["infierno as the aligned translation", "identifying Hades with the lake of fire", "silently replacing Hades with Seol outside an explanatory note"],
+      "review": {
+        "title": "Seol, Hades, Gehena y Tártaro",
+        "researchNote": "notes/research/infierno.md",
+        "summary": "Canonical and contemporary Greek evidence treats Hades as a distinguishable designation for death or the realm of the dead, not an automatic synonym for final punishment."
+      }
+    },
+    {
+      "id": "nt-gehenna",
+      "status": "binding",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1067"]},
+      "instruction": "Preserve the source designation as the established Spanish form Gehena. Do not substitute the broader inherited term infierno, even where contemporary Spanish dictionaries relate the concepts.",
+      "spanishOptions": [
+        {"form": "Gehena", "when": "G1067 is the aligned source term; preserve its complements involving fire, judgment, body, or destruction."}
+      ],
+      "avoid": ["infierno as the aligned translation", "Gehenna", "dropping an expressed complement such as de fuego"],
+      "review": {
+        "title": "Seol, Hades, Gehena y Tártaro",
+        "researchNote": "notes/research/infierno.md",
+        "summary": "Gehena is a recognized Spanish form with its own Hebrew and Greek history; preserving it prevents its source family from being merged with Hades or Seol."
+      }
+    },
+    {
+      "id": "nt-tartaroo",
+      "status": "binding-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G5020"]},
+      "instruction": "Preserve G5020 as a verbal construction involving Tártaro. Do not flatten the participial verb into the generic noun infierno.",
+      "spanishOptions": [
+        {"form": "arrojar al Tártaro", "when": "The construction foregrounds being cast into the punitive domain."},
+        {"form": "confinar en el Tártaro", "when": "The construction and its accompanying custody language foreground imprisonment."}
+      ],
+      "avoid": ["infierno as the aligned translation", "treating G5020 as a place noun rather than a verb", "merging Tártaro with Hades or Gehena"],
+      "referenceRules": [
+        {
+          "references": ["2PE.2.4"],
+          "strength": "binding",
+          "instruction": "Use a Spanish verbal construction with Tártaro and keep the source participle linked to that whole verbal unit."
+        }
+      ],
+      "review": {
+        "title": "Seol, Hades, Gehena y Tártaro",
+        "researchNote": "notes/research/infierno.md",
+        "summary": "G5020 is a single verbal occurrence concerning sinful angels; the approved realization preserves both its verbal form and the distinct Tártaro designation."
+      }
+    },
+    {
+      "id": "ot-nephesh",
+      "status": "binding-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H5315"]},
+      "instruction": "Choose the Spanish realization of nephesh from its construction and participants. Alma remains permitted but is never automatic; do not import immortality, separability, or a body-soul contrast that the source does not express.",
+      "spanishOptions": [
+        {"form": "ser viviente/criatura viviente", "when": "The construction identifies a whole living human or animal, especially with the living-creature expression."},
+        {"form": "persona/individuo", "when": "Human beings are counted, identified as members of a group, or referred to as whole persons."},
+        {"form": "vida", "when": "Life is killed, preserved, endangered, sought, surrendered, or recovered."},
+        {"form": "alma", "when": "The construction concerns the inner person, personal identity, desire, or a contrast that this established Spanish term preserves accurately."},
+        {"form": "ánimo/ser/yo/deseo", "when": "The syntax and discourse specifically require one of these contextual relations and natural Spanish supports it."}
+      ],
+      "avoid": [
+        "using alma as an automatic gloss",
+        "using vida or persona as an automatic replacement",
+        "adding immortality or separability without source evidence",
+        "merging nephesh with neshamah or ruach"
+      ],
+      "review": {
+        "title": "Alma, vida y persona",
+        "researchNote": "notes/research/alma.md",
+        "summary": "Canonical usage includes animals, whole living beings, counted persons, endangered life, desire, and inner identity; no single Spanish realization covers every occurrence."
+      }
+    },
+    {
+      "id": "nt-psyche",
+      "status": "binding-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G5590"]},
+      "instruction": "Choose the Spanish realization of psyche from its construction and discourse. Alma remains required as a live option where body, spirit, the inner person, or continuing personal identity is in view, but it is never an automatic gloss.",
+      "spanishOptions": [
+        {"form": "alma", "when": "The text contrasts psyche with the body or spirit, foregrounds the inner person, or presents personal identity beyond death."},
+        {"form": "vida", "when": "The construction concerns killing, saving, risking, surrendering, laying down, losing, or recovering one's life without an explicit contrast that vida would erase."},
+        {"form": "persona/individuo", "when": "People are counted, identified collectively, or referred to as whole persons."},
+        {"form": "ser viviente/criatura viviente", "when": "A whole living being, including a nonhuman creature, is in view."},
+        {"form": "ánimo/ser/yo/deseo", "when": "The construction specifically expresses disposition, identity, self-reference, or desire and that realization is natural in Spanish."}
+      ],
+      "avoid": [
+        "using alma as an automatic gloss",
+        "using vida or persona as an automatic replacement",
+        "adding immortality or separability without source evidence",
+        "merging psyche with pneuma or zoe"
+      ],
+      "review": {
+        "title": "Alma, vida y persona",
+        "researchNote": "notes/research/alma.md",
+        "summary": "Canonical, documentary, and literary usage spans life, person, inner disposition, body-soul contrast, and postmortem identity; the construction must select the Spanish realization."
+      }
+    },
+    {
+      "id": "ot-yesha-salvation-family",
+      "status": "approved-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H3444", "H3467", "H3468", "H8668"]},
+      "instruction": "Choose the Spanish realization from the danger, agent, patient, result, and horizon expressed by the construction. Salvación and salvar remain valid options but are never automatic glosses. Preserve who saves whom, from what, and with what result; do not add guilt, eternity, heaven, works, or a doctrinal condition not expressed by the source.",
+      "spanishOptions": [
+        {"form": "salvación/salvar", "when": "The context presents God's comprehensive intervention, judgment, restored relation, future hope, or a rescue whose scope should not be reduced to one immediate effect; these forms may also be used for physical danger when they are the clearest natural Spanish."},
+        {"form": "rescatar/librar/poner a salvo", "when": "Immediate danger, enemies, death, captivity, or extraction from peril is foregrounded."},
+        {"form": "preservar/conservar/sobrevivir", "when": "Continuity, survival, preservation, or remaining alive is foregrounded."}
+      ],
+      "avoid": [
+        "using salvación or salvar as an automatic gloss",
+        "adding guilt, eternity, heaven, works, or a doctrinal condition without source evidence",
+        "merging this family with malat, palat, or natsal merely because Spanish options overlap",
+        "omitting the expressed danger, agent, patient, or result"
+      ],
+      "review": {
+        "title": "Salvación, rescate, preservación y sanidad",
+        "researchNote": "notes/research/salvacion.md",
+        "summary": "Canonical usage spans historical deliverance, enemies, danger, death, preservation, and relation with God; documentary, literary, Latin, and Spanish evidence rules out a fixed gloss."
+      }
+    },
+    {
+      "id": "nt-sozo-soteria-family",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G4982", "G4991", "G4992"]},
+      "instruction": "Choose the Spanish realization from the danger, agent, patient, result, and horizon expressed by the construction. Salvación and salvar remain valid options but are never automatic glosses. Preserve who saves whom, from what, and with what result; do not add guilt, eternity, heaven, works, or a doctrinal condition not expressed by the source.",
+      "spanishOptions": [
+        {"form": "salvación/salvar", "when": "The context presents God's comprehensive intervention, forgiveness, judgment, future life, or a rescue whose scope should not be reduced to one immediate effect; these forms may also be used for physical danger when they are the clearest natural Spanish."},
+        {"form": "rescatar/librar/poner a salvo", "when": "Immediate danger, enemies, death, captivity, drowning, or extraction from peril is foregrounded."},
+        {"form": "sanar/curar/recuperar(se)", "when": "Physical recovery from illness is unequivocally foregrounded."},
+        {"form": "preservar/conservar/sobrevivir/llegar a salvo", "when": "Continuity, survival, preservation, or safe arrival is foregrounded."}
+      ],
+      "avoid": [
+        "using salvación or salvar as an automatic gloss",
+        "adding guilt, eternity, heaven, works, or a doctrinal condition without source evidence",
+        "merging this family with diasozo, rhyomai, exaireo, or lytroo merely because Spanish options overlap",
+        "omitting the expressed danger, agent, patient, or result"
+      ],
+      "review": {
+        "title": "Salvación, rescate, preservación y sanidad",
+        "researchNote": "notes/research/salvacion.md",
+        "summary": "Canonical and contemporary Greek usage spans rescue, survival, healing, preservation, safety, and salvation in relation to God; the construction must select the Spanish realization."
+      }
+    },
+    {
+      "id": "nt-soter-title",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G4990"]},
+      "instruction": "Render soter as the personal function or title expressed by the construction. Salvador is the normal Spanish option; do not transfer the title automatically to related verbal or abstract forms.",
+      "spanishOptions": [
+        {"form": "Salvador", "when": "G4990 designates a person by the function or title of one who saves."}
+      ],
+      "avoid": [
+        "replacing the personal title with an abstract noun",
+        "using the title to predetermine the translation of sozo, soteria, or soterion",
+        "omitting an expressed possessor or apposition"
+      ],
+      "review": {
+        "title": "Salvación, rescate, preservación y sanidad",
+        "researchNote": "notes/research/salvacion.md",
+        "summary": "Documentary and literary Greek widely attest soter as a personal title or function; Salvador remains natural Spanish while the cognate family stays context-sensitive."
+      }
+    },
+    {
+      "id": "ot-bowing-worship-families",
+      "status": "approved-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H7812", "H5456", "H6915"]},
+      "instruction": "Preserve the bodily act and determine its relational force from the recipient and context. Adorar is permitted when genuine divine or idolatrous worship is expressed, but it is never an automatic gloss and must not make a human recipient divine.",
+      "spanishOptions": [
+        {"form": "adorar", "when": "A divine or idolatrous recipient and the construction genuinely express religious worship."},
+        {"form": "postrarse/inclinarse", "when": "The bodily gesture is foregrounded, including respect, submission, entreaty, or worship."},
+        {"form": "rendir homenaje/rendir reverencia", "when": "The act is directed to an authority or honored person without presenting that recipient as divine."}
+      ],
+      "avoid": [
+        "using adorar as an automatic gloss",
+        "inferring solely from the verb that the recipient is divine",
+        "reducing genuine worship to a merely physical gesture when the context establishes worship"
+      ],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Canonical and contemporary usage applies bowing and prostration to God, idols, rulers, relatives, and honored persons; recipient and context determine the Spanish relation."
+      }
+    },
+    {
+      "id": "ot-abad-service-family",
+      "status": "approved-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H5647"]},
+      "instruction": "Preserve the source relation of work or service. When the service is cultual, express that cultual relation without erasing the service component or merging it with a separate bowing token.",
+      "spanishOptions": [
+        {"form": "trabajar", "when": "Labor or work is foregrounded."},
+        {"form": "servir", "when": "Service to a person, authority, people, deity, or idol is foregrounded."},
+        {"form": "rendir servicio/rendir culto", "when": "The construction explicitly presents cultual service and natural Spanish benefits from making that relation explicit."}
+      ],
+      "avoid": ["using adorar as an automatic replacement", "merging service with a separate bowing or homage token"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Abad spans ordinary work, political or personal service, and service to God or idols; its service relation must remain visible."
+      }
+    },
+    {
+      "id": "nt-proskyneo",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G4352"]},
+      "instruction": "Preserve the act of prostration or homage and determine its force from the recipient and context. Adorar is permitted for genuine worship but is never automatic.",
+      "spanishOptions": [
+        {"form": "adorar", "when": "The divine or idolatrous recipient and discourse genuinely establish worship."},
+        {"form": "postrarse/inclinarse", "when": "The bodily gesture is foregrounded."},
+        {"form": "rendir homenaje/rendir reverencia", "when": "Homage to an authority or honored person is in view without presenting that person as divine."}
+      ],
+      "avoid": ["using adorar as an automatic gloss", "inferring divinity solely from the verb", "merging the token with a separate latreuo service token"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Biblical, documentary, and literary Greek use proskyneo before God, idols, rulers, relatives, and honored persons; context supplies the relational force."
+      }
+    },
+    {
+      "id": "nt-latreuo",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G3000"]},
+      "instruction": "Preserve the source relation of service, especially cultual service. Do not replace it automatically with adorar or merge it with a separate proskyneo token.",
+      "spanishOptions": [
+        {"form": "servir", "when": "Service to God, a power, or another master is foregrounded."},
+        {"form": "rendir servicio/rendir culto", "when": "Cultual service is explicit and the fuller Spanish construction preserves it naturally."}
+      ],
+      "avoid": ["using adorar as an automatic replacement", "merging latreuo with proskyneo when both are expressed"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Latreuo retains a service relation in biblical and contemporary Greek, including but not limited to cultual service."
+      }
+    },
+    {
+      "id": "nt-sebomai",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G4576"]},
+      "instruction": "Express reverence or devotion according to the recipient and syntax. Do not treat the family as an automatic synonym of proskyneo or latreuo.",
+      "spanishOptions": [
+        {"form": "reverenciar/venerar", "when": "Respectful religious or nonreligious regard is foregrounded."},
+        {"form": "ser devoto/temer a Dios", "when": "The participial construction identifies a person's recognized religious devotion and the context supports that natural Spanish."},
+        {"form": "adorar", "when": "The construction itself establishes worship of a divine or idolatrous recipient rather than reverence alone."}
+      ],
+      "avoid": ["using adorar automatically", "merging reverence with service or bodily prostration"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Sebomai expresses reverence or devotion toward varied recipients; the construction selects the Spanish realization."
+      }
+    },
+    {
+      "id": "nt-religious-practice-families",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G2151", "G2356", "G1479"]},
+      "instruction": "Preserve piety, religious practice, or self-imposed worship as expressed. Do not flatten these nouns and verbs into the generic action adorar.",
+      "spanishOptions": [
+        {"form": "practicar la piedad/cumplir el deber religioso", "when": "Eusebeo presents pious conduct or religious duty."},
+        {"form": "religión/práctica religiosa/culto", "when": "Threskeia denotes observable religious practice or its system."},
+        {"form": "culto autoimpuesto", "when": "Ethelothreskeia expressly marks self-chosen or self-imposed worship."}
+      ],
+      "avoid": ["using adorar or adoración as an automatic gloss", "omitting the self-imposed component of ethelothreskeia"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Piety and religious-practice families preserve relations distinct from bodily homage, service, and glorification."
+      }
+    },
+    {
+      "id": "nt-doxazo",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1392"]},
+      "instruction": "Preserve the source action of glorifying, honoring, or causing glory to be recognized. Do not replace it automatically with worship terminology merely because God is the recipient.",
+      "spanishOptions": [
+        {"form": "glorificar/dar gloria", "when": "Glory is attributed or made manifest."},
+        {"form": "honrar", "when": "The construction foregrounds conferring or recognizing honor and natural Spanish supports it."}
+      ],
+      "avoid": ["using adorar or adoración as an automatic replacement", "merging glorification with a separate worship or service token"],
+      "review": {
+        "title": "Adorar, postrarse, servir y rendir culto",
+        "researchNote": "notes/research/adoracion.md",
+        "summary": "Doxazo expresses glorification or honor and remains distinct from prostration, service, reverence, and religious practice."
+      }
+    },
+    {
+      "id": "nt-ekklesia",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G1577"]},
+      "instruction": "Distinguish the gathered assembly, the identifiable local congregation, and the universal church of Christ. Do not use iglesia automatically and do not import a building, clergy, denomination, government, or hierarchy not expressed by the construction.",
+      "spanishOptions": [
+        {"form": "asamblea", "when": "People are actually gathered, especially for deliberation, instruction, judgment, worship, or a civic, legal, military, confused, or non-Christian meeting."},
+        {"form": "congregación", "when": "The referent is an identifiable local body of believers, whether or not the members are assembled at that moment."},
+        {"form": "iglesia", "when": "The discourse presents the universal corporate body belonging to Christ rather than one local congregation or one meeting."}
+      ],
+      "avoid": [
+        "using iglesia as an automatic gloss",
+        "using comunidad where it can suggest the town or surrounding population",
+        "adding a church building, clergy, denomination, government, or hierarchy without source evidence",
+        "merging ekklesia with synagoge, synedrion, or panegyris"
+      ],
+      "referenceRules": [
+        {
+          "references": ["ACT.19.32", "ACT.19.39", "ACT.19.41"],
+          "strength": "binding",
+          "preferred": ["asamblea"],
+          "avoid": ["iglesia", "congregación"],
+          "reason": "The Ephesian referent is a confused, lawful, or dismissed civic assembly, not a Christian congregation."
+        }
+      ],
+      "review": {
+        "title": "Iglesia, asamblea y congregación",
+        "researchNote": "notes/research/iglesia.md",
+        "summary": "Canonical and contemporary Greek distinguishes an actual assembly, an identifiable local body, and the universal body of Christ; modern iglesia carries specifically Christian institutional senses."
+      }
+    },
+    {
+      "id": "ot-qahal",
+      "status": "approved-options",
+      "testament": "ot",
+      "match": {"strongsAny": ["H6951"]},
+      "instruction": "Express the summoned or identified assembly according to its participants and function. Do not translate qahal automatically as iglesia because of later reception or quotation history.",
+      "spanishOptions": [
+        {"form": "asamblea", "when": "The people are summoned or gathered for a concrete event, deliberation, covenant act, judgment, worship, or hearing."},
+        {"form": "congregación", "when": "The source designates the identifiable body of people rather than only the meeting event."}
+      ],
+      "avoid": ["using iglesia as an automatic gloss", "merging qahal with edah or moed", "adding Christian institutional identity"],
+      "review": {
+        "title": "Iglesia, asamblea y congregación",
+        "researchNote": "notes/research/iglesia.md",
+        "summary": "Qahal supplies important canonical assembly background but remains a Hebrew family whose participants and function must determine the Spanish realization."
+      }
+    },
+    {
+      "id": "nt-baptizo",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G907"]},
+      "instruction": "Choose from the rite, physical immersion or sinking, metaphorical overwhelming, and ceremonial washing established by the construction. Preserve agent, patient, medium, and complements; the verb alone does not decide mode or sacramental theology.",
+      "spanishOptions": [
+        {"form": "bautizar", "when": "The context designates the recognized rite of John or the disciples, or expressly presents a metaphorical baptism as such."},
+        {"form": "sumergir/hundir", "when": "Physical immersion or sinking, rather than the name of the rite, is foregrounded."},
+        {"form": "abrumar", "when": "A metaphorical use foregrounds being overwhelmed and the Spanish preserves the construction naturally."},
+        {"form": "lavar/lavarse", "when": "The context clearly presents ceremonial washing, such as washing before eating, rather than the Christian rite."}
+      ],
+      "avoid": [
+        "using bautizar as an automatic gloss",
+        "using sumergir as an automatic gloss",
+        "adding a mode, formula, saving effect, sacramental theology, or recipient qualification not expressed by the source",
+        "omitting an expressed agent, patient, medium, or complement"
+      ],
+      "referenceRules": [
+        {
+          "references": ["MRK.7.4", "LUK.11.38"],
+          "strength": "binding",
+          "preferred": ["lavar/lavarse"],
+          "avoid": ["bautizar"],
+          "reason": "The immediate construction concerns ceremonial washing connected with eating, not the Christian rite."
+        }
+      ],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "First-century literary controls attest physical sinking, immersion, and overwhelming, while NT context can establish a recognized rite; neither bautizar nor sumergir is an automatic gloss."
+      }
+    },
+    {
+      "id": "nt-baptisma",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G908"]},
+      "instruction": "Name the rite or its explicit metaphorical extension according to the construction. Use inmersión only when the act itself is foregrounded and the Spanish does not add a modal claim absent from the source.",
+      "spanishOptions": [
+        {"form": "bautismo", "when": "The context names the recognized rite or expressly extends that designation metaphorically."},
+        {"form": "inmersión", "when": "The act of immersion itself is foregrounded and the contextual evidence supports that realization without importing an unstated mode."}
+      ],
+      "avoid": [
+        "using bautismo or inmersión mechanically in every context",
+        "adding a mode, formula, saving effect, sacramental theology, or recipient qualification not expressed by the source"
+      ],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "Modern Spanish bautismo identifies the rite but does not itself disclose or decide the physical mode; contextual evidence must control any use of inmersión."
+      }
+    },
+    {
+      "id": "nt-baptismos",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G909"]},
+      "instruction": "Express ritual washing without automatically converting this distinct family into the Christian rite named by baptisma.",
+      "spanishOptions": [
+        {"form": "lavamiento(s)", "when": "Ritual or ceremonial washing is in view and this is the clearest contemporary Spanish."},
+        {"form": "ablución/abluciones", "when": "The context foregrounds a prescribed ceremonial washing and the more formal term is natural."}
+      ],
+      "avoid": ["using bautismo automatically", "merging this family with baptisma, bapto, loutron, or katharismos"],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "The source formally distinguishes ritual washings from the central baptisma noun; conceptual proximity does not erase that lexical distinction."
+      }
+    },
+    {
+      "id": "nt-baptistes",
+      "status": "binding",
+      "testament": "nt",
+      "match": {"strongsAny": ["G910"]},
+      "instruction": "Use the established Spanish title el Bautista. This is an explicit editorial title choice, not permission to obscure the non-title senses of related verbs and nouns.",
+      "spanishOptions": [
+        {"form": "el Bautista", "when": "G910 is the title applied to John."}
+      ],
+      "avoid": ["el Sumergidor", "treating the title choice as proof that every cognate must use bautizar"],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "The human editor retained the intelligible established Spanish title while requiring contextual translation of the related action families."
+      }
+    },
+    {
+      "id": "nt-bapto",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G911"]},
+      "instruction": "Preserve the concrete action performed upon the object and its expressed medium.",
+      "spanishOptions": [
+        {"form": "mojar", "when": "An object is dipped or wetted and full submersion is not foregrounded."},
+        {"form": "sumergir", "when": "The object is put into the expressed liquid and immersion is foregrounded."
+        }
+      ],
+      "avoid": ["using bautizar", "omitting the object or expressed medium"],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "Bapto supplies a concrete dipping or wetting control and must not be collapsed into the ritual title family."
+      }
+    },
+    {
+      "id": "nt-loutron",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G3067"]},
+      "instruction": "Express the bath or washing named by the construction without automatically relabeling it baptism.",
+      "spanishOptions": [
+        {"form": "baño", "when": "The construction foregrounds bathing or the bath."},
+        {"form": "lavamiento", "when": "The washing action or its figurative application is foregrounded."}
+      ],
+      "avoid": ["using bautismo automatically", "merging loutron with baptisma or katharismos"],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "Loutron remains a distinct bath or washing family even where the surrounding theology relates washing to Christian experience."
+      }
+    },
+    {
+      "id": "nt-katharismos",
+      "status": "approved-options",
+      "testament": "nt",
+      "match": {"strongsAny": ["G2512"]},
+      "instruction": "Express purification or cleaning according to what is purified and the ritual or ordinary setting.",
+      "spanishOptions": [
+        {"form": "purificación", "when": "Ritual, moral, or cultic purification is foregrounded."},
+        {"form": "limpieza", "when": "Concrete cleaning or a natural Spanish description of becoming clean is foregrounded."}
+      ],
+      "avoid": ["using bautismo automatically", "merging purification with washing or immersion families"],
+      "review": {
+        "title": "Bautizar, bautismo, sumergir y lavar",
+        "researchNote": "notes/research/bautismo.md",
+        "summary": "Katharismos denotes purification or cleaning and remains formally distinct from baptism, dipping, bath, and ritual-washing families."
+      }
+    }
+  ]
+}

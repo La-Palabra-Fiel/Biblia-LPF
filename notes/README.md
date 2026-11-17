@@ -16,7 +16,19 @@ paquete canónico de cada versículo.
 - [Marcos 16 — límites de Scrivener y MACULA 16:99](nt/marcos/16-20.md)
 - [Hechos 15:29 — terminal textual sin árbol proyectable](nt/hechos/15-29.md)
 - [Arrepentimiento, cambio de mente, pesar y regreso](topics/arrepentimiento.md)
+- [Términos religiosos heredados bajo consideración](topics/terminos-heredados.md)
 - [Los nefilim](topics/nefilim.md)
+
+## Expedientes de investigación
+
+Los expedientes conservan la evidencia reproducible que conduce a una
+decisión. No son fuentes adicionales para traducir y no amplían la lista
+cerrada de `SOURCE_POLICY.md`.
+
+- [Método y plantilla de expedientes](research/README.md)
+- [Registro de fuentes para investigación léxica](research/SOURCES.md)
+- [`μετανοέω`, `μετάνοια` y `μεταμέλομαι`](research/metanoeo-metanoia.md)
+- [`בְּרִית`, `διαθήκη`, pacto y testamento](research/pacto-testamento.md)
 
 ## Cómo guardar una nota
 

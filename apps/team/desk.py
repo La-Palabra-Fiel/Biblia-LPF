@@ -50,7 +50,7 @@ from nt_macula import (  # noqa: E402
 )
 from nt_source import TR_CODE_BY_STEM, load_reconciled_verse  # noqa: E402
 from lint_lib import lint_divine_name, lint_spanish  # noqa: E402
-from source_packet import build_packet, list_verses  # noqa: E402
+from source_packet import build_packet, canonical_editorial_policy_fields, list_verses  # noqa: E402
 from draft_lib import DRAFT_EXPECTED_COMPLETION_TOKENS, DRAFT_MAX_COMPLETION_TOKENS, DRAFT_SPEC_VERSION, alignment_precision_findings, build_user_prompt as build_draft_prompt, draft_specification_is_current, lexical_alignment_surface, load_system as load_draft_system, merge_source_units_by_id, prompt_fingerprint as draft_prompt_fingerprint  # noqa: E402
 from audit_gpt import AUDIT_MAX_COMPLETION_TOKENS  # noqa: E402
 from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_prompt  # noqa: E402
@@ -531,9 +531,21 @@ def decision_summary(slug: str) -> dict[str, int]:
     return counts
 
 
-def public_packet(packet: dict) -> dict:
+def public_packet(packet: dict, book, chapter: int, verse: int) -> dict:
     keys = ("sourceTokenId", "position", "surface", "paleo", "lemma", "strongs", "morph", "morphExpanded")
-    return {"schema": packet.get("schema"), "sourcePolicy": packet.get("sourcePolicy"), "evidenceStatus": packet.get("evidenceStatus"), "reference": packet.get("reference"), "textualBasis": packet.get("textualBasis"), "tokens": [{k: token.get(k) for k in keys} for token in packet.get("tokens") or []], "syntaxEvidence": packet.get("syntax"), "originalLanguageContext": packet.get("originalLanguageContext") or [], "corpusEvidence": packet.get("corpusEvidence") or [], "lexicalEvidence": packet.get("lexicalEvidence") or []}
+    # An NT chapter may have a complete structural candidate before its
+    # per-verse translation packets have been prepared.  Keep that valid
+    # no-cost review state visible: current editorial policy still needs the
+    # canonical chapter context, but an absent packet must not crash the
+    # chapter endpoint or masquerade as a browser connection failure.
+    policy_packet = {
+        **packet,
+        "book": packet.get("book") or book.slug,
+        "chapter": packet.get("chapter") or chapter,
+        "verse": packet.get("verse") or verse,
+    }
+    editorial = canonical_editorial_policy_fields(policy_packet)
+    return {"schema": packet.get("schema"), "sourcePolicy": packet.get("sourcePolicy"), "evidenceStatus": packet.get("evidenceStatus"), "reference": packet.get("reference"), "textualBasis": packet.get("textualBasis"), "tokens": [{k: token.get(k) for k in keys} for token in packet.get("tokens") or []], "syntaxEvidence": packet.get("syntax"), "originalLanguageContext": packet.get("originalLanguageContext") or [], "corpusEvidence": packet.get("corpusEvidence") or [], "lexicalEvidence": packet.get("lexicalEvidence") or [], "editorialLexicalPolicy": editorial["editorialLexicalPolicy"], "editorialLexicalPolicyReview": editorial["editorialLexicalPolicyReview"]}
 
 
 def translation_file(slug: str) -> Path:
@@ -654,7 +666,7 @@ def chapter_view(slug: str, chapter) -> dict:
         }
         human_current = human_review_is_current(slug, number, verse)
         revision_open = revision_is_open(slug, number, verse)
-        packet_view = public_packet(packet)
+        packet_view = public_packet(packet, book, number, verse)
         if book.testament == "nt" and not packet_view.get("evidenceStatus"):
             packet_view["evidenceStatus"] = nt_structure_status.get(verse, "HOLD_NO_CHAPTER_CANDIDATE")
         rows.append({"verse": verse, "reference": f"{book.label} {number}:{verse}", "canonical": canonical_verse, "packet": packet_view, "candidate": candidate, "recovered": recovered_verse, "gate": gate, "humanReviewed": human_current and not revision_open, "priorApprovalCurrent": human_current, "revisionOpen": revision_open})

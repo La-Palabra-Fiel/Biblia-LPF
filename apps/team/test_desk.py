@@ -45,6 +45,17 @@ class DeskTests(unittest.TestCase):
         self.assertTrue(desk.lint_spanish("Yo **soy** Yahvé"))
         self.assertTrue(desk.lint_spanish("Él, Aarón y Moisés, a quienes Yahvé dijo."))
         self.assertEqual(desk.lint_spanish("Estos *son* Aarón y Moisés."),[])
+    def test_arrepent_word_family_is_prohibited(self):
+        for spanish in (
+            "Arrepiéntanse.",
+            "Él se arrepintió.",
+            "Mostraron arrepentimiento.",
+            "Estaba arrepentido.",
+        ):
+            findings=desk.lint_spanish(spanish)
+            self.assertEqual(len(findings),1)
+            self.assertIn("arrepent-",findings[0]["issue"])
+        self.assertEqual(desk.lint_spanish("Cambien de manera de pensar."),[])
     def test_para_que_viva_is_not_a_global_spanish_error(self):
         spanish="Trata con generosidad a Tu siervo, para que viva y guarde Tu palabra."
         packet={"tokens":[
@@ -89,6 +100,14 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
         self.assertFalse(desk.board()["ntBlocked"])
         self.assertEqual(desk.board()["ntReadiness"],"whole-nt-structure-first")
+
+    def test_missing_nt_packet_uses_chapter_context_for_editorial_policy(self):
+        book=desk.book_or_raise("filipenses")
+        packet=desk.public_packet({},book,4,1)
+        self.assertIsNone(packet["evidenceStatus"])
+        self.assertEqual(packet["tokens"],[])
+        self.assertEqual(packet["editorialLexicalPolicy"],[])
+        self.assertEqual(packet["editorialLexicalPolicyReview"],[])
 
     def test_nt_chapter_preparation_counts_ready_and_skips_holds(self):
         book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()
@@ -542,6 +561,11 @@ class DeskTests(unittest.TestCase):
         self.assertIn("La segunda queda sin enlaces",html)
         self.assertIn("function unresolvedBoundaryFindings",html)
         self.assertIn("La cobertura está completa; solo falta dividir",html)
+        self.assertIn("Política léxica editorial e investigación",html)
+        self.assertIn("Opciones sugeridas",html)
+        self.assertIn("Respaldo para revisión humana",html)
+        self.assertIn("editorialLexicalPolicyReview",html)
+        self.assertIn("function editorialPolicyPanel",html)
     def test_prepare_requires_explicit_cost_confirmation(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         with patch.object(desk,"chapter_or_raise",return_value=(book,5,[1])):

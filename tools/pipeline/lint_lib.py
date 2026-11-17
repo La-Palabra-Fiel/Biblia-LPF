@@ -9,6 +9,10 @@ from books import ROOT, get_book
 
 RULES = (
     (re.compile(r"\b(?:Jehová|Jehova|Yahweh|Yahveh|Yavé|Yave|YHWH)\b", re.I), "יהוה must be rendered Yahvé"),
+    (
+        re.compile(r"\barrep(?:ent|i[eé]nt|int)[\wáéíóúüñ]*\b", re.I),
+        "The Spanish arrepent- word family is prohibited in canonical LPF text",
+    ),
     (re.compile(r"\bfaraón\b"), "the locked proper name must be capitalized Faraón"),
     (re.compile(r"\bJesucristo\b", re.I), "Jesucristo fuses two Greek tokens; use the approved two-word form"),
     (re.compile(r"\bJes[uú]s\s+Cristo\b", re.I), "Jesús Cristo is not natural Spanish; use Jesús, *el* Cristo when the Greek order is Jesus-Christ"),

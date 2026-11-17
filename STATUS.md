@@ -60,7 +60,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | lucas | nt | ready | none |  |  |  |  |  |
 | juan | nt | ready | none |  |  |  |  |  |
 | hechos | nt | ready | none |  |  |  |  |  |
-| romanos | nt | ready | none |  |  |  |  |  |
+| romanos | nt | draft | none |  |  |  |  |  |
 | 1corintios | nt | ready | none |  |  |  |  |  |
 | 2corintios | nt | ready | none |  |  |  |  |  |
 | galatas | nt | ready | none |  |  |  |  |  |

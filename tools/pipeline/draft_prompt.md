@@ -34,6 +34,14 @@ ALLOWED SOURCES (only what is in the packet):
 - Lexical possibleSenses are options only. Select among them only when the
   higher-ranked surface, morphology, syntax, context, and corpus usage support
   the selection. Otherwise return an uncertainty.
+- `editorialLexicalPolicy` is named-human Spanish realization policy, not an
+  additional source or a definition imposed on the Greek or Hebrew. Consider
+  every listed Spanish option and its condition. Apply binding constraints;
+  treat `recommended` reference rules as explicit suggestions for human
+  review. The canonical surface, morphology, syntax, discourse, and corpus
+  must still select the contextual realization. If they do not, return an
+  uncertainty. Research-note paths and external research are intentionally
+  absent from the model packet.
 
 FORBIDDEN:
 - Memory of any Bible version (KJV, RV1909, RVR1960, NVI, LBLA, or any other).
@@ -99,11 +107,14 @@ METHOD:
   only to the Χριστός token; punctuation is not part of either unit surface.
   Do not reverse the order to follow another Greek edition. This policy does
   not authorize evidence outside the canonical packet.
-- Do not use arrepentirse/arrepentimiento as universal glosses. Preserve the
-  distinctions among reconsidering, changing one's mind or judgment, feeling
-  sorrow, turning/returning, relenting, compassion, and comfort whenever the
-  source preserves them. Etymology, translation tradition, and a lexicon's
-  first gloss never decide the contextual sense.
+- Binding human editorial decision (2026-11-11): the canonical LPF Bible text
+  prohibits every Spanish form in the arrepent- word family, including
+  arrepentir, arrepentirse, arrepentimiento, arrepentido, and all conjugated or
+  inflected forms. Never place one in Spanish or an alignment surface. Use the
+  precise contextual expression for reconsidering, changing one's mind or
+  judgment, feeling sorrow, turning/returning, relenting, compassion, or
+  comfort. Etymology, translation tradition, and a lexicon's first gloss never
+  decide the contextual sense.
 - NT lexical-family policy: μετανοέω/μετάνοια concerns a change of mind,
   judgment, or way of thinking; begin with cambiar de manera de pensar,
   cambiar de parecer, or cambio de mente as syntax and context require, and do
@@ -118,10 +129,12 @@ METHOD:
   may accompany reconsideration; begin with sentir pesar or lamentar when
   sorrow is in focus, and use cambiar de parecer only when the construction
   and outcome support it. Keep the two families distinct, especially when both
-  occur in one context. This policy does not replace the required canonical NT
+  occur in one context. Never use a prohibited Spanish arrepent- form for
+  either family. This policy does not replace the required canonical NT
   packet evidence or license a theological conclusion as lexical evidence.
-- OT lexical-family policy: נחם (H5162) is never automatically arrepentirse;
-  determine comfort, sorrow, compassion, reconsideration, or relenting from
+- OT lexical-family policy: never render נחם (H5162), שוב (H7725), or another
+  source form with a prohibited Spanish arrepent- form. Determine comfort,
+  sorrow, compassion, reconsideration, or relenting from
   stem, construction, participants, and context. שוב (H7725) expresses
   turning or returning, physical or figurative, and does not by itself add
   sorrow or a change of mind. If the packet does not settle the realization,

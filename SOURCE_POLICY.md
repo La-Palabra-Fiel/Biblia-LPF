@@ -269,6 +269,163 @@ discursivo TR1894, uso de corpus TR1894, evidencia TBESG fijada y cobertura
 terminal TR completa. Una incertidumbre textual o morfológica real sí mantiene
 bloqueado ese versículo, no los demás.
 
+### Excepción cerrada de investigación humana: griego documental DDbDP
+
+Por autorización humana del 11 de noviembre de 2026, se permite
+**Papyri.info/DDbDP** como testigo comparativo de uso del griego documental en
+expedientes léxicos y en la adjudicación humana documentada de un `HOLD` del
+Nuevo Testamento. No es autoridad textual del NT y nunca puede cambiar,
+completar ni corregir la superficie Scrivener TR1894, la morfología Robinson,
+la estructura permitida de MACULA o el contexto y corpus canónicos de TR1894.
+
+La fuente primaria autorizada queda fijada así:
+
+- repositorio: `https://github.com/papyri/idp.data`;
+- commit: `56f68ee627b3602acd3ec9e0eee411d5912a9e3a`;
+- árbol `DDbDP/`:
+  `d39ff5831b5ba7efbf316c600af4c6b340701585`, 67.981 XML;
+- árbol `HGV_meta_EpiDoc/`:
+  `aa2a956bf9bb292cea1c6c3e55da56494c8fc451`, 68.023 XML;
+- licencia de las transcripciones DDbDP: CC BY 3.0, con atribución a *Duke
+  Databank of Documentary Papyri / Papyri.info*;
+- manifiesto y procedimiento:
+  `source/greek/documentary-koine/DDbDP_QUERY_MANIFEST.json` y
+  `tools/research/ddbdp_primary_inventory.py`.
+
+Solo se autorizan para la investigación humana:
+
+- la transcripción griega primaria DDbDP;
+- el marcado EpiDoc de restitución, incertidumbre, regularización y aparato;
+- fecha, procedencia y palabras clave documentales del registro HGV enlazado;
+- inventarios derivados que conserven commit, ruta DDbDP, identificador HGV,
+  contexto griego, fecha abierta o cerrada y estado editorial de las letras.
+
+Quedan excluidos y deben rechazarse:
+
+- traducciones modernas de los papiros como autoridad léxica;
+- lemas, morfología, sintaxis, dependencias o roles semánticos automáticos;
+- frecuencia bruta presentada como definición o selección de sentido;
+- convertir una restitución editorial en palabra plenamente conservada;
+- convertir una fecha unilateral en intervalo cerrado;
+- proyectar sin prueba el uso egipcio, administrativo o tardío sobre un autor
+  neotestamentario;
+- usar DDbDP para escoger una variante textual, ampliar TR1894 o vencer el
+  contexto inmediato, el discurso o el corpus canónico.
+
+`alekkeersmaekers/duke-nlp`, commit
+`deb35dba76a88b882978b89ec597deb04a9911ec`, queda autorizado únicamente como
+**índice de descubrimiento** para localizar posibles formas flexionadas. Una
+anotación suya no es evidencia. Cada candidato debe volver a la transcripción
+DDbDP fijada y a su HGV; sus campos automáticos de lema, morfología, sintaxis,
+dependencia y rol semántico no pueden justificar una decisión.
+
+Esta excepción autoriza consulta humana reproducible y la documentación de la
+adjudicación; **no autoriza entrada automática en el paquete del modelo**. La
+política de paquete permanece `lbf-source-policy-v4`. Para exponer DDbDP a un
+modelo será obligatorio adoptar un identificador de política nuevo, un
+cargador de lista positiva, pruebas de procedencia y fuga, y una migración
+explícita de los paquetes afectados. Hasta entonces, el modelo sigue recibiendo
+solo el paquete v4 y una persona registra la conclusión que haya adjudicado.
+
+Toda consulta DDbDP debe ser visible para el usuario en dos lugares:
+
+1. antes de consultar, el asistente o la herramienta anuncia expresamente
+   **«Consultando DDbDP»** y declara la familia o cuestión investigada;
+2. al terminar, añade una entrada a
+   `source/greek/documentary-koine/CONSULTATIONS.json` con fecha, responsable,
+   propósito, alcance de consulta, commit, artefacto y checksum, resumen del
+   resultado, expediente relacionado, si la evidencia fue expuesta a un
+   modelo y si produjo una adjudicación humana.
+
+Una mención bibliográfica sin abrir, buscar ni analizar DDbDP no cuenta como
+consulta. Leer un inventario DDbDP ya generado sí cuenta y debe identificar el
+`consultationId` que lo produjo; una consulta nueva, ampliada o con otra
+pregunta recibe una entrada nueva. Nunca se oculta una consulta dentro de una
+auditoría general, un prompt o una llamada de herramienta.
+
+### Excepción cerrada de investigación humana: controles literarios
+
+Por autorización humana del 11 de noviembre de 2026, las ediciones griegas
+fijadas de **Filón de Alejandría** y **Flavio Josefo** pueden consultarse como
+controles literarios del siglo I en expedientes léxicos y en adjudicaciones
+humanas documentadas de `HOLD`. No son griego documental cotidiano, no son
+autoridad textual del NT y no pueden corregir ni ampliar Scrivener TR1894.
+
+Por la misma autorización, **Plutarco**, **Dión Crisóstomo** y **Epicteto tal
+como lo transmite Arriano** pueden consultarse como controles grecorromanos no
+cristianos cercanos al siglo I. Su fecha y registro se declaran por separado;
+no se los presenta como testimonio exacto del año o década de un pasaje del NT.
+
+Las únicas colecciones autorizadas son las ediciones griegas `grc` enumeradas
+en `source/greek/literary-koine/LITERARY_KOINE_MANIFEST.json`:
+
+- Filón: Open Greek and Latin `First1KGreek`, commit
+  `ed91552c52530c8f5a3ddf2dd767e899372a804c`, árbol `data/tlg0018`
+  `b2a2da4948b64595e61535587232eadb3f6761e7`, 31 ediciones;
+- Josefo: PerseusDL `canonical-greekLit`, commit
+  `7fd4dae30f1d2176c3c6f64c0750f6f39cd972f3`, árbol `data/tlg0526`
+  `0c7e87bac2f60bf603d4d97802776ce2b354b1a1`, 4 ediciones;
+- Plutarco: el mismo commit PerseusDL, árbol `data/tlg0007`
+  `fa7006cae3945e83e4361ba9bec5335e96fa6efd`, una edición griega por cada
+  una de 143 obras;
+- Dión Crisóstomo: el mismo commit, árbol `data/tlg0612`
+  `decea3a69159037e29c9e416c6f6c953042103b5`, 1 edición;
+- Epicteto/Arriano: el mismo commit, árbol `data/tlg0557`
+  `aeb755f13c116e5e426736a2a66f217ecf4a09b7`, 5 ediciones.
+
+Se permite conservar superficie griega, referencia CTS, ruta, contexto
+lingüístico inmediato y marcado editorial necesario para comprobar el texto.
+Se excluyen las traducciones paralelas, glosas, lemas, morfología, sintaxis o
+semántica automáticas. La frecuencia no constituye una definición y los
+registros de autores distintos y DDbDP nunca se suman como si fueran un corpus
+homogéneo. La interpretación teológica no forma parte de esta consulta; sí es
+obligatorio leer contexto lingüístico suficiente para entender el uso.
+
+Esta excepción no modifica el paquete automático: continúa vigente
+`lbf-source-policy-v4`. La evidencia no entra en Team Desk ni en un paquete de
+modelo sin una política nueva, cargador de lista positiva, pruebas de fuga y
+migración explícita. Una persona puede registrar después una conclusión
+adjudicada, pero el inventario por sí solo no altera traducción ni alineación.
+
+Antes de cada consulta se anuncia la fuente y la cuestión concreta. Después
+se registra en `source/greek/literary-koine/CONSULTATIONS.json` el commit,
+árbol, consulta, artefacto, checksum, resultado, revisión por asistente,
+exposición o no al modelo de traducción y cualquier adjudicación humana.
+
+### Excepción cerrada de investigación humana: recepción latina clementina
+
+Por autorización humana del 12 de noviembre de 2026, la **Vulgata Clementina**
+del Clementine Vulgate Project puede consultarse únicamente para estudiar la
+mediación histórica de terminología latina en expedientes léxicos. No es
+autoridad textual, léxica ni semántica para LPF; no demuestra el significado
+original del hebreo o del griego y no puede corregir, completar ni desempatar
+la evidencia canónica.
+
+La fuente queda fijada en
+`source/latin/clementine-vulgate/CLEMENTINE_MANIFEST.json`:
+
+- repositorio `https://bitbucket.org/clementinetextproject/text.git`;
+- commit `edc85da058be630183d26e4deb6714ade80e600c`;
+- árbol `43d059c73fb2f96264670ce64fb304aea5785fc2`;
+- 73 archivos raíz `*.lat`, con hash agregado
+  `df9ba8f9d951d949041bfc4721e3a0ddd946b2335fa7b7c9647ed9c539a2d1c4`;
+- texto electrónico basado en Colunga-Turrado 1947 y Vercellone 1861;
+- transcripción identificada por el proyecto como dominio público; software
+  VulSearch bajo GPL-2.0.
+
+Solo se permiten búsquedas formales reproducibles que conserven la superficie,
+libro, referencia, línea y contexto latino inmediato. Quedan prohibidos una
+glosa automática, tratar frecuencia como definición, describir la Clementina
+como texto original de Jerónimo y usar una elección latina para decidir la
+traducción española. El registro debe distinguir siempre recepción latina de
+uso griego contemporáneo.
+
+Esta excepción no modifica el paquete automático: continúa vigente
+`lbf-source-policy-v4`. La fuente no entra en Team Desk ni en ningún paquete de
+modelo. Antes de consultarla se anuncia la fuente y la cuestión; después se
+registra la consulta, revisión y checksum en
+`source/latin/clementine-vulgate/CONSULTATIONS.json`.
+
 ## Antiguo Testamento
 
 Autoridad textual única:
@@ -304,6 +461,22 @@ De MACULA solo pueden sobrevivir al paquete los atributos estructurales
 de sentido o traducción. MACULA nunca aporta la superficie autoritativa.
 
 ## Datos derivados sin autoridad semántica
+
+`translation/LEXICAL_POLICY.json` es un registro de política editorial humana
+para **realizaciones españolas posibles y restricciones**, no una fuente
+textual ni un léxico adicional. El cargador incluye solamente las entradas que
+coinciden mecánicamente con los identificadores Strong de los tokens o con una
+secuencia explícita de ellos. El registro nunca reemplaza superficie,
+morfología, sintaxis, discurso ni uso del corpus canónico, y una lista de
+opciones nunca elige por sí sola el sentido.
+
+El paquete del modelo recibe la instrucción editorial, las opciones españolas,
+sus condiciones y cualquier regla de referencia activa. No recibe rutas,
+resúmenes ni contenido de los expedientes de investigación. Team Desk puede
+mostrar por separado esos metadatos al revisor humano. La política se valida
+contra el archivo canónico en cada paquete; una entrada alterada, añadida a un
+versículo que no coincide o desprovista de su límite de evidencia provoca el
+rechazo del paquete.
 
 - La conversión a caracteres paleohebreos es solamente una representación de
   los mismos consonantes. No decide significado.

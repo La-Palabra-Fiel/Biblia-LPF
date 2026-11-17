@@ -33,6 +33,7 @@ from hebrew_lexicon import (
     UPSTREAM_COMMIT as HEBREW_LEXICON_COMMIT,
     lookup as lookup_hebrew_lexicon,
 )
+from lexical_policy import policies_for_verse, policy_version
 from morph import expand_hebrew_morph
 from nt_source import load_reconciled_verse, validate_manifest
 from nt_evidence import corpus_usage as nt_corpus_usage, original_language_context as nt_original_language_context, syntax_for_verse as nt_syntax_for_verse
@@ -69,6 +70,30 @@ NT_ALLOWED_SOURCES = [
 
 OSIS_NS = {"o": "http://www.bibletechnologies.net/2003/OSIS/namespace"}
 VERSE_LINE = re.compile(r"^(\d+):(\d+)\s+(.*)$")
+
+
+def editorial_policy_fields(book: Book, chapter: int, verse: int, tokens: list[dict]) -> dict:
+    source_book = (book.utr_stem if book.testament == "nt" else book.osis).upper()
+    model_entries, review_entries = policies_for_verse(
+        book.testament,
+        f"{source_book}.{chapter}.{verse}",
+        tokens,
+    )
+    return {
+        "editorialLexicalPolicyVersion": policy_version(),
+        "editorialLexicalPolicy": model_entries,
+        "editorialLexicalPolicyReview": review_entries,
+    }
+
+
+def canonical_editorial_policy_fields(packet: dict) -> dict:
+    """Resolve current editorial policy without treating it as source evidence."""
+    return editorial_policy_fields(
+        get_book(str(packet.get("book") or "")),
+        int(packet.get("chapter") or 0),
+        int(packet.get("verse") or 0),
+        packet.get("tokens") or [],
+    )
 
 
 def local_name(tag: str) -> str:
@@ -365,6 +390,7 @@ def build_ot_packet(book: Book, chapter: int, verse: int) -> dict:
         "syntax": syntax,
         "originalLanguageContext": context,
         "corpusEvidence": list(corpus_entries.values()),
+        **editorial_policy_fields(book, chapter, verse, tokens),
     }
 
 def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
@@ -482,6 +508,7 @@ def build_nt_packet(book: Book, chapter: int, verse: int) -> dict:
         "syntax": syntax,
         "originalLanguageContext": nt_original_language_context(book, chapter, verse),
         "corpusEvidence": list(corpus_entries.values()),
+        **editorial_policy_fields(book, chapter, verse, tokens),
     }
 
 
@@ -538,6 +565,14 @@ def validate_packet(packet: dict) -> None:
         raise ValueError("source packet has a noncanonical textual basis")
     if packet.get("allowedSources") != expected_sources:
         raise ValueError("source packet has a noncanonical source allowlist")
+    expected_editorial = canonical_editorial_policy_fields(packet)
+    editorial_keys = set(expected_editorial)
+    present_editorial_keys = editorial_keys.intersection(packet)
+    if present_editorial_keys and present_editorial_keys != editorial_keys:
+        raise ValueError("source packet has incomplete editorial lexical policy")
+    for key, expected in expected_editorial.items():
+        if present_editorial_keys and packet.get(key) != expected:
+            raise ValueError("source packet has noncanonical editorial lexical policy")
     if any("ahrc" in token for token in packet.get("tokens") or []):
         raise ValueError("AHRC evidence is prohibited by SOURCE_POLICY.md")
     if testament == "ot":
@@ -670,6 +705,7 @@ def packet_for_prompt(packet: dict) -> dict:
     not carry semantic evidence and are intentionally omitted here.
     """
     validate_packet(packet)
+    editorial = canonical_editorial_policy_fields(packet)
     if packet.get("testament") == "nt":
         if packet.get("evidenceStatus") != "READY_FOR_MODEL":
             raise RuntimeError(f"model translation blocked for this verse: {packet.get('evidenceStatus')}")
@@ -707,6 +743,8 @@ def packet_for_prompt(packet: dict) -> dict:
             "syntax": packet["syntax"],
             "originalLanguageContext": packet.get("originalLanguageContext") or [],
             "corpusEvidence": cited_corpus,
+            "editorialLexicalPolicyVersion": editorial["editorialLexicalPolicyVersion"],
+            "editorialLexicalPolicy": editorial["editorialLexicalPolicy"],
         }
     tokens = []
     for token in packet.get("tokens") or []:
@@ -826,6 +864,8 @@ def packet_for_prompt(packet: dict) -> dict:
         },
         "originalLanguageContext": context,
         "corpusEvidence": corpus,
+        "editorialLexicalPolicyVersion": editorial["editorialLexicalPolicyVersion"],
+        "editorialLexicalPolicy": editorial["editorialLexicalPolicy"],
     }
 
 

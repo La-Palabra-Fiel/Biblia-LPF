@@ -7,249 +7,249 @@
 
 ### 1:1
 
-Pablo, siervo de Cristo Jesús, llamado apóstol, apartado para el evangelio de Dios,
+Pablo, esclavo de Jesús, *el* Cristo, llamado a ser apóstol, apartado para el evangelio de Dios.
 
 ### 1:2
 
-que él prometió de antemano por medio de sus profetas en las Escrituras santas,
+que prometió de antemano por medio de Sus profetas en las Escrituras santas,
 
 ### 1:3
 
-acerca de su Hijo, nacido de la simiente de David según la carne,
+Acerca de Su Hijo, que nació de la semilla de David según la carne,
 
 ### 1:4
 
-declarado Hijo de Dios con poder según el Espíritu de santidad por la resurrección de los muertos, Jesús Cristo, nuestro Señor;
+quien fue designado Hijo de Dios con poder, según el espíritu de santidad, por la resurrección de entre los muertos: Jesús, *el* Cristo, nuestro Señor;
 
 ### 1:5
 
-por medio de quien recibimos gracia y apostolado para la obediencia de fe entre todas las naciones por causa de su nombre,
+por medio de quien recibimos gracia y apostolado para la obediencia de la fe entre todas las naciones, por causa de Su nombre,
 
 ### 1:6
 
-entre las cuales también ustedes son llamados de Jesús Cristo;
+Entre los cuales están también ustedes, llamados de Jesús, *el* Cristo.
 
 ### 1:7
 
-a todos los que están en Roma, amados de Dios, llamados santos: Gracia a ustedes y paz de Dios nuestro Padre y del Señor Jesús Cristo.
+A todos los que están en Roma, amados por Dios, santos por llamamiento: gracia y paz a ustedes de parte de Dios nuestro Padre y del Señor Jesús, *el* Cristo.
 
 ### 1:8
 
-Primeramente doy gracias a mi Dios por medio de Jesús Cristo por todos ustedes, porque la fe de ustedes se anuncia en todo el mundo.
+En primer lugar, doy gracias a mi Dios por medio de Jesús, *el* Cristo, por todos ustedes, porque la fe de ustedes se proclama en todo el mundo.
 
 ### 1:9
 
-Porque Dios es testigo mío, a quien sirvo en mi espíritu en el evangelio de su Hijo, de cómo sin cesar hago mención de ustedes
+Pues Dios es mi testigo, a quien sirvo en mi espíritu en el evangelio de Su Hijo, de cómo sin cesar hago mención de ustedes.
 
 ### 1:10
 
-siempre en mis oraciones, rogando si de algún modo ya alguna vez me será concedido por la voluntad de Dios ir a ustedes.
+Suplicando siempre en mis oraciones si de algún modo por fin se me facilitará llegar a ustedes por la voluntad de Dios.
 
 ### 1:11
 
-Porque anhelo verlos para impartirles algún don espiritual a fin de que ustedes sean fortalecidos,
+Pues anhelo verlos para impartirles algún don espiritual, para que ustedes sean fortalecidos.
 
 ### 1:12
 
-esto es, ser mutuamente animados entre ustedes por la fe que hay entre ustedes y yo.
+Es decir, recibir ánimo con ustedes mediante la fe que hay en unos y otros, tanto la de ustedes como la mía.
 
 ### 1:13
 
-No quiero que ignoren, hermanos, que muchas veces me propuse ir a ustedes y hasta ahora he sido impedido, para tener algún fruto también entre ustedes, como también entre las demás naciones.
+Y no quiero que ustedes ignoren, hermanos, que muchas veces me propuse ir a ustedes —y se me impidió hasta ahora— para tener algún fruto también entre ustedes, así como también entre las demás naciones.
 
 ### 1:14
 
-A griegos y a bárbaros, a sabios y a ignorantes, soy deudor;
+Soy deudor tanto de griegos como de bárbaros, tanto de sabios como de insensatos.
 
 ### 1:15
 
-así que, en cuanto a mí, estoy dispuesto también a anunciarles el evangelio a ustedes que están en Roma.
+Así, por mi parte, *estoy* dispuesto a anunciar buenas noticias también a ustedes, los que están en Roma.
 
 ### 1:16
 
-Porque no me avergüenzo del evangelio, pues es poder de Dios para salvación a todo el que cree, al judío primeramente, y también al griego.
+Pues no me avergüenzo del evangelio del Cristo, porque es poder de Dios para la salvación de todo el que cree, tanto del judío primero como del griego.
 
 ### 1:17
 
-Porque en él se revela la justicia de Dios de fe en fe, como está escrito: El justo por la fe vivirá.
+Pues en él se revela la justicia de Dios, de fe para fe, como está escrito: «Pero el justo vivirá por fe».
 
 ### 1:18
 
-Porque se revela la ira de Dios desde el cielo contra toda impiedad e injusticia de los hombres que detienen la verdad en injusticia,
+Pues la ira de Dios se revela desde el cielo contra toda impiedad e injusticia de los seres humanos que retienen la verdad en la injusticia,
 
 ### 1:19
 
-porque lo conocido de Dios es manifiesto entre ellos, pues Dios se lo manifestó.
+Porque lo conocido de Dios es manifiesto en ellos, pues Dios se lo manifestó.
 
 ### 1:20
 
-Porque las cosas invisibles de él, desde la creación del mundo, se perciben claramente, siendo entendidas por medio de las cosas hechas, tanto su eterno poder como su divinidad, de modo que ellos son inexcusables;
+Pues las cosas invisibles de Él —tanto Su poder eterno como Su divinidad— se ven claramente desde la creación del mundo, al ser comprendidas por medio de las obras, de modo que ellos son inexcusables.
 
 ### 1:21
 
-porque habiendo conocido a Dios, no lo glorificaron como a Dios ni le dieron gracias, sino que se envanecieron en sus razonamientos, y su necio corazón fue entenebrecido.
+Porque, habiendo conocido a Dios, no Lo glorificaron como Dios ni dieron gracias, sino que se volvieron vanos en sus razonamientos, y su corazón sin entendimiento se oscureció.
 
 ### 1:22
 
-Profesando ser sabios, se hicieron necios,
+Afirmando ser sabios, se volvieron necios.
 
 ### 1:23
 
-y cambiaron la gloria del Dios incorruptible en semejanza de imagen de hombre corruptible, y de aves, de cuadrúpedos y de reptiles.
+Y cambiaron la gloria del Dios incorruptible por la semejanza de una imagen de un ser humano corruptible y de aves y de cuadrúpedos y de reptiles.
 
 ### 1:24
 
-Por lo cual Dios los entregó en las concupiscencias de sus corazones a impureza, a fin de que sus cuerpos fueran deshonrados entre ellos;
+Por eso Dios también los entregó, en los deseos de sus corazones, a la impureza, para que sus cuerpos fueran deshonrados entre ellos mismos;
 
 ### 1:25
 
-los cuales cambiaron la verdad de Dios por la mentira, y adoraron y sirvieron a la creación en lugar del Creador, el cual es bendito por los siglos. Amén.
+Quienes cambiaron la verdad de Dios por la mentira y veneraron y rindieron culto a la creación antes que al Creador, quien es bendito por los siglos. Amén.
 
 ### 1:26
 
-Por esto Dios los entregó a pasiones de deshonra; porque también sus mujeres cambiaron el uso natural por el que es contra naturaleza,
+Por esto Dios los entregó a pasiones deshonrosas; pues también sus mujeres cambiaron la relación natural por la contraria a la naturaleza.
 
 ### 1:27
 
-y de igual modo también los varones, dejando el uso natural de la mujer, se inflamaron en su lascivia unos con otros, cometiendo actos vergonzosos varones con varones, y recibiendo en sí mismos la retribución debida de su extravío.
+Y de igual manera también los varones, habiendo dejado la relación natural con la mujer, se encendieron en su deseo unos por otros: varones cometiendo la indecencia con varones y recibiendo en sí mismos la retribución que correspondía por su extravío.
 
 ### 1:28
 
-Y como no aprobaron tener a Dios en conocimiento, Dios los entregó a una mente reprobada, para hacer lo que no conviene,
+Y así como no consideraron apropiado mantener a Dios en su conocimiento, Dios los entregó a una mente reprobada, para hacer lo que no corresponde.
 
 ### 1:29
 
-llenos de toda injusticia, maldad, avaricia, malicia; repletos de envidia, homicidio, contiendas, engaño, malignidad; chismosos,
+Colmados de toda injusticia, inmoralidad sexual, perversidad, codicia, maldad; llenos de envidia, asesinato, discordia, engaño, malevolencia; murmuradores.
 
 ### 1:30
 
-calumniadores, aborrecedores de Dios, insolentes, soberbios, jactanciosos, inventores de males, desobedientes a los padres,
+difamadores, que odian a Dios, insolentes, arrogantes, fanfarrones, inventores de males, desobedientes a los padres,
 
 ### 1:31
 
-sin entendimiento, desleales, sin afecto natural, sin misericordia;
+Sin entendimiento, desleales a sus compromisos, sin afecto natural, irreconciliables, sin misericordia.
 
 ### 1:32
 
-los cuales, habiendo conocido el decreto de Dios de que los que practican tales cosas son dignos de muerte, no solo las hacen, sino que también aprueban a los que las practican.
+Quienes, aun habiendo conocido el decreto de Dios —que los que practican tales cosas son merecedores de muerte—, no solo las hacen, sino que también aprueban a quienes *las* practican.
 
 ## Capítulo 2
 
 ### 2:1
 
-Por lo cual eres inexcusable, oh hombre, todo el que juzga; porque en lo que juzgas al otro, a ti mismo te condenas, pues tú que juzgas practicas las mismas cosas.
+Por eso eres inexcusable, oh hombre, tú que juzgas, seas quien seas; pues en lo que juzgas al otro, te condenas a ti mismo, porque tú que juzgas haces las mismas cosas.
 
 ### 2:2
 
-Sabemos que el juicio de Dios es según verdad contra los que practican tales cosas.
+Pero sabemos que el juicio de Dios contra los que hacen tales cosas es conforme a la verdad.
 
 ### 2:3
 
-¿Piensas esto, oh hombre, tú que juzgas a los que practican tales cosas y las haces, que tú escaparás del juicio de Dios?
+Pero ¿piensas esto, oh hombre que juzgas a los que practican tales cosas y las haces: que tú escaparás del juicio de Dios?
 
 ### 2:4
 
-¿O desprecias las riquezas de su bondad, tolerancia y paciencia, ignorando que la bondad de Dios te guía al arrepentimiento?
+¿O desprecias la riqueza de Su bondad y de la tolerancia y de la paciencia, ignorando que la bondad de Dios te conduce a cambiar de manera de pensar?
 
 ### 2:5
 
-Pero según tu dureza y tu corazón impenitente, atesoras para ti mismo ira en el día de la ira y de la revelación del justo juicio de Dios,
+Pero, conforme a tu dureza y tu corazón que no cambia de manera de pensar, atesoras para ti mismo ira en el día de ira y de revelación del justo juicio de Dios.
 
 ### 2:6
 
-quien pagará a cada uno conforme a sus obras:
+quien pagará a cada uno según sus obras.
 
 ### 2:7
 
-a los que, perseverando en bien hacer, buscan gloria, honra e inmortalidad, vida eterna;
+Por una parte, vida eterna a los que, con perseverancia en la buena obra, buscan gloria y honor e incorruptibilidad;
 
 ### 2:8
 
-pero a los que son de contienda y no obedecen a la verdad, sino que obedecen a la injusticia, ira y enojo.
+Pero para los que actúan por rivalidad y desobedecen a la verdad, pero obedecen a la injusticia: furor e ira.
 
 ### 2:9
 
-Tribulación y angustia sobre toda alma de hombre que hace el mal, del judío primeramente, y también del griego;
+Aflicción y angustia sobre toda persona humana que hace el mal, tanto el judío en primer lugar como el griego.
 
 ### 2:10
 
-pero gloria, honra y paz a todo el que hace el bien, al judío primeramente, y también al griego;
+Pero gloria y honor y paz para todo el que hace lo bueno, tanto para el judío primero como para el griego.
 
 ### 2:11
 
-porque no hay acepción de personas delante de Dios.
+Pues no hay favoritismo en Dios.
 
 ### 2:12
 
-Porque todos los que sin ley pecaron, sin ley también perecerán; y todos los que bajo la ley pecaron, por la ley serán juzgados;
+Pues todos los que pecaron sin ley también perecerán sin ley, y todos los que pecaron bajo la ley serán juzgados por la ley.
 
 ### 2:13
 
-porque no los oidores de la ley son justos delante de Dios, sino que los hacedores de la ley serán justificados.
+Porque los oyentes de la ley no *son* justos ante Dios, sino que los cumplidores de la ley serán declarados justos.
 
 ### 2:14
 
-Porque cuando los gentiles, que no tienen ley, hacen por naturaleza las cosas de la ley, estos, no teniendo ley, son ley para sí mismos,
+Porque, cuando los gentiles que no tienen ley hacen por naturaleza lo de la ley, estos, sin tener ley, son ley para sí mismos.
 
 ### 2:15
 
-los cuales muestran la obra de la ley escrita en sus corazones, dando testimonio juntamente su conciencia, y acusándose o también defendiéndose entre sí sus pensamientos,
+Quienes muestran la obra de la ley escrita en sus corazones, mientras su conciencia da testimonio a la vez y, entre sí, los pensamientos acusan o también defienden.
 
 ### 2:16
 
-en el día en que Dios juzgará los secretos de los hombres, conforme a mi evangelio, por medio de Cristo Jesús.
+En el día en que Dios juzgará los secretos de los seres humanos, según mi evangelio, por medio de Jesús, *el* Cristo.
 
 ### 2:17
 
-Pero si tú te llamas judío, y te apoyas en la ley, y te glorías en Dios,
+Mira, tú eres llamado judío y descansas en la ley y te glorías en Dios.
 
 ### 2:18
 
-y conoces su voluntad, y apruebas las cosas excelentes, siendo instruido por la ley;
+y conoces Su voluntad, y apruebas las cosas excelentes, siendo instruido por la ley;
 
 ### 2:19
 
-y confías en ser guía de los ciegos, luz de los que están en tinieblas,
+Y estás convencido de que tú mismo eres guía de ciegos, luz de los que *están* en oscuridad,
 
 ### 2:20
 
-instructor de los necios, maestro de niños, teniendo en la ley la forma del conocimiento y de la verdad;
+instructor de insensatos, maestro de niños, teniendo en la ley la forma del conocimiento y de la verdad,
 
 ### 2:21
 
-tú, pues, que enseñas a otro, ¿no te enseñas a ti mismo? Tú que predicas que no se robe, ¿robas?
+Entonces, tú que enseñas a otro, ¿no te enseñas a ti mismo? Tú que proclamas «No robes», ¿robas?
 
 ### 2:22
 
-Tú que dices que no se cometa adulterio, ¿cometes adulterio? Tú que abominas los ídolos, ¿cometes sacrilegio?
+Tú que dices que no se cometa adulterio, ¿cometes adulterio? Tú que detestas los ídolos, ¿saqueas templos?
 
 ### 2:23
 
-Tú que te glorías en la ley, ¿por la transgresión de la ley deshonras a Dios?
+Tú que te jactas de la ley, ¿deshonras a Dios por la transgresión de la ley?
 
 ### 2:24
 
-Porque el nombre de Dios es blasfemado entre los gentiles por causa de ustedes, como está escrito.
+Pues el nombre de Dios es blasfemado entre las naciones por causa de ustedes, tal como está escrito.
 
 ### 2:25
 
-Pues la circuncisión aprovecha, si practicas la ley; pero si eres transgresor de la ley, tu circuncisión se ha hecho incircuncisión.
+Pues la circuncisión ciertamente beneficia si cumples la ley; pero si eres transgresor de la ley, tu circuncisión se ha convertido en incircuncisión.
 
 ### 2:26
 
-Si, pues, el incircunciso guarda los justos requisitos de la ley, ¿no será contada su incircuncisión como circuncisión?
+Por tanto, si la incircuncisión observa los preceptos de la ley, ¿no será considerada su incircuncisión como circuncisión?
 
 ### 2:27
 
-Y el que físicamente es incircunciso, pero cumple la ley, te juzgará a ti que, con la letra y la circuncisión, eres transgresor de la ley.
+Y la incircuncisión por naturaleza, cumpliendo la ley, te juzgará a ti, que con la letra y la circuncisión *eres* transgresor de la ley.
 
 ### 2:28
 
-Porque no es judío el que lo es exteriormente, ni es circuncisión la que se hace exteriormente en la carne;
+Porque no es judío quien *lo es* exteriormente, ni *es* circuncisión la exterior, en la carne.
 
 ### 2:29
 
-sino que es judío el que lo es en lo interior, y la circuncisión es la del corazón, en espíritu, no en letra; cuya alabanza no viene de los hombres, sino de Dios.
+Sino que *es* judío quien lo *es* en lo oculto, y la circuncisión *es* del corazón, en espíritu, no en letra; cuyo elogio no *es* de los seres humanos, sino de Dios.
 
 ## Capítulo 3
 

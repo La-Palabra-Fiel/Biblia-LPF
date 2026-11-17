@@ -52,6 +52,14 @@ Strong's is an identifier, not a definition. Lexicons document possibilities
 but never choose the contextual sense over surface, grammar, syntax, context,
 or corpus usage.
 
+`editorialLexicalPolicy` contains named-human Spanish realization options and
+constraints. It is editorial policy, not another textual or lexical source.
+Check that the candidate respects binding constraints and that its selected
+option satisfies the stated condition. A `recommended` reference rule is a
+suggestion to surface for human review, not permission to pass a rendering
+that the canonical evidence contradicts. External research and research-note
+paths are not supplied to you.
+
 FORBIDDEN: memory of any Bible version, theology, typology, traditional
 renderings, RV1909, RVR1960, BLE glosses, AHRC/AHLB, raw MACULA data or its
 glosses/translations/LXX/SDBH/semantic fields, web/retrieval, or any source not

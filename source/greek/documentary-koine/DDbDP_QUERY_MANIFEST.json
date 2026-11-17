@@ -1,0 +1,77 @@
+{
+  "schema": "lpf-ddbdp-primary-query-manifest-v1",
+  "status": "authorized-human-lexical-research-only",
+  "targetNormalizedPrefixes": ["μετανο", "μεταμελ"],
+  "upstream": {
+    "repository": "https://github.com/papyri/idp.data",
+    "commit": "56f68ee627b3602acd3ec9e0eee411d5912a9e3a",
+    "commitDate": "2026-11-11T19:08:15Z"
+  },
+  "selection": {
+    "literalGitHubCodeSearches": [
+      {
+        "query": "μετανο repo:papyri/idp.data path:DDbDP",
+        "resultCount": 59
+      },
+      {
+        "query": "μεταμελ repo:papyri/idp.data path:DDbDP",
+        "resultCount": 10
+      }
+    ],
+    "literalSearchUnionCount": 67,
+    "supplementalSplitFormsFromPinnedDiscoveryCorpus": [
+      "DDbDP/18/18658.xml",
+      "DDbDP/20/20062.xml",
+      "DDbDP/27/27748.xml"
+    ],
+    "warning": "Literal code search does not cross EpiDoc elements or line breaks. This is a controlled primary cross-check, not an exhaustive full-corpus concordance."
+  },
+  "localEvaluationCache": {
+    "aggregateAlgorithm": "sha256 over sorted UTF-8 rows path + NUL + file_sha256 + LF",
+    "ddbdp": {
+      "xmlCount": 70,
+      "aggregateSha256": "4a6b9cc8b1a84c6caa7baaae34489657a38e7a31c37ce32ce6c01730558c9e2b"
+    },
+    "hgvMetadata": {
+      "xmlCount": 85,
+      "aggregateSha256": "5d619619335347517e8043ddde16e5257e2a60a64766dd35abe4a1624eb4bded"
+    }
+  },
+  "fullConcordance": {
+    "procedure": "tools/research/ddbdp_primary_inventory.py --repository-root PINNED_CHECKOUT",
+    "ddbdp": {
+      "xmlCount": 67981,
+      "gitTreeSha1": "d39ff5831b5ba7efbf316c600af4c6b340701585"
+    },
+    "hgvMetadata": {
+      "xmlCount": 68023,
+      "gitTreeSha1": "aa2a956bf9bb292cea1c6c3e55da56494c8fc451"
+    },
+    "result": {
+      "generatedAt": "2026-11-11",
+      "artifactSha256": "9ef14fd937400de38dcb95eebd547eee3f59ba8dfd1e5293c07dc4305977ff13",
+      "occurrenceCount": 57,
+      "countsByDateBand": {
+        "diachronic-comparison": 48,
+        "indeterminate-open-range-may-overlap-first-century-ce": 3,
+        "near-contemporary-100-bce-to-200-ce": 6
+      },
+      "missingHgvMetadataForOccurrences": 0
+    }
+  },
+  "authorityLimits": {
+    "allowed": [
+      "primary DDbDP Greek transcription",
+      "EpiDoc restoration and uncertainty markup",
+      "paired HGV date, provenance, and documentary keywords",
+      "named-human lexical dossiers and documented HOLD adjudication"
+    ],
+    "notAllowed": [
+      "semantic definition from frequency alone",
+      "automatic lemma authority",
+      "canonical verse-packet input",
+      "unattended model input",
+      "override of TR1894, Robinson, or permitted MACULA structure"
+    ]
+  }
+}

@@ -78,6 +78,11 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def mapping_sha256(path: Path) -> str:
+    """Hash the mapping ledger in its canonical LF representation."""
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def verify_checkout() -> None:
     actual = subprocess.run(
         ["git", "-C", str(MACULA_ROOT), "rev-parse", "HEAD"],

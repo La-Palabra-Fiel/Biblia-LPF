@@ -20,6 +20,7 @@ from nt_macula import (  # noqa: E402
     load_macula_words,
     lowfat_path,
     map_verse,
+    mapping_sha256,
     sha256,
     validate_mapping_ledger,
     verify_checkout,
@@ -97,7 +98,7 @@ def main() -> int:
         "files": files,
         "mapping": {
             "path": str(LEDGER.relative_to(ROOT)),
-            "sha256": sha256(LEDGER),
+            "sha256": mapping_sha256(LEDGER),
             "policy": MAPPING_POLICY,
             **ledger["summary"],
         },

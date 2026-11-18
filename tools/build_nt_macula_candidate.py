@@ -18,7 +18,7 @@ from nt_macula import (  # noqa: E402
     apply_tr_authority_adaptations,
     apply_tr_authority_fallbacks,
     project_chapter_candidate,
-    sha256,
+    mapping_sha256,
     validate_mapping_ledger,
 )
 
@@ -53,7 +53,7 @@ def main() -> int:
     args = parser.parse_args()
 
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if sha256(MAPPING) != manifest.get("mapping", {}).get("sha256"):
+    if mapping_sha256(MAPPING) != manifest.get("mapping", {}).get("sha256"):
         raise ValueError("MACULA Greek mapping ledger is stale")
     mapping = json.loads(MAPPING.read_text(encoding="utf-8"))
     validate_mapping_ledger(mapping)
@@ -66,7 +66,7 @@ def main() -> int:
     candidate = apply_structure_adjudications(candidate, adjudications)
     candidate = apply_tr_authority_fallbacks(candidate, mapping)
     candidate["provenance"]["structureAdjudications"] = {
-        "path": str(ADJUDICATIONS.relative_to(ROOT)),
+        "path": ADJUDICATIONS.relative_to(ROOT).as_posix(),
         "scope": "chapter",
         "sha256": chapter_adjudication_sha256(
             adjudications, book.slug, args.chapter

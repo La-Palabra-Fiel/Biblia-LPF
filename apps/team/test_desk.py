@@ -13,10 +13,12 @@ class DeskTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
         self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED)
         desk._estimate_packet_cache.clear()
+        desk._nt_syntax_board_cache=None
         desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
         desk._estimate_packet_cache.clear()
+        desk._nt_syntax_board_cache=None
         desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
     def test_model_is_fixed_to_sol(self):
         self.assertEqual(desk.model_name(),"gpt-6.1-sol")
@@ -110,6 +112,16 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(packet["tokens"],[])
         self.assertEqual(packet["editorialLexicalPolicy"],[])
         self.assertEqual(packet["editorialLexicalPolicyReview"],[])
+
+    def test_stale_nt_candidate_is_rebuildable_without_breaking_board(self):
+        book=type("B",(),{"slug":"juan","label":"Juan"})()
+        candidate={"book":"juan","chapter":1,"summary":{"mappedWords":57}}
+        with patch.object(desk,"validate_nt_syntax_candidate"),patch.object(desk,"validate_nt_candidate_adjudication_binding",side_effect=ValueError("stale adjudications")):
+            row=desk.nt_candidate_board_row(candidate,book,1)
+        self.assertFalse(row["candidateBuilt"])
+        self.assertEqual(row["status"],"stale-candidate")
+        self.assertEqual(row["validationError"],"stale adjudications")
+        self.assertEqual(row["summary"]["mappedWords"],57)
 
     def test_nt_chapter_preparation_counts_ready_and_skips_holds(self):
         book=type("B",(),{"slug":"filipenses","label":"Filipenses","testament":"nt"})()

@@ -73,6 +73,8 @@ _threads: dict[str, threading.Thread] = {}
 _stops: dict[str, threading.Event] = {}
 _chapter_counts: dict[str, int] = {}
 _nt_mapping_cache: tuple[str, dict] | None = None
+_nt_syntax_board_cache: tuple[str, dict] | None = None
+_nt_syntax_board_lock = threading.Lock()
 _estimate_packet_cache: dict[tuple[str, str, int, int | None], tuple[float, dict[int, dict]]] = {}
 ESTIMATE_PACKET_CACHE_SECONDS = 120
 
@@ -1308,6 +1310,52 @@ def validate_nt_candidate_adjudication_binding(candidate: dict) -> None:
         raise ValueError("The NT structural candidate is not bound to current human adjudications.")
 
 
+def nt_candidate_board_row(candidate: dict, book, chapter: int) -> dict:
+    """Describe one candidate without letting it break the whole NT board."""
+    try:
+        validate_nt_syntax_candidate(candidate)
+        validate_nt_candidate_adjudication_binding(candidate)
+        if candidate.get("book") != book.slug or candidate.get("chapter") != chapter:
+            raise ValueError("Candidate identity does not match its filename.")
+    except ValueError as exc:
+        summary = candidate.get("summary") if isinstance(candidate.get("summary"), dict) else {}
+        return {
+            "book": book.slug,
+            "label": book.label,
+            "chapter": chapter,
+            "candidateBuilt": False,
+            "status": "stale-candidate",
+            "validationError": str(exc),
+            "summary": {
+                "mappedWords": int(summary.get("mappedWords") or 0),
+                "trOnlyTokens": int(summary.get("trOnlyTokens") or 0),
+                "unmatchedMaculaWords": int(summary.get("unmatchedMaculaWords") or 0),
+                "robinsonDisagreements": int(summary.get("robinsonDisagreements") or 0),
+            },
+        }
+    return {
+        "book": book.slug,
+        "label": book.label,
+        "chapter": chapter,
+        "candidateBuilt": True,
+        "status": candidate["status"],
+        "summary": candidate["summary"],
+    }
+
+
+def nt_syntax_board_signature() -> str:
+    paths = sorted(NT_SYNTAX_CANDIDATES.glob("*.macula.json"))
+    paths.extend((NT_STRUCTURE_ADJUDICATIONS, NT_MACULA_MAPPING, NT_MACULA_MANIFEST))
+    rows = []
+    for path in paths:
+        try:
+            stat = path.stat()
+            rows.append((str(path.relative_to(ROOT)), stat.st_size, stat.st_mtime_ns))
+        except FileNotFoundError:
+            rows.append((str(path), None, None))
+    return hashlib.sha256(json.dumps(rows, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
 def load_validated_nt_mapping() -> dict:
     """Load the pinned triple-agreement ledger once per content hash."""
     global _nt_mapping_cache
@@ -1327,6 +1375,20 @@ def load_validated_nt_mapping() -> dict:
 
 def nt_syntax_board() -> dict:
     """List every NT chapter, including candidates not built yet."""
+    global _nt_syntax_board_cache
+    signature = nt_syntax_board_signature()
+    if _nt_syntax_board_cache and _nt_syntax_board_cache[0] == signature:
+        return _nt_syntax_board_cache[1]
+    with _nt_syntax_board_lock:
+        signature = nt_syntax_board_signature()
+        if _nt_syntax_board_cache and _nt_syntax_board_cache[0] == signature:
+            return _nt_syntax_board_cache[1]
+        result = _build_nt_syntax_board()
+        _nt_syntax_board_cache = (signature, result)
+        return result
+
+
+def _build_nt_syntax_board() -> dict:
     available_by_key = {}
     by_stem = {book.utr_stem: book for book in NT}
     for path in sorted(NT_SYNTAX_CANDIDATES.glob("*.macula.json")):
@@ -1337,18 +1399,9 @@ def nt_syntax_board() -> dict:
         if book is None or not parts[1].isdigit():
             continue
         candidate = read_json(path, {})
-        validate_nt_syntax_candidate(candidate)
-        validate_nt_candidate_adjudication_binding(candidate)
-        if candidate.get("book") != book.slug or candidate.get("chapter") != int(parts[1]):
-            raise ValueError(f"{path.name}: candidate identity does not match its filename.")
-        available_by_key[(book.slug, int(parts[1]))] = {
-            "book": book.slug,
-            "label": book.label,
-            "chapter": int(parts[1]),
-            "candidateBuilt": True,
-            "status": candidate["status"],
-            "summary": candidate["summary"],
-        }
+        available_by_key[(book.slug, int(parts[1]))] = nt_candidate_board_row(
+            candidate, book, int(parts[1])
+        )
     mapping = load_validated_nt_mapping()
     by_code = {TR_CODE_BY_STEM[book.utr_stem]: book for book in NT}
     chapter_rows: dict[tuple[str, int], list[dict]] = {}
@@ -1389,6 +1442,16 @@ def nt_syntax_board() -> dict:
         "mappingPolicy": NT_MACULA_MAPPING_POLICY,
         "candidates": available,
     }
+
+
+def warm_nt_syntax_board() -> None:
+    """Fill the read-only NT menu cache before the first reviewer opens it."""
+    try:
+        nt_syntax_board()
+    except (OSError, ValueError):
+        # The request endpoint still reports any global mapping defect. A
+        # best-effort startup warmup must never stop Team Desk itself.
+        return
 
 
 def nt_structure_phase_status() -> dict:

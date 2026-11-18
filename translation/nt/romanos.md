@@ -939,7 +939,7 @@ los cuales son israelitas, de quienes son la adopción y la gloria y los pactos 
 
 ### 9:5
 
-de quienes son los padres, y de quienes es el Cristo según la carne, el que es Dios sobre todas las cosas, bendito por los siglos. Amén.
+de quienes *son* los padres, y de quienes *es* el Cristo según la carne, el que es Dios sobre todas las cosas, bendito por los siglos. Amén.
 
 ### 9:6
 
@@ -987,7 +987,7 @@ Así que no depende del que quiere ni del que corre, sino de Dios que tiene mise
 
 ### 9:17
 
-Porque la Escritura dice a Faraón: «Para esto mismo te levanté, para mostrar en ti mi poder, y para que mi nombre sea anunciado en toda la tierra».
+Pues la Escritura dice al Faraón: «Para esto mismo te levanté, para mostrar en ti Mi poder y para que Mi nombre sea proclamado en toda la tierra».
 
 ### 9:18
 

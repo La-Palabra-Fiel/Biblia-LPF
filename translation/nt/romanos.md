@@ -769,11 +769,11 @@ Por tanto, ahora no *hay* condenación alguna para los que *están* en Cristo Je
 
 ### 8:2
 
-Porque la ley del Espíritu de vida en Cristo Jesús te ha librado de la ley del pecado y de la muerte
+Pues la ley del Espíritu de la vida, en Cristo Jesús, me liberó de la ley del pecado y de la muerte.
 
 ### 8:3
 
-Porque lo que era imposible para la ley, por cuanto era débil por medio de la carne Dios, enviando a su propio Hijo en semejanza de carne de pecado y por el pecado, condenó al pecado en la carne
+Pues, en cuanto a lo imposible para la ley —en lo que era débil por medio de la carne—, Dios, habiendo enviado a Su propio Hijo en semejanza de carne de pecado y por el pecado, condenó el pecado en la carne.
 
 ### 8:4
 
@@ -785,19 +785,19 @@ Pues los que viven según la carne piensan en las cosas de la carne; pero los qu
 
 ### 8:6
 
-Porque el designio de la carne es muerte, pero el designio del Espíritu es vida y paz
+Pues el pensamiento de la carne *es* muerte, pero el pensamiento del Espíritu *es* vida y paz.
 
 ### 8:7
 
-porque el designio de la carne es enemistad contra Dios pues no se sujeta a la ley de Dios, ni tampoco puede
+Porque el pensamiento de la carne *es* hostilidad contra Dios, pues no se somete a la ley de Dios, porque tampoco puede.
 
 ### 8:8
 
-Y los que están en la carne no pueden agradar a Dios
+Y los que están en la carne no pueden agradar a Dios.
 
 ### 8:9
 
-Pero ustedes no están en la carne, sino en el Espíritu si es que el Espíritu de Dios mora en ustedes Y si alguno no tiene el Espíritu de Cristo, este no es de él
+Pero ustedes no están en la carne, sino en el Espíritu, si en verdad el Espíritu de Dios habita en ustedes. Pero si alguien no tiene el Espíritu de Cristo, ese no es Suyo.
 
 ### 8:10
 
@@ -805,119 +805,119 @@ Pero si Cristo *está* en ustedes, el cuerpo ciertamente *está* muerto por caus
 
 ### 8:11
 
-Y si el Espíritu del que resucitó a Jesús de entre los muertos mora en ustedes el que resucitó de entre los muertos a Cristo Jesús también dará vida a sus cuerpos mortales por medio de su Espíritu que mora en ustedes
+Pero si el Espíritu del que levantó a Jesús de entre los muertos habita en ustedes, el que levantó al Cristo de entre los muertos dará vida también a los cuerpos mortales de ustedes por medio de Su Espíritu que habita en ustedes.
 
 ### 8:12
 
-Así que, hermanos, deudores somos, no a la carne para vivir conforme a la carne
+Así pues, hermanos, somos deudores, no a la carne para vivir según la carne.
 
 ### 8:13
 
-Porque si viven conforme a la carne, van a morir; pero si por el Espíritu dan muerte a las prácticas del cuerpo, vivirán
+Porque si viven según la carne, van a morir; pero si por el Espíritu hacen morir las obras del cuerpo, vivirán.
 
 ### 8:14
 
-Porque todos los que son guiados por el Espíritu de Dios, estos son hijos de Dios
+Pues todos los que son guiados por el Espíritu de Dios, esos son hijos de Dios.
 
 ### 8:15
 
-Porque no recibieron un espíritu de servidumbre para volver al temor sino que recibieron el Espíritu de adopción, por el cual clamamos: ¡Abba, Padre!
+Pues no recibieron un espíritu de esclavitud para temer de nuevo, sino que recibieron un espíritu de adopción, en el cual clamamos: «¡Abba, Padre!».”
 
 ### 8:16
 
-El Espíritu mismo da testimonio a nuestro espíritu de que somos hijos de Dios
+El Espíritu mismo da testimonio con nuestro espíritu de que somos hijos de Dios.
 
 ### 8:17
 
-Y si hijos, también herederos; herederos de Dios y coherederos con Cristo, si es que padecemos con él para que también seamos glorificados con él
+Y si *somos* hijos, también *somos* herederos; en efecto, herederos de Dios y coherederos con Cristo, si en verdad sufrimos juntos, para que también seamos glorificados juntos.
 
 ### 8:18
 
-Porque considero que los sufrimientos del tiempo presente no son dignos de compararse con la gloria que ha de ser revelada en nosotros
+Pues considero que los sufrimientos del tiempo presente no *son* comparables con la gloria que ha de ser revelada a nosotros.
 
 ### 8:19
 
-Porque la creación aguarda con anhelo la revelación de los hijos de Dios
+Pues la expectación anhelante de la creación aguarda con ansia la revelación de los hijos de Dios.
 
 ### 8:20
 
-Porque la creación fue sujetada a vanidad, no por su voluntad, sino por causa del que la sujetó, en esperanza
+Pues la creación fue sometida a la futilidad, no por voluntad propia, sino a causa de quien la sometió con esperanza.
 
 ### 8:21
 
-de que también la creación misma será liberada de la servidumbre de corrupción a la libertad de la gloria de los hijos de Dios
+Que también la creación misma será liberada de la esclavitud de la corrupción para la libertad de la gloria de los hijos de Dios.
 
 ### 8:22
 
-Porque sabemos que toda la creación gime a una y a una está con dolores de parto hasta ahora
+Pues sabemos que toda la creación gime en conjunto y sufre en conjunto dolores de parto hasta ahora.
 
 ### 8:23
 
-Y no solo ella, sino también nosotros mismos, que tenemos las primicias del Espíritu, también nosotros gemimos dentro de nosotros mismos aguardando la adopción, la redención de nuestro cuerpo
+Y no solo *eso*, sino también nosotros mismos, que tenemos las primicias del Espíritu, también nosotros mismos gemimos dentro de nosotros mismos, esperando con anhelo la adopción como hijos, la redención de nuestro cuerpo.
 
 ### 8:24
 
-Porque en esperanza fuimos salvos; pero la esperanza que se ve no es esperanza; porque lo que uno ve, ¿por qué lo espera?
+Pues en la esperanza fuimos salvados. Pero la esperanza que se ve no es esperanza; pues lo que alguien ve, ¿por qué lo espera todavía?
 
 ### 8:25
 
-Pero si esperamos lo que no vemos, con paciencia lo aguardamos
+Pero si esperamos lo que no vemos, lo aguardamos con perseverancia.
 
 ### 8:26
 
-Y de igual manera también el Espíritu nos ayuda en nuestra debilidad porque no sabemos qué pedir como conviene pero el Espíritu mismo intercede con gemidos indecibles
+Y de igual manera también el Espíritu ayuda en nuestras debilidades; pues no sabemos qué pedir en oración como se debe, pero el Espíritu mismo intercede por nosotros con gemidos inexpresables.
 
 ### 8:27
 
-Y el que escudriña los corazones sabe cuál es el designio del Espíritu porque conforme a Dios intercede por los santos
+Y el que examina los corazones sabe cuál *es* el pensamiento del Espíritu, porque intercede por los santos conforme a Dios.
 
 ### 8:28
 
-Y sabemos que a los que aman a Dios, todas las cosas les ayudan para bien, a los que son llamados conforme a su propósito
+Ahora bien, sabemos que, para los que aman a Dios, todas las cosas cooperan para bien, para los que son llamados conforme al propósito.
 
 ### 8:29
 
-Porque a los que de antemano conoció, también los predestinó a ser conformes a la imagen de su Hijo para que él sea el primogénito entre muchos hermanos
+Porque a quienes conoció de antemano también los predestinó a ser conformes a la imagen de Su Hijo, para que Él fuera el primogénito entre muchos hermanos.
 
 ### 8:30
 
-Y a los que predestinó, a estos también llamó y a los que llamó, a estos también justificó y a los que justificó, a estos también glorificó
+Y a quienes predestinó, a estos también los llamó; y a quienes llamó, a estos también los justificó; y a quienes justificó, a estos también los glorificó.
 
 ### 8:31
 
-¿Qué, pues, diremos a estas cosas? Si Dios es por nosotros, ¿quién contra nosotros?
+¿Qué diremos, entonces, respecto a estas cosas? Si Dios *está* a favor de nosotros, ¿quién *está* contra nosotros?
 
 ### 8:32
 
-El que no escatimó ni a su propio Hijo, sino que lo entregó por todos nosotros ¿cómo no nos dará también con él todas las cosas?
+El que ciertamente no perdonó a Su propio Hijo, sino que Lo entregó por todos nosotros, ¿cómo no nos concederá también, junto con Él, todas las cosas?
 
 ### 8:33
 
-¿Quién acusará a los escogidos de Dios? Dios es el que justifica
+¿Quién presentará cargos contra los elegidos de Dios? Dios *es* el que justifica.
 
 ### 8:34
 
-¿Quién es el que condena? Cristo es el que murió; más aún, el que también resucitó, el cual además está a la diestra de Dios el cual también intercede por nosotros
+¿Quién *es* el que condena? Cristo *es* el que murió; más aún, también fue resucitado, quien también está a la derecha de Dios, quien también intercede por nosotros.
 
 ### 8:35
 
-¿Quién nos separará del amor de Cristo? ¿Tribulación, o angustia, o persecución, o hambre, o desnudez, o peligro, o espada?
+¿Quién nos separará del amor del Cristo? ¿La aflicción o la angustia o la persecución o el hambre o la desnudez o el peligro o la espada?
 
 ### 8:36
 
-Como está escrito: Por causa de ti somos muertos todo el día; somos contados como ovejas de matadero
+Como está escrito: «Por causa de ti se nos da muerte todo el día; fuimos considerados como ovejas para la matanza».
 
 ### 8:37
 
-Pero en todas estas cosas somos más que vencedores por medio del que nos amó
+Pero en todo esto vencemos con creces por medio de quien nos amó.
 
 ### 8:38
 
-Porque estoy convencido de que ni muerte, ni vida, ni ángeles, ni principados, ni lo presente, ni lo por venir, ni potestades
+Pues estoy convencido de que ni la muerte ni la vida ni los ángeles ni los poderes ni las fuerzas ni lo presente ni lo venidero,
 
 ### 8:39
 
-ni lo alto, ni lo profundo, ni ninguna otra cosa creada podrá separarnos del amor de Dios que es en Cristo Jesús nuestro Señor
+Ni la altura, ni la profundidad, ni ninguna otra criatura podrá separarnos del amor de Dios que *está* en Cristo Jesús, nuestro Señor.
 
 ## Capítulo 9
 

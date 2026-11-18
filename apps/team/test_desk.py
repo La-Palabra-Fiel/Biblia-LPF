@@ -12,9 +12,11 @@ class DeskTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
         self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED)
+        desk._estimate_packet_cache.clear()
         desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
+        desk._estimate_packet_cache.clear()
         desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
     def test_model_is_fixed_to_sol(self):
         self.assertEqual(desk.model_name(),"gpt-6.1-sol")
@@ -465,6 +467,17 @@ class DeskTests(unittest.TestCase):
         sample="א"*1000
         self.assertEqual(len(sample.encode("utf-8")),2000)
         self.assertEqual(desk.estimate_input_tokens(sample),720)
+
+    def test_recent_cost_estimate_reuses_packets_and_rechecks_candidates(self):
+        book=type("B",(),{"slug":"exodo","label":"Éxodo","testament":"ot"})()
+        packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[]}
+        root=Path(self.tmp.name)
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,5,[1,2])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"build_packet",return_value=packet) as build,patch.object(desk,"packet_path",side_effect=lambda s,c,v:root/f"{v}.json"),patch.object(desk,"reusable_candidate",return_value=(None,{})) as reusable,patch.object(desk,"pipeline_dir",return_value=root),patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
+            first=desk.prepare_estimate("Ana","exodo",5,"11111111")
+            second=desk.prepare_estimate("Ana","exodo",5,"11111111")
+        self.assertEqual(first["estimatedMaximumUsd"],second["estimatedMaximumUsd"])
+        self.assertEqual(build.call_count,2)
+        self.assertEqual(reusable.call_count,4)
     def test_prompt_rejects_fragmentary_identification(self):
         prompt=(Path(desk.__file__).resolve().parents[2]/"tools"/"pipeline"/"draft_prompt.md").read_text(encoding="utf-8")
         self.assertIn("Él, Aarón y Moisés",prompt)
@@ -490,6 +503,8 @@ class DeskTests(unittest.TestCase):
         self.assertIn("Revisión humana local:</b> sin costo",html)
         self.assertIn("/api/audit-verse",html)
         self.assertIn("Máximo calculado",html)
+        self.assertIn("Calculando costo…",html)
+        self.assertIn("Los capítulos largos pueden tardar unos segundos",html)
         self.assertIn("La revisión encontró problemas",html)
         self.assertIn("g.alignmentFindings",html)
         self.assertIn("reglas anteriores",html)

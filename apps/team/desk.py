@@ -16,6 +16,7 @@ import re
 import subprocess
 import sys
 import threading
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -71,6 +72,8 @@ _threads: dict[str, threading.Thread] = {}
 _stops: dict[str, threading.Event] = {}
 _chapter_counts: dict[str, int] = {}
 _nt_mapping_cache: tuple[str, dict] | None = None
+_estimate_packet_cache: dict[tuple[str, str, int, int | None], tuple[float, dict[int, dict]]] = {}
+ESTIMATE_PACKET_CACHE_SECONDS = 120
 
 # Measured across the stored Sol requests, input tokens are at most
 # about 0.341 per UTF-8 byte. Keep a small safety margin without incorrectly
@@ -701,6 +704,15 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         if selected_verse not in verses:
             raise ValueError("That verse is not in this Protestant chapter.")
         selected_verses = [selected_verse]
+    cache_key = (person, book.slug, number, selected_verse)
+    cache_now = time.monotonic()
+    with _lock:
+        expired = [key for key, (created, _) in _estimate_packet_cache.items() if cache_now - created > ESTIMATE_PACKET_CACHE_SECONDS]
+        for key in expired:
+            _estimate_packet_cache.pop(key, None)
+        cached = _estimate_packet_cache.get(cache_key)
+        cached_packets = cached[1] if cached else {}
+    estimate_packets: dict[int, dict] = {}
     draft_calls = audit_calls = skipped_human = reused_candidates = 0
     structural_holds: list[dict] = []
     estimated_input_tokens = 0
@@ -709,9 +721,17 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         if human_review_is_current(book.slug, number, verse):
             skipped_human += 1
             continue
-        # Preparation always rebuilds the derived packet. Do the same in
-        # memory here so a stale stored packet cannot understate paid calls.
-        packet = build_packet(book.slug, number, verse)
+        # The first estimate rebuilds every derived packet in memory so a
+        # stale stored packet cannot understate paid calls. Cost confirmation
+        # immediately calls this function a second time; reuse the exact
+        # packets displayed in that recent estimate while
+        # rechecking human approvals and candidate compatibility below. This
+        # avoids making a long OT chapter look frozen twice without weakening
+        # the server-side maximum-cost check.
+        packet = cached_packets.get(verse)
+        if packet is None:
+            packet = build_packet(book.slug, number, verse)
+        estimate_packets[verse] = packet
         # A HOLD packet is still the canonical, no-cost explanation of what
         # must be adjudicated. Persist it so Team Desk can show the source
         # tokens without pretending that translation/alignment already exist.
@@ -750,6 +770,8 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
     all_flagged_usd = conservative_usd
     maximum_paid_calls = draft_calls
     likely_new_audits = 0
+    with _lock:
+        _estimate_packet_cache[cache_key] = (time.monotonic(), estimate_packets)
     return {
         "book": book.slug,
         "chapter": number,

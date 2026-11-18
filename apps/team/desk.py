@@ -252,12 +252,24 @@ def enforce_human_adjudication(prior: dict, gate: dict, spanish: str, decision: 
 
 
 def load_claims() -> dict:
-    data = read_json(CLAIMS, {})
+    with _lock:
+        data = read_json(CLAIMS, {})
     return data if isinstance(data, dict) else {}
 
 
 def save_claims(value: dict) -> None:
-    write_json(CLAIMS, value)
+    with _lock:
+        # Windows can refuse an atomic replace while another program has the
+        # ledger open. Retry briefly without changing the atomic write.
+        for delay in (0.05, 0.10, 0.20, 0.40):
+            try:
+                write_json(CLAIMS, value)
+                return
+            except PermissionError as exc:
+                if getattr(exc, "winerror", None) not in (5, 32):
+                    raise
+                time.sleep(delay)
+        write_json(CLAIMS, value)
 
 
 def load_people() -> dict:

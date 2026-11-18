@@ -46,6 +46,7 @@ from books import NT, OT, get_book  # noqa: E402
 from nt_macula import (  # noqa: E402
     MAPPING_POLICY as NT_MACULA_MAPPING_POLICY,
     TR_AUTHORITY_FALLBACK_RULE,
+    mapping_sha256,
     validate_candidate as validate_nt_syntax_candidate,
     validate_mapping_ledger as validate_nt_mapping_ledger,
 )
@@ -1297,7 +1298,7 @@ def nt_chapter_adjudication_fingerprint(book: str, chapter: int) -> str:
 def validate_nt_candidate_adjudication_binding(candidate: dict) -> None:
     binding = (candidate.get("provenance") or {}).get("structureAdjudications") or {}
     if (
-        binding.get("path") != str(NT_STRUCTURE_ADJUDICATIONS.relative_to(ROOT))
+        str(binding.get("path") or "").replace("\\", "/") != NT_STRUCTURE_ADJUDICATIONS.relative_to(ROOT).as_posix()
         or not NT_STRUCTURE_ADJUDICATIONS.is_file()
         or binding.get("scope") != "chapter"
         or binding.get("sha256") != nt_chapter_adjudication_fingerprint(
@@ -1313,7 +1314,7 @@ def load_validated_nt_mapping() -> dict:
     manifest = read_json(NT_MACULA_MANIFEST, {})
     mapping = read_json(NT_MACULA_MAPPING, {})
     expected = (manifest.get("mapping") or {}).get("sha256")
-    actual = file_fingerprint(NT_MACULA_MAPPING) if NT_MACULA_MAPPING.is_file() else ""
+    actual = mapping_sha256(NT_MACULA_MAPPING) if NT_MACULA_MAPPING.is_file() else ""
     if not expected or actual != expected:
         raise ValueError("The NT MACULA mapping ledger is missing or stale.")
     if (manifest.get("mapping") or {}).get("policy") != NT_MACULA_MAPPING_POLICY:

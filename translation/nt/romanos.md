@@ -975,7 +975,7 @@ como está escrito: «A Jacob amé, pero a Esaú aborrecí».
 
 ### 9:14
 
-¿Qué, pues, diremos? ¿Hay injusticia de parte de Dios? ¡De ninguna manera!
+¿Qué diremos entonces? ¿Acaso *hay* injusticia de parte de Dios? ¡Que no suceda!
 
 ### 9:15
 
@@ -1047,7 +1047,7 @@ pero Israel, persiguiendo una ley de justicia, no llegó a esa ley.
 
 ### 9:32
 
-¿Por qué? Porque no fue por fe, sino como por obras; tropezaron con la piedra de tropiezo,
+¿Por qué? Porque no *la buscaban* por fe, sino como si *fuera* por obras de la ley. Pues tropezaron con la piedra del tropiezo.
 
 ### 9:33
 

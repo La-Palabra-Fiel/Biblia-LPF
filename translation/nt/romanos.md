@@ -923,11 +923,11 @@ Ni la altura, ni la profundidad, ni ninguna otra criatura podrá separarnos del 
 
 ### 9:1
 
-Digo verdad en Cristo —no miento—, dándome testimonio mi conciencia en el Espíritu Santo,
+Digo la verdad en Cristo, no miento; mi conciencia da testimonio conmigo en el Espíritu Santo.
 
 ### 9:2
 
-de que tengo gran tristeza e incesante dolor en mi corazón.
+que tengo gran tristeza y dolor incesante en mi corazón.
 
 ### 9:3
 
@@ -935,7 +935,7 @@ Porque desearía ser yo mismo anatema, separado de Cristo, por mis hermanos, mis
 
 ### 9:4
 
-los cuales son israelitas, de quienes son la adopción y la gloria y los pactos y la legislación y el culto y las promesas,
+Quienes son israelitas, a quienes pertenecen la adopción y la gloria y los pactos y la promulgación de la ley y el culto y las promesas.
 
 ### 9:5
 
@@ -943,35 +943,35 @@ de quienes *son* los padres, y de quienes *es* el Cristo según la carne, el que
 
 ### 9:6
 
-Pero no es como si hubiera fallado la palabra de Dios. Porque no todos los que descienden de Israel son Israel;
+Pero no *es* como si la palabra de Dios hubiera fallado; pues los que proceden de Israel no *son* todos ellos Israel.
 
 ### 9:7
 
-ni porque son descendencia de Abraham son todos hijos, sino: «En Isaac te será llamada descendencia».
+Tampoco porque son descendencia de Abraham *son* todos hijos, sino: «En Isaac será llamada tu descendencia».
 
 ### 9:8
 
-Es decir, no los hijos de la carne son estos hijos de Dios, sino que los hijos de la promesa son contados como descendencia.
+Esto es: los hijos de la carne, estos no *son* hijos de Dios, sino que los hijos de la promesa son considerados como descendencia.
 
 ### 9:9
 
-Porque palabra de promesa es esta: «Por este tiempo vendré, y Sara tendrá un hijo».
+Pues la declaración de promesa *es* esta: «En este tiempo vendré, y habrá un hijo para Sara».
 
 ### 9:10
 
-Y no solo eso, sino también Rebeca, al tener relaciones de uno solo, Isaac nuestro padre;
+Y no solo *eso*, sino también Rebeca, estando encinta de uno solo, Isaac, nuestro padre…
 
 ### 9:11
 
-porque aún no habían nacido ni habían hecho algo bueno o malo, para que el propósito de Dios según elección permaneciera,
+Pues, cuando aún no habían nacido ni habían hecho nada bueno o malo, para que el propósito de Dios conforme a elección permaneciera, no por obras sino por quien llama,
 
 ### 9:12
 
-no por obras sino por el que llama, se le dijo: «El mayor servirá al menor»;
+Se le dijo que el mayor servirá al menor.
 
 ### 9:13
 
-como está escrito: «A Jacob amé, pero a Esaú aborrecí».
+Tal como está escrito: «Amé a Jacob, pero odié a Esaú».
 
 ### 9:14
 
@@ -979,11 +979,11 @@ como está escrito: «A Jacob amé, pero a Esaú aborrecí».
 
 ### 9:15
 
-Porque a Moisés dice: «Tendré misericordia del que yo tenga misericordia, y compadeceré al que yo compadezca».
+Pues dice a Moisés: «Tendré misericordia de quien tenga misericordia y tendré compasión de quien tenga compasión».
 
 ### 9:16
 
-Así que no depende del que quiere ni del que corre, sino de Dios que tiene misericordia.
+Así pues, no *depende* de quien quiere ni de quien corre, sino de Dios, que tiene misericordia.
 
 ### 9:17
 
@@ -991,59 +991,59 @@ Pues la Escritura dice al Faraón: «Para esto mismo te levanté, para mostrar e
 
 ### 9:18
 
-Así que de quien quiere tiene misericordia, y a quien quiere endurece.
+Así pues, tiene misericordia de quien quiere, y endurece a quien quiere.
 
 ### 9:19
 
-Me dirás entonces: «¿Por qué, pues, aún culpa? Porque ¿quién ha resistido a su voluntad?»
+Entonces me dirás: «¿Por qué todavía reprocha? Pues ¿quién se ha resistido a Su voluntad?».
 
 ### 9:20
 
-Pero, oh hombre, ¿quién eres tú que respondes contra Dios? ¿Acaso dirá lo formado al que lo formó: «¿Por qué me hiciste así?»?
+Más bien, oh hombre, ¿quién eres tú, que replicas a Dios? ¿Acaso dirá lo moldeado a quien lo moldeó: «¿Por qué me hiciste así?»?
 
 ### 9:21
 
-¿O no tiene autoridad el alfarero sobre el barro, de la misma masa, para hacer una vasija para honor y otra para deshonra?
+¿O no tiene el alfarero autoridad sobre el barro para hacer de la misma masa una vasija para honra y otra para deshonra?
 
 ### 9:22
 
-¿Y si Dios, queriendo mostrar la ira y dar a conocer su poder, soportó con mucha paciencia vasijas de ira preparadas para destrucción,
+Pero si Dios, queriendo manifestar la ira y dar a conocer Su poder, soportó con mucha paciencia vasijas de ira preparadas para la destrucción…
 
 ### 9:23
 
-y para dar a conocer las riquezas de su gloria sobre vasijas de misericordia que preparó de antemano para gloria,
+y para que diera a conocer la riqueza de Su gloria en vasos de misericordia, que preparó de antemano para la gloria
 
 ### 9:24
 
-a los cuales también llamó, a nosotros, no solo de entre los judíos sino también de entre los gentiles?
+A quienes también llamó, a nosotros, no solo de entre los judíos, sino también de entre los gentiles.
 
 ### 9:25
 
-Como también en Oseas dice: «Llamaré pueblo mío al que no era mi pueblo, y amada a la que no era amada»;
+Como también dice en Oseas: «Llamaré “Mi pueblo” al que no *es* Mi pueblo, y “amada” a la que no ha sido amada».
 
 ### 9:26
 
-y será en el lugar donde se les dijo: «Ustedes no son mi pueblo», allí serán llamados hijos del Dios vivo.
+Y sucederá que en el lugar donde se les dijo: «Ustedes no *son* Mi pueblo», allí serán llamados hijos del Dios vivo.
 
 ### 9:27
 
-E Isaías clama acerca de Israel: «Aunque el número de los hijos de Israel sea como la arena del mar, el remanente será salvado;
+E Isaías clama acerca de Israel: «Aunque el número de los hijos de Israel sea como la arena del mar, el remanente será salvado».
 
 ### 9:28
 
-porque el Señor ejecutará su palabra sobre la tierra, concluyéndola y abreviándola».
+porque el Señor cumplirá *Su* palabra y la abreviará con justicia; pues hará efectiva *Su* palabra abreviada sobre la tierra».
 
 ### 9:29
 
-Y como Isaías había dicho de antemano: «Si el Señor Sebaot no nos hubiera dejado descendencia, como Sodoma hubiéramos llegado a ser, y semejantes a Gomorra».
+Y tal como ha dicho antes Isaías: «Si el Señor de los ejércitos no nos hubiera dejado semilla, habríamos llegado a ser como Sodoma y habríamos sido hechos semejantes a Gomorra».
 
 ### 9:30
 
-¿Qué, pues, diremos? Que los gentiles, que no perseguían justicia, alcanzaron justicia, la justicia que es por la fe;
+¿Qué diremos entonces? Que los gentiles, que no perseguían justicia, alcanzaron justicia, concretamente la justicia que procede de la fe.
 
 ### 9:31
 
-pero Israel, persiguiendo una ley de justicia, no llegó a esa ley.
+Pero Israel, persiguiendo la ley de justicia, no llegó a la ley de justicia.
 
 ### 9:32
 
@@ -1051,7 +1051,7 @@ pero Israel, persiguiendo una ley de justicia, no llegó a esa ley.
 
 ### 9:33
 
-como está escrito: «He aquí, pongo en Sión piedra de tropiezo y roca de escándalo, y el que cree en él no será avergonzado».
+Como está escrito: «Mira, pongo en Sion una piedra de tropiezo y una roca que hace caer; y todo el que cree en él no será avergonzado».
 
 ## Capítulo 10
 

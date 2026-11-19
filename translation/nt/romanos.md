@@ -1057,87 +1057,87 @@ Como está escrito: «Mira, pongo en Sion una piedra de tropiezo y una roca que 
 
 ### 10:1
 
-Hermanos, el deseo de mi corazón y mi súplica a Dios por ellos es para salvación.
+Hermanos, ciertamente el deseo de mi corazón y la súplica a Dios por Israel tienen por fin la salvación.
 
 ### 10:2
 
-Porque les doy testimonio de que tienen celo de Dios, pero no conforme a conocimiento pleno;
+Pues doy testimonio a su favor de que tienen celo por Dios, pero no conforme al conocimiento.
 
 ### 10:3
 
-porque, desconociendo la justicia de Dios y buscando establecer la propia, no se sometieron a la justicia de Dios.
+Pues, desconociendo la justicia de Dios y buscando establecer su propia justicia, no se sometieron a la justicia de Dios.
 
 ### 10:4
 
-Porque el fin de la ley es Cristo, para justicia a todo el que cree.
+Pues Cristo *es* el fin de la ley para justicia, para todo el que cree.
 
 ### 10:5
 
-Porque Moisés escribe acerca de la justicia que es por la ley: «El hombre que la haga vivirá por ella».
+Pues Moisés escribe acerca de la justicia que procede de la ley que el hombre que haya hecho esas cosas vivirá por ellas.
 
 ### 10:6
 
-Pero la justicia que es por la fe dice así: «No digas en tu corazón: “¿Quién subirá al cielo?”» (esto es, para hacer bajar a Cristo);
+Pero la justicia por la fe dice así: «No digas en tu corazón: “¿Quién subirá al cielo?”»; esto es, hacer bajar a Cristo.
 
 ### 10:7
 
-o: «“¿Quién descenderá al abismo?”» (esto es, para hacer subir a Cristo de entre los muertos).
+O: «¿Quién bajará al abismo?». Esto es, hacer subir a Cristo de entre los muertos.
 
 ### 10:8
 
-Pero ¿qué dice? «Cerca de ti está la palabra, en tu boca y en tu corazón» (esto es, la palabra de la fe que predicamos):
+Pero ¿qué dice? «Cerca de ti está la palabra, en tu boca y en tu corazón». Esto es la palabra de la fe que proclamamos.
 
 ### 10:9
 
-que si confiesas con tu boca a Jesús como Señor, y crees en tu corazón que Dios lo levantó de entre los muertos, serás salvado.
+Porque si confiesas con tu boca al Señor Jesús y crees en tu corazón que Dios Lo levantó de entre los muertos, serás salvado.
 
 ### 10:10
 
-Porque con el corazón se cree para justicia, y con la boca se confiesa para salvación.
+Pues con el corazón se cree para justicia, y con la boca se confiesa para salvación.
 
 ### 10:11
 
-Porque la Escritura dice: «Todo el que cree en él no será avergonzado».
+Pues la Escritura dice: «Todo el que cree en Él no será avergonzado».
 
 ### 10:12
 
-Porque no hay distinción entre judío y griego, pues el mismo Señor de todos es rico para con todos los que lo invocan;
+Pues no hay distinción entre judío y griego, porque el mismo Señor *es* de todos, siendo rico para todos los que Lo invocan.
 
 ### 10:13
 
-porque todo el que invoque el nombre del Señor será salvado.
+Porque todo el que invoque el nombre del Señor será salvado.
 
 ### 10:14
 
-¿Cómo, pues, invocarán a aquel en quien no han creído? ¿Y cómo creerán en aquel de quien no han oído? ¿Y cómo oirán sin quien predique?
+¿Cómo, entonces, invocarán a aquel en quien no han creído? ¿Y cómo creerán en aquel a quien no han oído? ¿Y cómo oirán sin alguien que predique?
 
 ### 10:15
 
-¿Y cómo predicarán si no son enviados? Como está escrito: «¡Cuán hermosos son los pies de los que anuncian buenas nuevas!»
+¿Y cómo predicarán si no son enviados? Como está escrito: «¡Qué hermosos *son* los pies de los que anuncian buenas noticias de paz, de los que anuncian buenas noticias de las cosas buenas!»
 
 ### 10:16
 
-Pero no todos obedecieron al evangelio. Porque Isaías dice: «Señor, ¿quién creyó a nuestro anuncio?»
+Pero no todos obedecieron al evangelio, pues Isaías dice: «Señor, ¿quién creyó en nuestro mensaje?»
 
 ### 10:17
 
-Así que la fe es por el oír, y el oír por la palabra de Cristo.
+Así pues, la fe *procede* del oír, y el oír *procede* por medio de la palabra de Dios.
 
 ### 10:18
 
-Pero digo: ¿Acaso no han oído? Ciertamente sí: «A toda la tierra salió su sonido, y hasta los confines del mundo habitado sus palabras».
+Pero digo: ¿Acaso no oyeron? Claro que sí: «Su sonido salió a toda la tierra, y sus palabras, hasta los confines del mundo habitado».
 
 ### 10:19
 
-Pero digo: ¿Acaso Israel no entendió? Primero Moisés dice: «Yo los provocaré a celos con lo que no es pueblo; con una nación sin entendimiento los provocaré a ira».
+Pero digo: ¿Acaso Israel no entendió? Primero Moisés dice: «Yo los provocaré a celos con lo que no *es* una nación; con una nación sin entendimiento los provocaré a ira».
 
 ### 10:20
 
-E Isaías se atreve y dice: «Fui hallado por los que no me buscaban; me hice manifiesto a los que no preguntaban por mí».
+Pero Isaías se muestra muy audaz y dice: «Fui encontrado por los que no Me buscaban; Me hice manifiesto a los que no Me consultaban».
 
 ### 10:21
 
-Pero respecto a Israel dice: «Todo el día extendí mis manos hacia un pueblo desobediente y contradictor».
+Pero respecto a Israel dice: «Todo el día extendí Mis manos hacia un pueblo que desobedece y contradice».
 
 ## Capítulo 11
 

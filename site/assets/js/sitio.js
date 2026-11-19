@@ -9,6 +9,24 @@
     try { localStorage.setItem(clave, valor); } catch (e) {}
   }
 
+  function urlPagina() {
+    var url = new URL(window.location.href);
+    url.hash = '';
+    url.search = '';
+    return url;
+  }
+
+  function pieCopia(referencia, enlace) {
+    return '— ' + referencia + ' · La Palabra Fiel (LPF)\n' + enlace;
+  }
+
+  function htmlCopia(texto, referencia, enlace) {
+    var href = enlace.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+    return '<p>' + escapar(texto).replace(/\n/g, '<br>') + '</p>' +
+      '<p>— ' + escapar(referencia) + ' · La Palabra Fiel (LPF)<br>' +
+      '<a href="' + href + '">' + escapar(enlace) + '</a></p>';
+  }
+
   /* ---- Tema claro / oscuro ---------------------------------------------- */
   document.addEventListener('click', function (ev) {
     var btn = ev.target.closest('[data-accion="tema"]');
@@ -67,7 +85,9 @@
         if (n) n.remove();
         partes.push((num ? num + ' ' : '') + c.textContent.trim());
       });
-      navigator.clipboard.writeText(partes.join('\n') + '\n\n— ' + ref + ' (La Palabra Fiel)').then(function () {
+      navigator.clipboard.writeText(
+        partes.join('\n') + '\n\n' + pieCopia(ref, urlPagina().href)
+      ).then(function () {
         var previo = b.textContent;
         b.textContent = 'Copiado';
         setTimeout(function () { b.textContent = previo; }, 1600);
@@ -92,6 +112,40 @@
       });
       p.classList.add('destacado');
     }
+  });
+
+  /* ---- Añadir referencia, versión y enlace al copiar versículos --------- */
+  document.addEventListener('copy', function (ev) {
+    if (!ev.clipboardData) return;
+    var seleccion = window.getSelection();
+    if (!seleccion || seleccion.isCollapsed || !seleccion.rangeCount) return;
+    var lectura = document.querySelector('.lectura');
+    if (!lectura) return;
+    var rango = seleccion.getRangeAt(0);
+    var versos = Array.prototype.filter.call(lectura.querySelectorAll('.v'), function (verso) {
+      try { return rango.intersectsNode(verso); } catch (e) { return false; }
+    });
+    if (!versos.length) return;
+
+    var texto = seleccion.toString().trim();
+    if (!texto) return;
+    var numeros = versos.map(function (verso) {
+      var numero = verso.querySelector('.vn');
+      return numero ? numero.textContent.trim() : '';
+    }).filter(Boolean);
+    if (!numeros.length) return;
+
+    var capitulo = lectura.getAttribute('data-referencia') || '';
+    var referencia = capitulo + ':' + numeros[0];
+    if (numeros.length > 1) referencia += '–' + numeros[numeros.length - 1];
+    var url = urlPagina();
+    url.hash = 'v' + numeros[0];
+    var enlace = url.href;
+    var textoPlano = texto + '\n\n' + pieCopia(referencia, enlace);
+
+    ev.clipboardData.setData('text/plain', textoPlano);
+    ev.clipboardData.setData('text/html', htmlCopia(texto, referencia, enlace));
+    ev.preventDefault();
   });
 
   /* ---- Navegación con flechas entre capítulos ---------------------------- */

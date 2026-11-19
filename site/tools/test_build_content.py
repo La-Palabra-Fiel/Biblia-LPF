@@ -97,6 +97,17 @@ class RenderTextoVersiculoTests(unittest.TestCase):
         self.assertIn('estadoCapitulo: "draft-only"', draft)
         self.assertIn('estadoCapitulo: "approved"', approved)
 
+    def test_reader_copy_adds_lpf_version_and_permalink(self) -> None:
+        javascript = (
+            Path(__file__).resolve().parents[1] / "assets" / "js" / "sitio.js"
+        ).read_text(encoding="utf-8")
+        self.assertIn("document.addEventListener('copy'", javascript)
+        self.assertIn("La Palabra Fiel (LPF)", javascript)
+        self.assertIn("url.hash = 'v' + numeros[0]", javascript)
+        self.assertIn("ev.clipboardData.setData('text/plain'", javascript)
+        self.assertIn("ev.clipboardData.setData('text/html'", javascript)
+        self.assertIn("pieCopia(ref, urlPagina().href)", javascript)
+
 
 if __name__ == "__main__":
     unittest.main()

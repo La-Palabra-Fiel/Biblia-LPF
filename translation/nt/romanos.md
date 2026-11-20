@@ -1143,147 +1143,147 @@ Pero respecto a Israel dice: «Todo el día extendí Mis manos hacia un pueblo q
 
 ### 11:1
 
-Digo, pues: ¿Ha desechado Dios a su pueblo? ¡De ninguna manera! Porque también yo soy israelita, de la descendencia de Abraham, de la tribu de Benjamín.
+Digo, pues: ¿acaso rechazó Dios a Su pueblo? ¡De ningún modo! Porque también yo soy israelita, de la simiente de Abraham, de la tribu de Benjamín.
 
 ### 11:2
 
-No ha desechado Dios a su pueblo, al cual conoció de antemano. ¿O no saben lo que dice la Escritura en Elías, cómo intercede ante Dios contra Israel?
+Dios no rechazó a Su pueblo, al que conoció de antemano. ¿O no saben qué dice la Escritura en *el pasaje de* Elías, cómo suplica a Dios contra Israel, diciendo:
 
 ### 11:3
 
-«Señor, mataron a tus profetas, derribaron tus altares, y yo he quedado solo, y buscan mi vida».
+Señor, mataron a Tus profetas y derribaron Tus altares; y yo quedé solo, y atentan contra mi vida.
 
 ### 11:4
 
-Pero ¿qué le dice el oráculo divino? «Me he reservado siete mil hombres que no doblaron rodilla a Baal».
+Pero ¿qué le dice la respuesta divina? «Reservé para Mí siete mil hombres que no doblaron la rodilla ante Baal».
 
 ### 11:5
 
-Así también, pues, en el tiempo presente ha quedado un remanente según elección de gracia.
+Así pues, también en el tiempo presente ha llegado a existir un remanente conforme a una elección por gracia.
 
 ### 11:6
 
-Y si es por gracia, ya no es por obras; de otro modo la gracia ya no sería gracia.
+Pero si *es* por gracia, ya no *es* por obras; de lo contrario, la gracia ya no es gracia. Pero si *es* por obras, ya no es gracia; de lo contrario, la obra ya no es obra.
 
 ### 11:7
 
-¿Qué, pues? Lo que Israel busca, eso no lo alcanzó; pero la elección sí lo alcanzó, y los demás fueron endurecidos,
+¿Qué, entonces? Lo que Israel busca, eso no obtuvo; pero los elegidos lo obtuvieron, y los demás fueron endurecidos.
 
 ### 11:8
 
-como está escrito: «Dios les dio espíritu de estupor, ojos para no ver y oídos para no oír, hasta el día de hoy».
+Tal como está escrito: «Dios les dio un espíritu de estupor, ojos para que no vean y oídos para que no oigan, hasta el día de hoy».
 
 ### 11:9
 
-Y David dice: «Sea hecha su mesa en trampa y en red y en escándalo y en retribución para ellos;
+Y David dice: «Que la mesa de ellos se convierta en trampa y en red y en tropiezo y en retribución para ellos».
 
 ### 11:10
 
-oscurézcanse sus ojos para no ver, y doblega siempre su espalda».
+Que se oscurezcan sus ojos para que no vean, y dobla por completo su espalda continuamente.
 
 ### 11:11
 
-Digo, pues: ¿Tropezaron para caer? ¡De ninguna manera! Sino que por su trasgresión vino la salvación a los gentiles, para provocarlos a celos.
+Digo, entonces: ¿acaso tropezaron para caer? ¡Que no suceda! Al contrario, por su transgresión, la salvación *es* para las naciones, para provocar celos en ellos.
 
 ### 11:12
 
-Y si su trasgresión es riqueza del mundo, y su derrota riqueza de gentiles, ¿cuánto más su plenitud?
+Y si la transgresión de ellos *es* riqueza para el mundo y la pérdida de ellos *es* riqueza para las naciones, ¡cuánto más la plenitud de ellos!
 
 ### 11:13
 
-Pero a ustedes, los gentiles, les digo: en cuanto soy, pues, apóstol de gentiles, glorifico mi ministerio,
+Pues a ustedes, los gentiles, les hablo. En la medida en que yo soy apóstol de gentiles, ciertamente honro mi ministerio.
 
 ### 11:14
 
-por si de algún modo provoque a celos a mi carne y salve a algunos de ellos.
+Por si de algún modo provoco celos en mi carne y salvo a algunos de ellos.
 
 ### 11:15
 
-Porque si su rechazo es reconciliación del mundo, ¿qué será su admisión sino vida de entre los muertos?
+Porque, si el rechazo de ellos *es* reconciliación del mundo, ¿qué *es* la aceptación, sino vida de entre los muertos?
 
 ### 11:16
 
-Y si las primicias son santas, también lo es la masa; y si la raíz es santa, también lo son las ramas.
+Y si la primicia *es* santa, también la masa; y si la raíz *es* santa, también las ramas.
 
 ### 11:17
 
-Pero si algunas de las ramas fueron desgajadas, y tú, siendo olivo silvestre, fuiste injertado entre ellas y llegaste a ser partícipe de la raíz de la grosura del olivo,
+Pero si algunas de las ramas fueron desgajadas y tú, siendo un olivo silvestre, fuiste injertado entre ellas y llegaste a ser copartícipe de la raíz y de la grasa del olivo,
 
 ### 11:18
 
-no te jactes contra las ramas. Y si te jactas, no eres tú quien sostiene la raíz, sino la raíz a ti.
+No presumas de superioridad sobre las ramas; pero si presumes de superioridad, tú no sostienes la raíz, sino la raíz a ti.
 
 ### 11:19
 
-Dirás entonces: «Las ramas fueron desgajadas para que yo fuera injertado».
+Entonces dirás: «Las ramas fueron desgajadas para que yo fuera injertado».
 
 ### 11:20
 
-Bien; por la incredulidad fueron desgajadas, pero tú por la fe estás en pie. No seas altivo, sino teme;
+Bien. Por la incredulidad fueron desgajadas, pero tú te mantienes en pie por la fe. No seas arrogante, sino teme.
 
 ### 11:21
 
-porque si Dios no perdonó a las ramas naturales, tampoco a ti perdonará.
+Porque si Dios no perdonó a las ramas naturales, no sea que tampoco te perdone.
 
 ### 11:22
 
-Mira, pues, la bondad y la severidad de Dios: severidad para con los que cayeron, pero para contigo bondad de Dios, si permaneces en la bondad; de otro modo, también tú serás cortado.
+Observa, pues, la bondad y la severidad de Dios: por un lado, severidad hacia los que cayeron; por otro, bondad hacia ti, si permaneces en la bondad; de lo contrario, también tú serás cortado.
 
 ### 11:23
 
-Y también aquellos, si no permanecen en la incredulidad, serán injertados, porque poderoso es Dios para injertarlos de nuevo.
+Pero también aquellos, si no permanecen en la incredulidad, serán injertados, pues Dios es capaz de injertarlos de nuevo.
 
 ### 11:24
 
-Porque si tú fuiste cortado del olivo silvestre según naturaleza, y contra naturaleza fuiste injertado en el olivo cultivado, ¿cuánto más estos, que son según naturaleza, serán injertados en su propio olivo?
+Pues si tú fuiste cortado del olivo silvestre por naturaleza y, contra naturaleza, fuiste injertado en un olivo cultivado, ¡cuánto más estos, los naturales, serán injertados en su propio olivo!
 
 ### 11:25
 
-Porque no quiero que ignoren, hermanos, este misterio, para que no sean sabios en su propia opinión: que el endurecimiento ha ocurrido en parte a Israel hasta que entre la plenitud de los gentiles;
+Pues no quiero que ustedes ignoren, hermanos, este misterio, para que no sean sabios a juicio de ustedes mismos: que un endurecimiento ha sobrevenido en parte a Israel hasta que entre la plenitud de los gentiles.
 
 ### 11:26
 
-y así todo Israel será salvado, como está escrito: «Vendrá de Sión el Libertador; apartará de Jacob las impiedades».
+Y así todo Israel será salvado, tal como está escrito: «Vendrá de Sion el que rescata y apartará las impiedades de Jacob».
 
 ### 11:27
 
-«Y este será mi pacto con ellos, cuando quite sus pecados».
+Y este *es* el pacto procedente de Mí para ellos, cuando quite sus pecados.
 
 ### 11:28
 
-En cuanto al evangelio, son enemigos por causa de ustedes; pero en cuanto a la elección, amados por causa de los padres.
+Por una parte, en cuanto al evangelio, *son* enemigos por ustedes; pero en cuanto a la elección, *son* amados por los padres.
 
 ### 11:29
 
-Porque irrevocables son los dones y el llamado de Dios.
+Pues los dones y el llamamiento de Dios *son* irrevocables.
 
 ### 11:30
 
-Porque así como ustedes una vez desobedecieron a Dios, pero ahora han recibido misericordia por la desobediencia de estos,
+Pues así como también ustedes antes desobedecieron a Dios, pero ahora recibieron misericordia por la desobediencia de estos,
 
 ### 11:31
 
-así también estos ahora desobedecieron, para que por la misericordia de ustedes también ellos ahora reciban misericordia.
+así también estos ahora desobedecieron, para que por la misericordia concedida a ustedes también ellos reciban misericordia.
 
 ### 11:32
 
-Porque Dios encerró a todos en desobediencia para tener misericordia de todos.
+Pues Dios encerró a todos en la desobediencia para tener misericordia de todos.
 
 ### 11:33
 
-¡Oh profundidad de las riquezas y de la sabiduría y del conocimiento de Dios! ¡Cuán inescrutables son sus juicios e inrastreables sus caminos!
+¡Oh, profundidad de la riqueza y de la sabiduría y del conocimiento de Dios! ¡Cuán insondables *son* Sus juicios e imposibles de rastrear Sus caminos!
 
 ### 11:34
 
-Porque ¿quién conoció la mente del Señor, o quién llegó a ser su consejero?
+Pues ¿quién conoció la mente del Señor? ¿O quién llegó a ser Su consejero?
 
 ### 11:35
 
-¿O quién le dio primero a él, para que le sea recompensado?
+¿O quién Le dio primero y se le retribuirá?
 
 ### 11:36
 
-Porque de él y por medio de él y para él son todas las cosas. A él sea la gloria por los siglos. Amén.
+Porque de Él y por medio de Él y para Él *son* todas las cosas. ¡A Él la gloria por los siglos! Amén.
 
 ## Capítulo 12
 

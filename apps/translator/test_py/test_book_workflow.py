@@ -10,9 +10,38 @@ REPO = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO / "tools"))
 
 import publish  # noqa: E402
+import export  # noqa: E402
 
 
 class CanonicalBookWorkflow(unittest.TestCase):
+    def test_nt_export_maps_tr_tokens_to_reader_tokens_without_losing_canonical_ids(self) -> None:
+        links = [{
+            "reference": "Romanos 1:1",
+            "units": [
+                {"surface": "de Jesús", "sourceTokenIds": ["n45001001003"]},
+                {"surface": "Cristo", "sourceTokenIds": ["n45001001004"]},
+            ],
+        }]
+        exported, metadata = export.build_reader_links("romanos", links)
+        units = exported[0]["units"]
+        self.assertEqual(units[0]["canonicalSourceTokenIds"], ["n45001001003"])
+        self.assertEqual(units[0]["sourceTokenIds"], ["n45001001004"])
+        self.assertEqual(units[1]["canonicalSourceTokenIds"], ["n45001001004"])
+        self.assertEqual(units[1]["sourceTokenIds"], ["n45001001003"])
+        self.assertEqual(links[0]["units"][0]["sourceTokenIds"], ["n45001001003"])
+        self.assertEqual(metadata["canonicalSourceTokenField"], "canonicalSourceTokenIds")
+        self.assertEqual(metadata["readerSourceTokenField"], "sourceTokenIds")
+
+    def test_nt_export_does_not_invent_reader_identity_for_tr_only_token(self) -> None:
+        links = [{
+            "reference": "Romanos 1:3",
+            "units": [{"surface": "de David", "sourceTokenIds": ["n45001003009"]}],
+        }]
+        exported, _ = export.build_reader_links("romanos", links)
+        unit = exported[0]["units"][0]
+        self.assertEqual(unit["canonicalSourceTokenIds"], ["n45001003009"])
+        self.assertEqual(unit["sourceTokenIds"], [])
+
     def test_status_script_can_check_one_book_without_unrelated_blockers(self) -> None:
         result = subprocess.run(
             [sys.executable, str(REPO / "tools" / "status.py"), "titus"],

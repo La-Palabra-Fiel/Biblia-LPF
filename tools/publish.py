@@ -26,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from export import (  # noqa: E402
     ROOT,
     committed_source_problem,
+    committed_reader_bridge_problem,
     git,
     git_head,
     parse_status_row,
@@ -118,6 +119,13 @@ def check_package_current(book: str, row: dict[str, str], text_path: Path, meta:
             f"{source_file} changed since the export. The signature no longer binds it.\n"
             f"Re-export, or clear the `done` signature per DATA_CONTRACT.md."
         )
+    reader_bridge = meta.get("readerTokenBridge")
+    if row["testament"] == "nt":
+        if not isinstance(reader_bridge, dict):
+            raise SystemExit("NT package has no explicit TR-to-Reader token bridge. Re-export.")
+        bridge_path = ROOT / str(reader_bridge.get("bridgeFile") or "")
+        if not bridge_path.is_file() or sha256_file(bridge_path) != reader_bridge.get("bridgeSha256"):
+            raise SystemExit("NT package Reader token bridge is stale. Rebuild and re-export.")
     if row["translation"] != "done" or row["alignment"] != "done":
         raise SystemExit(
             f"{book} is not finished. translation={row['translation']} alignment={row['alignment']}"
@@ -240,6 +248,9 @@ def main() -> int:
     problem = committed_source_problem(book, row)
     if problem:
         raise SystemExit(problem)
+    bridge_problem = committed_reader_bridge_problem(row)
+    if bridge_problem:
+        raise SystemExit(bridge_problem)
     check_package_current(book, row, text_path, meta)
     status_gate(book)
 

@@ -8,6 +8,7 @@ Requires translation and alignment both `done` in STATUS.md.
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import re
@@ -18,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "STATUS.md"
+READER_TOKEN_BRIDGE_PATH = ROOT / "source" / "greek" / "TR1894" / "reader-token-bridge.json"
 
 CONSUMER_LABEL = {
     "zacarias": "Zechariah",
@@ -156,9 +158,122 @@ def build_consumer(book: str, row: dict[str, str], verses: list[tuple[int, int, 
     return "\n".join(lines) + "\n"
 
 
+def load_reader_token_bridge(book: str) -> tuple[dict, dict]:
+    if not READER_TOKEN_BRIDGE_PATH.is_file():
+        raise SystemExit(
+            "NT Reader token bridge is missing. "
+            "Run: python3 tools/build_nt_reader_token_bridge.py"
+        )
+    bridge = json.loads(READER_TOKEN_BRIDGE_PATH.read_text(encoding="utf-8"))
+    if bridge.get("schema") != "lpf-tr-to-reader-token-bridge-v1":
+        raise SystemExit("NT Reader token bridge has an unsupported schema")
+    generator = bridge.get("generator") or {}
+    generator_path = ROOT / str(generator.get("path") or "")
+    if (
+        generator.get("command") != "python3 tools/build_nt_reader_token_bridge.py"
+        or not generator_path.is_file()
+        or sha256_file(generator_path) != generator.get("sha256")
+    ):
+        raise SystemExit(
+            "NT Reader token bridge generator is stale. "
+            "Run: python3 tools/build_nt_reader_token_bridge.py"
+        )
+    book_bridge = (bridge.get("books") or {}).get(book)
+    if not isinstance(book_bridge, dict):
+        raise SystemExit(f"NT Reader token bridge has no entry for {book}")
+    return bridge, book_bridge
+
+
+def committed_reader_bridge_problem(row: dict[str, str]) -> str | None:
+    if row["testament"] != "nt":
+        return None
+    required = [READER_TOKEN_BRIDGE_PATH, ROOT / "tools" / "build_nt_reader_token_bridge.py"]
+    problems: list[str] = []
+    for path in required:
+        relative = str(path.relative_to(ROOT))
+        committed = git(ROOT, "show", f"HEAD:{relative}", check=False)
+        if not committed:
+            problems.append(f"{relative} is not present at HEAD")
+            continue
+        committed_hash = hashlib.sha256((committed + "\n").encode("utf-8")).hexdigest()
+        if committed_hash != sha256_file(path):
+            problems.append(f"{relative} differs from HEAD")
+    if not problems:
+        return None
+    return (
+        "the NT Reader token bridge is not committed:\n"
+        + "\n".join(f"   {problem}" for problem in problems)
+        + "\nCommit the bridge and its generator before exporting."
+    )
+
+
+NT_SOURCE_TOKEN_ID = re.compile(r"^n(\d{2})(\d{3})(\d{3})(\d{3})$")
+
+
+def reader_token_id(source_token_id: str, book_bridge: dict) -> str | None:
+    match = NT_SOURCE_TOKEN_ID.fullmatch(source_token_id)
+    if not match:
+        raise SystemExit(f"invalid canonical NT source token id: {source_token_id}")
+    book_code, chapter, verse, ordinal = (int(value) for value in match.groups())
+    expected_code = int(book_bridge.get("bookCode", 0))
+    if book_code != expected_code:
+        raise SystemExit(
+            f"canonical token {source_token_id} belongs to book {book_code}, expected {expected_code}"
+        )
+    verse_map = (book_bridge.get("verses") or {}).get(f"{chapter}:{verse}")
+    if not isinstance(verse_map, list) or ordinal < 1 or ordinal > len(verse_map):
+        raise SystemExit(f"Reader token bridge does not cover canonical token {source_token_id}")
+    reader_ordinal = verse_map[ordinal - 1]
+    if reader_ordinal is None:
+        return None
+    return f"n{book_code:02d}{chapter:03d}{verse:03d}{int(reader_ordinal):03d}"
+
+
+def build_reader_links(book: str, links: list[dict]) -> tuple[list[dict], dict]:
+    bridge, book_bridge = load_reader_token_bridge(book)
+    exported = copy.deepcopy(links)
+    canonical_ids: set[str] = set()
+    reader_ids: set[str] = set()
+    unmapped_ids: set[str] = set()
+    for link in exported:
+        for unit in link.get("units") or []:
+            original = [str(value) for value in (unit.get("sourceTokenIds") or [])]
+            unit["canonicalSourceTokenIds"] = original
+            mapped: list[str] = []
+            for source_token_id in original:
+                canonical_ids.add(source_token_id)
+                target = reader_token_id(source_token_id, book_bridge)
+                if target is None:
+                    unmapped_ids.add(source_token_id)
+                elif target not in mapped:
+                    mapped.append(target)
+                    reader_ids.add(target)
+            unit["sourceTokenIds"] = mapped
+    metadata = {
+        "schema": bridge["schema"],
+        "mappingPolicy": bridge["mappingPolicy"],
+        "sourceTokenBasis": bridge["sourceTokenBasis"],
+        "readerTokenBasis": bridge["readerTokenBasis"],
+        "referenceDataset": bridge["referenceDataset"],
+        "referenceRevision": bridge["referenceRevision"],
+        "bridgeFile": str(READER_TOKEN_BRIDGE_PATH.relative_to(ROOT)),
+        "bridgeSha256": sha256_file(READER_TOKEN_BRIDGE_PATH),
+        "canonicalSourceTokenField": "canonicalSourceTokenIds",
+        "readerSourceTokenField": "sourceTokenIds",
+        "canonicalTokenCount": len(canonical_ids),
+        "mappedReaderTokenCount": len(reader_ids),
+        "unmappedCanonicalTokenCount": len(unmapped_ids),
+    }
+    return exported, metadata
+
+
 def build_alignment(book: str, row: dict[str, str], src: Path, commit: str) -> dict:
     data = json.loads(src.read_text(encoding="utf-8"))
-    return {
+    links = data["links"]
+    reader_bridge = None
+    if row["testament"] == "nt":
+        links, reader_bridge = build_reader_links(book, links)
+    result = {
         "generated": True,
         "doNotEdit": True,
         "sourceRepository": "La-Palabra-Fiel/Biblia-LPF",
@@ -173,8 +288,11 @@ def build_alignment(book: str, row: dict[str, str], src: Path, commit: str) -> d
         "numbering": data.get("numbering", "protestant"),
         "translation_by": row["translation_by"],
         "alignment_by": row["alignment_by"],
-        "links": data["links"],
+        "links": links,
     }
+    if reader_bridge is not None:
+        result["readerTokenBridge"] = reader_bridge
+    return result
 
 
 def main() -> int:
@@ -208,6 +326,10 @@ def main() -> int:
     problem = committed_source_problem(book, row)
     if problem:
         print(problem, file=sys.stderr)
+        return 2
+    bridge_problem = committed_reader_bridge_problem(row)
+    if bridge_problem:
+        print(bridge_problem, file=sys.stderr)
         return 2
 
     check = subprocess.run([sys.executable, str(ROOT / "tools" / "status.py"), book], cwd=ROOT)

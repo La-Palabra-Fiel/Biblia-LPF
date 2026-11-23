@@ -122,6 +122,16 @@ must be `done`; chapters and unfinished books never enter `cgv-data`.
 Those two historical technical paths are the entire published surface for a
 book. A publisher commit contains nothing else.
 
+For NT books, canonical reverse links continue to cite the SCV-authoritative
+Scrivener token order. The consumer alignment exported to `cgv-data` must not
+assume that those ordinals identify MorphGNT/SBLGNT tokens. `tools/export.py`
+uses the pinned `reader-token-bridge.json` to preserve the original IDs in
+`canonicalSourceTokenIds` and to write only explicitly mapped Reader-spine IDs
+in `sourceTokenIds`. A TR token with no safe comparison token remains an
+explicit consumer-side gap; it is never attached by equal ordinal. Publisher
+refuses an NT package whose bridge or bridge generator is absent, stale, or
+uncommitted.
+
 `publish.py` commits in a temporary `git worktree` cut from `origin/{base}`.
 It does not switch the caller's branch and cannot carry unrelated working-tree
 changes into the commit. It does not push unless asked.

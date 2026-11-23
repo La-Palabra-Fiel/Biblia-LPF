@@ -1293,19 +1293,19 @@ Por tanto, los exhorto, hermanos, por las misericordias de Dios, a que presenten
 
 ### 12:2
 
-Y no se conformen a este siglo, sino transfórmense por la renovación de la mente, para que ustedes comprueben cuál es la voluntad de Dios, lo bueno y agradable y perfecto.
+Y no se amolden a esta época, sino que sean transformados mediante la renovación de su mente, para que ustedes comprueben cuál *es* la buena y agradable y perfecta voluntad de Dios.
 
 ### 12:3
 
-Porque digo, por la gracia que me ha sido dada, a todo el que está entre ustedes, que no piense de sí más de lo que debe pensar, sino que piense con cordura, conforme a la medida de fe que Dios repartió a cada uno.
+Pues digo, por medio de la gracia que me fue concedida, a cada uno que está entre ustedes que no piense de sí con altivez más allá de lo que debe pensar, sino que piense con miras a pensar con sensatez, según Dios repartió a cada uno una medida de fe.
 
 ### 12:4
 
-Porque así como en un cuerpo tenemos muchos miembros, pero no todos los miembros tienen la misma función,
+Pues, así como en un solo cuerpo tenemos muchos miembros, pero no todos los miembros tienen la misma función,
 
 ### 12:5
 
-así nosotros, siendo muchos, somos un cuerpo en Cristo, y cada uno miembros los unos de los otros.
+Así, los muchos somos un solo cuerpo en Cristo y, cada uno por su parte, miembros unos de otros.
 
 ### 12:6
 
@@ -1313,15 +1313,15 @@ Y tenemos dones diferentes según la gracia que nos fue dada: ya sea profecía, 
 
 ### 12:7
 
-si es servicio, en el servir; si el que enseña, en la enseñanza;
+o servicio, en el servicio; o el que enseña, en la enseñanza;
 
 ### 12:8
 
-si el que exhorta, en la exhortación; el que reparte, con sencillez; el que preside, con diligencia; el que hace misericordia, con alegría.
+O el que exhorta, *que lo haga* en la exhortación; el que comparte, *que lo haga* con generosidad; el que dirige, *que lo haga* con diligencia; el que muestra misericordia, *que lo haga* con alegría.
 
 ### 12:9
 
-El amor sea sin hipocresía. Aborrezcan lo malo; apéguense a lo bueno.
+El amor *sea* sincero. Aborrezcan lo malo; apéguense a lo bueno.
 
 ### 12:10
 
@@ -1329,111 +1329,111 @@ En el amor fraternal, *sean* afectuosos unos con otros; en cuanto a honra, prefi
 
 ### 12:11
 
-en la diligencia, no perezosos; fervientes en el espíritu; sirviendo al Señor;
+En la diligencia, no *sean* perezosos; ardan en el espíritu; sirvan al Señor.
 
 ### 12:12
 
-gozosos en la esperanza; pacientes en la tribulación; perseverantes en la oración;
+Alégrense en la esperanza; resistan en la aflicción; perseveren en la oración.
 
 ### 12:13
 
-compartiendo para las necesidades de los santos; practicando la hospitalidad.
+Compartan las necesidades de los santos; busquen con empeño la hospitalidad.
 
 ### 12:14
 
-Bendigan a los que los persiguen; bendigan, y no maldigan.
+Bendigan a los que los persiguen; bendigan y no maldigan.
 
 ### 12:15
 
-Gócense con los que se gozan; lloren con los que lloran.
+Alégrense con quienes se alegran y lloren con quienes lloran.
 
 ### 12:16
 
-Tengan un mismo sentir los unos hacia los otros; no aspiren a lo alto, sino asóciense con los humildes. No sean sabios en su propia opinión.
+Piensen lo mismo unos de otros. No piensen en lo elevado, sino adáptense a los humildes. No sean sabios a su propio juicio.
 
 ### 12:17
 
-No paguen a nadie mal por mal; procuren lo bueno delante de todos los hombres.
+No devuelvan a nadie mal por mal; procuren lo bueno ante todos los seres humanos.
 
 ### 12:18
 
-Si es posible, en cuanto de ustedes dependa, tengan paz con todos los hombres.
+Si *es* posible, en lo que dependa de ustedes, vivan en paz con todas las personas.
 
 ### 12:19
 
-No se venguen ustedes mismos, amados, sino den lugar a la ira, porque está escrito: «Mía es la venganza; yo pagaré», dice el Señor.
+No se venguen, amados, sino den lugar a la ira, pues está escrito: «Mía *es* la venganza; Yo retribuiré», dice el Señor.
 
 ### 12:20
 
-Sino que si tu enemigo tiene hambre, dale de comer; si tiene sed, dale de beber; porque haciendo esto, amontonarás brasas de fuego sobre su cabeza.
+Por tanto, si tu enemigo tiene hambre, aliméntalo; si tiene sed, dale de beber; porque, al hacer esto, amontonarás carbones encendidos sobre su cabeza.
 
 ### 12:21
 
-No seas vencido por el mal, sino vence con el bien el mal.
+No seas vencido por el mal, sino vence el mal con el bien.
 
 ## Capítulo 13
 
 ### 13:1
 
-Toda alma se someta a las autoridades superiores, porque no hay autoridad sino de parte de Dios, y las que existen han sido establecidas por Dios.
+Que toda persona se someta a las autoridades superiores, pues no hay autoridad sino de Dios; y las autoridades existentes están establecidas por Dios.
 
 ### 13:2
 
-De modo que el que se opone a la autoridad se ha opuesto a la ordenación de Dios, y los que se han opuesto recibirán juicio para sí mismos.
+Por tanto, el que se opone a la autoridad se ha resistido a la disposición de Dios; y los que se han resistido recibirán juicio para sí mismos.
 
 ### 13:3
 
-Porque los gobernantes no son temor para la buena obra, sino para la mala. ¿Quieres no temer a la autoridad? Haz lo bueno, y tendrás alabanza de ella;
+Pues los gobernantes no son motivo de temor para las buenas obras, sino para las malas. Y ¿quieres no temer a la autoridad? Haz lo bueno y tendrás elogio de parte de ella.
 
 ### 13:4
 
-porque es servidor de Dios para ti para lo bueno. Pero si haces lo malo, teme; porque no lleva en vano la espada, porque es servidor de Dios, vengador para ira contra el que practica lo malo.
+Pues es servidor de Dios para tu bien. Pero si haces el mal, teme, pues no lleva la espada en vano; pues es servidor de Dios, vengador para ejecutar ira contra el que practica el mal.
 
 ### 13:5
 
-Por eso es necesario someterse, no solo por causa de la ira, sino también por causa de la conciencia.
+Por eso, *es* necesario someterse, no solo por la ira, sino también por la conciencia.
 
 ### 13:6
 
-Porque por esto también pagan ustedes impuestos, pues son ministros de Dios, perseverando en esto mismo.
+Pues por esto también pagan tributos, porque son servidores de Dios, dedicándose constantemente a esto mismo.
 
 ### 13:7
 
-Paguen a todos lo debido: al del impuesto, el impuesto; al del tributo, el tributo; al del temor, el temor; al del honor, el honor.
+Den, por tanto, a todos lo que deben: a quien corresponde el tributo, el tributo; a quien corresponde el impuesto, el impuesto; a quien corresponde el temor, el temor; a quien corresponde la honra, la honra.
 
 ### 13:8
 
-No deban nada a nadie, sino el amarse unos a otros; porque el que ama al otro ha cumplido la ley.
+No deban nada a nadie, excepto el amarse unos a otros; pues el que ama al otro ha cumplido la ley.
 
 ### 13:9
 
-Porque aquello: No adulterarás, No matarás, No hurtarás, No codiciarás, y si hay algún otro mandamiento, se resume en esta palabra, en el: Amarás a tu prójimo como a ti mismo.
+Pues el «No cometerás adulterio; no asesinarás; no robarás; no darás falso testimonio; no codiciarás», y cualquier otro mandamiento que haya, se resume en esta declaración, en el «Amarás a tu prójimo como a ti mismo».
 
 ### 13:10
 
-El amor no hace mal al prójimo; por tanto, el cumplimiento de la ley es el amor.
+El amor no hace mal al prójimo; por tanto, el amor *es* el cumplimiento de la ley.
 
 ### 13:11
 
-Y esto, conociendo el tiempo, que ya es hora de que ustedes despierten del sueño; porque ahora la salvación está más cerca de nosotros que cuando creímos.
+Y *hagan* esto, conociendo el tiempo: que ya *es* hora de despertarnos del sueño; pues ahora la salvación *está* más cerca de nosotros que cuando creímos.
 
 ### 13:12
 
-La noche está avanzada, y el día se ha acercado. Desechemos, pues, las obras de las tinieblas, y vistámonos las armas de la luz.
+La noche ha avanzado, pero el día se ha acercado. Por tanto, dejemos de lado las obras de la oscuridad y pongámonos las armas de la luz.
 
 ### 13:13
 
-Andemos decentemente como de día, no en juergas y embriagueces, no en lechos y disoluciones, no en contiendas y celos;
+Andemos decorosamente, como de día; no en juergas y borracheras, no en lechos y desenfrenos, no en contienda y celos.
 
 ### 13:14
 
-sino vístanse del Señor Jesús Cristo, y no hagan provisión para la carne, para deseos.
+Pero revístanse del Señor Jesús, *el* Cristo, y no hagan provisión para la carne con miras a los deseos.
 
 ## Capítulo 14
 
 ### 14:1
 
-Reciban al que es débil en la fe, no para debates de opiniones.
+Y reciban al que es débil en la fe, no para emitir juicios sobre razonamientos.
 
 ### 14:2
 
@@ -1441,255 +1441,255 @@ Uno cree que puede comer de todo, pero el débil come verduras.
 
 ### 14:3
 
-El que come no menosprecie al que no come, y el que no come no juzgue al que come, porque Dios lo recibió.
+El que come no desprecie al que no come, y el que no come no juzgue al que come, porque Dios lo recibió.
 
 ### 14:4
 
-¿Quién eres tú que juzgas al siervo doméstico ajeno? Para su propio señor se mantiene en pie o cae; pero se mantendrá en pie, porque el Señor puede sostenerlo.
+¿Quién eres tú, que juzgas a un siervo doméstico de otro? Ante su propio señor se mantiene en pie o cae; pero será puesto en pie, porque Dios es capaz de ponerlo en pie.
 
 ### 14:5
 
-Uno juzga un día más que otro día; otro juzga igual todo día. Cada uno esté plenamente convencido en su propia mente.
+Uno estima un día por encima de otro día; otro, en cambio, estima cada día. Que cada uno esté plenamente convencido en su propia mente.
 
 ### 14:6
 
-El que observa el día, lo observa para el Señor; y el que come, come para el Señor, porque da gracias a Dios; y el que no come, para el Señor no come, y da gracias a Dios.
+El que observa el día, lo observa para el Señor; y el que no observa el día, no lo observa para el Señor. El que come, come para el Señor, pues da gracias a Dios; y el que no come, no come para el Señor y da gracias a Dios.
 
 ### 14:7
 
-Porque ninguno de nosotros vive para sí, y ninguno muere para sí.
+Pues ninguno de nosotros vive para sí mismo, y nadie muere para sí mismo.
 
 ### 14:8
 
-Porque si vivimos, para el Señor vivimos; y si morimos, para el Señor morimos. Así que, ya sea que vivamos o que muramos, del Señor somos.
+Pues si vivimos, vivimos para el Señor; y si morimos, morimos para el Señor. Por lo tanto, ya sea que vivamos, ya sea que muramos, somos del Señor.
 
 ### 14:9
 
-Porque para esto Cristo murió y vivió, para ser Señor también de muertos y de vivos.
+Pues para esto Cristo también murió y resucitó y volvió a vivir, para que ejerciera señorío tanto sobre los muertos como sobre los vivos.
 
 ### 14:10
 
-Pero tú, ¿por qué juzgas a tu hermano? O también tú, ¿por qué menosprecias a tu hermano? Porque todos compareceremos ante el tribunal de Dios.
+Pero tú, ¿por qué juzgas a tu hermano? O tú también, ¿por qué desprecias a tu hermano? Pues todos compareceremos ante el tribunal del Cristo.
 
 ### 14:11
 
-Porque está escrito: Vivo yo, dice el Señor, que ante mí se doblará toda rodilla, y toda lengua confesará a Dios.
+Pues está escrito: «Por Mi vida —dice el Señor—, que ante Mí se doblará toda rodilla y toda lengua dará alabanza a Dios».
 
 ### 14:12
 
-Así que cada uno de nosotros dará cuenta de sí mismo.
+Así pues, cada uno de nosotros dará cuenta de sí mismo a Dios.
 
 ### 14:13
 
-Por tanto, ya no nos juzguemos unos a otros, sino más bien juzguen esto: no poner tropiezo al hermano o escándalo.
+Por tanto, no nos juzguemos más unos a otros, sino que decidan más bien esto: no poner un tropiezo o una trampa al hermano.
 
 ### 14:14
 
-Sé y estoy persuadido en el Señor Jesús de que nada es común por sí mismo, sino para el que considera algo común, para aquel es común.
+Sé y estoy convencido en el Señor Jesús de que nada *es* impuro por sí mismo, salvo para quien considera que algo es impuro; para él *es* impuro.
 
 ### 14:15
 
-Porque si por comida tu hermano se entristece, ya no andas conforme al amor. No destruyas con tu comida a aquel por quien Cristo murió.
+Pero si por causa de la comida tu hermano se entristece, ya no caminas de acuerdo con el amor. No destruyas con tu comida a aquel por quien Cristo murió.
 
 ### 14:16
 
-No sea, pues, blasfemado lo bueno de ustedes.
+Por tanto, que no sea difamado el bien de ustedes.
 
 ### 14:17
 
-Porque el reino de Dios no es comida y bebida, sino justicia y paz y gozo en el Espíritu Santo.
+Porque el reino de Dios no es comer y beber, sino justicia y paz y alegría en el Espíritu Santo.
 
 ### 14:18
 
-porque el que en esto sirve a Cristo es agradable a Dios y aprobado ante los hombres.
+Porque el que sirve al Cristo en estas cosas *es* agradable a Dios y aprobado por los hombres.
 
 ### 14:19
 
-Así que, busquemos las cosas de la paz y las de la edificación de unos a otros.
+Así pues, busquemos lo que contribuye a la paz y lo que contribuye a la edificación mutua.
 
 ### 14:20
 
-No destruyas por causa de la comida la obra de Dios. Todas las cosas, en verdad, son limpias, pero es malo para el hombre que come con tropiezo.
+No destruyas la obra de Dios por causa de la comida. Ciertamente, todo *es* limpio, pero *es* malo para el hombre que come causando tropiezo.
 
 ### 14:21
 
-Bueno es no comer carne, ni beber vino, ni nada en que tu hermano tropieza o se escandaliza o se debilita.
+*Es* bueno el no comer carne ni beber vino ni *hacer* aquello en lo que tu hermano tropieza o es hecho tropezar o se debilita.
 
 ### 14:22
 
-La fe que tienes, tenla para ti mismo delante de Dios. Bienaventurado el que no se juzga a sí mismo en lo que aprueba.
+Tú tienes fe; tenla para ti mismo ante Dios. Dichoso *es* el que no se condena a sí mismo en lo que aprueba.
 
 ### 14:23
 
-Pero el que duda, si come, ha sido condenado, porque no es de fe; y todo lo que no es de fe es pecado.
+Pero el que duda, si come, está condenado, porque no *come* por fe; y todo lo que no *procede* de la fe es pecado.
 
 ## Capítulo 15
 
 ### 15:1
 
-Pero nosotros, los fuertes, debemos llevar las flaquezas de los débiles, y no agradarnos a nosotros mismos.
+Ahora bien, nosotros, los fuertes, debemos cargar con las debilidades de los débiles y no complacernos.
 
 ### 15:2
 
-Cada uno de nosotros agrade a su prójimo para lo bueno, hacia edificación.
+Pues cada uno de nosotros agrade al prójimo para el bien, con miras a la edificación.
 
 ### 15:3
 
-Porque también Cristo no se agradó a sí mismo, sino como está escrito: Los vituperios de los que te vituperaban cayeron sobre mí.
+Pues también el Cristo no Se complació a Sí mismo, sino que, como está escrito: «Los reproches de los que te reprochan cayeron sobre Mí».
 
 ### 15:4
 
-Porque las cosas que fueron escritas de antemano, para nuestra enseñanza fueron escritas, para que por la perseverancia y por el consuelo de las Escrituras tengamos la esperanza.
+Pues todo lo que fue escrito antes, fue escrito antes para nuestra instrucción, para que, mediante la perseverancia y el consuelo de las Escrituras, tengamos la esperanza.
 
 ### 15:5
 
-Y el Dios de la perseverancia y del consuelo les dé a ustedes el mismo sentir unos con otros conforme a Cristo Jesús,
+Y que el Dios de la perseverancia y del consuelo les conceda pensar lo mismo entre ustedes conforme a Cristo Jesús.
 
 ### 15:6
 
-para que unánimes, a una boca, glorifiquen al Dios y Padre de nuestro Señor Jesús Cristo.
+Para que, unánimes, con una sola boca glorifiquen al Dios y Padre de nuestro Señor Jesús, *el* Cristo.
 
 ### 15:7
 
-Por tanto, recíbanse unos a otros, como también Cristo los recibió a ustedes, para gloria de Dios.
+Por eso, recíbanse unos a otros, así como también el Cristo nos recibió para gloria de Dios.
 
 ### 15:8
 
-Porque digo que Cristo se ha hecho servidor de la circuncisión por causa de la verdad de Dios, para confirmar las promesas de los padres,
+Ahora bien, digo que Jesús, *el* Cristo, ha llegado a ser servidor de la circuncisión por la verdad de Dios, para confirmar las promesas de los padres.
 
 ### 15:9
 
-y que las naciones glorifiquen a Dios por causa de la misericordia, como está escrito: Por eso te confesaré entre las naciones, y a tu nombre cantaré salmos.
+Y que las naciones glorifiquen a Dios por la misericordia, tal como está escrito: «Por esto Te alabaré entre las naciones y cantaré alabanzas a Tu nombre».
 
 ### 15:10
 
-Y otra vez dice: Alégrense, naciones, con su pueblo.
+Y de nuevo dice: «Alégrense, naciones, con Su pueblo».
 
 ### 15:11
 
-Y otra vez: Alaben al Señor todas las naciones, y alábenlo todos los pueblos.
+Y de nuevo: «Alaben al Señor, todas las naciones, y elógienLo, todos los pueblos».
 
 ### 15:12
 
-Y otra vez Isaías dice: Habrá la raíz de Isaí, y el que se levanta para regir naciones; en él esperarán las naciones.
+Y de nuevo Isaías dice: «Existirá la raíz de Isaí y el que se levanta para gobernar las naciones; en él las naciones esperarán».
 
 ### 15:13
 
-Y el Dios de la esperanza los llene a ustedes de todo gozo y paz en el creer, para que abunden ustedes en la esperanza por el poder del Espíritu Santo.
+Y que el Dios de la esperanza los llene de toda alegría y paz al creer, para que ustedes abunden en la esperanza por el poder del Espíritu Santo.
 
 ### 15:14
 
-Pero estoy persuadido, hermanos míos, yo mismo también acerca de ustedes, de que también ustedes mismos están llenos de bondad, llenos de todo conocimiento, capaces también de amonestarse unos a otros.
+Pero, mis hermanos, también yo mismo estoy convencido respecto de ustedes de que también ustedes mismos están llenos de bondad, colmados de todo conocimiento, capaces también de amonestarse unos a otros.
 
 ### 15:15
 
-Pero les escribí con más atrevimiento en parte, como para recordarles, por causa de la gracia que me fue dada por Dios,
+Pero les escribí, hermanos, en parte con más audacia, como quien les hace recordar de nuevo, por la gracia que me fue dada por Dios.
 
 ### 15:16
 
-para que yo sea ministro de Cristo Jesús para las naciones, ministrando como sacerdote el evangelio de Dios, para que la ofrenda de las naciones sea aceptable, santificada en el Espíritu Santo.
+para que yo sea ministro de Jesús, *el* Cristo, para los gentiles, ministrando como sacerdote el evangelio de Dios, para que la ofrenda de los gentiles sea aceptable, santificada en el Espíritu Santo.
 
 ### 15:17
 
-Tengo, pues, el motivo de jactarme en Cristo Jesús en las cosas para con Dios.
+Por tanto, tengo motivo para gloriarme en Cristo Jesús en lo referente a Dios.
 
 ### 15:18
 
-Porque no osaré hablar de nada de lo que no haya obrado Cristo por medio de mí para la obediencia de las naciones, de palabra y de obra,
+Pues no me atreveré a hablar de nada que Cristo no haya realizado por medio de mí para la obediencia de las naciones, mediante palabra y obra.
 
 ### 15:19
 
-en poder de señales y prodigios, en poder del Espíritu; de modo que desde Jerusalén y en derredor hasta el Ilírico he cumplido el evangelio de Cristo,
+Con el poder de señales y prodigios, con el poder del Espíritu de Dios, de modo que yo he anunciado plenamente el evangelio del Cristo desde Jerusalén y por los alrededores hasta el Ilírico.
 
 ### 15:20
 
-esforzándome así por anunciar el evangelio no donde Cristo ya fue nombrado, para no edificar sobre fundamento ajeno,
+Y aspirando así a anunciar buenas noticias, no donde Cristo fue nombrado, para no construir sobre un fundamento ajeno.
 
 ### 15:21
 
-sino como está escrito: A quienes no se les anunció acerca de él, verán, y los que no han oído, entenderán.
+Sino que, tal como está escrito: «Aquellos a quienes no se les anunció acerca de Él verán, y quienes no han oído entenderán».
 
 ### 15:22
 
-Por lo cual también muchas veces se me impedía ir a ustedes;
+Por eso también se me impedía muchas veces ir a ustedes.
 
 ### 15:23
 
-pero ahora, no teniendo ya lugar en estas regiones, y teniendo deseo de ir a ustedes desde hace muchos años,
+Pero ahora, al no tener ya lugar en estas regiones y al tener desde hace muchos años anhelo de ir a ustedes,
 
 ### 15:24
 
-cuando vaya a España; porque espero, al pasar, verlos a ustedes y ser encaminado por ustedes allá, si primero disfruto un poco de ustedes.
+Cuando vaya a España, iré a ustedes, pues espero verlos al pasar y ser encaminado por ustedes hacia allá, si primero me sacio en parte de ustedes.
 
 ### 15:25
 
-Pero ahora voy a Jerusalén, sirviendo a los santos.
+Pero ahora voy a Jerusalén para servir a los santos.
 
 ### 15:26
 
-Porque Macedonia y Acaya tuvieron a bien hacer cierta contribución para los pobres de los santos que están en Jerusalén.
+Pues Macedonia y Acaya tuvieron a bien hacer una contribución para los pobres de entre los santos que están en Jerusalén.
 
 ### 15:27
 
-Tuvieron a bien, porque también son deudores de ellos; porque si las naciones han participado de sus bienes espirituales, deben también servirles en los materiales.
+Pues les pareció bien, y son deudores de ellos. Porque si los gentiles participaron en las cosas espirituales de ellos, también deben servirles en las cosas materiales.
 
 ### 15:28
 
-Así que, cuando haya concluido esto y les haya sellado este fruto, pasaré por ustedes hacia España.
+Por tanto, cuando haya completado esto y haya sellado para ellos este fruto, partiré hacia España pasando por ustedes.
 
 ### 15:29
 
-Y sé que, al ir a ustedes, llegaré en la plenitud de la bendición de Cristo.
+Y sé que, cuando vaya a ustedes, iré con la plenitud de la bendición del evangelio del Cristo.
 
 ### 15:30
 
-Les ruego, hermanos, por nuestro Señor Jesús Cristo y por el amor del Espíritu, que luchen juntamente conmigo en las oraciones por mí ante Dios,
+Ahora bien, les ruego, hermanos, por nuestro Señor Jesús, *el* Cristo, y por el amor del Espíritu, que luchen juntos conmigo en las oraciones a Dios por mí.
 
 ### 15:31
 
-para que yo sea librado de los que desobedecen en Judea, y que mi servicio para Jerusalén sea aceptable a los santos,
+Para que sea librado de los que desobedecen en Judea, y para que mi servicio para Jerusalén resulte aceptable a los santos.
 
 ### 15:32
 
-para que, llegando a ustedes con gozo por la voluntad de Dios, halle descanso con ustedes.
+Para que llegue con alegría a ustedes por voluntad de Dios y descanse junto con ustedes.
 
 ### 15:33
 
-Y el Dios de la paz sea con todos ustedes. Amén.
+Y el Dios de la paz *esté* con todos ustedes. Amén.
 
 ## Capítulo 16
 
 ### 16:1
 
-Les recomiendo a Febe, nuestra hermana, que también es servidora de la iglesia que está en Cencrea,
+Y les recomiendo a Febe, nuestra hermana, que es servidora de la congregación que *está* en Cencrea.
 
 ### 16:2
 
-para que la reciban en el Señor de un modo digno de los santos, y la ayuden en cualquier asunto en que ella necesite de ustedes; porque también ella ha sido protectora de muchos, y de mí mismo.
+Para que la reciban en el Señor de manera digna de los santos y le presten apoyo en cualquier asunto en que necesite de ustedes, pues también ella ha sido protectora de muchos y de mí mismo.
 
 ### 16:3
 
-Saluden a Prisca y a Aquila, mis colaboradores en Cristo Jesús,
+Saluden a Priscila y a Aquila, mis colaboradores en Cristo Jesús.
 
 ### 16:4
 
-los cuales por mi vida expusieron su propio cuello, a quienes no solo yo doy gracias, sino también todas las iglesias de las naciones,
+Quienes expusieron su propio cuello por mi vida, a quienes no solo yo doy gracias, sino también todas las congregaciones de los gentiles.
 
 ### 16:5
 
-y a la iglesia que está en su casa. Saluden a Epéneto, mi amado, que es primicias de Asia para Cristo.
+Y a la congregación en su casa. Saluden a Epéneto, mi amado, quien es primicia de Acaya para Cristo.
 
 ### 16:6
 
-Saluden a María, la cual ha trabajado mucho por ustedes.
+Saluden a María, quien trabajó mucho por nosotros.
 
 ### 16:7
 
-Saluden a Andrónico y a Junia, mis parientes y mis compañeros de prisión, los cuales son distinguidos entre los apóstoles, y que también fueron en Cristo antes que yo.
+Saluden a Andrónico y a Junia, mis parientes y mis compañeros de cautiverio, quienes son notables entre los apóstoles y también llegaron a estar en Cristo antes que yo.
 
 ### 16:8
 
-Saluden a Ampliato, mi amado en el Señor.
+Saluden a Amplias, mi amado en el Señor.
 
 ### 16:9
 
@@ -1697,15 +1697,15 @@ Saluden a Urbano, nuestro colaborador en Cristo, y a Estaquis, mi amado.
 
 ### 16:10
 
-Saluden a Apeles, el aprobado en Cristo. Saluden a los de la casa de Aristóbulo.
+Saluden a Apeles, el aprobado en Cristo. Saluden a los de entre los de Aristóbulo.
 
 ### 16:11
 
-Saluden a Herodión, mi pariente. Saluden a los de la casa de Narciso que están en el Señor.
+Saluden a Herodión, mi pariente. Saluden, de entre los de Narciso, a los que están en el Señor.
 
 ### 16:12
 
-Saluden a Trifena y a Trifosa, las que trabajan en el Señor. Saluden a Pérsida, la amada, la cual ha trabajado mucho en el Señor.
+Saluden a Trifena y a Trifosa, las que trabajan arduamente en el Señor. Saluden a Pérsida, la amada, quien se esforzó mucho en el Señor.
 
 ### 16:13
 
@@ -1713,56 +1713,56 @@ Saluden a Rufo, el elegido en el Señor, y a su madre y mía.
 
 ### 16:14
 
-Saluden a Asíncrito, a Flegonte, a Hermes, a Patrobas, a Hermas y a los hermanos que están con ellos.
+Saluden a Asíncrito, a Flegonte, a Hermas, a Pátrobas, a Hermes y a los hermanos que están con ellos.
 
 ### 16:15
 
-Saluden a Filólogo y a Julia, a Nereo y a su hermana, y a Olimpás y a todos los santos que están con ellos.
+Saluden a Filólogo y a Julia, a Nereo y a su hermana, y a Olimpas y a todos los santos que están con ellos.
 
 ### 16:16
 
-Salúdense unos a otros con beso santo. Las iglesias todas de Cristo los saludan.
+Salúdense unos a otros con un beso santo. Las congregaciones del Cristo los saludan.
 
 ### 16:17
 
-Les ruego, hermanos, que se fijen en los que causan las disensiones y los escándalos contra la enseñanza que ustedes aprendieron, y apártense de ellos.
+Ahora los exhorto, hermanos, a observar a los que causan las divisiones y los tropiezos en contra de la enseñanza que ustedes aprendieron; y apártense de ellos.
 
 ### 16:18
 
-Porque tales no sirven a nuestro Señor Cristo, sino a su propio vientre, y por medio de palabras suaves y de alabanzas engañan los corazones de los ingenuos.
+Pues los de esa clase no sirven a nuestro Señor Jesús, *el* Cristo, sino a su propio vientre, y mediante la labia y la adulación engañan los corazones de los inocentes.
 
 ### 16:19
 
-Porque la obediencia de ustedes ha llegado a todos. Por tanto, me gozo por ustedes; pero quiero que ustedes sean sabios para lo bueno, e inocentes para lo malo.
+Pues la obediencia de ustedes llegó a todos. Por tanto, me alegro por lo que respecta a ustedes; pero quiero que ustedes sean sabios respecto a lo bueno, pero inocentes respecto a lo malo.
 
 ### 16:20
 
-Y el Dios de la paz aplastará pronto a Satanás bajo los pies de ustedes. La gracia de nuestro Señor Jesús Cristo sea con ustedes.
+Y el Dios de la paz aplastará pronto a Satanás bajo los pies de ustedes. La gracia de nuestro Señor Jesús, *el* Cristo, *esté* con ustedes. Amén.
 
 ### 16:21
 
-Los saluda Timoteo, mi colaborador, y Lucio y Jasón y Sosípater, mis parientes.
+Los saludan Timoteo, mi colaborador, y Lucio y Jasón y Sosípatro, mis parientes.
 
 ### 16:22
 
-Los saludo yo, Tercio, el que escribió la carta, en el Señor.
+Yo, Tercio, el que escribió la carta en el Señor, los saludo.
 
 ### 16:23
 
-Los saluda Gayo, mi anfitrión y de toda la iglesia. Los saluda Erasto, el tesorero de la ciudad, y Cuarto, el hermano.
+Los saluda Gayo, el anfitrión mío y de toda la congregación. Los saludan Erasto, el administrador de la ciudad, y Cuarto, el hermano.
 
 ### 16:24
 
-La gracia de nuestro Señor Jesús Cristo sea con todos ustedes. Amén.
+La gracia de nuestro Señor Jesús, *el* Cristo, *esté* con todos ustedes. Amén.
 
 ### 16:25
 
-A aquel que es poderoso para confirmaros conforme a mi evangelio y al anuncio de Jesús Cristo, conforme a la revelación del misterio guardado en tiempos eternos,
+Y al que los puede fortalecer según mi evangelio y la proclamación de Jesús, *el* Cristo, según la revelación del misterio que se ha mantenido en silencio durante tiempos eternos,
 
 ### 16:26
 
-ahora, sin embargo, se ha manifestado por medio de las escrituras proféticas, conforme a la ordenanza del Dios eterno, para la obediencia de la fe en todas las naciones;
+pero ahora manifestado y dado a conocer a todas las naciones por medio de escritos proféticos, según el mandato del Dios eterno, para la obediencia de la fe,
 
 ### 16:27
 
-al solo Dios sabio, por medio de Jesús Cristo, gloria a los siglos. Amén.
+Al único Dios sabio, por medio de Jesús, *el* Cristo, *sea* la gloria por los siglos. Amén.

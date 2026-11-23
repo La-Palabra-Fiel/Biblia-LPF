@@ -60,7 +60,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | lucas | nt | ready | none |  |  |  |  |  |
 | juan | nt | ready | none |  |  |  |  |  |
 | hechos | nt | ready | none |  |  |  |  |  |
-| romanos | nt | draft | none |  |  |  |  |  |
+| romanos | nt | done | done | John Wry | 2026-11-23 | John Wry | 2026-11-23 |  |
 | 1corintios | nt | ready | none |  |  |  |  |  |
 | 2corintios | nt | ready | none |  |  |  |  |  |
 | galatas | nt | ready | none |  |  |  |  |  |

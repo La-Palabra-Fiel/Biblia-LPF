@@ -1289,7 +1289,7 @@ Porque de Él y por medio de Él y para Él *son* todas las cosas. ¡A Él la gl
 
 ### 12:1
 
-Les exhorto, pues, hermanos, por las misericordias de Dios, a presentar sus cuerpos como sacrificio vivo, santo, agradable a Dios, que es su culto racional.
+Por tanto, los exhorto, hermanos, por las misericordias de Dios, a que presenten sus cuerpos como sacrificio vivo, santo, agradable a Dios: su culto racional.
 
 ### 12:2
 
@@ -1309,7 +1309,7 @@ así nosotros, siendo muchos, somos un cuerpo en Cristo, y cada uno miembros los
 
 ### 12:6
 
-Y teniendo dones diferentes según la gracia que nos fue dada: si es profecía, conforme a la proporción de la fe;
+Y tenemos dones diferentes según la gracia que nos fue dada: ya sea profecía, según la proporción de la fe;
 
 ### 12:7
 
@@ -1325,7 +1325,7 @@ El amor sea sin hipocresía. Aborrezcan lo malo; apéguense a lo bueno.
 
 ### 12:10
 
-En el amor fraternal sean afectuosos los unos con los otros; en cuanto a honra, prefiriéndose los unos a los otros;
+En el amor fraternal, *sean* afectuosos unos con otros; en cuanto a honra, prefiriéndose los unos a los otros;
 
 ### 12:11
 

@@ -1208,22 +1208,34 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
             "reason": decision.get("reason"),
         })
 
-    def propagate(node: dict) -> tuple[bool, bool, set[str]]:
+    def propagate(node: dict) -> tuple[bool, bool, set[str], set[str]]:
         if node.get("kind") == "reference-word":
-            return False, False, set()
+            return False, False, set(), set()
         if node.get("kind") == "tr-word":
             decision_id = node.get("decisionId")
-            return True, False, ({decision_id} if decision_id else set())
+            adaptation_id = node.get("adaptationRuleId")
+            return (
+                True,
+                False,
+                ({decision_id} if decision_id else set()),
+                ({adaptation_id} if adaptation_id else set()),
+            )
         if node.get("kind") == "word":
-            return True, True, set()
+            return True, True, set(), set()
         child_rows = [propagate(child) for child in node.get("children") or []]
         resolved = all(row[0] for row in child_rows)
         children_exact = all(row[1] for row in child_rows)
         decisions = set(node.get("localDecisionIds") or []).union(*(row[2] for row in child_rows))
+        adaptations = set(node.get("localAdaptationRuleIds") or []).union(
+            *(row[3] for row in child_rows)
+        )
         if node.get("status") == "hold-token-disagreement" and resolved:
             if decisions:
                 node["status"] = "human-adjudicated-tr"
                 node["decisionIds"] = sorted(decisions)
+            elif adaptations:
+                node["status"] = "tr-authority-adapted"
+                node["adaptationRuleIds"] = sorted(adaptations)
             elif children_exact:
                 # MACULA trees may place postpositive particles before their
                 # clauses or otherwise use structural rather than surface
@@ -1231,8 +1243,18 @@ def apply_structure_adjudications(candidate: dict, adjudications: dict) -> dict:
                 # anchor, that ordering is not a token disagreement.
                 node["status"] = "exact-candidate"
             else:
-                return False, False, decisions
-        return resolved, node.get("status") == "exact-candidate" and children_exact, decisions
+                return False, False, decisions, adaptations
+        elif node.get("status") == "human-adjudicated-tr" and resolved:
+            # A later adjudication may retain a subtree that was itself
+            # adjudicated earlier in the same pass. Keep the parent provenance
+            # complete instead of retaining only its local decision ID.
+            node["decisionIds"] = sorted(decisions)
+        return (
+            resolved,
+            node.get("status") == "exact-candidate" and children_exact,
+            decisions,
+            adaptations,
+        )
 
     for sentence in candidate.get("sentences") or []:
         for root in sentence.get("roots") or []:

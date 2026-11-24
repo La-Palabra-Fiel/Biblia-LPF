@@ -1195,7 +1195,7 @@ Pues a ustedes, los gentiles, les hablo. En la medida en que yo soy apóstol de 
 
 ### 11:14
 
-Por si de algún modo provoco celos en mi carne y salvo a algunos de ellos.
+Por si de algún modo provoco a celos a *los de* mi carne y salvo a algunos de ellos.
 
 ### 11:15
 

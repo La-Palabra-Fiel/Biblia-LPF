@@ -146,6 +146,43 @@ class NtMaculaTests(unittest.TestCase):
         self.assertEqual(adapted["MAT.2.23.w007"], APPROVED_ROBINSON_BINDING_RULE)
         self.assertNotIn("MAT.2.23.w007", candidate["trOnlyTokenIds"])
 
+    def test_structure_overlay_preserves_deterministic_adaptation_provenance(self) -> None:
+        import json
+        from books import ROOT
+
+        ledger = json.loads(
+            (ROOT / "source/greek/TR1894/macula-structure-mapping.json").read_text()
+        )
+        adjudications = {
+            "schema": "tr1894-native-structure-adjudications-v1",
+            "decisions": [],
+        }
+        candidate = project_chapter_candidate(get_book("romanos"), 1, ledger)
+        apply_tr_authority_adaptations(candidate, ledger, adjudications)
+        apply_structure_adjudications(candidate, adjudications)
+
+        nodes = {}
+
+        def collect(node):
+            if node.get("candidateNodeId"):
+                nodes[node["candidateNodeId"]] = node
+            for child in node.get("children") or []:
+                collect(child)
+
+        for sentence in candidate["sentences"]:
+            for root in sentence["roots"]:
+                collect(root)
+
+        self.assertEqual(
+            nodes["ROM.1.mc00136"]["status"],
+            "tr-authority-adapted",
+        )
+        self.assertEqual(
+            nodes["ROM.1.mc00363"]["status"],
+            "tr-authority-adapted",
+        )
+        validate_candidate(candidate)
+
     def test_isolated_macula_only_terminal_promotes_the_sole_group_child(self) -> None:
         import json
         from books import ROOT

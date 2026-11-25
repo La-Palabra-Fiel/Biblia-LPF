@@ -21,6 +21,11 @@ declaración adicional.
 - Las firmas están en `apps/team/var/book-signatures.json`.
 - `apps/team/var/` está excluido de Git y nunca se publica en GitHub.
 
+El sitio público recibe solamente un conteo anónimo en
+`PEER_REVIEW_PROGRESS.json`. Ese conteo está ligado a la huella exacta de la
+traducción: si cambia el libro, el sitio muestra cero hasta que la versión nueva
+reciba firmas. Nunca se publican nombres ni claves privadas.
+
 Para crear o volver a mostrar el enlace local de un libro:
 
 ```sh

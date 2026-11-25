@@ -87,6 +87,35 @@ def human_candidate_path(book: str, testament: str, chapter: int, verse: int) ->
     return pipeline_dir(book, testament) / f"{book}-{chapter}-{verse}.candidate-human-reviewed.json"
 
 
+def prepared_chapters(
+    *, book: str, testament: str, translations: dict[tuple[int, int], str]
+) -> list[int]:
+    """Return chapters whose every canonical verse has a prepared candidate."""
+    prepared_verses: set[tuple[int, int]] = set()
+    name_pattern = re.compile(
+        rf"^{re.escape(book)}-(\d+)-(\d+)\."
+        rf"(?:candidate-human-reviewed|draft-[A-Za-z0-9_-]+)\.json$"
+    )
+    for path in pipeline_dir(book, testament).glob(f"{book}-*.json"):
+        match = name_pattern.match(path.name)
+        if not match:
+            continue
+        candidate = read_json(path, {})
+        if (
+            isinstance(candidate, dict)
+            and str(candidate.get("spanish") or "").strip()
+            and isinstance(candidate.get("units"), list)
+            and bool(candidate["units"])
+        ):
+            prepared_verses.add((int(match.group(1)), int(match.group(2))))
+    result: list[int] = []
+    for chapter in sorted({chapter for chapter, _ in translations}):
+        verses = sorted(verse for current, verse in translations if current == chapter)
+        if verses and all((chapter, verse) in prepared_verses for verse in verses):
+            result.append(chapter)
+    return result
+
+
 def reference_key(link: dict) -> tuple[int, int] | None:
     match = REF_IN_LINK.search(str(link.get("reference") or ""))
     if not match:
@@ -319,6 +348,12 @@ def publication_progress(
             chapter_errors[str(chapter)] = errors
     approved = [int(chapter) for chapter, status in chapter_statuses.items() if status == "approved"]
     drafts = [int(chapter) for chapter, status in chapter_statuses.items() if status == "draft-only"]
+    prepared = sorted(
+        set(chapters if book_finished else prepared_chapters(
+            book=book, testament=testament, translations=translations
+        ))
+        | set(approved)
+    )
     return {
         "schema": "lpf-website-progress-v1",
         "technicalBibleId": "LBF",
@@ -329,7 +364,9 @@ def publication_progress(
         "chapterStatuses": chapter_statuses,
         "chapterLabels": {chapter: None if status == "approved" else "Solo borrador" for chapter, status in chapter_statuses.items()},
         "approvedChapters": approved,
+        "preparedChapters": prepared,
         "draftChapters": drafts,
+        "preparedChapterCount": len(prepared),
         "approvedChapterCount": len(approved),
         "chapterCount": len(chapters),
         "sourceCommit": source_commit,

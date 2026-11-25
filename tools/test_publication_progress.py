@@ -66,6 +66,25 @@ class PublicationProgressTests(unittest.TestCase):
         self.assertEqual(public["schema"], "lpf-website-progress-v1")
         self.assertEqual(public["chapterStatuses"], {"1": "approved", "2": "draft-only"})
         self.assertEqual(public["chapterLabels"], {"1": None, "2": "Solo borrador"})
+        self.assertEqual(public["preparedChapters"], [1])
+        self.assertEqual(public["preparedChapterCount"], 1)
+
+    def test_prepared_chapter_requires_a_candidate_for_every_verse(self):
+        pipeline = self.root / "pipeline" / "ot" / "sample"
+        progress.write_json(
+            pipeline / "sample-2-1.draft-team-gpt.json",
+            {
+                "schema": "lbf-gpt-draft-v1",
+                "spanish": "Texto borrador.",
+                "units": [{"es": "Texto borrador", "sourceTokenIds": ["h3"]}],
+            },
+        )
+        with patch.object(progress, "ROOT", self.root):
+            public = progress.publication_progress(
+                book="sample", testament="ot", book_finished=False
+            )
+        self.assertEqual(public["preparedChapters"], [1, 2])
+        self.assertEqual(public["preparedChapterCount"], 2)
 
     def test_revision_demotes_chapter_without_deleting_links(self):
         with patch.object(progress, "ROOT", self.root):

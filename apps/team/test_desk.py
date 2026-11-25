@@ -11,15 +11,15 @@ import desk
 class DeskTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
-        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS)
+        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS,desk.PUBLIC_PEER_REVIEW_PROGRESS)
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews";desk.BOOK_SIGNATURES=root/"book-signatures.json";desk.BOOK_REVIEW_LINKS=root/"book-review-links.json"
+        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews";desk.BOOK_SIGNATURES=root/"book-signatures.json";desk.BOOK_REVIEW_LINKS=root/"book-review-links.json";desk.PUBLIC_PEER_REVIEW_PROGRESS=root/"PEER_REVIEW_PROGRESS.json"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS=self.old;self.tmp.cleanup()
+        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS,desk.PUBLIC_PEER_REVIEW_PROGRESS=self.old;self.tmp.cleanup()
 
     def test_authenticated_reader_signs_exact_ready_book_once(self):
         root=Path(self.tmp.name)
@@ -34,6 +34,10 @@ class DeskTests(unittest.TestCase):
             payload={"accessKey":"private-key","book":"filipenses","translationSha256":sha,"confirmed":True,"signedName":"Ana Pérez"}
             view=desk.sign_peer_review(payload)
             self.assertEqual(view["signatures"][0]["name"],"Ana Pérez")
+            public=desk.read_json(desk.PUBLIC_PEER_REVIEW_PROGRESS,{})
+            self.assertEqual(public["books"]["filipenses"]["completed"],1)
+            self.assertEqual(public["books"]["filipenses"]["translationSha256"],sha)
+            self.assertNotIn("Ana Pérez",desk.PUBLIC_PEER_REVIEW_PROGRESS.read_text(encoding="utf-8"))
             with self.assertRaisesRegex(ValueError,"already signed"):
                 desk.sign_peer_review(payload)
             with self.assertRaisesRegex(ValueError,"does not match"):
@@ -132,6 +136,20 @@ class DeskTests(unittest.TestCase):
             desk.claim("Ana","exodo",3,"11111111");desk.claim("Luis","exodo",4,"22222222")
             with self.assertRaises(ValueError):desk.claim("Luis","exodo",3,"22222222")
             self.assertIn("exodo:3",desk.load_claims());self.assertIn("exodo:4",desk.load_claims())
+
+    def test_restart_clears_orphaned_running_claim_without_retry(self):
+        claims={
+            "mateo:20":{"book":"mateo","chapter":20,"name":"Ana","running":True,"verse":31,"note":"Preparing 20:31"},
+            "exodo:3":{"book":"exodo","chapter":3,"name":"Luis","running":False,"note":"Ready for human review"},
+        }
+        desk.write_json(desk.CLAIMS,claims)
+        self.assertEqual(desk.recover_interrupted_preparations(),1)
+        saved=desk.load_claims()
+        self.assertFalse(saved["mateo:20"]["running"])
+        self.assertIn("no automatic retry",saved["mateo:20"]["note"])
+        self.assertEqual(saved["mateo:20"]["verse"],31)
+        self.assertEqual(saved["exodo:3"]["note"],"Ready for human review")
+        self.assertEqual(desk.recover_interrupted_preparations(),0)
     def test_nt_is_allowed_but_readiness_is_per_verse(self):
         self.assertEqual(desk.book_or_raise("filipenses").testament,"nt")
         self.assertFalse(desk.board()["ntBlocked"])

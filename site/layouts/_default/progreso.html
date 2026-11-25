@@ -7,41 +7,49 @@
 
   {{ with $d }}
   <ul class="cifras">
-    <li class="cifra"><b>{{ .totales.libros }}</b><span>Libros con algún texto preliminar</span></li>
-    <li class="cifra"><b>{{ .totales.capitulos }}</b><span>Capítulos con archivo de borrador</span></li>
-    <li class="cifra"><b>{{ lang.FormatNumber 0 .totales.versiculos }}</b><span>Versículos con texto preliminar</span></li>
-    <li class="cifra"><b>{{ .totales.capitulosAprobados }}</b><span>Capítulos aprobados</span></li>
+    <li class="cifra"><b>{{ .totales.capitulosPreparados }} / {{ .totales.capitulos }}</b><span>Capítulos preparados</span></li>
+    <li class="cifra"><b>{{ .totales.capitulosAprobados }} / {{ .totales.capitulos }}</b><span>Capítulos aprobados</span></li>
+    <li class="cifra"><b>{{ .totales.revisoresPares }} / {{ .totales.metaRevisoresPares }}</b><span>Revisiones de pares</span></li>
   </ul>
 
-  <h2>Disponibilidad de texto preliminar</h2>
+  <h2>Progreso por libro</h2>
 
   <div class="aviso">
-    <p>Los capítulos aprobados tienen texto y alineamiento confirmados por una persona. Los demás siguen disponibles como <em>Solo borrador</em>. Un libro permanece <em>Libro sin terminar</em> hasta su aprobación final. Consulta <a href="{{ "versiones/" | relURL }}">Estado</a> para ver las firmas registradas por etapa.</p>
+    <p><strong>Preparado</strong> significa que Team Desk tiene un candidato para cada versículo del capítulo. <strong>Aprobado</strong> significa que una persona confirmó el texto y el alineamiento del capítulo. <strong>Revisores pares</strong> cuenta firmas anónimas ligadas a la versión española exacta, con una meta de diez por libro. Ninguna de estas cifras marca automáticamente un libro como terminado.</p>
   </div>
 
   {{ range $t := slice "at" "nt" }}
   {{ $libros := where $d.canon "testamento" $t }}
   {{ $hechos := where $libros "publicado" true }}
-  <h2>{{ if eq $t "at" }}Antiguo Testamento{{ else }}Nuevo Testamento{{ end }}
-    <span style="font-family:var(--sans);font-size:.75rem;letter-spacing:.08em;color:var(--tinta-suave);text-transform:uppercase">
-      {{ len $hechos }} con algún borrador preliminar
-    </span></h2>
-  <div class="tabla-envoltura">
-    <table>
-      <thead>
-        <tr><th>Libro</th><th>Capítulos aprobados</th><th>Versículos</th><th>Estado del libro</th></tr>
-      </thead>
-      <tbody>
-        {{ range $libros }}
-        <tr>
-          <td>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</td>
-          <td>{{ if .publicado }}{{ .capitulosAprobados }} / {{ .capitulos }}{{ else }}—{{ end }}</td>
-          <td>{{ if .publicado }}{{ .versiculos }}{{ else }}—{{ end }}</td>
-          <td>{{ if not .publicado }}No disponible{{ else if eq .estadoLibro "approved" }}LPF{{ else }}Libro sin terminar{{ end }}</td>
-        </tr>
-        {{ end }}
-      </tbody>
-    </table>
+  <h2 class="titulo-testamento">{{ if eq $t "at" }}Antiguo Testamento{{ else }}Nuevo Testamento{{ end }}
+    <span>{{ len $hechos }} con texto preliminar</span>
+  </h2>
+  <div class="rejilla-progreso">
+    {{ range $libros }}
+    <article class="tarjeta-progreso">
+      <header>
+        <h3>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</h3>
+        <span class="estado-progreso-libro">{{ if not .publicado }}Sin texto{{ else if eq .estadoLibro "approved" }}LPF{{ else }}En curso{{ end }}</span>
+      </header>
+      <dl>
+        <div class="metrica-progreso preparada">
+          <dt>Capítulos preparados</dt>
+          <dd><b>{{ .capitulosPreparados }}</b> / {{ .capitulos }}</dd>
+          <progress value="{{ .capitulosPreparados }}" max="{{ .capitulos }}" aria-label="{{ .titulo }}: {{ .capitulosPreparados }} de {{ .capitulos }} capítulos preparados"></progress>
+        </div>
+        <div class="metrica-progreso aprobada">
+          <dt>Capítulos aprobados</dt>
+          <dd><b>{{ .capitulosAprobados }}</b> / {{ .capitulos }}</dd>
+          <progress value="{{ .capitulosAprobados }}" max="{{ .capitulos }}" aria-label="{{ .titulo }}: {{ .capitulosAprobados }} de {{ .capitulos }} capítulos aprobados"></progress>
+        </div>
+        <div class="metrica-progreso revisores">
+          <dt>Revisores pares</dt>
+          <dd><b>{{ .revisoresPares }}</b> / {{ .metaRevisoresPares }}</dd>
+          <progress value="{{ .revisoresPares }}" max="{{ .metaRevisoresPares }}" aria-label="{{ .titulo }}: {{ .revisoresPares }} de {{ .metaRevisoresPares }} revisores pares"></progress>
+        </div>
+      </dl>
+    </article>
+    {{ end }}
   </div>
   {{ end }}
   {{ end }}

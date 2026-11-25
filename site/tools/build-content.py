@@ -19,6 +19,7 @@ Uso:  python3 tools/build-content.py
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import re
@@ -30,6 +31,7 @@ RAIZ_SITIO = Path(__file__).resolve().parent.parent
 RAIZ_REPO = RAIZ_SITIO.parent
 DIR_TRADUCCION = RAIZ_REPO / "translation"
 ARCHIVO_ESTADO = RAIZ_REPO / "STATUS.md"
+ARCHIVO_REVISION_PARES = RAIZ_REPO / "PEER_REVIEW_PROGRESS.json"
 
 sys.path.insert(0, str(RAIZ_REPO / "tools"))
 from publication_progress import publication_progress  # noqa: E402
@@ -108,6 +110,10 @@ class Libro:
         self.testamento_fuente = "ot" if testamento == "at" else "nt"
         self.estado_libro = "unfinished"
         self.estados_capitulos: dict[str, str] = {}
+        self.capitulos_preparados = 0
+        self.revisores_pares = 0
+        self.meta_revisores_pares = 10
+        self.ruta_fuente: Path | None = None
 
     @property
     def n_versiculos(self) -> int:
@@ -131,6 +137,7 @@ def parsear_libro(ruta: Path, meta: dict) -> Libro:
     libro = Libro(slug, info["titulo"], info["testamento"], info["orden"])
     libro.slug_fuente = ruta.stem.lower()
     libro.testamento_fuente = ruta.parent.name
+    libro.ruta_fuente = ruta
 
     capitulo_actual: int | None = None
     versiculo_actual: str | None = None
@@ -335,6 +342,25 @@ def leer_estado() -> list[dict]:
     return salida
 
 
+def leer_revision_pares(libro: Libro) -> tuple[int, int]:
+    """Read only the anonymous count bound to this exact translation file."""
+    target = 10
+    if not ARCHIVO_REVISION_PARES.is_file() or not libro.ruta_fuente:
+        return 0, target
+    try:
+        data = json.loads(ARCHIVO_REVISION_PARES.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return 0, target
+    if not isinstance(data, dict) or data.get("schema") != "lbf-public-peer-review-progress-v1":
+        return 0, target
+    target = max(1, int(data.get("targetPerBook") or target))
+    row = (data.get("books") or {}).get(libro.slug_fuente) or {}
+    fingerprint = hashlib.sha256(libro.ruta_fuente.read_bytes()).hexdigest()
+    if row.get("translationSha256") != fingerprint:
+        return 0, target
+    return min(max(0, int(row.get("completed") or 0)), target), target
+
+
 def main() -> None:
     if not DIR_TRADUCCION.is_dir():
         raise SystemExit(f"No se encontró {DIR_TRADUCCION}")
@@ -368,6 +394,8 @@ def main() -> None:
         )
         libro.estado_libro = progreso["bookStatus"]
         libro.estados_capitulos = progreso["chapterStatuses"]
+        libro.capitulos_preparados = progreso["preparedChapterCount"]
+        libro.revisores_pares, libro.meta_revisores_pares = leer_revision_pares(libro)
 
     if DIR_BIBLIA.exists():
         shutil.rmtree(DIR_BIBLIA)
@@ -412,7 +440,10 @@ def main() -> None:
                       "versiculos": l.n_versiculos if l else 0,
                       "publicado": bool(l),
                       "estadoLibro": l.estado_libro if l else "unavailable",
-                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0})
+                      "capitulosPreparados": l.capitulos_preparados if l else 0,
+                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
+                      "revisoresPares": l.revisores_pares if l else 0,
+                      "metaRevisoresPares": l.meta_revisores_pares if l else 10})
     for slug, titulo, caps in CANON_NT:
         l = publicados.get(slug)
         canon.append({"slug": slug, "titulo": titulo, "testamento": "nt",
@@ -420,7 +451,10 @@ def main() -> None:
                       "versiculos": l.n_versiculos if l else 0,
                       "publicado": bool(l),
                       "estadoLibro": l.estado_libro if l else "unavailable",
-                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0})
+                      "capitulosPreparados": l.capitulos_preparados if l else 0,
+                      "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
+                      "revisoresPares": l.revisores_pares if l else 0,
+                      "metaRevisoresPares": l.meta_revisores_pares if l else 10})
 
     n_at = sum(1 for l in libros if l.testamento == "at")
     n_nt = sum(1 for l in libros if l.testamento == "nt")
@@ -436,6 +470,9 @@ def main() -> None:
                 sum(estado == "approved" for estado in libro.estados_capitulos.values())
                 for libro in libros
             ),
+            "capitulosPreparados": sum(libro.capitulos_preparados for libro in libros),
+            "revisoresPares": sum(libro.revisores_pares for libro in libros),
+            "metaRevisoresPares": sum(libro.meta_revisores_pares for libro in libros),
         },
         "publicados": [
             {
@@ -445,7 +482,10 @@ def main() -> None:
                 "capitulos": l.n_capitulos,
                 "versiculos": l.n_versiculos,
                 "estadoLibro": l.estado_libro,
+                "capitulosPreparados": l.capitulos_preparados,
                 "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()),
+                "revisoresPares": l.revisores_pares,
+                "metaRevisoresPares": l.meta_revisores_pares,
             }
             for l in libros
         ],

@@ -33,7 +33,7 @@ python3 tools/build-content.py && hugo --gc --minify
 | --- | --- |
 | `content/biblia/<libro>/_index.md` | Página de cada libro |
 | `content/biblia/<libro>/<n>.md` | Página de cada capítulo (versículos en HTML) |
-| `data/libros.json` | Índice del canon, aprobación de capítulos, estado y estadísticas |
+| `data/libros.json` | Índice del canon, capítulos preparados y aprobados, revisión de pares y estadísticas |
 | `data/versiones.json` | Estado leído de `../STATUS.md` |
 | `static/indice.json` | Índice de búsqueda del lado del cliente |
 

@@ -65,6 +65,7 @@ VAR = Path(__file__).resolve().parent / "var"
 CLAIMS, PEOPLE = VAR / "claims.json", VAR / "people.json"
 BOOK_SIGNATURES = VAR / "book-signatures.json"
 BOOK_REVIEW_LINKS = VAR / "book-review-links.json"
+PUBLIC_PEER_REVIEW_PROGRESS = ROOT / "PEER_REVIEW_PROGRESS.json"
 RECOVERED = VAR / "recovered-reviews"
 STATUS = ROOT / "STATUS.md"
 NT_SYNTAX_CANDIDATES = ROOT / "nt-syntax" / "candidates"
@@ -276,6 +277,28 @@ def save_claims(value: dict) -> None:
         write_json(CLAIMS, value)
 
 
+def recover_interrupted_preparations() -> int:
+    """Clear persisted running flags after a server restart without retrying work."""
+    with _lock:
+        claims = load_claims()
+        recovered = 0
+        for claim in claims.values():
+            if not isinstance(claim, dict) or claim.get("running") is not True:
+                continue
+            claim.update(
+                running=False,
+                note=(
+                    "Preparation stopped: Team Desk restarted before this local worker "
+                    "finished; no automatic retry was made."
+                ),
+                updated=now(),
+            )
+            recovered += 1
+        if recovered:
+            save_claims(claims)
+        return recovered
+
+
 def load_people() -> dict:
     try:
         data = read_json(PEOPLE, {})
@@ -422,6 +445,25 @@ def current_book_signatures(slug: str, fingerprint: str) -> list[dict]:
     ]
 
 
+def write_public_peer_review_progress(slug: str, fingerprint: str, completed: int) -> None:
+    """Publish an anonymous, version-bound count without exposing reviewer data."""
+    value = read_json(PUBLIC_PEER_REVIEW_PROGRESS, {})
+    if not isinstance(value, dict) or value.get("schema") != "lbf-public-peer-review-progress-v1":
+        value = {
+            "schema": "lbf-public-peer-review-progress-v1",
+            "targetPerBook": 10,
+            "books": {},
+        }
+    target = max(1, int(value.get("targetPerBook") or 10))
+    books = value.setdefault("books", {})
+    books[slug] = {
+        "translationSha256": fingerprint,
+        "completed": min(max(0, int(completed)), target),
+        "updatedOn": now(),
+    }
+    write_json(PUBLIC_PEER_REVIEW_PROGRESS, value)
+
+
 def load_book_review_links() -> dict:
     value = read_json(BOOK_REVIEW_LINKS, {})
     return value if isinstance(value, dict) else {}
@@ -488,6 +530,11 @@ def sign_peer_review(payload: dict) -> dict:
             "statement": "The named reader confirmed reading the complete book and approved this exact Spanish translation.",
         })
         write_json(BOOK_SIGNATURES, ledger)
+        write_public_peer_review_progress(
+            book.slug,
+            fingerprint,
+            len(current_book_signatures(book.slug, fingerprint)),
+        )
     return peer_review_book(access_key, book.slug)
 
 

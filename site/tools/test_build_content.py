@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import json
 import unittest
 from pathlib import Path
 from runpy import run_path
@@ -96,6 +98,38 @@ class RenderTextoVersiculoTests(unittest.TestCase):
         self.assertIn("capitulosAprobados: 1", index)
         self.assertIn('estadoCapitulo: "draft-only"', draft)
         self.assertIn('estadoCapitulo: "approved"', approved)
+
+    def test_peer_review_count_is_anonymous_and_bound_to_exact_translation(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            translation = root / "filemon.md"
+            translation.write_text("# Filemón\n\n### 1:1\n\nTexto.\n", encoding="utf-8")
+            progress = root / "PEER_REVIEW_PROGRESS.json"
+            progress.write_text(
+                json.dumps({
+                    "schema": "lbf-public-peer-review-progress-v1",
+                    "targetPerBook": 10,
+                    "books": {
+                        "filemon": {
+                            "translationSha256": hashlib.sha256(translation.read_bytes()).hexdigest(),
+                            "completed": 3,
+                        }
+                    },
+                }),
+                encoding="utf-8",
+            )
+            book = build_content["Libro"]("filemon", "Filemón", "nt", 117)
+            book.slug_fuente = "filemon"
+            book.ruta_fuente = translation
+            globals_ = build_content["leer_revision_pares"].__globals__
+            original = globals_["ARCHIVO_REVISION_PARES"]
+            globals_["ARCHIVO_REVISION_PARES"] = progress
+            try:
+                self.assertEqual(build_content["leer_revision_pares"](book), (3, 10))
+                translation.write_text("# Filemón\n\n### 1:1\n\nTexto cambiado.\n", encoding="utf-8")
+                self.assertEqual(build_content["leer_revision_pares"](book), (0, 10))
+            finally:
+                globals_["ARCHIVO_REVISION_PARES"] = original
 
     def test_reader_copy_adds_lpf_version_and_permalink(self) -> None:
         javascript = (

@@ -804,6 +804,88 @@ input[type="search"]::placeholder { color: var(--tinta-suave); }
 }
 .etiqueta-medidor b { font-weight: 500; color: var(--tinta); }
 
+.titulo-testamento {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem 1rem;
+  align-items: baseline;
+  margin-top: 3rem;
+}
+.titulo-testamento span {
+  color: var(--tinta-suave);
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rejilla-progreso {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.tarjeta-progreso {
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  background: var(--papel-alto);
+  box-shadow: var(--sombra);
+}
+.tarjeta-progreso header {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: baseline;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--linea);
+}
+.tarjeta-progreso h3 { margin: 0; font-size: 1.22rem; }
+.estado-progreso-libro {
+  flex: none;
+  color: var(--tinta-suave);
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.tarjeta-progreso dl { margin: .9rem 0 0; }
+.metrica-progreso {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .15rem .75rem;
+  margin-top: .75rem;
+}
+.metrica-progreso dt,
+.metrica-progreso dd {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: .78rem;
+}
+.metrica-progreso dt { color: var(--tinta-media); }
+.metrica-progreso dd { color: var(--tinta-suave); font-variant-numeric: tabular-nums; }
+.metrica-progreso dd b { color: var(--tinta); font-size: .95rem; }
+.metrica-progreso progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: .62rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  appearance: none;
+  background: var(--papel-hundido);
+}
+.metrica-progreso progress::-webkit-progress-bar { background: var(--papel-hundido); border-radius: 999px; }
+.metrica-progreso progress::-webkit-progress-value { background: var(--barra-progreso); border-radius: 999px; }
+.metrica-progreso progress::-moz-progress-bar { background: var(--barra-progreso); border-radius: 999px; }
+.metrica-progreso.preparada { --barra-progreso: #477b9b; }
+.metrica-progreso.aprobada { --barra-progreso: #3f7654; }
+.metrica-progreso.revisores { --barra-progreso: var(--acento); }
+
+@media (max-width: 700px) {
+  .rejilla-progreso { grid-template-columns: 1fr; }
+}
+
 /* ---------- Impresión --------------------------------------------------- */
 
 @media print {

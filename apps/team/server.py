@@ -119,6 +119,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     desk.secure_private_storage()
+    desk.recover_interrupted_preparations()
     threading.Thread(target=desk.warm_totals, daemon=True).start()
     threading.Thread(target=desk.warm_nt_syntax_board, daemon=True).start()
     server = ThreadingHTTPServer((HOST, PORT), Handler)

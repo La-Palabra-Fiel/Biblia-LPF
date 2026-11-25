@@ -4,9 +4,8 @@ layout: "progreso"
 description: "Inventario de borradores muy preliminares de La Palabra Fiel, un proyecto de traducción bíblica en fase inicial."
 ---
 
-El sitio muestra el trabajo más reciente. Los capítulos aprobados por una
-persona se presentan como LPF; los demás permanecen visibles con la marca
-`Solo borrador`. Aunque haya capítulos aprobados, el libro conserva la marca
-`Libro sin terminar` hasta su aprobación final. Consulta el registro de [estado
-de revisión]({{< relref "/versiones" >}}) para ver los estados y las firmas de
-cada etapa.
+Cada libro muestra por separado cuánto trabajo está preparado en Team Desk,
+cuántos capítulos recibieron aprobación humana y cuántos revisores pares han
+firmado la versión española exacta. Los nombres de los revisores y sus enlaces
+privados nunca se publican. Consulta también el [estado de
+revisión]({{< relref "/versiones" >}}) de cada etapa.

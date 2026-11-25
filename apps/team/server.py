@@ -82,6 +82,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_value(400, {"error": str(exc)})
         if parsed.path in {"/", "/index.html"}:
             return self.send_value(200, body=(PUBLIC / "index.html").read_bytes(), content_type="text/html; charset=utf-8")
+        if parsed.path in {"/revision-libros", "/revision-libros.html"}:
+            return self.send_value(200, body=(PUBLIC / "revision-libros.html").read_bytes(), content_type="text/html; charset=utf-8")
         return self.send_value(404, {"error": "Not found"})
 
     def do_POST(self):  # noqa: N802
@@ -100,6 +102,8 @@ class Handler(BaseHTTPRequestHandler):
             "/api/approve-verse": desk.approve_verse,
             "/api/approve-clean-chapter": desk.approve_clean_chapter,
             "/api/finish-chapter": desk.finish_chapter,
+            "/api/revision-libros/libro": lambda p: desk.peer_review_book(p.get("accessKey"), p.get("book")),
+            "/api/revision-libros/firmar": desk.sign_peer_review,
         }
         action = actions.get(urlparse(self.path).path)
         if not action:

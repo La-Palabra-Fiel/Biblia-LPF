@@ -1,52 +1,41 @@
-# Peer review on GitHub
+# Revisión de libros
 
-Whole-book peer review uses GitHub pull-request approvals. There is no second
-website, user database, or deployment.
+Cada revisor recibe un enlace privado distinto para cada libro. El archivo
+oculto enlaza de forma explícita el libro, el nombre del revisor y su clave
+privada.
 
-## One-time repository setup
+## Para el lector
 
-1. Keep this repository private while unfinished translation work is private.
-2. Add each reviewer as a GitHub collaborator or organization member with
-   permission to read and review pull requests.
-3. In the protection rule or ruleset for `main`, require a pull request before
-   merging and require the desired number of approvals (at least two for
-   multiple-person review).
-4. Enable dismissal of stale approvals when new commits are pushed. This keeps
-   every approval bound to the exact version the reviewer read.
+1. Abre el enlace privado recibido.
+2. Lee el libro completo.
+3. Escribe su nombre completo y pulsa **Firmar**.
 
-GitHub then owns authentication and records the reviewer's account, approval,
-date, review text, and commit.
+La aplicación rechaza la firma si el nombre escrito no coincide con el revisor
+asignado a ese enlace. Registra el nombre, la fecha y la huella exacta del
+archivo de traducción. El lector no crea una cuenta ni copia ninguna
+declaración adicional.
 
-## Review one book
+## Datos privados
 
-1. Finish the book on a branch and run:
+- Los enlaces privados están en `apps/team/var/book-review-links.json`.
+- Las firmas están en `apps/team/var/book-signatures.json`.
+- `apps/team/var/` está excluido de Git y nunca se publica en GitHub.
 
-   ```sh
-   python3 tools/verify.py <book>
-   ```
+Para crear o volver a mostrar el enlace local de un libro:
 
-2. Confirm that the translation stage is `ready`. Verification never approves
-   the Spanish and never writes `done`.
-3. Push the branch and open a pull request using
-   `.github/PULL_REQUEST_TEMPLATE/book-peer-review.md`.
-4. Request the required reviewers.
-5. Each reviewer reads the entire `translation/{nt|ot}/<book>.md` file, checks
-   the source packet or alignment where needed, and submits GitHub's
-   **Approve** review only if they personally approve the translation.
-6. If the translation changes, reviewers reread the affected material and
-   approve the new commit. The stale-approval rule removes the old approval.
-7. Merge only after the configured number of current approvals is present.
+```sh
+python3 apps/team/manage_review_links.py romanos "Ana Pérez"
+```
 
-## Canonical status boundary
+Para invalidar el enlace anterior y crear otro:
 
-GitHub peer approvals are review evidence; they do not automatically edit
-`STATUS.md`, approve alignment, or mark a book `done`. The repository's
-existing named-human `ready` → `done` control remains governed by
-`DATA_CONTRACT.md`. Automation must never infer `done` from a pull request.
+```sh
+python3 apps/team/manage_review_links.py romanos "Ana Pérez" --renew
+```
 
-For a book that is already on `main`, make any requested review corrections on
-a new branch and open the review pull request from that branch. If no change is
-needed, record the review in a GitHub issue that names the book and exact commit;
-each reviewer gives a named approval comment there. Future books should enter
-`main` through the pull-request workflow so GitHub's formal approval control is
-available.
+## Límite canónico
+
+Una firma confirma solamente que la persona leyó y aprobó la versión española
+exacta del libro. No aprueba automáticamente la alineación, no modifica
+`STATUS.md` y no marca el libro como `done`. El control humano separado de
+`DATA_CONTRACT.md` permanece vigente.

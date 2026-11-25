@@ -11,15 +11,37 @@ import desk
 class DeskTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
-        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED)
+        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS)
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews"
+        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews";desk.BOOK_SIGNATURES=root/"book-signatures.json";desk.BOOK_REVIEW_LINKS=root/"book-review-links.json"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
+        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS=self.old;self.tmp.cleanup()
+
+    def test_authenticated_reader_signs_exact_ready_book_once(self):
+        root=Path(self.tmp.name)
+        translation=root/"translation"/"nt"/"filipenses.md"
+        translation.parent.mkdir(parents=True)
+        translation.write_text("# Filipenses\n\n## Capítulo 1\n\n### 1:1\n\nTexto.\n",encoding="utf-8")
+        status=root/"STATUS.md"
+        status.write_text("| book | testament | translation | alignment | translation_by | translation_on | alignment_by | alignment_on | notes |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| filipenses | nt | ready | draft | | | | | |\n",encoding="utf-8")
+        desk.write_json(desk.BOOK_REVIEW_LINKS,{"filipenses":{"Ana Pérez":"private-key"}})
+        with patch.object(desk,"ROOT",root),patch.object(desk,"STATUS",status):
+            sha=desk.file_fingerprint(translation)
+            payload={"accessKey":"private-key","book":"filipenses","translationSha256":sha,"confirmed":True,"signedName":"Ana Pérez"}
+            view=desk.sign_peer_review(payload)
+            self.assertEqual(view["signatures"][0]["name"],"Ana Pérez")
+            with self.assertRaisesRegex(ValueError,"already signed"):
+                desk.sign_peer_review(payload)
+            with self.assertRaisesRegex(ValueError,"does not match"):
+                desk.sign_peer_review({**payload,"signedName":"Otra Persona"})
+            translation.write_text(translation.read_text(encoding="utf-8")+"Cambio.\n",encoding="utf-8")
+            self.assertEqual(desk.peer_review_book("private-key","filipenses")["signatures"],[])
+            with self.assertRaisesRegex(ValueError,"not valid"):
+                desk.peer_review_book("wrong-key","filipenses")
 
     def test_reviewer_credentials_are_scrypt_hashed(self):
         secret="correct horse battery staple"

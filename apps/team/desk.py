@@ -63,6 +63,8 @@ HEADING = re.compile(r"^###\s+(\d+):(\d+)\s*$")
 STATUS_COLUMNS = ("book", "testament", "translation", "alignment", "translation_by", "translation_on", "alignment_by", "alignment_on", "notes")
 VAR = Path(__file__).resolve().parent / "var"
 CLAIMS, PEOPLE = VAR / "claims.json", VAR / "people.json"
+BOOK_SIGNATURES = VAR / "book-signatures.json"
+BOOK_REVIEW_LINKS = VAR / "book-review-links.json"
 RECOVERED = VAR / "recovered-reviews"
 STATUS = ROOT / "STATUS.md"
 NT_SYNTAX_CANDIDATES = ROOT / "nt-syntax" / "candidates"
@@ -364,6 +366,129 @@ def authorize(name: str, token: str) -> str:
         if known.casefold() == person.casefold() and verify_credential(token, secret):
             return known
     raise ValueError("Name or token does not match.")
+
+
+def translation_status(slug: str) -> str:
+    for line in STATUS.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) == len(STATUS_COLUMNS) and cells[0] == slug:
+            return cells[2]
+    return "none"
+
+
+def peer_book_text(slug: str) -> tuple[object, Path, list[dict]]:
+    book = book_or_raise(slug)
+    path = translation_file(book.slug)
+    if not path.is_file():
+        raise ValueError(f"{book.label} has no translation file.")
+    chapters: list[dict] = []
+    current = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        chapter_match = re.match(r"^##\s+Cap[ií]tulo\s+(\d+)\s*$", line.strip(), re.IGNORECASE)
+        if chapter_match:
+            current = {"chapter": int(chapter_match.group(1)), "verses": []}
+            chapters.append(current)
+            continue
+        verse_match = HEADING.match(line.strip())
+        if verse_match and current is not None:
+            current["verses"].append({"verse": int(verse_match.group(2)), "text": ""})
+            continue
+        if current is None or not current["verses"] or not line.strip() or line.lstrip().startswith(">"):
+            continue
+        verse = current["verses"][-1]
+        verse["text"] = " ".join(part for part in (verse["text"], line.strip()) if part)
+    chapters = [chapter for chapter in chapters if chapter["verses"]]
+    if not chapters:
+        raise ValueError(f"{book.label} has no readable chapters.")
+    return book, path, chapters
+
+
+def load_book_signatures() -> dict:
+    value = read_json(BOOK_SIGNATURES, {})
+    if not isinstance(value, dict) or value.get("schema") != "lbf-peer-book-signatures-v1":
+        return {"schema": "lbf-peer-book-signatures-v1", "books": {}}
+    value.setdefault("books", {})
+    return value
+
+
+def current_book_signatures(slug: str, fingerprint: str) -> list[dict]:
+    entries = load_book_signatures().get("books", {}).get(slug, [])
+    return [
+        {"name": entry.get("name"), "signedOn": entry.get("signedOn")}
+        for entry in entries
+        if isinstance(entry, dict) and entry.get("translationSha256") == fingerprint
+    ]
+
+
+def load_book_review_links() -> dict:
+    value = read_json(BOOK_REVIEW_LINKS, {})
+    return value if isinstance(value, dict) else {}
+
+
+def authorize_book_review_link(slug: str, access_key: str) -> str:
+    reviewers = load_book_review_links().get(slug) or {}
+    if not isinstance(reviewers, dict):
+        raise ValueError("This private review link is no longer valid.")
+    submitted = str(access_key or "")
+    for reviewer, expected in reviewers.items():
+        if expected and secrets.compare_digest(submitted, str(expected)):
+            return clean_name(reviewer)
+    raise ValueError("This private review link is not valid.")
+
+
+def peer_review_book(access_key, slug) -> dict:
+    reviewer = authorize_book_review_link(str(slug or ""), access_key)
+    book, path, chapters = peer_book_text(str(slug or ""))
+    fingerprint = file_fingerprint(path)
+    return {
+        "book": book.slug,
+        "reviewer": reviewer,
+        "label": book.label,
+        "status": translation_status(book.slug),
+        "translationSha256": fingerprint,
+        "chapters": chapters,
+        "signatures": current_book_signatures(book.slug, fingerprint),
+    }
+
+
+def sign_peer_review(payload: dict) -> dict:
+    slug = str(payload.get("book") or "")
+    access_key = payload.get("accessKey")
+    reviewer = authorize_book_review_link(slug, access_key)
+    book, path, chapters = peer_book_text(slug)
+    status = translation_status(book.slug)
+    if status not in {"ready", "done"}:
+        raise ValueError(f"{book.label} is not ready for whole-book approval.")
+    if payload.get("confirmed") is not True:
+        raise ValueError("Confirm that you read the complete book and approve this translation.")
+    signed_name = clean_name(payload.get("signedName"))
+    if signed_name.casefold() != reviewer.casefold():
+        raise ValueError("The written name does not match the reviewer assigned to this private link.")
+    fingerprint = file_fingerprint(path)
+    if payload.get("translationSha256") != fingerprint:
+        raise ValueError("The translation changed. Reload the book before signing.")
+    with _lock:
+        ledger = load_book_signatures()
+        entries = ledger["books"].setdefault(book.slug, [])
+        if any(
+            isinstance(entry, dict)
+            and entry.get("translationSha256") == fingerprint
+            and str(entry.get("name") or "").casefold() == signed_name.casefold()
+            for entry in entries
+        ):
+            raise ValueError(f"{signed_name} already signed this version of {book.label}.")
+        entries.append({
+            "name": signed_name,
+            "signedName": signed_name,
+            "signedOn": now(),
+            "translationSha256": fingerprint,
+            "chaptersRead": [chapter["chapter"] for chapter in chapters],
+            "statement": "The named reader confirmed reading the complete book and approved this exact Spanish translation.",
+        })
+        write_json(BOOK_SIGNATURES, ledger)
+    return peer_review_book(access_key, book.slug)
 
 
 def book_or_raise(slug: str):

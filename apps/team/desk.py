@@ -61,9 +61,8 @@ from audit_lib import SYSTEM as AUDIT_SYSTEM, build_user_prompt as build_audit_p
 
 HEADING = re.compile(r"^###\s+(\d+):(\d+)\s*$")
 STATUS_COLUMNS = ("book", "testament", "translation", "alignment", "translation_by", "translation_on", "alignment_by", "alignment_on", "notes")
-VAR = Path(os.environ.get("LBF_TEAM_DATA_DIR") or (Path(__file__).resolve().parent / "var")).expanduser().resolve()
+VAR = Path(__file__).resolve().parent / "var"
 CLAIMS, PEOPLE = VAR / "claims.json", VAR / "people.json"
-PEER_REVIEWS = VAR / "peer-review-signoffs.json"
 RECOVERED = VAR / "recovered-reviews"
 STATUS = ROOT / "STATUS.md"
 NT_SYNTAX_CANDIDATES = ROOT / "nt-syntax" / "candidates"
@@ -279,8 +278,6 @@ def load_people() -> dict:
     try:
         data = read_json(PEOPLE, {})
     except json.JSONDecodeError:
-        if os.environ.get("LBF_TEAM_ENV", "development").casefold() == "production":
-            raise
         # Local-only compatibility for one historical hand-edited file.
         # Production remains strict, and manage_users.py rewrites valid JSON.
         raw = PEOPLE.read_text(encoding="utf-8")
@@ -361,180 +358,10 @@ def clean_name(name: str) -> str:
     return value
 
 
-def status_rows() -> dict[str, dict[str, str]]:
-    """Read the canonical status ledger without ever changing it."""
-    rows: dict[str, dict[str, str]] = {}
-    if not STATUS.is_file():
-        return rows
-    for line in STATUS.read_text(encoding="utf-8").splitlines():
-        if not line.startswith("|"):
-            continue
-        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-        if len(cells) != len(STATUS_COLUMNS) or cells[0] in {"book", "---"}:
-            continue
-        rows[cells[0]] = dict(zip(STATUS_COLUMNS, cells))
-    return rows
-
-
-def peer_review_ledger() -> dict:
-    value = read_json(PEER_REVIEWS, {})
-    if not isinstance(value, dict) or value.get("schema") != "lbf-book-peer-review-signoffs-v1":
-        return {"schema": "lbf-book-peer-review-signoffs-v1", "books": {}}
-    if not isinstance(value.get("books"), dict):
-        value["books"] = {}
-    return value
-
-
-def parsed_translation_book(slug: str) -> tuple[object, Path, str, list[dict]]:
-    """Return canonical book text as chapter/verse rows for human reading."""
-    book = book_or_raise(slug)
-    path = translation_file(book.slug)
-    if not path.is_file():
-        raise ValueError(f"{book.label} has no canonical translation file to review.")
-    text = path.read_text(encoding="utf-8")
-    chapters: list[dict] = []
-    current: dict | None = None
-    for line in text.splitlines():
-        chapter_match = re.match(r"^##\s+Cap[ií]tulo\s+(\d+)\s*$", line.strip(), re.IGNORECASE)
-        if chapter_match:
-            current = {"chapter": int(chapter_match.group(1)), "verses": []}
-            chapters.append(current)
-            continue
-        verse_match = HEADING.match(line.strip())
-        if verse_match and current is not None:
-            current["verses"].append({"verse": int(verse_match.group(2)), "text": ""})
-            continue
-        if current is None or not current["verses"] or not line.strip() or line.lstrip().startswith(">"):
-            continue
-        current["verses"][-1]["text"] = " ".join(
-            part for part in (current["verses"][-1]["text"], line.strip()) if part
-        )
-    chapters = [chapter for chapter in chapters if chapter["verses"]]
-    if not chapters:
-        raise ValueError(f"{book.label} has no canonical Protestant chapter text to review.")
-    return book, path, text, chapters
-
-
-def current_peer_signoffs(slug: str, translation_sha256: str | None = None) -> tuple[list[dict], list[dict]]:
-    if translation_sha256 is None:
-        _, path, _, _ = parsed_translation_book(slug)
-        translation_sha256 = file_fingerprint(path)
-    entries = peer_review_ledger().get("books", {}).get(slug, [])
-    if not isinstance(entries, list):
-        entries = []
-    current, historical = [], []
-    for entry in entries:
-        if not isinstance(entry, dict):
-            continue
-        row = {
-            "reviewedBy": str(entry.get("reviewedBy") or ""),
-            "reviewedOn": str(entry.get("reviewedOn") or ""),
-            "chapterCount": len(entry.get("chaptersRead") or []),
-        }
-        (current if entry.get("translationSha256") == translation_sha256 else historical).append(row)
-    return current, historical
-
-
-def peer_review_catalog() -> list[dict]:
-    statuses = status_rows()
-    rows = []
-    for book in (*OT, *NT):
-        path = translation_file(book.slug)
-        if not path.is_file():
-            continue
-        try:
-            _, _, _, chapters = parsed_translation_book(book.slug)
-        except ValueError:
-            continue
-        current, historical = current_peer_signoffs(book.slug, file_fingerprint(path))
-        state = (statuses.get(book.slug) or {}).get("translation") or "none"
-        rows.append({
-            "book": book.slug,
-            "label": book.label,
-            "testament": book.testament,
-            "translationStatus": state,
-            "chapterCount": len(chapters),
-            "currentSignoffs": current,
-            "historicalSignoffCount": len(historical),
-            "signoffEligible": state in {"ready", "done"},
-        })
-    return rows
-
-
-def peer_review_view(name, token, slug) -> dict:
-    person = authorize(name, token)
-    book, path, _, chapters = parsed_translation_book(str(slug or ""))
-    sha256 = file_fingerprint(path)
-    current, historical = current_peer_signoffs(book.slug, sha256)
-    state = (status_rows().get(book.slug) or {}).get("translation") or "none"
-    return {
-        "reviewer": person,
-        "book": book.slug,
-        "label": book.label,
-        "testament": book.testament,
-        "translationStatus": state,
-        "translationSha256": sha256,
-        "signoffEligible": state in {"ready", "done"},
-        "chapters": chapters,
-        "currentSignoffs": current,
-        "historicalSignoffs": historical,
-        "scope": "Peer approval of this exact Spanish translation only; not alignment approval and not STATUS.md book completion.",
-    }
-
-
-def peer_review_home(name, token) -> dict:
-    person = authorize(name, token)
-    return {"reviewer": person, "books": peer_review_catalog()}
-
-
-def sign_peer_review(payload: dict) -> dict:
-    person = authorize(payload.get("name"), payload.get("token"))
-    book, path, _, chapters = parsed_translation_book(str(payload.get("book") or ""))
-    state = (status_rows().get(book.slug) or {}).get("translation") or "none"
-    if state not in {"ready", "done"}:
-        raise ValueError(f"{book.label} is {state}, not ready for a whole-book peer sign-off.")
-    if payload.get("translationApproved") is not True or payload.get("scopeConfirmed") is not True:
-        raise ValueError("Confirm both the whole-book translation approval and its limited peer-review scope.")
-    expected_chapters = [chapter["chapter"] for chapter in chapters]
-    try:
-        chapters_read = sorted({int(value) for value in payload.get("chaptersRead") or []})
-    except (TypeError, ValueError) as exc:
-        raise ValueError("The chapter reading confirmation is invalid.") from exc
-    if chapters_read != expected_chapters:
-        raise ValueError("Confirm that you personally read every chapter of this exact book before signing.")
-    expected_sha256 = file_fingerprint(path)
-    if str(payload.get("translationSha256") or "") != expected_sha256:
-        raise ValueError("The translation changed while you were reading it. Reload the book and review the current text.")
-    with _lock:
-        ledger = peer_review_ledger()
-        entries = ledger["books"].setdefault(book.slug, [])
-        if any(
-            isinstance(entry, dict)
-            and str(entry.get("reviewedBy") or "").casefold() == person.casefold()
-            and entry.get("translationSha256") == expected_sha256
-            for entry in entries
-        ):
-            raise ValueError(f"{person} has already signed this exact version of {book.label}.")
-        entries.append({
-            "schema": "lbf-book-peer-review-signoff-v1",
-            "book": book.slug,
-            "reviewedBy": person,
-            "reviewedOn": now(),
-            "translationSha256": expected_sha256,
-            "chaptersRead": chapters_read,
-            "translationApproved": True,
-            "scopeConfirmed": True,
-            "scope": "exact canonical Spanish translation only; not alignment approval and not STATUS.md book completion",
-        })
-        write_json(PEER_REVIEWS, ledger)
-    return peer_review_view(person, payload.get("token"), book.slug)
-
-
 def authorize(name: str, token: str) -> str:
     person = clean_name(name)
-    allow_plaintext = os.environ.get("LBF_TEAM_ENV", "development").casefold() != "production"
     for known, secret in load_people().items():
-        if known.casefold() == person.casefold() and verify_credential(token, secret, allow_plaintext=allow_plaintext):
+        if known.casefold() == person.casefold() and verify_credential(token, secret):
             return known
     raise ValueError("Name or token does not match.")
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Manage Team Desk reviewer credentials without storing plaintext secrets."""
+"""Manage credentials for the local chapter-review Team Desk."""
 from __future__ import annotations
 
 import argparse
@@ -55,7 +55,7 @@ def migrate_users() -> None:
         salt_record = desk.hashed_credential(value) if len(value) >= 12 else _hash_legacy(value)
         people[name] = salt_record
     save_people(people)
-    print(f"Converted {len(plain)} credential(s). Rotate any legacy short credentials before production use.")
+    print(f"Converted {len(plain)} credential(s). Rotate any legacy short credentials when practical.")
 
 
 def _hash_legacy(secret: str) -> str:
@@ -74,7 +74,7 @@ def _hash_legacy(secret: str) -> str:
 def list_users() -> None:
     people = desk.load_people()
     for name, value in sorted(people.items(), key=lambda item: item[0].casefold()):
-        print(f"{name}\t{'hashed' if desk.credential_is_hashed(value) else 'PLAINTEXT — migrate before production'}")
+        print(f"{name}\t{'hashed' if desk.credential_is_hashed(value) else 'PLAINTEXT — run migrate'}")
 
 
 def main() -> None:

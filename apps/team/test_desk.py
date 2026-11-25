@@ -4,7 +4,6 @@ from __future__ import annotations
 import tempfile
 import threading
 import unittest
-import os
 from pathlib import Path
 from unittest.mock import patch
 import desk
@@ -12,77 +11,25 @@ import desk
 class DeskTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
-        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.PEER_REVIEWS)
+        self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED)
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews";desk.PEER_REVIEWS=root/"peer-review-signoffs.json"
+        desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
         desk._estimate_packet_cache.clear()
         desk._nt_syntax_board_cache=None
-        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.PEER_REVIEWS=self.old;self.tmp.cleanup()
+        desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED=self.old;self.tmp.cleanup()
 
-    def test_peer_review_requires_every_chapter_and_is_bound_to_exact_translation(self):
-        root=Path(self.tmp.name)
-        translation=root/"translation"/"nt"/"filipenses.md"
-        translation.parent.mkdir(parents=True)
-        translation.write_text(
-            "# Filipenses\n\n## Capítulo 1\n\n### 1:1\n\nTexto uno.\n\n"
-            "## Capítulo 2\n\n### 2:1\n\nTexto dos.\n",
-            encoding="utf-8",
-        )
-        status=root/"STATUS.md"
-        status.write_text(
-            "| book | testament | translation | alignment | translation_by | translation_on | alignment_by | alignment_on | notes |\n"
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
-            "| filipenses | nt | ready | draft | | | | | |\n",
-            encoding="utf-8",
-        )
-        with patch.object(desk,"ROOT",root),patch.object(desk,"STATUS",status):
-            sha=desk.file_fingerprint(translation)
-            base={"name":"Ana","token":"11111111","book":"filipenses","translationSha256":sha,"translationApproved":True,"scopeConfirmed":True}
-            with self.assertRaisesRegex(ValueError,"every chapter"):
-                desk.sign_peer_review({**base,"chaptersRead":[1]})
-            view=desk.sign_peer_review({**base,"chaptersRead":[1,2]})
-            self.assertEqual([row["reviewedBy"] for row in view["currentSignoffs"]],["Ana"])
-            self.assertEqual(view["historicalSignoffs"],[])
-            with self.assertRaisesRegex(ValueError,"already signed"):
-                desk.sign_peer_review({**base,"chaptersRead":[1,2]})
-            translation.write_text(translation.read_text(encoding="utf-8")+"\nCambio.\n",encoding="utf-8")
-            changed=desk.peer_review_view("Ana","11111111","filipenses")
-            self.assertEqual(changed["currentSignoffs"],[])
-            self.assertEqual([row["reviewedBy"] for row in changed["historicalSignoffs"]],["Ana"])
-
-    def test_peer_review_does_not_sign_a_draft_book(self):
-        root=Path(self.tmp.name)
-        translation=root/"translation"/"nt"/"filipenses.md"
-        translation.parent.mkdir(parents=True)
-        translation.write_text("# Filipenses\n\n## Capítulo 1\n\n### 1:1\n\nTexto.\n",encoding="utf-8")
-        status=root/"STATUS.md"
-        status.write_text(
-            "| book | testament | translation | alignment | translation_by | translation_on | alignment_by | alignment_on | notes |\n"
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
-            "| filipenses | nt | draft | none | | | | | |\n",
-            encoding="utf-8",
-        )
-        with patch.object(desk,"ROOT",root),patch.object(desk,"STATUS",status):
-            payload={"name":"Ana","token":"11111111","book":"filipenses","translationSha256":desk.file_fingerprint(translation),"chaptersRead":[1],"translationApproved":True,"scopeConfirmed":True}
-            with self.assertRaisesRegex(ValueError,"not ready"):
-                desk.sign_peer_review(payload)
-        self.assertFalse(desk.PEER_REVIEWS.exists())
-
-    def test_reviewer_credentials_are_scrypt_hashed_and_production_rejects_plaintext(self):
+    def test_reviewer_credentials_are_scrypt_hashed(self):
         secret="correct horse battery staple"
         record=desk.hashed_credential(secret)
         self.assertTrue(desk.credential_is_hashed(record))
         self.assertNotIn(secret,record)
         self.assertTrue(desk.verify_credential(secret,record,allow_plaintext=False))
         self.assertFalse(desk.verify_credential("wrong credential",record,allow_plaintext=False))
-        desk.PEOPLE.write_text('{"Ana":"'+record+'","Luis":"22222222"}\n',encoding="utf-8")
-        with patch.dict(os.environ,{"LBF_TEAM_ENV":"production"}):
-            self.assertEqual(desk.authorize("Ana",secret),"Ana")
-            with self.assertRaisesRegex(ValueError,"Name or token"):
-                desk.authorize("Luis","22222222")
+        desk.PEOPLE.write_text('{"Ana":"'+record+'"}\n',encoding="utf-8")
+        self.assertEqual(desk.authorize("Ana",secret),"Ana")
     def test_model_is_fixed_to_sol(self):
         self.assertEqual(desk.model_name(),"gpt-6.1-sol")
         self.assertEqual(desk.reasoning_effort(),"low")

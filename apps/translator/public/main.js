@@ -19,6 +19,14 @@ function bookIdFromLocation() {
   return (params.get("book") || "titus").trim().toLowerCase() || "titus";
 }
 
+function normalizedBookKey(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 const state = {
   view: "translation",
   bookId: bookIdFromLocation(),
@@ -1671,7 +1679,13 @@ async function loadAvailableBooks() {
     option.textContent = book.label;
     bookSelect.append(option);
   }
-  if (!options.some(book => book.id === state.bookId)) {
+  const requestedBook = normalizedBookKey(state.bookId);
+  const requestedOption = options.find(book =>
+    [book.id, book.bleSlug, book.label].some(value => normalizedBookKey(value) === requestedBook)
+  );
+  if (requestedOption) {
+    state.bookId = requestedOption.id;
+  } else if (!options.some(book => book.id === state.bookId)) {
     state.bookId = active || options[0].id;
   }
   bookSelect.value = state.bookId;

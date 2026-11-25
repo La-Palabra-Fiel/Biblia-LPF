@@ -93,13 +93,21 @@ export function lbfHome(book) {
   return { slug, testament };
 }
 
+function normalizedBookKey(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 export function findBook(idOrLabel) {
-  const key = String(idOrLabel || "").trim().toLowerCase();
+  const key = normalizedBookKey(idOrLabel);
   return allTranslatorBooks().find(b =>
-    b.id === key
-    || b.label.toLowerCase() === key
-    || b.bleSlug === key
-    || b.usfm.toLowerCase() === key
+    normalizedBookKey(b.id) === key
+    || normalizedBookKey(b.label) === key
+    || normalizedBookKey(b.bleSlug) === key
+    || normalizedBookKey(b.usfm) === key
   ) || null;
 }
 

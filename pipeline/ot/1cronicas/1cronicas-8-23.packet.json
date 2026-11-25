@@ -1,5 +1,8 @@
 {
   "schema": "lbf-source-packet-v1",
+  "sourcePolicy": "lbf-source-policy-v4",
+  "evidencePolicy": "canonical-ot-evidence-bundle-v1",
+  "evidenceStatus": "READY_FOR_MODEL",
   "book": "1cronicas",
   "label": "1 Crónicas",
   "testament": "ot",
@@ -9,50 +12,430 @@
   "verse": 23,
   "oshbOsis": "1Chr.8.23",
   "allowedSources": [
-    "OSHB/WLC",
-    "paleo-hebrew",
-    "AHRC-nonbinding"
+    "OSHB/WLC-surface",
+    "OSHB-lemma-morph",
+    "Strongs-id-only",
+    "OpenScriptures-HebrewLexicon@21c9add13bc727d3a951361778e97e3ff7afd1ce",
+    "MACULA-Hebrew-structure-only@47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "OSHB/WLC-corpus-usage"
   ],
   "forbiddenSources": [
     "memory",
     "theology",
     "RV1909",
     "BLE-gloss",
-    "other-versions"
+    "other-versions",
+    "unapproved-lexicons",
+    "web-or-retrieval",
+    "macula",
+    "AHRC/AHLB"
   ],
   "tokens": [
     {
       "sourceTokenId": "h13008023001",
       "oshbId": "132oS",
+      "oshbRef": "1Chr.8.23!1",
       "position": 1,
       "surface": "וְעַבְדּ֥וֹן",
       "paleo": "𐤅𐤏𐤁𐤃𐤅𐤍",
       "lemma": "c/5658",
       "strongs": "H5658",
       "morph": "HC/Np",
-      "morphExpanded": "Hebrew; conjunction; noun proper"
+      "morphExpanded": "Hebrew; conjunction; noun proper",
+      "lexicalEvidenceId": "izj",
+      "corpusEvidenceId": "5658"
     },
     {
       "sourceTokenId": "h13008023002",
       "oshbId": "13iQ7",
+      "oshbRef": "1Chr.8.23!2",
       "position": 2,
       "surface": "וְזִכְרִ֖י",
       "paleo": "𐤅𐤆𐤊𐤓𐤉",
       "lemma": "c/2147",
       "strongs": "H2147",
       "morph": "HC/Np",
-      "morphExpanded": "Hebrew; conjunction; noun proper"
+      "morphExpanded": "Hebrew; conjunction; noun proper",
+      "lexicalEvidenceId": "dij",
+      "corpusEvidenceId": "2147"
     },
     {
       "sourceTokenId": "h13008023003",
       "oshbId": "13etD",
+      "oshbRef": "1Chr.8.23!3",
       "position": 3,
       "surface": "וְחָנָֽן",
       "paleo": "𐤅𐤇𐤍𐤍",
       "lemma": "c/2605",
       "strongs": "H2605",
       "morph": "HC/Np",
-      "morphExpanded": "Hebrew; conjunction; noun proper"
+      "morphExpanded": "Hebrew; conjunction; noun proper",
+      "lexicalEvidenceId": "ecd",
+      "corpusEvidenceId": "2605"
     }
-  ]
+  ],
+  "lexicalEvidence": [
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "5658",
+      "lexicalIndexId": "izj",
+      "headword": "עַבְדּוֹן",
+      "transliteration": "ʿabdôn",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Abdon. Compare",
+      "bdbEntryId": "p.ac.am",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "2147",
+      "lexicalIndexId": "dij",
+      "headword": "זִכְרִי",
+      "transliteration": "zikrî",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Zichri",
+      "bdbEntryId": "g.bh.ag",
+      "possibleSenses": [],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    },
+    {
+      "source": "OpenScriptures-HebrewLexicon",
+      "sourceCommit": "21c9add13bc727d3a951361778e97e3ff7afd1ce",
+      "license": "CC BY 4.0",
+      "attribution": "Open Scriptures Hebrew Bible Project",
+      "augmentedStrong": "2605",
+      "lexicalIndexId": "ecd",
+      "headword": "חָנָן",
+      "transliteration": "ḥānān",
+      "partOfSpeech": "Np",
+      "indexDefinition": "Canan",
+      "bdbEntryId": "h.dz.ag",
+      "possibleSenses": [
+        "gracious"
+      ],
+      "corpusReferences": [],
+      "authority": "secondary-possibilities-only"
+    }
+  ],
+  "syntax": {
+    "source": "MACULA-Hebrew-structure-only",
+    "sourceCommit": "47db250bd55d0d8577f2a94fba114ef16c35b23c",
+    "license": "CC BY 4.0",
+    "attribution": "MACULA Hebrew Linguistic Datasets, available at https://github.com/Clear-Bible/macula-hebrew/",
+    "mapping": {
+      "matched": 3,
+      "total": 3,
+      "status": "exact"
+    },
+    "nodes": [
+      {
+        "nodeId": "m130080001",
+        "sourceTokenIds": [
+          "h13008023001",
+          "h13008023002",
+          "h13008023003"
+        ]
+      },
+      {
+        "nodeId": "m130080002",
+        "class": "cl",
+        "rule": "P2CL",
+        "sourceTokenIds": [
+          "h13008023001",
+          "h13008023002",
+          "h13008023003"
+        ]
+      },
+      {
+        "nodeId": "m130080003",
+        "class": "np",
+        "rule": "Conj3Np",
+        "role": "p",
+        "head": "true",
+        "sourceTokenIds": [
+          "h13008023001",
+          "h13008023002",
+          "h13008023003"
+        ]
+      }
+    ],
+    "tokenRoles": {}
+  },
+  "originalLanguageContext": [
+    {
+      "reference": "1 Crónicas 8:22",
+      "oshbOsis": "1Chr.8.22",
+      "relation": "previous",
+      "tokens": [
+        {
+          "oshbId": "13i6M",
+          "oshbRef": "1Chr.8.22!1",
+          "surface": "וְיִשְׁפָּ֥ן",
+          "lemma": "c/3473",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13YXc",
+          "oshbRef": "1Chr.8.22!2",
+          "surface": "וָעֵ֖בֶר",
+          "lemma": "c/5677",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13feJ",
+          "oshbRef": "1Chr.8.22!3",
+          "surface": "וֶאֱלִיאֵֽל",
+          "lemma": "c/447",
+          "morph": "HC/Np"
+        }
+      ]
+    },
+    {
+      "reference": "1 Crónicas 8:23",
+      "oshbOsis": "1Chr.8.23",
+      "relation": "current",
+      "tokens": [
+        {
+          "oshbId": "132oS",
+          "oshbRef": "1Chr.8.23!1",
+          "surface": "וְעַבְדּ֥וֹן",
+          "lemma": "c/5658",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13iQ7",
+          "oshbRef": "1Chr.8.23!2",
+          "surface": "וְזִכְרִ֖י",
+          "lemma": "c/2147",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13etD",
+          "oshbRef": "1Chr.8.23!3",
+          "surface": "וְחָנָֽן",
+          "lemma": "c/2605",
+          "morph": "HC/Np"
+        }
+      ]
+    },
+    {
+      "reference": "1 Crónicas 8:24",
+      "oshbOsis": "1Chr.8.24",
+      "relation": "next",
+      "tokens": [
+        {
+          "oshbId": "13AJ9",
+          "oshbRef": "1Chr.8.24!1",
+          "surface": "וַחֲנַנְיָ֥ה",
+          "lemma": "c/2608 a",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13Y2o",
+          "oshbRef": "1Chr.8.24!2",
+          "surface": "וְעֵילָ֖ם",
+          "lemma": "c/5867 b",
+          "morph": "HC/Np"
+        },
+        {
+          "oshbId": "13zZV",
+          "oshbRef": "1Chr.8.24!3",
+          "surface": "וְעַנְתֹתִיָּֽה",
+          "lemma": "c/6070",
+          "morph": "HC/Np"
+        }
+      ]
+    }
+  ],
+  "corpusEvidence": [
+    {
+      "corpusEvidenceId": "5658",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "5658",
+      "totalOccurrences": 8,
+      "exactMorphOccurrences": 1,
+      "samples": [
+        {
+          "reference": "1Chr.8.23",
+          "surface": "וְעַבְדּ֥וֹן",
+          "lemma": "c/5658",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "P2CL",
+          "oshbId": "132oS",
+          "originalContext": [
+            "וְעַבְדּ֥וֹן",
+            "וְזִכְרִ֖י",
+            "וְחָנָֽן"
+          ]
+        },
+        {
+          "reference": "Josh.21.30",
+          "surface": "עַבְדּ֖וֹן",
+          "lemma": "5658",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "PP-O",
+          "oshbId": "06hdN",
+          "originalContext": [
+            "מִגְרָשֶׁ֑הָ",
+            "אֶת",
+            "עַבְדּ֖וֹן",
+            "וְאֶת",
+            "מִגְרָשֶֽׁהָ"
+          ]
+        },
+        {
+          "reference": "2Chr.34.20",
+          "surface": "עַבְדּ֨וֹן",
+          "lemma": "5658",
+          "morph": "HNp",
+          "syntaxRoles": [],
+          "clauseRule": "V-S-O-PP",
+          "oshbId": "14fQb",
+          "originalContext": [
+            "שָׁ֠פָן",
+            "וְאֶת",
+            "עַבְדּ֨וֹן",
+            "בֶּן",
+            "מִיכָ֜ה"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Np"
+      ]
+    },
+    {
+      "corpusEvidenceId": "2147",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "2147",
+      "totalOccurrences": 12,
+      "exactMorphOccurrences": 5,
+      "samples": [
+        {
+          "reference": "Exod.6.21",
+          "surface": "וְזִכְרִֽי",
+          "lemma": "c/2147",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "S-P",
+          "oshbId": "02Bfr",
+          "originalContext": [
+            "קֹ֥רַח",
+            "וָנֶ֖פֶג",
+            "וְזִכְרִֽי"
+          ]
+        },
+        {
+          "reference": "1Chr.8.23",
+          "surface": "וְזִכְרִ֖י",
+          "lemma": "c/2147",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "P2CL",
+          "oshbId": "13iQ7",
+          "originalContext": [
+            "וְעַבְדּ֥וֹן",
+            "וְזִכְרִ֖י",
+            "וְחָנָֽן"
+          ]
+        },
+        {
+          "reference": "1Chr.26.25",
+          "surface": "וְזִכְרִ֥י",
+          "lemma": "c/2147",
+          "morph": "HC/Np",
+          "syntaxRoles": [
+            "p"
+          ],
+          "clauseRule": "ClCl2",
+          "oshbId": "13bNQ",
+          "originalContext": [
+            "וְיֹרָ֣ם",
+            "בְּנ֔וֹ",
+            "וְזִכְרִ֥י",
+            "בְנ֖וֹ",
+            "וּשְׁלֹמִ֥ית"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Np"
+      ]
+    },
+    {
+      "corpusEvidenceId": "2605",
+      "source": "OSHB/WLC-corpus",
+      "selection": "exact-neighbor-collocation-then-morph-then-lemma-spread",
+      "lemma": "2605",
+      "totalOccurrences": 12,
+      "exactMorphOccurrences": 3,
+      "samples": [
+        {
+          "reference": "1Chr.8.23",
+          "surface": "וְחָנָֽן",
+          "lemma": "c/2605",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "P2CL",
+          "oshbId": "13etD",
+          "originalContext": [
+            "וְעַבְדּ֥וֹן",
+            "וְזִכְרִ֖י",
+            "וְחָנָֽן"
+          ]
+        },
+        {
+          "reference": "1Chr.8.38",
+          "surface": "וְחָנָ֑ן",
+          "lemma": "c/2605",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "P2CL",
+          "oshbId": "13Y6J",
+          "originalContext": [
+            "וּשְׁעַרְיָ֔ה",
+            "וְעֹבַדְיָ֖ה",
+            "וְחָנָ֑ן",
+            "כָּל",
+            "אֵ֖לֶּה"
+          ]
+        },
+        {
+          "reference": "1Chr.9.44",
+          "surface": "וְחָנָ֑ן",
+          "lemma": "c/2605",
+          "morph": "HC/Np",
+          "syntaxRoles": [],
+          "clauseRule": "P2CL",
+          "oshbId": "13g9e",
+          "originalContext": [
+            "וּשְׁעַרְיָ֔ה",
+            "וְעֹבַדְיָ֖ה",
+            "וְחָנָ֑ן",
+            "אֵ֖לֶּה",
+            "בְּנֵ֥י"
+          ]
+        }
+      ],
+      "targetMorphs": [
+        "HC/Np"
+      ]
+    }
+  ],
+  "editorialLexicalPolicyVersion": "2026-11-13",
+  "editorialLexicalPolicy": [],
+  "editorialLexicalPolicyReview": []
 }

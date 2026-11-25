@@ -71,7 +71,7 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | 2tesalonicenses | nt | ready | none |  |  |  |  |  |
 | 1timoteo | nt | ready | none |  |  |  |  |  |
 | 2timoteo | nt | ready | none |  |  |  |  |  |
-| titus | nt | done | draft | John Wry | 2026-08-20 |  |  | mixed hand + auto-zip; auto is not finished |
+| titus | nt | done | done | John Wry | 2026-11-25 | John Wry | 2026-11-25 | mixed hand + auto-zip; auto is not finished |
 | filemon | nt | ready | none |  |  |  |  |  |
 | hebreos | nt | ready | none |  |  |  |  |  |
 | santiago | nt | ready | none |  |  |  |  |  |

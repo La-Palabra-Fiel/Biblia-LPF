@@ -6,6 +6,10 @@ caller's `cgv-data` working tree: the commit is made in a temporary git
 worktree cut from `<remote>/<base>`, so the branch contains only the two
 historical LBF technical paths and a dirty local checkout is left untouched.
 
+An explicit corrective migration may additionally remove the two generated
+source-ID aliases from an earlier bad publication.  That mode is guarded by a
+declared source-to-consumer mapping and validates both aliases before deletion.
+
 `cgv-data` is output only. This script never reads LBF text or alignment
 back from it.
 """
@@ -32,6 +36,7 @@ from export import (  # noqa: E402
     parse_status_row,
     sha256_file,
 )
+from consumer_books import consumer_book_id  # noqa: E402
 
 TEXT_TARGET = "bibles/LBF/{book}.lbf.md"
 ALIGN_TARGET = "bibles/LBF/alignments/{book}.alignment.json"
@@ -55,6 +60,8 @@ DISPLAY_NAME = {
 }
 
 HEADER_COMMIT = re.compile(r"^\s*sourceCommit:\s*([0-9a-f]{40})\s*$", re.MULTILINE)
+HEADER_BOOK = re.compile(r"^\s*book:\s*([^\s]+)\s*$", re.MULTILINE)
+HEADER_SOURCE = re.compile(r"^\s*source:\s*(\S+)\s*$", re.MULTILINE)
 PUBLISHED_AT = re.compile(r"^(\d{4})-(\d{2})-(\d{2})T")
 
 
@@ -79,23 +86,39 @@ def require_data_repo(repo: Path) -> None:
 
 
 def read_package(pkg: Path, book: str) -> tuple[Path, Path, dict]:
-    text_path = pkg / f"{book}.lbf.md"
-    align_path = pkg / f"{book}.alignment.json"
+    consumer_id = consumer_book_id(book)
+    text_path = pkg / f"{consumer_id}.lbf.md"
+    align_path = pkg / f"{consumer_id}.alignment.json"
     missing = [str(p) for p in (text_path, align_path) if not p.is_file()]
     if missing:
         raise SystemExit(
             "export package incomplete: " + ", ".join(missing) + f"\nRun: python3 tools/export.py {book} --out {pkg}"
         )
     meta = json.loads(align_path.read_text(encoding="utf-8"))
+    if meta.get("bookId") != consumer_id:
+        raise SystemExit(
+            f"package alignment bookId is {meta.get('bookId')!r}, expected {consumer_id!r}. Re-export."
+        )
+    if meta.get("sourceBookId") != book:
+        raise SystemExit(
+            f"package alignment sourceBookId is {meta.get('sourceBookId')!r}, expected {book!r}. Re-export."
+        )
     return text_path, align_path, meta
 
 
 def check_package_current(book: str, row: dict[str, str], text_path: Path, meta: dict) -> None:
     """Refuse a package that no longer matches the repository it came from."""
     head = git_head()
-    header = HEADER_COMMIT.search(text_path.read_text(encoding="utf-8"))
+    text = text_path.read_text(encoding="utf-8")
+    header = HEADER_COMMIT.search(text)
     if not header:
         raise SystemExit(f"{text_path} has no sourceCommit header. Re-export.")
+    header_book = HEADER_BOOK.search(text)
+    expected_consumer_id = consumer_book_id(book)
+    if not header_book or header_book.group(1) != expected_consumer_id:
+        raise SystemExit(
+            f"{text_path} does not declare consumer book {expected_consumer_id}. Re-export."
+        )
     text_commit = header.group(1)
     align_commit = meta.get("sourceCommit")
     if text_commit != align_commit:
@@ -144,7 +167,72 @@ def branch_name(book: str, meta: dict) -> str:
     stamp = PUBLISHED_AT.match(str(meta.get("publishedAt", "")))
     if not stamp:
         raise SystemExit("package alignment has no usable publishedAt. Re-export.")
-    return f"lbf-{book}-{''.join(stamp.groups())}"
+    return f"lbf-{consumer_book_id(book)}-{''.join(stamp.groups())}"
+
+
+def validate_mispublished_aliases(
+    work: Path,
+    source_book: str,
+    consumer_id: str,
+    testament: str,
+    package_meta: dict,
+) -> list[str]:
+    """Validate the exact generated alias pair before corrective deletion."""
+    if source_book == consumer_id:
+        raise SystemExit(
+            "--cleanup-mispublished-source-id requires a declared source-to-consumer ID mapping"
+        )
+
+    text_rel = TEXT_TARGET.format(book=source_book)
+    align_rel = ALIGN_TARGET.format(book=source_book)
+    text_path = work / text_rel
+    align_path = work / align_rel
+    missing = [
+        rel
+        for rel, path in ((text_rel, text_path), (align_rel, align_path))
+        if not path.is_file()
+    ]
+    if missing:
+        raise SystemExit(
+            "corrective cleanup requires the complete mispublished alias pair; missing:\n  "
+            + "\n  ".join(missing)
+        )
+
+    text = text_path.read_text(encoding="utf-8")
+    alias_book = HEADER_BOOK.search(text)
+    alias_source = HEADER_SOURCE.search(text)
+    alias_commit = HEADER_COMMIT.search(text)
+    expected_source = f"Biblia-LBF/translation/{testament}/{source_book}.md"
+    if not alias_book or alias_book.group(1) != source_book:
+        raise SystemExit(f"refusing cleanup: {text_rel} does not declare book {source_book}")
+    if not alias_source or alias_source.group(1) != expected_source:
+        raise SystemExit(f"refusing cleanup: {text_rel} has unexpected source provenance")
+    if not alias_commit:
+        raise SystemExit(f"refusing cleanup: {text_rel} has no sourceCommit")
+
+    try:
+        alias_meta = json.loads(align_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"refusing cleanup: {align_rel} is malformed JSON: {exc}") from exc
+    expected_alignment = {
+        "generated": True,
+        "doNotEdit": True,
+        "sourceRepository": package_meta.get("sourceRepository"),
+        "sourceFile": package_meta.get("sourceFile"),
+        "generator": "tools/export.py",
+        "bookId": source_book,
+    }
+    mismatches = [
+        key for key, expected in expected_alignment.items() if alias_meta.get(key) != expected
+    ]
+    if mismatches:
+        raise SystemExit(
+            f"refusing cleanup: {align_rel} has unexpected generated provenance fields: "
+            + ", ".join(mismatches)
+        )
+    if alias_meta.get("sourceCommit") != alias_commit.group(1):
+        raise SystemExit("refusing cleanup: mispublished text/alignment sourceCommit values differ")
+    return [text_rel, align_rel]
 
 
 def start_point(repo: Path, remote: str, base: str, fetch: bool) -> str:
@@ -176,7 +264,10 @@ def publish(
     base_ref: str,
     text_path: Path,
     align_path: Path,
+    package_meta: dict,
+    testament: str,
     message: str,
+    cleanup_mispublished_source_id: bool = False,
 ) -> str:
     if git(repo, "rev-parse", "--verify", branch, check=False):
         raise SystemExit(
@@ -187,23 +278,46 @@ def publish(
     work = tmp / "cgv-data"
     try:
         git(repo, "worktree", "add", "--quiet", "-b", branch, str(work), base_ref)
+        consumer_id = consumer_book_id(book)
         targets = {
-            TEXT_TARGET.format(book=book): text_path,
-            ALIGN_TARGET.format(book=book): align_path,
+            TEXT_TARGET.format(book=consumer_id): text_path,
+            ALIGN_TARGET.format(book=consumer_id): align_path,
         }
+        cleanup_paths: list[str] = []
+        if cleanup_mispublished_source_id:
+            cleanup_paths = validate_mispublished_aliases(
+                work,
+                book,
+                consumer_id,
+                testament,
+                package_meta,
+            )
         for rel, src in targets.items():
             dest = work / rel
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(src, dest)
-        git(work, "add", "--", *targets)
-        staged = git(work, "diff", "--cached", "--name-only")
+        for rel in cleanup_paths:
+            (work / rel).unlink()
+        expected_paths = set(targets) | set(cleanup_paths)
+        git(work, "add", "--all", "--", *sorted(expected_paths))
+        # Disable rename detection here: a correct consumer-ID repair replaces
+        # two nearly identical generated files, but the safety gate must audit
+        # all four literal paths rather than Git's collapsed rename display.
+        staged = git(work, "diff", "--cached", "--name-only", "--no-renames")
         if not staged:
             raise SystemExit(f"{book} is already published at {base_ref}. Nothing to do.")
+        staged_paths = set(staged.splitlines())
         # Only the two LBF paths may appear. Fewer is normal: republishing an
         # unchanged book restages only the alignment, whose publishedAt moves.
-        unexpected = sorted(set(staged.splitlines()) - set(targets))
+        unexpected = sorted(staged_paths - expected_paths)
         if unexpected:
             raise SystemExit("refusing to commit unexpected paths:\n  " + "\n  ".join(unexpected))
+        if cleanup_mispublished_source_id and staged_paths != expected_paths:
+            missing = sorted(expected_paths - staged_paths)
+            raise SystemExit(
+                "corrective cleanup must atomically change all four expected paths; unchanged:\n  "
+                + "\n  ".join(missing)
+            )
         git(work, "commit", "--quiet", "-m", message)
         sha = git(work, "rev-parse", "HEAD")
         print(git(work, "show", "--stat", "--oneline", "HEAD"))
@@ -240,6 +354,14 @@ def main() -> int:
         help="Push the branch. Off by default: the commit is made locally first.",
     )
     parser.add_argument("--no-fetch", action="store_true", help="Do not fetch before branching")
+    parser.add_argument(
+        "--cleanup-mispublished-source-id",
+        action="store_true",
+        help=(
+            "Atomically remove the validated generated source-ID alias pair while publishing "
+            "to a declared consumer ID. Intended only for corrective migrations."
+        ),
+    )
     args = parser.parse_args()
 
     book = args.book
@@ -259,9 +381,24 @@ def main() -> int:
     branch = args.branch or branch_name(book, meta)
     base_ref = start_point(repo, args.remote, args.base, fetch=not args.no_fetch)
     label = DISPLAY_NAME.get(book, book.capitalize())
-    message = f"Publish signed {label} LPF text and alignment."
+    message = (
+        f"Correct {label} consumer ID and publish signed LPF text and alignment."
+        if args.cleanup_mispublished_source_id
+        else f"Publish signed {label} LPF text and alignment."
+    )
 
-    sha = publish(book, repo, branch, base_ref, text_path, align_path, message)
+    sha = publish(
+        book,
+        repo,
+        branch,
+        base_ref,
+        text_path,
+        align_path,
+        meta,
+        row["testament"],
+        message,
+        cleanup_mispublished_source_id=args.cleanup_mispublished_source_id,
+    )
 
     print(f"\nbranch {branch}")
     print(f"commit {sha}")

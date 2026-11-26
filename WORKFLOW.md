@@ -869,6 +869,27 @@ Eso corta la rama `lbf-<libro>-<fecha>` desde `origin/main` y hace un solo
 | `<libro>.lbf.md` | `bibles/LBF/<libro>.lbf.md` |
 | `<libro>.alignment.json` | `bibles/LBF/alignments/<libro>.alignment.json` |
 
+`<libro>` en la entrada del comando es el identificador de la fuente. Si un
+libro tiene un identificador de consumidor ya establecido distinto, la única
+correspondencia autorizada vive en `tools/consumer_books.json`. El exportador
+usa el identificador de consumidor en los nombres del paquete y en `bookId`,
+pero conserva el identificador y las rutas de la fuente en la procedencia. El
+publicador resuelve la misma correspondencia para las rutas de destino. Nunca
+se renombran esos archivos a mano.
+
+Una migración correctiva explícita puede retirar un par generado anteriormente
+bajo el identificador equivocado mientras publica el par canónico:
+
+```sh
+python3 tools/publish.py titus --data-repo ../cgv-data \
+  --cleanup-mispublished-source-id
+```
+
+Ese modo exige una correspondencia declarada, valida la procedencia completa
+de los dos alias y se niega a continuar si el *commit* no cambia exactamente
+los cuatro caminos esperados. No es el camino normal de publicación y no
+autoriza borrar ni mover artefactos manualmente.
+
 El *commit* se hace en un `git worktree` temporal. Su copia de trabajo de
 `cgv-data` no se toca: no cambia de rama y sus archivos sucios no entran.
 

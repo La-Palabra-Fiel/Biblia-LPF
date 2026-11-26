@@ -20,6 +20,24 @@ SOURCE_COMMIT = "a" * 40
 SOURCE_FILE = "alignment/nt/titus/titus-reverse-links.json"
 
 
+def shared_links() -> list[dict]:
+    return [
+        {
+            "phraseIndex": index,
+            "reference": f"Tito 1:{index + 1}",
+            "status": "hand",
+            "units": [
+                {
+                    "unitId": f"{index}:0",
+                    "surface": "Texto",
+                    "sourceTokenIds": [f"n560010{index + 1:03d}001"],
+                }
+            ],
+        }
+        for index in range(50)
+    ]
+
+
 def run_git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         ["git", "-C", str(repo), *args],
@@ -49,7 +67,7 @@ def alias_alignment() -> dict:
         "sourceFile": SOURCE_FILE,
         "generator": "tools/export.py",
         "bookId": "titus",
-        "links": [],
+        "links": shared_links(),
     }
 
 
@@ -63,7 +81,7 @@ def package_meta() -> dict:
         "generator": "tools/export.py",
         "bookId": "tito",
         "sourceBookId": "titus",
-        "links": [],
+        "links": shared_links(),
     }
 
 
@@ -182,7 +200,7 @@ class CorrectivePublisherTests(unittest.TestCase):
             cleanup_mispublished_source_id=True,
         )
         changed = run_git(
-            self.repo, "diff", "--name-status", "main.." + branch
+            self.repo, "diff", "--name-status", "--no-renames", "main.." + branch
         ).stdout.splitlines()
         self.assertEqual(
             set(changed),

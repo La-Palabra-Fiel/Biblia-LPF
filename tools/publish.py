@@ -300,7 +300,10 @@ def publish(
             (work / rel).unlink()
         expected_paths = set(targets) | set(cleanup_paths)
         git(work, "add", "--all", "--", *sorted(expected_paths))
-        staged = git(work, "diff", "--cached", "--name-only")
+        # Disable rename detection here: a correct consumer-ID repair replaces
+        # two nearly identical generated files, but the safety gate must audit
+        # all four literal paths rather than Git's collapsed rename display.
+        staged = git(work, "diff", "--cached", "--name-only", "--no-renames")
         if not staged:
             raise SystemExit(f"{book} is already published at {base_ref}. Nothing to do.")
         staged_paths = set(staged.splitlines())

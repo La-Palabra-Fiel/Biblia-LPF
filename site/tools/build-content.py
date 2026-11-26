@@ -111,6 +111,8 @@ class Libro:
         self.estado_libro = "unfinished"
         self.estados_capitulos: dict[str, str] = {}
         self.capitulos_preparados = 0
+        self.capitulos_preparados_lista: list[int] = []
+        self.capitulos_pendientes_preparacion: list[int] = []
         self.revisores_pares = 0
         self.meta_revisores_pares = 10
         self.ruta_fuente: Path | None = None
@@ -395,6 +397,10 @@ def main() -> None:
         libro.estado_libro = progreso["bookStatus"]
         libro.estados_capitulos = progreso["chapterStatuses"]
         libro.capitulos_preparados = progreso["preparedChapterCount"]
+        libro.capitulos_preparados_lista = progreso["preparedChapters"]
+        libro.capitulos_pendientes_preparacion = sorted(
+            set(libro.capitulos) - set(progreso["preparedChapters"])
+        )
         libro.revisores_pares, libro.meta_revisores_pares = leer_revision_pares(libro)
 
     if DIR_BIBLIA.exists():
@@ -441,6 +447,8 @@ def main() -> None:
                       "publicado": bool(l),
                       "estadoLibro": l.estado_libro if l else "unavailable",
                       "capitulosPreparados": l.capitulos_preparados if l else 0,
+                      "capitulosPreparadosLista": l.capitulos_preparados_lista if l else [],
+                      "capitulosPendientesPreparacion": l.capitulos_pendientes_preparacion if l else list(range(1, caps + 1)),
                       "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
                       "revisoresPares": l.revisores_pares if l else 0,
                       "metaRevisoresPares": l.meta_revisores_pares if l else 10})
@@ -452,6 +460,8 @@ def main() -> None:
                       "publicado": bool(l),
                       "estadoLibro": l.estado_libro if l else "unavailable",
                       "capitulosPreparados": l.capitulos_preparados if l else 0,
+                      "capitulosPreparadosLista": l.capitulos_preparados_lista if l else [],
+                      "capitulosPendientesPreparacion": l.capitulos_pendientes_preparacion if l else list(range(1, caps + 1)),
                       "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
                       "revisoresPares": l.revisores_pares if l else 0,
                       "metaRevisoresPares": l.meta_revisores_pares if l else 10})
@@ -483,6 +493,8 @@ def main() -> None:
                 "versiculos": l.n_versiculos,
                 "estadoLibro": l.estado_libro,
                 "capitulosPreparados": l.capitulos_preparados,
+                "capitulosPreparadosLista": l.capitulos_preparados_lista,
+                "capitulosPendientesPreparacion": l.capitulos_pendientes_preparacion,
                 "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()),
                 "revisoresPares": l.revisores_pares,
                 "metaRevisoresPares": l.meta_revisores_pares,

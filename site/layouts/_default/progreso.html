@@ -36,6 +36,13 @@
           <dt>Capítulos preparados</dt>
           <dd><b>{{ .capitulosPreparados }}</b> / {{ .capitulos }}</dd>
           <progress value="{{ .capitulosPreparados }}" max="{{ .capitulos }}" aria-label="{{ .titulo }}: {{ .capitulosPreparados }} de {{ .capitulos }} capítulos preparados"></progress>
+          {{ if .publicado }}
+          <details class="detalle-capitulos">
+            <summary>Ver capítulos exactos</summary>
+            <p><strong>Preparados:</strong> {{ if .capitulosPreparadosLista }}{{ delimit .capitulosPreparadosLista ", " }}{{ else }}ninguno{{ end }}.</p>
+            <p><strong>Pendientes:</strong> {{ if .capitulosPendientesPreparacion }}{{ delimit .capitulosPendientesPreparacion ", " }}{{ else }}ninguno{{ end }}.</p>
+          </details>
+          {{ end }}
         </div>
         <div class="metrica-progreso aprobada">
           <dt>Capítulos aprobados</dt>

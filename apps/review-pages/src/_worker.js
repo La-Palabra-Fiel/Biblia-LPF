@@ -5,8 +5,18 @@ const JSON_HEADERS = {
   "Referrer-Policy": "no-referrer",
 };
 
+const PUBLIC_PROGRESS_HEADERS = {
+  ...JSON_HEADERS,
+  "Access-Control-Allow-Origin": "*",
+  "Cache-Control": "public, max-age=60, s-maxage=60",
+};
+
 function json(value, status = 200) {
   return new Response(JSON.stringify(value), { status, headers: JSON_HEADERS });
+}
+
+function publicJson(value, status = 200) {
+  return new Response(JSON.stringify(value), { status, headers: PUBLIC_PROGRESS_HEADERS });
 }
 
 export function normalizeName(value) {
@@ -60,6 +70,25 @@ async function currentSignatures(env, book, fingerprint) {
   return result.results || [];
 }
 
+async function publicProgress(env) {
+  const result = await env.DB.prepare(
+    "SELECT book, translation_sha256, COUNT(*) AS completed, MAX(signed_on) AS updated_on FROM signatures GROUP BY book, translation_sha256 ORDER BY book, translation_sha256"
+  ).all();
+  const books = {};
+  for (const row of result.results || []) {
+    if (!books[row.book]) books[row.book] = {};
+    books[row.book][row.translation_sha256] = {
+      completed: Math.max(0, Number(row.completed) || 0),
+      updatedOn: row.updated_on,
+    };
+  }
+  return {
+    schema: "lpf-public-peer-review-progress-v2",
+    targetPerBook: 10,
+    books,
+  };
+}
+
 async function bookView(env, request, body) {
   const book = validBook(body.book);
   const reviewer = await authorize(env, book, body.accessKey);
@@ -107,6 +136,9 @@ async function sign(env, request, body) {
 
 export async function handleRequest(request, env) {
   const url = new URL(request.url);
+  if (request.method === "GET" && url.pathname === "/api/revision-libros/progreso") {
+    return publicJson(await publicProgress(env));
+  }
   if (request.method === "POST" && url.pathname === "/api/revision-libros/libro") {
     return json(await bookView(env, request, await payload(request)));
   }
@@ -122,7 +154,10 @@ export default {
       return await handleRequest(request, env);
     } catch (error) {
       console.error(JSON.stringify({ event: "peer_review_error", path: new URL(request.url).pathname, error: String(error) }));
-      return json({ error: error instanceof Error ? error.message : "No se pudo completar la acción." }, 400);
+      const value = { error: error instanceof Error ? error.message : "No se pudo completar la acción." };
+      return new URL(request.url).pathname === "/api/revision-libros/progreso"
+        ? publicJson(value, 500)
+        : json(value, 400);
     }
   },
 };

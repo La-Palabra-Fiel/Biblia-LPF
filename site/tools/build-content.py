@@ -116,6 +116,7 @@ class Libro:
         self.revisores_pares = 0
         self.meta_revisores_pares = 10
         self.ruta_fuente: Path | None = None
+        self.huella_traduccion = ""
 
     @property
     def n_versiculos(self) -> int:
@@ -140,6 +141,7 @@ def parsear_libro(ruta: Path, meta: dict) -> Libro:
     libro.slug_fuente = ruta.stem.lower()
     libro.testamento_fuente = ruta.parent.name
     libro.ruta_fuente = ruta
+    libro.huella_traduccion = hashlib.sha256(ruta.read_bytes()).hexdigest()
 
     capitulo_actual: int | None = None
     versiculo_actual: str | None = None
@@ -451,7 +453,9 @@ def main() -> None:
                       "capitulosPendientesPreparacion": l.capitulos_pendientes_preparacion if l else list(range(1, caps + 1)),
                       "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
                       "revisoresPares": l.revisores_pares if l else 0,
-                      "metaRevisoresPares": l.meta_revisores_pares if l else 10})
+                      "metaRevisoresPares": l.meta_revisores_pares if l else 10,
+                      "slugFuente": l.slug_fuente if l else slug,
+                      "translationSha256": l.huella_traduccion if l else ""})
     for slug, titulo, caps in CANON_NT:
         l = publicados.get(slug)
         canon.append({"slug": slug, "titulo": titulo, "testamento": "nt",
@@ -464,7 +468,9 @@ def main() -> None:
                       "capitulosPendientesPreparacion": l.capitulos_pendientes_preparacion if l else list(range(1, caps + 1)),
                       "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()) if l else 0,
                       "revisoresPares": l.revisores_pares if l else 0,
-                      "metaRevisoresPares": l.meta_revisores_pares if l else 10})
+                      "metaRevisoresPares": l.meta_revisores_pares if l else 10,
+                      "slugFuente": l.slug_fuente if l else slug,
+                      "translationSha256": l.huella_traduccion if l else ""})
 
     n_at = sum(1 for l in libros if l.testamento == "at")
     n_nt = sum(1 for l in libros if l.testamento == "nt")
@@ -498,6 +504,8 @@ def main() -> None:
                 "capitulosAprobados": sum(v == "approved" for v in l.estados_capitulos.values()),
                 "revisoresPares": l.revisores_pares,
                 "metaRevisoresPares": l.meta_revisores_pares,
+                "slugFuente": l.slug_fuente,
+                "translationSha256": l.huella_traduccion,
             }
             for l in libros
         ],

@@ -142,6 +142,16 @@ class RenderTextoVersiculoTests(unittest.TestCase):
         self.assertIn("ev.clipboardData.setData('text/html'", javascript)
         self.assertIn("pieCopia(ref, urlPagina().href)", javascript)
 
+    def test_peer_review_progress_fetches_anonymous_exact_version_counts(self) -> None:
+        site = Path(__file__).resolve().parents[1]
+        javascript = (site / "assets" / "js" / "sitio.js").read_text(encoding="utf-8")
+        template = (site / "layouts" / "_default" / "progreso.html").read_text(encoding="utf-8")
+        self.assertIn("lpf-public-peer-review-progress-v2", javascript)
+        self.assertIn("datos.books[libro][huella]", javascript)
+        self.assertIn("data-progreso-libro", template)
+        self.assertIn("data-huella=\"{{ .translationSha256 }}\"", template)
+        self.assertNotIn("signed_name", javascript)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -108,7 +108,7 @@ is replaced by its shared headword summary. The complete pinned lexical,
 corpus, context, and structural evidence always remains in the canonical
 packet for human review.
 
-Team Desk runs one paid chapter worker by default and enforces a US$10 daily
+Team Desk runs one paid chapter worker by default and enforces a US$50 daily
 OpenAI ceiling across recorded calls and active reservations. Every chapter,
 single-verse draft, and optional audit displays both its maximum cost and the
 day's accumulated spend before confirmation. Set `LBF_TEAM_WORKERS` or

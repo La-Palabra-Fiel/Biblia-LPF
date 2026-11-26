@@ -165,6 +165,59 @@
   var caja = document.getElementById('buscador');
   if (caja) iniciarBuscador(caja);
 
+  /* ---- Firmas de revisión por pares ------------------------------------- */
+  var progresoPares = document.querySelector('[data-progreso-pares]');
+  if (progresoPares) actualizarProgresoPares(progresoPares);
+
+  function actualizarProgresoPares(contenedor) {
+    var endpoint = contenedor.getAttribute('data-endpoint');
+    var estado = contenedor.querySelector('[data-progreso-pares-estado]');
+    if (!endpoint) return;
+    fetch(endpoint, { credentials: 'omit', mode: 'cors' })
+      .then(function (respuesta) {
+        if (!respuesta.ok) throw new Error('respuesta no disponible');
+        return respuesta.json();
+      })
+      .then(function (datos) {
+        if (!datos || datos.schema !== 'lpf-public-peer-review-progress-v2') {
+          throw new Error('formato de progreso desconocido');
+        }
+        var meta = Math.max(1, Number(datos.targetPerBook) || 10);
+        var total = 0;
+        var totalMeta = 0;
+        contenedor.querySelectorAll('[data-progreso-libro]').forEach(function (tarjeta) {
+          var libro = tarjeta.getAttribute('data-libro');
+          var huella = tarjeta.getAttribute('data-huella');
+          var fila = huella && datos.books && datos.books[libro]
+            ? datos.books[libro][huella]
+            : null;
+          var cantidad = Math.min(meta, Math.max(0, Number(fila && fila.completed) || 0));
+          var numero = tarjeta.querySelector('[data-revisores-conteo]');
+          var metaLibro = tarjeta.querySelector('[data-revisores-meta-libro]');
+          var barra = tarjeta.querySelector('[data-revisores-barra]');
+          if (numero) numero.textContent = String(cantidad);
+          if (metaLibro) metaLibro.textContent = String(meta);
+          if (barra) {
+            barra.value = cantidad;
+            barra.max = meta;
+            barra.setAttribute('aria-label', (tarjeta.getAttribute('data-titulo') || libro) + ': ' + cantidad + ' de ' + meta + ' revisores pares');
+          }
+          if (huella) {
+            total += cantidad;
+            totalMeta += meta;
+          }
+        });
+        var totalNodo = contenedor.querySelector('[data-revisores-total]');
+        var metaNodo = contenedor.querySelector('[data-revisores-meta]');
+        if (totalNodo) totalNodo.textContent = String(total);
+        if (metaNodo) metaNodo.textContent = String(totalMeta);
+        if (estado) estado.textContent = 'Firmas actualizadas desde el registro de revisión.';
+      })
+      .catch(function () {
+        if (estado) estado.textContent = 'No se pudo actualizar el registro de firmas; se muestran los últimos datos publicados.';
+      });
+  }
+
   function normalizar(s) {
     return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }

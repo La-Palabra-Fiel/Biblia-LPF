@@ -20,7 +20,25 @@ class FakeDatabase {
   }
 
   prepare(sql) {
+    const progressRows = () => {
+      const groups = new Map();
+      this.signatures.forEach((row) => {
+        const key = `${row.book}:${row.translation_sha256}`;
+        const known = groups.get(key) || {
+          book: row.book, translation_sha256: row.translation_sha256,
+          completed: 0, updated_on: row.signed_on,
+        };
+        known.completed += 1;
+        if (row.signed_on > known.updated_on) known.updated_on = row.signed_on;
+        groups.set(key, known);
+      });
+      return { results: [...groups.values()] };
+    };
     return {
+      all: async () => {
+        if (!sql.startsWith("SELECT book, translation_sha256")) throw new Error(`Consulta inesperada: ${sql}`);
+        return progressRows();
+      },
       bind: (...values) => ({
         first: async () => {
           if (!sql.startsWith("SELECT reviewer,")) throw new Error(`Consulta inesperada: ${sql}`);
@@ -96,5 +114,21 @@ test("la firma exige que la persona escriba su propio nombre", async () => {
   assert.equal(response.status, 200);
   assert.equal(env.DB.signatures.length, 1);
   assert.equal(env.DB.signatures[0].signed_name, "Ana Pérez");
+});
+
+test("el progreso público expone conteos anónimos ligados a la traducción", async () => {
+  const { book, env } = await environment();
+  env.DB.signatures.push({
+    book: "romanos", reviewer: "Ana Pérez", reviewer_key: "ana pérez",
+    signed_name: "Ana Pérez", signed_on: "2026-11-26T03:16:16.058Z",
+    translation_sha256: book.translationSha256, statement: "confirmado",
+  });
+  const response = await handleRequest(
+    new Request("https://revision.example/api/revision-libros/progreso"), env,
+  );
+  const value = await response.json();
+  assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+  assert.equal(value.books.romanos[book.translationSha256].completed, 1);
+  assert.equal(JSON.stringify(value).includes("Ana Pérez"), false);
 });
 

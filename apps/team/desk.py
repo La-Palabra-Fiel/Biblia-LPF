@@ -76,7 +76,7 @@ NT_STRUCTURE_ADJUDICATIONS = ROOT / "source" / "greek" / "TR1894" / "MACULA_STRU
 # One paid chapter at a time is the safe default. Operators may deliberately
 # raise this, but the shared daily ceiling below still includes reservations.
 MAX_RUNNING = max(1, int(os.environ.get("LBF_TEAM_WORKERS", "1")))
-TEAM_DAILY_BUDGET_USD = max(0.0, float(os.environ.get("LBF_TEAM_DAILY_BUDGET_USD", "10.00")))
+TEAM_DAILY_BUDGET_USD = max(0.0, float(os.environ.get("LBF_TEAM_DAILY_BUDGET_USD", "50.00")))
 TEAM_BUDGET_TIMEZONE_NAME = os.environ.get("LBF_TEAM_TIMEZONE", "America/Toronto")
 try:
     TEAM_BUDGET_TIMEZONE = ZoneInfo(TEAM_BUDGET_TIMEZONE_NAME)

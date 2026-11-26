@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $d := site.Data.libros }}
-<section class="envoltura pagina pagina-ancha">
+<section class="envoltura pagina pagina-ancha" data-progreso-pares data-endpoint="https://revision.lapalabrafiel.org/api/revision-libros/progreso">
   <p class="subtitulo-pagina">Fase inicial · inventario de borradores</p>
   <h1>{{ .Title }}</h1>
   <div class="prosa">{{ .Content }}</div>
@@ -9,13 +9,14 @@
   <ul class="cifras">
     <li class="cifra"><b>{{ .totales.capitulosPreparados }} / {{ .totales.capitulos }}</b><span>Capítulos preparados</span></li>
     <li class="cifra"><b>{{ .totales.capitulosAprobados }} / {{ .totales.capitulos }}</b><span>Capítulos aprobados</span></li>
-    <li class="cifra"><b>{{ .totales.revisoresPares }} / {{ .totales.metaRevisoresPares }}</b><span>Revisiones de pares</span></li>
+    <li class="cifra"><b><span data-revisores-total>{{ .totales.revisoresPares }}</span> / <span data-revisores-meta>{{ .totales.metaRevisoresPares }}</span></b><span>Revisiones de pares</span></li>
   </ul>
 
   <h2>Progreso por libro</h2>
 
   <div class="aviso">
     <p><strong>Preparado</strong> significa que Team Desk terminó la preparación completa del capítulo; puede conservar versículos en HOLD para revisión humana. <strong>Aprobado</strong> significa que una persona confirmó el texto y el alineamiento del capítulo. <strong>Revisores pares</strong> cuenta firmas anónimas ligadas a la versión española exacta, con una meta de diez por libro. Ninguna de estas cifras marca automáticamente un libro como terminado.</p>
+    <p class="estado-progreso-pares" data-progreso-pares-estado aria-live="polite">Actualizando las firmas recibidas…</p>
   </div>
 
   {{ range $t := slice "at" "nt" }}
@@ -26,7 +27,7 @@
   </h2>
   <div class="rejilla-progreso">
     {{ range $libros }}
-    <article class="tarjeta-progreso">
+    <article class="tarjeta-progreso" data-progreso-libro data-libro="{{ .slugFuente }}" data-huella="{{ .translationSha256 }}" data-titulo="{{ .titulo }}">
       <header>
         <h3>{{ if .publicado }}<a href="{{ printf "biblia/%s/" .slug | relURL }}">{{ .titulo }}</a>{{ else }}{{ .titulo }}{{ end }}</h3>
         <span class="estado-progreso-libro">{{ if not .publicado }}Sin texto{{ else if eq .estadoLibro "approved" }}LPF{{ else }}En curso{{ end }}</span>
@@ -37,7 +38,7 @@
           <dd><b>{{ .capitulosPreparados }}</b> / {{ .capitulos }}</dd>
           <progress value="{{ .capitulosPreparados }}" max="{{ .capitulos }}" aria-label="{{ .titulo }}: {{ .capitulosPreparados }} de {{ .capitulos }} capítulos preparados"></progress>
           {{ if .publicado }}
-          <details class="detalle-capitulos">
+          <details class="detalle-capitulos"{{ if le .capitulos 10 }} open{{ end }}>
             <summary>Ver capítulos exactos</summary>
             <p><strong>Preparados:</strong> {{ if .capitulosPreparadosLista }}{{ delimit .capitulosPreparadosLista ", " }}{{ else }}ninguno{{ end }}.</p>
             <p><strong>Pendientes:</strong> {{ if .capitulosPendientesPreparacion }}{{ delimit .capitulosPendientesPreparacion ", " }}{{ else }}ninguno{{ end }}.</p>
@@ -51,8 +52,8 @@
         </div>
         <div class="metrica-progreso revisores">
           <dt>Revisores pares</dt>
-          <dd><b>{{ .revisoresPares }}</b> / {{ .metaRevisoresPares }}</dd>
-          <progress value="{{ .revisoresPares }}" max="{{ .metaRevisoresPares }}" aria-label="{{ .titulo }}: {{ .revisoresPares }} de {{ .metaRevisoresPares }} revisores pares"></progress>
+          <dd><b data-revisores-conteo>{{ .revisoresPares }}</b> / <span data-revisores-meta-libro>{{ .metaRevisoresPares }}</span></dd>
+          <progress data-revisores-barra value="{{ .revisoresPares }}" max="{{ .metaRevisoresPares }}" aria-label="{{ .titulo }}: {{ .revisoresPares }} de {{ .metaRevisoresPares }} revisores pares"></progress>
         </div>
       </dl>
     </article>

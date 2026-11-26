@@ -17,6 +17,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from consumer_books import consumer_book_id
+
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "STATUS.md"
 READER_TOKEN_BRIDGE_PATH = ROOT / "source" / "greek" / "TR1894" / "reader-token-bridge.json"
@@ -139,11 +141,17 @@ def committed_source_problem(book: str, row: dict[str, str]) -> str | None:
     )
 
 
-def build_consumer(book: str, row: dict[str, str], verses: list[tuple[int, int, str]], commit: str) -> str:
+def build_consumer(
+    book: str,
+    consumer_id: str,
+    row: dict[str, str],
+    verses: list[tuple[int, int, str]],
+    commit: str,
+) -> str:
     label = CONSUMER_LABEL.get(book, book)
     header = [
         "<!-- LPF (technical id: LBF)",
-        f"     book: {book}",
+        f"     book: {consumer_id}",
         "     translation: done",
         "     alignment: done",
         f"     translation_by: {row['translation_by']}",
@@ -267,7 +275,13 @@ def build_reader_links(book: str, links: list[dict]) -> tuple[list[dict], dict]:
     return exported, metadata
 
 
-def build_alignment(book: str, row: dict[str, str], src: Path, commit: str) -> dict:
+def build_alignment(
+    book: str,
+    consumer_id: str,
+    row: dict[str, str],
+    src: Path,
+    commit: str,
+) -> dict:
     data = json.loads(src.read_text(encoding="utf-8"))
     links = data["links"]
     reader_bridge = None
@@ -282,7 +296,8 @@ def build_alignment(book: str, row: dict[str, str], src: Path, commit: str) -> d
         "sourceSha256": sha256_file(src),
         "generator": "tools/export.py",
         "publishedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "bookId": book,
+        "bookId": consumer_id,
+        "sourceBookId": book,
         "textualBasis": data.get("textualBasis"),
         "schemaVersion": data.get("schemaVersion", 1),
         "numbering": data.get("numbering", "protestant"),
@@ -306,6 +321,7 @@ def main() -> int:
     )
     args = parser.parse_args()
     book = args.book
+    consumer_id = consumer_book_id(book)
     row = parse_status_row(book)
     if row["translation"] != "done" or row["alignment"] != "done":
         print(
@@ -340,11 +356,19 @@ def main() -> int:
     commit = git_head()
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
-    consumer = out / f"{book}.lbf.md"
-    alignment = out / f"{book}.alignment.json"
-    consumer.write_text(build_consumer(book, row, verses, commit), encoding="utf-8")
+    consumer = out / f"{consumer_id}.lbf.md"
+    alignment = out / f"{consumer_id}.alignment.json"
+    consumer.write_text(
+        build_consumer(book, consumer_id, row, verses, commit),
+        encoding="utf-8",
+    )
     alignment.write_text(
-        json.dumps(build_alignment(book, row, a_path, commit), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(
+            build_alignment(book, consumer_id, row, a_path, commit),
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
         encoding="utf-8",
     )
     print(consumer)

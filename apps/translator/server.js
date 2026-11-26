@@ -23,6 +23,7 @@ import {
   statusRow,
   workflowForRow
 } from "./src/workflow/bookWorkflow.js";
+import { consumerBookId } from "./src/workflow/consumerBooks.js";
 import { readSourcePublication } from "./src/workflow/sourcePublication.js";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
@@ -484,8 +485,9 @@ async function readBookProvenance(bookId) {
 
 async function readExportState(bookId) {
   const { slug } = gitPathsForBook(bookId);
-  const textFile = join(exportPackageDir, `${slug}.lbf.md`);
-  const alignmentFile = join(exportPackageDir, `${slug}.alignment.json`);
+  const consumerSlug = consumerBookId(slug);
+  const textFile = join(exportPackageDir, `${consumerSlug}.lbf.md`);
+  const alignmentFile = join(exportPackageDir, `${consumerSlug}.alignment.json`);
   try {
     const [text, alignmentRaw, head] = await Promise.all([
       readFile(textFile, "utf8"),
@@ -495,7 +497,13 @@ async function readExportState(bookId) {
     const alignment = JSON.parse(alignmentRaw);
     const textCommit = text.match(/^\s*sourceCommit:\s*([0-9a-f]{40})\s*$/mu)?.[1] || "";
     const alignmentCommit = String(alignment.sourceCommit || "");
-    const ready = Boolean(textCommit && textCommit === alignmentCommit && textCommit === head.stdout);
+    const ready = Boolean(
+      textCommit
+      && textCommit === alignmentCommit
+      && textCommit === head.stdout
+      && alignment.bookId === consumerSlug
+      && alignment.sourceBookId === slug
+    );
     return {
       ready,
       sourceCommit: alignmentCommit,
@@ -534,25 +542,26 @@ async function runDataGit(args, { allowFailure = false } = {}) {
 }
 
 async function readPublishedBookFromRef(bookSlug, ref) {
+  const consumerSlug = consumerBookId(bookSlug);
   try {
     const [textResult, alignmentResult] = await Promise.all([
       execFileAsync("git", [
         "-C",
         defaultDataRepo,
         "show",
-        `${ref}:bibles/LBF/${bookSlug}.lbf.md`
+        `${ref}:bibles/LBF/${consumerSlug}.lbf.md`
       ], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }),
       execFileAsync("git", [
         "-C",
         defaultDataRepo,
         "show",
-        `${ref}:bibles/LBF/alignments/${bookSlug}.alignment.json`
+        `${ref}:bibles/LBF/alignments/${consumerSlug}.alignment.json`
       ], { encoding: "utf8", maxBuffer: 8 * 1024 * 1024 })
     ]);
     const textCommit = String(textResult.stdout || "").match(/^\s*sourceCommit:\s*([0-9a-f]{40})\s*$/mu)?.[1] || "";
     const alignment = JSON.parse(String(alignmentResult.stdout || "{}"));
     const alignmentCommit = String(alignment.sourceCommit || "");
-    if (!textCommit || textCommit !== alignmentCommit) return null;
+    if (!textCommit || textCommit !== alignmentCommit || alignment.bookId !== consumerSlug) return null;
     return {
       sourceCommit: textCommit,
       publishedAt: String(alignment.publishedAt || "")
@@ -579,9 +588,10 @@ async function bookContentUnchangedSince(bookSlug, sourceCommit) {
 }
 
 async function readLocalPublicationState(bookSlug, exported) {
+  const consumerSlug = consumerBookId(bookSlug);
   const available = existsSync(join(defaultDataRepo, ".git"));
   const stamp = String(exported.publishedAt || "").match(/^(\d{4})-(\d{2})-(\d{2})T/u);
-  let branch = stamp ? `lbf-${bookSlug}-${stamp.slice(1).join("")}` : "";
+  let branch = stamp ? `lbf-${consumerSlug}-${stamp.slice(1).join("")}` : "";
   const pullRequestUrlFor = name => (name
     ? `https://github.com/Cultivados-en-Gracia-y-Verdad/cgv-data/compare/main...${name}?expand=1`
     : "");
@@ -613,7 +623,7 @@ async function readLocalPublicationState(bookSlug, exported) {
 
   if (!branch && onMain?.publishedAt) {
     const mainStamp = String(onMain.publishedAt).match(/^(\d{4})-(\d{2})-(\d{2})T/u);
-    if (mainStamp) branch = `lbf-${bookSlug}-${mainStamp.slice(1).join("")}`;
+    if (mainStamp) branch = `lbf-${consumerSlug}-${mainStamp.slice(1).join("")}`;
   }
 
   const branchExists = branch

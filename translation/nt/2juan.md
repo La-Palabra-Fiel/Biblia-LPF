@@ -6,52 +6,52 @@
 
 ### 1:1
 
-El anciano, a la señora elegida y a sus hijos, a quienes yo amo en verdad, y no solo yo, sino también todos los que han conocido la verdad,
+El anciano, a la señora elegida y a sus hijos, a quienes yo amo en verdad; y no solo yo, sino también todos los que han conocido la verdad.
 
 ### 1:2
 
-por causa de la verdad que permanece en nosotros, y estará con nosotros para siempre.
+por la verdad que permanece en nosotros y estará con nosotros para siempre.
 
 ### 1:3
 
-Estará con nosotros gracia, misericordia y paz de parte de Dios Padre, y de parte de Jesús Cristo, el Hijo del Padre, en verdad y amor.
+Estarán con ustedes la gracia, la misericordia, la paz de Dios Padre y del Señor Jesús, *el* Cristo, el Hijo del Padre, en verdad y amor.
 
 ### 1:4
 
-Me alegré mucho porque he hallado de tus hijos que andan en la verdad, como recibimos mandamiento del Padre.
+Me alegré mucho porque he encontrado a algunos de tus hijos caminando en la verdad, tal como recibimos un mandamiento del Padre.
 
 ### 1:5
 
-Y ahora te ruego, señora, no como escribiéndote un mandamiento nuevo, sino el que teníamos desde el principio, que nos amemos unos a otros.
+Y ahora te pido, señora, no como si te escribiera un mandamiento nuevo, sino el que teníamos desde el principio, que nos amemos unos a otros.
 
 ### 1:6
 
-Y este es el amor: que andemos según sus mandamientos. Este es el mandamiento, como oyeron desde el principio: que anden en él.
+Y este es el amor: que caminemos conforme a sus mandamientos. Este es el mandamiento, tal como oyeron desde el principio: que caminen en él.
 
 ### 1:7
 
-Porque muchos engañadores han salido al mundo, los que no confiesan a Jesús Cristo que viene en carne. Este es el engañador y el anticristo.
+Porque muchos engañadores entraron en el mundo, los que no reconocen que Jesús, *el* Cristo, viene en carne. Este es el engañador y el anticristo.
 
 ### 1:8
 
-Miren por ustedes mismos, para que no pierdan lo que hemos trabajado, sino que reciban completa recompensa.
+Cuídense para que no perdamos lo que hemos realizado, sino que recibamos una recompensa completa.
 
 ### 1:9
 
-Todo el que se adelanta y no permanece en la enseñanza de Cristo no tiene a Dios; el que permanece en la enseñanza, este tiene tanto al Padre como al Hijo.
+Todo el que transgrede y no permanece en la enseñanza del Cristo no tiene a Dios. El que permanece en la enseñanza del Cristo, ese tiene tanto al Padre como al Hijo.
 
 ### 1:10
 
-Si alguien viene a ustedes y no trae esta enseñanza, no lo reciban en casa ni le digan: «Saludos»;
+Si alguien viene a ustedes y no trae esta enseñanza, no lo reciban en casa y no le digan «Saludos».
 
 ### 1:11
 
-porque el que le dice: «Saludos» participa en sus obras malas.
+Pues quien le da un saludo participa en sus malas obras.
 
 ### 1:12
 
-Teniendo muchas cosas que escribirles, no quise hacerlo con papel y tinta, sino que espero ir a ustedes y hablar boca a boca, para que el gozo de ustedes sea completo.
+Teniendo muchas cosas que escribirles, no quise *hacerlo* por medio de papel y tinta; pero espero ir a ustedes y hablar boca a boca, para que nuestra alegría esté completa.
 
 ### 1:13
 
-Te saludan los hijos de tu hermana, la elegida.
+Te saludan los hijos de tu hermana, la elegida. Amén.

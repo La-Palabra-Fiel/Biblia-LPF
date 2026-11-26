@@ -6,60 +6,56 @@
 
 ### 1:1
 
-El anciano, a Gayo el amado, a quien yo amo en verdad.
+El anciano, a Gayo, el amado, a quien yo amo en verdad.
 
 ### 1:2
 
-Amado, deseo que en todo te vaya bien y que tengas salud, así como le va bien a tu alma.
+Amado, oro que prosperes en todo y tengas buena salud, así como prospera tu alma.
 
 ### 1:3
 
-Porque me alegré mucho cuando vinieron unos hermanos y dieron testimonio de tu verdad, como tú andas en la verdad.
+Pues me alegré mucho cuando vinieron hermanos y dieron testimonio de tu verdad, así como tú caminas en la verdad.
 
 ### 1:4
 
-No tengo mayor gozo que este: oír que mis hijos andan en la verdad.
+No tengo alegría mayor que estas cosas: oír que mis hijos caminan en la verdad.
 
 ### 1:5
 
-Amado, actúas fielmente en todo lo que haces por los hermanos, y esto a extranjeros,
+Amado, actúas con fidelidad en todo lo que hagas para los hermanos y para los forasteros.
 
 ### 1:6
 
-los cuales han dado testimonio de tu amor delante de la iglesia; a quienes harás bien si los envías de una manera digna de Dios,
+quienes dieron testimonio de tu amor ante la asamblea, a quienes harás bien en ayudar a continuar el viaje de manera digna de Dios.
 
 ### 1:7
 
-porque por causa del Nombre salieron, sin recibir nada de los gentiles.
+Porque salieron por Su nombre, sin recibir nada de los gentiles.
 
 ### 1:8
 
-Nosotros, pues, debemos acoger a tales personas, para que seamos colaboradores con la verdad.
+Por tanto, nosotros debemos acoger a los de esa clase, para que lleguemos a ser colaboradores con la verdad.
 
 ### 1:9
 
-Escribí algo a la iglesia; pero Diótrefes, a quien le gusta ser el primero entre ellos, no nos recibe.
+Escribí a la congregación, pero Diótrefes, el que ama ser el primero entre ellos, no nos recibe.
 
 ### 1:10
 
-Por esto, si voy, recordaré las obras que hace, calumniándonos con palabras malas; y no contento con esto, ni él mismo recibe a los hermanos, y a los que quieren recibirlos se lo impide y los echa de la iglesia.
+Por esto, si voy, traeré a la memoria sus obras que hace, diciendo disparates contra nosotros con palabras maliciosas. Y no contentándose con estas cosas, él mismo no recibe a los hermanos, y obstaculiza a los que quieren hacerlo y los expulsa de la congregación.
 
 ### 1:11
 
-Amado, no imites lo malo, sino lo bueno. El que hace el bien es de Dios; el que hace el mal no ha visto a Dios.
+Amado, no imites lo malo, sino lo bueno. El que hace el bien es de Dios; pero el que hace el mal no ha visto a Dios.
 
 ### 1:12
 
-A Demetrio todos le han dado buen testimonio, y también la verdad misma; y también nosotros damos testimonio, y sabes que nuestro testimonio es verdadero.
+Demetrio ha recibido testimonio de todos y de la verdad misma. Y nosotros también damos testimonio, y saben que nuestro testimonio es verdadero.
 
 ### 1:13
 
-Tenía muchas cosas que escribirte, pero no quiero escribirte con tinta y pluma;
+Tenía muchas cosas que escribir, pero no quiero escribirte con tinta y cálamo.
 
 ### 1:14
 
-pero espero verte pronto, y hablaremos boca a boca.
-
-### 1:15
-
-Paz a ti. Te saludan los amigos. Saluda a los amigos, a cada uno por nombre.
+Pero espero verte de inmediato, y hablaremos boca a boca. Paz a ti. Los amigos te saludan. Saluda a los amigos por nombre.

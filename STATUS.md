@@ -77,9 +77,9 @@ Signed columns stay empty until a human writes a name and an ISO date.
 | santiago | nt | ready | none |  |  |  |  |  |
 | 1pedro | nt | ready | none |  |  |  |  |  |
 | 2pedro | nt | ready | none |  |  |  |  |  |
-| 1juan | nt | ready | draft |  |  |  |  | reverse-links claim all-hand; unsigned |
-| 2juan | nt | ready | none |  |  |  |  |  |
-| 3juan | nt | ready | none |  |  |  |  |  |
+| 1juan | nt | draft | draft |  |  |  |  | reverse-links claim all-hand; unsigned |
+| 2juan | nt | draft | none |  |  |  |  |  |
+| 3juan | nt | draft | none |  |  |  |  |  |
 | judas | nt | ready | ready |  |  |  |  | reverse-links claim all-hand; unsigned |
 | apocalipsis | nt | draft | draft |  |  |  |  | reclasificado como borrador por decisión humana 2026-11-09; revisión TR posterior no comprobada y el trabajo anterior no constituye aprobación final |
 

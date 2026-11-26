@@ -78,7 +78,7 @@ EXPECTED_VERSES = {
     "2pedro": 61,
     "1juan": 105,
     "2juan": 13,
-    "3juan": 15,
+    "3juan": 14,
     "judas": 25,
     "apocalipsis": 404,
 }

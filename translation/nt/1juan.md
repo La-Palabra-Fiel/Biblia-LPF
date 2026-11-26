@@ -6,43 +6,43 @@
 
 ### 1:1
 
-Lo que era desde el principio, lo que hemos oído, lo que hemos visto con nuestros ojos, lo que contemplamos y nuestras manos palparon acerca de la Palabra de vida;
+Lo que existía desde el principio, lo que hemos oído, lo que hemos visto con nuestros ojos, lo que contemplamos y nuestras manos palparon, acerca de la palabra de la vida…
 
 ### 1:2
 
-y la vida fue manifestada, y la hemos visto, y damos testimonio, y les anunciamos la vida eterna, la cual estaba con el Padre y nos fue manifestada;
+Y la vida fue manifestada, y hemos visto y damos testimonio y les anunciamos la vida eterna, que estaba con el Padre y nos fue manifestada.
 
 ### 1:3
 
-lo que hemos visto y oído les anunciamos a ustedes, para que ustedes también tengan comunión con nosotros; y nuestra comunión es con el Padre y con su Hijo, Jesús Cristo.
+Les anunciamos lo que hemos visto y hemos oído, para que también ustedes tengan comunión con nosotros. Y nuestra comunión también *es* con el Padre y con Su Hijo, Jesús, *el* Cristo.
 
 ### 1:4
 
-Y estas cosas les escribimos para que su gozo sea completo.
+Y les escribimos estas cosas para que la alegría de ustedes esté completa.
 
 ### 1:5
 
-Y este es el mensaje que hemos oído de él y les anunciamos: que Dios es luz y no hay ningunas tinieblas en él.
+Y este es el mensaje que hemos oído de Él y les anunciamos: que Dios es luz y en Él no hay ninguna oscuridad.
 
 ### 1:6
 
-Si decimos que tenemos comunión con él y andamos en las tinieblas, mentimos y no practicamos la verdad.
+Si decimos que tenemos comunión con Él y caminamos en la oscuridad, mentimos y no practicamos la verdad.
 
 ### 1:7
 
-Pero si andamos en la luz, como él está en la luz, tenemos comunión unos con otros, y la sangre de Jesús Cristo, su Hijo, nos limpia de todo pecado.
+Pero si caminamos en la luz, como Él está en la luz, tenemos comunión unos con otros, y la sangre de Jesús, *el* Cristo, Su Hijo, nos limpia de todo pecado.
 
 ### 1:8
 
-Si decimos que no tenemos pecado, nos engañamos a nosotros mismos y la verdad no está en nosotros.
+Si decimos que no tenemos pecado, nos engañamos a nosotros mismos, y la verdad no está en nosotros.
 
 ### 1:9
 
-Si confesamos nuestros pecados, él es fiel y justo para perdonarnos los pecados y limpiarnos de toda injusticia.
+Si confesamos nuestros pecados, es fiel y justo para perdonarnos los pecados y limpiarnos de toda injusticia.
 
 ### 1:10
 
-Si decimos que no hemos pecado, lo hacemos mentiroso, y su palabra no está en nosotros.
+Si decimos que no hemos pecado, Lo hacemos mentiroso, y Su palabra no está en nosotros.
 
 ## Capítulo 2
 
@@ -76,7 +76,7 @@ Amados, no les escribo un mandamiento nuevo, sino un mandamiento antiguo que han
 
 ### 2:8
 
-De nuevo, les escribo un mandamiento nuevo, lo cual es verdadero en él y en ustedes, porque las tinieblas van pasando y la luz verdadera ya brilla.
+De nuevo, les escribo un mandamiento nuevo, lo cual es verdadero en Él y en ustedes, porque la oscuridad está pasando y la luz verdadera ya brilla.
 
 ### 2:9
 
@@ -108,7 +108,7 @@ No amen al mundo ni las cosas que están en el mundo. Si alguien ama al mundo, e
 
 ### 2:16
 
-Porque todo lo que hay en el mundo, el deseo de la carne, el deseo de los ojos y la arrogancia de la vida, no procede del Padre, sino que procede del mundo.
+Porque todo lo que *hay* en el mundo —el deseo de la carne y el deseo de los ojos y la jactancia de la vida— no es del Padre, sino que es del mundo.
 
 ### 2:17
 
@@ -120,7 +120,7 @@ Niñitos, es la última hora; y como oyeron que viene el anticristo, ahora han s
 
 ### 2:19
 
-Salieron de nosotros, pero no eran de nosotros; porque si hubieran sido de nosotros, habrían permanecido con nosotros; pero salieron para que se manifestara que no todos son de nosotros.
+Salieron de entre nosotros, pero no eran de nosotros; pues, si hubieran sido de nosotros, habrían permanecido con nosotros. Pero *salieron* para que quedara de manifiesto que no todos son de nosotros.
 
 ### 2:20
 
@@ -152,7 +152,7 @@ Les he escrito estas cosas acerca de los que los engañan.
 
 ### 2:27
 
-Y en cuanto a ustedes, la unción que recibieron de él permanece en ustedes, y no tienen necesidad de que alguien les enseñe; sino que, como su unción les enseña acerca de todas las cosas, y es verdadera y no es mentira, y tal como les enseñó, permanezcan en él.
+Y en cuanto a ustedes, la unción que recibieron de Él permanece en ustedes, y no tienen necesidad de que alguien les enseñe; pero así como la misma unción les enseña acerca de todo —y es verdadera y no es mentira—, y tal como les enseñó, permanecerán en Él.
 
 ### 2:28
 
@@ -160,7 +160,7 @@ Y ahora, hijitos, permanezcan en él, para que cuando él se manifieste tengamos
 
 ### 2:29
 
-Si saben que él es justo, sepan que todo el que practica la justicia ha nacido de él.
+Si saben que es justo, reconocen que todo el que practica la justicia ha nacido de Él.
 
 ## Capítulo 3
 

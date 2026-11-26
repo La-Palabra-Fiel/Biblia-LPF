@@ -42,6 +42,22 @@ class CanonicalBookWorkflow(unittest.TestCase):
         self.assertEqual(unit["canonicalSourceTokenIds"], ["n45001003009"])
         self.assertEqual(unit["sourceTokenIds"], [])
 
+    def test_nt_export_uses_reviewed_one_to_many_reader_mapping(self) -> None:
+        links = [{
+            "reference": "Romanos 11:20",
+            "units": [{"surface": "seas arrogante", "sourceTokenIds": ["n45011020011"]}],
+        }]
+        exported, metadata = export.build_reader_links("romanos", links)
+        unit = exported[0]["units"][0]
+        self.assertEqual(unit["canonicalSourceTokenIds"], ["n45011020011"])
+        self.assertEqual(
+            unit["sourceTokenIds"],
+            ["n45011020011", "n45011020012"],
+        )
+        self.assertEqual(metadata["canonicalTokenCount"], 1)
+        self.assertEqual(metadata["mappedReaderTokenCount"], 2)
+        self.assertEqual(metadata["unmappedCanonicalTokenCount"], 0)
+
     def test_status_script_can_check_one_book_without_unrelated_blockers(self) -> None:
         result = subprocess.run(
             [sys.executable, str(REPO / "tools" / "status.py"), "titus"],

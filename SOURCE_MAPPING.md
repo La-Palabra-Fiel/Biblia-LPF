@@ -83,6 +83,13 @@ The local sources deliberately supply different capabilities: Scrivener text-onl
 
 This is an engineering gate, not authorization to import automatically. It protects TR1894 as immutable NT text authority.
 
+Reviewed TR-to-Reader one-to-many decisions live in
+`source/greek/TR1894/READER_TOKEN_BRIDGE_ADJUDICATIONS.json`. Each decision
+must name the reviewer, bind one stable TR token to ordered Reader terminal
+IDs, and record both source surfaces. `tools/build_nt_reader_token_bridge.py`
+validates those claims against the pinned sources and generates the bridge;
+the generated bridge is never edited by hand.
+
 ## MACULA Greek: comparison only
 
 A MACULA Greek ID such as `n40001005005` belongs to its edition. If retained, it must occur only in a reference record:

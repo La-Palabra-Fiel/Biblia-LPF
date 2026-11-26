@@ -33,6 +33,7 @@ from export import (  # noqa: E402
     committed_reader_bridge_problem,
     git,
     git_head,
+    load_reader_token_bridge,
     parse_status_row,
     sha256_file,
 )
@@ -144,6 +145,7 @@ def check_package_current(book: str, row: dict[str, str], text_path: Path, meta:
         )
     reader_bridge = meta.get("readerTokenBridge")
     if row["testament"] == "nt":
+        load_reader_token_bridge(book)
         if not isinstance(reader_bridge, dict):
             raise SystemExit("NT package has no explicit TR-to-Reader token bridge. Re-export.")
         bridge_path = ROOT / str(reader_bridge.get("bridgeFile") or "")

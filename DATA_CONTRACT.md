@@ -141,9 +141,14 @@ Scrivener token order. The consumer alignment exported to `cgv-data` must not
 assume that those ordinals identify MorphGNT/SBLGNT tokens. `tools/export.py`
 uses the pinned `reader-token-bridge.json` to preserve the original IDs in
 `canonicalSourceTokenIds` and to write only explicitly mapped Reader-spine IDs
-in `sourceTokenIds`. A TR token with no safe comparison token remains an
-explicit consumer-side gap; it is never attached by equal ordinal. Publisher
-refuses an NT package whose bridge or bridge generator is absent, stale, or
+in `sourceTokenIds`. Exact mappings come from forced or unique normalized
+surface agreement. A one-to-many comparison may supply multiple Reader-spine
+IDs only through a named-human decision in
+`source/greek/TR1894/READER_TOKEN_BRIDGE_ADJUDICATIONS.json`; the generator
+validates both editions' surfaces before applying it. A TR token with neither
+safe comparison nor reviewed mapping remains an explicit consumer-side gap;
+it is never attached by equal ordinal. Publisher refuses an NT package whose
+bridge, adjudication ledger, or bridge generator is absent, stale, or
 uncommitted.
 
 `publish.py` commits in a temporary `git worktree` cut from `origin/{base}`.

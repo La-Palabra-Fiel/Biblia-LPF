@@ -22,6 +22,9 @@ from consumer_books import consumer_book_id
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "STATUS.md"
 READER_TOKEN_BRIDGE_PATH = ROOT / "source" / "greek" / "TR1894" / "reader-token-bridge.json"
+READER_TOKEN_BRIDGE_ADJUDICATIONS_PATH = (
+    ROOT / "source" / "greek" / "TR1894" / "READER_TOKEN_BRIDGE_ADJUDICATIONS.json"
+)
 
 CONSUMER_LABEL = {
     "zacarias": "Zechariah",
@@ -173,7 +176,7 @@ def load_reader_token_bridge(book: str) -> tuple[dict, dict]:
             "Run: python3 tools/build_nt_reader_token_bridge.py"
         )
     bridge = json.loads(READER_TOKEN_BRIDGE_PATH.read_text(encoding="utf-8"))
-    if bridge.get("schema") != "lpf-tr-to-reader-token-bridge-v1":
+    if bridge.get("schema") != "lpf-tr-to-reader-token-bridge-v2":
         raise SystemExit("NT Reader token bridge has an unsupported schema")
     generator = bridge.get("generator") or {}
     generator_path = ROOT / str(generator.get("path") or "")
@@ -186,6 +189,17 @@ def load_reader_token_bridge(book: str) -> tuple[dict, dict]:
             "NT Reader token bridge generator is stale. "
             "Run: python3 tools/build_nt_reader_token_bridge.py"
         )
+    adjudications = bridge.get("adjudications") or {}
+    if (
+        adjudications.get("schema") != "lpf-tr-to-reader-token-bridge-adjudications-v1"
+        or adjudications.get("file") != str(READER_TOKEN_BRIDGE_ADJUDICATIONS_PATH.relative_to(ROOT))
+        or not READER_TOKEN_BRIDGE_ADJUDICATIONS_PATH.is_file()
+        or sha256_file(READER_TOKEN_BRIDGE_ADJUDICATIONS_PATH) != adjudications.get("sha256")
+    ):
+        raise SystemExit(
+            "NT Reader token bridge adjudications are stale. "
+            "Run: python3 tools/build_nt_reader_token_bridge.py"
+        )
     book_bridge = (bridge.get("books") or {}).get(book)
     if not isinstance(book_bridge, dict):
         raise SystemExit(f"NT Reader token bridge has no entry for {book}")
@@ -195,7 +209,11 @@ def load_reader_token_bridge(book: str) -> tuple[dict, dict]:
 def committed_reader_bridge_problem(row: dict[str, str]) -> str | None:
     if row["testament"] != "nt":
         return None
-    required = [READER_TOKEN_BRIDGE_PATH, ROOT / "tools" / "build_nt_reader_token_bridge.py"]
+    required = [
+        READER_TOKEN_BRIDGE_PATH,
+        READER_TOKEN_BRIDGE_ADJUDICATIONS_PATH,
+        ROOT / "tools" / "build_nt_reader_token_bridge.py",
+    ]
     problems: list[str] = []
     for path in required:
         relative = str(path.relative_to(ROOT))
@@ -209,16 +227,16 @@ def committed_reader_bridge_problem(row: dict[str, str]) -> str | None:
     if not problems:
         return None
     return (
-        "the NT Reader token bridge is not committed:\n"
+        "the NT Reader token bridge inputs are not committed:\n"
         + "\n".join(f"   {problem}" for problem in problems)
-        + "\nCommit the bridge and its generator before exporting."
+        + "\nCommit the bridge, adjudication ledger, and generator before exporting."
     )
 
 
 NT_SOURCE_TOKEN_ID = re.compile(r"^n(\d{2})(\d{3})(\d{3})(\d{3})$")
 
 
-def reader_token_id(source_token_id: str, book_bridge: dict) -> str | None:
+def reader_token_ids(source_token_id: str, book_bridge: dict) -> list[str]:
     match = NT_SOURCE_TOKEN_ID.fullmatch(source_token_id)
     if not match:
         raise SystemExit(f"invalid canonical NT source token id: {source_token_id}")
@@ -231,10 +249,24 @@ def reader_token_id(source_token_id: str, book_bridge: dict) -> str | None:
     verse_map = (book_bridge.get("verses") or {}).get(f"{chapter}:{verse}")
     if not isinstance(verse_map, list) or ordinal < 1 or ordinal > len(verse_map):
         raise SystemExit(f"Reader token bridge does not cover canonical token {source_token_id}")
-    reader_ordinal = verse_map[ordinal - 1]
-    if reader_ordinal is None:
-        return None
-    return f"n{book_code:02d}{chapter:03d}{verse:03d}{int(reader_ordinal):03d}"
+    mapped = verse_map[ordinal - 1]
+    if mapped is None:
+        return []
+    if type(mapped) is int:
+        reader_ordinals = [mapped]
+    elif (
+        isinstance(mapped, list)
+        and len(mapped) >= 2
+        and all(type(value) is int and value > 0 for value in mapped)
+        and mapped == sorted(set(mapped))
+    ):
+        reader_ordinals = mapped
+    else:
+        raise SystemExit(f"Reader token bridge has an invalid mapping for {source_token_id}")
+    return [
+        f"n{book_code:02d}{chapter:03d}{verse:03d}{reader_ordinal:03d}"
+        for reader_ordinal in reader_ordinals
+    ]
 
 
 def build_reader_links(book: str, links: list[dict]) -> tuple[list[dict], dict]:
@@ -250,12 +282,13 @@ def build_reader_links(book: str, links: list[dict]) -> tuple[list[dict], dict]:
             mapped: list[str] = []
             for source_token_id in original:
                 canonical_ids.add(source_token_id)
-                target = reader_token_id(source_token_id, book_bridge)
-                if target is None:
+                targets = reader_token_ids(source_token_id, book_bridge)
+                if not targets:
                     unmapped_ids.add(source_token_id)
-                elif target not in mapped:
-                    mapped.append(target)
-                    reader_ids.add(target)
+                for target in targets:
+                    if target not in mapped:
+                        mapped.append(target)
+                        reader_ids.add(target)
             unit["sourceTokenIds"] = mapped
     metadata = {
         "schema": bridge["schema"],

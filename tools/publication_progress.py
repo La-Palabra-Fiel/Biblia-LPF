@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PREPARATION_PROGRESS_FILE = "TEAM_PREPARATION_PROGRESS.json"
 VERSE_HEADING = re.compile(r"^###\s+(\d+):(\d+)\s*$")
 REF_IN_LINK = re.compile(r"(\d+):(\d+)")
 FINISHED_LINK_STATUSES = {"hand", "manual", "manual-realign"}
@@ -114,6 +115,25 @@ def prepared_chapters(
         if verses and all((chapter, verse) in prepared_verses for verse in verses):
             result.append(chapter)
     return result
+
+
+def recorded_prepared_chapters(book: str) -> list[int]:
+    value = read_json(ROOT / PREPARATION_PROGRESS_FILE, {})
+    if not isinstance(value, dict) or value.get("schema") != "lbf-public-team-preparation-progress-v1":
+        return []
+    chapters = (value.get("books") or {}).get(book) or []
+    return sorted({int(chapter) for chapter in chapters if int(chapter) > 0})
+
+
+def record_prepared_chapter(book: str, chapter: int) -> None:
+    """Record a successfully completed full-chapter Team Desk preparation."""
+    path = ROOT / PREPARATION_PROGRESS_FILE
+    value = read_json(path, {})
+    if not isinstance(value, dict) or value.get("schema") != "lbf-public-team-preparation-progress-v1":
+        value = {"schema": "lbf-public-team-preparation-progress-v1", "books": {}}
+    books = value.setdefault("books", {})
+    books[book] = sorted({int(item) for item in (books.get(book) or [])} | {int(chapter)})
+    write_json(path, value)
 
 
 def reference_key(link: dict) -> tuple[int, int] | None:
@@ -348,10 +368,12 @@ def publication_progress(
             chapter_errors[str(chapter)] = errors
     approved = [int(chapter) for chapter, status in chapter_statuses.items() if status == "approved"]
     drafts = [int(chapter) for chapter, status in chapter_statuses.items() if status == "draft-only"]
+    chapter_set = set(chapters)
     prepared = sorted(
         set(chapters if book_finished else prepared_chapters(
             book=book, testament=testament, translations=translations
         ))
+        | (set(recorded_prepared_chapters(book)) & chapter_set)
         | set(approved)
     )
     return {

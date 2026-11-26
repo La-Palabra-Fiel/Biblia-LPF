@@ -96,6 +96,7 @@ class Handler(BaseHTTPRequestHandler):
             "/api/prepare-verse": lambda p: desk.prepare(p.get("name"), p.get("book"), p.get("chapter"), p.get("token"), p.get("costConfirmed"), p.get("verse"), p.get("confirmedMaximumUsd")),
             "/api/stop": lambda p: desk.stop(p.get("name"), p.get("book"), p.get("chapter"), p.get("token")),
             "/api/build-nt-syntax": desk.build_nt_syntax_candidate,
+            "/api/audit-verse-estimate": desk.audit_verse_estimate,
             "/api/audit-verse": desk.audit_verse,
             "/api/reopen-verse": desk.reopen_verse,
             "/api/cancel-revision": desk.cancel_revision,

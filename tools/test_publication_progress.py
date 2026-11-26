@@ -86,6 +86,18 @@ class PublicationProgressTests(unittest.TestCase):
         self.assertEqual(public["preparedChapters"], [1, 2])
         self.assertEqual(public["preparedChapterCount"], 2)
 
+    def test_recorded_team_desk_chapter_counts_even_with_hold_verses(self):
+        with patch.object(progress, "ROOT", self.root):
+            progress.record_prepared_chapter("sample", 2)
+            public = progress.publication_progress(
+                book="sample", testament="ot", book_finished=False
+            )
+        self.assertEqual(public["preparedChapters"], [1, 2])
+        ledger = progress.read_json(
+            self.root / progress.PREPARATION_PROGRESS_FILE, {}
+        )
+        self.assertEqual(ledger["books"]["sample"], [2])
+
     def test_revision_demotes_chapter_without_deleting_links(self):
         with patch.object(progress, "ROOT", self.root):
             path = progress.promote_chapter_alignment(

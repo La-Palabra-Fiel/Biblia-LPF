@@ -623,14 +623,34 @@ class SourcePacketTests(unittest.TestCase):
         self.assertEqual(packet["evidenceStatus"], "READY_FOR_MODEL")
         self.assertEqual(packet["syntax"]["status"], "READY_TR_STRUCTURE")
         prompt = packet_for_prompt(packet)
-        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v1")
+        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v2")
 
     def test_nt_prompt_opens_only_for_a_ready_verse(self) -> None:
         packet = build_packet("filipenses", 1, 7)
         self.assertEqual(packet["evidenceStatus"], "READY_FOR_MODEL")
         prompt = packet_for_prompt(packet)
-        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v1")
+        self.assertEqual(prompt["promptProfile"], "canonical-nt-compact-v2")
         self.assertEqual(prompt["textualBasis"], "TR1894")
+
+    def test_nt_prompt_deduplicates_lexicon_articles_without_losing_evidence_ids(self) -> None:
+        packet = build_packet("titus", 1, 1)
+        prompt = packet_for_prompt(packet)
+        full_ids = {
+            item["lexicalEvidenceId"]
+            for item in packet["lexicalEvidence"]
+        }
+        compact_ids = {
+            evidence_id
+            for item in prompt["lexicalEvidence"]
+            for evidence_id in item["lexicalEvidenceIds"]
+        }
+        self.assertEqual(compact_ids, full_ids)
+        self.assertTrue(all("glosses" in item for item in prompt["lexicalEvidence"]))
+        self.assertNotIn("tokenStructuralPaths", prompt["syntax"])
+        self.assertLess(
+            len(dump_prompt({"packet": prompt})),
+            len(dump_prompt({"packet": packet})) * 0.60,
+        )
 
     def test_editorial_lexical_policy_is_matched_but_research_stays_human_only(self) -> None:
         packet = build_packet("hebreos", 9, 16)

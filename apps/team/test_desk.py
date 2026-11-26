@@ -13,11 +13,13 @@ class DeskTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory(); root=Path(self.tmp.name)
         self.old=(desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS,desk.PUBLIC_PEER_REVIEW_PROGRESS)
         desk._estimate_packet_cache.clear()
+        desk._budget_reservations.clear()
         desk._nt_syntax_board_cache=None
         desk.VAR=root;desk.CLAIMS=root/"claims.json";desk.PEOPLE=root/"people.json";desk.RECOVERED=root/"recovered-reviews";desk.BOOK_SIGNATURES=root/"book-signatures.json";desk.BOOK_REVIEW_LINKS=root/"book-review-links.json";desk.PUBLIC_PEER_REVIEW_PROGRESS=root/"PEER_REVIEW_PROGRESS.json"
         desk.PEOPLE.write_text('{"Ana":"11111111","Luis":"22222222"}\n',encoding="utf-8")
     def tearDown(self):
         desk._estimate_packet_cache.clear()
+        desk._budget_reservations.clear()
         desk._nt_syntax_board_cache=None
         desk.VAR,desk.CLAIMS,desk.PEOPLE,desk.RECOVERED,desk.BOOK_SIGNATURES,desk.BOOK_REVIEW_LINKS,desk.PUBLIC_PEER_REVIEW_PROGRESS=self.old;self.tmp.cleanup()
 
@@ -438,7 +440,7 @@ class DeskTests(unittest.TestCase):
         book=type("B",(),{"slug":"exodo","label":"Éxodo"})()
         candidate=Path(self.tmp.name)/"existing.json";candidate.write_text('{"spanish":"Texto","units":[{"es":"Texto","sourceTokenIds":["h1"]}]}\n',encoding="utf-8")
         packet={"sourcePolicy":"lbf-source-policy-v4","tokens":[{"sourceTokenId":"h1"}]}
-        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"reusable_candidate",return_value=(candidate,{"spanish":"Texto"})),patch.object(desk,"build_packet",return_value=packet) as build,patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
+        with patch.object(desk,"authorize",return_value="Ana"),patch.object(desk,"chapter_or_raise",return_value=(book,6,[1])),patch.object(desk,"assert_holder"),patch.object(desk,"human_review_is_current",return_value=False),patch.object(desk,"reusable_candidate",return_value=(candidate,{"spanish":"Texto"})),patch.object(desk,"build_packet",return_value=packet) as build,patch.object(desk,"packet_path",return_value=Path(self.tmp.name)/"packet.json"),patch.object(desk,"load_draft_system",return_value="system"),patch.object(desk,"build_draft_prompt",return_value="prompt"),patch.object(desk,"build_audit_prompt",return_value="audit"):
             estimate=desk.prepare_estimate("Ana","exodo",6,"11111111")
         build.assert_called_once_with("exodo",6,1)
         self.assertEqual(estimate["reusedCandidates"],0)
@@ -530,6 +532,20 @@ class DeskTests(unittest.TestCase):
         self.assertEqual(len(sample.encode("utf-8")),2000)
         self.assertEqual(desk.estimate_input_tokens(sample),720)
 
+    def test_daily_budget_includes_running_reservations(self):
+        with patch.object(desk, "paid_usage_today", return_value=3.25), patch.object(desk, "TEAM_DAILY_BUDGET_USD", 10.0):
+            desk._budget_reservations["mateo:1"] = 4.0
+            status = desk.paid_budget_status(2.50)
+            self.assertTrue(status["allowed"])
+            self.assertEqual(status["projectedUsd"], 9.75)
+            with self.assertRaisesRegex(ValueError, "Límite diario"):
+                desk.enforce_paid_budget(3.0)
+
+    def test_daily_budget_can_exclude_the_current_reservation(self):
+        with patch.object(desk, "paid_usage_today", return_value=2.0), patch.object(desk, "TEAM_DAILY_BUDGET_USD", 10.0):
+            desk._budget_reservations["mateo:1"] = 6.0
+            self.assertTrue(desk.paid_budget_status(6.0, "mateo:1")["allowed"])
+
     def test_recent_cost_estimate_reuses_packets_and_rechecks_candidates(self):
         book=type("B",(),{"slug":"exodo","label":"Éxodo","testament":"ot"})()
         packet={"sourcePolicy":"lbf-source-policy-v4","evidenceStatus":"READY_FOR_MODEL","tokens":[]}
@@ -564,6 +580,9 @@ class DeskTests(unittest.TestCase):
         self.assertIn("/api/prepare-estimate",html)
         self.assertIn("Revisión humana local:</b> sin costo",html)
         self.assertIn("/api/audit-verse",html)
+        self.assertIn("/api/audit-verse-estimate",html)
+        self.assertIn("paidBudgetNotice",html)
+        self.assertIn("body{font-size:25px}",html)
         self.assertIn("Máximo calculado",html)
         self.assertIn("Calculando costo…",html)
         self.assertIn("Los capítulos largos pueden tardar unos segundos",html)

@@ -101,7 +101,23 @@ results with current rules without rewriting historical artifacts or clearing
 independent fidelity-audit findings.
 
 New Team Desk screening drafts use GPT-6.1 Sol at low reasoning with a
-4,000-token completion ceiling and one best-ranked corpus parallel per lemma.
+4,000-token completion ceiling and one best-ranked corpus parallel per token.
+For NT prompts, repeated TBESG rows are grouped: every evidence ID and distinct
+gloss remains visible to the model, while a repeated full dictionary article
+is replaced by its shared headword summary. The complete pinned lexical,
+corpus, context, and structural evidence always remains in the canonical
+packet for human review.
+
+Team Desk runs one paid chapter worker by default and enforces a US$10 daily
+OpenAI ceiling across recorded calls and active reservations. Every chapter,
+single-verse draft, and optional audit displays both its maximum cost and the
+day's accumulated spend before confirmation. Set `LBF_TEAM_WORKERS` or
+`LBF_TEAM_DAILY_BUDGET_USD` only as an explicit operator budget decision; the
+budget day uses `LBF_TEAM_TIMEZONE` (`America/Toronto` by default), and a daily
+budget of `0` disables the ceiling. Separate computers cannot share an
+in-memory reservation, so the OpenAI project must also retain its provider-side
+budget as the final account-wide limit.
+
 The model choice is scheduled for human review beginning 2026-11-30; the date
 does not change it automatically. Existing compatible GPT-5.6 Sol candidates
 at low or medium reasoning are reused without another paid call. The displayed

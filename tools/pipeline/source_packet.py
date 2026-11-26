@@ -713,12 +713,99 @@ def packet_for_prompt(packet: dict) -> dict:
         seen_corpus = set()
         corpus_by_id = {row["corpusEvidenceId"]: row for row in packet.get("corpusEvidence") or []}
         for token in packet.get("tokens") or []:
-            for evidence_id in (token.get("corpusEvidenceIds") or [])[:2]:
+            # The first item is the deterministically best-ranked occurrence.
+            # Additional occurrences remain in the canonical packet for human
+            # review; repeating them in every paid prompt was a major cost
+            # multiplier without adding a different kind of evidence.
+            evidence_ids = token.get("corpusEvidenceIds") or []
+            evidence_id = next(
+                (
+                    item for item in evidence_ids
+                    if corpus_by_id[item].get("trTokenId") != token.get("trTokenId")
+                ),
+                evidence_ids[0] if evidence_ids else None,
+            )
+            if evidence_id:
                 if evidence_id not in seen_corpus:
-                    cited_corpus.append(corpus_by_id[evidence_id])
+                    row = corpus_by_id[evidence_id]
+                    cited_corpus.append({
+                        key: row.get(key)
+                        for key in (
+                            "strong", "reference", "surface", "morph",
+                            "structuralPath",
+                        )
+                        if row.get(key) not in (None, [], "")
+                    })
                     seen_corpus.add(evidence_id)
+
+        # TBESG stores occurrence/gloss variants as separate rows and repeats
+        # the same complete dictionary article in each row.  Preserve every
+        # evidence ID and every distinct gloss, but send the shared article
+        # only once per lexical entry.  The complete pinned rows remain in the
+        # validated packet on disk.
+        compact_lexical = []
+        lexical_groups = {}
+        for entry in packet.get("lexicalEvidence") or []:
+            key = (
+                entry.get("strong"),
+                entry.get("greek"),
+                entry.get("meaning"),
+                entry.get("authority"),
+            )
+            group = lexical_groups.get(key)
+            if group is None:
+                meaning = " ".join(str(entry.get("meaning") or "").split())
+                # TBESG uses ``__`` to begin its long numbered discussion.
+                # The paid screening draft needs the headword description and
+                # all occurrence gloss options, not pages of references. The
+                # unabridged article remains in the canonical packet and UI.
+                meaning_summary = meaning.split("__", 1)[0].strip()[:800]
+                group = {
+                    key: entry.get(key)
+                    for key in (
+                        "strong", "greek", "transliteration",
+                        "lexicalMorphology", "authority",
+                    )
+                    if entry.get(key) not in (None, [], "")
+                }
+                if meaning_summary:
+                    group["meaningSummary"] = meaning_summary
+                group["lexicalEvidenceIds"] = []
+                group["glosses"] = []
+                lexical_groups[key] = group
+                compact_lexical.append(group)
+            evidence_id = entry.get("lexicalEvidenceId")
+            if evidence_id and evidence_id not in group["lexicalEvidenceIds"]:
+                group["lexicalEvidenceIds"].append(evidence_id)
+            gloss = entry.get("gloss")
+            if gloss and gloss not in group["glosses"]:
+                group["glosses"].append(gloss)
+
+        def compact_syntax_node(node: dict) -> dict:
+            compact = {
+                key: node.get(key)
+                for key in (
+                    "kind", "status", "category", "rule", "function",
+                    "clauseType", "trTokenId",
+                )
+                if node.get(key) not in (None, [], {}, "")
+            }
+            children = [compact_syntax_node(child) for child in node.get("children") or []]
+            if children:
+                compact["children"] = children
+            return compact
+
+        syntax = packet["syntax"]
+        compact_syntax = {
+            key: syntax.get(key)
+            for key in (
+                "status", "mappingStatus", "trAuthorityFallback",
+            )
+            if syntax.get(key) not in (None, [], {}, "")
+        }
+        compact_syntax["roots"] = [compact_syntax_node(root) for root in syntax.get("roots") or []]
         return {
-            "promptProfile": "canonical-nt-compact-v1",
+            "promptProfile": "canonical-nt-compact-v2",
             "sourcePolicy": packet["sourcePolicy"],
             "evidencePolicy": packet["evidencePolicy"],
             "book": packet["book"],
@@ -729,19 +816,20 @@ def packet_for_prompt(packet: dict) -> dict:
             "tokens": [
                 {key: token.get(key) for key in (
                     "sourceTokenId", "trTokenId", "surface", "surfaceBeta", "strongs",
-                    "morph", "lexicalEvidenceIds", "corpusEvidenceIds",
+                    "morph",
                 ) if token.get(key) not in (None, [], "")}
                 for token in packet["tokens"]
             ],
-            "lexicalEvidence": [
-                {key: entry.get(key) for key in (
-                    "lexicalEvidenceId", "strong", "greek", "transliteration",
-                    "lexicalMorphology", "gloss", "meaning", "authority",
-                ) if entry.get(key) not in (None, [], "")}
-                for entry in packet.get("lexicalEvidence") or []
+            "lexicalEvidence": compact_lexical,
+            "syntax": compact_syntax,
+            "originalLanguageContext": [
+                {
+                    key: item.get(key)
+                    for key in ("role", "reference", "surface")
+                    if item.get(key) not in (None, [], "")
+                }
+                for item in packet.get("originalLanguageContext") or []
             ],
-            "syntax": packet["syntax"],
-            "originalLanguageContext": packet.get("originalLanguageContext") or [],
             "corpusEvidence": cited_corpus,
             "editorialLexicalPolicyVersion": editorial["editorialLexicalPolicyVersion"],
             "editorialLexicalPolicy": editorial["editorialLexicalPolicy"],

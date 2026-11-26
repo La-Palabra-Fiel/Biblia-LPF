@@ -21,15 +21,16 @@ import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 ROOT = Path(__file__).resolve().parents[2]
 PIPELINE = ROOT / "tools" / "pipeline"
 sys.path.insert(0, str(PIPELINE))
 sys.path.insert(0, str(ROOT / "tools"))
 import env_load  # noqa: E402,F401
-from publication_progress import demote_chapter_alignment, promote_chapter_alignment  # noqa: E402
+from publication_progress import demote_chapter_alignment, promote_chapter_alignment, record_prepared_chapter  # noqa: E402
 from draft_lib import COMPATIBLE_TEAM_DRAFT_MODELS, TEAM_DRAFT_MODEL, TEAM_DRAFT_MODEL_REVIEW_ON, TEAM_DRAFT_REASONING  # noqa: E402
-from usage_lib import rates_for  # noqa: E402
+from usage_lib import call_cost, rates_for  # noqa: E402
 from json_io import write_json_atomic  # noqa: E402
 
 # The team workflow is deliberately not model-configurable. Changing this is a
@@ -72,10 +73,20 @@ NT_SYNTAX_CANDIDATES = ROOT / "nt-syntax" / "candidates"
 NT_MACULA_MAPPING = ROOT / "source" / "greek" / "TR1894" / "macula-structure-mapping.json"
 NT_MACULA_MANIFEST = ROOT / "source" / "greek" / "TR1894" / "MACULA_GREEK_MANIFEST.json"
 NT_STRUCTURE_ADJUDICATIONS = ROOT / "source" / "greek" / "TR1894" / "MACULA_STRUCTURE_ADJUDICATIONS.json"
-MAX_RUNNING = max(1, int(os.environ.get("LBF_TEAM_WORKERS", "4")))
+# One paid chapter at a time is the safe default. Operators may deliberately
+# raise this, but the shared daily ceiling below still includes reservations.
+MAX_RUNNING = max(1, int(os.environ.get("LBF_TEAM_WORKERS", "1")))
+TEAM_DAILY_BUDGET_USD = max(0.0, float(os.environ.get("LBF_TEAM_DAILY_BUDGET_USD", "10.00")))
+TEAM_BUDGET_TIMEZONE_NAME = os.environ.get("LBF_TEAM_TIMEZONE", "America/Toronto")
+try:
+    TEAM_BUDGET_TIMEZONE = ZoneInfo(TEAM_BUDGET_TIMEZONE_NAME)
+except ZoneInfoNotFoundError:
+    TEAM_BUDGET_TIMEZONE_NAME = "UTC"
+    TEAM_BUDGET_TIMEZONE = timezone.utc
 _lock = threading.RLock()
 _threads: dict[str, threading.Thread] = {}
 _stops: dict[str, threading.Event] = {}
+_budget_reservations: dict[str, float] = {}
 _chapter_counts: dict[str, int] = {}
 _nt_mapping_cache: tuple[str, dict] | None = None
 _nt_syntax_board_cache: tuple[str, dict] | None = None
@@ -109,6 +120,60 @@ def now() -> str:
 
 def today() -> str:
     return datetime.now(timezone.utc).date().isoformat()
+
+
+def paid_usage_today() -> float:
+    """Return today's recorded OpenAI spend from canonical usage artifacts."""
+    day = datetime.now(TEAM_BUDGET_TIMEZONE).date()
+    total = 0.0
+    for path in (ROOT / "pipeline").glob("**/*.usage.json"):
+        stored = read_json(path, {})
+        calls = stored.get("calls") if isinstance(stored, dict) else []
+        if not isinstance(calls, list):
+            continue
+        for call in calls:
+            if not isinstance(call, dict) or call.get("provider") != "openai":
+                continue
+            try:
+                called_at = datetime.fromisoformat(str(call.get("at") or "").replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if called_at.astimezone(TEAM_BUDGET_TIMEZONE).date() != day:
+                continue
+            total += float(call.get("usd") if call.get("usd") is not None else call_cost(call))
+    return round(total, 6)
+
+
+def paid_budget_status(proposed_usd: float = 0.0, exclude_key: str | None = None) -> dict:
+    spent = paid_usage_today()
+    reserved = sum(
+        amount for key, amount in _budget_reservations.items()
+        if key != exclude_key
+    )
+    projected = spent + reserved + max(0.0, float(proposed_usd))
+    return {
+        "dailyBudgetUsd": round(TEAM_DAILY_BUDGET_USD, 2),
+        "budgetTimezone": TEAM_BUDGET_TIMEZONE_NAME,
+        "spentTodayUsd": round(spent, 2),
+        "reservedUsd": round(reserved, 2),
+        "projectedUsd": round(projected, 2),
+        "remainingUsd": round(max(0.0, TEAM_DAILY_BUDGET_USD - spent - reserved), 2),
+        "allowed": TEAM_DAILY_BUDGET_USD <= 0 or projected <= TEAM_DAILY_BUDGET_USD,
+    }
+
+
+def enforce_paid_budget(proposed_usd: float, exclude_key: str | None = None) -> dict:
+    status = paid_budget_status(proposed_usd, exclude_key)
+    if not status["allowed"]:
+        raise ValueError(
+            "Límite diario de Team Desk alcanzado. "
+            f"Gastado hoy: US${status['spentTodayUsd']:.2f}; "
+            f"reservado: US${status['reservedUsd']:.2f}; "
+            f"máximo de esta acción: US${float(proposed_usd):.2f}; "
+            f"límite diario: US${status['dailyBudgetUsd']:.2f}. "
+            "No se hizo ninguna llamada pagada."
+        )
+    return status
 
 
 def model_name() -> str:
@@ -1033,6 +1098,7 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
     likely_new_audits = 0
     with _lock:
         _estimate_packet_cache[cache_key] = (time.monotonic(), estimate_packets)
+    budget = paid_budget_status(math.ceil(conservative_usd * 100) / 100)
     return {
         "book": book.slug,
         "chapter": number,
@@ -1051,6 +1117,7 @@ def prepare_estimate(name, slug, chapter, token="", verse=None) -> dict:
         "estimatedLikelyUsd": round(likely_usd, 2),
         "estimatedMaximumUsd": math.ceil(conservative_usd * 100) / 100,
         "estimatedAllFlaggedMaximumUsd": math.ceil(all_flagged_usd * 100) / 100,
+        **budget,
         "note": "Existing candidates are reused. Paid audits are optional, one verse at a time, and are never included or launched automatically.",
     }
 
@@ -1078,6 +1145,8 @@ def prepare(name, slug, chapter, token="", cost_confirmed=False, verse=None, con
             raise ValueError("This chapter is already being prepared.")
         if sum(_alive(item) for item in _threads) >= MAX_RUNNING:
             raise ValueError("All preparation workers are occupied.")
+        enforce_paid_budget(float(estimate["estimatedMaximumUsd"]), key)
+        _budget_reservations[key] = float(estimate["estimatedMaximumUsd"])
         event = threading.Event()
         _stops[key] = event
         _threads[key] = threading.Thread(target=_prepare, args=(book.slug, number, event, selected_verse), daemon=True)
@@ -1128,7 +1197,14 @@ def _prepare(slug: str, chapter: int, event: threading.Event, only_verse: int | 
             if check_data.get("model") != SPANISH_GATE_MODEL or check_data.get("candidateSha256") != fingerprint: _run([sys.executable, str(PIPELINE / "spanish_check_local.py"), slug, str(chapter), str(verse), "--candidate-file", str(path), "--label", label], allow_gate_failure=True)
     except Exception as exc:  # noqa: BLE001
         error = str(exc)
+    if not error and not event.is_set() and only_verse is None:
+        try:
+            with _lock:
+                record_prepared_chapter(slug, chapter)
+        except Exception as exc:  # noqa: BLE001
+            error = f"chapter preparation finished but its public progress could not be recorded: {exc}"
     with _lock:
+        _budget_reservations.pop(key, None)
         claims = load_claims()
         if key in claims:
             claims[key].update(running=False, note=(f"Preparation stopped: {error}" if error else ("Preparation stopped" if event.is_set() else "Ready for human review")), updated=now()); save_claims(claims)
@@ -1141,7 +1217,45 @@ def stop(name, slug, chapter, token="") -> None:
         if key in _stops: _stops[key].set()
 
 
+def audit_verse_estimate(payload: dict) -> dict:
+    person = authorize(payload.get("name"), payload.get("token"))
+    book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter"))
+    verse = int(payload.get("verse") or 0)
+    if verse not in verses:
+        raise ValueError("That verse is not in this Protestant chapter.")
+    with _lock:
+        assert_holder(person, book.slug, chapter)
+    path = candidate_path(book.slug, chapter, verse)
+    candidate = read_json(path, {}) if path else {}
+    if not path or candidate.get("schema") == "lbf-human-reviewed-candidate-v1":
+        raise ValueError("A saved unapproved candidate is required before requesting an optional paid audit.")
+    packet = read_json(packet_path(book.slug, chapter, verse), {})
+    label = label_for(candidate, path)
+    audit_path = pipeline_dir(book.slug) / f"{book.slug}-{chapter}-{verse}.audit-gpt-{label}.json"
+    existing = read_json(audit_path, {})
+    fingerprint = object_fingerprint(candidate)
+    needed = existing.get("model") != TEAM_MODEL or existing.get("reasoningEffort") != TEAM_REASONING or existing.get("candidateSha256") != fingerprint
+    maximum = 0.0
+    if needed:
+        prompt = build_audit_prompt(packet, str(candidate.get("spanish") or ""), label)
+        input_tokens = estimate_input_tokens(AUDIT_SYSTEM + prompt)
+        maximum = input_tokens / 1_000_000 * TEAM_RATES["input"] + AUDIT_MAX_COMPLETION_TOKENS / 1_000_000 * TEAM_RATES["output"]
+    maximum = math.ceil(maximum * 100) / 100
+    return {
+        "paidCalls": 1 if needed else 0,
+        "estimatedMaximumUsd": maximum,
+        **paid_budget_status(maximum),
+    }
+
+
 def audit_verse(payload: dict) -> dict:
+    estimate = audit_verse_estimate(payload)
+    try:
+        confirmed_maximum = float(payload.get("confirmedMaximumUsd"))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Confirm the displayed maximum audit cost.") from exc
+    if confirmed_maximum < float(estimate["estimatedMaximumUsd"]):
+        raise ValueError("The audit estimate changed. Review and confirm the new maximum before any paid call.")
     person = authorize(payload.get("name"), payload.get("token"))
     book, chapter, verses = chapter_or_raise(payload.get("book"), payload.get("chapter"))
     verse = int(payload.get("verse") or 0)
@@ -1159,7 +1273,15 @@ def audit_verse(payload: dict) -> dict:
     existing = read_json(audit_path, {})
     fingerprint = object_fingerprint(candidate)
     if existing.get("model") != TEAM_MODEL or existing.get("reasoningEffort") != TEAM_REASONING or existing.get("candidateSha256") != fingerprint:
-        _run([sys.executable, str(PIPELINE / "audit_gpt.py"), book.slug, str(chapter), str(verse), "--candidate-file", str(path), "--label", label], allow_gate_failure=True)
+        reservation_key = f"audit:{book.slug}:{chapter}:{verse}"
+        with _lock:
+            enforce_paid_budget(float(estimate["estimatedMaximumUsd"]), reservation_key)
+            _budget_reservations[reservation_key] = float(estimate["estimatedMaximumUsd"])
+        try:
+            _run([sys.executable, str(PIPELINE / "audit_gpt.py"), book.slug, str(chapter), str(verse), "--candidate-file", str(path), "--label", label], allow_gate_failure=True)
+        finally:
+            with _lock:
+                _budget_reservations.pop(reservation_key, None)
     return chapter_view(book.slug, chapter)
 
 

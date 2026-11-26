@@ -40,6 +40,13 @@ The publisher is two scripts and nothing else:
 `lbf-<book>-<date>` branch in `cgv-data`. Never `git add` LBF text or
 alignment into `cgv-data` by hand. Never `cp` into `bibles/LBF/`.
 
+Source IDs that differ from established consumer IDs are declared only in
+`tools/consumer_books.json`. Export, publish, and Translator must use that
+shared mapping; never rename a generated package or a `cgv-data` artifact by
+hand. The publisher's alias-cleanup option is only for an explicitly named
+corrective migration and must validate the complete generated alias pair
+before removal.
+
 `export.py` refuses if the bound source is not committed. The fix is a commit
 by the user, either directly or through Translator's explicit **Review &
 Commit** confirmation; never a flag or blind re-run.

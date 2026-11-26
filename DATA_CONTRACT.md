@@ -116,11 +116,25 @@ must be `done`; chapters and unfinished books never enter `cgv-data`.
 
 | Data | Path in `cgv-data` |
 | --- | --- |
-| Consumer text | `bibles/LBF/{book}.lbf.md` |
-| Consumer alignment | `bibles/LBF/alignments/{book}.alignment.json` |
+| Consumer text | `bibles/LBF/{consumerBookId}.lbf.md` |
+| Consumer alignment | `bibles/LBF/alignments/{consumerBookId}.alignment.json` |
 
 Those two historical technical paths are the entire published surface for a
-book. A publisher commit contains nothing else.
+book. Source identifiers that differ from an established consumer identifier
+are declared in `tools/consumer_books.json`; the exporter, publisher, and
+Translator use the same mapping. The exported metadata retains the source
+identifier and source paths while `bookId`, package filenames, and destination
+paths use the consumer identifier. No one renames a generated package or
+destination artifact by hand.
+
+A normal publisher commit contains nothing else. One explicitly requested
+corrective consumer-ID migration may also remove the complete generated alias
+pair created by an earlier bad publication. That cleanup runs only through
+`tools/publish.py --cleanup-mispublished-source-id`, only when a declared
+mapping exists, and only after the publisher verifies both aliases' book,
+source path, source commit, generator, and repository provenance. The
+corrective commit must atomically change exactly the canonical pair and the
+two validated alias paths; the normal publisher invariant remains unchanged.
 
 For NT books, canonical reverse links continue to cite the SCV-authoritative
 Scrivener token order. The consumer alignment exported to `cgv-data` must not
